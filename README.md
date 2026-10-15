@@ -130,8 +130,7 @@
 |---|---|
 | [README.md](README.md) | 当前项目入口、研发范围、待决问题与实名分工 |
 | [READ.md](READ.md) | 本次改写前 README 的完整原文归档 |
-| [AI_Banking_Agent_Architecture_Complete.md](AI_Banking_Agent_Architecture_Complete.md) | 原架构方案、业务用例、技术模块与团队成长设计 |
-| [AI_Banking_Agent_更新分工清单.md](AI_Banking_Agent_更新分工清单.md) | 研发、赛事材料、报名与提交工作的详细清单 |
+| [AI_Banking_Agent_Architecture_架构与分工SOP整合.md](AI_Banking_Agent_Architecture_架构与分工SOP整合.md) | 原架构方案、业务用例、技术模块与团队成长设计 |
 | [Github共同搭建agent原理.md](Github共同搭建agent原理.md) | 现有团队协作参考资料 |
 | [工具下载指南.md](工具下载指南.md) | 现有工具准备参考资料 |
 | [codex 基础入门书.pdf](codex%20基础入门书.pdf) | 现有入门参考资料 |
