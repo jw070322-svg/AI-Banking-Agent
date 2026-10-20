@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "architecture.md": "bbc1abccd188ec89a22e4d69a7a4fd0f589651f5d960032176cb57444256af6d",
+    "data_driven.py": "7d29555ab34f2aea0834c284426162eec2bb95a4af6f4a8adda00255466ada00",
+    "development_log.json": "e4f51b7eba1dfa366d0e0bd85f253e94ac23a3e3399539bc993fe7f272a6af3b",
+    "example_input.json": "47d12869bed3481136d3dfad70901dea52c5a56002a54ffd8c17b98e5d593f11",
+    "example_results.json": "c1c5dd25f6de7f1e2259c7ff84786e57b1cbd695e4d67c1aa77cc5b25b65dcae",
+    "matching_core.py": "ea3598665e4b19ae731572e9845dfad4eab15a32c8ab2903fc31d050bc063c32",
+    "rule_driven.py": "57967f0461854b1569ce8cbf4ffb49166e0acde9f8dc06c9958b0e34cc4970ba",
+    "test_matching.py": "6e76c4cd5d7028e67fcea8e1d3b3a554d5ffba888a03a834f983d8dd819cee84",
+    "validation_report.json": "7df35c6a5c0f7199e469d40b6fd7b05d17d3988cb04e62f78657a8c4f2d68ee8",
+    "workbook_adapter.py": "c7512b67bd28050deea45cc7050b8c13622a8f965329577a245947581cd08343",
+    "workbook_mapping.template.json": "8c491432f6c22783bfcfb2aafa9b8b3a199d0a2ebb7998018f6633b88f48f4e6"
+  }
+}

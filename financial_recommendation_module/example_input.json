@@ -1,0 +1,321 @@
+{
+  "provenance": "FICTIONAL placeholder data; not extracted from EDE20261017.xlsx",
+  "users": [
+    {
+      "user_id": "U001",
+      "risk_tolerance": 3,
+      "risk_capacity": 3,
+      "budget_cny": 50000,
+      "horizon_days": 400,
+      "max_redemption_days": 7,
+      "objective": "income",
+      "preferred_categories": [
+        "fixed_income"
+      ]
+    },
+    {
+      "user_id": "U002",
+      "risk_tolerance": 1,
+      "risk_capacity": 1,
+      "budget_cny": 8000,
+      "horizon_days": 30,
+      "max_redemption_days": 1,
+      "objective": "liquidity",
+      "preferred_categories": [
+        "cash"
+      ]
+    },
+    {
+      "user_id": "U003",
+      "risk_tolerance": 5,
+      "risk_capacity": 4,
+      "budget_cny": 100000,
+      "horizon_days": 1095,
+      "max_redemption_days": 7,
+      "objective": "growth",
+      "preferred_categories": [
+        "equity",
+        "balanced"
+      ]
+    },
+    {
+      "user_id": "U004",
+      "risk_tolerance": 3,
+      "risk_capacity": null,
+      "budget_cny": 20000,
+      "horizon_days": 365,
+      "max_redemption_days": 7,
+      "objective": "income",
+      "preferred_categories": []
+    },
+    {
+      "user_id": "U005",
+      "risk_tolerance": 5,
+      "risk_capacity": 1,
+      "budget_cny": 30000,
+      "horizon_days": 30,
+      "max_redemption_days": 1,
+      "objective": "growth",
+      "preferred_categories": [
+        "equity"
+      ]
+    },
+    {
+      "user_id": "U006",
+      "risk_tolerance": 3,
+      "risk_capacity": 3,
+      "budget_cny": 60000,
+      "horizon_days": 450,
+      "max_redemption_days": 7,
+      "objective": "income",
+      "preferred_categories": [
+        "fixed_income"
+      ]
+    },
+    {
+      "user_id": "U007",
+      "risk_tolerance": 2,
+      "risk_capacity": 2,
+      "budget_cny": 40000,
+      "horizon_days": 400,
+      "max_redemption_days": 5,
+      "objective": "income",
+      "preferred_categories": [
+        "fixed_income"
+      ]
+    },
+    {
+      "user_id": "U008",
+      "risk_tolerance": 3,
+      "risk_capacity": 3,
+      "budget_cny": 80000,
+      "horizon_days": 730,
+      "max_redemption_days": 7,
+      "objective": "growth",
+      "preferred_categories": [
+        "balanced"
+      ]
+    },
+    {
+      "user_id": "U009",
+      "risk_tolerance": 1,
+      "risk_capacity": 1,
+      "budget_cny": 10000,
+      "horizon_days": 60,
+      "max_redemption_days": 1,
+      "objective": "liquidity",
+      "preferred_categories": [
+        "cash"
+      ]
+    },
+    {
+      "user_id": "U010",
+      "risk_tolerance": 5,
+      "risk_capacity": 5,
+      "budget_cny": 150000,
+      "horizon_days": 1825,
+      "max_redemption_days": 7,
+      "objective": "growth",
+      "preferred_categories": [
+        "equity"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "product_id": "P001",
+      "name": "Example Cash Reserve",
+      "risk_level": 1,
+      "min_investment_cny": 1,
+      "lockup_days": 0,
+      "redemption_days": 1,
+      "category": "cash",
+      "objectives": [
+        "liquidity"
+      ],
+      "annual_fee_pct": 0.15,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P002",
+      "name": "Example Short Bond",
+      "risk_level": 2,
+      "min_investment_cny": 1000,
+      "lockup_days": 90,
+      "redemption_days": 2,
+      "category": "fixed_income",
+      "objectives": [
+        "income"
+      ],
+      "annual_fee_pct": 0.35,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P003",
+      "name": "Example 365-day Income",
+      "risk_level": 2,
+      "min_investment_cny": 10000,
+      "lockup_days": 365,
+      "redemption_days": 0,
+      "category": "fixed_income",
+      "objectives": [
+        "income"
+      ],
+      "annual_fee_pct": 0.0,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P004",
+      "name": "Example Balanced Fund",
+      "risk_level": 3,
+      "min_investment_cny": 100,
+      "lockup_days": 180,
+      "redemption_days": 3,
+      "category": "balanced",
+      "objectives": [
+        "income",
+        "growth"
+      ],
+      "annual_fee_pct": 1.2,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P005",
+      "name": "Example Equity Fund",
+      "risk_level": 5,
+      "min_investment_cny": 100,
+      "lockup_days": 0,
+      "redemption_days": 3,
+      "category": "equity",
+      "objectives": [
+        "growth"
+      ],
+      "annual_fee_pct": 1.5,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P006",
+      "name": "Example Premium Income",
+      "risk_level": 3,
+      "min_investment_cny": 200000,
+      "lockup_days": 90,
+      "redemption_days": 2,
+      "category": "fixed_income",
+      "objectives": [
+        "income"
+      ],
+      "annual_fee_pct": 0.4,
+      "facts_verified": true,
+      "active": true,
+      "currency": "CNY"
+    },
+    {
+      "product_id": "P007",
+      "name": "Example Unverified Cash",
+      "risk_level": 1,
+      "min_investment_cny": 1,
+      "lockup_days": 0,
+      "redemption_days": 0,
+      "category": "cash",
+      "objectives": [
+        "liquidity"
+      ],
+      "annual_fee_pct": null,
+      "facts_verified": false,
+      "active": true,
+      "currency": "CNY"
+    }
+  ],
+  "history": [
+    {
+      "user_id": "U002",
+      "product_id": "P001",
+      "rating": 5
+    },
+    {
+      "user_id": "U006",
+      "product_id": "P001",
+      "rating": 3
+    },
+    {
+      "user_id": "U006",
+      "product_id": "P002",
+      "rating": 5
+    },
+    {
+      "user_id": "U006",
+      "product_id": "P003",
+      "rating": 3
+    },
+    {
+      "user_id": "U006",
+      "product_id": "P004",
+      "rating": 4
+    },
+    {
+      "user_id": "U007",
+      "product_id": "P001",
+      "rating": 3
+    },
+    {
+      "user_id": "U007",
+      "product_id": "P002",
+      "rating": 5
+    },
+    {
+      "user_id": "U007",
+      "product_id": "P003",
+      "rating": 4
+    },
+    {
+      "user_id": "U008",
+      "product_id": "P001",
+      "rating": 2
+    },
+    {
+      "user_id": "U008",
+      "product_id": "P002",
+      "rating": 3
+    },
+    {
+      "user_id": "U008",
+      "product_id": "P004",
+      "rating": 5
+    },
+    {
+      "user_id": "U009",
+      "product_id": "P001",
+      "rating": 5
+    },
+    {
+      "user_id": "U010",
+      "product_id": "P001",
+      "rating": 1
+    },
+    {
+      "user_id": "U010",
+      "product_id": "P002",
+      "rating": 2
+    },
+    {
+      "user_id": "U010",
+      "product_id": "P004",
+      "rating": 4
+    },
+    {
+      "user_id": "U010",
+      "product_id": "P005",
+      "rating": 5
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-10-17T21:52:13+08:00",
+  "python_version": "3.12.14",
+  "unit_tests": {
+    "run": 32,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "compiled_files": [
+    "data_driven.py",
+    "matching_core.py",
+    "rule_driven.py",
+    "test_matching.py",
+    "workbook_adapter.py"
+  ],
+  "cli_checks": [
+    {
+      "module": "data_driven.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "module": "data_driven.py",
+      "arguments": [
+        "--input",
+        "example_input.json",
+        "--user-id",
+        "U001"
+      ],
+      "exit_code": 0
+    },
+    {
+      "module": "data_driven.py",
+      "arguments": [
+        "--evaluate"
+      ],
+      "exit_code": 0
+    },
+    {
+      "module": "rule_driven.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "module": "rule_driven.py",
+      "arguments": [
+        "--input",
+        "example_input.json",
+        "--user-id",
+        "U001"
+      ],
+      "exit_code": 0
+    },
+    {
+      "module": "workbook_adapter.py",
+      "arguments": [
+        "--help"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "strict_json_serialization": "passed for example input and all generated results",
+  "source_workbook_read": "not verified: Windows denied access to supplied G drive file",
+  "excel_adapter_integration": "not run against source workbook; syntax and CLI help checked",
+  "production_financial_validation": "not performed"
+}

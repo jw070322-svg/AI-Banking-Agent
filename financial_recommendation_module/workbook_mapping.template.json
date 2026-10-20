@@ -1,0 +1,17 @@
+{
+  "_note": "ILLUSTRATIVE ONLY. Sheet names and headers below have NOT been verified against EDE20261017.xlsx. Replace using inspect output. Confirm units; no automatic conversion is performed.",
+  "units": {"currency": "CNY", "duration": "calendar_days", "fee": "percent"},
+  "users": {
+    "sheet": "Users",
+    "header_row": 1,
+    "columns": {"user_id": "user_id", "risk_tolerance": "risk_tolerance", "risk_capacity": "risk_capacity", "budget_cny": "budget_cny", "horizon_days": "horizon_days", "max_redemption_days": "max_redemption_days", "objective": "objective", "preferred_categories": "preferred_categories"},
+    "value_maps": {}
+  },
+  "products": {
+    "sheet": "Products",
+    "header_row": 1,
+    "columns": {"product_id": "product_id", "name": "name", "risk_level": "risk_level", "min_investment_cny": "min_investment_cny", "lockup_days": "lockup_days", "redemption_days": "redemption_days", "category": "category", "objectives": "objectives", "annual_fee_pct": "annual_fee_pct", "active": "active", "currency": "currency", "facts_verified": "facts_verified"},
+    "value_maps": {}
+  },
+  "history": null
+}

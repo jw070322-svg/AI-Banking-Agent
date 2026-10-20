@@ -1,0 +1,823 @@
+{
+  "provenance": "FICTIONAL demonstration; no workbook-derived recommendations",
+  "generated_at": "2026-10-17T21:52:13+08:00",
+  "data_driven": {
+    "module": "data_driven",
+    "policy_version": "demo-policy-1.0",
+    "method": "data_driven_profile_neighbor_ratings",
+    "model_version": "profile-neighbor-ratings-1.0",
+    "user_id": "U001",
+    "status": "ok",
+    "recommendations": [
+      {
+        "product_id": "P004",
+        "name": "Example Balanced Fund",
+        "preference_score": 4.315885,
+        "support_count": 3,
+        "weight_sum": 2.122081,
+        "neighbor_evidence": [
+          {
+            "user_id": "U006",
+            "distance": 0.013004,
+            "weight": 0.986996,
+            "rating": 4.0
+          },
+          {
+            "user_id": "U008",
+            "distance": 0.329667,
+            "weight": 0.670333,
+            "rating": 5.0
+          },
+          {
+            "user_id": "U010",
+            "distance": 0.535248,
+            "weight": 0.464752,
+            "rating": 4.0
+          }
+        ],
+        "score_unit": "explicit_preference_rating_1_to_5",
+        "effective_risk": 3,
+        "objective_match": true,
+        "logic": "Passed factual eligibility; ranked by neighboring users' ratings."
+      },
+      {
+        "product_id": "P002",
+        "name": "Example Short Bond",
+        "preference_score": 4.091427,
+        "support_count": 4,
+        "weight_sum": 3.010131,
+        "neighbor_evidence": [
+          {
+            "user_id": "U006",
+            "distance": 0.013004,
+            "weight": 0.986996,
+            "rating": 5.0
+          },
+          {
+            "user_id": "U007",
+            "distance": 0.11195,
+            "weight": 0.88805,
+            "rating": 5.0
+          },
+          {
+            "user_id": "U008",
+            "distance": 0.329667,
+            "weight": 0.670333,
+            "rating": 3.0
+          },
+          {
+            "user_id": "U010",
+            "distance": 0.535248,
+            "weight": 0.464752,
+            "rating": 2.0
+          }
+        ],
+        "score_unit": "explicit_preference_rating_1_to_5",
+        "effective_risk": 3,
+        "objective_match": true,
+        "logic": "Passed factual eligibility; ranked by neighboring users' ratings."
+      },
+      {
+        "product_id": "P003",
+        "name": "Example 365-day Income",
+        "preference_score": 3.473615,
+        "support_count": 2,
+        "weight_sum": 1.875046,
+        "neighbor_evidence": [
+          {
+            "user_id": "U006",
+            "distance": 0.013004,
+            "weight": 0.986996,
+            "rating": 3.0
+          },
+          {
+            "user_id": "U007",
+            "distance": 0.11195,
+            "weight": 0.88805,
+            "rating": 4.0
+          }
+        ],
+        "score_unit": "explicit_preference_rating_1_to_5",
+        "effective_risk": 3,
+        "objective_match": true,
+        "logic": "Passed factual eligibility; ranked by neighboring users' ratings."
+      }
+    ],
+    "excluded": [
+      {
+        "product_id": "P005",
+        "stage": "eligibility",
+        "reasons": [
+          "product risk exceeds the effective risk cap"
+        ]
+      },
+      {
+        "product_id": "P006",
+        "stage": "eligibility",
+        "reasons": [
+          "minimum investment exceeds budget"
+        ]
+      },
+      {
+        "product_id": "P007",
+        "stage": "eligibility",
+        "reasons": [
+          "product facts are unverified"
+        ]
+      }
+    ],
+    "warnings": [
+      "Preference scores are ratings on a 1..5 scale; they are not suitability probabilities, expected returns, or confidence estimates.",
+      "Annual fee unavailable: no low-fee preference bonus"
+    ],
+    "evidence": {
+      "target_history_excluded": true,
+      "minimum_support": 2,
+      "neighbor_limit": 5,
+      "max_distance": 0.6,
+      "training_users": 6,
+      "training_interactions": 16,
+      "selected_neighbor_ids": [
+        "U006",
+        "U007",
+        "U008",
+        "U010"
+      ],
+      "fitted_numeric_features": [
+        "risk_tolerance",
+        "risk_capacity",
+        "budget_cny",
+        "horizon_days",
+        "max_redemption_days"
+      ]
+    },
+    "eligible_supported_count": 4,
+    "eligible_unselected_ids": [
+      "P001"
+    ]
+  },
+  "rule_driven": {
+    "module": "rule_driven",
+    "method": "prioritized_expert_preference_rules",
+    "policy_version": "demo-policy-1.0",
+    "rule_version": "demo-preference-rules-1.0",
+    "user_id": "U001",
+    "status": "ok",
+    "score_meaning": "Preference rubric points (0-100), not a probability or return",
+    "recommendations": [
+      {
+        "product_id": "P002",
+        "product_name": "Example Short Bond",
+        "score": 97.7,
+        "objective_match": true,
+        "effective_risk_cap": 3,
+        "rule_evidence": [
+          {
+            "rule_id": "R010",
+            "priority": 1,
+            "max_contribution": 60.0,
+            "description": "Product objectives include the user's stated objective",
+            "matched": true,
+            "contribution": 60.0,
+            "facts": {
+              "user_objective": "income",
+              "product_objectives": [
+                "income"
+              ]
+            }
+          },
+          {
+            "rule_id": "R020",
+            "priority": 2,
+            "max_contribution": 25.0,
+            "description": "Product category is explicitly preferred by the user",
+            "matched": true,
+            "contribution": 25.0,
+            "facts": {
+              "preferred_categories": [
+                "fixed_income"
+              ],
+              "product_category": "fixed_income"
+            }
+          },
+          {
+            "rule_id": "R030",
+            "priority": 3,
+            "max_contribution": 10.0,
+            "description": "Shorter lockup plus redemption relative to the horizon",
+            "matched": true,
+            "contribution": 7.7,
+            "facts": {
+              "total_access_days": 92,
+              "horizon_days": 400
+            }
+          },
+          {
+            "rule_id": "R040",
+            "priority": 3,
+            "max_contribution": 5.0,
+            "description": "Known annual fee is at most 0.5 percent",
+            "matched": true,
+            "contribution": 5.0,
+            "facts": {
+              "annual_fee_pct": 0.35,
+              "threshold_pct": 0.5
+            }
+          }
+        ],
+        "eligibility_notes": []
+      },
+      {
+        "product_id": "P003",
+        "product_name": "Example 365-day Income",
+        "score": 90.875,
+        "objective_match": true,
+        "effective_risk_cap": 3,
+        "rule_evidence": [
+          {
+            "rule_id": "R010",
+            "priority": 1,
+            "max_contribution": 60.0,
+            "description": "Product objectives include the user's stated objective",
+            "matched": true,
+            "contribution": 60.0,
+            "facts": {
+              "user_objective": "income",
+              "product_objectives": [
+                "income"
+              ]
+            }
+          },
+          {
+            "rule_id": "R020",
+            "priority": 2,
+            "max_contribution": 25.0,
+            "description": "Product category is explicitly preferred by the user",
+            "matched": true,
+            "contribution": 25.0,
+            "facts": {
+              "preferred_categories": [
+                "fixed_income"
+              ],
+              "product_category": "fixed_income"
+            }
+          },
+          {
+            "rule_id": "R030",
+            "priority": 3,
+            "max_contribution": 10.0,
+            "description": "Shorter lockup plus redemption relative to the horizon",
+            "matched": true,
+            "contribution": 0.875,
+            "facts": {
+              "total_access_days": 365,
+              "horizon_days": 400
+            }
+          },
+          {
+            "rule_id": "R040",
+            "priority": 3,
+            "max_contribution": 5.0,
+            "description": "Known annual fee is at most 0.5 percent",
+            "matched": true,
+            "contribution": 5.0,
+            "facts": {
+              "annual_fee_pct": 0.0,
+              "threshold_pct": 0.5
+            }
+          }
+        ],
+        "eligibility_notes": []
+      },
+      {
+        "product_id": "P004",
+        "product_name": "Example Balanced Fund",
+        "score": 65.425,
+        "objective_match": true,
+        "effective_risk_cap": 3,
+        "rule_evidence": [
+          {
+            "rule_id": "R010",
+            "priority": 1,
+            "max_contribution": 60.0,
+            "description": "Product objectives include the user's stated objective",
+            "matched": true,
+            "contribution": 60.0,
+            "facts": {
+              "user_objective": "income",
+              "product_objectives": [
+                "income",
+                "growth"
+              ]
+            }
+          },
+          {
+            "rule_id": "R020",
+            "priority": 2,
+            "max_contribution": 25.0,
+            "description": "Product category is explicitly preferred by the user",
+            "matched": false,
+            "contribution": 0.0,
+            "facts": {
+              "preferred_categories": [
+                "fixed_income"
+              ],
+              "product_category": "balanced"
+            }
+          },
+          {
+            "rule_id": "R030",
+            "priority": 3,
+            "max_contribution": 10.0,
+            "description": "Shorter lockup plus redemption relative to the horizon",
+            "matched": true,
+            "contribution": 5.425,
+            "facts": {
+              "total_access_days": 183,
+              "horizon_days": 400
+            }
+          },
+          {
+            "rule_id": "R040",
+            "priority": 3,
+            "max_contribution": 5.0,
+            "description": "Known annual fee is at most 0.5 percent",
+            "matched": false,
+            "contribution": 0.0,
+            "facts": {
+              "annual_fee_pct": 1.2,
+              "threshold_pct": 0.5
+            }
+          }
+        ],
+        "eligibility_notes": []
+      }
+    ],
+    "excluded": [
+      {
+        "product_id": "P005",
+        "reasons": [
+          "product risk exceeds the effective risk cap"
+        ]
+      },
+      {
+        "product_id": "P006",
+        "reasons": [
+          "minimum investment exceeds budget"
+        ]
+      },
+      {
+        "product_id": "P007",
+        "reasons": [
+          "product facts are unverified"
+        ]
+      }
+    ],
+    "warnings": [
+      "P007: Annual fee unavailable: no low-fee preference bonus"
+    ]
+  },
+  "edge_cases": {
+    "incomplete_profile_data": {
+      "module": "data_driven",
+      "policy_version": "demo-policy-1.0",
+      "method": "data_driven_profile_neighbor_ratings",
+      "model_version": "profile-neighbor-ratings-1.0",
+      "user_id": "U004",
+      "status": "needs_profile_completion",
+      "recommendations": [],
+      "excluded": [
+        {
+          "product_id": "P001",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P002",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P003",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P004",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P005",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P006",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity"
+          ]
+        },
+        {
+          "product_id": "P007",
+          "stage": "eligibility",
+          "reasons": [
+            "profile: missing or invalid risk_capacity",
+            "product facts are unverified"
+          ]
+        }
+      ],
+      "warnings": [
+        "Preference scores are ratings on a 1..5 scale; they are not suitability probabilities, expected returns, or confidence estimates.",
+        "Annual fee unavailable: no low-fee preference bonus"
+      ],
+      "evidence": {
+        "target_history_excluded": true,
+        "minimum_support": 2,
+        "neighbor_limit": 5,
+        "max_distance": 0.6
+      },
+      "profile_errors": [
+        "profile: missing or invalid risk_capacity"
+      ]
+    },
+    "incomplete_profile_rules": {
+      "module": "rule_driven",
+      "method": "prioritized_expert_preference_rules",
+      "policy_version": "demo-policy-1.0",
+      "rule_version": "demo-preference-rules-1.0",
+      "user_id": "U004",
+      "status": "needs_profile_completion",
+      "score_meaning": "Preference rubric points (0-100), not a probability or return",
+      "recommendations": [],
+      "excluded": [],
+      "warnings": [
+        "profile: missing or invalid risk_capacity"
+      ]
+    },
+    "conflicting_signals_data": {
+      "module": "data_driven",
+      "policy_version": "demo-policy-1.0",
+      "method": "data_driven_profile_neighbor_ratings",
+      "model_version": "profile-neighbor-ratings-1.0",
+      "user_id": "U005",
+      "status": "ok",
+      "recommendations": [
+        {
+          "product_id": "P001",
+          "name": "Example Cash Reserve",
+          "preference_score": 3.316473,
+          "support_count": 4,
+          "weight_sum": 1.907017,
+          "neighbor_evidence": [
+            {
+              "user_id": "U002",
+              "distance": 0.492988,
+              "weight": 0.507012,
+              "rating": 5.0
+            },
+            {
+              "user_id": "U009",
+              "distance": 0.505838,
+              "weight": 0.494162,
+              "rating": 5.0
+            },
+            {
+              "user_id": "U010",
+              "distance": 0.507012,
+              "weight": 0.492988,
+              "rating": 1.0
+            },
+            {
+              "user_id": "U008",
+              "distance": 0.587145,
+              "weight": 0.412855,
+              "rating": 2.0
+            }
+          ],
+          "score_unit": "explicit_preference_rating_1_to_5",
+          "effective_risk": 1,
+          "objective_match": false,
+          "logic": "Passed factual eligibility; ranked by neighboring users' ratings."
+        }
+      ],
+      "excluded": [
+        {
+          "product_id": "P002",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P003",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon"
+          ]
+        },
+        {
+          "product_id": "P004",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P005",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P006",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "minimum investment exceeds budget",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P007",
+          "stage": "eligibility",
+          "reasons": [
+            "product facts are unverified"
+          ]
+        }
+      ],
+      "warnings": [
+        "Preference scores are ratings on a 1..5 scale; they are not suitability probabilities, expected returns, or confidence estimates.",
+        "Conflicting risk signals: the lower risk value is binding",
+        "Annual fee unavailable: no low-fee preference bonus",
+        "Some selected alternatives do not match the stated objective. Preference evidence cannot override the risk or liquidity gates."
+      ],
+      "evidence": {
+        "target_history_excluded": true,
+        "minimum_support": 2,
+        "neighbor_limit": 5,
+        "max_distance": 0.6,
+        "training_users": 6,
+        "training_interactions": 16,
+        "selected_neighbor_ids": [
+          "U002",
+          "U009",
+          "U010",
+          "U008"
+        ],
+        "fitted_numeric_features": [
+          "risk_tolerance",
+          "risk_capacity",
+          "budget_cny",
+          "horizon_days",
+          "max_redemption_days"
+        ]
+      },
+      "eligible_supported_count": 1,
+      "eligible_unselected_ids": []
+    },
+    "conflicting_signals_rules": {
+      "module": "rule_driven",
+      "method": "prioritized_expert_preference_rules",
+      "policy_version": "demo-policy-1.0",
+      "rule_version": "demo-preference-rules-1.0",
+      "user_id": "U005",
+      "status": "ok",
+      "score_meaning": "Preference rubric points (0-100), not a probability or return",
+      "recommendations": [
+        {
+          "product_id": "P001",
+          "product_name": "Example Cash Reserve",
+          "score": 14.666667,
+          "objective_match": false,
+          "effective_risk_cap": 1,
+          "rule_evidence": [
+            {
+              "rule_id": "R010",
+              "priority": 1,
+              "max_contribution": 60.0,
+              "description": "Product objectives include the user's stated objective",
+              "matched": false,
+              "contribution": 0.0,
+              "facts": {
+                "user_objective": "growth",
+                "product_objectives": [
+                  "liquidity"
+                ]
+              }
+            },
+            {
+              "rule_id": "R020",
+              "priority": 2,
+              "max_contribution": 25.0,
+              "description": "Product category is explicitly preferred by the user",
+              "matched": false,
+              "contribution": 0.0,
+              "facts": {
+                "preferred_categories": [
+                  "equity"
+                ],
+                "product_category": "cash"
+              }
+            },
+            {
+              "rule_id": "R030",
+              "priority": 3,
+              "max_contribution": 10.0,
+              "description": "Shorter lockup plus redemption relative to the horizon",
+              "matched": true,
+              "contribution": 9.666667,
+              "facts": {
+                "total_access_days": 1,
+                "horizon_days": 30
+              }
+            },
+            {
+              "rule_id": "R040",
+              "priority": 3,
+              "max_contribution": 5.0,
+              "description": "Known annual fee is at most 0.5 percent",
+              "matched": true,
+              "contribution": 5.0,
+              "facts": {
+                "annual_fee_pct": 0.15,
+                "threshold_pct": 0.5
+              }
+            }
+          ],
+          "eligibility_notes": [
+            "Conflicting risk signals: the lower risk value is binding"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "product_id": "P002",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P003",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon"
+          ]
+        },
+        {
+          "product_id": "P004",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P005",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P006",
+          "reasons": [
+            "product risk exceeds the effective risk cap",
+            "minimum investment exceeds budget",
+            "lockup plus redemption exceeds investment horizon",
+            "redemption delay exceeds liquidity tolerance"
+          ]
+        },
+        {
+          "product_id": "P007",
+          "reasons": [
+            "product facts are unverified"
+          ]
+        }
+      ],
+      "warnings": [
+        "Conflicting risk signals: the lower risk value is binding",
+        "P007: Annual fee unavailable: no low-fee preference bonus",
+        "No eligible product matches the stated objective; results are eligible alternatives, not objective matches"
+      ]
+    },
+    "no_interaction_evidence": {
+      "module": "data_driven",
+      "policy_version": "demo-policy-1.0",
+      "method": "data_driven_profile_neighbor_ratings",
+      "model_version": "profile-neighbor-ratings-1.0",
+      "user_id": "U001",
+      "status": "no_evidence",
+      "recommendations": [],
+      "excluded": [
+        {
+          "product_id": "P005",
+          "stage": "eligibility",
+          "reasons": [
+            "product risk exceeds the effective risk cap"
+          ]
+        },
+        {
+          "product_id": "P006",
+          "stage": "eligibility",
+          "reasons": [
+            "minimum investment exceeds budget"
+          ]
+        },
+        {
+          "product_id": "P007",
+          "stage": "eligibility",
+          "reasons": [
+            "product facts are unverified"
+          ]
+        },
+        {
+          "product_id": "P001",
+          "stage": "insufficient_evidence",
+          "reasons": [
+            "Need 2 distinct neighboring raters; found 0"
+          ],
+          "support_count": 0
+        },
+        {
+          "product_id": "P002",
+          "stage": "insufficient_evidence",
+          "reasons": [
+            "Need 2 distinct neighboring raters; found 0"
+          ],
+          "support_count": 0
+        },
+        {
+          "product_id": "P003",
+          "stage": "insufficient_evidence",
+          "reasons": [
+            "Need 2 distinct neighboring raters; found 0"
+          ],
+          "support_count": 0
+        },
+        {
+          "product_id": "P004",
+          "stage": "insufficient_evidence",
+          "reasons": [
+            "Need 2 distinct neighboring raters; found 0"
+          ],
+          "support_count": 0
+        }
+      ],
+      "warnings": [
+        "Preference scores are ratings on a 1..5 scale; they are not suitability probabilities, expected returns, or confidence estimates.",
+        "Annual fee unavailable: no low-fee preference bonus",
+        "Insufficient interaction evidence: use an explicitly identified rule-based fallback or request more evidence; no ML score was invented."
+      ],
+      "evidence": {
+        "target_history_excluded": true,
+        "minimum_support": 2,
+        "neighbor_limit": 5,
+        "max_distance": 0.6,
+        "training_users": 0,
+        "training_interactions": 0,
+        "selected_neighbor_ids": [],
+        "fitted_numeric_features": []
+      },
+      "eligible_supported_count": 0,
+      "eligible_unselected_ids": []
+    }
+  },
+  "synthetic_holdout_diagnostic": {
+    "protocol": "leave_one_user_out; eligibility gated; supported predictions only",
+    "folds": 6,
+    "input_rating_rows": 16,
+    "eligible_heldout_rows": 16,
+    "predicted_heldout_rows": 8,
+    "prediction_coverage": 0.5,
+    "mean_absolute_error_rating_units": 0.777056,
+    "limitations": [
+      "Coverage and MAE must be read together; abstained rows are not scored.",
+      "Sparse, selected ratings do not represent all users or unseen products.",
+      "Preference error does not measure suitability, financial benefit, or fairness.",
+      "Default samples are fictional; these metrics are only a mechanics check.",
+      "No chronological backtest is possible without interaction timestamps."
+    ]
+  }
+}
