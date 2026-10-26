@@ -1,0 +1,37 @@
+{
+  "schema_version": "banking.agent-response.v1",
+  "example_type": "behavioral_fixture_not_a_live_lookup",
+  "steps": [
+    {
+      "action": "rag.search",
+      "evidence_ref": null,
+      "validation": "miss"
+    },
+    {
+      "action": "find_primary_source_via_authorized_search",
+      "evidence_ref": null,
+      "validation": "not_run_in_this_fixture"
+    }
+  ],
+  "status": "needs_evidence",
+  "result": {
+    "answer": null,
+    "answer_type": "current_fact",
+    "query": "某银行当前人民币一年期定期存款利率是多少？",
+    "required_context": [
+      "银行名称",
+      "渠道",
+      "产品/期限",
+      "生效日"
+    ],
+    "source_status": "unverified",
+    "as_of": null
+  },
+  "sources": [],
+  "warnings": [
+    "格式示例没有实际搜索证据，不填入示例利率。"
+  ],
+  "next_actions": [
+    "核对已连接Baidu或其他授权搜索入口，打开银行官网并记录生效时间。"
+  ]
+}

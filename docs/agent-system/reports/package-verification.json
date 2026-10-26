@@ -1,0 +1,49 @@
+{
+  "verified_at": "2026-10-26T16:41:45.299426+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "check": "strict_json_no_duplicates_or_nonfinite",
+      "passed": true,
+      "files": 20
+    },
+    {
+      "check": "R1_source_hash_units_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "R2_source_hash_units_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "R3_source_hash_units_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "R4_source_hash_units_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "R5_source_hash_units_reconciliation",
+      "passed": true
+    },
+    {
+      "check": "retained_live_HTTP_and_idempotency_evidence",
+      "passed": true
+    },
+    {
+      "check": "wind_delivery_five_sheets_and_unit_contract",
+      "passed": true
+    },
+    {
+      "check": "reserved_vs_verified_and_quota_policy_contract",
+      "passed": true
+    },
+    {
+      "check": "eight_field_log_contract",
+      "passed": true
+    }
+  ],
+  "model_evaluations_run": 0,
+  "note": "Artifact/HTTP evidence verification only; no claim of runtime integration or full JSON Schema meta-validation."
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "banking.dossier.v1",
+  "dossier_id": "R2",
+  "scenario_type": "C",
+  "scenario_id": "SCN_C_20261027003043_631C63",
+  "source": {
+    "provider": "environment-agent",
+    "mode": "synthetic",
+    "transport": "HTTP",
+    "endpoint": "/api/scenarios/generate",
+    "request_id": "REQ-20261027003043-9DA31220",
+    "retrieved_at": "2026-10-26T16:40:38.152156+00:00",
+    "raw_response_sha256": "3d1589658c3b0503f9018583df0d6c76493e5579e7ed5cda566defcb87a1d355",
+    "raw_response_path": "reports/raw-environment-responses/R2.json"
+  },
+  "reference_date": "2026-10-27",
+  "seed": 2702,
+  "simulated": true,
+  "ledger_modified": false,
+  "customer": {
+    "user_id": "U6BEA2BA57D77",
+    "profile": {
+      "occupation": "医生",
+      "registration_date": "2023-08-19",
+      "monthly_income_minor": 2432117
+    }
+  },
+  "risk_profile": null,
+  "risk_profile_status": "not_provided_by_api",
+  "accounts": [
+    {
+      "account_id": "ACC5BC274B75B85",
+      "user_id": "U6BEA2BA57D77",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 1361849,
+      "balance_minor": 2684323,
+      "status": "正常",
+      "opened_date": "2024-02-29"
+    }
+  ],
+  "activity_summary": {
+    "booked_income_minor": 1390867,
+    "booked_outflow_minor": 68393,
+    "transaction_count": 7
+  },
+  "recent_activity": [
+    {
+      "transaction_id": "T2AE96097D5F7",
+      "account_id": "ACC5BC274B75B85",
+      "date": "2026-10-24",
+      "amount_minor": 9708,
+      "amount": -9708,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某超市",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T94D40316D065",
+      "account_id": "ACC5BC274B75B85",
+      "date": "2026-10-24",
+      "amount_minor": 18599,
+      "amount": -18599,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "线上购物支付",
+      "status": "booked",
+      "time": "10:00:00",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPD19AA5CFD76D",
+      "related_transaction_id": "T37BE452E1106"
+    },
+    {
+      "transaction_id": "T37BE452E1106",
+      "account_id": "ACC5BC274B75B85",
+      "date": "2026-10-24",
+      "amount_minor": 18599,
+      "amount": -18599,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "疑似重复扣款",
+      "status": "booked",
+      "time": "10:02:00",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPD19AA5CFD76D",
+      "related_transaction_id": "T94D40316D065"
+    }
+  ],
+  "calendar": [],
+  "budget": null,
+  "data_quality": {
+    "balance_reconciled": true,
+    "money_unit": "CNY_minor_integer",
+    "missing_fields": [
+      "risk_profile"
+    ],
+    "notes": [
+      "R1-R5 are dossier identifiers, not customer or product risk ratings.",
+      "Full authoritative generation response is retained locally with its hash; this is an abbreviated audit example."
+    ]
+  }
+}

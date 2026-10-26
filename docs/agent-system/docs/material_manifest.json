@@ -1,0 +1,16 @@
+{
+  "schema_version": "banking.material-manifest.v1",
+  "materials": [
+    {
+      "attachment_id": "dc2e3cd6-fb6f-48a2-83c6-013bbb6a770a",
+      "filename": "Pasted text.txt",
+      "mime_type": "text/plain",
+      "size_bytes": 5950,
+      "sha256": "257a66dc52d60c384253713ccc3866f51e72a8bbee267f0f2c7e3362ca24cc60",
+      "purpose": "user-authored system prompt requirements",
+      "processing_status": "read_and_requirements_mapped",
+      "business_customer_data": false,
+      "note": "开发需求文件可用于设计；客户档案/市场业务资料仍须通过data.ingest_material门面。"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "banking.dossier.v1",
+  "dossier_id": "R4",
+  "scenario_type": "E",
+  "scenario_id": "SCN_E_20261027003043_A1ABD8",
+  "source": {
+    "provider": "environment-agent",
+    "mode": "synthetic",
+    "transport": "HTTP",
+    "endpoint": "/api/scenarios/generate",
+    "request_id": "REQ-20261027003043-D5507A95",
+    "retrieved_at": "2026-10-26T16:40:38.171305+00:00",
+    "raw_response_sha256": "48e0455289fc4100bb0d40b87a0acefd568233346fa422889b0dec5310339c6e",
+    "raw_response_path": "reports/raw-environment-responses/R4.json"
+  },
+  "reference_date": "2026-10-27",
+  "seed": 2704,
+  "simulated": true,
+  "ledger_modified": false,
+  "customer": {
+    "user_id": "UE70E958A96DE",
+    "profile": {
+      "occupation": "软件工程师",
+      "registration_date": "2023-07-12",
+      "monthly_income_minor": 1552710
+    }
+  },
+  "risk_profile": null,
+  "risk_profile_status": "not_provided_by_api",
+  "accounts": [
+    {
+      "account_id": "ACC1F128EEB7250",
+      "user_id": "UE70E958A96DE",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 308146,
+      "balance_minor": 8424597,
+      "status": "正常",
+      "opened_date": "2024-07-03"
+    }
+  ],
+  "activity_summary": {
+    "booked_income_minor": 8134451,
+    "booked_outflow_minor": 18000,
+    "transaction_count": 12
+  },
+  "recent_activity": [
+    {
+      "transaction_id": "T7616D827CD8B",
+      "account_id": "ACC1F128EEB7250",
+      "date": "2026-10-03",
+      "amount_minor": 3000,
+      "amount": -3000,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某云盘服务",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "booked",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T502E21EA8ABA",
+      "account_id": "ACC1F128EEB7250",
+      "date": "2026-10-01",
+      "amount_minor": 1721772,
+      "amount": 1721772,
+      "direction": "credit",
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T13A14C474404",
+      "account_id": "ACC1F128EEB7250",
+      "date": "2026-09-03",
+      "amount_minor": 3000,
+      "amount": -3000,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某云盘服务",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "booked",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    }
+  ],
+  "calendar": [],
+  "budget": null,
+  "data_quality": {
+    "balance_reconciled": true,
+    "money_unit": "CNY_minor_integer",
+    "missing_fields": [
+      "risk_profile"
+    ],
+    "notes": [
+      "R1-R5 are dossier identifiers, not customer or product risk ratings.",
+      "Full authoritative generation response is retained locally with its hash; this is an abbreviated audit example."
+    ]
+  }
+}

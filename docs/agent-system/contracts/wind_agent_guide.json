@@ -1,0 +1,315 @@
+{
+  "schema_version": "banking.wind-task-guide.v1",
+  "guide_type": "project_interchange_specification",
+  "vendor_official_api_schema": false,
+  "language": "zh-CN",
+  "target_agent": "用户账号内实际可用的Wind官方Agent/终端助手",
+  "created_at": "2026-10-26T16:36:54.145513+00:00",
+  "objective": "获取可核验的银行理财产品、风险基准、宏观和板块数据，规范化后交给环境Agent数据门面入库，支持研究与情景计算。",
+  "instruction_to_wind_agent": "先核验账户权限、产品和字段字典，再按以下五表导出纯数值XLSX与溯源manifest。缺少字段记录缺项；不要猜代码、编收益、混用净值口径或导出客户私有资料。",
+  "preflight": [
+    {
+      "step": 1,
+      "action": "确认Wind官方Agent/终端及导出权限实际可用；报告套餐、权限限制与是否存在额外费用。",
+      "on_failure": "return blocked with missing entitlement"
+    },
+    {
+      "step": 2,
+      "action": "按正式产品名称筛选，核验每份额类别的真实code、名称、币种、发行/管理机构和条款。",
+      "on_failure": "report unresolved code; do not use FLEX/TERM3/TERM6/TERM12/BALANCED"
+    },
+    {
+      "step": 3,
+      "action": "查询当前Wind字段字典，建立normalized_field到verified_source_field的映射；保存名称、单位、说明、权限和查询时间。",
+      "on_failure": "source_field=null; required fields missing makes product ineligible"
+    },
+    {
+      "step": 4,
+      "action": "固定分析日、历史范围和point-in-time政策，再下载数据；分红再投资、扣费、日期和修订口径须先确定。",
+      "on_failure": "stop ambiguous series"
+    }
+  ],
+  "product_universe": [
+    {
+      "category": "现金管理类银行理财",
+      "target_count": 3,
+      "normalized_category": "cash",
+      "notes": "总回报净值；七日年化不能填nav"
+    },
+    {
+      "category": "90天持有期纯固收银行理财",
+      "target_count": 3,
+      "normalized_category": "fixed_income",
+      "notes": "以正式最短持有和赎回规则为准"
+    },
+    {
+      "category": "180天持有期固收银行理财",
+      "target_count": 3,
+      "normalized_category": "fixed_income",
+      "notes": "核对开放窗口、利率和信用风险资料"
+    },
+    {
+      "category": "12个月封闭式固收银行理财",
+      "target_count": 3,
+      "normalized_category": "fixed_income",
+      "notes": "真实封闭期按实际日历，不直接替换为演示360日"
+    },
+    {
+      "category": "90天持有期固收增强银行理财",
+      "target_count": 3,
+      "normalized_category": "fixed_income_plus",
+      "notes": "风险等级及权益比例以正式产品文件为准；复杂开放窗口本版不建模"
+    }
+  ],
+  "optional_research_universe": [
+    "短债/纯债基金",
+    "国债ETF",
+    "政策性金融债ETF",
+    "宽基及科技/消费/医药/金融/能源行业ETF",
+    "黄金ETF"
+  ],
+  "excluded_for_current_model": [
+    "杠杆/衍生品",
+    "个股交易推荐",
+    "外币/QDII汇率模型",
+    "无法表达赎回窗口或本金现金流的复杂产品"
+  ],
+  "market_blocks": {
+    "broad_indices": [
+      "沪深300",
+      "上证50",
+      "中证500",
+      "中证1000"
+    ],
+    "industry_indices": [
+      "科技",
+      "消费",
+      "医药",
+      "金融",
+      "能源"
+    ],
+    "macro": [
+      "制造业PMI",
+      "CPI",
+      "PPI",
+      "社会融资规模",
+      "M2",
+      "政策利率"
+    ],
+    "risk_free": "明确期限与年化口径的人民币基准；具体系列由研究者选定，并记录原始机构与日基。",
+    "current_rule_usage": "当前本地研究模块仅消费精确映射的PMI数值和指数变化，其他宏观指标展示；规则未做回测优化。"
+  },
+  "time_range": {
+    "analysis_date": "由实际任务传入，不能晚于宿主当前当地日期",
+    "preferred_history_years": 3,
+    "minimum_nav_points_for_scoring": 61,
+    "current_ranking_recent_points": 253,
+    "frequency": "daily observed values",
+    "holiday_handling": "保留实际交易/公布日期，不伪造非交易日观测",
+    "future_data": "discard from current analysis; retain source record for audit",
+    "revised_macro": "使用分析时点可知的vintage；无法提供则标记PIT unavailable"
+  },
+  "workbook": {
+    "filename": "wind_banking_products_YYYYMMDD.xlsx",
+    "format": "xlsx values only",
+    "sheets": {
+      "products": {
+        "required": [
+          "code",
+          "name",
+          "category",
+          "risk_level",
+          "min_amount",
+          "lock_days",
+          "redemption_days",
+          "annual_fee",
+          "currency",
+          "as_of",
+          "source",
+          "price_basis"
+        ],
+        "optional": [
+          "sector"
+        ],
+        "types": {
+          "code": "string, preserve leading zeros",
+          "name": "string",
+          "category": "string",
+          "risk_level": "integer 1..5 from official terms",
+          "min_amount": "number CNY yuan, 0..10000000",
+          "lock_days": "integer calendar days, 0..36500",
+          "redemption_days": "integer calendar days, 0..365",
+          "annual_fee": "decimal annual fraction, 0..0.2; 1%=0.01",
+          "currency": "CNY",
+          "as_of": "YYYY-MM-DD, terms validity date",
+          "source": "string, Wind export identity and original disclosure",
+          "price_basis": "total_return_net | total_return_gross | price_only",
+          "sector": "string; same vocabulary as indices.sector"
+        },
+        "key": [
+          "code"
+        ]
+      },
+      "prices": {
+        "required": [
+          "date",
+          "code",
+          "nav"
+        ],
+        "optional": [],
+        "types": {
+          "date": "YYYY-MM-DD",
+          "code": "products.code",
+          "nav": "positive numeric daily total-return NAV; not 7-day annualized yield"
+        },
+        "key": [
+          "date",
+          "code"
+        ]
+      },
+      "risk_free": {
+        "required": [
+          "date",
+          "rate"
+        ],
+        "optional": [],
+        "types": {
+          "date": "YYYY-MM-DD",
+          "rate": "decimal annual fraction, -0.05..0.5; currency and maturity must be described in manifest"
+        },
+        "key": [
+          "date"
+        ]
+      },
+      "indices": {
+        "required": [
+          "date",
+          "code",
+          "name",
+          "close",
+          "source"
+        ],
+        "optional": [
+          "sector"
+        ],
+        "types": {
+          "date": "YYYY-MM-DD",
+          "code": "real verified Wind index code",
+          "name": "official name",
+          "close": "positive numeric closing level",
+          "sector": "blank for broad market; standardized industry otherwise",
+          "source": "Wind export identity"
+        },
+        "key": [
+          "date",
+          "code"
+        ]
+      },
+      "macro": {
+        "required": [
+          "date",
+          "available_date",
+          "indicator",
+          "value",
+          "unit",
+          "source"
+        ],
+        "optional": [],
+        "types": {
+          "date": "YYYY-MM-DD observation date",
+          "available_date": "YYYY-MM-DD actually available publication date, >=date",
+          "indicator": "PMI | CPI | PPI | 社融 | M2 | 政策利率 or exact named series",
+          "value": "finite number",
+          "unit": "explicit unit; PMI uses 指数/index/点",
+          "source": "Wind plus original publisher"
+        },
+        "key": [
+          "date",
+          "indicator"
+        ]
+      }
+    },
+    "missing_values": "required不可用则排除对应产品并写quality_report；不要填0冒充",
+    "percent_encoding": "decimal fraction, 2.35%=0.0235",
+    "money_encoding": "products.min_amount是元，银行API *_minor是分；仅由适配器显式转换",
+    "date_encoding": "优先YYYY-MM-DD；兼容明确日期系统的Excel序号",
+    "formula_policy": "no formulas, macros, embedded scripts, external links or encrypted workbook",
+    "raw_size_limit_bytes": 8388608,
+    "unzipped_size_limit_bytes": 67108864,
+    "maximum_total_rows": 160000,
+    "maximum_columns": 40
+  },
+  "price_basis": {
+    "total_return_net": "分红再投资且已扣费的总回报净值，不再重复扣费",
+    "total_return_gross": "分红再投资但未扣费的总回报净值，由算法按annual_fee扣费",
+    "price_only": "仅价格，当前评分模块排除",
+    "forbidden_substitutes": [
+      "七日年化收益率",
+      "不包含分红再投资的累计净值",
+      "业绩比较基准",
+      "未经校验的收益承诺"
+    ]
+  },
+  "quality_checks": [
+    "code、日期键唯一，代码可关联，所有数值有限，nav/close为正，风险等级源自正式条款",
+    "同份额/产品不拼接不同净值口径；有合并或分红拆分时保留官方调整说明",
+    "不前值填充缺失，连续超过12自然日或中位间隔超过3日的净值不按252日频年化",
+    "评分时净值/指数超过10自然日标记过时，产品条款超过90日需更新",
+    "无风险利率向过去匹配最多40自然日，禁止使用未来利率；必须记录期限与年化日基",
+    "PMI available_date不晚于分析日、公布不超过90日；发布日期未知则不进入当日规则",
+    "源表核验后记录转换、缺项、排除产品及原因；官方风险、费用或流动性资料缺失不能凭波动推断",
+    "导入批次在当前本地版本中替换会话数据集；需要分批时先准备合并后的完整规范批次，不连续上传局部表冒充追加"
+  ],
+  "deliverables": [
+    {
+      "filename": "wind_banking_products_YYYYMMDD.xlsx",
+      "content": "五个标准工作表的纯值工作簿"
+    },
+    {
+      "filename": "wind_manifest_YYYYMMDD.json",
+      "content": "数据来源、真实Wind代码、verified字段映射、费用/净值口径、币种、日期范围、可获得日期、vintage、SHA-256和导出时间"
+    },
+    {
+      "filename": "wind_quality_report_YYYYMMDD.json",
+      "content": "每产品点数、缺失/重复/过时/不规则日期、排除项及导入前质量检查结果"
+    }
+  ],
+  "delivery_transport": {
+    "business_access": "data.import_market -> environment-agent unified facade -> normalized market read",
+    "existing_local_import": "POST /api/market/import",
+    "existing_payload_keys": [
+      "filename",
+      "content_base64"
+    ],
+    "existing_headers": [
+      "session Cookie (server managed)",
+      "Idempotency-Key"
+    ],
+    "existing_status_reads": [
+      "GET /api/market/status",
+      "GET /api/market/context"
+    ],
+    "facade_integration_status": "reserved, not implemented by this prompt package",
+    "log_policy": "不记录base64或凭据，只记录文件hash与脱敏摘要"
+  },
+  "return_to_requester": {
+    "status_enum": [
+      "succeeded",
+      "partial",
+      "blocked",
+      "failed"
+    ],
+    "required_fields": [
+      "status",
+      "exported_files",
+      "verified_products",
+      "field_mapping",
+      "date_range",
+      "quality_report",
+      "missing_items",
+      "permissions_checked",
+      "billing_checked"
+    ],
+    "do_not_claim": "没有实际导出或校验时，不能声称已接入Wind真实数据"
+  }
+}

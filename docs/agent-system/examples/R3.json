@@ -1,0 +1,101 @@
+{
+  "schema_version": "banking.dossier.v1",
+  "dossier_id": "R3",
+  "scenario_type": "D",
+  "scenario_id": "SCN_D_20261027003043_CC7E3F",
+  "source": {
+    "provider": "environment-agent",
+    "mode": "synthetic",
+    "transport": "HTTP",
+    "endpoint": "/api/scenarios/generate",
+    "request_id": "REQ-20261027003043-955F4D08",
+    "retrieved_at": "2026-10-26T16:40:38.167902+00:00",
+    "raw_response_sha256": "45d89a0c09505c292486c4a23c9d04c32cf0301cee701b3d08551b568a41cf68",
+    "raw_response_path": "reports/raw-environment-responses/R3.json"
+  },
+  "reference_date": "2026-10-27",
+  "seed": 2703,
+  "simulated": true,
+  "ledger_modified": false,
+  "customer": {
+    "user_id": "U638C69EE7832",
+    "profile": {
+      "occupation": "软件工程师",
+      "registration_date": "2023-10-27",
+      "monthly_income_minor": 1728453
+    }
+  },
+  "risk_profile": null,
+  "risk_profile_status": "not_provided_by_api",
+  "accounts": [
+    {
+      "account_id": "ACC309A73C06921",
+      "user_id": "U638C69EE7832",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 174207,
+      "balance_minor": 659955,
+      "status": "正常",
+      "opened_date": "2021-11-04"
+    }
+  ],
+  "activity_summary": {
+    "booked_income_minor": 836485,
+    "booked_outflow_minor": 350737,
+    "transaction_count": 4
+  },
+  "recent_activity": [
+    {
+      "transaction_id": "TEA3E13126121",
+      "account_id": "ACC309A73C06921",
+      "date": "2026-10-27",
+      "amount_minor": 948811,
+      "amount": -948811,
+      "direction": "debit",
+      "transaction_type": "transfer_out",
+      "category": "转账",
+      "merchant": "收款人-张三",
+      "description": "转账请求：金额超过可用余额，被银行拒绝",
+      "status": "rejected"
+    },
+    {
+      "transaction_id": "TF9E51E60FF53",
+      "account_id": "ACC309A73C06921",
+      "date": "2026-10-22",
+      "amount_minor": 53322,
+      "amount": -53322,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "聚餐",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T2E69E1815223",
+      "account_id": "ACC309A73C06921",
+      "date": "2026-10-17",
+      "amount_minor": 297415,
+      "amount": -297415,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某购物中心",
+      "description": "购物消费",
+      "status": "booked"
+    }
+  ],
+  "calendar": [],
+  "budget": null,
+  "data_quality": {
+    "balance_reconciled": true,
+    "money_unit": "CNY_minor_integer",
+    "missing_fields": [
+      "risk_profile"
+    ],
+    "notes": [
+      "R1-R5 are dossier identifiers, not customer or product risk ratings.",
+      "Full authoritative generation response is retained locally with its hash; this is an abbreviated audit example."
+    ]
+  }
+}

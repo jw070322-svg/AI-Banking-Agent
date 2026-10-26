@@ -1,0 +1,198 @@
+{
+  "schema_version": "banking.change-manifest.v1",
+  "created_at": "2026-10-26T16:43:01.103834+00:00",
+  "base_commit": "fcb5c59a11e58233f8093c56d8f539648ba0fcc6",
+  "branch": "docs/banking-agent-system-20261027",
+  "changes": [
+    {
+      "path": "docs/agent-system/.gitignore",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "e0bab5d3635d3397730295c82cd9febe8bf85dc3b6f40fc0045b27bd623d63e3",
+      "bytes": 65
+    },
+    {
+      "path": "docs/agent-system/contracts/behavior_evaluations.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "582bb51b626632f93457e6336afd9c2d272f7e91e706b6c95ec722efe8e44ded",
+      "bytes": 6341
+    },
+    {
+      "path": "docs/agent-system/contracts/integration_contract.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "bb956da468ceb2605037b3fd2c913d4c19f3f057d9058ed2d6395b4f3c877bd2",
+      "bytes": 5913
+    },
+    {
+      "path": "docs/agent-system/contracts/tool_schemas.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "33fbd8799423c97fecf15a8dd55f1768a6895372c35ae367021815a3e1e12058",
+      "bytes": 12108
+    },
+    {
+      "path": "docs/agent-system/contracts/wind_agent_guide.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "677a78bd4e703991d7934d3a1d810493288123cea04371c40e49d7ca1ca13fe4",
+      "bytes": 11735
+    },
+    {
+      "path": "docs/agent-system/development_log.jsonl",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "6102156cb402c5104fcbc30966497e231425e02ed3cab801639166f462c1f863",
+      "bytes": 3093
+    },
+    {
+      "path": "docs/agent-system/docs/changes.md",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "1fcb5df8ecd972fa10492bac0f83f54cd9fd464027c4b99f859b758dec132d67",
+      "bytes": 2292
+    },
+    {
+      "path": "docs/agent-system/docs/material_manifest.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "6f97819315fde1c15e564c6455f72689e0634466f48a3595f2621ed42cf6c3bf",
+      "bytes": 632
+    },
+    {
+      "path": "docs/agent-system/examples/dossiers.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "ebeea17bf72afca2458a36a3b2f09caf540dfd14357cfd107feee01c7aeae680",
+      "bytes": 18999
+    },
+    {
+      "path": "docs/agent-system/examples/handoff.template.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "bc9cec92dc5c2d1b24c15e9d3b772716aa0ca2b6d023588b108985d917704753",
+      "bytes": 821
+    },
+    {
+      "path": "docs/agent-system/examples/knowledge_fallback.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "dcb35985148591c84f2ee2cee66ba6532312a3027a2928f0ecca6d0d6a12b709",
+      "bytes": 991
+    },
+    {
+      "path": "docs/agent-system/examples/R1.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "06e97fead2b3bb4083793595c31c1d27a6d624d723c436c6dd3d64fa9c99db69",
+      "bytes": 2916
+    },
+    {
+      "path": "docs/agent-system/examples/R2.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "11a642c35db21c71776e147599375703e0a94ea540dfe2e0195d45cd50216c35",
+      "bytes": 3267
+    },
+    {
+      "path": "docs/agent-system/examples/R3.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "c8c96651403246022b3322aa4054931ff140a4fb2effb83271c98dee9cefd039",
+      "bytes": 3017
+    },
+    {
+      "path": "docs/agent-system/examples/R4.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "9a22cf73a800aa8f57a5733d1f27e8096b8e310da132a44e48cb152a9641c660",
+      "bytes": 3258
+    },
+    {
+      "path": "docs/agent-system/examples/R5.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "a832f736c8c4a7739f1884178dd056645a2b1582b01b725e2e4d2ceadf0abef9",
+      "bytes": 4187
+    },
+    {
+      "path": "docs/agent-system/prompts/banking_environment_system.md",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "9444526438d094536ca7cf6cd8bf568664003345874b6219647062c0b29cad5a",
+      "bytes": 23020
+    },
+    {
+      "path": "docs/agent-system/README.md",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "e950c86b925004a4cbc08097d940dcf27c5c6db2d39d9074738cbc92a58bd515",
+      "bytes": 4332
+    },
+    {
+      "path": "docs/agent-system/reports/dossier-api-verification.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "1f33546964d926fafa42b5ac167eb17ee41e1724c13da20af334007de8cba492",
+      "bytes": 1668
+    },
+    {
+      "path": "docs/agent-system/reports/package-verification.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "7ff150a3e97a804736c433f81a8fc82d9444a4234ebb5ab5a8873773b978796a",
+      "bytes": 1211
+    },
+    {
+      "path": "docs/agent-system/reports/raw-environment-responses/R1.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "f33c62ef461eb21142069818eb7e2a29d30f8c743c18b203513a20644019994f",
+      "bytes": 10149
+    },
+    {
+      "path": "docs/agent-system/reports/raw-environment-responses/R2.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "3d1589658c3b0503f9018583df0d6c76493e5579e7ed5cda566defcb87a1d355",
+      "bytes": 10010
+    },
+    {
+      "path": "docs/agent-system/reports/raw-environment-responses/R3.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "45d89a0c09505c292486c4a23c9d04c32cf0301cee701b3d08551b568a41cf68",
+      "bytes": 8485
+    },
+    {
+      "path": "docs/agent-system/reports/raw-environment-responses/R4.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "48e0455289fc4100bb0d40b87a0acefd568233346fa422889b0dec5310339c6e",
+      "bytes": 14591
+    },
+    {
+      "path": "docs/agent-system/reports/raw-environment-responses/R5.json",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "22bb5f9f1cdff823478e1ae46c06c666b4f82398b2d1caf39719f79ec744afd8",
+      "bytes": 12052
+    },
+    {
+      "path": "docs/agent-system/tools/collect_dossiers.py",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "3f1f5b592a0ac604cf261c21f9368ea72e0970afc6da1899f9ee91a831708b48",
+      "bytes": 6599
+    },
+    {
+      "path": "docs/agent-system/tools/validate_package.py",
+      "change_type": "added",
+      "before_sha256": null,
+      "after_sha256": "9658d53a36687493541c966b3f2207b0c95675758626cd82279a9927f7a8d701",
+      "bytes": 5769
+    }
+  ],
+  "self_hash": "excluded to avoid recursive hash; final commit supplies integrity"
+}
