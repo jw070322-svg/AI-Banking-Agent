@@ -1,0 +1,53 @@
+{
+  "verified_at": "2026-10-26T16:40:38.214616+00:00",
+  "base_url": "http://127.0.0.1:8792",
+  "mode": "synthetic_HTTP_API",
+  "passed": true,
+  "evidence": [
+    {
+      "dossier_id": "R1",
+      "scenario_type": "A",
+      "http_api_succeeded": true,
+      "reconciled_accounts": 1,
+      "transactions": 11,
+      "idempotency_replayed": true,
+      "raw_response_sha256": "f33c62ef461eb21142069818eb7e2a29d30f8c743c18b203513a20644019994f"
+    },
+    {
+      "dossier_id": "R2",
+      "scenario_type": "C",
+      "http_api_succeeded": true,
+      "reconciled_accounts": 1,
+      "transactions": 7,
+      "idempotency_replayed": true,
+      "raw_response_sha256": "3d1589658c3b0503f9018583df0d6c76493e5579e7ed5cda566defcb87a1d355"
+    },
+    {
+      "dossier_id": "R3",
+      "scenario_type": "D",
+      "http_api_succeeded": true,
+      "reconciled_accounts": 1,
+      "transactions": 4,
+      "idempotency_replayed": true,
+      "raw_response_sha256": "45d89a0c09505c292486c4a23c9d04c32cf0301cee701b3d08551b568a41cf68"
+    },
+    {
+      "dossier_id": "R4",
+      "scenario_type": "E",
+      "http_api_succeeded": true,
+      "reconciled_accounts": 1,
+      "transactions": 12,
+      "idempotency_replayed": true,
+      "raw_response_sha256": "48e0455289fc4100bb0d40b87a0acefd568233346fa422889b0dec5310339c6e"
+    },
+    {
+      "dossier_id": "R5",
+      "scenario_type": "F",
+      "http_api_succeeded": true,
+      "reconciled_accounts": 1,
+      "transactions": 9,
+      "idempotency_replayed": true,
+      "raw_response_sha256": "22bb5f9f1cdff823478e1ae46c06c666b4f82398b2d1caf39719f79ec744afd8"
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/banking-agent/contracts/v1",
+  "title": "Banking Agent Reserved Tool Contracts",
+  "description": "Design-only JSON Schemas. Names are logical; no endpoint is implemented by this package.",
+  "type": "object",
+  "$defs": {
+    "dossier_read_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dossier_id": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "data_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "request_id",
+        "user_id",
+        "tenant_id",
+        "dossier_id",
+        "as_of",
+        "data_version"
+      ],
+      "additionalProperties": false
+    },
+    "material_ingest_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "upload_ref": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "consent_ref": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id",
+        "user_id",
+        "tenant_id",
+        "upload_ref",
+        "sha256",
+        "purpose",
+        "consent_ref"
+      ],
+      "additionalProperties": false
+    },
+    "rag_search_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "query": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "top_k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "authorized_scope_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "request_id",
+        "user_id",
+        "tenant_id",
+        "query",
+        "as_of",
+        "top_k",
+        "authorized_scope_refs"
+      ],
+      "additionalProperties": false
+    },
+    "rag_search_result": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "hit",
+            "miss",
+            "stale",
+            "conflict",
+            "unavailable"
+          ]
+        },
+        "hits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "document_id": {
+                "type": "string"
+              },
+              "chunk_id": {
+                "type": "string"
+              },
+              "source_uri": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "effective_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "relevance": {
+                "type": "number"
+              },
+              "quoted_evidence": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "document_id",
+              "chunk_id",
+              "source_uri",
+              "version",
+              "effective_date",
+              "retrieved_at",
+              "relevance",
+              "quoted_evidence"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "status",
+        "hits",
+        "warnings"
+      ],
+      "additionalProperties": false
+    },
+    "security_evaluate_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resource": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "normalized_parameters": {
+          "type": "object"
+        },
+        "data_version": {
+          "type": "string"
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "authorization_context_ref": {
+          "type": "string"
+        },
+        "approval_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "idempotency_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "request_id",
+        "user_id",
+        "tenant_id",
+        "resource",
+        "action",
+        "normalized_parameters",
+        "data_version",
+        "policy_version",
+        "authorization_context_ref",
+        "approval_ref",
+        "idempotency_key"
+      ],
+      "additionalProperties": false
+    },
+    "security_evaluate_result": {
+      "type": "object",
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": [
+            "allow",
+            "deny",
+            "needs_approval",
+            "unavailable"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approval_binding": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policy_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "reason_codes",
+        "required_scopes",
+        "approval_binding",
+        "expires_at",
+        "policy_version"
+      ],
+      "additionalProperties": false
+    },
+    "local_life_search_request": {
+      "type": "object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "user_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tenant_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "enum": [
+            "meituan",
+            "dianping"
+          ]
+        },
+        "city_or_region": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "restaurant",
+            "cake",
+            "flowers"
+          ]
+        },
+        "event_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "party_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "budget_minor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "approved_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "request_id",
+        "user_id",
+        "tenant_id",
+        "provider",
+        "city_or_region",
+        "category",
+        "event_date",
+        "party_size",
+        "budget_minor",
+        "approved_preferences"
+      ],
+      "additionalProperties": false
+    },
+    "quota_result": {
+      "type": "object",
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "available",
+            "unknown"
+          ]
+        },
+        "windows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "used_percent": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 100
+              },
+              "reset_at": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "used_percent",
+              "reset_at"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "observed_at",
+        "status",
+        "windows"
+      ],
+      "additionalProperties": false
+    },
+    "audit_record": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "intent": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "input": {},
+        "output": {},
+        "risk_check": {},
+        "approval": {},
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "user_id",
+        "intent",
+        "tool",
+        "input",
+        "output",
+        "risk_check",
+        "approval",
+        "timestamp"
+      ],
+      "additionalProperties": false
+    },
+    "agent_response": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "banking.agent-response.v1"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "needs_input",
+            "needs_evidence",
+            "blocked",
+            "failed",
+            "unknown",
+            "paused_quota"
+          ]
+        },
+        "result": {
+          "type": [
+            "object",
+            "array",
+            "null"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "schema_version",
+        "steps",
+        "status",
+        "result",
+        "sources",
+        "warnings",
+        "next_actions"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

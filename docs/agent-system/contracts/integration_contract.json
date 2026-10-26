@@ -1,0 +1,235 @@
+{
+  "schema_version": "banking.integration-contract.v1",
+  "implementation_status": "design_and_verified_generation_samples_only",
+  "verified_existing_generation": {
+    "method": "POST",
+    "path": "/api/scenarios/generate",
+    "required_headers": [
+      "Content-Type: application/json",
+      "Idempotency-Key"
+    ],
+    "request_fields": {
+      "prompt": "string",
+      "scenario_type": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "seed": "uint32",
+      "reference_date": "YYYY-MM-DD"
+    },
+    "canonical_response_fields": [
+      "schema_version",
+      "request_id",
+      "status",
+      "data",
+      "error",
+      "trace",
+      "simulated"
+    ],
+    "evidence": "reports/dossier-api-verification.json",
+    "ledger_modified": false
+  },
+  "dossier_id_mapping": {
+    "R1": "A",
+    "R2": "C",
+    "R3": "D",
+    "R4": "E",
+    "R5": "F"
+  },
+  "proposed_data_facade": {
+    "status": "reserved",
+    "provider_kinds": [
+      "environment",
+      "bank"
+    ],
+    "business_clients": "orchestrator/UI use canonical facade only",
+    "operations": [
+      "read_dossier",
+      "read_accounts",
+      "read_transactions",
+      "read_contacts",
+      "read_calendar",
+      "ingest_material",
+      "import_market",
+      "read_market"
+    ],
+    "required_request": [
+      "actor_id",
+      "tenant_id",
+      "resource_id",
+      "scope",
+      "as_of",
+      "request_id"
+    ],
+    "required_response_metadata": [
+      "schema_version",
+      "request_id",
+      "status",
+      "provider",
+      "source_record_id",
+      "as_of",
+      "retrieved_at",
+      "data_version",
+      "data",
+      "error"
+    ],
+    "pagination": [
+      "cursor",
+      "next_cursor",
+      "has_more",
+      "snapshot_version"
+    ],
+    "data_access_exception": "附件字节可由授权接收器读取并上传；业务字段只能从解析后门面读取。公开搜索属于研究证据，入档必须通过ingest。"
+  },
+  "rag": {
+    "status": "reserved",
+    "input": [
+      "query",
+      "user_scope",
+      "as_of",
+      "top_k",
+      "request_id"
+    ],
+    "output": [
+      "status",
+      "hits",
+      "document_id",
+      "chunk_id",
+      "source_uri",
+      "version",
+      "effective_date",
+      "retrieved_at",
+      "relevance",
+      "quoted_evidence",
+      "warnings"
+    ],
+    "miss_policy": [
+      "record miss/stale/conflict/unavailable",
+      "authorized Baidu search or verified zero-cost external AI",
+      "fetch primary evidence",
+      "needs_evidence if unresolved"
+    ],
+    "sensitive_egress": "deny without specific explicit authorization"
+  },
+  "security": {
+    "status": "reserved; existing app policy enforcement remains separate",
+    "input": [
+      "actor",
+      "resource",
+      "action",
+      "normalized_parameters",
+      "data_version",
+      "policy_version",
+      "authorization_context",
+      "approval_ref",
+      "idempotency_key"
+    ],
+    "output": [
+      "decision",
+      "reason_codes",
+      "required_scopes",
+      "approval_binding",
+      "expires_at",
+      "policy_version"
+    ],
+    "decision_enum": [
+      "allow",
+      "deny",
+      "needs_approval",
+      "unavailable"
+    ],
+    "unavailable_policy": "fail closed for sensitive writes; authorized reads can continue"
+  },
+  "local_life": {
+    "status": "reserved official connector, search-link fallback only",
+    "providers": [
+      "meituan",
+      "dianping"
+    ],
+    "result_states": [
+      "verified_api_result",
+      "external_search_link",
+      "needs_user_check",
+      "unavailable"
+    ],
+    "request": [
+      "city_or_region",
+      "category",
+      "budget_minor",
+      "party_size",
+      "event_date",
+      "user_approved_preferences"
+    ],
+    "result": [
+      "provider",
+      "merchant_name",
+      "url",
+      "retrieved_at",
+      "price",
+      "price_basis",
+      "availability_status",
+      "source_status"
+    ],
+    "avoid_sending": [
+      "bank_account_data",
+      "transaction_history",
+      "family_relationships",
+      "private_calendar_text",
+      "credentials"
+    ],
+    "budget_reservation": [
+      "event_id",
+      "reservation_id",
+      "amount_minor",
+      "currency",
+      "event_date",
+      "status",
+      "version"
+    ]
+  },
+  "quota": {
+    "threshold_remaining_percent": 15,
+    "comparison": "<=",
+    "measurement": "minimum of host-provided windows; remaining=clamp(100-usedPercent,0,100)",
+    "at_threshold": "pause_new_business_and_repository_writes; save handoff and audit only",
+    "unknown": "quota_unknown, do not fabricate remaining percentage",
+    "resume": "explicit user instruction plus fresh quota and state checks"
+  },
+  "provider_swap_acceptance": [
+    "same canonical schema and types",
+    "authentication and consent isolation",
+    "integer-minor precision; source units explicit",
+    "timezone and as_of mapping",
+    "full pagination within one snapshot version",
+    "booked-only ledger reconciliation",
+    "refund/internal-transfer semantics",
+    "empty/null/missing values",
+    "idempotent retry and unknown-result recovery",
+    "schema version mismatch and sanitized errors"
+  ],
+  "execution_limits": {
+    "read_retries": 2,
+    "unknown_mutation": "query operation before any replay",
+    "retrieval_query_rounds": 2,
+    "queries_per_round": 3
+  },
+  "audit_log_top_level_fields": [
+    "user_id",
+    "intent",
+    "tool",
+    "input",
+    "output",
+    "risk_check",
+    "approval",
+    "timestamp"
+  ],
+  "live_bank_verified": false,
+  "real_wind_verified": false,
+  "external_ai_verified": false,
+  "meituan_dianping_api_verified": false
+}

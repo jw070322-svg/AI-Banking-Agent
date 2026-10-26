@@ -1,0 +1,31 @@
+{
+  "schema_version": "banking.handoff.v1",
+  "status": "paused_quota",
+  "saved_at": null,
+  "context": {
+    "user_objective": null,
+    "workspace": null,
+    "repository": null,
+    "branch": null,
+    "commit_sha": null
+  },
+  "constraints": [
+    "业务数据经环境Agent门面读取",
+    "额度<=15%暂停业务，只保存交接与审计"
+  ],
+  "completed": [],
+  "pending": [],
+  "evidence": [],
+  "decision_summary": [],
+  "outstanding_operations": [],
+  "quota": {
+    "observed_at": null,
+    "windows": [],
+    "remaining_percent": null,
+    "reset_at": null
+  },
+  "next_steps": [
+    "用户明确恢复后重查额度、状态和授权，再核对未决操作。"
+  ],
+  "note": "模板，不代表已触发暂停；决策摘要只写公开依据及验证结果。"
+}

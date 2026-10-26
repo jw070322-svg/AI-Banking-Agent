@@ -1,0 +1,147 @@
+{
+  "schema_version": "banking.dossier.v1",
+  "dossier_id": "R5",
+  "scenario_type": "F",
+  "scenario_id": "SCN_F_20261027003043_8AEA71",
+  "source": {
+    "provider": "environment-agent",
+    "mode": "synthetic",
+    "transport": "HTTP",
+    "endpoint": "/api/scenarios/generate",
+    "request_id": "REQ-20261027003043-2BDCDC04",
+    "retrieved_at": "2026-10-26T16:40:38.211825+00:00",
+    "raw_response_sha256": "22bb5f9f1cdff823478e1ae46c06c666b4f82398b2d1caf39719f79ec744afd8",
+    "raw_response_path": "reports/raw-environment-responses/R5.json"
+  },
+  "reference_date": "2026-10-27",
+  "seed": 2705,
+  "simulated": true,
+  "ledger_modified": false,
+  "customer": {
+    "user_id": "U74D62CFA67F9",
+    "profile": {
+      "occupation": "教师",
+      "registration_date": "2023-11-08",
+      "monthly_income_minor": 2430893
+    }
+  },
+  "risk_profile": null,
+  "risk_profile_status": "not_provided_by_api",
+  "accounts": [
+    {
+      "account_id": "ACC3F7AEB82260A",
+      "user_id": "U74D62CFA67F9",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 1535292,
+      "balance_minor": 2769055,
+      "status": "正常",
+      "opened_date": "2025-11-20"
+    }
+  ],
+  "activity_summary": {
+    "booked_income_minor": 1446294,
+    "booked_outflow_minor": 212531,
+    "transaction_count": 9
+  },
+  "recent_activity": [
+    {
+      "transaction_id": "TC752D09B302E",
+      "account_id": "ACC3F7AEB82260A",
+      "date": "2026-10-26",
+      "amount_minor": 4805,
+      "amount": -4805,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T880E1F062CAF",
+      "account_id": "ACC3F7AEB82260A",
+      "date": "2026-10-26",
+      "amount_minor": 10774,
+      "amount": -10774,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "TAA3BB9E574E5",
+      "account_id": "ACC3F7AEB82260A",
+      "date": "2026-10-14",
+      "amount_minor": 46974,
+      "amount": -46974,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某超市",
+      "description": "",
+      "status": "booked"
+    }
+  ],
+  "calendar": [
+    {
+      "event_id": "EVT00C423D6E4C4",
+      "date": "2026-11-17",
+      "title": "预订生日鲜花",
+      "category": "鲜花",
+      "budget_minor": 24531,
+      "status": "planned",
+      "related_member_id": "FAM0D6222D90BC7",
+      "auto_order": true
+    },
+    {
+      "event_id": "EVTE5B1E0143A32",
+      "date": "2026-11-17",
+      "title": "预订生日蛋糕",
+      "category": "蛋糕",
+      "budget_minor": 19250,
+      "status": "planned",
+      "related_member_id": "FAM0D6222D90BC7",
+      "auto_order": true
+    },
+    {
+      "event_id": "EVT66903E5D0A7C",
+      "date": "2026-11-17",
+      "title": "购买生日礼物",
+      "category": "生日礼物",
+      "budget_minor": 16931,
+      "status": "planned",
+      "related_member_id": "FAM0D6222D90BC7",
+      "auto_order": false
+    },
+    {
+      "event_id": "EVTE730A02C5A4C",
+      "date": "2026-11-19",
+      "title": "安排生日晚餐",
+      "category": "生日晚餐",
+      "budget_minor": 27109,
+      "status": "planned",
+      "related_member_id": "FAM0D6222D90BC7",
+      "auto_order": false
+    }
+  ],
+  "budget": {
+    "currency": "CNY",
+    "lock_month": "2026-11",
+    "monthly_activity_budget_minor": 100000,
+    "locked_amount_minor": 100000
+  },
+  "data_quality": {
+    "balance_reconciled": true,
+    "money_unit": "CNY_minor_integer",
+    "missing_fields": [
+      "risk_profile"
+    ],
+    "notes": [
+      "R1-R5 are dossier identifiers, not customer or product risk ratings.",
+      "Full authoritative generation response is retained locally with its hash; this is an abbreviated audit example."
+    ]
+  }
+}

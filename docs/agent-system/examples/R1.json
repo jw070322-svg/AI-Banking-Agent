@@ -1,0 +1,101 @@
+{
+  "schema_version": "banking.dossier.v1",
+  "dossier_id": "R1",
+  "scenario_type": "A",
+  "scenario_id": "SCN_A_20261027003043_D2E008",
+  "source": {
+    "provider": "environment-agent",
+    "mode": "synthetic",
+    "transport": "HTTP",
+    "endpoint": "/api/scenarios/generate",
+    "request_id": "REQ-20261027003043-D3375D3B",
+    "retrieved_at": "2026-10-26T16:40:38.118184+00:00",
+    "raw_response_sha256": "f33c62ef461eb21142069818eb7e2a29d30f8c743c18b203513a20644019994f",
+    "raw_response_path": "reports/raw-environment-responses/R1.json"
+  },
+  "reference_date": "2026-10-27",
+  "seed": 2701,
+  "simulated": true,
+  "ledger_modified": false,
+  "customer": {
+    "user_id": "U7C94F19EF7C0",
+    "profile": {
+      "occupation": "医生",
+      "registration_date": "2024-03-02",
+      "monthly_income_minor": 1695921
+    }
+  },
+  "risk_profile": null,
+  "risk_profile_status": "not_provided_by_api",
+  "accounts": [
+    {
+      "account_id": "ACCA54FF85D43BC",
+      "user_id": "U7C94F19EF7C0",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 561736,
+      "balance_minor": 1820148,
+      "status": "正常",
+      "opened_date": "2024-12-26"
+    }
+  ],
+  "activity_summary": {
+    "booked_income_minor": 1562422,
+    "booked_outflow_minor": 304010,
+    "transaction_count": 11
+  },
+  "recent_activity": [
+    {
+      "transaction_id": "TB53057B1DEEC",
+      "account_id": "ACCA54FF85D43BC",
+      "date": "2026-10-26",
+      "amount_minor": 35121,
+      "amount": -35121,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T53831685CA63",
+      "account_id": "ACCA54FF85D43BC",
+      "date": "2026-10-22",
+      "amount_minor": 44906,
+      "amount": -44906,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T96B514DF7C28",
+      "account_id": "ACCA54FF85D43BC",
+      "date": "2026-10-19",
+      "amount_minor": 7086,
+      "amount": -7086,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "booked"
+    }
+  ],
+  "calendar": [],
+  "budget": null,
+  "data_quality": {
+    "balance_reconciled": true,
+    "money_unit": "CNY_minor_integer",
+    "missing_fields": [
+      "risk_profile"
+    ],
+    "notes": [
+      "R1-R5 are dossier identifiers, not customer or product risk ratings.",
+      "Full authoritative generation response is retained locally with its hash; this is an abbreviated audit example."
+    ]
+  }
+}
