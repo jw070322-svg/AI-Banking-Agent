@@ -52,12 +52,12 @@
     },
     "tools/build_relocation_ledger.py": {
       "before": "35cb29469664b87ae0f41cdecfc7349f7b632c076d5f986c6253cdd00e8aa43b",
-      "after": "c4e1001789f68ecc51ccb4812093604a21fcc4353055fe0fe0cfcecde18a2bec",
+      "after": "4596196ac41ee25e387c03e6dbf7b39a2a114af6fa24fa5b517f911ceafc4c83",
       "reason": "登记便携模型版本授权改动"
     },
     "tools/build_version_ledger.py": {
       "before": "4fcad374f7149c33711702c73544e69f5a74cc1f48e99ba7df47e03fe107557a",
-      "after": "108f936a1b4b49fe3998869151787a428f0869de7620d6055f9ad115237aa373",
+      "after": "a37636603311e40ed497bf09df46eca03c44a4ffe14ae191cc9b1de2c20dac00",
       "reason": "登记便携模型版本授权改动"
     }
   }
