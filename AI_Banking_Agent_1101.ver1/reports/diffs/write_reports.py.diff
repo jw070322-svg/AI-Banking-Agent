@@ -1,0 +1,169 @@
+--- FirstAgent/write_reports.py
++++ SecondAsgent/write_reports.py
+@@ -1,162 +1,5 @@
+-"""Generate reviewable handoff and checkpoint artifacts from measured evidence."""
+-from pathlib import Path
+-from datetime import datetime, timezone
+-import argparse, hashlib, json, re, zipfile
+-from write_branch_details import render_branch
++"""SecondAsgent report entry point."""
++from write_update_reports import main
+ 
+-BASE=Path(__file__).resolve().parent
+-ROOT=BASE.parent
+-def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+-def write_json(path,value):
+-    path.parent.mkdir(parents=True,exist_ok=True)
+-    path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+-
+-PATCHES=[
+- {'id':'P01','gap':'Orchestrator/agent_orchestrator.py 为 0 字节；eva 编排缺少 brain/stages/risk 等关键依赖',
+-  'sources':['Orchestrator/agent_orchestrator.py','Teammate_output/eva output/1020/ver.2/orchestrator.py','Teammate_output/eva output/1020/ver.2/models(3).py'],
+-  'targets':['first_agent/service.py','first_agent/server.py'],
+-  'rationale':'无法把残缺包宣称为可运行交付；依据其阶段设计新增规则路由、缺参澄清、查询依赖、金融预览及回执状态机，已交付的 data/tools/models 保留为真实校验依赖。'},
+- {'id':'P02','gap':'Ethan output 为空，推荐模块尚无包级接入，且金额单位为元',
+-  'sources':['financial_recommendation_module/matching_core.py','financial_recommendation_module/rule_driven.py','financial_recommendation_module/data_driven.py'],
+-  'targets':['first_agent/vendor/finance/matching_core.py','first_agent/vendor/finance/rule_driven.py','first_agent/vendor/finance/data_driven.py','first_agent/service.py'],
+-  'rationale':'复用项目协作代码补齐实际推荐能力，修正包内相对导入；仅适配层把分转换为元，同步 vv 目录、配置金额、风险和到期结算约束。Ethan 原角色不能从空目录确认，此为暂定交接归属。'},
+- {'id':'P03','gap':'vv 原版账本只在浏览器内存中，刷新丢失，与 eva 虚构初值不同',
+-  'sources':['Teammate_output/vv output/1021/Banking 统一版(2).html','Teammate_output/vv output/1021/Banking-统一版源码(1)/banking-agent/dist/journey-engine.js'],
+-  'targets':['web/journey-engine.js','web/server-bridge.js','web/journey-workspace.js','web/agent-panel.js','first_agent/engine_worker.cjs','first_agent/service.py'],
+-  'rationale':'最新独立 HTML 与包内脚本及非字体 CSS 一致，采用可维护源码布局。引擎在服务端逐事务运行，SQLite 保存唯一状态；新增转账助手、真实接通本地 API，更新刷新与能力文案。'},
+- {'id':'P04','gap':'eva ver.2 未交付 scanner；旧 scanner 对自由文本密码、数字 PII 和哈希的处理不足',
+-  'sources':['Teammate_output/eva output/1020/ver.1/compliance(1).py','risk_security_toolkit/risk_scaffold/modules/security.py','Teammate_output/eva output/1020/ver.2/auth.py'],
+-  'targets':['first_agent/vendor/eva/risk/compliance.py','first_agent/vendor/eva/risk/auth.py','first_agent/vendor/security/gate.py','first_agent/security.py','first_agent/service.py'],
+-  'rationale':'明确标记从旧版本补回缺失 scanner，再在外层修复脱敏；使用 toolkit 默认拒绝 scope/resource gate。复用认证断言数据契约，但在持久化状态内验证绑定、过期及一次性消费，与扣账同事务；未调用旧 consume 接口冒充完整授权。'},
+- {'id':'P05','gap':'YUKI simple_RAG 对无关文档也加分，中文长句分词弱，来源仅文件名；文件名乱码',
+-  'sources':['Teammate_output/YUKI ouput/1022/AI-Banking-agent.zip','Teammate_output/YUKI ouput/1022/AI-Banking-agent/AI-Banking-agent/src/RAG/simple_RAG.py','Teammate_output/YUKI ouput/1022/AI-Banking-agent/AI-Banking-agent/data/knowledge','RAG/banking_rag'],
+-  'targets':['knowledge/manifest.json','knowledge/index.json','first_agent/vendor/rag','first_agent/service.py'],
+-  'rationale':'保留八份最新知识原文及原始字节哈希，以正文标题修复运行副本文件名；复用项目 BM25、中文双字分词、哈希与行号引用，对无关问题拒答，个人业务查询由 Agent 工具处理。未把教育资料称作权威银行规则。'},
+- {'id':'P06','gap':'多个接口无统一单位、幂等、期限或错误状态，跨语言预览哈希存在整数/浮点差异',
+-  'sources':['Teammate_output/vv output/1021/Banking-统一版源码(1)/banking-agent/API-CONTRACT.md','Teammate_output/eva output/1020/ver.2/policy_config.json','financial_recommendation_module/matching_core.py'],
+-  'targets':['API-CONTRACT.md','first_agent/service.py','first_agent/server.py'],
+-  'rationale':'边界使用整数分和固定响应外壳；预览绑定客户、会话、操作、金额、版本、策略、整数秒过期时间。相同幂等键同请求返回原回执；未知结果阻断再执行，所有状态更改与审计原子提交。'},
+-]
+-
+-BRANCHES=[
+- {'branch_name':'eva / 风控与业务工具','file':'eva','summary':'复用 ver.2 的 data、tools、models、policy_config 与认证断言契约；从 ver.1 补缺失 scanner 并外层修复脱敏。完整接入权限、预览失效、累计分级和事务内断言校验。',
+-  'changed':['first_agent/vendor/eva/','first_agent/vendor/security/gate.py','first_agent/security.py','first_agent/service.py'],
+-  'validation':['账户越权与未知工具拒绝','红色累计分级、断言过期和重放拒绝','线程及 Windows 多进程同一操作仅扣账一次','密码/数字手机号脱敏、合法哈希保持完整'],
+-  'next':['交付完整同版本 bank_agent 包及原版测试，关闭原缺失依赖清单','维护模拟银行 API、模拟认证与可替换接口契约；真实银行由组委会接入','卡管理：参考真实银行 APP 的模式补充后端 API、持久状态与前端从卡库选择卡的闭环；当前尚未实现；继续维护风险政策与控制矩阵证据']},
+- {'branch_name':'vv / 前端与业务交互','file':'vv','summary':'采用 1021 最新 HTML 对应的同一版脚本和样式；保留四主导航、订阅、预演、申赎，换成服务端状态适配器，并加入转账与知识对话面板。刷新保留账本，页面能力说明已更新。',
+-  'changed':['web/index.html','web/journey-engine.js','web/journey-workspace.js','web/server-bridge.js','web/agent-panel.js','first_agent/engine_worker.cjs'],
+-  'validation':['15 项业务规则检查','浏览器转账 800 元后总览与账单同步，刷新保留','债务比率问答返回来源和行号','初始化摘要权限错误修复并在浏览器复核'],
+-  'next':['把兼容同步 XHR 改为异步视图数据加载，避免主线程等待','将转账记录正式并入任务主导航，而非仅助手面板','继续完善窄屏、无障碍及高延迟状态；当前未宣称完成全尺寸视觉回归']},
+- {'branch_name':'YUKI / 知识与评测','file':'YUKI','summary':'纳入 1022 的八份知识文档及参考源码、评测题库；标题修复运行文件名，换用项目现有 BM25 与可追溯引用，无证据时拒答，资料不触发工具执行。',
+-  'changed':['knowledge/','first_agent/vendor/rag/','first_agent/service.py','sources/YUKI/'],
+-  'validation':['债务比率原文检索 grounded，带文档哈希和行号','无关问题 no_evidence','知识查询不改变余额','浏览器验证引用展示'],
+-  'next':['补充资料的审核人、适用期、权威来源与定期复核流程','将 20 正常、20 边界、10 风险题转成带标注的自动评分集；当前没有声称 50 题全数通过','现金流、储蓄率、流动性已从最新 ZIP 恢复并入库；新增主题须提供可审查来源']},
+- {'branch_name':'Ethan / 空交付补位（原分工待确认）','file':'Ethan','summary':'指定目录为空，不能选出最新交付。暂以现有 financial_recommendation_module 为产品匹配补丁来源，新增包内导入和统一金额/目录/期限适配；此名称不代表已核实 Ethan 原本负责推荐。',
+-  'changed':['first_agent/vendor/finance/','first_agent/service.py'],
+-  'validation':['推荐与执行使用相同产品目录及配置资金','缺风险档案返回 needs_profile_completion','低于产品起点、锁定加结算超期限均排除'],
+-  'next':['补交原职责及最新完整 output、测试、依赖说明和接口契约','确认推荐/计算职责是否归本分支，再接收补位模块','如接入真实产品，提供条款、费用、风险及数据有效性来源；本次仅虚构目录']},
+- {'branch_name':'集成 / 编排与交付','file':'integration','summary':'新增可运行的本地 HTTP Agent、SQLite 状态/幂等/审计、规则意图与多轮澄清，统一接入四方资产并生成总版及分支文档。',
+-  'changed':['first_agent/service.py','first_agent/server.py','tests/test_integration.py','verify_delivery.py','API-CONTRACT.md','summary.md','summary.json'],
+-  'validation':['统一整数分、错误结构和操作状态','持久恢复、跨会话隔离、Host/Origin 校验','多工具查询依赖及金额歧义澄清','来源时间与 SHA-256 清单、补丁映射和额度采样'],
+-  'next':['如需开放式自然语言理解，再接入模型 provider 并保持确定性执行边界','维护模拟 API 和接入契约，真实银行由组委会本地部署接入','后续卡管理对接由后端主责、集成负责编排安全；当前模拟会话与本地审计的适用范围须明确']},
+-]
+-
+-LIMITS=[
+- '当前交付规则驱动的本地模拟银行 API 与统一契约；真实银行由组委会收到作品后本地部署接入，不列为团队欠交项。没有接入开放式模型或真实 MFA。',
+- '身份是服务端创建的演示会话，每个会话有独立虚构账本；不是手机银行真实登录系统。',
+- '卡申请/挂失、手机号/定时/AA 转账、自动订阅识别与提醒、生日商户联动仍为后续需求，不计入已实现功能。',
+- '同期原 eva 完整测试无法直接复跑；本报告只统计新的集成测试及 vv 兼容规则检查，不沿用 42 项通过声明。',
+- '同步页面适配会阻塞主线程，适用于本机演示；未完成所有屏幕尺寸视觉验收。',
+- 'SQLite 本地事务不等于分布式银行原子事务，普通本地审计不具备生产防篡改保证。',
+- '额度工具提供即时快照，没有推送订阅；按用户最新要求只检查 windowDurationMins=300 的 5 小时窗口，剩余严格低于 10% 才存档停止。周额度不参与停止条件；未知额度不等于零。',
+-]
+-
+-def main():
+-    parser=argparse.ArgumentParser();parser.add_argument('--status',choices=['in_progress','completed','stopped_low_quota'],default='in_progress')
+-    status=parser.parse_args().status
+-    quota=json.loads((BASE/'reports/quota_latest.json').read_text(encoding='utf-8'))
+-    remaining=[w['remaining_percent'] for w in quota.get('windows',[]) if w.get('window_duration_mins')==300 and isinstance(w.get('remaining_percent'),(int,float))]
+-    quota['monitor_window_minutes']=300
+-    quota['ignore_weekly']=True
+-    quota['stop']=bool(remaining) and min(remaining)<10
+-    quota['monitor_status']='observed' if remaining else 'unavailable'
+-    if quota['stop']:status='stopped_low_quota'
+-    write_json(BASE/'reports/quota_latest.json',quota)
+-    validation=json.loads((BASE/'reports/verification.json').read_text(encoding='utf-8')) if (BASE/'reports/verification.json').exists() else {}
+-    now=datetime.now(timezone.utc).isoformat()
+-    steps=[
+-      {'step':1,'analysis':'按完整版本组装依赖；不能以单个最新日志替代可运行模块。output 的大小写、空格及 ouput 拼写差异均纳入。',
+-       'action':'递归盘点四个分支，建立修改时间、大小和 SHA-256 清单；eva ver.2、vv 1021、YUKI 1022 为最新交付。Ethan 为空。','state':'completed','evidence':'reports/source_inventory.json'},
+-      {'step':2,'analysis':'解压会保留源代码旧时间，压缩包下载时间较新；独立 HTML 也可能晚于包内源码，需比对实际内容。',
+-       'action':'确认 vv 两段业务脚本与最新 HTML 一致；剔除嵌入字体表示差异后 CSS 一致。发现 YUKI ZIP 有 19 个有效文件而解压目录仅 15 个，恢复三篇知识与一份知识库说明。旧 eva ver.1 仅定点补缺 scanner。','state':'completed','evidence':'reports/vv-style-comparison.json / reports/yuki-archive-recovery.json'},
+-      {'step':3,'analysis':'编排空文件、eva 缺依赖、多份虚构初值、金额元/分、RAG 弱检索共同阻碍完整执行。',
+-       'action':'新增集成编排，保留可用交付组件，补丁逐项映射到项目现有模块；统一金额、快照、预览、幂等、错误、操作状态及证据引用。','state':'completed','evidence':'reports/patch_manifest.json'},
+-      {'step':4,'analysis':'扣款、预览消费、累计和回执若不原子处理，重复或并发提交可能产生不一致。',
+-       'action':'服务端 SQLite BEGIN IMMEDIATE 包裹账本、状态、幂等结果、审计。未知结果先查原操作；转账共享 vv 唯一余额，不复制 eva 账户初始资金。','state':'completed','evidence':'first_agent/service.py'},
+-      {'step':5,'analysis':'Windows 临时目录权限与数据库句柄生命周期影响测试；Python/JS 对浮点式整数的序列化差异会破坏哈希。',
+-       'action':'按权限规则在沙箱外复跑测试；修复 SQLite 初始化句柄关闭及整数秒时间戳；回归断言过期回滚、权限、金额、脱敏、并发与持久化。','state':'completed','evidence':'reports/verification.json'},
+-      {'step':6,'analysis':'服务进程与浏览器受不同沙箱限制，仅 HTTP 单测通过不能证明页面能工作。',
+-       'action':'改在获准的沙箱外启动仅本机服务；修复总览启动时摘要代理权限错误；浏览器验证 800 元模拟转账、刷新保留、共享账单及知识引用。','state':'completed','evidence':'reports/browser-verification.json'},
+-      {'step':7,'analysis':'用户最新要求只检测 5h 窗口；此前因周额度中止属历史记录，当前停止依据为 300 分钟窗口剩余低于 10%。',
+-       'action':'重新获取额度并按 5h 窗口判断；周额度不参与停止，保存快照和旧上下文。','state':'completed','evidence':'reports/quota_latest.json'},
+-      {'step':8,'analysis':'队友需要看到补丁来源、具体接口和未验收范围，不能只拿一份笼统完成声明。',
+-       'action':'补写五份分工 Markdown 的逐文件/逐方法改动、复用对比、完整差异、补丁来源与验证边界；同步总版、生成器及模拟 API 交付范围。本次未重跑业务测试。','state':status,'evidence':'summary.md / summary.json / reports/branches/'},
+-    ]
+-    interfaces={'schema_version':'1.0.0','money':'CNY integer minor units','state':['available','positions','subscriptions','transactions','operations','transfer_ops','version','consent','daily_transfers','task_log','clarification'],
+-        'statuses':['succeeded','needs_input','awaiting_confirmation','unknown','processing','failed','rejected','cancelled','invalidated'],
+-        'bindings':['customer_id','session_id','operation_id','type','target','amount_minor','version','policy_version','expires_at'],
+-        'api_contract':'API-CONTRACT.md','entry':'python -m first_agent.server --port 8765','storage':'runtime/agent.sqlite3'}
+-    context={'created_at':now,'steps':steps,'current_state':{'status':status,'quota':quota,'interfaces':interfaces,'missing_items':LIMITS,
+-            'validation':validation,'completed':['版本选取与比对','安全补丁及统一接口','可运行前后端','行为回归','浏览器执行与持久恢复','交接产物'],
+-            'remaining':[] if status=='completed' else ['交付文件最终核验与最终答复']},
+-        'summary':'首次集成原型已完成开发和核心验证；以所列验证文件作为证据。' if status=='completed' else '已完成代码及主要验证；保存交接上下文。',
+-        'conclusion':'低于 10% 已中止，不再执行开发。' if status=='stopped_low_quota' else '保存当前执行上下文；后续只按明确遗留项继续。'}
+-    if (BASE/'context_log.json').exists():
+-        context['previous_context']=json.loads((BASE/'context_log.json').read_text(encoding='utf-8-sig'))
+-    context['current_state']['latest_request']='各分工代码修改全部写入对应 Markdown；额度仅检查 5h 窗口。'
+-    write_json(BASE/'context_log.json',context)
+-    md=['# 执行上下文与决策记录',f'生成：{now}；状态：{status}。','']
+-    for s in steps:md += [f"## 步骤 {s['step']}",f"依据：{s['analysis']}",f"操作与结果：{s['action']}",f"证据：{s['evidence']}；状态：{s['state']}。",'']
+-    md+=['## 当前状态',json.dumps(interfaces,ensure_ascii=False,indent=2),'','额度：'+json.dumps(quota,ensure_ascii=False),'', '## 遗留边界']
+-    md += ['- '+x for x in LIMITS]
+-    md += ['', '执行上下文包括用户任务、所选来源、取舍依据、实际步骤、错误修复、状态、验证与后续事项；不包含系统隐藏提示、私人推理草稿或账户标识。','', '结论：'+context['conclusion']]
+-    history=(BASE/'context_log.md').read_text(encoding='utf-8-sig') if (BASE/'context_log.md').exists() else ''
+-    (BASE/'context_log.md').write_text(('# 历史记录（当时规则，现已由后文最新规则覆盖）\n\n'+history+'\n\n---\n\n' if history else '')+'\n\n'.join(md)+'\n',encoding='utf-8')
+-    patch_doc=[]
+-    for patch in PATCHES:
+-        patch={**patch,'source_evidence':[],'target_evidence':[]}
+-        for key,root in [('source',ROOT),('target',BASE)]:
+-            for p in patch['sources' if key=='source' else 'targets']:
+-                path=root/p
+-                patch[key+'_evidence'].append({'path':str(path),'sha256':sha(path) if path.is_file() else None,'directory':path.is_dir()})
+-        patch_doc.append(patch)
+-    write_json(BASE/'reports/patch_manifest.json',{'patches':patch_doc,'conclusion':'补丁来源及当前目标可逐项核对；目录级哈希详见 file_manifest.json。'})
+-    overview={'architecture':'vv 界面 → 同源 HTTP 兼容层/对话 → AgentService → SQLite 事务 → Node 业务引擎 + eva 校验/认证契约 + 推荐规则 + BM25 RAG',
+-        'scope':'团队交付规则驱动的本地模拟首次 Agent、模拟银行 API 与统一契约；真实银行由组委会本地部署接入。账单、订阅、转账为核心，附推荐及模拟申赎和知识问答。',
+-        'integration':'所有业务共享 vv 整数分账本；eva 只复用校验与数据契约，推荐使用同一目录与资金/期限约束；RAG 使用 YUKI 最新八篇原文与项目可追溯检索补丁。',
+-        'interfaces':interfaces,'validation':validation,'quota':quota,'remaining_issues':LIMITS}
+-    write_json(BASE/'summary.json',{'analysis':['完整交付单元优先于最新单文件；来源与补丁单独记录。','单账本及事务内执行优先解决额度、幂等、审批与回执的一致性。','声明的能力以测试和浏览器实测为准，规划项单列。'],
+-        'overview':overview,'branches':BRANCHES,'status':status,'conclusion':'已完成首次模拟 Agent 集成及逐项分工交接；真实银行接入由组委会负责。' if status=='completed' else context['conclusion']})
+-    md=['# 首次 Agent 总版总结','## 集成依据与版本选择',
+-        '递归盘点 Teammate_output，实际包含 77 个非缓存/非 Mac 元数据文件（ZIP 内另行核对）；四个分支中三个有内容，Ethan 为空。原始目录保持原样。',
+-        'eva 采用 1020/ver.2；ver.1 仅补回新版缺失的 scanner。vv 采用 1021，最新独立 HTML 与包内两段脚本及非字体样式一致。YUKI 采用 1022 的源码、八篇知识及评测材料。源文件时间、大小、SHA-256 见 reports/source_inventory.json。ZIP 复核额外恢复 YUKI 三篇知识与一份说明，详情见 reports/yuki-archive-recovery.json。',
+-        '空编排器及残缺包不能直接作为首版运行，因此新增明确的集成实现，并从已有推荐、RAG、安全工具包补齐可运行链路。','## 架构与接口',overview['architecture'],overview['integration'],
+-        '接口结构、权限、状态和单位见 API-CONTRACT.md；实际状态与幂等返回、累计和审计在同一个 SQLite 事务提交。预览绑定操作与版本，300 秒过期；模拟增强断言绑定本次预览，120 秒有效且一次消费。',
+-        '## 补丁来源与作用']
+-    for p in PATCHES:md += [f"- {p['id']}：{p['gap']}。处理：{p['rationale']} 来源："+'、'.join(p['sources'])+'。']
+-    md+=['## 验证与额度',json.dumps(validation,ensure_ascii=False,indent=2),
+-         '浏览器已验证：明确确认 800 元模拟转账后，余额 ¥38,640 → ¥37,840；总资产 ¥128,640 → ¥127,840；账单增加 800 元支出；刷新保留。知识问答显示 YUKI 原文引用与行号。',
+-         '额度最新采样：'+json.dumps(quota,ensure_ascii=False)+'。当前仅检查 5h 窗口；此前周额度中止记录保留在上下文历史中。此处业务验证结果沿用原报告，本次仅完成文档与生成器核对。',
+-         '## 各分支交接']
+-    for b in BRANCHES:
+-        md += [f"### {b['branch_name']}",b['summary'],'交接文件：reports/branches/'+b['file']+'.md。','后续：'+'；'.join(b['next'])+'。']
+-        p=BASE/'reports/branches'/f"{b['file']}.md";p.parent.mkdir(parents=True,exist_ok=True);p.write_text(render_branch(b),encoding='utf-8')
+-    md+=['## 遗留问题与运行方式']+['- '+x for x in LIMITS]
+-    md+=['在本目录运行 `python -m first_agent.server --port 8765`，访问 http://127.0.0.1:8765/ 。验证运行 `python verify_delivery.py`。来源快照在 sources/，原件在 Teammate_output，实际运行代码在 first_agent/ 与 web/。',
+-         '结论：已形成可运行、可追溯、同账本、可复测的首次本地模拟 Agent，并完成总版和各分支交接。' if status=='completed' else '结论：'+context['conclusion']]
+-    (BASE/'summary.md').write_text('\n\n'.join(md)+'\n',encoding='utf-8')
+-    manifest={str(p.relative_to(BASE)):sha(p) for p in sorted(BASE.rglob('*')) if p.is_file() and 'runtime' not in p.relative_to(BASE).parts and '__pycache__' not in p.parts and p.name!='file_manifest.json'}
+-    write_json(BASE/'reports/file_manifest.json',{'sha256':manifest,'conclusion':'本清单覆盖交付代码、资料与报告；不包含运行时数据库及清单自身。'})
+-    print(json.dumps({'status':status,'files':len(manifest),'summary':str(BASE/'summary.md')},ensure_ascii=False))
+-
+-if __name__=='__main__':main()
++if __name__ == "__main__":
++    main()

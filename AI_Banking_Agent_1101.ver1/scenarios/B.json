@@ -1,0 +1,98 @@
+{
+  "schema_version": "scenario-1.0",
+  "scenario_id": "SCN_B_20261022185343_DC6949",
+  "scenario_type": "B",
+  "accounts": [
+    {
+      "account_id": "ACC133FF0B66994",
+      "initial_balance_minor": 1383403,
+      "balance_minor": 1620320,
+      "currency": "CNY"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T9D7005F98C07",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-19",
+      "amount_minor": -44661,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "T65AAB1550968",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-21",
+      "amount_minor": -81492,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TDF003494D30C",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-22",
+      "amount_minor": -208782,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TD24D251913F4",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-26",
+      "amount_minor": -33082,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "T3F087F062D43",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-01",
+      "amount_minor": 1058879,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T5EEF63BCB7CE",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-03",
+      "amount_minor": -5928,
+      "category": "餐饮",
+      "status": "booked"
+    },
+    {
+      "id": "TDB7C951EE23B",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-04",
+      "amount_minor": -204004,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TCCBA653431B0",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-08",
+      "amount_minor": -148371,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TA0E584B3EC52",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-10",
+      "amount_minor": -54415,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TD1FC7225F040",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-25",
+      "amount_minor": -41227,
+      "category": "购物",
+      "status": "booked"
+    }
+  ],
+  "warnings": [],
+  "simulated": true,
+  "ledger_modified": false
+}

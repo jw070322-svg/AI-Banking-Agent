@@ -1,0 +1,24 @@
+{
+  "teammate": {
+    "run": 57,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "relay": {
+    "run": 8,
+    "failures": 1,
+    "errors": 0,
+    "passed": false
+  },
+  "inherited": {
+    "run": 202,
+    "failures": 0,
+    "errors": 1,
+    "passed": false
+  },
+  "frontend": {
+    "scripts": 11,
+    "passed": true
+  }
+}

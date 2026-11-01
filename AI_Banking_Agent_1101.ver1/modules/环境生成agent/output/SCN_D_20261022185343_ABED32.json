@@ -1,0 +1,85 @@
+{
+  "scenario_id": "SCN_D_20261022185343_ABED32",
+  "scenario_name": "余额不足",
+  "scenario_type": "D",
+  "created_at": "2026-10-22T18:53:43",
+  "user": {
+    "user_id": "U354868016453",
+    "name": "吴杰",
+    "gender": "男",
+    "id_number": "440103199509181598",
+    "phone": "18918578573",
+    "email": "u354868016453@example.com",
+    "address": "上海市浦东新区",
+    "occupation": "市场专员",
+    "monthly_income": 16459.64,
+    "registration_date": "2022-09-25"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC57DB69A28AC1",
+      "user_id": "U354868016453",
+      "account_type": "储蓄卡",
+      "account_number": "6222551862697594066",
+      "currency": "CNY",
+      "initial_balance": 1122.15,
+      "balance": 9972.27,
+      "status": "正常",
+      "opened_date": "2022-03-19"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "TEDA842F0AF67",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-07",
+      "amount": 11913.01,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T92913C383BD8",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-12",
+      "amount": 2420.6,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8E71094CB6A1",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-17",
+      "amount": 642.29,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "聚餐",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T59FA648CA043",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-22",
+      "amount": 11277.45,
+      "transaction_type": "transfer_out",
+      "category": "转账",
+      "merchant": "收款人-张三",
+      "description": "转账请求：金额超过可用余额，被银行拒绝",
+      "status": "rejected",
+      "expected_result": "rejected"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成账户余额与一笔转账请求，使请求金额超过可用余额；交易应被拒绝，不允许出现负余额。",
+    "expected": {
+      "transfer_rejected": true,
+      "no_negative_balance": true
+    }
+  }
+}

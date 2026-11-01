@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-30T16:07:46.398310+00:00",
+  "probe": {
+    "baidu": {
+      "status": "needs_verification",
+      "http_status": 200,
+      "query": "复利的定义",
+      "url": "https://www.baidu.com/s?wd=%E5%A4%8D%E5%88%A9%E7%9A%84%E5%AE%9A%E4%B9%89",
+      "items": [],
+      "source_type": "public_search_titles",
+      "notice": "搜索标题是网页线索，未读取或验证正文。",
+      "cached": false,
+      "provider": "baidu",
+      "retrieved_at": "2026-10-30T16:07:45.928682+00:00",
+      "message": "需要在官方页面验证"
+    },
+    "llama_cpp": {
+      "status": "ready",
+      "model": "banking-finance-lora",
+      "local_only": true,
+      "api_fee": 0,
+      "provider": "llama_cpp",
+      "retrieved_at": "2026-10-30T16:07:45.726979+00:00",
+      "message": "本地模型可用"
+    },
+    "connections": {
+      "providers": {
+        "baidu": {
+          "status": "needs_verification",
+          "http_status": 200,
+          "source_type": "public_search_titles",
+          "notice": "搜索标题是网页线索，未读取或验证正文。",
+          "cached": false,
+          "provider": "baidu",
+          "retrieved_at": "2026-10-30T16:07:45.928682+00:00",
+          "message": "需要在官方页面验证"
+        },
+        "llama_cpp": {
+          "status": "ready",
+          "model": "banking-finance-lora",
+          "local_only": true,
+          "api_fee": 0,
+          "provider": "llama_cpp",
+          "retrieved_at": "2026-10-30T16:07:45.726979+00:00",
+          "message": "本地模型可用"
+        }
+      },
+      "model": "banking-finance-lora",
+      "ai_mode": "local_only",
+      "paid_api_enabled": false,
+      "meituan": {
+        "mode": "official_web_link",
+        "merchant_api_connected": false
+      },
+      "dianping": {
+        "mode": "official_web_link",
+        "merchant_api_connected": false
+      }
+    }
+  },
+  "answer": {
+    "schema_version": 1,
+    "question": "什么是辛普森悖论",
+    "retrieved_at": "2026-10-30T16:07:46.194511+00:00",
+    "index_sha256": "64caba34cb6c68f259c533fc2502306fe276f491b15e3d77fd5267a8dc4f3222",
+    "retrieval_mode": "bm25",
+    "generation_mode": "llama_cpp",
+    "status": "needs_evidence",
+    "answer": "本地 AI 已响应，但没有可核验的正文来源，暂不展示未经核实的解释。可主动选择百度搜索或补充正式资料。",
+    "citations": [],
+    "evidence": [],
+    "warnings": [
+      "本地小模型只作通用解释，不作为银行条款、实时市场数据或交易依据。"
+    ],
+    "tool_calls": [],
+    "model_response_received": true,
+    "search_results": [],
+    "search_url": "",
+    "search_status": "未主动发起公开搜索",
+    "fallback_steps": [
+      {
+        "provider": "local_rag",
+        "status": "no_evidence"
+      },
+      {
+        "provider": "baidu",
+        "status": "not_requested"
+      },
+      {
+        "provider": "llama_cpp",
+        "status": "ok"
+      }
+    ],
+    "model": "banking-finance-lora",
+    "public_query": "什么是辛普森悖论",
+    "external_data_sent": false,
+    "sent_fields": [],
+    "api_fee": 0,
+    "risk_notice": "通用知识说明；AI 补充内容未经外部事实核验，不作为金融操作依据"
+  },
+  "replay_equal": true,
+  "ledger_unchanged": true,
+  "official_links": {
+    "city": "上海",
+    "category": "蛋糕",
+    "query": "上海 蛋糕",
+    "items": [
+      {
+        "provider": "meituan",
+        "title": "打开美团官网",
+        "url": "https://www.meituan.com/"
+      },
+      {
+        "provider": "dianping",
+        "title": "打开大众点评",
+        "url": "https://www.dianping.com/"
+      }
+    ],
+    "status": "external_search_link",
+    "notice": "进入官网后按上方城市和品类搜索；未读取商户价格、评分或库存。"
+  },
+  "elapsed_seconds": 0.45,
+  "paid_api_calls": 0,
+  "ungrounded_output_suppressed": true,
+  "passed": true
+}

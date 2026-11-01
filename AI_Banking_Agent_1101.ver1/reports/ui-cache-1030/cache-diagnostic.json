@@ -1,0 +1,610 @@
+{
+  "python": "3.14.7 (main, Aug  8 2026, 21:15:19)  [MINGW GCC UCRT 16.2.0 64 bit (AMD64)]",
+  "dont_write_bytecode": true,
+  "caches_before": [],
+  "inventory": {
+    "required_files_checked": 659,
+    "required_missing": [],
+    "required_hash_mismatches": [],
+    "cache_artifacts": [
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\__init__.cpython-314(2).pyc",
+        "target": "first_agent/vendor/eva/security/__init__.cpython-314(2).pyc",
+        "sha256": "808a1be9f87ae3530fa3871c11696c25ec5c4cee3ee8d15f9253cbcf9ddf8716",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\__init__.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\__init__.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\adapters.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/adapters.cpython-314.pyc",
+        "sha256": "d93c4bf94085979e2aae82e454ac4b234472abdf04373d3a57d4e1b8a85654c8",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\adapters.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\adapters.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\audit.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/audit.cpython-314.pyc",
+        "sha256": "67504fffc3f8955d1d2a9818d5019a63745b3fad9e58286c67d51f7fa023cbe2",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\audit.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\audit.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\auth.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/auth.cpython-314.pyc",
+        "sha256": "f8df6a8158544eb24f5c0ec0a3e7fca2f296b5f4c7047a804bdb24ebe69a627d",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\auth.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\auth.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\authorization.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/authorization.cpython-314.pyc",
+        "sha256": "7304532c3a03307fde4540ae88fa2f40945e498df3056f3b906d1c17867a4883",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\authorization.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\authorization.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\confirmation.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/confirmation.cpython-314.pyc",
+        "sha256": "bc6ae3e638009f3340437bb85e7a25b51c7bdaa3a2c1e29f44fbc110637ba283",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\confirmation.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\confirmation.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\gateway.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/gateway.cpython-314.pyc",
+        "sha256": "ce622fba3f8e3d004cc2ce0e2d4809430472540d22ce016c83b80d2a0602be3c",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\gateway.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\gateway.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\injection.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/injection.cpython-314.pyc",
+        "sha256": "b1dde8ae2b2600ce7f4707757c80cc90175bcfc4189f23408905e289653469fd",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\injection.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\injection.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\models.cpython-314(2).pyc",
+        "target": "first_agent/vendor/eva/security/models.cpython-314(2).pyc",
+        "sha256": "a70974112a59043fd9f6f819671d3ed845e3bc7501efa02eaa3ba5c70dbf1352",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\models.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\models.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\passwords.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/passwords.cpython-314.pyc",
+        "sha256": "9eec9941374ae69ae5cbaf6916c490f37f86d57e57645ad949b69048a227aafd",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\passwords.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\passwords.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\resources.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/resources.cpython-314.pyc",
+        "sha256": "112457dfd84585f7899ca9030002ebe28d9fd2ce57c09be2418c39859cfcbfeb",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\resources.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\resources.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\security\\sessions.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/security/sessions.cpython-314.pyc",
+        "sha256": "85f0f93bd53b14aa37a0950c4873810b16ad905697a8d027390742fa70f77b75",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\security\\sessions.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\security\\sessions.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\__init__.cpython-314(3).pyc",
+        "target": "first_agent/vendor/eva/tool_calling/__init__.cpython-314(3).pyc",
+        "sha256": "b35fb4fb7d54e15a1481e8e999b6cd067a65881870c2870eba56b60fd73a4cbd",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\__init__.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\__init__.py",
+            "source_loaded": true
+          },
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\__init__.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\__init__.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\__init__.cpython-314(4).pyc",
+        "target": "first_agent/vendor/eva/tool_calling/__init__.cpython-314(4).pyc",
+        "sha256": "1873570edee300c2ef2825af198d62adf7ee42edc3af6fcb4efb686cb8562690",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\__init__.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\__init__.py",
+            "source_loaded": true
+          },
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\__init__.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\__init__.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\accounts.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/accounts.cpython-314.pyc",
+        "sha256": "b6e8e9d125506756b8599aa80183e39f6ec4878527cd24b84cc266f77eb3131e",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\accounts.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\accounts.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\adapters.cpython-314(1).pyc",
+        "target": "first_agent/vendor/eva/tool_calling/adapters.cpython-314(1).pyc",
+        "sha256": "925f044aecd371a8f74c7453d77bb2e21ca196cc6e9c8bc4c0d9c25487463fdc",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\adapters.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\adapters.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\analysis.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/analysis.cpython-314.pyc",
+        "sha256": "113d9cb9ad9721ad45a3c944c92b737bb258569840664a3a7733af3c9fcc2689",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\analysis.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\analysis.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\calculations.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/calculations.cpython-314.pyc",
+        "sha256": "4203568db9c5411247d363223829f48e081e0c9e4c95964401c0a7ca25089788",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\calculations.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\calculations.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\errors.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/errors.cpython-314.pyc",
+        "sha256": "9f74635fbe1d378e5bbae0eb86d77d8fe4771884787265f0710dc84fb98aeeda",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\errors.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\errors.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\mocks.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/mocks.cpython-314.pyc",
+        "sha256": "f94878b7a9606fa829d71707a3eb5689f87328dd4a3530d7cb0c389d734bdeab",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\mocks.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\mocks.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\models.cpython-314(3).pyc",
+        "target": "first_agent/vendor/eva/tool_calling/models.cpython-314(3).pyc",
+        "sha256": "8dd787fe78d35b2a3ba33d1a319682019326c058210f0c5fb6f0bd79ecc974ff",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\models.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\models.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\orchestration.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/orchestration.cpython-314.pyc",
+        "sha256": "f48ad4168c48a198deb558f84e485ba76da0d18bf9b8705ab0006ed236ba5a53",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\orchestration.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\orchestration.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\planning.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/planning.cpython-314.pyc",
+        "sha256": "25c7963ae819aa65905b8df863c99d7bdc3424fe58336e5777818fe50a258f31",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\planning.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\planning.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\policies.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/policies.cpython-314.pyc",
+        "sha256": "2065901106a6f860e1b10a5526e93d9b94b111a0a8e1f26ba00e817f2e5c9f9b",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\policies.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\policies.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\products.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/products.cpython-314.pyc",
+        "sha256": "01fddd45c17c79ae30a99a9a038957d097d19bdcc5390138824c0c2e0068470e",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\products.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\products.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\registry.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/registry.cpython-314.pyc",
+        "sha256": "d5aa2a0d17308b7ef76a3e0017b01234d3abf137d6bdaf014d80bd8775209680",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\registry.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\registry.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\reporting.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/reporting.cpython-314.pyc",
+        "sha256": "d5a12b54aa292016ef9bf85e3a1b0428be1494281de9a1ac15a8360e2706b317",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\reporting.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\reporting.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\schema.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/schema.cpython-314.pyc",
+        "sha256": "f4c36465fbd7a456166659e1181bd467a5f15211250bd2a50aabda489f244764",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\schema.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\schema.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\services.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/services.cpython-314.pyc",
+        "sha256": "2f0411b98c086cba4e36609a03e4e078cb2cd79667622b0e5dd4ca957dd9c8ed",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\services.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\services.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\tracing.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/tracing.cpython-314.pyc",
+        "sha256": "3df1fc52fdbc1bdfbffbedd25aaeb3858c80ce7c05bbd0d01a129d96b2b6ed0f",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tracing.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tracing.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\transactions.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/transactions.cpython-314.pyc",
+        "sha256": "b0167e39d849a06c3a68d0d9ebb38bce6c47a528638a331d3448a925e04f7d78",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\tools\\transactions.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\tools\\transactions.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      },
+      {
+        "source": "F:\\AI_Banking\\Teammate_output\\eva output\\1029\\tool_calling\\utils.cpython-314.pyc",
+        "target": "first_agent/vendor/eva/tool_calling/utils.cpython-314.pyc",
+        "sha256": "ae2615a85874cdbae5273bf883697ed5c030bd9327c5727e1a154ed2feef7102",
+        "present": false,
+        "original_input_hash_matches": true,
+        "source_candidates": [
+          {
+            "source": "first_agent\\vendor\\eva\\tool_calling\\utils.py",
+            "origin": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver2\\first_agent\\vendor\\eva\\tool_calling\\utils.py",
+            "source_loaded": true
+          }
+        ],
+        "loaded_from_source": true
+      }
+    ],
+    "version_timeline": {
+      "AI_Banking_Agent_1029.ver1": {
+        "folder_exists": true,
+        "original_cache_files_present": 32
+      },
+      "AI_Banking_Agent_1029.ver2": {
+        "folder_exists": true,
+        "original_cache_files_present": 0
+      },
+      "AI_Banking_Agent_1029_rag_review": {
+        "folder_exists": true,
+        "original_cache_files_present": 0
+      },
+      "AI_Banking_Agent_1030.ver1": {
+        "folder_exists": true,
+        "original_cache_files_present": 0
+      }
+    },
+    "runtime_source_integrity_passed": true,
+    "legacy_artifact_preservation_passed": false
+  },
+  "tests": {
+    "legacy-full": {
+      "run": 202,
+      "failures": 0,
+      "errors": 1,
+      "error_tests": [
+        "test_tools_security_1029.QuotaAndPreservationTests.test_preservation"
+      ],
+      "passed": false
+    },
+    "current-http": {
+      "run": 65,
+      "failures": 0,
+      "errors": 0,
+      "error_tests": [],
+      "passed": true
+    }
+  },
+  "frontend": [
+    {
+      "path": "tests_frontend\\assistant-intents.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 13,\n  \"cases\": [\n    \"转账常见同义句可提取变量\",\n    \"日常账单说法进入账单页\",\n    \"续费代扣会员语句进入订阅而非账单默认页\",\n    \"理财产品进入产品页，持仓赎回进入持仓页\",\n    \"预算目标进入资金计划\",\n    \"卡片同义词只打开管理页面\",\n    \"回执与交易历史不误当成新转账\",\n    \"查询余额与账户总览\",\n    \"预演权限和风险档案有直接入口但不修改条件\",\n    \"账单月份分类联动，绝对与相对日期明确\",\n    \"多个场景需选择，不按第一个关键词直接执行\",\n    \"未知或帮助语句保留可恢复指引\",\n    \"所有识别仅记录输入，不授权扣款取消或修改卡片\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\backend-client.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 6,\n  \"cases\": [\n    \"读取后台快照，不建立浏览器账本\",\n    \"等待HTTP变更并刷新同一份余额\",\n    \"并发请求只提交一次\",\n    \"响应丢失不自动重试，刷新服务器最终结果\",\n    \"快照刷新失败时阻止新写入，重连可恢复\",\n    \"开发者密码由服务校验，令牌随请求发送\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\contract-rules.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 5,\n  \"cases\": [\n    \"1000元边界黄色可确认，累计多笔超限变红色\",\n    \"300秒预览过期不扣款且状态失效\",\n    \"120秒断言过期需重新验证但不延长预览\",\n    \"申购遵循相同的预览/断言时限\",\n    \"只有独立旧转账权限不能绕过trade，卡扩展仍隔离\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\core.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 15,\n  \"cases\": [\n    \"账单分类合计与总账一致\",\n    \"权限按查询订阅交易分开\",\n    \"订阅取消只减少未来支出，不能重复取消\",\n    \"关闭确认不执行，申购需验证，不能重复提交\",\n    \"目标、产品、预算、档案或授权变化使确认失效\",\n    \"筛选引擎处理风险期限金额与缺失资料\",\n    \"失败不会改动账本，未知结果冻结并查询一次\",\n    \"赎回申请不提前到账，次日查询后守恒\",\n    \"到账失败释放占用，未知赎回核对后仍须等到账\",\n    \"未到期不能赎回，占用资金不能重复赎回\",\n    \"中断撤销不回滚资金，恢复仍须重新确认\",\n    \"连续失败与验证错误锁定，解锁不清账\",\n    \"保持流动性不申购，预演无虚构收益\",\n    \"无效金额、期限和超配被拒绝\",\n    \"快照不能绕过内部规则，输入仅作记录不自动执行\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\customer-language.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 5,\n  \"cases\": [\n    \"操作名称转换为业务文字，原始工具名不泄露\",\n    \"未知工具状态与任意原始日志不直接回显\",\n    \"未知结果与明确失败保留准确状态不冒充成功\",\n    \"取消确认与条件变化有可理解说明\",\n    \"凭证编号可读并保持月度账单编号唯一\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\new_features.cjs",
+      "exit_code": 0,
+      "stdout": "{\"passed\":6,\"cases\":[\"逐日推进与批量推进结果相同且每月收支只记一次\",\"零收益假设不产生估值，工资支出计入守恒\",\"收益累积持仓，不提前变成可用现金\",\"余额不足的支出不扣款不计入已入账账单\",\"复利曲线与数学公式一致且参数改变确实改变曲线\",\"定期到期结算前无可用回款且事件预留进入预演\"]}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\return_chart.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 13,\n  \"cases\": [\n    \"现金管理与四类固收目录具备独立的风险及预演假设\",\n    \"R1不能申购R2；R2正常匹配90天但不能配置超期产品\",\n    \"逐日曲线181个点与每月表格在所有月末精确一致\",\n    \"同本金同期限产品切换使用各自默认收益率\",\n    \"低收益不再被本金坐标压平，收益端点与账面计算一致\",\n    \"负收益向下且负数刻度和读数可见\",\n    \"零收益为水平线，零本金和保留流动性为空态\",\n    \"收益率和资产价值视图显示正确单位与坐标\",\n    \"波动情景单独控制缩放并包含负收益可能\",\n    \"90天赎回情景91天到账，此后收益保持不变\",\n    \"收入支出只改变现金流，不冒充投资收益\",\n    \"事件预留压低可配置上限，曲线不允许超额资金\",\n    \"长周期极端输入图形有限，非法频率与无效数据被拒绝\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\simulation.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 15,\n  \"cases\": [\n    \"800 元转账同步余额资产账单与任务\",\n    \"转账与卡管理分别授权\",\n    \"失败转账不扣款，未知阻止重复，查询只入账一次\",\n    \"红色转账验证必需、错误验证码、关闭确认均不扣款\",\n    \"超额非整数未知联系人均拒绝\",\n    \"累计日限额与额度调整，不生成资金\",\n    \"限制解锁挂失联动转账，挂失不可解锁\",\n    \"未知卡操作查询后同步状态，失败不改卡\",\n    \"申请需次日审核，不当作立即开卡且重复查询不再开卡\",\n    \"卡申请拒绝不增加卡数与余额\",\n    \"快照恢复金额记录卡状态一致且编号不重复\",\n    \"刷新恢复待确认要求重新验证\",\n    \"授权变更/中断/目标变更使新操作失效，不回滚已执行\",\n    \"六个月锁定期加结算日不可用于六个月目标\",\n    \"持续操作混合申购赎回订阅和转账资金守恒\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "tests_frontend\\transfer-template.cjs",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": 7,\n  \"cases\": [\n    \"模板中的姓名和金额都是变量，不写死小王500\",\n    \"小李被识别但名册不存在，不替换成小王\",\n    \"重名联系人需要手动核对，不选第一个\",\n    \"缺少姓名金额或多笔附加条件不猜测\",\n    \"负数零超额与超过两位小数科学记数法均不带入\",\n    \"否定和绕过验证指令不转为可执行模板\",\n    \"识别不扣钱不授权不生成金融操作，执行仍走既有规则\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "review_additions\\test_frontend.cjs",
+      "exit_code": 0,
+      "stdout": "{\"passed\":8,\"checks\":[\"filters and comparison map to a semantic operation\",\"disabled controls are not recorded as attempted actions\",\"submission and confirmation separated\",\"queue cannot switch owner or consent epoch\",\"poisoned storage never leaks text or credentials\",\"malformed/unknown queued events rejected\",\"queue bounded and safe event retained\",\"local citations are clickable and unsafe links cannot enter markup\"]}\n",
+      "stderr": ""
+    },
+    {
+      "path": "relay_additions\\test_frontend.cjs",
+      "exit_code": 0,
+      "stdout": "{\"passed\":true,\"checks\":6}\n",
+      "stderr": ""
+    }
+  ],
+  "caches_after": [],
+  "runtime_checks_passed": true
+}

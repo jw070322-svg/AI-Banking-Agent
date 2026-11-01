@@ -1,0 +1,281 @@
+{
+  "archive": "F:\\AI_Banking\\Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent.zip",
+  "effective_files": 19,
+  "knowledge_documents": 8,
+  "recovered_from_archive": [
+    {
+      "type": "documentation",
+      "title": "银行业务知识库",
+      "target": "FirstAgent\\sources\\YUKI\\docs\\银行业务知识库.md",
+      "sha256": "1bcdedf474dcf4c27f968a13a8a7ca45d39a7fc97a32af9c5f85694bbbe1c7c2"
+    },
+    {
+      "type": "knowledge",
+      "title": "流动性",
+      "target": "FirstAgent\\knowledge\\03-流动性.md",
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29"
+    },
+    {
+      "type": "knowledge",
+      "title": "储蓄率",
+      "target": "FirstAgent\\knowledge\\02-储蓄率.md",
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9"
+    },
+    {
+      "type": "knowledge",
+      "title": "现金流",
+      "target": "FirstAgent\\knowledge\\01-现金流.md",
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d"
+    }
+  ],
+  "entries": [
+    {
+      "zip_entry": "AI-Banking-agent/README.md",
+      "bytes": 1387,
+      "sha256": "5e4644988d9eeb305c35d539f2647d4528252bd5ec1ab14b48a827f89c876c11",
+      "timestamp": [
+        2026,
+        10,
+        20,
+        15,
+        23,
+        8
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/docs/Θí╣τ¢«Φ»┤µÿÄ.md",
+      "bytes": 2602,
+      "sha256": "82a50189e46cf58b235310bbb83ddfbfb6a267580093c2e4fdd806609070a409",
+      "timestamp": [
+        2026,
+        10,
+        20,
+        16,
+        26,
+        12
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/docs/σ╖ÑΣ╜£µùÑσ┐ù.md",
+      "bytes": 1968,
+      "sha256": "1a05d8b94540fd7dfb658fb8c801b18a60c0623afbd846bbabaef7bb95537ad2",
+      "timestamp": [
+        2026,
+        10,
+        20,
+        16,
+        34,
+        34
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/docs/RAGΦ»┤µÿÄ.md",
+      "bytes": 3950,
+      "sha256": "3379f8ddc75e67fa81ba52469359bd7d2f3a57af7aa109db12862278926a707a",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        11,
+        21,
+        16
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/docs/Φ»äµ╡ïΘóÿσ║ô.md",
+      "bytes": 16761,
+      "sha256": "130781d31bd114bff1f3d4879883c8781ed41a67a7975d2e7dbae6be024e81dd",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        43,
+        46
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/docs/Θô╢ΦíîτƒÑΦ»åσ║ô.md",
+      "bytes": 5375,
+      "sha256": "1bcdedf474dcf4c27f968a13a8a7ca45d39a7fc97a32af9c5f85694bbbe1c7c2",
+      "timestamp": [
+        2026,
+        10,
+        20,
+        16,
+        29,
+        50
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/06-σÉêΦºäΦ╛╣τòî.md",
+      "bytes": 3841,
+      "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        42,
+        12
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/03-µ╡üσè¿µÇº.md",
+      "bytes": 4914,
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        36,
+        14
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/02-σé¿ΦôäτÄç.md",
+      "bytes": 6214,
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        32,
+        20
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/07-Φ«óΘÿàτ«íτÉå.md",
+      "bytes": 4497,
+      "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        42,
+        38
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/01-τÄ░Θçæµ╡ü.md",
+      "bytes": 5134,
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        24,
+        30
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/04-σÇ║σèíµ»öτÄç.md",
+      "bytes": 4616,
+      "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        40,
+        24
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/08-µùàµ╕╕Θóäτ«ù.md",
+      "bytes": 4365,
+      "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        43,
+        10
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/knowledge/05-ΘúÄΘÖ⌐τ«íτÉå.md",
+      "bytes": 4167,
+      "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb",
+      "timestamp": [
+        2026,
+        10,
+        21,
+        10,
+        41,
+        24
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/eval/02-Φ╛╣τòîΘù«Θóÿ.md",
+      "bytes": 5362,
+      "sha256": "f5ded1c1c0d07bcfe823506ba615e4c33ed8b17c59650c43c55d8b4cb80a1dd9",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        43,
+        38
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/eval/03-ΘúÄΘÖ⌐Θù«Θóÿ.md",
+      "bytes": 4479,
+      "sha256": "c5e3627acc878d44a4736873109b904a4c6d0d527d5cd0386055dab1f29b3db2",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        31,
+        56
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/eval/04-Φ»äµ╡ïµÇ╗Φí¿.md",
+      "bytes": 672,
+      "sha256": "892e7dff60e1662d4e5cc2ed1949bde61a13cee6b9bffcb126e94903e02d96aa",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        7,
+        26
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/data/eval/01-µ¡úσ╕╕Θù«Θóÿ.md",
+      "bytes": 5251,
+      "sha256": "da99ff9f9ab8770255b0de293254f0f9076f1d15a621f3949355f07b6bca97ef",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        43,
+        40
+      ]
+    },
+    {
+      "zip_entry": "AI-Banking-agent/src/RAG/simple_RAG.py",
+      "bytes": 6014,
+      "sha256": "b8b6783ff3d0bdba0dd9dcc0ecc24614800257bde3dd8ae26e2c33e26e2d984b",
+      "timestamp": [
+        2026,
+        10,
+        22,
+        12,
+        48,
+        32
+      ]
+    }
+  ],
+  "conclusion": "最新版压缩包比既有解压目录多 4 个文件；已从压缩包恢复缺失交付，原始目录未改动。"
+}

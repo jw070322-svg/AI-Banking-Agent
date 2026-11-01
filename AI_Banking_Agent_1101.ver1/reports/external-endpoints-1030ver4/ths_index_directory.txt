@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="edge" charset="gbk"> </meta>
+    <title>沪深指数_同花顺行情中心_同花顺财经网</title>
+    <meta name="keywords" content="金融,金融网,金融服务,金融网站,金融信息,金融资讯,金融信息服务,投资,金融投资,投资理财,股票"/>
+    <meta name="description" content="核新同花顺网络信息股份有限公司（同花顺）成立于1995年，是一家专业的互联网金融数据服务商，为您全方位提供财经资讯及全球金融市场行情，覆盖股票、基金、期货、外汇、债券、银行、黄金等多种面向个人和企业的服务。"/>
+    <link rel="stylesheet" href="http://s.thsi.cn/js/webHQ/resources/m.min.css">
+     <script type="text/javascript" src="//s.thsi.cn/js/chameleon/chameleon.1.7.min.1793372.js"></script> <script type="text/javascript">
+    var targetProtocol = "https:";
+    if (window.location.protocol != targetProtocol)
+        window.location.href = 'https:' +
+        window.location.href.substring(window.location.protocol.length);
+    </script>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6dc19a3987135225beb977a0b9931a25";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9d25c03aef06fec6abea265b79509ba4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script 
+    src="https://s.thsi.cn/cd/weblog/0.0.2/weblog.js"
+    id="weblog-script"
+    crossorigin="anonymous"
+></script>
+  
+  <script id="weblog-init">
+    (function() {
+      try {
+        if (window.weblog && window.weblog.setConfig) {
+          window.weblog.setConfig({
+            appKey: '2f33f4f729'
+          });
+        } 
+      } catch (e) {
+        console.warn('[Monitoring] weblog init errot:', e.message);
+      }
+    })();
+  </script>
+
+
+
+<script>
+(function() {
+      try {
+        if (window.weblog) {
+          window.weblog.report({
+            id: 'thsweb_msg_hqzx',
+            action: 'show',
+          });
+          
+          window.weblog.visibilityReport({
+            id: 'thsweb_msg_hqzx',
+            action: 'stay'
+          });
+          
+          console.log('[Weblog] report success');
+        } else {
+          console.warn('[Weblog] window.weblog undefined');
+        }
+      } catch (e) {
+        console.error('[Weblog] report error:', e);
+      }
+    })();
+</script>
+
+
+    <link rel="stylesheet" href="https://s.thsi.cn/cb?css/q/;reset.css;common_v1.css&20161130"/>
+        <link rel="stylesheet" href="https://s.thsi.cn/cb?css/q/;concept.css;/gn/common.css&20161130"/>
+                 
+    <link rel="stylesheet" href="http://s.thsi.cn/css/q/gnbk.css"/>
+</head>
+<body>
+<div class="header fixed">
+
+    <div class="w1200">
+
+        <div class="hdlogo">
+
+            <a target="_blank" class="site-logo" href="//www.10jqka.com.cn"> <img src="/images/logo-ths.jpg" title="同花顺" alt="同花顺"></a>
+
+            <h1><a target="_blank" title="行情中心" class="sub-logo" href="//q.10jqka.com.cn">行情中心</a></h1>
+
+        </div>
+
+        <div class="nav">
+
+            <a href="//q.10jqka.com.cn/"  data-type="hssc" class="arr-trigger cur">A股市场</a>
+            <a href="//q.10jqka.com.cn/hk/" >香港市场</a>
+            <a href="//q.10jqka.com.cn/usa/" >美国市场</a>
+			<a href="//q.10jqka.com.cn/eu/" >英国市场</a>
+            <!--<a href="//q.10jqka.com.cn/global/" >全球股市</a>-->
+            <a href="//q.10jqka.com.cn/gn/" data-type="bk" class="arr-trigger ">板块</a>
+            <a href="//q.10jqka.com.cn/xsb/" target="_blank" >新三板</a>
+            <a href="//data.10jqka.com.cn" target="_blank" data-type="sjzx" class="arr-trigger">数据中心</a>
+
+        </div>
+
+        <div class="sub-nav" data-type="sjzx" style="display: none;">
+
+            <div class="triangle"></div>
+
+            <ul class="channel clearfix">
+
+                <li class="cur"><a href="//data.10jqka.com.cn/market/longhu/" target="_blank">龙虎榜</a></li>
+
+                <li><a href="//data.10jqka.com.cn/market/dzjy/" target="_blank">大宗交易</a></li>
+
+                <li><a href="//data.10jqka.com.cn/ipo/xgsgyzq/" target="_blank">新股申购</a></li>
+
+                <li><a href="//data.10jqka.com.cn/market/xsjj/" target="_blank">限售解禁</a></li>
+
+                <li><a href="//data.10jqka.com.cn/financial/yjyg/" target="_blank">财务分析</a></li>
+
+                <li><a href="//data.10jqka.com.cn/hgt/hgtb/" target="_blank">沪港通</a></li>
+
+                <li><a href="//data.10jqka.com.cn/funds/ggzjl/" target="_blank">资金流向</a></li>
+
+                <li><a href="//data.10jqka.com.cn/tradetips/mrtbts/" target="_blank">交易提示</a></li>
+
+                <li><a href="//data.10jqka.com.cn/rank/cxg/" target="_blank">技术选股</a></li>
+
+                <li><a href="//data.10jqka.com.cn/market/ggsd/" target="_blank">公告速递</a></li>
+
+                <li><a href="//data.10jqka.com.cn/market/rzrq/" target="_blank">融资融券</a></li>
+
+                <li><a href="//data.10jqka.com.cn/gzqh/" target="_blank">股指期货</a></li>
+
+            </ul>
+
+        </div>
+        
+        <div class="sub-nav" data-type="bk" style="display: none;">
+
+            <div class="triangle"></div>
+
+            <ul class="channel clearfix">
+                <li ><a href="//q.10jqka.com.cn/gn/" target="_blank">概念板块</a></li>
+                <li ><a href="//q.10jqka.com.cn/dy/" target="_blank">地域板块</a></li>
+                <li ><a href="//q.10jqka.com.cn/thshy/" target="_blank">同花顺行业</a></li>
+                <li ><a href="//q.10jqka.com.cn/zjhhy/" target="_blank">证监会行业</a></li>
+
+            </ul>
+        </div>
+        
+        <div class="sub-nav" data-type="hssc" style="display: none;">
+            <div class="triangle"></div>
+            <ul class="channel clearfix">
+                <li ><a href="//q.10jqka.com.cn/" target="_blank">A股市场</a></li>
+                <li class="cur"><a href="//q.10jqka.com.cn/zs/" target="_blank">A股指数</a></li>
+                <li ><a href="//q.10jqka.com.cn/index/fxjs/" target="_blank">风险警示</a></li>
+            </ul>
+        </div>
+
+        <div class="login-box">
+
+            <a href="//upass.10jqka.com.cn/login?redir=HTTP_REFERER" target="_blank">登录</a>
+
+        </div>
+
+        <div class="logined_box hide fr">
+
+            <a href="//stock.10jqka.com.cn/my/" target="_blank" id="J_username" style="background-position: 100% 40px;">linhanzi</a>
+
+            <span>|</span>
+
+            <a href="javascript:;" id="header_logined_out" target="_self" class="homeloginout">退出</a>
+
+        </div>
+
+    </div>
+
+</div><div class="container w1200">
+<div class="category boxShadow m_links">
+        <div class="cate_inner">
+                        <div class="cate_group">
+                <span class="cate_letter">重要</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/1A0001/" target="_blank">上证指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399001/" target="_blank">深证成指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399005/" target="_blank">中小100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399006/" target="_blank">创业板指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399300/" target="_blank">沪深300</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">A~E</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/399693/" target="_blank">安防产业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399284/" target="_blank">AI&#032;50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0851/" target="_blank">百发100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399809/" target="_blank">保险主题</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399326/" target="_blank">成长40</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399296/" target="_blank">创成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0043/" target="_blank">超大盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399003/" target="_blank">成份Ｂ指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399278/" target="_blank">长江100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399291/" target="_blank">创精选88</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399295/" target="_blank">创价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399276/" target="_blank">创科技</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399232/" target="_blank">采矿指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0071/" target="_blank">材料等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980027/" target="_blank">CNIESBI</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980092/" target="_blank">CNIFCF</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980022/" target="_blank">CNIROBOT</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/970070/" target="_blank">CNTAI50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/988006/" target="_blank">CNTHKD</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/988106/" target="_blank">CNTTRHKD</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/988107/" target="_blank">CNTTRUSD</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/988007/" target="_blank">CNTUSD</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399355/" target="_blank">长三角</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0863/" target="_blank">CS精准医</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399810/" target="_blank">CSSW传媒</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399811/" target="_blank">CSSW电子</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0853/" target="_blank">CSSW丝路</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399707/" target="_blank">CSSW证券</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399992/" target="_blank">CSWD并购</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399993/" target="_blank">CSWD生科</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399976/" target="_blank">CS新能车</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0114/" target="_blank">持续产业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399266/" target="_blank">创新能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399351/" target="_blank">创新示范</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399050/" target="_blank">创新引擎</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399265/" target="_blank">创新药械</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399019/" target="_blank">创业200</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399012/" target="_blank">创业300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399020/" target="_blank">创业500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399673/" target="_blank">创业板50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399635/" target="_blank">创业板EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399606/" target="_blank">创业板R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399668/" target="_blank">创业板V</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399102/" target="_blank">创业板综</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399667/" target="_blank">创业成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399018/" target="_blank">创业创新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399692/" target="_blank">创业低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399293/" target="_blank">创业大盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399259/" target="_blank">创业低碳</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399694/" target="_blank">创业高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399640/" target="_blank">创业基础</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399264/" target="_blank">创业软件</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399263/" target="_blank">创业数字</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399643/" target="_blank">创业新兴</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399275/" target="_blank">创医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399261/" target="_blank">创业制造</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399269/" target="_blank">创质量</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399983/" target="_blank">地产等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399241/" target="_blank">地产指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0004/" target="_blank">地产指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399814/" target="_blank">大农业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399372/" target="_blank">大盘成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399405/" target="_blank">大盘高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399373/" target="_blank">大盘价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399282/" target="_blank">大数据50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0078/" target="_blank">电信等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399281/" target="_blank">电子50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399400/" target="_blank">大中盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399378/" target="_blank">ESG&#032;300</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">F~J</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/399354/" target="_blank">分析师指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399403/" target="_blank">防御100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0064/" target="_blank">非周期</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0097/" target="_blank">高端装备</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399277/" target="_blank">公共健康</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399244/" target="_blank">公共指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399974/" target="_blank">国企改革</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399807/" target="_blank">高铁产业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399803/" target="_blank">工业4.0</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0079/" target="_blank">公用等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0072/" target="_blank">工业等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0005/" target="_blank">公用指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0001/" target="_blank">工业指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399318/" target="_blank">国证Ｂ指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399317/" target="_blank">国证Ａ指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399311/" target="_blank">国证1000</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399303/" target="_blank">国证2000</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399312/" target="_blank">国证300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399310/" target="_blank">国证A50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399420/" target="_blank">国证保证</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399370/" target="_blank">国证成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399393/" target="_blank">国证地产</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399428/" target="_blank">国证定增</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399380/" target="_blank">国证ETF</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399320/" target="_blank">国证服务</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399419/" target="_blank">国证高铁</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399440/" target="_blank">国证钢铁</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399358/" target="_blank">国证环保</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399321/" target="_blank">国证红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399368/" target="_blank">国证军工</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399379/" target="_blank">国证基金</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399359/" target="_blank">国证基建</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399433/" target="_blank">国证交运</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399371/" target="_blank">国证价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399365/" target="_blank">国证粮食</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399435/" target="_blank">国证农牧</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399363/" target="_blank">国证算力</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399396/" target="_blank">国证食品</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399389/" target="_blank">国证通信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399397/" target="_blank">国证文化</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399353/" target="_blank">国证物流</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399412/" target="_blank">国证新能</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980017/" target="_blank">国证芯片</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0867/" target="_blank">港中小企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399392/" target="_blank">国证新兴</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399439/" target="_blank">国证油气</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399395/" target="_blank">国证有色</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399431/" target="_blank">国证银行</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399394/" target="_blank">国证医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399322/" target="_blank">国证治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399369/" target="_blank">国证责任</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0012/" target="_blank">国债指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399413/" target="_blank">国证转债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399357/" target="_blank">环渤海</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0091/" target="_blank">沪财中小</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980035/" target="_blank">化肥农药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0022/" target="_blank">沪公司债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0159/" target="_blank">沪股通</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0162/" target="_blank">沪互联+</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399806/" target="_blank">环境治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0869/" target="_blank">HK银行</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399411/" target="_blank">红利100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399805/" target="_blank">互联金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0015/" target="_blank">红利指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0061/" target="_blank">沪企债30</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0300/" target="_blank">沪深300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0102/" target="_blank">沪投资品</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0103/" target="_blank">沪消费品</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0160/" target="_blank">沪新丝路</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0161/" target="_blank">沪中国造</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399415/" target="_blank">I100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399416/" target="_blank">I300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399239/" target="_blank">IT指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399313/" target="_blank">巨潮100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399314/" target="_blank">巨潮大盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399316/" target="_blank">巨潮小盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399315/" target="_blank">巨潮中盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0860/" target="_blank">结构调整</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399959/" target="_blank">军工指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399995/" target="_blank">基建工程</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0008/" target="_blank">基金指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399283/" target="_blank">机器人50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0076/" target="_blank">金融等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399699/" target="_blank">金融科技</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399240/" target="_blank">金融指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399398/" target="_blank">绩效指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399235/" target="_blank">建筑指数</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">K~O</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/1B0698/" target="_blank">科创100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0699/" target="_blank">科创200</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0688/" target="_blank">科创50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0690/" target="_blank">科创成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0689/" target="_blank">科创材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0691/" target="_blank">科创ESG</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0687/" target="_blank">科创高装</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0681/" target="_blank">科创价格</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0693/" target="_blank">科创机械</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0695/" target="_blank">科长三角</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0683/" target="_blank">科创生物</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0692/" target="_blank">科创新能</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0685/" target="_blank">科创芯片</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0682/" target="_blank">科创信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0680/" target="_blank">科创综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0697/" target="_blank">科大湾区</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399608/" target="_blank">科技100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0073/" target="_blank">可选等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399243/" target="_blank">科研指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399103/" target="_blank">乐富指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980068/" target="_blank">蓝色100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399438/" target="_blank">绿色电力</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399258/" target="_blank">绿色低碳</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399436/" target="_blank">绿色煤炭</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980028/" target="_blank">龙头家电</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399362/" target="_blank">民企100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399292/" target="_blank">民企发展</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399990/" target="_blank">煤炭等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399231/" target="_blank">农林指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980023/" target="_blank">南山50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0070/" target="_blank">能源等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399366/" target="_blank">能源金属</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0122/" target="_blank">农业主题</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">P~T</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/399236/" target="_blank">批零指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399286/" target="_blank">区块链50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0059/" target="_blank">全R成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0060/" target="_blank">全R价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0057/" target="_blank">全指成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0987/" target="_blank">全指材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0992/" target="_blank">全指金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0058/" target="_blank">全指价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0989/" target="_blank">全指可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0986/" target="_blank">全指能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0993/" target="_blank">全指信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0991/" target="_blank">全指医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399481/" target="_blank">企债指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399632/" target="_blank">深100EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399633/" target="_blank">深300EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399674/" target="_blank">深A医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399088/" target="_blank">深创100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399681/" target="_blank">深成材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399688/" target="_blank">深成电信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399689/" target="_blank">深成公用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399682/" target="_blank">深成工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399686/" target="_blank">深成金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399683/" target="_blank">深成可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399680/" target="_blank">深成能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399684/" target="_blank">深成消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399678/" target="_blank">深次新股</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399687/" target="_blank">深成信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399685/" target="_blank">深成医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399659/" target="_blank">深成指EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399002/" target="_blank">深成指R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399234/" target="_blank">水电指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399671/" target="_blank">深防御50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0151/" target="_blank">上国红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399302/" target="_blank">深公司债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0865/" target="_blank">上海国企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399672/" target="_blank">深红利50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399677/" target="_blank">深互联EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399675/" target="_blank">深互联网</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399418/" target="_blank">数据要素</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399017/" target="_blank">SME创新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0153/" target="_blank">上民红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399352/" target="_blank">深企综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399013/" target="_blank">深市精选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399280/" target="_blank">生物50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399441/" target="_blank">生物医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399242/" target="_blank">商务指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399646/" target="_blank">深消费50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399274/" target="_blank">深新基建</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399268/" target="_blank">深小巨人</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399301/" target="_blank">深信用债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399299/" target="_blank">深信中低</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399298/" target="_blank">深信中高</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0152/" target="_blank">上央红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399647/" target="_blank">深医药50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399676/" target="_blank">深医药EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0002/" target="_blank">商业指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399107/" target="_blank">深证Ａ指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399108/" target="_blank">深证Ｂ指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399330/" target="_blank">深证100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0132/" target="_blank">上证100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399011/" target="_blank">深证1000</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399004/" target="_blank">深证100R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0133/" target="_blank">上证150</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0007/" target="_blank">上证180</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399009/" target="_blank">深证200</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399679/" target="_blank">深证200R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399007/" target="_blank">深证300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399344/" target="_blank">深证300R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0009/" target="_blank">上证380</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0016/" target="_blank">上证50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399850/" target="_blank">深证50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399010/" target="_blank">深证700</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399750/" target="_blank">深主板50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0155/" target="_blank">市值百强</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399346/" target="_blank">深证成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0033/" target="_blank">上证材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399614/" target="_blank">深证材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399434/" target="_blank">数字传媒</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399696/" target="_blank">深证创投</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399016/" target="_blank">深证创新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399661/" target="_blank">深证低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399637/" target="_blank">深证地产</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0055/" target="_blank">上证地企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0040/" target="_blank">上证电信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399621/" target="_blank">深证电信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399639/" target="_blank">深证大宗</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399306/" target="_blank">深证ETF</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399702/" target="_blank">深证F120</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0098/" target="_blank">上证F200</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399703/" target="_blank">深证F200</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0099/" target="_blank">上证F300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0100/" target="_blank">上证F500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399701/" target="_blank">深证F60</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399662/" target="_blank">深证高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399648/" target="_blank">深证GDP</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0056/" target="_blank">上证国企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0131/" target="_blank">上证高新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399622/" target="_blank">深证公用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0034/" target="_blank">上证工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399615/" target="_blank">深证工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0041/" target="_blank">上证公用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399638/" target="_blank">深证环保</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0158/" target="_blank">上证环保</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399324/" target="_blank">深证红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0062/" target="_blank">上证沪企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0054/" target="_blank">上证海外</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399262/" target="_blank">数字经济</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399695/" target="_blank">深证节能</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399619/" target="_blank">深证金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0038/" target="_blank">上证金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399655/" target="_blank">深证绩效</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399290/" target="_blank">深转交债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399348/" target="_blank">深证价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399339/" target="_blank">深证科技</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399616/" target="_blank">深证可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0035/" target="_blank">上证可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0090/" target="_blank">上证流通</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399653/" target="_blank">深证龙头</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0065/" target="_blank">上证龙头</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399410/" target="_blank">苏州率先</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0049/" target="_blank">上证民企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399337/" target="_blank">深证民营</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399613/" target="_blank">深证能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0032/" target="_blank">上证能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399669/" target="_blank">深证农业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399670/" target="_blank">深周期50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0047/" target="_blank">上证全指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0066/" target="_blank">上证商品</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399704/" target="_blank">深证上游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0094/" target="_blank">上证上游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0888/" target="_blank">上证收益</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399644/" target="_blank">深证时钟</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399654/" target="_blank">深证文化</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399617/" target="_blank">深证消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0036/" target="_blank">上证消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0045/" target="_blank">上证小盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399641/" target="_blank">深证新兴</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399620/" target="_blank">深证信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0039/" target="_blank">上证信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0067/" target="_blank">上证新兴</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0096/" target="_blank">上证下游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399706/" target="_blank">深证下游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0042/" target="_blank">上证央企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399335/" target="_blank">深证央企</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0134/" target="_blank">上证银行</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0037/" target="_blank">上证医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399618/" target="_blank">深证医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399636/" target="_blank">深证装备</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399328/" target="_blank">深证治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0044/" target="_blank">上证中盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0063/" target="_blank">上证周期</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399341/" target="_blank">深证责任</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1C0003/" target="_blank">上证指数(旧)</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0046/" target="_blank">上证中小</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399705/" target="_blank">深证中游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0068/" target="_blank">上证资源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0095/" target="_blank">上证中游</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0139/" target="_blank">上证转债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399106/" target="_blank">深证综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399307/" target="_blank">深证转债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399030/" target="_blank">碳科技30</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399060/" target="_blank">碳科技60</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399610/" target="_blank">TMT50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0847/" target="_blank">腾讯济安</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980076/" target="_blank">通用航空</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399289/" target="_blank">碳中和债</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399391/" target="_blank">投资时钟</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">U~Z</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/980001/" target="_blank">湾创100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/988201/" target="_blank">湾创100R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399248/" target="_blank">文化指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399350/" target="_blank">皖江30</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399285/" target="_blank">物联网50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980018/" target="_blank">卫星通信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399364/" target="_blank">消费100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0126/" target="_blank">消费50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0069/" target="_blank">消费80</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0074/" target="_blank">消费等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980030/" target="_blank">消费电子</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0148/" target="_blank">消费领先</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0814/" target="_blank">细分医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399260/" target="_blank">先进制造</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399901/" target="_blank">小康指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0901/" target="_blank">小康指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399297/" target="_blank">新浪100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980032/" target="_blank">新能电池</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399417/" target="_blank">新能源车</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399376/" target="_blank">小盘成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399408/" target="_blank">小盘低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399409/" target="_blank">小盘高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399377/" target="_blank">小盘价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399429/" target="_blank">新丝路</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399994/" target="_blank">信息安全</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0077/" target="_blank">信息等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0891/" target="_blank">新兴综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0116/" target="_blank">信用100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399360/" target="_blank">新硬件</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399100/" target="_blank">新指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0017/" target="_blank">新综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399970/" target="_blank">移动互联</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399991/" target="_blank">一带一路</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399279/" target="_blank">云科技50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399812/" target="_blank">养老产业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980016/" target="_blank">医疗健康</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/980015/" target="_blank">疫苗生科</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399550/" target="_blank">央视50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399552/" target="_blank">央视成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399698/" target="_blank">优势成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399551/" target="_blank">央视创新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399553/" target="_blank">央视回报</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0819/" target="_blank">有色金属</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399556/" target="_blank">央视生态</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399557/" target="_blank">央视文化</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0147/" target="_blank">优势消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399554/" target="_blank">央视治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399555/" target="_blank">央视责任</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399237/" target="_blank">运输指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0145/" target="_blank">优势资源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0146/" target="_blank">优势制造</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0075/" target="_blank">医药等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0121/" target="_blank">医药主题</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399612/" target="_blank">中创100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399611/" target="_blank">中创100R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399624/" target="_blank">中创400</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399625/" target="_blank">中创500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399626/" target="_blank">中创成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399665/" target="_blank">中创低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399660/" target="_blank">中创EW</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399666/" target="_blank">中创高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399652/" target="_blank">中创高新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399627/" target="_blank">中创价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399423/" target="_blank">中关村50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399697/" target="_blank">中关村60</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399422/" target="_blank">中关村A</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0006/" target="_blank">综合指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399399/" target="_blank">中经GDP</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399267/" target="_blank">专精特新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0019/" target="_blank">治理指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399996/" target="_blank">智能家居</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399432/" target="_blank">智能汽车</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399374/" target="_blank">中盘成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399406/" target="_blank">中盘低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399407/" target="_blank">中盘高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399375/" target="_blank">中盘价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399402/" target="_blank">周期100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399975/" target="_blank">证券公司</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399437/" target="_blank">证券龙头</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0048/" target="_blank">责任指数</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399356/" target="_blank">珠三角</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399333/" target="_blank">中小100R</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399008/" target="_blank">中小300</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399602/" target="_blank">中小成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399294/" target="_blank">中小创Q</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399015/" target="_blank">中小创新</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399663/" target="_blank">中小低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399634/" target="_blank">中小等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399664/" target="_blank">中小高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399649/" target="_blank">中小红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399623/" target="_blank">中小基础</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399658/" target="_blank">中小绩效</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399604/" target="_blank">中小价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399401/" target="_blank">中小盘</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399361/" target="_blank">在线消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399642/" target="_blank">中小新兴</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399650/" target="_blank">中小治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399651/" target="_blank">中小责任</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399101/" target="_blank">中小综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0020/" target="_blank">中型综指</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0092/" target="_blank">资源50</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399319/" target="_blank">资源优势</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399905/" target="_blank">中证&#032;500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399903/" target="_blank">中证100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399852/" target="_blank">中证1000</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0852/" target="_blank">中证1000</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0905/" target="_blank">中证500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0906/" target="_blank">中证800</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0903/" target="_blank">中证A100</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0510/" target="_blank">中证A500</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399997/" target="_blank">中证白酒</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399971/" target="_blank">中证传媒</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399813/" target="_blank">中证国安</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399973/" target="_blank">中证国防</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0827/" target="_blank">中证环保</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399987/" target="_blank">中证酒</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399967/" target="_blank">中证军工</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0934/" target="_blank">中证金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399934/" target="_blank">中证金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399998/" target="_blank">中证煤炭</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0928/" target="_blank">中证能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399928/" target="_blank">中证能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399804/" target="_blank">中证体育</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399932/" target="_blank">中证消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0932/" target="_blank">中证消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399808/" target="_blank">中证新能</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399935/" target="_blank">中证信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0935/" target="_blank">中证信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399989/" target="_blank">中证医疗</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399986/" target="_blank">中证银行</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399933/" target="_blank">中证医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0933/" target="_blank">中证医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399233/" target="_blank">制造指数</a>
+                                    </div>
+            </div>
+                        <div class="cate_group">
+                <span class="cate_letter">数字</span>
+                <div class="cate_items">
+                                         <a href="http://q.10jqka.com.cn/zs/detail/code/399630/" target="_blank">1000成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399382/" target="_blank">1000材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399367/" target="_blank">1000地产</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399383/" target="_blank">1000工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399390/" target="_blank">1000公用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399387/" target="_blank">1000金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399631/" target="_blank">1000价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399384/" target="_blank">1000可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399381/" target="_blank">1000能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399385/" target="_blank">1000消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399388/" target="_blank">1000信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399386/" target="_blank">1000医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399645/" target="_blank">100低波</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399656/" target="_blank">100绩效</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0129/" target="_blank">180波动</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0028/" target="_blank">180成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0136/" target="_blank">180低贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0051/" target="_blank">180等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0123/" target="_blank">180动态</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0093/" target="_blank">180分层</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0135/" target="_blank">180高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0149/" target="_blank">180红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0053/" target="_blank">180基本</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0025/" target="_blank">180基建</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0018/" target="_blank">180金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0029/" target="_blank">180价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0030/" target="_blank">180R成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0031/" target="_blank">180R价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0125/" target="_blank">180稳定</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0027/" target="_blank">180运输</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0021/" target="_blank">180治理</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0026/" target="_blank">180资源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399914/" target="_blank">300&#032;金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399913/" target="_blank">300&#032;医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0849/" target="_blank">300非银</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0914/" target="_blank">300金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399657/" target="_blank">300绩效</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399972/" target="_blank">300深市</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0913/" target="_blank">300医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0130/" target="_blank">380波动</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0117/" target="_blank">380成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0105/" target="_blank">380材料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0138/" target="_blank">380低贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0115/" target="_blank">380等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0141/" target="_blank">380动态</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0112/" target="_blank">380电信</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0137/" target="_blank">380高贝</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0113/" target="_blank">380公用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0106/" target="_blank">380工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0150/" target="_blank">380红利</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0128/" target="_blank">380基本</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0110/" target="_blank">380金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0118/" target="_blank">380价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0107/" target="_blank">380可选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0104/" target="_blank">380能源</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0119/" target="_blank">380R成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0120/" target="_blank">380R价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0142/" target="_blank">380稳定</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0108/" target="_blank">380消费</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0111/" target="_blank">380信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0109/" target="_blank">380医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399982/" target="_blank">500等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0982/" target="_blank">500等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0856/" target="_blank">500工业</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0802/" target="_blank">500沪市</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399802/" target="_blank">500深市</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0858/" target="_blank">500信息</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0854/" target="_blank">500原料</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0857/" target="_blank">500医药</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0170/" target="_blank">50AH优选</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0050/" target="_blank">50等权</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0052/" target="_blank">50基本</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0101/" target="_blank">5年信用</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399628/" target="_blank">700成长</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399629/" target="_blank">700价值</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399965/" target="_blank">800地产</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/399966/" target="_blank">800非银</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0974/" target="_blank">800金融</a>
+                                        <a href="http://q.10jqka.com.cn/zs/detail/code/1B0823/" target="_blank">800有色</a>
+                                    </div>
+            </div>
+                       
+        </div>
+    </div>
+    <div class="cate_toggle_wrap">
+        <a class="cate_toggle boxShadow" href="javascript: void(0)">展开全部</a>
+    </div>
+    <div class="box">
+    <div class="head">
+        <h2>指数列表</h2>
+    </div>
+    <div class="body m-pager-box" id="maincont" data-fixedthead="true">
+        
+        <table class="m-table m-pager-table">
+            <thead>
+            <tr>
+                <th width="6%">序号</th>
+                <th width="9%" ><a href="javascript:void(0)" field="indexcode" >指数代码<i></i></a></th>
+                <th width="9%">指数名称</th>
+                <th width="8%" ><a href="javascript:void(0)" field="zxj" >最新价<i></i></a></th>
+                <th width="8%" ><a href="javascript:void(0)" field="zde" >涨跌额<i></i></a></th>
+                <th width="8%" class='cur'><a href="javascript:void(0)" field="zdf" order="desc"  class="desc">涨跌幅(%)<i></i></a></th>
+                <th width="8%" ><a href="javascript:void(0)" field="zs" >昨收<i></i></a></th>
+                <th width="8%" ><a href="javascript:void(0)" field="jk" >今开<i></i></a></th>
+                <th width="8%" ><a href="javascript:void(0)" field="zgj" >最高价<i></i></a></th>
+                <th width="8%" ><a href="javascript:void(0)" field="zdj" >最低价<i></i></a></th>
+                <th width="10%" ><a href="javascript:void(0)" field="cjl" >成交量（万手）<i></i></a></th>
+                <th width="10%" ><a href="javascript:void(0)" field="cje" >成交额（亿元）<i></i></a></th>
+            </tr>
+            </thead>
+            <tbody>
+                        <tr>
+                <td>1</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399997/" target="_blank">399997</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399997/" target="_blank">中证白酒</a></td>
+                <td>6672.30</td>
+                <td class="c-rise">359.62</td>
+                <td class="c-rise">5.70</td>
+                <td>6312.68</td>
+                <td>6320.91</td>
+                <td>6724.19</td>
+                <td>6312.80</td>
+                <td>397.56</td>
+                <td>243.33</td>                
+            </tr>
+                        <tr>
+                <td>2</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399987/" target="_blank">399987</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399987/" target="_blank">中证酒</a></td>
+                <td>3901.06</td>
+                <td class="c-rise">184.33</td>
+                <td class="c-rise">4.96</td>
+                <td>3716.73</td>
+                <td>3720.91</td>
+                <td>3932.11</td>
+                <td>3715.73</td>
+                <td>553.00</td>
+                <td>267.09</td>                
+            </tr>
+                        <tr>
+                <td>3</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0074/" target="_blank">000074</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0074/" target="_blank">消费等权</a></td>
+                <td>6124.95</td>
+                <td class="c-rise">187.29</td>
+                <td class="c-rise">3.15</td>
+                <td>5937.66</td>
+                <td>5902.41</td>
+                <td>6186.29</td>
+                <td>5873.08</td>
+                <td>575.65</td>
+                <td>237.98</td>                
+            </tr>
+                        <tr>
+                <td>4</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399396/" target="_blank">399396</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399396/" target="_blank">国证食品</a></td>
+                <td>14712.70</td>
+                <td class="c-rise">428.00</td>
+                <td class="c-rise">3.00</td>
+                <td>14284.70</td>
+                <td>14211.41</td>
+                <td>14793.76</td>
+                <td>14179.13</td>
+                <td>961.93</td>
+                <td>373.14</td>                
+            </tr>
+                        <tr>
+                <td>5</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0036/" target="_blank">000036</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0036/" target="_blank">上证消费</a></td>
+                <td>9368.70</td>
+                <td class="c-rise">235.13</td>
+                <td class="c-rise">2.57</td>
+                <td>9133.57</td>
+                <td>9071.76</td>
+                <td>9429.55</td>
+                <td>9013.71</td>
+                <td>575.65</td>
+                <td>237.98</td>                
+            </tr>
+                        <tr>
+                <td>6</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0027/" target="_blank">000027</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0027/" target="_blank">180运输</a></td>
+                <td>764.28</td>
+                <td class="c-rise">16.71</td>
+                <td class="c-rise">2.23</td>
+                <td>747.57</td>
+                <td>747.66</td>
+                <td>768.92</td>
+                <td>747.66</td>
+                <td>1095.17</td>
+                <td>101.47</td>                
+            </tr>
+                        <tr>
+                <td>7</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399932/" target="_blank">399932</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399932/" target="_blank">中证消费</a></td>
+                <td>12648.49</td>
+                <td class="c-rise">258.94</td>
+                <td class="c-rise">2.09</td>
+                <td>12389.55</td>
+                <td>12318.94</td>
+                <td>12704.67</td>
+                <td>12268.73</td>
+                <td>848.52</td>
+                <td>350.61</td>                
+            </tr>
+                        <tr>
+                <td>8</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0932/" target="_blank">000932</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0932/" target="_blank">中证消费</a></td>
+                <td>12648.49</td>
+                <td class="c-rise">258.94</td>
+                <td class="c-rise">2.09</td>
+                <td>12389.55</td>
+                <td>12318.94</td>
+                <td>12704.67</td>
+                <td>12268.73</td>
+                <td>848.52</td>
+                <td>350.61</td>                
+            </tr>
+                        <tr>
+                <td>9</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399385/" target="_blank">399385</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399385/" target="_blank">1000消费</a></td>
+                <td>7847.82</td>
+                <td class="c-rise">156.73</td>
+                <td class="c-rise">2.04</td>
+                <td>7691.09</td>
+                <td>7653.07</td>
+                <td>7881.33</td>
+                <td>7623.30</td>
+                <td>984.23</td>
+                <td>376.73</td>                
+            </tr>
+                        <tr>
+                <td>10</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0869/" target="_blank">000869</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0869/" target="_blank">HK银行</a></td>
+                <td>5351.50</td>
+                <td class="c-rise">83.98</td>
+                <td class="c-rise">1.59</td>
+                <td>5267.52</td>
+                <td>5309.74</td>
+                <td>5356.44</td>
+                <td>5268.21</td>
+                <td>999.11</td>
+                <td>110.51</td>                
+            </tr>
+                        <tr>
+                <td>11</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399353/" target="_blank">399353</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399353/" target="_blank">国证物流</a></td>
+                <td>2008.36</td>
+                <td class="c-rise">30.75</td>
+                <td class="c-rise">1.55</td>
+                <td>1977.61</td>
+                <td>1976.09</td>
+                <td>2021.37</td>
+                <td>1975.45</td>
+                <td>2128.31</td>
+                <td>184.26</td>                
+            </tr>
+                        <tr>
+                <td>12</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0032/" target="_blank">000032</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0032/" target="_blank">上证能源</a></td>
+                <td>2389.57</td>
+                <td class="c-rise">36.02</td>
+                <td class="c-rise">1.53</td>
+                <td>2353.55</td>
+                <td>2351.41</td>
+                <td>2393.11</td>
+                <td>2336.87</td>
+                <td>2054.09</td>
+                <td>179.23</td>                
+            </tr>
+                        <tr>
+                <td>13</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0928/" target="_blank">000928</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0928/" target="_blank">中证能源</a></td>
+                <td>3565.39</td>
+                <td class="c-rise">53.49</td>
+                <td class="c-rise">1.52</td>
+                <td>3511.90</td>
+                <td>3502.56</td>
+                <td>3573.43</td>
+                <td>3488.44</td>
+                <td>1982.33</td>
+                <td>187.21</td>                
+            </tr>
+                        <tr>
+                <td>14</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399928/" target="_blank">399928</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399928/" target="_blank">中证能源</a></td>
+                <td>3565.39</td>
+                <td class="c-rise">53.49</td>
+                <td class="c-rise">1.52</td>
+                <td>3511.90</td>
+                <td>3502.56</td>
+                <td>3573.43</td>
+                <td>3488.44</td>
+                <td>1982.33</td>
+                <td>187.21</td>                
+            </tr>
+                        <tr>
+                <td>15</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399381/" target="_blank">399381</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399381/" target="_blank">1000能源</a></td>
+                <td>3726.39</td>
+                <td class="c-rise">54.57</td>
+                <td class="c-rise">1.49</td>
+                <td>3671.82</td>
+                <td>3662.14</td>
+                <td>3735.38</td>
+                <td>3646.57</td>
+                <td>2012.32</td>
+                <td>189.71</td>                
+            </tr>
+                        <tr>
+                <td>16</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0147/" target="_blank">000147</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0147/" target="_blank">优势消费</a></td>
+                <td>5538.47</td>
+                <td class="c-rise">76.82</td>
+                <td class="c-rise">1.41</td>
+                <td>5461.65</td>
+                <td>5437.32</td>
+                <td>5604.64</td>
+                <td>5390.91</td>
+                <td>700.13</td>
+                <td>310.61</td>                
+            </tr>
+                        <tr>
+                <td>17</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0104/" target="_blank">000104</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0104/" target="_blank">380能源</a></td>
+                <td>1443.97</td>
+                <td class="c-rise">19.00</td>
+                <td class="c-rise">1.33</td>
+                <td>1424.97</td>
+                <td>1426.03</td>
+                <td>1457.18</td>
+                <td>1409.46</td>
+                <td>681.85</td>
+                <td>49.63</td>                
+            </tr>
+                        <tr>
+                <td>18</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399684/" target="_blank">399684</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399684/" target="_blank">深成消费</a></td>
+                <td>1392.82</td>
+                <td class="c-rise">18.17</td>
+                <td class="c-rise">1.32</td>
+                <td>1374.65</td>
+                <td>1367.87</td>
+                <td>1400.53</td>
+                <td>1363.87</td>
+                <td>535.01</td>
+                <td>158.94</td>                
+            </tr>
+                        <tr>
+                <td>19</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0149/" target="_blank">000149</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0149/" target="_blank">180红利</a></td>
+                <td>4477.07</td>
+                <td class="c-rise">58.24</td>
+                <td class="c-rise">1.32</td>
+                <td>4418.83</td>
+                <td>4425.26</td>
+                <td>4478.78</td>
+                <td>4408.00</td>
+                <td>4546.06</td>
+                <td>480.51</td>                
+            </tr>
+                        <tr>
+                <td>20</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0152/" target="_blank">000152</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0152/" target="_blank">上央红利</a></td>
+                <td>3060.14</td>
+                <td class="c-rise">37.77</td>
+                <td class="c-rise">1.25</td>
+                <td>3022.37</td>
+                <td>3026.58</td>
+                <td>3066.05</td>
+                <td>3015.67</td>
+                <td>4089.39</td>
+                <td>397.33</td>                
+            </tr>
+                        <tr>
+                <td>21</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399617/" target="_blank">399617</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399617/" target="_blank">深证消费</a></td>
+                <td>7244.75</td>
+                <td class="c-rise">89.28</td>
+                <td class="c-rise">1.25</td>
+                <td>7155.47</td>
+                <td>7123.57</td>
+                <td>7281.06</td>
+                <td>7096.54</td>
+                <td>436.46</td>
+                <td>147.69</td>                
+            </tr>
+                        <tr>
+                <td>22</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0108/" target="_blank">000108</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0108/" target="_blank">380消费</a></td>
+                <td>10621.40</td>
+                <td class="c-rise">130.84</td>
+                <td class="c-rise">1.25</td>
+                <td>10490.56</td>
+                <td>10388.84</td>
+                <td>10749.65</td>
+                <td>10254.99</td>
+                <td>291.06</td>
+                <td>56.65</td>                
+            </tr>
+                        <tr>
+                <td>23</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399433/" target="_blank">399433</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399433/" target="_blank">国证交运</a></td>
+                <td>1569.15</td>
+                <td class="c-rise">18.87</td>
+                <td class="c-rise">1.22</td>
+                <td>1550.28</td>
+                <td>1548.34</td>
+                <td>1581.39</td>
+                <td>1547.26</td>
+                <td>2794.96</td>
+                <td>205.63</td>                
+            </tr>
+                        <tr>
+                <td>24</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399439/" target="_blank">399439</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399439/" target="_blank">国证油气</a></td>
+                <td>2121.51</td>
+                <td class="c-rise">24.73</td>
+                <td class="c-rise">1.18</td>
+                <td>2096.78</td>
+                <td>2085.14</td>
+                <td>2138.08</td>
+                <td>2081.45</td>
+                <td>2398.64</td>
+                <td>214.78</td>                
+            </tr>
+                        <tr>
+                <td>25</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0986/" target="_blank">000986</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0986/" target="_blank">全指能源</a></td>
+                <td>2767.34</td>
+                <td class="c-rise">31.55</td>
+                <td class="c-rise">1.15</td>
+                <td>2735.79</td>
+                <td>2726.64</td>
+                <td>2777.81</td>
+                <td>2713.09</td>
+                <td>2677.76</td>
+                <td>234.41</td>                
+            </tr>
+                        <tr>
+                <td>26</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1A0003/" target="_blank">000003</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1A0003/" target="_blank">Ｂ股指数</a></td>
+                <td>264.44</td>
+                <td class="c-rise">2.98</td>
+                <td class="c-rise">1.14</td>
+                <td>261.46</td>
+                <td>260.38</td>
+                <td>266.21</td>
+                <td>257.65</td>
+                <td>25.38</td>
+                <td>1.84</td>                
+            </tr>
+                        <tr>
+                <td>27</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0015/" target="_blank">000015</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0015/" target="_blank">红利指数</a></td>
+                <td>3348.19</td>
+                <td class="c-rise">37.59</td>
+                <td class="c-rise">1.14</td>
+                <td>3310.60</td>
+                <td>3309.17</td>
+                <td>3361.65</td>
+                <td>3288.78</td>
+                <td>4770.62</td>
+                <td>458.51</td>                
+            </tr>
+                        <tr>
+                <td>28</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0151/" target="_blank">000151</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0151/" target="_blank">上国红利</a></td>
+                <td>1656.81</td>
+                <td class="c-rise">18.55</td>
+                <td class="c-rise">1.13</td>
+                <td>1638.26</td>
+                <td>1637.40</td>
+                <td>1663.69</td>
+                <td>1627.29</td>
+                <td>2875.94</td>
+                <td>282.28</td>                
+            </tr>
+                        <tr>
+                <td>29</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399391/" target="_blank">399391</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399391/" target="_blank">投资时钟</a></td>
+                <td>3014.75</td>
+                <td class="c-rise">30.70</td>
+                <td class="c-rise">1.03</td>
+                <td>2984.05</td>
+                <td>2977.87</td>
+                <td>3027.68</td>
+                <td>2965.60</td>
+                <td>4302.82</td>
+                <td>769.54</td>                
+            </tr>
+                        <tr>
+                <td>30</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0103/" target="_blank">000103</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0103/" target="_blank">沪消费品</a></td>
+                <td>6836.03</td>
+                <td class="c-rise">69.47</td>
+                <td class="c-rise">1.03</td>
+                <td>6766.56</td>
+                <td>6753.17</td>
+                <td>6946.72</td>
+                <td>6702.42</td>
+                <td>629.51</td>
+                <td>356.56</td>                
+            </tr>
+                        <tr>
+                <td>31</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399275/" target="_blank">399275</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399275/" target="_blank">创医药</a></td>
+                <td>2224.50</td>
+                <td class="c-rise">22.54</td>
+                <td class="c-rise">1.02</td>
+                <td>2201.96</td>
+                <td>2180.67</td>
+                <td>2293.22</td>
+                <td>2164.78</td>
+                <td>1057.02</td>
+                <td>244.27</td>                
+            </tr>
+                        <tr>
+                <td>32</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399369/" target="_blank">399369</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399369/" target="_blank">国证责任</a></td>
+                <td>1394.27</td>
+                <td class="c-rise">12.92</td>
+                <td class="c-rise">0.94</td>
+                <td>1381.35</td>
+                <td>1373.62</td>
+                <td>1404.31</td>
+                <td>1369.45</td>
+                <td>3842.93</td>
+                <td>766.47</td>                
+            </tr>
+                        <tr>
+                <td>33</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399436/" target="_blank">399436</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399436/" target="_blank">绿色煤炭</a></td>
+                <td>4440.38</td>
+                <td class="c-rise">40.16</td>
+                <td class="c-rise">0.91</td>
+                <td>4400.22</td>
+                <td>4393.97</td>
+                <td>4471.13</td>
+                <td>4348.18</td>
+                <td>968.94</td>
+                <td>89.25</td>                
+            </tr>
+                        <tr>
+                <td>34</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399373/" target="_blank">399373</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399373/" target="_blank">大盘价值</a></td>
+                <td>8405.09</td>
+                <td class="c-rise">72.98</td>
+                <td class="c-rise">0.88</td>
+                <td>8332.11</td>
+                <td>8335.32</td>
+                <td>8405.91</td>
+                <td>8294.08</td>
+                <td>7211.65</td>
+                <td>855.15</td>                
+            </tr>
+                        <tr>
+                <td>35</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0150/" target="_blank">000150</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0150/" target="_blank">380红利</a></td>
+                <td>11946.89</td>
+                <td class="c-rise">94.98</td>
+                <td class="c-rise">0.80</td>
+                <td>11851.91</td>
+                <td>11839.77</td>
+                <td>12017.66</td>
+                <td>11729.41</td>
+                <td>904.80</td>
+                <td>75.64</td>                
+            </tr>
+                        <tr>
+                <td>36</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399321/" target="_blank">399321</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399321/" target="_blank">国证红利</a></td>
+                <td>7501.60</td>
+                <td class="c-rise">59.43</td>
+                <td class="c-rise">0.80</td>
+                <td>7442.17</td>
+                <td>7424.92</td>
+                <td>7508.26</td>
+                <td>7397.91</td>
+                <td>6302.28</td>
+                <td>972.52</td>                
+            </tr>
+                        <tr>
+                <td>37</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0070/" target="_blank">000070</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0070/" target="_blank">能源等权</a></td>
+                <td>3221.43</td>
+                <td class="c-rise">24.11</td>
+                <td class="c-rise">0.75</td>
+                <td>3197.32</td>
+                <td>3194.53</td>
+                <td>3245.73</td>
+                <td>3160.14</td>
+                <td>2054.09</td>
+                <td>179.23</td>                
+            </tr>
+                        <tr>
+                <td>38</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399685/" target="_blank">399685</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399685/" target="_blank">深成医药</a></td>
+                <td>1413.94</td>
+                <td class="c-rise">10.58</td>
+                <td class="c-rise">0.75</td>
+                <td>1403.36</td>
+                <td>1392.77</td>
+                <td>1440.28</td>
+                <td>1389.56</td>
+                <td>952.90</td>
+                <td>217.94</td>                
+            </tr>
+                        <tr>
+                <td>39</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399265/" target="_blank">399265</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399265/" target="_blank">创新药械</a></td>
+                <td>901.80</td>
+                <td class="c-rise">6.55</td>
+                <td class="c-rise">0.73</td>
+                <td>895.25</td>
+                <td>885.33</td>
+                <td>934.41</td>
+                <td>876.74</td>
+                <td>1097.01</td>
+                <td>249.47</td>                
+            </tr>
+                        <tr>
+                <td>40</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399280/" target="_blank">399280</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399280/" target="_blank">生物50</a></td>
+                <td>1757.15</td>
+                <td class="c-rise">12.27</td>
+                <td class="c-rise">0.70</td>
+                <td>1744.88</td>
+                <td>1726.39</td>
+                <td>1807.88</td>
+                <td>1719.01</td>
+                <td>858.88</td>
+                <td>215.76</td>                
+            </tr>
+                        <tr>
+                <td>41</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0136/" target="_blank">000136</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0136/" target="_blank">180低贝</a></td>
+                <td>13318.18</td>
+                <td class="c-rise">90.86</td>
+                <td class="c-rise">0.69</td>
+                <td>13227.32</td>
+                <td>13219.29</td>
+                <td>13334.33</td>
+                <td>13161.62</td>
+                <td>5123.87</td>
+                <td>669.06</td>                
+            </tr>
+                        <tr>
+                <td>42</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0153/" target="_blank">000153</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0153/" target="_blank">上民红利</a></td>
+                <td>3049.92</td>
+                <td class="c-rise">20.69</td>
+                <td class="c-rise">0.68</td>
+                <td>3029.23</td>
+                <td>3023.04</td>
+                <td>3085.89</td>
+                <td>3009.27</td>
+                <td>632.17</td>
+                <td>58.66</td>                
+            </tr>
+                        <tr>
+                <td>43</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0109/" target="_blank">000109</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0109/" target="_blank">380医药</a></td>
+                <td>8934.59</td>
+                <td class="c-rise">59.62</td>
+                <td class="c-rise">0.67</td>
+                <td>8874.97</td>
+                <td>8867.57</td>
+                <td>9153.93</td>
+                <td>8793.20</td>
+                <td>531.46</td>
+                <td>157.87</td>                
+            </tr>
+                        <tr>
+                <td>44</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0138/" target="_blank">000138</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0138/" target="_blank">380低贝</a></td>
+                <td>8476.53</td>
+                <td class="c-rise">56.24</td>
+                <td class="c-rise">0.67</td>
+                <td>8420.29</td>
+                <td>8384.50</td>
+                <td>8549.48</td>
+                <td>8324.62</td>
+                <td>2870.40</td>
+                <td>257.10</td>                
+            </tr>
+                        <tr>
+                <td>45</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399318/" target="_blank">399318</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399318/" target="_blank">国证Ｂ指</a></td>
+                <td>5162.86</td>
+                <td class="c-rise">32.42</td>
+                <td class="c-rise">0.63</td>
+                <td>5130.44</td>
+                <td>5111.95</td>
+                <td>5189.73</td>
+                <td>5078.36</td>
+                <td>47.11</td>
+                <td>2.65</td>                
+            </tr>
+                        <tr>
+                <td>46</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399998/" target="_blank">399998</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399998/" target="_blank">中证煤炭</a></td>
+                <td>2333.33</td>
+                <td class="c-rise">14.54</td>
+                <td class="c-rise">0.63</td>
+                <td>2318.79</td>
+                <td>2313.18</td>
+                <td>2348.57</td>
+                <td>2288.68</td>
+                <td>1166.96</td>
+                <td>97.54</td>                
+            </tr>
+                        <tr>
+                <td>47</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0126/" target="_blank">000126</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0126/" target="_blank">消费50</a></td>
+                <td>6222.89</td>
+                <td class="c-rise">37.59</td>
+                <td class="c-rise">0.61</td>
+                <td>6185.30</td>
+                <td>6130.26</td>
+                <td>6275.67</td>
+                <td>6093.43</td>
+                <td>1196.93</td>
+                <td>371.21</td>                
+            </tr>
+                        <tr>
+                <td>48</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399618/" target="_blank">399618</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399618/" target="_blank">深证医药</a></td>
+                <td>6866.66</td>
+                <td class="c-rise">41.38</td>
+                <td class="c-rise">0.61</td>
+                <td>6825.28</td>
+                <td>6775.49</td>
+                <td>7020.75</td>
+                <td>6748.01</td>
+                <td>1246.18</td>
+                <td>283.16</td>                
+            </tr>
+                        <tr>
+                <td>49</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0052/" target="_blank">000052</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/1B0052/" target="_blank">50基本</a></td>
+                <td>2867.06</td>
+                <td class="c-rise">17.03</td>
+                <td class="c-rise">0.60</td>
+                <td>2850.03</td>
+                <td>2850.17</td>
+                <td>2870.04</td>
+                <td>2833.24</td>
+                <td>5195.57</td>
+                <td>1329.28</td>                
+            </tr>
+                        <tr>
+                <td>50</td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399989/" target="_blank">399989</a></td>
+                <td><a href="http://q.10jqka.com.cn/zs/detail/code/399989/" target="_blank">中证医疗</a></td>
+                <td>6581.04</td>
+                <td class="c-rise">38.52</td>
+                <td class="c-rise">0.59</td>
+                <td>6542.52</td>
+                <td>6487.25</td>
+                <td>6757.03</td>
+                <td>6446.58</td>
+                <td>961.14</td>
+                <td>315.35</td>                
+            </tr>
+                        </tbody>
+        </table>
+          <input type="hidden" id="baseUrl" value='zs/index'>
+        <div class="m-pager" id="m-page">
+         &nbsp;<a class="cur" page="1" href="javascript:void(0)">1</a>&nbsp;&nbsp;<a class="changePage" page="2" href="javascript:void(0);">2</a>&nbsp;&nbsp;<a class="changePage" page="3" href="javascript:void(0);">3</a>&nbsp;&nbsp;<a class="changePage" page="4" href="javascript:void(0);">4</a>&nbsp;&nbsp;<a class="changePage" page="5" href="javascript:void(0);">5</a>&nbsp;&nbsp;<a class="changePage" page="2" href="javascript:void(0);">下一页</a><a class="changePage" page="12" href="javascript:void(0);">尾页</a><span class="page_info">1/12</span>
+        </div>
+           
+    </div>
+</div>
+</div>
+ <div class="bottom-map-warp">
+        <div class="bottom-map clearfix">
+            <dl class="item">
+                <dt class="icon-pdzx">频道资讯</dt>
+                <dd><a href="http://news.10jqka.com.cn/yaowen/" target="_blank">财经要闻</a></dd>
+                <dd><a href="http://news.10jqka.com.cn/cjzx_list/ " target="_blank">宏观经济</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/bidu/" target="_blank">股票必读</a></dd>
+                <dd><a href="http://master.10jqka.com.cn/" target="_blank">名家100</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/company.shtml" target="_blank">公司频道</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/market.shtml" target="_blank">市场频道</a></dd>
+                <dd><a href="http://futures.10jqka.com.cn/" target="_blank">股指期货</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/newstock/" target="_blank">新股频道</a></dd>
+                <dd><a href="http://news.10jqka.com.cn/guojicj_list/" target="_blank">国际财经</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/chuangye/" target="_blank">创业板</a></dd>
+                <dd><a href="http://xinsanban.10jqka.com.cn/" target="_blank">新三板</a></dd>
+                <dd><a href="http://news.10jqka.com.cn/bigdata.shtml" target="_blank">图解财经</a></dd>                
+            </dl>
+            <dl class="item">
+                <dt class="icon-tzrd">投资热点</dt>
+                <dd><a href="http://stock.10jqka.com.cn/bktt_list/" target="_blank">四大报刊</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/fupan/" target="_blank">每日复盘</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/fincalendar.shtml" target="_blank">投资日历</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/financial/yjyg/" target="_blank">财报大全</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/zaopan/" target="_blank">早盘必读</a></dd>
+                <dd><a href="http://news.10jqka.com.cn/hudong/" target="_blank">互动平台</a></dd>
+                <dd><a href="http://doctor.10jqka.com.cn/" target="_blank">牛叉诊股</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/tradetips/tfpts/" target="_blank">交易提示</a></dd>
+                <dd><a href="http://stock.10jqka.com.cn/thsgd/" target="_blank">实时新闻</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/market/xsjj/" target="_blank">限售解禁</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/ipo/xgpt/" target="_blank">新股日历</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/market/ggsd/" target="_blank">公告速递</a></dd>
+            </dl>
+            <dl class="item">
+                <dt class="icon-sjjh">数据精华</dt>
+                <dd><a href="http://data.10jqka.com.cn/market/longhu/" target="_blank">龙虎榜单</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/market/dzjy/" target="_blank">大宗交易</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/market/rzrq/" target="_blank">融资融券</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/financial/yjyg/" target="_blank">业绩预告</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/funds/ggzjl/" target="_blank">个股资金</a></dd>
+<!--                <dd><a href="http://data.10jqka.com.cn/funds/ddzz/" target="_blank">大单追踪</a></dd>-->
+                <dd><a href="http://data.10jqka.com.cn/hgt/hgtb/" target="_blank">沪港通</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/funds/hyzjl/" target="_blank">行业资金</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/ipo/xgyp/" target="_blank">新股预披</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/market/ggsyl/" target="_blank" class="overw">个股市盈率</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/rank/cxfl/" target="_blank">持续放量</a></dd>
+                <dd><a href="http://data.10jqka.com.cn/rank/xstp/" target="_blank">向上突破</a></dd>
+            </dl>
+        </div>
+    </div>		<div class="alert_box hide" id="resBox">
+	        <div class="hd">
+                <h2>提示</h2>
+                <span class="close"></span>
+            </div>
+            <div class="bd warn_con">
+                <p></p>
+            </div> 
+		</div>
+<div class="bottom-link">
+        <div id="footer">
+            <p id="bottom-scroll-listen" data-scroll-taid="web_2bottom" class="ta-scroll-box scroll-ta-over"><a target="_blank" href="http://news.10jqka.com.cn/tzz/" rel="nofollow">投资者关系</a> 			<span class="ff">|</span> 			<a target="_blank" href="http://news.10jqka.com.cn/20100105/c61833421.shtml" rel="nofollow">关于同花顺</a> 			<span>|</span> 			<a target="_blank" href="http://download.10jqka.com.cn/">软件下载</a> 			<span>|</span> 			<a target="_blank" href="http://www.10jqka.com.cn/ia/pass_buck.php" rel="nofollow">法律声明</a> 			<span>|</span> 			<a target="_blank" href="http://www.10jqka.com.cn/hexin_license.htm" rel="nofollow">运营许可</a> 			<span>|</span> 			<a target="_blank" href="http://www.10jqka.com.cn/modules.php?name=what&amp;page=cooperate" rel="nofollow">内容合作</a> 			<span>|</span> 			<a target="_blank" href="http://www.10jqka.com.cn/hexin_contact.htm" rel="nofollow">联系我们</a> 			<span>|</span> 			<a target="_blank" href="http://news.10jqka.com.cn/link.shtml" rel="nofollow">友情链接</a> 			<span>|</span>
+                <!--<a target="_blank" href="http://news.10jqka.com.cn/msg/" rel="nofollow">网友意见箱</a> 			<span>|</span> -->
+                <a target="_blank" href="http://job.10jqka.com.cn/" rel="nofollow">招聘英才</a> 			<span class="ff">|</span> 			<a target="_blank" href="http://vote.10jqka.com.cn/webvote/suggest.html" rel="nofollow">用户体验计划</a></p> <p class="c333">不良信息举报电话：(0571)88933003 			<a href=" mailto:jubao@myhexin.com" class="smarterwiki-linkify">举报邮箱：jubao@myhexin.com</a> 			增值电信业务经营许可证：B2-20080207</p> <p class="c333">CopyrightHithink RoyalFlush Information Network Co.,Ltd. All rights reserved. 浙江核新同花顺网络信息股份有限公司版权所有</p> <p class="c333">ICP证： 			<a href="http://www.miitbeian.gov.cn/" target="_blank">浙ICP备09003598号</a> 			证券投资咨询服务提供：浙江同花顺云软件有限公司 （中国证监会核发证书编号：ZX0050）</p> <div id="myVerifyImageBox" class="verifyImageBox" siteid="43" style="margin-bottom:20px;"></div>
+
+        </div>
+    </div><script type="text/javascript" src="//s.thsi.cn/cb?js/;jquery-1.8.3.min.js;ta.min.js;storage.min.js&20151106"></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?js/home/;ths_core.min.js;ths_quote.min.js;ths_index_v3.3.min.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?js/ucenter/subMenu_v4.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/js/q/newq/common_v2.1.min.js" ></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?website/datacenter/rzrq/thscharts.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?js/webHQ/resources/require.min.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/website/datacenter/rzrq/drawChart.min.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?js/q/newq/flash.min.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/js/q/newq/index2.js"></script>
+<script type="text/javascript" src="//s.thsi.cn/cb?js/q/newq/;concept.min.js&20161201"></script>
+
+<script>
+
+var fidId = 'hqzx_hssc';
+
+if (typeof(fidId)!="undefined" && fidId!=null) {
+	TA.log({id:'qszs',fid:'info_gather,qcenter,'+fidId});
+} else {
+	TA.log({id:'qszs',fid:'info_gather,qcenter'});
+}
+	//TA.log({id: 'qszs',fid: 'qcenter'});
+	$(function(){ 
+		$("#red_check").click(function(){
+          $("body").addClass("reversedColor");
+
+		});
+		$("#green_check").click(function(){
+			$("body").removeClass("reversedColor");
+
+		});
+	});	
+</script>
+
+<script src="http://s.thsi.cn/js/q/newq/main.min.js"></script>
+
+<script>
+	$(function(){
+	    if($('.m-pager-box').length > 0){
+	        var pager = new mpager('.m-pager-box');
+	        pager.init();
+	    }
+	});
+	
+	
+</script>
+
+</body>
+</html>

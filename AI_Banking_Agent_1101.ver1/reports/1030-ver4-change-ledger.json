@@ -1,0 +1,732 @@
+{
+  "baseline": "reports/1030-ver4-baseline.json",
+  "generated_at": "2026-10-31T00:45:33.029060+08:00",
+  "summary": {
+    "unchanged": 786,
+    "added": 92,
+    "modified": 28,
+    "relocated": 29,
+    "missing": 0,
+    "unproven": 0
+  },
+  "added": [
+    {
+      "path": "HANDOFF_1030_GUARDIAN_COMPLETE.json",
+      "reason": "Guardian 轮交接：完成项、证据与剩余边界"
+    },
+    {
+      "path": "HANDOFF_1030_GUARDIAN_PAUSED.json",
+      "reason": "上一轮额度暂停交接，本版基线生成之后新建；本轮据其继续，原文不改"
+    },
+    {
+      "path": "HANDOFF_1030_LOCAL_AI_FIX.json",
+      "reason": "本轮交接：根因、修复、证据与边界"
+    },
+    {
+      "path": "HANDOFF_1030_ONLINE_VERIFY.json",
+      "reason": "本轮交接：设计、证据、实测与边界"
+    },
+    {
+      "path": "HANDOFF_1030_PRODUCT_QUOTES.json",
+      "reason": "本轮交接：状态、证据、测试与遗留"
+    },
+    {
+      "path": "first_agent/local_ai_bootstrap.py",
+      "reason": "新增本地模型引导：就绪快路径、适配器实证、端口冲突只报告不强杀"
+    },
+    {
+      "path": "first_agent/online_verification.py",
+      "reason": "官网在线核验：stdlib HTMLParser 提取标题/元数据/正文块，按术语字面命中选段，输出 six 状态与可核验引用；无第三方依赖"
+    },
+    {
+      "path": "first_agent/vendor/eva/security/verification.py",
+      "reason": "新增验证闸门：13 项检查、证据报告、源码哈希票、build_verified_runtime"
+    },
+    {
+      "path": "history_version/00_评委请先看_指数版.txt",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/CURVE_FIX_1026.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1027_PAUSED.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1027_SECURITY.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1027_VER3.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1027_VER4.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1027_VER5_PAUSED.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1028_RAG.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1029_PROGRESS.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1029_RAG_PAUSED.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1029_TOOLS_SECURITY.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1030_LAUNCHERS_PAUSED.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1030_LIVE_INDICES.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1030_PRESERVATION_FIX.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1030_RELAY.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_1030_UI_CACHE.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/HANDOFF_REVIEW_1029.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/LOCAL_AGENT_HANDOFF.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/RESUME_TOMORROW.json",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/VALIDATION_1026.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/VALIDATION_1027.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/VALIDATION_1027_VER3.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/VALIDATION_1027_VER4.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log_1029.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log_1030.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log_rag_1029.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log_review_1029.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/development_log_ui_cache_1030.jsonl",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/from_previous_versions/1025.ver1/handoff/HANDOFF.json",
+      "reason": "1025.ver1 交接包，此前全仓缺失"
+    },
+    {
+      "path": "history_version/from_previous_versions/1025.ver1/handoff/HANDOFF.md",
+      "reason": "1025.ver1 交接说明，此前全仓缺失"
+    },
+    {
+      "path": "history_version/from_previous_versions/1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.json",
+      "reason": "1025.ver1 额度监控副本，此前全仓缺失"
+    },
+    {
+      "path": "history_version/from_previous_versions/1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.md",
+      "reason": "1025.ver1 额度监控说明，此前全仓缺失"
+    },
+    {
+      "path": "history_version/from_previous_versions/1026.ver1/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1026.ver1 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1026.ver2/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1026.ver2 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1027.ver1/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1027.ver1 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1027.ver2/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1027.ver2 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1027.ver3/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1027.ver3 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1027.ver4/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1027.ver4 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/1027.ver5/LOCAL_AGENT_HANDOFF.md",
+      "reason": "1027.ver5 交接历史修订版"
+    },
+    {
+      "path": "history_version/from_previous_versions/MANIFEST.json",
+      "reason": "补齐清单：来源路径、哈希、大小与用途"
+    },
+    {
+      "path": "history_version/original_scripts/启动官网指数优先版.bat.txt",
+      "reason": "历史启动器修正相对目录前的逐字节备份，与原基线哈希匹配"
+    },
+    {
+      "path": "history_version/tools_security_1029_additive.zip",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/先看这里_最新版本.md",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "history_version/启动官网指数优先版.bat",
+      "reason": "用户授权历史归档；原路径与基线哈希匹配，内容或原文备份已核验"
+    },
+    {
+      "path": "live_products/__init__.py",
+      "reason": "产品行情包入口"
+    },
+    {
+      "path": "live_products/cards.js",
+      "reason": "价格与评分净值并列渲染；无行情产品显示原因与人工核验链接"
+    },
+    {
+      "path": "live_products/provider.py",
+      "reason": "ETF 场内公开行情；场外基金与银行理财只产出核验入口，不联网、不补造"
+    },
+    {
+      "path": "live_products/runtime.py",
+      "reason": "在产品服务的 market 响应里追加 product_quote_selection，不动 product_observations"
+    },
+    {
+      "path": "live_products/test_provider.py",
+      "reason": "产品行情门禁、撞码回归、解析与回退用例"
+    },
+    {
+      "path": "live_products/test_runtime.py",
+      "reason": "产品接入的会话、事务边界、审计与注入用例"
+    },
+    {
+      "path": "logs/creation_1030_guardian.jsonl",
+      "reason": "Guardian 轮八字段创作日志"
+    },
+    {
+      "path": "logs/creation_1030_local_ai.jsonl",
+      "reason": "本轮八字段创作日志"
+    },
+    {
+      "path": "logs/creation_1030_online_verify.jsonl",
+      "reason": "本轮八字段创作日志"
+    },
+    {
+      "path": "logs/creation_1030_product_quotes.jsonl",
+      "reason": "本轮八字段创作日志"
+    },
+    {
+      "path": "logs/creation_1030_ver4_archive.jsonl",
+      "reason": "本轮历史文件整理八字段创作日志"
+    },
+    {
+      "path": "reports/1030-ver4-baseline.json",
+      "reason": "本版基线自身"
+    },
+    {
+      "path": "reports/1030-ver4-change-ledger.json",
+      "reason": "台账工具自身的输出"
+    },
+    {
+      "path": "reports/api-endpoints-1030ver4.json",
+      "reason": "路由双向差集核对结果"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/PROVENANCE.json",
+      "reason": "外部端点实测来源、状态、签名与哈希"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/ths_hs_510300.txt",
+      "reason": "同花顺ETF分时冻结响应（510300.SH）"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/ths_index_directory.txt",
+      "reason": "同花顺指数目录冻结响应，供离线回归"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/ths_zs_1B0001.txt",
+      "reason": "同花顺指数分时冻结响应（000001.SH）"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/wind_detail_js.txt",
+      "reason": "Wind 官网脚本冻结响应"
+    },
+    {
+      "path": "reports/external-endpoints-1030ver4/wind_index_page.txt",
+      "reason": "Wind 官网页面冻结响应"
+    },
+    {
+      "path": "reports/guardian-1030ver4-verification.json",
+      "reason": "验证闸门逐项结果与源码哈希证据"
+    },
+    {
+      "path": "reports/product-quote-probe/PROVENANCE.json",
+      "reason": "冻结响应的来源、抓取时间与哈希"
+    },
+    {
+      "path": "reports/product-quote-probe/etf_510300_last.txt",
+      "reason": "同花顺公开分时冻结响应，供离线回归"
+    },
+    {
+      "path": "reports/启动器归档_1030ver4.json",
+      "reason": "本轮用户授权迁移清单，包含原文哈希及历史启动器工作目录修正证据"
+    },
+    {
+      "path": "reports/启动器整理核验_1030ver4.json",
+      "reason": "启动器唯一性、依赖、哈希及保全检查结果"
+    },
+    {
+      "path": "reports/归档补齐_1030ver4.json",
+      "reason": "history_version 缺口补齐的来源与哈希清单"
+    },
+    {
+      "path": "start_live_product_quotes.py",
+      "reason": "8807 演示入口启动前自动拉起并核验本地模型"
+    },
+    {
+      "path": "tests/test_guardian_1030.py",
+      "reason": "Guardian 连接/放行/拒绝/异常/撤权/过期/篡改/重放/未知回执与端到端用例"
+    },
+    {
+      "path": "tests/test_local_model_bootstrap.py",
+      "reason": "密钥优先级、状态映射、引导状态机与“拒绝用基础模型顶替”不变量的离线测试"
+    },
+    {
+      "path": "tests/test_online_verification.py",
+      "reason": "核验链路的离线用例：解析、选段、主机白名单、PDF 回退、改写校验、证据冻结与授权前不外发"
+    },
+    {
+      "path": "tests_frontend/online-verification.cjs",
+      "reason": "核验卡片渲染、转义与改写标注用例"
+    },
+    {
+      "path": "tests_frontend/product-quotes.cjs",
+      "reason": "产品卡片渲染、转义与无行情文案用例"
+    },
+    {
+      "path": "tools/audit_api_endpoints_1030ver4.py",
+      "reason": "内部路由与契约文档的静态双向核对工具"
+    },
+    {
+      "path": "tools/backfill_history_versions.py",
+      "reason": "history_version 缺口补齐工具：逐字节复制并重算哈希，不覆盖已存在文件"
+    },
+    {
+      "path": "tools/build_version_ledger.py",
+      "reason": "本版变更台账工具：新增/改动必须附理由，否则非零退出"
+    },
+    {
+      "path": "tools/diagnose_local_model.py",
+      "reason": "一条命令定位本地模型链路的断点"
+    },
+    {
+      "path": "tools/verify_external_endpoints_1030ver4.py",
+      "reason": "外部数据端点只读实测与冻结样本工具"
+    },
+    {
+      "path": "产品实时行情接入说明_1030.md",
+      "reason": "接入边界、口径分工、防错设计与已知限制"
+    },
+    {
+      "path": "启动产品行情版.bat",
+      "reason": "双击入口；带 -X utf8 避免中文 Windows 编码问题"
+    }
+  ],
+  "modified": [
+    {
+      "path": "00_评委请先看.txt",
+      "reason": "用户要求归档历史入口；更新唯一启动器为产品行情版8807，旧说明已留档"
+    },
+    {
+      "path": "API-CONTRACT.md",
+      "reason": "补充 knowledge 的 online_verify 参数、六种状态与抓取边界"
+    },
+    {
+      "path": "LOCAL_AGENT_HANDOFF.md",
+      "reason": "继承的历史交接原文已归档；根目录提供当前版本与最新迁移证据入口"
+    },
+    {
+      "path": "first_agent/external_services.py",
+      "reason": "request 增加可传入的 hosts（默认行为不变）与 complete() 供核验改写复用；本地请求的跳转规则保持原样"
+    },
+    {
+      "path": "first_agent/service.py",
+      "reason": "knowledge 增加 online_verify 分支与兜底步骤记录；审计只记同意布尔值，不记问题原文"
+    },
+    {
+      "path": "first_agent/vendor/eva/security/adapters.py",
+      "reason": "修复合规适配器扫描器接口不兼容；证据增加撤权/策略版本；新增网页审批证据桥与验票就绪判定"
+    },
+    {
+      "path": "first_agent/vendor/eva/security/injection.py",
+      "reason": "默认扫描器改 CompatibleScanner，修复默认 PromptInjectionGuard 的 TypeError"
+    },
+    {
+      "path": "live_indices/provider.py",
+      "reason": "safe_url/PublicHTTP 增加可选 hosts 白名单；默认值仍为全局 HOSTS，指数行为不变"
+    },
+    {
+      "path": "live_indices/runtime.py",
+      "reason": "planning_script 增加可选注入块、make_server 增加可选 script；默认行为不变"
+    },
+    {
+      "path": "modules/环境生成agent/scenario_server.py",
+      "reason": "文档字符串引用订正为根目录 API-CONTRACT.md"
+    },
+    {
+      "path": "reports/1029-modules-selfcheck.txt",
+      "reason": "模块自检运行器重写的输出"
+    },
+    {
+      "path": "reports/external-live.json",
+      "reason": "验收脚本重写的实测输出"
+    },
+    {
+      "path": "reports/latest-frontend-tests.json",
+      "reason": "运行器重写的测试输出"
+    },
+    {
+      "path": "reports/latest-integration-tests.json",
+      "reason": "运行器重写的测试输出"
+    },
+    {
+      "path": "reports/latest-integration-tests.txt",
+      "reason": "运行器重写的测试输出"
+    },
+    {
+      "path": "reports/review-continuation/cases-complete.json",
+      "reason": "评测脚本重写的输出"
+    },
+    {
+      "path": "reports/review-continuation/new-tests.txt",
+      "reason": "运行器重写的测试输出"
+    },
+    {
+      "path": "reports/review-continuation/rag-results.json",
+      "reason": "105 题评测脚本重写的输出"
+    },
+    {
+      "path": "reports/review-continuation/知识问答核对.html",
+      "reason": "105 题评测脚本重写的核对页面"
+    },
+    {
+      "path": "reports/历史迁移核对_1030ver3.json",
+      "reason": "迁移台账按新登记重新生成"
+    },
+    {
+      "path": "start.py",
+      "reason": "改用共用引导并在失败时打印真实原因"
+    },
+    {
+      "path": "start_live_indices.py",
+      "reason": "8806 对照入口同样拉起本地模型"
+    },
+    {
+      "path": "start_local_ai.ps1",
+      "reason": "共享密钥、端口占用分类、启动后轮询就绪、状态文件；纯 ASCII 以兼容 Windows PowerShell 5.1"
+    },
+    {
+      "path": "tools/build_relocation_ledger.py",
+      "reason": "登记本轮 Guardian 改动，保全检查据此判定"
+    },
+    {
+      "path": "web/customer-view.js",
+      "reason": "知识卡片增加官方原文摘录与模型改写标注"
+    },
+    {
+      "path": "web/external-services.css",
+      "reason": "原文摘录与模型改写样式"
+    },
+    {
+      "path": "web/external-services.js",
+      "reason": "增加官方原文核验勾选框并随 knowledge 请求发送"
+    },
+    {
+      "path": "先看这里_最新版本.md",
+      "reason": "旧8805说明逐字节归档；根目录指向当前产品行情版8807"
+    }
+  ],
+  "relocated": [
+    {
+      "path": "启动官网指数优先版.bat",
+      "current": "history_version/启动官网指数优先版.bat",
+      "baseline_sha256": "124555335f78c89a2475c8a3f6f77d95e6743540bbb4bc5a7c326712642a872f",
+      "current_sha256": "6b2b997e98f29226b843dbaa50ad11f7e211511027649adabb6c034cf67f5317",
+      "backup": "history_version/original_scripts/启动官网指数优先版.bat.txt",
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "CURVE_FIX_1026.md",
+      "current": "history_version/CURVE_FIX_1026.md",
+      "baseline_sha256": "aa0bb5978f914386e47946e52502976360e213aabb67b525c9427eec81a3dcf4",
+      "current_sha256": "aa0bb5978f914386e47946e52502976360e213aabb67b525c9427eec81a3dcf4",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "RESUME_TOMORROW.json",
+      "current": "history_version/RESUME_TOMORROW.json",
+      "baseline_sha256": "3c788a162f99b170416b6cd4d4e686b4c53f2f60dc71e768dd1f80d7e754d4d0",
+      "current_sha256": "3c788a162f99b170416b6cd4d4e686b4c53f2f60dc71e768dd1f80d7e754d4d0",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "tools_security_1029_additive.zip",
+      "current": "history_version/tools_security_1029_additive.zip",
+      "baseline_sha256": "cd766e062f1ac960b9031b9e85296608712b1eda8f1d57fd0ad77a2174127ca6",
+      "current_sha256": "cd766e062f1ac960b9031b9e85296608712b1eda8f1d57fd0ad77a2174127ca6",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1027_PAUSED.md",
+      "current": "history_version/HANDOFF_1027_PAUSED.md",
+      "baseline_sha256": "94ec53efb34c8a7771cb3981a41dd0fda8bee8b482fc35c5e1032327ab8188b9",
+      "current_sha256": "94ec53efb34c8a7771cb3981a41dd0fda8bee8b482fc35c5e1032327ab8188b9",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1027_SECURITY.md",
+      "current": "history_version/HANDOFF_1027_SECURITY.md",
+      "baseline_sha256": "5b32d3b4698db9fd0af71ca5d2a87af1c6574d6dd3f622a7c6b966688d079fcc",
+      "current_sha256": "5b32d3b4698db9fd0af71ca5d2a87af1c6574d6dd3f622a7c6b966688d079fcc",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1027_VER3.md",
+      "current": "history_version/HANDOFF_1027_VER3.md",
+      "baseline_sha256": "ca733dea6a00a59a0dddeac5a35286428e9bc75678a545a65ba2fa89d544a8c6",
+      "current_sha256": "ca733dea6a00a59a0dddeac5a35286428e9bc75678a545a65ba2fa89d544a8c6",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1027_VER4.md",
+      "current": "history_version/HANDOFF_1027_VER4.md",
+      "baseline_sha256": "3ccbc3cdac0590d39f934150c35497152f097d6aa8ac3b80ab4e2cbb06370c97",
+      "current_sha256": "3ccbc3cdac0590d39f934150c35497152f097d6aa8ac3b80ab4e2cbb06370c97",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1027_VER5_PAUSED.md",
+      "current": "history_version/HANDOFF_1027_VER5_PAUSED.md",
+      "baseline_sha256": "20e07304abd4685fc6a94733c1c66e490f1fe2065eab1b3e3691fbc4b90f5a4d",
+      "current_sha256": "20e07304abd4685fc6a94733c1c66e490f1fe2065eab1b3e3691fbc4b90f5a4d",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1028_RAG.md",
+      "current": "history_version/HANDOFF_1028_RAG.md",
+      "baseline_sha256": "d6eabf4204ccfe34f6437054a9fa3ef70e5d681d6395cf3409ecd9efa6535792",
+      "current_sha256": "d6eabf4204ccfe34f6437054a9fa3ef70e5d681d6395cf3409ecd9efa6535792",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1029_PROGRESS.json",
+      "current": "history_version/HANDOFF_1029_PROGRESS.json",
+      "baseline_sha256": "ccad56fc411683a57540c06675d653781d846fc124124c16713b346d6225ab6f",
+      "current_sha256": "ccad56fc411683a57540c06675d653781d846fc124124c16713b346d6225ab6f",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1029_RAG_PAUSED.json",
+      "current": "history_version/HANDOFF_1029_RAG_PAUSED.json",
+      "baseline_sha256": "1201534e9a105c6f9fdad134b7d80f60d1c7beb501ba8026b6014f83a0b51c22",
+      "current_sha256": "1201534e9a105c6f9fdad134b7d80f60d1c7beb501ba8026b6014f83a0b51c22",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1029_TOOLS_SECURITY.json",
+      "current": "history_version/HANDOFF_1029_TOOLS_SECURITY.json",
+      "baseline_sha256": "89a97d4ee49dcdcd17d0016903846cb3016ed6eb74b12a0d032e768c3594b744",
+      "current_sha256": "89a97d4ee49dcdcd17d0016903846cb3016ed6eb74b12a0d032e768c3594b744",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1030_LAUNCHERS_PAUSED.json",
+      "current": "history_version/HANDOFF_1030_LAUNCHERS_PAUSED.json",
+      "baseline_sha256": "12a6bd302d1cb7685dbb86a3f04917d49d666a898b95239a1c412e1126ceb964",
+      "current_sha256": "12a6bd302d1cb7685dbb86a3f04917d49d666a898b95239a1c412e1126ceb964",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1030_LIVE_INDICES.json",
+      "current": "history_version/HANDOFF_1030_LIVE_INDICES.json",
+      "baseline_sha256": "f3ef85f67de3f8fb588ee89294a307c13ee08927fcf55caaf9987ee7af383af9",
+      "current_sha256": "f3ef85f67de3f8fb588ee89294a307c13ee08927fcf55caaf9987ee7af383af9",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1030_PRESERVATION_FIX.json",
+      "current": "history_version/HANDOFF_1030_PRESERVATION_FIX.json",
+      "baseline_sha256": "dea23a510a70ed19db20acf3fe983dd9dbf5bd2446ae7b9d72b6ed1c14d8636f",
+      "current_sha256": "dea23a510a70ed19db20acf3fe983dd9dbf5bd2446ae7b9d72b6ed1c14d8636f",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1030_RELAY.json",
+      "current": "history_version/HANDOFF_1030_RELAY.json",
+      "baseline_sha256": "195be80f8ea023f7d61473b17effe2541a0eb9eb904d621882537a80d881bfac",
+      "current_sha256": "195be80f8ea023f7d61473b17effe2541a0eb9eb904d621882537a80d881bfac",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_1030_UI_CACHE.json",
+      "current": "history_version/HANDOFF_1030_UI_CACHE.json",
+      "baseline_sha256": "5f4f84d49530fe02a5dbc7797d89d213be6f66b713b1a7553aa3ae69d8b2f046",
+      "current_sha256": "5f4f84d49530fe02a5dbc7797d89d213be6f66b713b1a7553aa3ae69d8b2f046",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "HANDOFF_REVIEW_1029.json",
+      "current": "history_version/HANDOFF_REVIEW_1029.json",
+      "baseline_sha256": "8178ce738ccb13a3e7cbb6bb13ae5d3087adb6e5d5dbbfcb3d101ab41adf3fe5",
+      "current_sha256": "8178ce738ccb13a3e7cbb6bb13ae5d3087adb6e5d5dbbfcb3d101ab41adf3fe5",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "VALIDATION_1026.md",
+      "current": "history_version/VALIDATION_1026.md",
+      "baseline_sha256": "414f83a90aabb8e5820fb232764aca45ecb114a6a8acac1479a118c7217654ab",
+      "current_sha256": "414f83a90aabb8e5820fb232764aca45ecb114a6a8acac1479a118c7217654ab",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "VALIDATION_1027_VER3.md",
+      "current": "history_version/VALIDATION_1027_VER3.md",
+      "baseline_sha256": "b1a5b90ecbfade0b514760b86b24d59200359926f2b011862d7926dde718e181",
+      "current_sha256": "b1a5b90ecbfade0b514760b86b24d59200359926f2b011862d7926dde718e181",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "VALIDATION_1027_VER4.md",
+      "current": "history_version/VALIDATION_1027_VER4.md",
+      "baseline_sha256": "8ae471cfccee9b11f400ca099fc5505cddc2ef1f7439f423c03487c25f3f4570",
+      "current_sha256": "8ae471cfccee9b11f400ca099fc5505cddc2ef1f7439f423c03487c25f3f4570",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "VALIDATION_1027.md",
+      "current": "history_version/VALIDATION_1027.md",
+      "baseline_sha256": "49c7def96a2b0cbb19d34a52505898a13c95ce0f7104ae77caec1e7276728d6a",
+      "current_sha256": "49c7def96a2b0cbb19d34a52505898a13c95ce0f7104ae77caec1e7276728d6a",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log_1029.jsonl",
+      "current": "history_version/development_log_1029.jsonl",
+      "baseline_sha256": "ec45dc2b96fd27a2d5777901451d7e1b9fc57e4dacdb391854af08e62d64a86a",
+      "current_sha256": "ec45dc2b96fd27a2d5777901451d7e1b9fc57e4dacdb391854af08e62d64a86a",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log_1030.jsonl",
+      "current": "history_version/development_log_1030.jsonl",
+      "baseline_sha256": "fecc5bd45f48a8f5a428bd97b2097d5e9be94ebd4e46c6a6d0e806fe88c7632a",
+      "current_sha256": "fecc5bd45f48a8f5a428bd97b2097d5e9be94ebd4e46c6a6d0e806fe88c7632a",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log_rag_1029.jsonl",
+      "current": "history_version/development_log_rag_1029.jsonl",
+      "baseline_sha256": "25b25e424ad275321ca1e7b70012167b3fe3102db29093b13c379ecc2376c6ee",
+      "current_sha256": "25b25e424ad275321ca1e7b70012167b3fe3102db29093b13c379ecc2376c6ee",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log_review_1029.jsonl",
+      "current": "history_version/development_log_review_1029.jsonl",
+      "baseline_sha256": "6f76e9a6b06cae493c3454405bf81bcaf455b4167537603cd2a7b7f4370dbb86",
+      "current_sha256": "6f76e9a6b06cae493c3454405bf81bcaf455b4167537603cd2a7b7f4370dbb86",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log_ui_cache_1030.jsonl",
+      "current": "history_version/development_log_ui_cache_1030.jsonl",
+      "baseline_sha256": "d6ab1f6d2174100da4d0490fc7f654bd5e1c2c2d7c87e77caf149c5060557d69",
+      "current_sha256": "d6ab1f6d2174100da4d0490fc7f654bd5e1c2c2d7c87e77caf149c5060557d69",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    },
+    {
+      "path": "development_log.jsonl",
+      "current": "history_version/development_log.jsonl",
+      "baseline_sha256": "7ca5e13464c732b9dce968254c5f1045e9038f7d7b4889a833ed71198cc736cc",
+      "current_sha256": "7ca5e13464c732b9dce968254c5f1045e9038f7d7b4889a833ed71198cc736cc",
+      "backup": null,
+      "proof": "reports/启动器归档_1030ver4.json"
+    }
+  ],
+  "missing": [],
+  "unproven": []
+}

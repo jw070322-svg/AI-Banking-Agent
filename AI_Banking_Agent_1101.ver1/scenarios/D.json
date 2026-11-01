@@ -1,0 +1,50 @@
+{
+  "schema_version": "scenario-1.0",
+  "scenario_id": "SCN_D_20261022185343_ABED32",
+  "scenario_type": "D",
+  "accounts": [
+    {
+      "account_id": "ACC57DB69A28AC1",
+      "initial_balance_minor": 112215,
+      "balance_minor": 997227,
+      "currency": "CNY"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TEDA842F0AF67",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-07",
+      "amount_minor": 1191301,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T92913C383BD8",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-12",
+      "amount_minor": -242060,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "T8E71094CB6A1",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-17",
+      "amount_minor": -64229,
+      "category": "餐饮",
+      "status": "booked"
+    },
+    {
+      "id": "T59FA648CA043",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-22",
+      "amount_minor": -1127745,
+      "category": "转账",
+      "status": "rejected"
+    }
+  ],
+  "warnings": [],
+  "simulated": true,
+  "ledger_modified": false
+}

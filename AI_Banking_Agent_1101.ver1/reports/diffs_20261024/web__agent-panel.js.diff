@@ -1,0 +1,32 @@
+--- F:\AI_Banking\SecondAsgent\web\agent-panel.js
++++ web\agent-panel.js
+@@ -2,13 +2,27 @@
+ const css=document.createElement('style');css.textContent=`#agent-launch{position:fixed;bottom:22px;right:22px;z-index:80;border:0;border-radius:24px;background:#4d4b9f;color:white;padding:14px 22px;cursor:pointer}#agent-panel{position:fixed;inset:24px 24px 24px auto;width:min(570px,calc(100vw - 48px));z-index:100;background:#fff;border:1px solid #deddeb;border-radius:18px;box-shadow:0 12px 60px #20204040;overflow:auto;padding:22px;font:14px/1.7 system-ui;color:#35445e}#agent-panel[hidden]{display:none}#agent-panel button{margin:4px;border:1px solid #d7d9e5;padding:7px 12px;border-radius:8px;background:#f7f7fc;cursor:pointer}#agent-panel input{padding:8px;border:1px solid #ccc;border-radius:6px;width:96%}#agent-panel pre{white-space:pre-wrap;word-break:break-word;font-size:12px;background:#f6f7fa;padding:12px;max-height:48vh;overflow:auto}#agent-close{float:right}`;document.head.append(css);
+ const launch=document.createElement('button');launch.id='agent-launch';launch.textContent='Agent · 对话与转账';
+ const panel=document.createElement('section');panel.id='agent-panel';panel.hidden=true;
+-panel.innerHTML='<button id="agent-close">关闭</button><h2>Banking Agent · 第二版</h2><p>本地模拟 · 持久化账本 · 测试场景与银行账本独立</p><button id="agent-consent">开启演示查询与交易权限</button><p>例如：分析账单并检查订阅；给张三转账 800 元；什么是债务比率</p><form id="agent-form"><label for="agent-message">你的需求</label><input id="agent-message" required maxlength="2000" autocomplete="off"><button>发送</button></form><div id="agent-steps" aria-live="polite"></div><pre id="agent-output">等待请求</pre><div id="agent-confirm" hidden><p id="agent-preview"></p><label>红色操作演示码（246810）<input id="agent-code" placeholder="仅为模拟验证，不是真实 MFA"></label><button id="agent-do">核对后确认模拟转账</button><button id="agent-cancel">取消本次转账</button></div><div id="agent-unknown" hidden><p>结果未知，请查询原操作回执；禁止重新发起。</p><button id="agent-query">查询模拟成功回执</button></div><button id="agent-events">查看本会话审计</button>';
++panel.innerHTML='<button id="agent-close">关闭</button><h2>Banking Agent · 第三版</h2><p>本地模拟 · 持久化账本 · 测试场景与银行账本独立</p><button id="agent-consent">开启演示查询与交易权限</button><p>例如：分析账单并检查订阅；给张三转账 800 元；什么是债务比率</p><form id="agent-form"><label for="agent-message">你的需求</label><input id="agent-message" required maxlength="2000" autocomplete="off"><button>发送</button></form><div id="agent-steps" aria-live="polite"></div><pre id="agent-output">等待请求</pre><div id="agent-confirm" hidden><p id="agent-preview"></p><label>红色操作演示码（246810）<input id="agent-code" placeholder="仅为模拟验证，不是真实 MFA"></label><button id="agent-do">核对后确认模拟转账</button><button id="agent-cancel">取消本次转账</button></div><div id="agent-unknown" hidden><p>结果未知，请查询原操作回执；禁止重新发起。</p><button id="agent-query">查询模拟成功回执</button></div><button id="agent-events">查看本会话审计</button>';
+ document.body.append(launch,panel);
+ const el=id=>document.getElementById(id);let pending=null,inflight=false;
+ const history=document.createElement('button');history.textContent='查看转账记录';panel.append(history);
+ history.onclick=async()=>{try{const r=await fetch('/api/snapshot').then(x=>x.json());show(r.data.state.transfer_ops);pending=r.data.state.transfer_ops.find(x=>['awaiting_confirmation','unknown'].includes(x.status))||null;if(pending){el('agent-confirm').hidden=pending.status!=='awaiting_confirmation';el('agent-unknown').hidden=pending.status!=='unknown';el('agent-preview').textContent=`收款人 ${pending.beneficiary_name} · ¥${(pending.amount/100).toFixed(2)} · ${pending.level==='red'?'红色：需模拟验证':'黄色：需明确确认'}`;}}catch(e){show(e.message);}};
+-const scenarioButton=document.createElement('button');scenarioButton.textContent='生成独立测试场景';panel.append(scenarioButton);scenarioButton.onclick=async()=>{try{show((await call('/api/scenarios/generate',{requirement:el('agent-message').value})).data);}catch(e){show(e.message);}};
++const scenarioButton=document.createElement('button');scenarioButton.textContent='生成独立测试场景 A–G';panel.append(scenarioButton);scenarioButton.onclick=async()=>{try{show((await call('/api/scenarios/generate',{prompt:el('agent-message').value,format:'contract'})).data);}catch(e){show(e.message);}};
++for(const [label,tool] of [['查看现金流与预算','analysis.pipeline'],['整理本会话数据','data.organize']]){const button=document.createElement('button');button.textContent=label;panel.append(button);button.onclick=async()=>{try{showAnalysis((await call('/api/analysis',{tool,args:{days:30}})).data);}catch(e){show(e.message);}};}
+ const show=value=>el('agent-output').textContent=typeof value==='string'?value:JSON.stringify(value,null,2);
++function showAnalysis(payload){
++ const r=payload.result,money=n=>'¥'+(n/100).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2});let lines=[];
++ if(payload.tool==='data.organize'){
++  const d=r.views.display,c=r.views.cards;
++  lines=['本会话数据已整理 · 只读',`统计月份：${d.month}`,`当前可用余额：${money(d.available_balance_minor)}`,`当月收入：${money(d.income_minor)}　消费：${money(d.spending_minor)}`,`有效订阅：${d.active_subscriptions} 项　银行卡：${d.card_count} 张`,'账单、推荐条件、卡片和展示资料已就绪。'];
++  if(c.missing.includes('credit_card_bill'))lines.push('当前会话没有信用卡账单明细。');
++  lines.push(...r.manifest.warnings.filter(x=>!x.includes('expected_insights')));
++ }else{
++  const s=r.summary;
++  lines=['现金流与预算分析 · 只读',`统计月份：${r.period.month}`,`当月收入：${money(s.income_minor)}　消费：${money(s.spending_minor)}`,`未来 ${r.period.horizon_days} 天预计最低余额：${money(s.lowest_balance_minor)}`,`每月储蓄空间：${money(s.safe_to_save_monthly_minor)}`,`每月投资空间：${money(s.safe_to_invest_monthly_minor)}`,`发现 ${s.finding_count} 条提醒`,...r.warnings];
++ }
++ show(lines.join('\n')+'\n\n以上基于本地虚构样本；没有变动余额、授权或待确认操作。');
++}
+ async function call(path,args){
+  const data=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':crypto.randomUUID()},body:JSON.stringify(args)}).then(x=>x.json());
+  if(data.error)throw Error(data.error.message);return data;

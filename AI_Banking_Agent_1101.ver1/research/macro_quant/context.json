@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "module": "macro_quant",
+  "path": "research/macro_quant",
+  "model_version": "conditional-scenario-cvar-1.0.0",
+  "scope": "独立只读宏观与市场条件情景推荐研究；提供MD、JSON、Python三个主要交付",
+  "status": "completed_research_prototype",
+  "validation_summary": {
+    "unit_tests": 42,
+    "walk_forward_periods": 36,
+    "data_kind": "synthetic",
+    "economic_validation": false,
+    "preexisting_implementation_files_checked": 76,
+    "preexisting_implementation_files_changed": 0,
+    "independent_review": "VaR等权原子边界偏差已修复并纳入测试；CVaR和36折标签可用时点另行交叉核验。",
+    "result_scope": "计算、契约和可复现性通过；不宣称宏观条件模型全面优于等权基线"
+  },
+  "context_reviewed": [
+    "INTEGRATION-DECISIONS.md",
+    "context_log.md",
+    "API-CONTRACT.md",
+    "README.md",
+    "first_agent/service.py",
+    "first_agent/vendor/finance/matching_core.py",
+    "../financial_recommendation_module/architecture.md"
+  ],
+  "preserved_decisions": [
+    "既有推荐是偏好排序，新分数不覆盖旧结果",
+    "预算只消费既有applied_minor，不改变已验证零上限回退",
+    "不改业务账本、权限和交易审批链",
+    "不把客户账本送入RAG",
+    "无真实数据不宣称实证校准"
+  ],
+  "design_decisions": [
+    "同制度、共同30自然日到账收益情景；特征和标签分别受时点可用性约束",
+    "训练期标准化、相似核和时间衰减；未混合支持不足时拒绝",
+    "单品分数=(1-lambda)平均超额收益-lambda*带符号损失CVaR",
+    "边界原子按最差概率质量精确截取；当前收费口径精确重定价",
+    "现有适当性先行；缺共同历史或期限口径不一致的产品排除",
+    "固定参数合成时间滚动验证，不实施参数寻优，不证明现实盈利"
+  ],
+  "interfaces": "research/macro_quant/INTERFACE.md",
+  "validation": "research/macro_quant/verification.json",
+  "unresolved": [
+    "真实PIT数据与来源证据适配器",
+    "新发、退市及制度变化实证处理",
+    "真实到账现金流/费用核验",
+    "独立真实样本外验证及参数校准",
+    "生产服务授权、预算与数据映射接入"
+  ]
+}

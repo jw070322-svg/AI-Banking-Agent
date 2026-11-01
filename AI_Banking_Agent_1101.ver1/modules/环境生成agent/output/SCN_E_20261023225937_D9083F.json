@@ -1,0 +1,168 @@
+{
+  "scenario_id": "SCN_E_20261023225937_D9083F",
+  "scenario_name": "周期性订阅",
+  "scenario_type": "E",
+  "created_at": "2026-10-23T22:59:37",
+  "user": {
+    "user_id": "UEF4850FD9D3F",
+    "name": "周强",
+    "gender": "男",
+    "id_number": "330102198411049612",
+    "phone": "17118244935",
+    "email": "uef4850fd9d3f@example.com",
+    "address": "上海市浦东新区",
+    "occupation": "市场专员",
+    "monthly_income": 18782.05,
+    "registration_date": "2024-07-05"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC344A42C18A62",
+      "user_id": "UEF4850FD9D3F",
+      "account_type": "储蓄卡",
+      "account_number": "6222874016400524278",
+      "currency": "CNY",
+      "initial_balance": 2630.99,
+      "balance": 72663.27,
+      "status": "正常",
+      "opened_date": "2022-01-12"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T48F45E9953D2",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-06-01",
+      "amount": 18551.24,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T119CE1805081",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-06-13",
+      "amount": 25.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T5958EEEA163E",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-07-01",
+      "amount": 11182.4,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8181369147EB",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-07-13",
+      "amount": 25.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T89A212C136E0",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-08-01",
+      "amount": 19953.16,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T9020FF9AB5C2",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-08-13",
+      "amount": 25.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T9F0475523327",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-09-01",
+      "amount": 8870.52,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TEF8CC07A30F2",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-09-13",
+      "amount": 25.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "TEDD450F0FD0A",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-10-01",
+      "amount": 11599.96,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TA53FABF3E3FC",
+      "account_id": "ACC344A42C18A62",
+      "date": "2026-10-13",
+      "amount": 25.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "云存储会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "云存储会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成多个月份的固定周期扣款，保留商户、金额、日期与订阅类别信息。",
+    "expected": {
+      "multiple_months": true,
+      "fixed_amount": true,
+      "fixed_merchant": true,
+      "has_subscription_category": true,
+      "consecutive_months": true
+    }
+  }
+}

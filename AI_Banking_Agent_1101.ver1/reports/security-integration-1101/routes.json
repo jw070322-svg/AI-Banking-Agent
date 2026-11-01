@@ -1,0 +1,222 @@
+{
+  "business_routes": [
+    {
+      "method": "GET",
+      "path": "/api/snapshot",
+      "action": "snapshot",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/accounts/overview",
+      "action": "accounts",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/transactions",
+      "action": "transactions",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/subscriptions",
+      "action": "subscriptions",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/products",
+      "action": "recommend",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/events",
+      "action": "events",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/analysis",
+      "action": "analysis",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/analysis/status",
+      "action": "analysis.status",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/calendar",
+      "action": "calendar.list",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/market/status",
+      "action": "market.status",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/market/context",
+      "action": "market.context",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/recipients",
+      "action": "recipients",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/audit/export",
+      "action": "audit.export",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "GET",
+      "path": "/api/external/status",
+      "action": "external.status",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/scenarios/generate",
+      "action": "scenario.generate",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/analysis",
+      "action": "analysis",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/rpc",
+      "action": "rpc",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/chat",
+      "action": "chat",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/knowledge",
+      "action": "knowledge",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/recommendations",
+      "action": "recommend",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/transfers/preview",
+      "action": "transfer.preview",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/transfers/verify",
+      "action": "transfer.verify",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/transfers/confirm",
+      "action": "transfer.confirm",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/transfers/reconcile",
+      "action": "transfer.reconcile",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/transfers/cancel",
+      "action": "transfer.cancel",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/page/open",
+      "action": "page.open",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/calendar/save",
+      "action": "calendar.save",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/calendar/reserve",
+      "action": "calendar.reserve",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/calendar/release",
+      "action": "calendar.release",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/calendar/google/sync",
+      "action": "calendar.google.sync",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/profile",
+      "action": "profile.update",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/market/recommend",
+      "action": "market.recommend",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external/probe",
+      "action": "external.probe",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/external/search",
+      "action": "external.search",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    },
+    {
+      "method": "POST",
+      "path": "/api/local-life/links",
+      "action": "local_life.links",
+      "through": "IntegratedService dispatch/research -> HardenedToolGateway"
+    }
+  ],
+  "control_plane_exemptions": [
+    "session creation/health/static resources",
+    "experience consent/query/delete: existing strict scoped handlers",
+    "developer login/reset/restore: original session-bound developer validation and audit, local testing only",
+    "public index/product-quote helper GETs: original allowlisted public-data provider; no bank mutations",
+    "/api/security/status: current-session dispatch count only"
+  ],
+  "old_entrypoints": "Older services/launchers do not acquire new guards automatically; use start_security_integrated.py only."
+}

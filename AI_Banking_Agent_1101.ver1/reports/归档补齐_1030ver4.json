@@ -1,0 +1,115 @@
+{
+  "generated_by": "tools/backfill_history_versions.py",
+  "generated_at": "2026-10-30T23:00:27.008158+08:00",
+  "user_request": "用户要求确认 history_version 内所有历史版本文件齐备",
+  "method": "逐字节复制后重算 SHA-256 比对；不覆盖已存在文件；不改写任何历史基线",
+  "not_a_baseline_edit": "基线 JSON 未改动，本清单只新增历史材料副本",
+  "entries": [
+    {
+      "source_version": "1025.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1025.ver1/handoff/HANDOFF.json",
+      "target": "history_version/from_previous_versions/1025.ver1/handoff/HANDOFF.json",
+      "sha256": "393e443277aa159d8160f95ae1f51fa899f15f66962eb51a21d6a6d73a9be4cd",
+      "size": 14420,
+      "intent": "1025 版交接包；此前任何版本目录都未保存，是唯一完全缺失的交接",
+      "status": "copy"
+    },
+    {
+      "source_version": "1025.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1025.ver1/handoff/HANDOFF.md",
+      "target": "history_version/from_previous_versions/1025.ver1/handoff/HANDOFF.md",
+      "sha256": "cef1aa2b232f882795e6fced0e89f9e3c3aa5997e4ac0eb5f60b84fe95ff053d",
+      "size": 8414,
+      "intent": "1025 版交接包；此前任何版本目录都未保存，是唯一完全缺失的交接",
+      "status": "copy"
+    },
+    {
+      "source_version": "1025.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.json",
+      "target": "history_version/from_previous_versions/1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.json",
+      "sha256": "c1132a331303f6a31faf25da6d10265b9490ac01ff29e2ba36859a8dab0cabf1",
+      "size": 3018,
+      "intent": "1025 版交接包；此前任何版本目录都未保存，是唯一完全缺失的交接",
+      "status": "copy"
+    },
+    {
+      "source_version": "1025.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.md",
+      "target": "history_version/from_previous_versions/1025.ver1/handoff/quota_monitor_2026-10-25/HANDOFF.md",
+      "sha256": "8243632273b546d314e1ec887a21f1d765009507480152b46419d3ef6f1c5d59",
+      "size": 3862,
+      "intent": "1025 版交接包；此前任何版本目录都未保存，是唯一完全缺失的交接",
+      "status": "copy"
+    },
+    {
+      "source_version": "1026.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1026.ver1/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1026.ver1/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "3d4141a3a218e9f9020ab3bba000c8865932f1c6db7944aeb0ac88f969a638b3",
+      "size": 8157,
+      "intent": "1026.ver1 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1026.ver2",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1026.ver2/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1026.ver2/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "cfaf4a9ee5e7856d753316e01e344dd59535d965cd9aad7c2f8e71457c10c05f",
+      "size": 10659,
+      "intent": "1026.ver2 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1027.ver1",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1027.ver1/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1027.ver1/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "3a15470d8777818df56c020a5a3fb5e68ff1662a8556a36e710993dae6c00405",
+      "size": 3897,
+      "intent": "1027.ver1 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1027.ver2",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1027.ver2/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1027.ver2/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "e5ff2b6a7fb66a3445233166ce9d668ca0e069647ed58dc13ce55cdbefbfa272",
+      "size": 11060,
+      "intent": "1027.ver2 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1027.ver3",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1027.ver3/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1027.ver3/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "b35c853b3e373e25ad8adba803244a01e35aef3d51baefd76bb9bfa195851f1d",
+      "size": 11313,
+      "intent": "1027.ver3 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1027.ver4",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1027.ver4/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1027.ver4/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "126f559f8bc74d4b263499e3a0f6fa787409fa9a57de7f98ea34cc7e7fd97c86",
+      "size": 11526,
+      "intent": "1027.ver4 交接修订版",
+      "status": "copy"
+    },
+    {
+      "source_version": "1027.ver5",
+      "source": "F:/AI_Banking/AI_Banking_Agent_1027.ver5/LOCAL_AGENT_HANDOFF.md",
+      "target": "history_version/from_previous_versions/1027.ver5/LOCAL_AGENT_HANDOFF.md",
+      "sha256": "de081492309e842372abcdc7943a802dd8c4024c6b31c8818cf5cc145ee8c17f",
+      "size": 12278,
+      "intent": "1027.ver5 交接修订版",
+      "status": "copy"
+    }
+  ],
+  "summary": {
+    "planned": 11,
+    "copied_or_present": 11,
+    "duplicates_skipped": 0,
+    "failed": 0
+  },
+  "report_note": "归档补齐核对报告；与 MANIFEST 同源"
+}

@@ -1,0 +1,335 @@
+{
+  "patches": [
+    {
+      "id": "P01",
+      "gap": "Orchestrator/agent_orchestrator.py 为 0 字节；eva 编排缺少 brain/stages/risk 等关键依赖",
+      "sources": [
+        "Orchestrator/agent_orchestrator.py",
+        "Teammate_output/eva output/1020/ver.2/orchestrator.py",
+        "Teammate_output/eva output/1020/ver.2/models(3).py"
+      ],
+      "targets": [
+        "first_agent/service.py",
+        "first_agent/server.py"
+      ],
+      "rationale": "无法把残缺包宣称为可运行交付；依据其阶段设计新增规则路由、缺参澄清、查询依赖、金融预览及回执状态机，已交付的 data/tools/models 保留为真实校验依赖。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\Orchestrator\\agent_orchestrator.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\eva output\\1020\\ver.2\\orchestrator.py",
+          "sha256": "cd0339a684dc98decbadcbea6fd75f311ab77b10ed6e05344df9ec10101f0134",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\eva output\\1020\\ver.2\\models(3).py",
+          "sha256": "b1a16894e9c9fed4dda2c0fdaf67407e4348590cf8a04afd54d51ddf5425da7d",
+          "directory": false
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\server.py",
+          "sha256": "feb36bbdd9cad347d2f15e14ddcf18c9b6a22541c1c7e79f31d37ec79867f990",
+          "directory": false
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "gap": "Ethan output 为空，推荐模块尚无包级接入，且金额单位为元",
+      "sources": [
+        "financial_recommendation_module/matching_core.py",
+        "financial_recommendation_module/rule_driven.py",
+        "financial_recommendation_module/data_driven.py"
+      ],
+      "targets": [
+        "first_agent/vendor/finance/matching_core.py",
+        "first_agent/vendor/finance/rule_driven.py",
+        "first_agent/vendor/finance/data_driven.py",
+        "first_agent/service.py"
+      ],
+      "rationale": "复用项目协作代码补齐实际推荐能力，修正包内相对导入；仅适配层把分转换为元，同步 vv 目录、配置金额、风险和到期结算约束。Ethan 原角色不能从空目录确认，此为暂定交接归属。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\financial_recommendation_module\\matching_core.py",
+          "sha256": "ea3598665e4b19ae731572e9845dfad4eab15a32c8ab2903fc31d050bc063c32",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\financial_recommendation_module\\rule_driven.py",
+          "sha256": "57967f0461854b1569ce8cbf4ffb49166e0acde9f8dc06c9958b0e34cc4970ba",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\financial_recommendation_module\\data_driven.py",
+          "sha256": "7d29555ab34f2aea0834c284426162eec2bb95a4af6f4a8adda00255466ada00",
+          "directory": false
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\finance\\matching_core.py",
+          "sha256": "b648f1a44314f13c57d2bccdfec2b7fb5e420b483e876ed1a47cd97a21b35d99",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\finance\\rule_driven.py",
+          "sha256": "887207836324921c939e5d833b8b7b11e01a316b422ff89a18dcfbceb4e4f35c",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\finance\\data_driven.py",
+          "sha256": "27f955d37e25d57839a4ba6a496ed766fe7765a121dae82348c49a6f42cdc85e",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "gap": "vv 原版账本只在浏览器内存中，刷新丢失，与 eva 虚构初值不同",
+      "sources": [
+        "Teammate_output/vv output/1021/Banking 统一版(2).html",
+        "Teammate_output/vv output/1021/Banking-统一版源码(1)/banking-agent/dist/journey-engine.js"
+      ],
+      "targets": [
+        "web/journey-engine.js",
+        "web/server-bridge.js",
+        "web/journey-workspace.js",
+        "web/agent-panel.js",
+        "first_agent/engine_worker.cjs",
+        "first_agent/service.py"
+      ],
+      "rationale": "最新独立 HTML 与包内脚本及非字体 CSS 一致，采用可维护源码布局。引擎在服务端逐事务运行，SQLite 保存唯一状态；新增转账助手、真实接通本地 API，更新刷新与能力文案。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\vv output\\1021\\Banking 统一版(2).html",
+          "sha256": "e38a4a589f2d350db0a99722e731a843abc697d81bd34b10acf6629ea2a9224a",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\journey-engine.js",
+          "sha256": "b3c0adc714d3697e40a62f0cd2a944754f92453d9ce1719be150c028314769c8",
+          "directory": false
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\web\\journey-engine.js",
+          "sha256": "5be09a83d0e3730016dcb19e1b38a42adfc9863155f3ddc3da80a17ec9a7b30b",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\web\\server-bridge.js",
+          "sha256": "f6ff2d2813288cb2544fe9d6edf8436f7423a90c8bb4f7767f664779233b5728",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\web\\journey-workspace.js",
+          "sha256": "164396ec0de7e1d1e489c6f348802f4ae21acc7dee5fc82c19654a8fc943d9f5",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\web\\agent-panel.js",
+          "sha256": "e4cb39e4ca4b6b913d1caf4febaecf11c1dcd2d64190add6e127d4c090c1661b",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\engine_worker.cjs",
+          "sha256": "5137c54267bc775bd6d1011ac1489cd3cecf9f32c3b911ab413ba9a01db2585a",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "gap": "eva ver.2 未交付 scanner；旧 scanner 对自由文本密码、数字 PII 和哈希的处理不足",
+      "sources": [
+        "Teammate_output/eva output/1020/ver.1/compliance(1).py",
+        "risk_security_toolkit/risk_scaffold/modules/security.py",
+        "Teammate_output/eva output/1020/ver.2/auth.py"
+      ],
+      "targets": [
+        "first_agent/vendor/eva/risk/compliance.py",
+        "first_agent/vendor/eva/risk/auth.py",
+        "first_agent/vendor/security/gate.py",
+        "first_agent/security.py",
+        "first_agent/service.py"
+      ],
+      "rationale": "明确标记从旧版本补回缺失 scanner，再在外层修复脱敏；使用 toolkit 默认拒绝 scope/resource gate。复用认证断言数据契约，但在持久化状态内验证绑定、过期及一次性消费，与扣账同事务；未调用旧 consume 接口冒充完整授权。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\eva output\\1020\\ver.1\\compliance(1).py",
+          "sha256": "0ac894503d0c99745dd024ddf149759845352d098034bac8de420e1e5d234040",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\risk_security_toolkit\\risk_scaffold\\modules\\security.py",
+          "sha256": "f677552a5b976000052c92be74e56a50606cf40489719c77277f8e7609ae293b",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\eva output\\1020\\ver.2\\auth.py",
+          "sha256": "576fd7ca9e4612b849a5f0691645e44ebcac2733e5ff7ac67357227aecaf3c2e",
+          "directory": false
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\eva\\risk\\compliance.py",
+          "sha256": "0ac894503d0c99745dd024ddf149759845352d098034bac8de420e1e5d234040",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\eva\\risk\\auth.py",
+          "sha256": "576fd7ca9e4612b849a5f0691645e44ebcac2733e5ff7ac67357227aecaf3c2e",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\security\\gate.py",
+          "sha256": "f677552a5b976000052c92be74e56a50606cf40489719c77277f8e7609ae293b",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\security.py",
+          "sha256": "b0cf902ac8ee7f0b4f38c6434378e32927f80d7d6813ff28073f13eec7291cf5",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "gap": "YUKI simple_RAG 对无关文档也加分，中文长句分词弱，来源仅文件名；文件名乱码",
+      "sources": [
+        "Teammate_output/YUKI ouput/1022/AI-Banking-agent.zip",
+        "Teammate_output/YUKI ouput/1022/AI-Banking-agent/AI-Banking-agent/src/RAG/simple_RAG.py",
+        "Teammate_output/YUKI ouput/1022/AI-Banking-agent/AI-Banking-agent/data/knowledge",
+        "RAG/banking_rag"
+      ],
+      "targets": [
+        "knowledge/manifest.json",
+        "knowledge/index.json",
+        "first_agent/vendor/rag",
+        "first_agent/service.py"
+      ],
+      "rationale": "保留八份最新知识原文及原始字节哈希，以正文标题修复运行副本文件名；复用项目 BM25、中文双字分词、哈希与行号引用，对无关问题拒答，个人业务查询由 Agent 工具处理。未把教育资料称作权威银行规则。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent.zip",
+          "sha256": "55adadf731afe8e1a7f5f8a6c3ebcb09af3f1c117b38076953b924a1d8bd333a",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\src\\RAG\\simple_RAG.py",
+          "sha256": "b8b6783ff3d0bdba0dd9dcc0ecc24614800257bde3dd8ae26e2c33e26e2d984b",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge",
+          "sha256": null,
+          "directory": true
+        },
+        {
+          "path": "F:\\AI_Banking\\RAG\\banking_rag",
+          "sha256": null,
+          "directory": true
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\knowledge\\manifest.json",
+          "sha256": "66133453f193cbdc63c82ff84db544cea1be33e3cd0d71960b073806d15e70cc",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\knowledge\\index.json",
+          "sha256": "090419b9b34fe9843f2278dea100fb9a38481a1e4ee9824118018d88346c91d0",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\vendor\\rag",
+          "sha256": null,
+          "directory": true
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "gap": "多个接口无统一单位、幂等、期限或错误状态，跨语言预览哈希存在整数/浮点差异",
+      "sources": [
+        "Teammate_output/vv output/1021/Banking-统一版源码(1)/banking-agent/API-CONTRACT.md",
+        "Teammate_output/eva output/1020/ver.2/policy_config.json",
+        "financial_recommendation_module/matching_core.py"
+      ],
+      "targets": [
+        "API-CONTRACT.md",
+        "first_agent/service.py",
+        "first_agent/server.py"
+      ],
+      "rationale": "边界使用整数分和固定响应外壳；预览绑定客户、会话、操作、金额、版本、策略、整数秒过期时间。相同幂等键同请求返回原回执；未知结果阻断再执行，所有状态更改与审计原子提交。",
+      "source_evidence": [
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\API-CONTRACT.md",
+          "sha256": "0540285f775ee2caeb7b9fe44be3e57677bcdce2055456d0a2c901e0ae3ee167",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\Teammate_output\\eva output\\1020\\ver.2\\policy_config.json",
+          "sha256": "f0c0416092740facfeb908f5a8381dbbd1fc10bc603a05f7935a69a906aa8924",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\financial_recommendation_module\\matching_core.py",
+          "sha256": "ea3598665e4b19ae731572e9845dfad4eab15a32c8ab2903fc31d050bc063c32",
+          "directory": false
+        }
+      ],
+      "target_evidence": [
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\API-CONTRACT.md",
+          "sha256": "2e7f3a504fa57ce25970d7a020d0135ce60338c05fe8f2dbe2c12240aa5b023d",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\service.py",
+          "sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+          "directory": false
+        },
+        {
+          "path": "F:\\AI_Banking\\FirstAgent\\first_agent\\server.py",
+          "sha256": "feb36bbdd9cad347d2f15e14ddcf18c9b6a22541c1c7e79f31d37ec79867f990",
+          "directory": false
+        }
+      ]
+    }
+  ],
+  "conclusion": "补丁来源及当前目标可逐项核对；目录级哈希详见 file_manifest.json。"
+}

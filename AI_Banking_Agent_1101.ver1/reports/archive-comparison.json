@@ -1,0 +1,16 @@
+[
+  {
+    "archive": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1).zip",
+    "zip_integrity_ok": true,
+    "matching_content_hash_multiset": true,
+    "archive_content_files": 18,
+    "extracted_content_files": 18
+  },
+  {
+    "archive": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent.zip",
+    "zip_integrity_ok": true,
+    "matching_content_hash_multiset": false,
+    "archive_content_files": 19,
+    "extracted_content_files": 15
+  }
+]

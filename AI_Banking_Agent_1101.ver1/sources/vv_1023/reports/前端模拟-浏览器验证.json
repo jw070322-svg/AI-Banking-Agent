@@ -1,0 +1,102 @@
+{
+  "layouts": [
+    {
+      "route": "总览",
+      "scrollWidth": 390,
+      "unnamedButtons": 0,
+      "width": 390
+    },
+    {
+      "route": "收支与订阅",
+      "scrollWidth": 390,
+      "unnamedButtons": 0,
+      "width": 390
+    },
+    {
+      "route": "理财",
+      "scrollWidth": 390,
+      "unnamedButtons": 0,
+      "width": 390
+    },
+    {
+      "route": "任务与记录",
+      "scrollWidth": 390,
+      "unnamedButtons": 0,
+      "width": 390
+    },
+    {
+      "route": "总览",
+      "scrollWidth": 768,
+      "unnamedButtons": 0,
+      "width": 768
+    },
+    {
+      "route": "收支与订阅",
+      "scrollWidth": 768,
+      "unnamedButtons": 0,
+      "width": 768
+    },
+    {
+      "route": "理财",
+      "scrollWidth": 768,
+      "unnamedButtons": 0,
+      "width": 768
+    },
+    {
+      "route": "任务与记录",
+      "scrollWidth": 768,
+      "unnamedButtons": 0,
+      "width": 768
+    },
+    {
+      "route": "总览",
+      "scrollWidth": 1440,
+      "unnamedButtons": 0,
+      "width": 1440
+    },
+    {
+      "route": "收支与订阅",
+      "scrollWidth": 1440,
+      "unnamedButtons": 0,
+      "width": 1440
+    },
+    {
+      "route": "理财",
+      "scrollWidth": 1440,
+      "unnamedButtons": 0,
+      "width": 1440
+    },
+    {
+      "route": "任务与记录",
+      "scrollWidth": 1440,
+      "unnamedButtons": 0,
+      "width": 1440
+    }
+  ],
+  "scenePanels": [
+    "智能转账",
+    "账单分析",
+    "理财操作",
+    "卡片管理",
+    "订阅／代扣管理",
+    "跨场景联动"
+  ],
+  "paths": [
+    "800元转账余额37840资产127840支出13660并刷新恢复",
+    "额度1000当天已用800再次800被拦截",
+    "未知100元转账回执查询成功",
+    "挂失借记卡后停止交易",
+    "申请次日审核成功生成模拟卡",
+    "新卡转账50元及刷新恢复待确认",
+    "取消映像会员当前余额不增加",
+    "两产品比较及预演申购2690元",
+    "赎回100元次日查询到账"
+  ],
+  "keyboard": [
+    "Enter打开",
+    "Tab焦点位于弹窗",
+    "Escape关闭",
+    "关闭返回原入口焦点"
+  ],
+  "consoleErrors": []
+}

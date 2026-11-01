@@ -1,0 +1,22 @@
+test_ask_citations_bind_to_snapshot (relay_additions.test_boundaries.Boundaries.test_ask_citations_bind_to_snapshot) ... FAIL
+test_delete_during_inflight_request_prevents_late_repopulation (relay_additions.test_boundaries.Boundaries.test_delete_during_inflight_request_prevents_late_repopulation) ... ok
+test_plain_mode_preserves_answers (relay_additions.test_boundaries.Boundaries.test_plain_mode_preserves_answers) ... ok
+test_real_http_blocks_full_source_and_stale_version (relay_additions.test_boundaries.Boundaries.test_real_http_blocks_full_source_and_stale_version) ... ok
+test_search_and_sparse_fallback_use_only_approved_chunk (relay_additions.test_boundaries.Boundaries.test_search_and_sparse_fallback_use_only_approved_chunk) ... ok
+test_source_only_approved_lines_and_version_bound (relay_additions.test_boundaries.Boundaries.test_source_only_approved_lines_and_version_bound) ... ok
+test_unapproved_document_and_modified_source_rejected (relay_additions.test_boundaries.Boundaries.test_unapproved_document_and_modified_source_rejected) ... ok
+test_unpublished_direct_search_fails_closed (relay_additions.test_boundaries.Boundaries.test_unpublished_direct_search_fails_closed) ... ok
+
+======================================================================
+FAIL: test_ask_citations_bind_to_snapshot (relay_additions.test_boundaries.Boundaries.test_ask_citations_bind_to_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\AI_Banking\AI_Banking_Agent_1030.ver1\relay_additions\test_boundaries.py", line 72, in test_ask_citations_bind_to_snapshot
+    self.assertTrue(answer['citations'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.812s
+
+FAILED (failures=1)

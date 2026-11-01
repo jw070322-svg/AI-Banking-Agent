@@ -1,0 +1,175 @@
+{
+  "scenario_id": "SCN_A_20261020111104_0D8784",
+  "scenario_name": "普通银行用户",
+  "scenario_type": "A",
+  "created_at": "2026-10-20T11:11:04",
+  "user": {
+    "user_id": "UC2C9EF193A24",
+    "name": "王娜",
+    "gender": "女",
+    "id_number": "110101199702037702",
+    "phone": "15652760936",
+    "email": "uc2c9ef193a24@example.com",
+    "address": "杭州市西湖区",
+    "occupation": "市场专员",
+    "monthly_income": 10230.04,
+    "registration_date": "2024-05-24"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC3249F13E3130",
+      "user_id": "UC2C9EF193A24",
+      "account_type": "储蓄卡",
+      "account_number": "6222198750693044938",
+      "currency": "CNY",
+      "initial_balance": 4723.24,
+      "balance": 16834.66,
+      "status": "正常",
+      "opened_date": "2025-07-03"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "TBBB418806E49",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-09-21",
+      "amount": 102.76,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB9B4E2D3899B",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-09-22",
+      "amount": 212.24,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TC1355521F115",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-09-25",
+      "amount": 308.93,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB20D97C08F4C",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-01",
+      "amount": 14111.99,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T20F2D46218A7",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-04",
+      "amount": 95.27,
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T7890FC18E3E3",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-06",
+      "amount": 174.41,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T6204E693AD64",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-07",
+      "amount": 320.66,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF9B6BCA115A5",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-09",
+      "amount": 23.74,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF86451FC88F4",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-13",
+      "amount": 169.2,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T71D87B0DFAC8",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-15",
+      "amount": 238.96,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T78063681B7F2",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-15",
+      "amount": 337.8,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T90A914EA8F46",
+      "account_id": "ACC3249F13E3130",
+      "date": "2026-10-20",
+      "amount": 16.6,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成一个普通银行用户，含用户信息、账户、初始余额，以及工资收入和日常消费流水。",
+    "expected": {
+      "has_user": true,
+      "has_account": true,
+      "has_income": true,
+      "has_expense": true,
+      "balance_non_negative": true
+    }
+  }
+}

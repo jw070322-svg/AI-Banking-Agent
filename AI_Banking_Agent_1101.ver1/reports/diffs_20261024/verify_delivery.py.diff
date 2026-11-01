@@ -1,0 +1,41 @@
+--- F:\AI_Banking\SecondAsgent\verify_delivery.py
++++ verify_delivery.py
+@@ -1,9 +1,18 @@
+ """Run behavioral suites and publish machine-readable verification evidence."""
+ from pathlib import Path
+ from datetime import datetime, timezone
+-import io, json, subprocess, sys, unittest
++import io, json, os, re, subprocess, sys, unittest
+ 
+ ROOT=Path(__file__).resolve().parent
++
++def run_check(name, command, cwd):
++    env={**os.environ,'PYTHONIOENCODING':'utf-8'}
++    proc=subprocess.run(command,cwd=cwd,env=env,capture_output=True,text=True,encoding='utf-8',timeout=180)
++    output=proc.stdout+proc.stderr
++    (ROOT/'reports'/f'{name}.txt').write_text(output,encoding='utf-8')
++    count=re.search(r'Ran (\d+) tests?',output)
++    return {'exit_code':proc.returncode,'passed':proc.returncode==0,'test_count':int(count[1]) if count else None,
++            'log':f'reports/{name}.txt'}
+ 
+ def main():
+     if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
+@@ -16,10 +25,17 @@
+         suites[name]=json.loads(node.stdout) if node.returncode==0 else {'passed':0,'error':node.stderr}
+     vv={'passed':sum(v['passed'] for v in suites.values()),'suites':suites}
+     (ROOT/'reports/vv-tests.json').write_text(json.dumps(vv,ensure_ascii=False,indent=2),encoding='utf-8')
++    extra={}
++    for name,directory in [('analysis','主任务_金融分析与量化'),('environment','环境生成agent')]:
++        extra[name]=run_check(name,[sys.executable,'-m','unittest','discover','-s','.','-p','test_*.py'],ROOT/'modules'/directory)
++    extra['backtest']=run_check('backtest',[sys.executable,'backtest_budget.py','--out-prefix',str(ROOT/'reports/budget_backtest')],ROOT/'modules/主任务_金融分析与量化')
++    for amount in [80000,120000]:
++        extra[f'demo_{amount}']=run_check(f'demo_{amount}',[sys.executable,'demo_full_chain.py','--amount-minor',str(amount)],ROOT)
+     report={'verified_at':datetime.now(timezone.utc).isoformat(),
+             'integration':{'run':result.testsRun,'passed':result.testsRun-len({str(t) for t,_ in result.failures+result.errors+result.skipped}),
+                 'failures':[str(t) for t,_ in result.failures],'errors':[str(t) for t,_ in result.errors],'skipped':[str(t) for t,_ in result.skipped]},
+-            'vv_engine':vv,'conclusion':'passed' if result.wasSuccessful() and all('error' not in v for v in suites.values()) else 'failed'}
++            'vv_engine':vv,'module_checks':extra,
++            'conclusion':'passed' if result.wasSuccessful() and not result.skipped and all('error' not in v for v in suites.values()) and all(v['passed'] for v in extra.values()) else 'failed'}
+     (ROOT/'reports/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+     print(json.dumps(report,ensure_ascii=False,indent=2))
+     return 0 if report['conclusion']=='passed' else 1

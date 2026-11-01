@@ -1,0 +1,13 @@
+--- sources/Ethan_1024/demo_full_chain.py
++++ demo_full_chain.py
+@@ -26,8 +26,8 @@
+ from typing import Any, Dict, List, Optional
+ 
+ ROOT = Path(__file__).resolve().parent
+-FIRST_AGENT_DIR = ROOT.parent / "FirstAgent"
+-ANALYSIS_DIR = ROOT / "主任务_金融分析与量化"
++FIRST_AGENT_DIR = ROOT
++ANALYSIS_DIR = ROOT / "modules" / "主任务_金融分析与量化"
+ 
+ VERIFY_CODE = "246810"  # FirstAgent 演示验证码（红档转账才需要）
+ F_PROMPT = "配偶生日快到了，想锁定 1000 元预算，并提醒我提前订鲜花和蛋糕"
