@@ -1,0 +1,27 @@
+{
+  "updated_at": "2026-10-29T16:29:58.525348+00:00",
+  "accepted_scope": "本地模拟闭环；真实服务待接入",
+  "local_workflow_checks_passed": true,
+  "original_handoff_all_tasks_complete": false,
+  "backend": {
+    "run": 57,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "frontend_checks": 8,
+  "gateway": "LedgerGateway -> original dispatcher -> original business engine, single SQLite transaction",
+  "standalone_AuthorizedToolGateway_fully_migrated": false,
+  "pending": [
+    "独立13项工具网关完整迁移",
+    "105题独立人工业务评分",
+    "全站完整UI/无障碍验收"
+  ],
+  "external": [
+    "真实身份",
+    "真实银行",
+    "真实模型",
+    "外部审计"
+  ],
+  "note": "本地模拟闭环验收_1030.md"
+}

@@ -1,0 +1,265 @@
+{
+  "version": "AI_Banking_Agent_1028.ver1",
+  "at": "2026-10-28T15:16:50.216318+08:00",
+  "source": "D:\\weixin_file\\xwechat_files\\wxid_n0t7qvlbfnod22_7a73\\temp\\RWTemp\\2026-10\\09c994907962f225ee2ab1cc51d04ae2\\simple_RAG(3).py",
+  "source_sha256": "49d4b06b7a29c69e1378fade762a99755bb0b9d5c23c83aef6f50e70b29cf42b",
+  "attachment_executed": false,
+  "comparison": [
+    {
+      "function": "is_sensitive_or_unsafe",
+      "existing": "已有Scanner、权限门禁及业务数据路由",
+      "decision": "保留原规则；新增通道仅对他人实际私密记录或直接执行请求停止补充检索。新脚本的整表词汇拒绝不全局启用，避免“什么是银行卡”被误拒。"
+    },
+    {
+      "function": "load_knowledge",
+      "existing": "已有显式manifest、路径及摘要校验",
+      "decision": "复用原资料入口，不引入扫描任意目录的重复加载器。"
+    },
+    {
+      "function": "normalize_text",
+      "existing": "已有NFKC、大小写及停用词处理",
+      "decision": "不替换原归一化，保留已有召回行为。"
+    },
+    {
+      "function": "tokenize",
+      "existing": "已有中文双字及英文数字分词",
+      "decision": "复用原tokenize，不引入第二套全局分词规则。"
+    },
+    {
+      "function": "split_markdown_into_chunks",
+      "existing": "已有标题、原始行号和块ID分块",
+      "decision": "保留现有块，不用新脚本500字设置重新切分原资料。"
+    },
+    {
+      "function": "semantic_overlap_score",
+      "existing": "缺少独立Jaccard词项重叠量",
+      "decision": "新增lexical_overlap；明确它是词项相似度，不是语义理解。"
+    },
+    {
+      "function": "compute_tfidf_vectors",
+      "existing": "现有BM25与可选嵌入，无本地稀疏TF-IDF通道",
+      "decision": "新增缓存的IDF与稀疏向量，不调用嵌入服务，不写回索引。"
+    },
+    {
+      "function": "cosine_similarity",
+      "existing": "已有稠密向量余弦",
+      "decision": "仅增加适配稀疏字典的sparse_cosine，原稠密实现不变。"
+    },
+    {
+      "function": "vector_score",
+      "existing": "缺少离线TF-IDF候选通道",
+      "decision": "新增SparseSupplement.search，保留有效期、类型、来源和行号；使用保守词项门槛。"
+    },
+    {
+      "function": "bm25_score",
+      "existing": "已有BM25与词项覆盖率限制",
+      "decision": "不替换公式、参数或排序；也不把新脚本固定分数门槛强加到不同评分体系。"
+    },
+    {
+      "function": "build_index",
+      "existing": "已有可追溯JSON索引",
+      "decision": "不重建或覆盖；原知识文本、索引和清单摘要保持一致。"
+    },
+    {
+      "function": "score_documents",
+      "existing": "已有排名与去重",
+      "decision": "原结果优先；仅原服务无证据且无已有证据块时尝试补充候选，补充候选按原文去重。"
+    },
+    {
+      "function": "retrieve",
+      "existing": "已有知识API和服务入口",
+      "decision": "复用原HTTP路由；新增启动组合及只读CLI，旧入口保留。"
+    },
+    {
+      "function": "extract_summary",
+      "existing": "已有可引用原始行摘录",
+      "decision": "继续摘录原文，不生成新事实，不用摘要改写原资料。"
+    },
+    {
+      "function": "build_contract_response",
+      "existing": "已有银行API envelope",
+      "decision": "新增显式选择的compatibility_response，旧契约不变；不复制trace中的原始问题日志。"
+    },
+    {
+      "function": "rag_answer",
+      "existing": "已有RAGService.ask及拒答/回退链",
+      "decision": "新增组合适配器；保留已命中答案、业务数据路由、拒答、生成拒绝和已有证据上的模型弃答。"
+    }
+  ],
+  "new_knowledge_documents": 0,
+  "knowledge_documents": 18,
+  "existing_files_verified": [
+    {
+      "path": "first_agent/vendor/rag/__init__.py",
+      "sha256": "7943e2551d18196328bc08986f5cfe96db3551dffc3489318a2ca4c274ad8a0d",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/cli.py",
+      "sha256": "ffc46b21030df8f0fb12300b3f6283f1babd6886979bccab1c3da50186c2c365",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/corpus.py",
+      "sha256": "1d5c235489c73b2e39857928235b2e3e4d91a18f5c03e7062e5af2b8113abaeb",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/providers.py",
+      "sha256": "a4ef6f5be80fac513ae07589380c590a824eb8a759d0189aacd2191f0dc02bb6",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/retrieval.py",
+      "sha256": "f559155bec509c5f1d97bf7a878b4b445b33fdaf125e255c5c8819e53c24de9f",
+      "unchanged": true
+    },
+    {
+      "path": "first_agent/vendor/rag/service.py",
+      "sha256": "62868820ab6d35c3affa095588259bbcb7a03e72156b767fcb28ac708d194cd3",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/01-现金流.md",
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/02-储蓄率.md",
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/03-流动性.md",
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/04-债务比率.md",
+      "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/05-风险管理.md",
+      "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/06-合规边界.md",
+      "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/07-订阅管理.md",
+      "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/08-旅行预算.md",
+      "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-01.md",
+      "sha256": "d30ee83870d6fa9dd10a6ff765587ac8b7658bc83f5091cd37ff4383e89119d5",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-02.md",
+      "sha256": "b227b31a78d15728c93f9afcd4dd86b77ac166fe0b4c62ad52645b930a17f75f",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-03.md",
+      "sha256": "651ddf53227f4be610cb5f75784e1a10e776b262b3b17462b50ae4d3507259b0",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-04.md",
+      "sha256": "5b4b913ef45bca8c114de5ac515a765ac61dfa0c6d5f326e54dbeafe542fd648",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-05.md",
+      "sha256": "e9357b0bc4ea6dfb98e5cb41b6ae75b5fd9a661ef3b64de583b8fb6deee9a835",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-06.md",
+      "sha256": "dc29c0dd0ec90744937012c54ce96dbcd36ebf84a31f7f33dfb81a5cf81a4ca9",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-07.md",
+      "sha256": "ac8b1d4e96ebd6ef3e41d861f7b8a9828c8ee3a2a27e2739ce7b799a16f51b33",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-08.md",
+      "sha256": "9aaccf62c5138ba076dd41881bb9a9b6d6b3435292e0334d69de950535eb2045",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-09.md",
+      "sha256": "f25ae466573ce5d438d151b72218fe6f0edc970246e5e3df9e1efe9fc4d63716",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance-10.md",
+      "sha256": "087e2095523b382a49b11801fd03626dbd46bb6ca354eb636a1587ae89c4a17c",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance_glossary.json",
+      "sha256": "e5f294ab8eac7cbe25d3b59bd9e96732a65ee4ff404b17d21ea92993e5afb63f",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/finance_terms.tsv",
+      "sha256": "451ff0827ee73f824a5fd145801cfaa3a14a3152ddd25671e10210f238787822",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/index.json",
+      "sha256": "f4ff1c77bd3ec1aaa1d2901153ed4a05fc3a9a5134c94b7cf458cdcaec852595",
+      "unchanged": true
+    },
+    {
+      "path": "knowledge/manifest.json",
+      "sha256": "73563695134975dc60c6245a7858636d66df41d7bdf3fe9a0d2226d05be88a2a",
+      "unchanged": true
+    },
+    {
+      "path": "sources/YUKI/src/RAG/simple_RAG.py",
+      "sha256": "b8b6783ff3d0bdba0dd9dcc0ecc24614800257bde3dd8ae26e2c33e26e2d984b",
+      "unchanged": true
+    }
+  ],
+  "new_code_files": [
+    "first_agent/rag_additions.py",
+    "first_agent/rag_additive_cli.py",
+    "start_additive_rag.py",
+    "启动增量RAG.bat",
+    "tests/test_rag_additions.py"
+  ],
+  "validation": {
+    "backend_tests": 166,
+    "frontend_tests": 85,
+    "new_rag_tests_included": 9,
+    "browser_query": "Can you explain LPR simply?",
+    "browser_result": "LPR original definition and reference visibly returned",
+    "screenshot": "reports/rag-additive-browser.png"
+  },
+  "limitations": [
+    "TF-IDF/Jaccard是词项相似度，不是嵌入语义理解",
+    "阈值为保守工程规则，未经过大样本调优",
+    "新入口不自动安装或启动模型；无依据问题仍沿用原本地模型及外联授权边界",
+    "原助手英文问句可带问号触发知识路由；无问号的部分英语请求仍可能提示未识别",
+    "本轮未将前版商户与模型全部待办声明为已完成"
+  ]
+}

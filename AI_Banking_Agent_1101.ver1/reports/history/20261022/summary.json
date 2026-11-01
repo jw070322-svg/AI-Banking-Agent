@@ -1,0 +1,228 @@
+{
+  "analysis": [
+    "完整交付单元优先于最新单文件；来源与补丁单独记录。",
+    "单账本及事务内执行优先解决额度、幂等、审批与回执的一致性。",
+    "声明的能力以测试和浏览器实测为准，规划项单列。"
+  ],
+  "overview": {
+    "architecture": "vv 界面 → 同源 HTTP 兼容层/对话 → AgentService → SQLite 事务 → Node 业务引擎 + eva 校验/认证契约 + 推荐规则 + BM25 RAG",
+    "scope": "团队交付规则驱动的本地模拟首次 Agent、模拟银行 API 与统一契约；真实银行由组委会本地部署接入。账单、订阅、转账为核心，附推荐及模拟申赎和知识问答。",
+    "integration": "所有业务共享 vv 整数分账本；eva 只复用校验与数据契约，推荐使用同一目录与资金/期限约束；RAG 使用 YUKI 最新八篇原文与项目可追溯检索补丁。",
+    "interfaces": {
+      "schema_version": "1.0.0",
+      "money": "CNY integer minor units",
+      "state": [
+        "available",
+        "positions",
+        "subscriptions",
+        "transactions",
+        "operations",
+        "transfer_ops",
+        "version",
+        "consent",
+        "daily_transfers",
+        "task_log",
+        "clarification"
+      ],
+      "statuses": [
+        "succeeded",
+        "needs_input",
+        "awaiting_confirmation",
+        "unknown",
+        "processing",
+        "failed",
+        "rejected",
+        "cancelled",
+        "invalidated"
+      ],
+      "bindings": [
+        "customer_id",
+        "session_id",
+        "operation_id",
+        "type",
+        "target",
+        "amount_minor",
+        "version",
+        "policy_version",
+        "expires_at"
+      ],
+      "api_contract": "API-CONTRACT.md",
+      "entry": "python -m first_agent.server --port 8765",
+      "storage": "runtime/agent.sqlite3"
+    },
+    "validation": {
+      "verified_at": "2026-10-22T09:19:02.078870+00:00",
+      "integration": {
+        "run": 20,
+        "passed": 20,
+        "failures": [],
+        "errors": [],
+        "skipped": []
+      },
+      "vv_engine": {
+        "passed": 15,
+        "cases": [
+          "账单分类合计与总账一致",
+          "权限按查询订阅交易分开",
+          "订阅取消只减少未来支出，不能重复取消",
+          "关闭确认不执行，申购需验证，不能重复提交",
+          "目标、产品、预算、档案或授权变化使确认失效",
+          "筛选引擎处理风险期限金额与缺失资料",
+          "失败不会改动账本，未知结果冻结并查询一次",
+          "赎回申请不提前到账，次日查询后守恒",
+          "到账失败释放占用，未知赎回核对后仍须等到账",
+          "未到期不能赎回，占用资金不能重复赎回",
+          "中断撤销不回滚资金，恢复仍须重新确认",
+          "连续失败与验证错误锁定，解锁不清账",
+          "保持流动性不申购，预演无虚构收益",
+          "无效金额、期限和超配被拒绝",
+          "快照不能绕过内部规则，输入仅作记录不自动执行"
+        ]
+      },
+      "conclusion": "passed"
+    },
+    "quota": {
+      "observed_at_utc": "2026-10-22 12:30:11 UTC",
+      "stage": "branch_documentation_verification",
+      "windows": [
+        {
+          "id": "codex",
+          "window": "primary",
+          "window_duration_mins": 300,
+          "remaining_percent": 59,
+          "resets_at": 1792689323
+        }
+      ],
+      "monitor_window_minutes": 300,
+      "ignore_weekly": true,
+      "threshold_percent": 10,
+      "stop": false,
+      "monitor_status": "observed"
+    },
+    "remaining_issues": [
+      "当前交付规则驱动的本地模拟银行 API 与统一契约；真实银行由组委会收到作品后本地部署接入，不列为团队欠交项。没有接入开放式模型或真实 MFA。",
+      "身份是服务端创建的演示会话，每个会话有独立虚构账本；不是手机银行真实登录系统。",
+      "卡申请/挂失、手机号/定时/AA 转账、自动订阅识别与提醒、生日商户联动仍为后续需求，不计入已实现功能。",
+      "同期原 eva 完整测试无法直接复跑；本报告只统计新的集成测试及 vv 兼容规则检查，不沿用 42 项通过声明。",
+      "同步页面适配会阻塞主线程，适用于本机演示；未完成所有屏幕尺寸视觉验收。",
+      "SQLite 本地事务不等于分布式银行原子事务，普通本地审计不具备生产防篡改保证。",
+      "额度工具提供即时快照，没有推送订阅；按用户最新要求只检查 windowDurationMins=300 的 5 小时窗口，剩余严格低于 10% 才存档停止。周额度不参与停止条件；未知额度不等于零。"
+    ]
+  },
+  "branches": [
+    {
+      "branch_name": "eva / 风控与业务工具",
+      "file": "eva",
+      "summary": "复用 ver.2 的 data、tools、models、policy_config 与认证断言契约；从 ver.1 补缺失 scanner 并外层修复脱敏。完整接入权限、预览失效、累计分级和事务内断言校验。",
+      "changed": [
+        "first_agent/vendor/eva/",
+        "first_agent/vendor/security/gate.py",
+        "first_agent/security.py",
+        "first_agent/service.py"
+      ],
+      "validation": [
+        "账户越权与未知工具拒绝",
+        "红色累计分级、断言过期和重放拒绝",
+        "线程及 Windows 多进程同一操作仅扣账一次",
+        "密码/数字手机号脱敏、合法哈希保持完整"
+      ],
+      "next": [
+        "交付完整同版本 bank_agent 包及原版测试，关闭原缺失依赖清单",
+        "维护模拟银行 API、模拟认证与可替换接口契约；真实银行由组委会接入",
+        "卡管理：参考真实银行 APP 的模式补充后端 API、持久状态与前端从卡库选择卡的闭环；当前尚未实现；继续维护风险政策与控制矩阵证据"
+      ]
+    },
+    {
+      "branch_name": "vv / 前端与业务交互",
+      "file": "vv",
+      "summary": "采用 1021 最新 HTML 对应的同一版脚本和样式；保留四主导航、订阅、预演、申赎，换成服务端状态适配器，并加入转账与知识对话面板。刷新保留账本，页面能力说明已更新。",
+      "changed": [
+        "web/index.html",
+        "web/journey-engine.js",
+        "web/journey-workspace.js",
+        "web/server-bridge.js",
+        "web/agent-panel.js",
+        "first_agent/engine_worker.cjs"
+      ],
+      "validation": [
+        "15 项业务规则检查",
+        "浏览器转账 800 元后总览与账单同步，刷新保留",
+        "债务比率问答返回来源和行号",
+        "初始化摘要权限错误修复并在浏览器复核"
+      ],
+      "next": [
+        "把兼容同步 XHR 改为异步视图数据加载，避免主线程等待",
+        "将转账记录正式并入任务主导航，而非仅助手面板",
+        "继续完善窄屏、无障碍及高延迟状态；当前未宣称完成全尺寸视觉回归"
+      ]
+    },
+    {
+      "branch_name": "YUKI / 知识与评测",
+      "file": "YUKI",
+      "summary": "纳入 1022 的八份知识文档及参考源码、评测题库；标题修复运行文件名，换用项目现有 BM25 与可追溯引用，无证据时拒答，资料不触发工具执行。",
+      "changed": [
+        "knowledge/",
+        "first_agent/vendor/rag/",
+        "first_agent/service.py",
+        "sources/YUKI/"
+      ],
+      "validation": [
+        "债务比率原文检索 grounded，带文档哈希和行号",
+        "无关问题 no_evidence",
+        "知识查询不改变余额",
+        "浏览器验证引用展示"
+      ],
+      "next": [
+        "补充资料的审核人、适用期、权威来源与定期复核流程",
+        "将 20 正常、20 边界、10 风险题转成带标注的自动评分集；当前没有声称 50 题全数通过",
+        "现金流、储蓄率、流动性已从最新 ZIP 恢复并入库；新增主题须提供可审查来源"
+      ]
+    },
+    {
+      "branch_name": "Ethan / 空交付补位（原分工待确认）",
+      "file": "Ethan",
+      "summary": "指定目录为空，不能选出最新交付。暂以现有 financial_recommendation_module 为产品匹配补丁来源，新增包内导入和统一金额/目录/期限适配；此名称不代表已核实 Ethan 原本负责推荐。",
+      "changed": [
+        "first_agent/vendor/finance/",
+        "first_agent/service.py"
+      ],
+      "validation": [
+        "推荐与执行使用相同产品目录及配置资金",
+        "缺风险档案返回 needs_profile_completion",
+        "低于产品起点、锁定加结算超期限均排除"
+      ],
+      "next": [
+        "补交原职责及最新完整 output、测试、依赖说明和接口契约",
+        "确认推荐/计算职责是否归本分支，再接收补位模块",
+        "如接入真实产品，提供条款、费用、风险及数据有效性来源；本次仅虚构目录"
+      ]
+    },
+    {
+      "branch_name": "集成 / 编排与交付",
+      "file": "integration",
+      "summary": "新增可运行的本地 HTTP Agent、SQLite 状态/幂等/审计、规则意图与多轮澄清，统一接入四方资产并生成总版及分支文档。",
+      "changed": [
+        "first_agent/service.py",
+        "first_agent/server.py",
+        "tests/test_integration.py",
+        "verify_delivery.py",
+        "API-CONTRACT.md",
+        "summary.md",
+        "summary.json"
+      ],
+      "validation": [
+        "统一整数分、错误结构和操作状态",
+        "持久恢复、跨会话隔离、Host/Origin 校验",
+        "多工具查询依赖及金额歧义澄清",
+        "来源时间与 SHA-256 清单、补丁映射和额度采样"
+      ],
+      "next": [
+        "如需开放式自然语言理解，再接入模型 provider 并保持确定性执行边界",
+        "维护模拟 API 和接入契约，真实银行由组委会本地部署接入",
+        "后续卡管理对接由后端主责、集成负责编排安全；当前模拟会话与本地审计的适用范围须明确"
+      ]
+    }
+  ],
+  "status": "completed",
+  "conclusion": "已完成首次模拟 Agent 集成及逐项分工交接；真实银行接入由组委会负责。"
+}

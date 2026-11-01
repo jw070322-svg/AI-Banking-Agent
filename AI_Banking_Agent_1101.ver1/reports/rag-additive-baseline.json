@@ -1,0 +1,258 @@
+{
+  "source_path": "D:\\weixin_file\\xwechat_files\\wxid_n0t7qvlbfnod22_7a73\\temp\\RWTemp\\2026-10\\09c994907962f225ee2ab1cc51d04ae2\\simple_RAG(3).py",
+  "source_sha256": "49d4b06b7a29c69e1378fade762a99755bb0b9d5c23c83aef6f50e70b29cf42b",
+  "source_executed": false,
+  "functions": [
+    {
+      "name": "is_sensitive_or_unsafe",
+      "line": 19,
+      "end_line": 22,
+      "description": ""
+    },
+    {
+      "name": "load_knowledge",
+      "line": 28,
+      "end_line": 39,
+      "description": "读取 data/knowledge 下的 .md 文档，返回 {文件名: 内容}。"
+    },
+    {
+      "name": "normalize_text",
+      "line": 45,
+      "end_line": 49,
+      "description": ""
+    },
+    {
+      "name": "tokenize",
+      "line": 52,
+      "end_line": 76,
+      "description": "将中文按双字词 + 单字词／英文词进行粗粒度分词，便于快捷 BM25 召回。"
+    },
+    {
+      "name": "split_markdown_into_chunks",
+      "line": 82,
+      "end_line": 106,
+      "description": "按标题和段落切块，保留语义边界。"
+    },
+    {
+      "name": "semantic_overlap_score",
+      "line": 112,
+      "end_line": 124,
+      "description": "计算问题与文本的重叠词比例，作为 BM25 的补充语义信号。"
+    },
+    {
+      "name": "compute_tfidf_vectors",
+      "line": 127,
+      "end_line": 156,
+      "description": "为所有 chunk 构造一个简化版 TF-IDF 向量空间，用作语义检索补充。"
+    },
+    {
+      "name": "cosine_similarity",
+      "line": 159,
+      "end_line": 169,
+      "description": "计算两个词向量的余弦相似度。"
+    },
+    {
+      "name": "vector_score",
+      "line": 172,
+      "end_line": 201,
+      "description": "基于简化 TF-IDF 空间的向量语义检索。"
+    },
+    {
+      "name": "bm25_score",
+      "line": 204,
+      "end_line": 253,
+      "description": "简单 BM25 公式，适合中文短文本检索，并加入语义重叠和向量相似度补偿。"
+    },
+    {
+      "name": "build_index",
+      "line": 259,
+      "end_line": 270,
+      "description": "将知识库内容转成可检索 chunk 索引。"
+    },
+    {
+      "name": "score_documents",
+      "line": 273,
+      "end_line": 304,
+      "description": ""
+    },
+    {
+      "name": "retrieve",
+      "line": 307,
+      "end_line": 310,
+      "description": "对外查询接口：读取知识库、索引并返回 top-k 证据。"
+    },
+    {
+      "name": "extract_summary",
+      "line": 313,
+      "end_line": 335,
+      "description": "截取最相关片段，尽量保留问题对应证据。"
+    },
+    {
+      "name": "build_contract_response",
+      "line": 338,
+      "end_line": 374,
+      "description": "将内部 RAG 结果包装成外部 API 契约格式。"
+    },
+    {
+      "name": "rag_answer",
+      "line": 377,
+      "end_line": 439,
+      "description": ""
+    }
+  ],
+  "sensitive_patterns": [
+    "他人",
+    "别人",
+    "朋友的",
+    "家人的",
+    "同事的",
+    "丈夫",
+    "妻子",
+    "父母",
+    "账户余额",
+    "身份证号",
+    "银行卡",
+    "手机号",
+    "银行卡号",
+    "身份证",
+    "查看别人",
+    "查看他人",
+    "看别人",
+    "看他人",
+    "别人的账单",
+    "他人的账单",
+    "转账给",
+    "直接转账",
+    "直接扣款",
+    "直接退款",
+    "隐私",
+    "交易明细",
+    "查看我朋友",
+    "看我朋友",
+    "看好友",
+    "看同事"
+  ],
+  "knowledge_documents_in_attachment": 0,
+  "protected_files": [
+    {
+      "path": "first_agent/vendor/rag/__init__.py",
+      "sha256": "7943e2551d18196328bc08986f5cfe96db3551dffc3489318a2ca4c274ad8a0d"
+    },
+    {
+      "path": "first_agent/vendor/rag/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "first_agent/vendor/rag/cli.py",
+      "sha256": "ffc46b21030df8f0fb12300b3f6283f1babd6886979bccab1c3da50186c2c365"
+    },
+    {
+      "path": "first_agent/vendor/rag/corpus.py",
+      "sha256": "1d5c235489c73b2e39857928235b2e3e4d91a18f5c03e7062e5af2b8113abaeb"
+    },
+    {
+      "path": "first_agent/vendor/rag/providers.py",
+      "sha256": "a4ef6f5be80fac513ae07589380c590a824eb8a759d0189aacd2191f0dc02bb6"
+    },
+    {
+      "path": "first_agent/vendor/rag/retrieval.py",
+      "sha256": "f559155bec509c5f1d97bf7a878b4b445b33fdaf125e255c5c8819e53c24de9f"
+    },
+    {
+      "path": "first_agent/vendor/rag/service.py",
+      "sha256": "62868820ab6d35c3affa095588259bbcb7a03e72156b767fcb28ac708d194cd3"
+    },
+    {
+      "path": "knowledge/01-现金流.md",
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d"
+    },
+    {
+      "path": "knowledge/02-储蓄率.md",
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9"
+    },
+    {
+      "path": "knowledge/03-流动性.md",
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29"
+    },
+    {
+      "path": "knowledge/04-债务比率.md",
+      "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951"
+    },
+    {
+      "path": "knowledge/05-风险管理.md",
+      "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb"
+    },
+    {
+      "path": "knowledge/06-合规边界.md",
+      "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d"
+    },
+    {
+      "path": "knowledge/07-订阅管理.md",
+      "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5"
+    },
+    {
+      "path": "knowledge/08-旅行预算.md",
+      "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d"
+    },
+    {
+      "path": "knowledge/finance-01.md",
+      "sha256": "d30ee83870d6fa9dd10a6ff765587ac8b7658bc83f5091cd37ff4383e89119d5"
+    },
+    {
+      "path": "knowledge/finance-02.md",
+      "sha256": "b227b31a78d15728c93f9afcd4dd86b77ac166fe0b4c62ad52645b930a17f75f"
+    },
+    {
+      "path": "knowledge/finance-03.md",
+      "sha256": "651ddf53227f4be610cb5f75784e1a10e776b262b3b17462b50ae4d3507259b0"
+    },
+    {
+      "path": "knowledge/finance-04.md",
+      "sha256": "5b4b913ef45bca8c114de5ac515a765ac61dfa0c6d5f326e54dbeafe542fd648"
+    },
+    {
+      "path": "knowledge/finance-05.md",
+      "sha256": "e9357b0bc4ea6dfb98e5cb41b6ae75b5fd9a661ef3b64de583b8fb6deee9a835"
+    },
+    {
+      "path": "knowledge/finance-06.md",
+      "sha256": "dc29c0dd0ec90744937012c54ce96dbcd36ebf84a31f7f33dfb81a5cf81a4ca9"
+    },
+    {
+      "path": "knowledge/finance-07.md",
+      "sha256": "ac8b1d4e96ebd6ef3e41d861f7b8a9828c8ee3a2a27e2739ce7b799a16f51b33"
+    },
+    {
+      "path": "knowledge/finance-08.md",
+      "sha256": "9aaccf62c5138ba076dd41881bb9a9b6d6b3435292e0334d69de950535eb2045"
+    },
+    {
+      "path": "knowledge/finance-09.md",
+      "sha256": "f25ae466573ce5d438d151b72218fe6f0edc970246e5e3df9e1efe9fc4d63716"
+    },
+    {
+      "path": "knowledge/finance-10.md",
+      "sha256": "087e2095523b382a49b11801fd03626dbd46bb6ca354eb636a1587ae89c4a17c"
+    },
+    {
+      "path": "knowledge/finance_glossary.json",
+      "sha256": "e5f294ab8eac7cbe25d3b59bd9e96732a65ee4ff404b17d21ea92993e5afb63f"
+    },
+    {
+      "path": "knowledge/finance_terms.tsv",
+      "sha256": "451ff0827ee73f824a5fd145801cfaa3a14a3152ddd25671e10210f238787822"
+    },
+    {
+      "path": "knowledge/index.json",
+      "sha256": "f4ff1c77bd3ec1aaa1d2901153ed4a05fc3a9a5134c94b7cf458cdcaec852595"
+    },
+    {
+      "path": "knowledge/manifest.json",
+      "sha256": "73563695134975dc60c6245a7858636d66df41d7bdf3fe9a0d2226d05be88a2a"
+    },
+    {
+      "path": "sources/YUKI/src/RAG/simple_RAG.py",
+      "sha256": "b8b6783ff3d0bdba0dd9dcc0ecc24614800257bde3dd8ae26e2c33e26e2d984b"
+    }
+  ]
+}

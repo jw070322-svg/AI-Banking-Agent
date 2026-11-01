@@ -1,0 +1,41 @@
+test_all_13_tools_registered (test_tools_security_1029.ModuleSecurityTests.test_all_13_tools_registered) ... ok
+test_argument_injection_blocks_handler (test_tools_security_1029.ModuleSecurityTests.test_argument_injection_blocks_handler) ... ok
+test_auditor_does_not_inherit_customer_permissions (test_tools_security_1029.ModuleSecurityTests.test_auditor_does_not_inherit_customer_permissions) ... ok
+test_blocked_output_has_no_raw_side_channel (test_tools_security_1029.ModuleSecurityTests.test_blocked_output_has_no_raw_side_channel) ... ok
+test_budget_and_alert_confirmation_path (test_tools_security_1029.ModuleSecurityTests.test_budget_and_alert_confirmation_path) ... ok
+test_confirmation_binding_and_invalid_arguments_not_consumed (test_tools_security_1029.ModuleSecurityTests.test_confirmation_binding_and_invalid_arguments_not_consumed) ... ok
+test_confirmation_duplicate_concurrent (test_tools_security_1029.ModuleSecurityTests.test_confirmation_duplicate_concurrent) ... ok
+test_confirmation_expiry_cancel_and_cross_session (test_tools_security_1029.ModuleSecurityTests.test_confirmation_expiry_cancel_and_cross_session) ... ok
+test_cookie_csrf_and_logout (test_tools_security_1029.ModuleSecurityTests.test_cookie_csrf_and_logout) ... ok
+test_cross_customer_account_denied (test_tools_security_1029.ModuleSecurityTests.test_cross_customer_account_denied) ... ok
+test_durable_idempotency_concurrent_and_restart (test_tools_security_1029.ModuleSecurityTests.test_durable_idempotency_concurrent_and_restart) ... ok
+test_durable_idempotency_cross_registry_race (test_tools_security_1029.ModuleSecurityTests.test_durable_idempotency_cross_registry_race) ... ok
+test_explicit_default_equals_omitted_default (test_tools_security_1029.ModuleSecurityTests.test_explicit_default_equals_omitted_default) ... ok
+test_final_audit_failure_does_not_return_success (test_tools_security_1029.ModuleSecurityTests.test_final_audit_failure_does_not_return_success) ... ok
+test_idempotency_conflict_and_permissions_rechecked (test_tools_security_1029.ModuleSecurityTests.test_idempotency_conflict_and_permissions_rechecked) ... ok
+test_input_injection_blocks_handler (test_tools_security_1029.ModuleSecurityTests.test_input_injection_blocks_handler) ... ok
+test_invalid_json_and_resource_bounds (test_tools_security_1029.ModuleSecurityTests.test_invalid_json_and_resource_bounds) ... ok
+test_journal_unavailable_prevents_dispatch (test_tools_security_1029.ModuleSecurityTests.test_journal_unavailable_prevents_dispatch) ... ok
+test_logs_do_not_contain_password_token_or_raw_request (test_tools_security_1029.ModuleSecurityTests.test_logs_do_not_contain_password_token_or_raw_request) ... ok
+test_mandatory_audit_failure_prevents_mutation (test_tools_security_1029.ModuleSecurityTests.test_mandatory_audit_failure_prevents_mutation) ... ok
+test_model_bridge_batch_preflight_and_no_claimed_identity (test_tools_security_1029.ModuleSecurityTests.test_model_bridge_batch_preflight_and_no_claimed_identity) ... ok
+test_model_bridge_read_and_write_proposal (test_tools_security_1029.ModuleSecurityTests.test_model_bridge_read_and_write_proposal) ... ok
+test_mutation_invalid_output_is_unknown (test_tools_security_1029.ModuleSecurityTests.test_mutation_invalid_output_is_unknown) ... ok
+test_output_guard_failure_after_mutation_requires_review (test_tools_security_1029.ModuleSecurityTests.test_output_guard_failure_after_mutation_requires_review) ... ok
+test_permission_change_after_confirmation (test_tools_security_1029.ModuleSecurityTests.test_permission_change_after_confirmation) ... ok
+test_r4_default_unavailable_and_stepup_required (test_tools_security_1029.ModuleSecurityTests.test_r4_default_unavailable_and_stepup_required) ... ok
+test_redacted_output_has_no_raw_side_channel (test_tools_security_1029.ModuleSecurityTests.test_redacted_output_has_no_raw_side_channel) ... ok
+test_registry_aliases_keep_guard (test_tools_security_1029.ModuleSecurityTests.test_registry_aliases_keep_guard) ... ok
+test_session_expiry (test_tools_security_1029.ModuleSecurityTests.test_session_expiry) ... ok
+test_ten_read_tools_execute_through_security (test_tools_security_1029.ModuleSecurityTests.test_ten_read_tools_execute_through_security) ... ok
+test_testonly_r4_chain_transports_verified_stepup (test_tools_security_1029.ModuleSecurityTests.test_testonly_r4_chain_transports_verified_stepup) ... ok
+test_unknown_mutation_never_reexecutes (test_tools_security_1029.ModuleSecurityTests.test_unknown_mutation_never_reexecutes) ... ok
+test_unknown_or_injected_tool_denied (test_tools_security_1029.ModuleSecurityTests.test_unknown_or_injected_tool_denied) ... ok
+test_preservation (test_tools_security_1029.QuotaAndPreservationTests.test_preservation) ... ok
+test_threshold_and_json_handoff (test_tools_security_1029.QuotaAndPreservationTests.test_threshold_and_json_handoff) ... ok
+test_unknown_or_stale_quota_is_not_fabricated (test_tools_security_1029.QuotaAndPreservationTests.test_unknown_or_stale_quota_is_not_fabricated) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 3.923s
+
+OK

@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-27T11:12:58.957635+00:00",
+  "status": "trained_experiment_not_deployed",
+  "base_model": "Qwen2.5-0.5B-Instruct Q4_K_M GGUF dequantized for training",
+  "base_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "training_device": "CPU",
+  "seed": 42,
+  "training_examples": 220,
+  "holdout_examples": 48,
+  "available_training_examples": 220,
+  "available_holdout_examples": 48,
+  "epochs": 2,
+  "optimizer_steps": 56,
+  "trainable_parameters": 540672,
+  "holdout_before": {
+    "mean_token_loss": 4.75919754117982,
+    "tokens": 1170,
+    "examples": 48
+  },
+  "holdout_after": {
+    "mean_token_loss": 3.3893963642609424,
+    "tokens": 1170,
+    "examples": 48
+  },
+  "holdout_loss_improved": true,
+  "safety_or_factual_accuracy_certified": false,
+  "deployed_to_llama_cpp": false,
+  "adapter_path": "F:\\AI_Banking\\AI_Banking_Agent_1027.ver4\\training\\lora-finance-qwen05b-full",
+  "training_data": "original general educational summaries; no customer data"
+}

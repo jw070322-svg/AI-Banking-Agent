@@ -1,0 +1,153 @@
+{
+  "scenario_id": "SCN_A_20261023230330_DB8B2B",
+  "scenario_name": "普通银行用户",
+  "scenario_type": "A",
+  "created_at": "2026-10-23T00:00:00",
+  "user": {
+    "user_id": "U51C91E7EA419",
+    "name": "吴磊",
+    "gender": "女",
+    "id_number": "110101198809267689",
+    "phone": "18684697880",
+    "email": "u51c91e7ea419@example.com",
+    "address": "杭州市西湖区",
+    "occupation": "教师",
+    "monthly_income": 21019.05,
+    "registration_date": "2021-05-27"
+  },
+  "accounts": [
+    {
+      "account_id": "ACCF38B80A4DF5A",
+      "user_id": "U51C91E7EA419",
+      "account_type": "储蓄卡",
+      "account_number": "6222081967273177848",
+      "currency": "CNY",
+      "initial_balance": 9141.87,
+      "balance": 29516.16,
+      "status": "正常",
+      "opened_date": "2023-09-26"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T9293C88B2875",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-09-25",
+      "amount": 306.5,
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8EB516F44881",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-09-30",
+      "amount": 264.09,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TE2551A466884",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-01",
+      "amount": 22620.01,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB5FBD9090B89",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-01",
+      "amount": 362.46,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T3D6C70EB9A0A",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-06",
+      "amount": 423.56,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TA511E060A724",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-06",
+      "amount": 156.68,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T5071ADEC6F11",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-09",
+      "amount": 20.57,
+      "transaction_type": "expense",
+      "category": "通讯",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TE41666160227",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-12",
+      "amount": 191.32,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T6058CE1D62E0",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-17",
+      "amount": 207.65,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T1919D11745AD",
+      "account_id": "ACCF38B80A4DF5A",
+      "date": "2026-10-23",
+      "amount": 312.89,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成一个普通银行用户，含用户信息、账户、初始余额，以及工资收入和日常消费流水。",
+    "expected": {
+      "has_user": true,
+      "has_account": true,
+      "has_income": true,
+      "has_expense": true,
+      "balance_non_negative": true
+    }
+  }
+}

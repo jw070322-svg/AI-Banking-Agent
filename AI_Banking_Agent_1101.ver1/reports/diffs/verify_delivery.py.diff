@@ -1,0 +1,27 @@
+--- FirstAgent/verify_delivery.py
++++ SecondAsgent/verify_delivery.py
+@@ -7,16 +7,19 @@
+ 
+ def main():
+     if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
+-    suite=unittest.defaultTestLoader.discover(str(ROOT/'tests'),pattern='test_integration.py')
++    suite=unittest.defaultTestLoader.discover(str(ROOT/'tests'),pattern='test_*.py')
+     stream=io.StringIO();result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+     (ROOT/'reports/integration-tests.txt').write_text(stream.getvalue(),encoding='utf-8')
+-    node=subprocess.run(['node',str(ROOT/'tests/vv_core.cjs')],capture_output=True,text=True,encoding='utf-8',cwd=ROOT)
+-    vv=json.loads(node.stdout) if node.returncode==0 else {'passed':0,'error':node.stderr}
++    suites={}
++    for name in ['vv_core','vv_simulation','vv_contract_rules']:
++        node=subprocess.run(['node',str(ROOT/'tests'/f'{name}.cjs')],capture_output=True,text=True,encoding='utf-8',cwd=ROOT)
++        suites[name]=json.loads(node.stdout) if node.returncode==0 else {'passed':0,'error':node.stderr}
++    vv={'passed':sum(v['passed'] for v in suites.values()),'suites':suites}
+     (ROOT/'reports/vv-tests.json').write_text(json.dumps(vv,ensure_ascii=False,indent=2),encoding='utf-8')
+     report={'verified_at':datetime.now(timezone.utc).isoformat(),
+-            'integration':{'run':result.testsRun,'passed':result.testsRun-len(result.failures)-len(result.errors)-len(result.skipped),
++            'integration':{'run':result.testsRun,'passed':result.testsRun-len({str(t) for t,_ in result.failures+result.errors+result.skipped}),
+                 'failures':[str(t) for t,_ in result.failures],'errors':[str(t) for t,_ in result.errors],'skipped':[str(t) for t,_ in result.skipped]},
+-            'vv_engine':vv,'conclusion':'passed' if result.wasSuccessful() and node.returncode==0 else 'failed'}
++            'vv_engine':vv,'conclusion':'passed' if result.wasSuccessful() and all('error' not in v for v in suites.values()) else 'failed'}
+     (ROOT/'reports/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+     print(json.dumps(report,ensure_ascii=False,indent=2))
+     return 0 if report['conclusion']=='passed' else 1

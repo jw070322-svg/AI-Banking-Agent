@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-27T06:03:26.857070+00:00",
+  "dataset": {
+    "filename": "wind_banking_products_20261027.xlsx",
+    "sha256": "230f7bb738d2b96582cbab280b0139eeba4dcbcada3201358f0646ca5c12fe4d",
+    "product_count": 35,
+    "price_rows": 13361,
+    "index_count": 9,
+    "macro_rows": 67,
+    "start_date": "2024-09-02",
+    "end_date": "2026-10-27"
+  },
+  "market_indices_displayed": 9,
+  "product_nav_series_displayed": 35,
+  "unapproved_public_search_blocked": true,
+  "unapproved_account_read_blocked": true,
+  "upload_route_removed": true,
+  "recommendation_succeeded": true,
+  "candidate_count": 0,
+  "excluded_count": 35,
+  "ledger_unchanged": true,
+  "paid_api_calls": 0,
+  "passed": true
+}

@@ -1,0 +1,11 @@
+--- FirstAgent/first_agent/server.py
++++ SecondAsgent/first_agent/server.py
+@@ -65,7 +65,7 @@
+                         with service.transaction() as db:service.load(db,sid)
+                     except Fault:sid=service.create_session()
+                     return self.send_json(service.envelope({'mode':'local_demo'}),cookie=sid)
+-                routes={'/api/rpc':'rpc','/api/chat':'chat','/api/knowledge':'knowledge','/api/recommendations':'recommend',
++                routes={'/api/scenarios/generate':'scenario.generate','/api/rpc':'rpc','/api/chat':'chat','/api/knowledge':'knowledge','/api/recommendations':'recommend',
+                         '/api/transfers/preview':'transfer.preview','/api/transfers/verify':'transfer.verify',
+                         '/api/transfers/confirm':'transfer.confirm','/api/transfers/reconcile':'transfer.reconcile','/api/transfers/cancel':'transfer.cancel'}
+                 action=routes.get(path)

@@ -1,0 +1,64 @@
+{
+  "用户ID": "local_user",
+  "状态": "本地千问模型已恢复接入：共享密钥、演示入口自动拉起、适配器实证加载；适配器问答质量未改善，仍不得宣称金融准确",
+  "项目路径": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver4",
+  "用户问题": "为什么本地千问模型不能接入了，检查并修复这个问题",
+  "根因": [
+    "密钥按版本目录存放而模型服务共享：1027.ver5/1028.ver1/1029.ver1/1029.ver2/1030.ver1 各有一份互不相同的密钥，1029_rag_review 与 1030.ver2/ver3/ver4 一份都没有。运行中的服务只认启动它那一份密钥，其余一律 401，面板显示“需要在官方页面验证”。",
+    "8807 演示入口根本不启动模型：只有 start.py 有自动启动块，启动产品行情版.bat 走的是 start_live_product_quotes.py，从不拉起 8797。",
+    "启动失败被吞掉：start.py 用 DEVNULL + 10 秒盲杀，ps1 只 catch WebException，Start-Process 之后不检查进程是否存活，所以失败只剩一句“Local AI unavailable”。"
+  ],
+  "修复": [
+    "密钥改为共享 F:\\AI_Banking\\local-ai\\local-model.key；读取端共享优先、旧版本路径回退；启动器只维护共享那份，可从旧路径采纳，避免打断正在跑的服务。",
+    "新增 first_agent/local_ai_bootstrap.py：就绪快路径、捕获启动器输出、适配器实证、端口冲突只报告 PID 不强杀；导入无副作用。",
+    "重写 start_local_ai.ps1：端口现状分类（ready / 端口被别的模型占用 / 密钥不匹配 / 未监听）、启动后轮询 30 秒就绪、状态写入 local-ai-status.json、纯 ASCII 以兼容 Windows PowerShell 5.1。",
+    "start.py、start_live_product_quotes.py（8807）、start_live_indices.py（8806）统一调用引导并打印真实原因。",
+    "本地 401 不再映射成“需要在官方页面验证”，改为新状态 auth_rejected，面板提示“本地模型密钥不匹配”。",
+    "新增 tools/diagnose_local_model.py：一条命令定位断点。",
+    "仓库根新增 .gitignore 忽略 local-ai/（2.7GB 权重与共享密钥不得进版本库）。"
+  ],
+  "关键实证": {
+    "适配器": "/lora-adapters 返回 training/lora-finance-qwen05b-full/adapter-qwen2.gguf，scale=1.0",
+    "为何不只信别名": "--alias banking-finance-lora 即使适配器没加载也会生效；本版 llama.cpp 在该 verbosity 下也不打印 lora 日志，所以用 /lora-adapters 作为唯一证据",
+    "鉴权": "无密钥与错误密钥访问 /v1/models 均返回 401",
+    "模型进程": "llama-server.exe PID 60820，监听 127.0.0.1:8797，命令行含 --lora 与 --api-key-file",
+    "前端状态": "providers.llama_cpp.status=ready，message=本地模型可用",
+    "生成": "generation_mode=llama_cpp，模型返回真实回答"
+  },
+  "测试结果": {
+    "本地模型专项": "24 通过（tests/test_local_model_bootstrap.py）",
+    "后端集成": "264 通过 / 0 失败 / 0 错误（原 240 + 24）",
+    "复核链": "57 通过",
+    "前端检查": "92 通过",
+    "端到端验收": "tools/verify_external_live.py 8807 passed=true，paid_api_calls=0",
+    "迁移台账": "迁移36 / 运行产物8 / 已登记改动17 / 未证实0"
+  },
+  "证据": [
+    "reports/external-live.json（本次验收实测）",
+    "F:\\AI_Banking\\local-ai\\local-ai-status.json（启动状态）",
+    "F:\\AI_Banking\\local-ai\\llama-server.stderr.log（本次启动日志）",
+    "reports/1030-ver4-change-ledger.json、reports/历史迁移核对_1030ver3.json",
+    "logs/creation_1030_local_ai.jsonl（八字段）"
+  ],
+  "设计依据": [
+    "模型服务与权重都是共享的，密钥也必须共享；按目录分裂必然产生 401",
+    "别名不能作为适配器加载的证据，必须查 /lora-adapters",
+    "适配器加载失败就拒绝启动，不允许用未微调的基础模型冒充训练模型",
+    "端口被别人占用时只报告 PID，不自动杀未知进程",
+    "启动失败必须可见：捕获输出、轮询就绪、写状态文件"
+  ],
+  "未完成 / 边界": [
+    "适配器质量未改善也未重新评测：reports/finance-lora-generation-full.json 仍记录 3 个留出题事实错误，数值等价性仍未验证",
+    "模型服务需手动停止（taskkill /PID，PID 见 local-ai-status.json）；本次未加自动关闭",
+    "共享密钥是回环服务的单一凭据，轮换会使运行中的服务失配，需重启",
+    "非 Windows 无启动路径，引导返回 unavailable",
+    "人工业务评分、生产认证、真实银行验收仍未完成"
+  ],
+  "后续处理建议": [
+    "先复核额度，再读本交接与 LOCAL_AGENT_HANDOFF.md",
+    "排障从 python tools/diagnose_local_model.py 开始，先看密钥候选与 /lora-adapters",
+    "换新版本目录时无需再复制密钥：共享路径即生效",
+    "改动受基线约束的文件后，在 tools/build_version_ledger.py 的 REASONS 与 tools/build_relocation_ledger.py 的 INTENTIONAL_EDITS 登记后重跑两条台账"
+  ],
+  "timestamp": "2026-10-31T00:22:00+08:00"
+}

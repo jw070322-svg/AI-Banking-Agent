@@ -1,0 +1,5 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const core=require('../dist/journey-engine.js'),code=fs.readFileSync(path.join(__dirname,'../dist/local-store.js'),'utf8'),memory=new Map();
+const context={BankCore:core,localStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v)}};vm.createContext(context);vm.runInContext(code,context);
+const a=context.BankLocal.createSession();a.authorize({read:true,subscriptions:true,trade:true,transfer:true,cards:true});const op=a.propose('transfer','R-WANG',80000);if(op.level==='red')a.verify(op.id,'246810');a.execute(op.id,'success');const b=context.BankLocal.createSession();assert.equal(b.state.available,3784000);assert.throws(()=>a.propose('transfer','R-WANG',1));
+memory.set(context.BankLocal.key,'{bad');const c=context.BankLocal.createSession();assert.ok(c.storageWarning);assert.throws(()=>c.propose('transfer','R-WANG',1));assert.equal(memory.get(context.BankLocal.key),'{bad');console.log('3 storage scenarios passed');

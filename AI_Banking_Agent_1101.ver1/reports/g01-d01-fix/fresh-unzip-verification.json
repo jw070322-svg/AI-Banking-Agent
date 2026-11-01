@@ -1,0 +1,18 @@
+{
+  "completed_at": "2026-11-01T03:42:22.264835+00:00",
+  "fresh_unzip_different_directory": true,
+  "one_command_exit_code": 0,
+  "fresh_test_result": {
+    "started_at": "2026-11-01T03:41:45.753214+00:00",
+    "completed_at": "2026-11-01T03:42:21.953429+00:00",
+    "source_fingerprint": "43474c35c216f3190b31e9777cb6b0dd54b0cb747ac94ee4471236f42e53a703",
+    "run": 58,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "timestamp_matches_actual_test": true,
+  "tampered_code_report_refused": true,
+  "ui_source_unchanged": true,
+  "windows_new_launcher_not_executed_on_mac": true
+}

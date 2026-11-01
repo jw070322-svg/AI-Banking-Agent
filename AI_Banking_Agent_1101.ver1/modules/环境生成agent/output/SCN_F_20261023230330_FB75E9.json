@@ -1,0 +1,211 @@
+{
+  "scenario_id": "SCN_F_20261023230330_FB75E9",
+  "scenario_name": "家庭生日跨场景联动",
+  "scenario_type": "F",
+  "created_at": "2026-10-23T00:00:00",
+  "user": {
+    "user_id": "U57ADF4F031FC",
+    "name": "刘磊",
+    "gender": "女",
+    "id_number": "440103200204123677",
+    "phone": "18879432627",
+    "email": "u57adf4f031fc@example.com",
+    "address": "北京市朝阳区",
+    "occupation": "医生",
+    "monthly_income": 21833.82,
+    "registration_date": "2023-01-21"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC8F94328BF8AE",
+      "user_id": "U57ADF4F031FC",
+      "account_type": "储蓄卡",
+      "account_number": "6222602145842108394",
+      "currency": "CNY",
+      "initial_balance": 7319.17,
+      "balance": 18342.91,
+      "status": "正常",
+      "opened_date": "2022-10-12"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "TA20C5738F7C7",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-09-26",
+      "amount": 481.23,
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8AFD2EF7B374",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-09-29",
+      "amount": 219.18,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T608F6254C3F0",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-01",
+      "amount": 14051.51,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TA67409BAF21C",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-03",
+      "amount": 302.92,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF1B8237F0DE0",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-06",
+      "amount": 247.24,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD734A86A04D1",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-07",
+      "amount": 380.95,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T46DE043F9F5B",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-15",
+      "amount": 396.5,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF9E6B50F9E6C",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-16",
+      "amount": 344.38,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TE39F65988372",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-23",
+      "amount": 335.86,
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF85E0EEC8BF9",
+      "account_id": "ACC8F94328BF8AE",
+      "date": "2026-10-23",
+      "amount": 319.51,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "模拟比赛中的跨场景联动：识别家庭成员生日，在生日当月锁定活动预算，并生成生日前 2 天的鲜花、蛋糕等订购活动日历。",
+    "expected": {
+      "family_birthday_in_lock_month": true,
+      "locked_amount": 1000.0,
+      "activity_calendar_coverage": true,
+      "order_two_days_before": true,
+      "calendar_within_locked_budget": true
+    }
+  },
+  "family": [
+    {
+      "member_id": "FAM1CD3FF44577C",
+      "relation": "母亲",
+      "birthday": "2026-10-27",
+      "birth_year": 1998,
+      "age_turning": 28
+    }
+  ],
+  "budget": {
+    "monthly_activity_budget": 1000.0,
+    "locked_amount": 1000.0,
+    "currency": "CNY",
+    "lock_month": "2026-10",
+    "note": "生日当月锁定活动预算，日历合计不超过锁定金额"
+  },
+  "activity_calendar": [
+    {
+      "event_id": "EVT85C8202CB15A",
+      "date": "2026-10-25",
+      "title": "预订生日鲜花",
+      "category": "鲜花",
+      "budget": 249.51,
+      "status": "planned",
+      "related_member_id": "FAM1CD3FF44577C",
+      "auto_order": true
+    },
+    {
+      "event_id": "EVT98D15AA26879",
+      "date": "2026-10-25",
+      "title": "预订生日蛋糕",
+      "category": "蛋糕",
+      "budget": 189.46,
+      "status": "planned",
+      "related_member_id": "FAM1CD3FF44577C",
+      "auto_order": true
+    },
+    {
+      "event_id": "EVT205594002427",
+      "date": "2026-10-25",
+      "title": "购买生日礼物",
+      "category": "生日礼物",
+      "budget": 97.8,
+      "status": "planned",
+      "related_member_id": "FAM1CD3FF44577C",
+      "auto_order": false
+    },
+    {
+      "event_id": "EVT4D5FA7E27F8C",
+      "date": "2026-10-27",
+      "title": "安排生日晚餐",
+      "category": "生日晚餐",
+      "budget": 287.23,
+      "status": "planned",
+      "related_member_id": "FAM1CD3FF44577C",
+      "auto_order": false
+    }
+  ]
+}

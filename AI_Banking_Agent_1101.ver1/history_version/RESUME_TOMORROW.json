@@ -1,0 +1,34 @@
+{
+  "status": "local_workflow_verified_original_handoff_not_all_complete",
+  "paused_at": "2026-10-29T11:15:25.354456+00:00",
+  "reason": "用户报告剩余额度12，要求快速收尾，明天继续；不再扩展或重跑测试",
+  "project": "/Users/valerie/Documents/Codex/2026-10-18/referenced-chatgpt-conversation-this-is-an-4/outputs/AI_Banking_Agent_1029_rag_review",
+  "entrypoint": "start_review.py",
+  "preview_url": "http://127.0.0.1:8802/",
+  "old_url_not_current": "http://127.0.0.1:8798/",
+  "preview_pid_last_observed": 53681,
+  "preview_database": "/Users/valerie/Documents/Codex/2026-10-18/referenced-chatgpt-conversation-this-is-an-4/work/review-1029-preview.sqlite3",
+  "last_checks": {
+    "run": 57,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "resume_first": [
+    "Read 明天继续_先看这里.md and HANDOFF_REVIEW_1029.json",
+    "Verify preview process/port before restart; last excerpt-marker regex fix is on disk and tested but preview process has not reloaded it",
+    "Preserve existing local test DB; restart only review service when authorized to continue",
+    "No need to rerun passed suites without code change; identify next bounded priority with user"
+  ],
+  "remaining": [
+    "105题独立人工业务评分与不切题资料核对",
+    "主网页接入原独立tools/security网关的后续工作",
+    "真实身份/银行/模型/外部搜索/防篡改审计尚未验收",
+    "审核版本工具尚不发布到在线知识索引"
+  ],
+  "note": "用户打开的是8798旧页面；本轮入口8802。预览服务可能因电脑休眠或重启停止；代码和证据文件已持久保存。不要擅自从旧输入ZIP重新覆盖续作。",
+  "updated_at": "2026-10-29T16:05:20.292770+00:00",
+  "latest_note": "本地模拟闭环验收_1030.md",
+  "latest_report": "reports/review-continuation/local-acceptance-1030.json",
+  "next_priority": "完整工具网关与原账本金融路由适配；不能以扫描器替代"
+}

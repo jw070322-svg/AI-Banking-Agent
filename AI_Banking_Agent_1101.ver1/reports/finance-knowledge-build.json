@@ -1,0 +1,11 @@
+{
+  "term_count": 134,
+  "category_count": 10,
+  "indexed_documents": 18,
+  "indexed_chunks": 283,
+  "train_examples": 220,
+  "holdout_examples": 48,
+  "split_method": "sha256 of canonical term; held-out terms absent from training",
+  "all_financial_terms_claimed": false,
+  "training_has_customer_data": false
+}

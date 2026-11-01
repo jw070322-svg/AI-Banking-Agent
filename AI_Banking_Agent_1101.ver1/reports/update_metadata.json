@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-23",
+  "source_count": 105,
+  "new_or_changed": [
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\AI_Banking_项目进度.md",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\main.py",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\main_backup.py",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020111028_8CFC07.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020111104_0D8784.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020133335_24BA6A.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020133403_FE2CC1.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020133915_C8975A.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020141513_CE5B6B.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261020143301_77087C.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261022185332_26568B.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261022185343_A462AC.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_B_20261020110937_B4A7FE.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_B_20261022185332_03E1CB.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_B_20261022185343_DC6949.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_C_20261020111543_B69FCC.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_C_20261022185332_9699E4.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_C_20261022185343_E8A841.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_D_20261020111113_F68C28.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_D_20261022185343_ABED32.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_E_20261020111122_3EC501.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_E_20261022185332_09FC12.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_E_20261022185343_94E93C.json",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\validator.py",
+    "Teammate_output\\Ethan output\\1022\\环境生成agent.zip",
+    "Teammate_output\\vv output\\1023\\Banking 前端模拟更新版.html",
+    "Teammate_output\\vv output\\1023\\Banking-统一版源码(2).zip",
+    "Teammate_output\\vv output\\1023\\前端更新版交付说明.md"
+  ],
+  "previous_source_changed": [],
+  "vv_html_script_match": {
+    "journey-engine.js": false,
+    "journey-workspace.js": false,
+    "local-store.js": true,
+    "contract-client.js": false
+  },
+  "selected": {
+    "eva": "1020/ver.2 (unchanged)",
+    "vv": "1023 ZIP, with 1023 standalone HTML comparison",
+    "YUKI": "1022 ZIP (unchanged)",
+    "Ethan": "1022 complete source plus latest A-E outputs"
+  },
+  "scenario_fixtures": [
+    {
+      "family": "A",
+      "source": "F:\\AI_Banking\\Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_A_20261022185343_A462AC.json",
+      "source_sha256": "916d20a59f43bb3edc6a6f0a6da385878620cf0f9c23c6a6427822b879650928",
+      "target": "scenarios/A.json"
+    },
+    {
+      "family": "B",
+      "source": "F:\\AI_Banking\\Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_B_20261022185343_DC6949.json",
+      "source_sha256": "68a78c28abb3bf360431f7c91f5282b7ee580bb2cd30ce5b626c7ad97a64bce4",
+      "target": "scenarios/B.json"
+    },
+    {
+      "family": "C",
+      "source": "F:\\AI_Banking\\Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_C_20261022185343_E8A841.json",
+      "source_sha256": "a9b1ad94a140bcb4d15891098761b40a0ac15dc767c2cf38390eaaec4f2ab0bf",
+      "target": "scenarios/C.json"
+    },
+    {
+      "family": "D",
+      "source": "F:\\AI_Banking\\Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_D_20261022185343_ABED32.json",
+      "source_sha256": "209290400de743a6b21a9b6cb434cf9b66448e177cbc41fe4a948c3d3babdcf1",
+      "target": "scenarios/D.json"
+    },
+    {
+      "family": "E",
+      "source": "F:\\AI_Banking\\Teammate_output\\Ethan output\\1022\\环境生成agent\\环境生成agent\\output\\SCN_E_20261022185343_94E93C.json",
+      "source_sha256": "5bd313cb0bb826af5a249aa647e7e8d4956d8784a4ac4243a1c95332f77833bc",
+      "target": "scenarios/E.json"
+    }
+  ],
+  "staging": "F:\\AI_Banking\\.work\\integration-20261023",
+  "delivery": "F:\\AI_Banking\\SecondAsgent",
+  "vv_selection_reason": "最新单页时间较晚；逐脚本比较发现 ZIP 含 trade 映射、预览/断言期限、累计分级等补丁。以单页新增业务功能为目标，从完整 ZIP 源码补齐契约保护，并连接服务端。",
+  "vv_file_mtimes_utc": {
+    "Banking 前端模拟更新版.html": "2026-10-23T06:15:13.307733+00:00",
+    "Banking-统一版源码(2).zip": "2026-10-23T06:09:19.608036+00:00",
+    "前端更新版交付说明.md": "2026-10-23T05:51:46.362682+00:00"
+  }
+}

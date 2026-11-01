@@ -1,0 +1,369 @@
+// @charset "gbk";
+define('util',[],function() {
+    function object(o){
+        function TF(){}
+        TF.prototype = o;
+        return new TF();
+    }
+
+    var util = {
+        inheritPrototype: function(subType, parentType){
+            var prototypeObj = object(parentType.prototype);
+            prototypeObj.constructor = subType;
+            subType.prototype = prototypeObj;
+        },
+
+        //判断代码是否为港股
+        isGg: function(code) {
+            return code.indexOf('HK') == 0 || code.indexOf('HS') == 0;
+        },
+        //判断代码是否为指数
+        isIndex: function(code) {
+            var indexPattern = /^(1A|1B|1C|399|3C|HSI)/;
+            return code.match(indexPattern) ? true : false;
+        },
+        formatUnit: function(val, fixed, unit) {
+            var temp,
+                fixed = fixed || 0;
+            if (val >= (temp = Math.pow(10, 8))) {
+                return (val / temp).toFixed(fixed) + (unit ? '亿' : '');
+            } else if (val >= (temp = Math.pow(10, 4))) {
+                return (val / temp).toFixed(fixed) + (unit ? '万' : '');
+            } else {
+                return val;
+            }
+        },
+        // 判断浏览器 名字
+        client: function(){
+            var ua = navigator.userAgent;
+            // var ua = navigator.userAgent+'UCBrowser';
+            var platform = navigator.platform;
+
+            var andriodVersion = 0;
+            var ieVersion = 0;
+            var level = {
+                pcSenior:0,
+                pcLow:0,
+                moveSenior:0,
+                moveLow:0
+            };
+
+            var browser = {
+                chrome:0,
+                uc:0,
+
+                // 指pc
+                safari:0
+            };
+
+            // if return ture : 代表不是ie8 及以下浏览器
+            // xp:  IE8 IE7 IE6 Chrome
+            function hasCreateElement(){
+                return typeof document.createElement == "function";
+            }
+            var ieNotLow = hasCreateElement();
+
+
+            if(!ieNotLow){
+                level.pcLow = 1;
+            }else if(/MSIE ([^;]+)/.test(ua)){
+                ieVersion = RegExp["$1"]>>0;
+                if(ieVersion>8){
+                    level.pcSenior = 1;
+                }
+            }else if(/Android (\d+\.\d+)/.test(ua)){
+                if (/UCBrowser/.test(ua)) {
+                    browser.uc = 1;
+                };
+                andriodVersion = parseFloat(RegExp.$1);
+                if (andriodVersion>2.3) {
+                    level.moveSenior = 1;
+                }else{
+                    level.moveLow = 1;
+                };
+            }else if(ua.indexOf("iPhone") > -1 ||(ua.indexOf("iPad") > -1)){
+                level.moveSenior = 1;
+            }else if(/Gecko?(:AppleWebKit)?/.test(ua)){
+                level.pcSenior = 1;
+                if (/Chrome\/(\S+)/.test(ua)) {
+                    browser.chrome = 1;
+                } else if(/Version\/(\S+)/.test(ua)){
+                    browser.safari = 1;
+                };
+            }else{
+                level.pcLow = 1;
+            }
+
+            return{
+                level:level,
+                browser:browser
+            }
+        }()
+
+    };
+    return util;
+});
+
+// @charset "utf-8";
+/*
+ * 针对不同浏览器的 不同处理
+ */
+define('BrowserStrategy',['util'], function (util){
+
+    var BrowserStrategy = {
+        // 针对 uc浏览器，每次url尾部加 ？时间戳
+        // 时间戳 根据 interval来判断是 每小时更新2015090101，还是每分钟201509010159
+        // interval : 默认 每分钟更新, 可以为 'perMinute' or 'perHour' or 'perDay' 'noTimestamp'这4种
+        getUrl:function(url, interval){
+            var c = util.client;
+            var t;
+            if (c.browser.uc) {
+                t = new Date();
+                var tStr = t.getFullYear() + (t.getMonth()+1<10?'0':'') + (t.getMonth()+1) + (t.getDate()+1<10?'0':'') + t.getDate();
+                var tempMin = (t.getMinutes()<10?'0':'') + t.getMinutes();
+                var tempHour = (t.getHours()<10?'0':'') + t.getHours();
+                if (interval === 'perMinute') {
+                    return url + '?' + tStr + tempHour + tempMin;
+                }else if (interval === 'perHour') {
+                    return url + '?' + tStr + tempHour;
+                }else if(interval === 'perDay'){
+                    return url + '?' + tStr;
+                }else{
+                    return url;
+                }
+
+            }else{
+                return url;
+            }
+
+        }
+    }
+
+    return BrowserStrategy;
+});
+
+// @charset "utf-8";
+define('Xhr',['BrowserStrategy'], function (BrowserStrategy){
+    /**
+     * 获取远程文件中的内容
+     * @param  {[type]}   url      [description]
+     * @param  {Function} callback [description]
+     * @param  {[type]}   code     [股票代码]
+     * @return {[type]}            [description]
+     */
+    function jqGetScript(urlPath, code, callback) {
+
+        var obj = {}
+        $.ajax({ 
+            url: urlPath, 
+            dataType: "script", 
+            cache:true, 
+            success: function(){
+                obj = window['var_'+code];
+                callback(obj);
+            }
+
+        });
+
+    }
+
+    /**
+     * name 为 callback 的name
+     * e.g quotebridge_todayline, quotebridge_time
+     * interval 是为了解决 仅在uc浏览器上 有过度缓存的bug
+     * 注：如果你需要间隔某个时间 请求同一接口，需要设定相应的interval值: 'perMinute', 'perHour', 'perDay', 'noTimestamp'这4种
+     */
+    var jqXhrWithoutCallback = function(urlPath, callback, name, interval) {
+        var xhrHandle;
+        interval = interval || 'perMinute';
+
+        var url = BrowserStrategy.getUrl(urlPath, interval);
+        // @todo delete
+        // (function() {
+            // window[name] = function(data){ callback(data); }
+            // xhrHandle = $.ajax({
+            //     type: "get",
+            //     url: url,
+            //     dataType : "script",
+            //     cache: true, 
+            //     success: function(data){
+            //         window[name] = undefined;
+            //         try{
+            //             delete window[name];
+            //         }catch(e){}
+            //     },
+            //     error:function(){
+            //         window[name] = undefined;
+            //         try{
+            //             delete window[name];
+            //         }catch(e){}
+
+            //     } 
+            // });
+            xhrHandle = $.ajax({ 
+                url: url, 
+                dataType: "jsonp", 
+                cache:true, 
+                jsonp:false,
+                // beforeSend: function(){
+                //     console.log('before send~~~');
+                //     console.log(arguments);
+                // },
+                jsonpCallback: name,
+                success: function(d, status, xhr){
+                    callback(d);
+                },
+                error:function(xhr, errorType, error){
+
+                }
+            });
+
+        // })()
+        return xhrHandle;
+    }
+
+    return {
+        jqGetScript : jqGetScript,
+        jqXhrWithoutCallback: jqXhrWithoutCallback
+    }
+    
+});
+
+// @charset "utf-8";
+/*
+ * 所有数据 测试环境和正式环境配置切换文件
+ */
+define('UrlConfig',[],function (){
+    var UrlConfig = {
+        // 正式环境
+        urlHost:'http://d.10jqka.com.cn/'
+        // 测试环境
+        // urlHost:'http://testm.10jqka.com.cn/mobile29/info/d/'
+    }
+
+    return UrlConfig;
+});
+
+// @charset "utf-8";
+define('PureDataProvider',['Xhr', 'UrlConfig'], function (Xhr, UrlConfig){
+    var PureDataProvider = function(options){
+        var defaultConfigs = {
+            url:UrlConfig.urlHost,
+            urlVersion:'v2/rank/',
+            middlePart: '',
+            lastPart:'a3.js',
+            isKeepingGet : false,
+            intervalTime: 60000,
+            callbackName: null,
+            success:function(){}
+        };
+
+        this.configs = $.extend({}, defaultConfigs, options);
+        this.getData();
+    }
+
+    PureDataProvider.prototype.getFromWeb = function(callback) {
+        var u = '', callbackName = '';
+        var middlePart = this.configs.middlePart ? this.configs.middlePart + '/' : '';
+        var urlPath = this.configs.url + 
+                        this.configs.urlVersion + 
+                        middlePart+
+                        this.configs.lastPart;
+        urlPath = urlPath.replace(/\/$/, '');
+
+        var pathName = this.configs.urlVersion + 
+                        middlePart+
+                        this.configs.lastPart;
+
+        if(/^(?:(\/))?v[\d]+/.test(this.configs.urlVersion) && !this.configs.callbackName){
+            callbackName = 'quotebridge_' + pathName.replace(/\/$/, '').replace(/^\//, '').replace(/\//g, '_').replace('.js', '').replace(/@/g, '').replace(/,/g, '_'); 
+        }else{
+            callbackName = this.configs.callbackName ? this.configs.callbackName.replace(/@/g, '') :'quotebridge_' + this.configs.urlVersion.replace(/^\//, '').replace(/\//g, '_').replace(/@/g, '');
+        }
+        
+        Xhr.jqXhrWithoutCallback(urlPath, callback, callbackName);
+    }
+
+    PureDataProvider.prototype.getData = function() {
+        var that = this;
+        
+        this.getFromWeb(function(data){
+            that.configs.success(data);
+            if(that.configs.isKeepingGet){
+                that.keepingGetData();
+            }; 
+        });
+
+    }
+
+    PureDataProvider.prototype.keepingGetData = function() {
+        var that = this;
+
+        this.keepingGetHandle = setTimeout(function() {
+            that.getFromWeb(function(data){
+                that.configs.success(data);
+            });
+            that.keepingGetHandle = setTimeout(arguments.callee, that.configs.intervalTime);
+        }, that.configs.intervalTime);
+
+    }
+
+    PureDataProvider.prototype.stopGetData = function() {
+        this.configs.isKeepingGet = false;
+        clearTimeout(this.keepingGetHandle);
+    }
+    
+    return PureDataProvider;
+});
+
+// @charset "utf-8";
+
+require(['PureDataProvider'], function(PureDataProvider) {
+
+    window.hx_canvas_puredataprovider = PureDataProvider;
+
+    ///////////
+    // demo  //
+    ///////////
+    // var sortProvider = null;
+    // if (sortProvider) {
+    //     sortProvider.stopGetData();
+    // }
+
+    // sortProvider = new PureDataProvider({
+    //     isKeepingGet : true,
+    //     intervalTime: 60000,
+    //     middlePart: '17/13',
+    //     lastPart:'a3.js',
+    //     success:function(d){
+    //         console.log(d);
+    //     }
+    // });
+
+    // var currentProvider = new PureDataProvider({
+    //     isKeepingGet : true,
+    //     intervalTime: 60000,
+    //     urlVersion:'real/hsa/',
+    //     lastPart:'300033,600000,000001',
+    //     success:function(d){
+    //         console.log(d);
+    //     }
+    // });
+
+});
+
+define("../../demo/PureData/pureDataEntrance", function(){});
+
+Thscharts.setOptions({lang:{months:"一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月".split(","),weekdays:"周一,周二,周三,周四,周五,周六,周日".split(","),thousandsSep:"",shortMonths:"一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月".split(",")}});var drawChart=function(b,d){this.elements=b;this.codeList=[];this.dataPool={};this.options=d||{}};drawChart.prototype.init=function(){var b=this;$(this.elements).each(function(d,a){b.codeList.push($(a).data("code"))});this.fetchData()};
+drawChart.prototype.getStockPriceInfo=function(b,d){var a=function(b,d){var a=-1,m=b.length,f,e,c;if(1===arguments.length){for(;++a<m&&!(null!=(f=c=b[a])&&f<=f);)f=c=void 0;for(;++a<m;)if(null!=(e=b[a]))f>e&&(f=e),c<e&&(c=e)}else{for(;++a<m&&!(null!=(f=c=d.call(b,b[a],a))&&f<=f);)f=void 0;for(;++a<m;)if(null!=(e=d.call(b,b[a],a)))f>e&&(f=e),c<e&&(c=e)}return[f,c]}(b,function(b){return b[1]}),g=a[0],a=a[1];if(d){var c=Math.abs(d-a),j=Math.abs(d-g),c=Math.max(c,j);g==a?(g=0.9*d,a=1.1*d):(g=+d-c,a=+d+
+c)}return{max:a,min:g,pre:d}};drawChart.prototype.getSeriesInfo=function(b){return!b?{count:242,xLabel:[[0,"09:30"],[121,"11:30/13:00"],[241,"15:00"]]}:0<=b.indexOf("gqh_")?{count:1442,xLabel:[[0,"07:00"],[721,"18:30"],[1442,"6:00"]]}:0<=b.indexOf("hk")?{count:332,xLabel:[[0,"09:30"],[332,"16:00"]]}:0<=b.indexOf("wh_")?{count:1442,xLabel:[[0,"00:00"],[721,"12:00"],[1442,"23:59"]]}:{count:242,xLabel:[[0,"09:30"],[121,"11:30/13:00"],[241,"15:00"]]}};
+drawChart.prototype.ready=function(b){this.drawHQ(b||this.elements)};drawChart.prototype.drawHQ=function(b){var d=this;$(b).each(function(a,g){var c=$(g).data("code");c&&(d.dataPool[c]?d.drawFn({element:g,code:c}):d.fetchData(c,b))})};drawChart.prototype.drawByData=function(b){return this.drawFn(b)};
+drawChart.prototype.drawFn=function(b){var d=this,a=b.code,g=b.element,c=b.tickDecimals||d.options.tickDecimals,j=b.data||d.dataPool[a].data,n=b.data?null:d.dataPool[a].pre,o=d.dataPool[a].dotsCount,l=d.getStockPriceInfo(j,n);$(g).thscharts({chart:{marginRight:0,marginLeft:0,marginBottom:d.options.hasXaxis?20:2,style:{"font-family":"Arial"},zoomType:"x",events:{selection:function(){return!1},click:function(){var b=d.options.clickCallback;b&&b(a)}}},title:{text:""},legend:{enabled:!1},credits:{enabled:!1},
+plotOptions:{area:{fillColor:"#F7FCFF",marker:{radius:2},lineWidth:1,states:{hover:{lineWidth:1,halo:{size:0}}},threshold:null}},series:[{type:"area",data:j,lineWidth:1,lineColor:"#0174DD",marker:{enabled:!1},animation:!1,yAxis:0}],tooltip:{shadow:!1,style:{padding:5},formatter:function(){if(b.data){var a=j[this.x][2].toString(),f="",f=4<a.length?a.substring(0,4)+"-"+a.substring(4,6)+"-"+a.substring(6):3==a.length?a.substring(0,1)+":"+a.substring(1):a.substring(0,2)+":"+a.substring(2);return f+"<br />"+
+this.y.toFixed(c)}a=0<=b.code.indexOf("gqh_")?2:c;f=j[this.x][2].toString().replace(/(.{2})\B/g,"$1:");return(0<=b.code.indexOf("gqh_")?d.perferTime(f,b.code):f)+"<br />"+this.y.toFixed(a)}},xAxis:{labels:{enabled:!1},tickLength:0,lineWidth:0,min:0,max:o},yAxis:{title:{text:""},gridLineWidth:0,lineWidth:0,tickPositions:[+l.min,+l.max],tickAmount:6,labels:{align:"left",x:5,y:0,style:{"font-size":10,"line-height":1},formatter:function(){return this.value.toFixed(c)}},plotLines:d.options.showPreLine?
+[{color:"#D75442",width:1,dashStyle:"ShortDash",value:n,zIndex:4,label:{text:n,textAlign:"left",x:5,style:{color:"#888"}}}]:[]}},function(a){if(d.options.hasXaxis)for(var c=function(a){a=a.split("");a.splice(2,0,":").join("");return a},e=b.code,p=d.dataPool[e].tradeTime,o=c(p[0].split("-")[0]),c=c(p[p.length-1].split("-")[1]),e=[[0,o],[d.dataPool[e].dotsCount-1,c]],o=a.plotHeight,c=a.plotLeft,p=a.plotTop,i,l,h=0;h<e.length;h++)if(l=c+a.xAxis[0].toPixels(e[h][0]),0==h){i="left";var k=e[h][1];"number"==
+typeof k&&(k=e[h][1].toString().substring(0,4)+"-"+e[h][1].toString().substring(4,6)+"-"+e[h][1].toString().substring(6));i=$("<div />").css({position:"absolute",left:l,"text-align":i,top:-9999,"font-size":10,"z-index":99,"line-height":"20px"}).html(k).prependTo(a.container);i.css({top:o+p})}else h==e.length-1?(i="right",k=e[h][1],"number"==typeof k&&(k=e[h][1].toString().substring(0,4)+"-"+e[h][1].toString().substring(4,6)+"-"+e[h][1].toString().substring(6)),i=$("<div />").css({position:"absolute",
+"text-align":i,top:-9999,"font-size":10,"z-index":99,"line-height":"20px"}).html(k).prependTo(a.container),i.css({right:0,top:o+p})):(i="center",k=e[h][1],"number"==typeof k&&(k=e[h][1].toString().substring(0,4)+"-"+e[h][1].toString().substring(4,6)+"-"+e[h][1].toString().substring(6)),i=$("<div />").css({position:"absolute",left:l,"text-align":i,top:-9999,"font-size":10,"z-index":99,"line-height":"20px"}).html(k).prependTo(a.container),i.css({left:l-i.width()/2,top:o+p}));e=j[j.length-1][1];$(g).data("stockLastInfo",
+{lastData:{pre:n,price:j[j.length-1][1],zde:e-n,zdf:(e-n)/n,min:a.yAxis[0].dataMin,max:a.yAxis[0].dataMax},originData:j});d.options.drawComplete&&d.options.drawComplete($(g))})};drawChart.prototype.perferTime=function(b,d){var a,g;a=parseInt(b.split(":")[0]);a="gqh_03CAD"==d?a+8:a+7;g=b.split(":")[1];return(24<=a?a-24:a)+":"+g};
+drawChart.prototype.fetchData=function(b,d){b=b||this.codeList;!$.isArray(b)&&0>$.inArray(b,this.codeList)&&(this.codeList.push(b),b=[b]);var a=this,g=setInterval(function(){if(window.hx_canvas_puredataprovider){clearInterval(g);var c=b;new hx_canvas_puredataprovider({url:"http://d.10jqka.com.cn/",urlVersion:"v6/time/",lastPart:($.isArray(c)?c:[c]).join(",")+"/last.js",isKeepingGet:!0,intervalTime:6E4,callbackName:"quotebridge_v6_time_"+($.isArray(c)?c:[c]).join("_")+"_last",success:function(b){for(var c in b){var g=
+b[c];if("string"!==typeof g.data)return;for(var l=g.data.split(";"),m=0,f=[];m<l.length;m++){var e=l[m].split(",");f.push([m,+e[1],e[0]])}a.dataPool[c]=g;a.dataPool[c].data=f}a.ready(d)}})}},30)};

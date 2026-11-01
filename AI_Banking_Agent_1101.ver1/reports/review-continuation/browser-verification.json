@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-10-29T11:15:25.354456+00:00",
+  "method": "actual browser UI; isolated local preview database",
+  "verified": [
+    "Default-off summary and explicit enable",
+    "Navigation and R1 filter observations",
+    "Offline pending queue and Chinese recovery message; reconnect sync",
+    "Reload retains summaries",
+    "390px viewport: document width390, dialog width356, no horizontal overflow",
+    "1280px desktop layout",
+    "Knowledge explanation no longer echoes example question; local citation opens original numbered source"
+  ],
+  "not_verified": [
+    "All inherited UI controls",
+    "Complete keyboard/screen-reader audit",
+    "Real model/bank/external search",
+    "Browser deletion of persisted records (backend temporary-database tests cover deletion)"
+  ],
+  "screenshots": [
+    "操作摘要-窄屏.png",
+    "总览-桌面全页.png",
+    "总览-窄屏全页.png",
+    "连接中断反馈.png",
+    "知识解释与引用.png",
+    "操作摘要-桌面.png"
+  ]
+}

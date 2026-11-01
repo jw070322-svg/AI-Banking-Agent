@@ -1,0 +1,904 @@
+{
+  "measurements": [
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 215.3203125,
+          "x": 274.1953125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 226.1875,
+          "x": 499.515625,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 219.140625,
+          "x": 735.703125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 403.9609375,
+          "x": 964.84375,
+          "y": 29
+        },
+        {
+          "h": 22,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权与控制",
+          "w": 50,
+          "x": 32,
+          "y": 775.90625
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 1223,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 1440
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 154.8125,
+          "x": 233.71875,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 165.6796875,
+          "x": 398.53125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 158.6328125,
+          "x": 574.2109375,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 222.4375,
+          "x": 742.84375,
+          "y": 29
+        },
+        {
+          "h": 22,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权与控制",
+          "w": 50,
+          "x": 27,
+          "y": 769.90625
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 819,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 1024
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 133.0390625,
+          "x": 116.0390625,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 143.90625,
+          "x": 259.078125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 136.859375,
+          "x": 412.984375,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 157.1171875,
+          "x": 559.84375,
+          "y": 29
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 572,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 768
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 284.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 284.5,
+          "x": 321.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 284.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 284.5,
+          "x": 321.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 532,
+          "y": 207
+        },
+        {
+          "h": 34,
+          "hit": true,
+          "inViewport": true,
+          "label": "查看对比",
+          "w": 64.6015625,
+          "x": 496.3984375,
+          "y": 854
+        },
+        {
+          "h": 20.3984375,
+          "hit": true,
+          "inViewport": true,
+          "label": "保留流动性",
+          "w": 45,
+          "x": 573,
+          "y": 860.796875
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 650
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 279.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 279.5,
+          "x": 316.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 279.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 279.5,
+          "x": 316.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 522,
+          "y": 207
+        },
+        {
+          "h": 34,
+          "hit": true,
+          "inViewport": true,
+          "label": "查看对比",
+          "w": 64.6015625,
+          "x": 486.3984375,
+          "y": 854
+        },
+        {
+          "h": 20.3984375,
+          "hit": true,
+          "inViewport": true,
+          "label": "保留流动性",
+          "w": 45,
+          "x": 563,
+          "y": 860.796875
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 640
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 154.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 154.5,
+          "x": 191.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 154.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 154.5,
+          "x": 191.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 285,
+          "y": 207
+        },
+        {
+          "h": 34,
+          "hit": true,
+          "inViewport": true,
+          "label": "查看对比",
+          "w": 64.6015625,
+          "x": 236.3984375,
+          "y": 854
+        },
+        {
+          "h": 20.3984375,
+          "hit": true,
+          "inViewport": true,
+          "label": "保留流动性",
+          "w": 45,
+          "x": 313,
+          "y": 860.796875
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 390
+    },
+    {
+      "page": "wealth",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 119.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 119.5,
+          "x": 156.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 119.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 119.5,
+          "x": 156.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 215,
+          "y": 207
+        },
+        {
+          "h": 34,
+          "hit": true,
+          "inViewport": true,
+          "label": "查看对比",
+          "w": 64.6015625,
+          "x": 166.3984375,
+          "y": 854
+        },
+        {
+          "h": 20.3984375,
+          "hit": true,
+          "inViewport": true,
+          "label": "保留流动性",
+          "w": 45,
+          "x": 243,
+          "y": 860.796875
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 320
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 215.3203125,
+          "x": 274.1953125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 226.1875,
+          "x": 499.515625,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 219.140625,
+          "x": 735.703125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 403.9609375,
+          "x": 964.84375,
+          "y": 29
+        },
+        {
+          "h": 22,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权与控制",
+          "w": 50,
+          "x": 32,
+          "y": 775.90625
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 1223,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 1440
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 154.8125,
+          "x": 233.71875,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 165.6796875,
+          "x": 398.53125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 158.6328125,
+          "x": 574.2109375,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 222.4375,
+          "x": 742.84375,
+          "y": 29
+        },
+        {
+          "h": 22,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权与控制",
+          "w": 50,
+          "x": 27,
+          "y": 769.90625
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 819,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 1024
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 133.0390625,
+          "x": 116.0390625,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 143.90625,
+          "x": 259.078125,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 136.859375,
+          "x": 412.984375,
+          "y": 29
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 157.1171875,
+          "x": 559.84375,
+          "y": 29
+        },
+        {
+          "h": 33,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 89,
+          "x": 572,
+          "y": 105
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 768
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 284.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 284.5,
+          "x": 321.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 284.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 284.5,
+          "x": 321.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 532,
+          "y": 207
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 650
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 279.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 279.5,
+          "x": 316.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 279.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 279.5,
+          "x": 316.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 522,
+          "y": 207
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 640
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 154.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 154.5,
+          "x": 191.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 154.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 154.5,
+          "x": 191.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 285,
+          "y": 207
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 390
+    },
+    {
+      "page": "overview",
+      "height": 900,
+      "horizontalOverflow": false,
+      "items": [
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "日历与个性化",
+          "w": 119.5,
+          "x": 29,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "Wind 市场研究",
+          "w": 119.5,
+          "x": 156.5,
+          "y": 23
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "网站与免费 AI",
+          "w": 119.5,
+          "x": 29,
+          "y": 75
+        },
+        {
+          "h": 44,
+          "hit": true,
+          "inViewport": true,
+          "label": "操作摘要",
+          "w": 119.5,
+          "x": 156.5,
+          "y": 75
+        },
+        {
+          "h": 27,
+          "hit": true,
+          "inViewport": true,
+          "label": "授权中心",
+          "w": 31,
+          "x": 215,
+          "y": 207
+        }
+      ],
+      "overlaps": [],
+      "toolbarCount": 1,
+      "tools": 4,
+      "width": 320
+    }
+  ],
+  "clicks": [
+    "wide authorization correct",
+    "wide and narrow summary correct",
+    "filter recorded after render",
+    "external status then Wind enabled",
+    "calendar correct title after asynchronous load"
+  ],
+  "passed": true
+}

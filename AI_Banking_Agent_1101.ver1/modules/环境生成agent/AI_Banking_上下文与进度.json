@@ -1,0 +1,169 @@
+{
+  "snapshot_version": 3,
+  "updated_at": "2026-10-23",
+  "project": {
+    "name": "AI Banking 银行场景环境生成 Agent",
+    "directory": "C:\\Users\\111\\Desktop\\AI_Banking\\环境生成agent",
+    "purpose": "生成虚构银行用户、账户、卡片、交易与生活事件数据，程序化校验后保存 JSON，并通过统一接口 1.0.0 提供给主 Agent。",
+    "safety_scope": "仅使用虚构数据；不连接真实银行；不执行真实资金操作；不写入演示账本（ledger_modified=false）。"
+  },
+  "files": {
+    "main.py": {
+      "status": "updated",
+      "role": "入口、规则解析、A~G 生成、双层校验、JSON 保存、seed/reference-date、命令行批量模式。"
+    },
+    "banking_domain.py": {
+      "status": "created",
+      "role": "卡片、信用卡账单周期、家庭、节日、日历提醒等生活层数据。"
+    },
+    "validator.py": {
+      "status": "updated",
+      "role": "结构、对账、A~G 专项，以及卡片/账单/家庭/订阅/日历/洞察/卡片事件通用校验。"
+    },
+    "scenario_adapter.py": {
+      "status": "updated",
+      "role": "契约适配：整数分、booked、去 PII、响应外壳、幂等；支持 G 与新增区块。"
+    },
+    "scenario_server.py": {
+      "status": "unchanged",
+      "role": "标准库 HTTP 入口，自动支持 G。"
+    },
+    "main_backup.py": {
+      "status": "outdated",
+      "role": "旧版备份，未同步。"
+    },
+    "test_validator.py": {
+      "status": "expanded",
+      "role": "39 项。"
+    },
+    "test_main.py": {
+      "status": "expanded",
+      "role": "11 项。"
+    },
+    "test_adapter.py": {
+      "status": "expanded",
+      "role": "20 项。"
+    },
+    "scenario_generator.py": {
+      "status": "not_created",
+      "role": "后续拆分生成逻辑。"
+    },
+    "models.py": {
+      "status": "not_created",
+      "role": "可选数据结构定义。"
+    }
+  },
+  "scenario_support": {
+    "A": "普通银行用户：工资、日常消费，附带卡片/账单/日历/洞察。",
+    "B": "购物支出增加：连续两个月差额按真实流水校验。",
+    "C": "疑似重复扣款：重复组 + 双向关联 + 标准答案洞察。",
+    "D": "余额不足：被拒转账不计入余额。",
+    "E": "周期性订阅：多期扣款 + subscriptions（下次扣费日/状态）+ 续费提醒。",
+    "F": "家庭生日跨场景联动：配偶生日、锁定预算、生日前 2 天鲜花蛋糕。",
+    "G": "信用卡与卡片管理：借记卡+信用卡、本期账单、提额/限额/冻结解冻/挂失补卡、还款提醒。"
+  },
+  "shared_blocks": {
+    "cards": "1 张借记卡 + 1 张信用卡，含额度、已用、可用、账单日、还款日、限额、状态，卡号脱敏。",
+    "credit_card_bill": "本期账单明细、合计、最低还款、已还、未还、账单日/还款日、状态。",
+    "family": "1~3 位家庭成员，birthday 为下一次生日，含 birth_year、age_turning。",
+    "calendar_events": "生日/节日/还款/订阅续费/工资日/预算锁定/备忘，含提醒日期与优先级。",
+    "expected_insights": "智能检测标准答案，带证据交易 ID；仅供评估分析 Agent。",
+    "subscriptions": "仅 E：商户、金额、周期、上次/下次扣费、状态。",
+    "card_events": "仅 G：before/after 快照，最终状态必须与卡片一致。"
+  },
+  "data_rules": {
+    "transaction_amount": "内部非负；对外 amount_minor 非负绝对值，amount 为带符号账单金额。",
+    "balance_reconciliation": "期末 = 期初 + 已完成收入/转入/退款 - 已完成支出/转出。",
+    "credit_card": "信用卡消费独立于存款账户；未还金额 = used_credit；available = limit - used。",
+    "non_completed_transactions": "rejected、pending 不影响余额。",
+    "birthday": "birthday 是下一次生日；birthday.year - birth_year == age_turning。",
+    "reminder": "remind_date = 事件日期 - remind_days_before。",
+    "insights": "证据交易必须存在；duplicate_charge 至少 2 笔证据。",
+    "festival_source": "公历 + 星期规则 + 2026–2027 农历演示对照表；超出范围自动跳过。",
+    "pii": "对外不含身份证、手机、邮箱、住址、姓名、完整卡号。"
+  },
+  "api_contract": {
+    "schema_version": "1.0.0",
+    "entry": "scenario_adapter.handle_generate(request, idempotency_key, session_id)",
+    "http": "scenario_server.py: POST /api/scenarios/generate（必须 Idempotency-Key）",
+    "envelope": [
+      "schema_version",
+      "request_id",
+      "status",
+      "data",
+      "error",
+      "trace",
+      "simulated"
+    ],
+    "evaluation_only_fields": [
+      "expected_insights"
+    ],
+    "error_codes": [
+      "INVALID_ARGUMENT",
+      "SCENARIO_INVALID",
+      "SCENARIO_UNSUPPORTED",
+      "IDEMPOTENCY_CONFLICT",
+      "IDEMPOTENCY_KEY_REQUIRED",
+      "SCENARIO_GENERATION_FAILED"
+    ],
+    "idempotency": "同会话同 key 同参数返回原响应；改参复用 key 返回 IDEMPOTENCY_CONFLICT；SQLite 单机持久化，默认 runtime/idempotency.sqlite3，可用 ENV_AGENT_IDEMPOTENCY_DB 覆盖，重启可重放。"
+  },
+  "verification": {
+    "command": "& \"$env:LOCALAPPDATA\\Programs\\Python\\Python315\\python.exe\" -m unittest discover -s . -p \"test_*.py\"",
+    "last_result": "73 项测试通过（39 + 11 + 23）。",
+    "batch_command": "python main.py --all --seed 42 --reference-date 2026-10-23",
+    "batch_result": "A~G 七个场景全部生成并通过双层校验。",
+    "sweep_result": "6 个日期 × 15 个 seed × A~G = 630 组，0 失败。",
+    "http_result": "G 场景 HTTP 200；卡片、账单、日历、洞察均按契约输出。"
+  },
+  "changes_2026_10_23_round2": [
+    "新增 banking_domain.py：卡片、账单周期、家庭、节日、日历提醒。",
+    "所有 A~G 场景附带 cards、credit_card_bill、family、calendar_events、expected_insights。",
+    "新增场景 G：信用卡与卡片管理（提额/限额/冻结解冻/挂失补卡）。",
+    "E 场景增加 subscriptions 与续费提醒。",
+    "F 场景改为配偶生日，并校验锁定金额不超过账户可用余额。",
+    "validator 增加卡片/账单/家庭/订阅/日历/洞察/卡片事件校验。",
+    "适配层支持 G，并输出 evaluation_only_fields。"
+  ],
+  "analysis_module": {
+    "directory": "C:\\Users\\111\\Desktop\\AI_Banking\\主任务_金融分析与量化",
+    "status": "first_version_ready",
+    "features": [
+      "已接入 FirstAgent：/api/analysis、/api/scenarios/generate、health 自检",
+      "bridge.py：契约边界调用环境生成 Agent",
+      "pipeline.py：端到端分析流水线",
+      "tools.py：9 个主 Agent 只读工具",
+      "分类/月度/年度账单报告（整数分）",
+      "9 类异常与提醒识别（含订阅调价、类别阈值）",
+      "订阅负担率、现金流投影、跨场景流动性",
+      "预算建议：每月可安全储蓄/投资额与约束",
+      "预算建议参数化回测：A~G × 6 压力 × 2 周期 × 13 策略，1092 次全部通过",
+      "数据整理 Agent：契约场景 → analysis/recommendation/cards/display 四视图 + 质量清单",
+      "26 个扰动/对抗样例（误报防护）"
+    ],
+    "verification": "主任务 115 项测试通过；FirstAgent 34 项集成测试通过（20 原有 + 14 分析）；A~G 样例 P/R/F1 = 1.0；扰动样例 26/26 通过"
+  },
+  "next_step": {
+    "goal": "真实脱敏数据回测，校准类别阈值、订阅负担分级与 1/3 个月缓冲策略。",
+    "completed": [
+      "比赛演示脚本 AI_Banking/demo_full_chain.py（2026-10-24）",
+      "expected_insights 对客链路默认剥离，评测开关显式开启（2026-10-24）",
+      "预算建议 budget.advice：每月可安全储蓄/投资额（2026-10-24）",
+      "理财推荐接入预算建议：positive headroom 收紧可投金额，为 0 时回退并提示先补应急金（2026-10-24）",
+      "合成场景参数化回测 backtest_budget.py：A~G × 6 压力 × 2 周期 × 13 策略，1092 次全部通过（2026-10-24）",
+      "幂等存储改 SQLite：单机持久化，跨进程重启可重放，新增 3 项测试（2026-10-24）",
+      "数据整理 Agent organizer.py：四视图 + 质量清单，20 项测试通过（2026-10-24）"
+    ],
+    "afterwards": [
+      "用真实脱敏数据回测，校准类别阈值、订阅负担分级与 1/3 个月缓冲策略。",
+      "拆分 scenario_generator.py。",
+      "补充答辩用的验证报告与截图。"
+    ]
+  },
+  "collaboration_preferences": [
+    "面向 Python 初学者解释每一步。",
+    "一次推进一个小步骤，修改前检查现状。",
+    "改动后运行对应测试并说明结果。",
+    "完成关键节点后同时更新进度文档和 JSON 快照。"
+  ]
+}

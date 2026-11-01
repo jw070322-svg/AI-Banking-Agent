@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-27T23:37:46.496238+08:00",
+  "purpose": "用户要求继续前先存档交接；按15%门槛保持暂停",
+  "version": "AI_Banking_Agent_1027.ver5",
+  "files": [
+    {
+      "file": "LOCAL_AGENT_HANDOFF.md",
+      "sha256": "508b5ce472508d8da13c77ac9871dca14a1a02411070d16eb723534cdd8a5a0e"
+    },
+    {
+      "file": "HANDOFF_1027_VER5_PAUSED.md",
+      "sha256": "292bdd055b7dd8f47374fe3a8ef7a88039983af9ba416248f32b031e112b9b97"
+    }
+  ],
+  "quota_remaining_percent": {
+    "primary": 99,
+    "secondary": 10
+  },
+  "business_work_resumed": false,
+  "pending": [
+    "模型适配器转换等价性验证",
+    "知识回退及搜索授权整链测试",
+    "个性化商户跳转和百度链接样式浏览器验收",
+    "更新正式验收报告与使用说明"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": "scenario-1.0",
+  "scenario_id": "SCN_E_20261022185343_94E93C",
+  "scenario_type": "E",
+  "accounts": [
+    {
+      "account_id": "ACCCB32B50A18B9",
+      "initial_balance_minor": 557431,
+      "balance_minor": 13050740,
+      "currency": "CNY"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T35FA3DEFA923",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-01",
+      "amount_minor": 1983643,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T4586E7734477",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T1565CBD2AB87",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-01",
+      "amount_minor": 1318994,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "TD681ED2B6863",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T00774D6C4992",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-01",
+      "amount_minor": 1935301,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T8D1EDFF17422",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T8725E1AFC218",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-01",
+      "amount_minor": 1638861,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T676F563FCE9D",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T1AB4C43F23CE",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-01",
+      "amount_minor": 1798304,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T466B79CD7CB6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T30F0E6F87F65",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-01",
+      "amount_minor": 1736063,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T72DE04328254",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "T353061D396C3",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-01",
+      "amount_minor": 1300207,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "T194FFD3D7FA2",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    },
+    {
+      "id": "TE04972C76E2F",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-01",
+      "amount_minor": 805936,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "TF9BCA35891D6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-19",
+      "amount_minor": -3000,
+      "category": "订阅",
+      "status": "booked"
+    }
+  ],
+  "warnings": [],
+  "simulated": true,
+  "ledger_modified": false
+}

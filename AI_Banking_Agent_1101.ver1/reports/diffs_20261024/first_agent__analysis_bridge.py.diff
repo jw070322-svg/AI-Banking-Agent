@@ -1,0 +1,189 @@
+--- sources/Ethan_1024/FirstAgent_分析接入/analysis_bridge.py
++++ first_agent/analysis_bridge.py
+@@ -1,8 +1,8 @@
+ """Bridge between the persisted demo session ledger and the analysis toolkit.
+ 
+-The analysis module lives in the sibling main-task project:
+-
+-    AI_Banking/主任务_金融分析与量化
++The analysis module is bundled once in this delivery:
++
++    Third_Agent/modules/主任务_金融分析与量化
+ 
+ It is imported at runtime (source of truth stays there) rather than copied into
+ vendor/, so algorithm and policy changes take effect without a second copy.
+@@ -17,12 +17,13 @@
+ 
+ import os
+ import sys
++import threading
+ from datetime import date, datetime, timedelta, timezone
+ from pathlib import Path
+ from typing import Any, Dict, List, Optional
+ 
+ BASE = Path(__file__).resolve().parents[1]
+-DEFAULT_ANALYSIS_DIR = BASE.parent / 'AI_Banking' / '主任务_金融分析与量化'
++DEFAULT_ANALYSIS_DIR = BASE / 'modules' / '主任务_金融分析与量化'
+ ANALYSIS_DIR = Path(os.environ.get('AI_BANKING_ANALYSIS_DIR', DEFAULT_ANALYSIS_DIR))
+ 
+ # Tools safe to run against a customer session (no scenario generation here).
+@@ -35,6 +36,7 @@
+     'liquidity.available',
+     'budget.advice',
+     'analysis.pipeline',
++    'data.organize',
+ }
+ 
+ # vv category codes -> Chinese report categories (unknown values pass through).
+@@ -64,6 +66,7 @@
+ }
+ 
+ _MODULES: Optional[Dict[str, Any]] = None
++_IMPORT_LOCK = threading.RLock()
+ 
+ 
+ class AnalysisError(Exception):
+@@ -74,6 +77,11 @@
+ 
+ 
+ def _load_modules() -> Dict[str, Any]:
++    with _IMPORT_LOCK:
++        return _load_modules_locked()
++
++
++def _load_modules_locked() -> Dict[str, Any]:
+     global _MODULES
+     if _MODULES is not None:
+         return _MODULES
+@@ -88,6 +96,7 @@
+         sys.path.insert(0, path)
+     try:
+         import tools as analysis_tools  # type: ignore
++        import organizer as analysis_organizer  # type: ignore
+     except ImportError as exc:
+         raise AnalysisError('ANALYSIS_UNAVAILABLE', f'分析模块导入失败：{exc}') from exc
+     finally:
+@@ -98,7 +107,7 @@
+                 sys.path.remove(path)
+             except ValueError:
+                 pass
+-    _MODULES = {'tools': analysis_tools}
++    _MODULES = {'tools': analysis_tools, 'organizer': analysis_organizer}
+     return _MODULES
+ 
+ 
+@@ -158,6 +167,10 @@
+             transaction_type = 'income'
+         elif raw_category == 'transfer':
+             transaction_type = 'transfer_out'
++        elif raw_category == 'investment':
++            transaction_type = 'investment_purchase'
++        elif raw_category == 'redeem':
++            transaction_type = 'investment_redemption'
+         elif amount > 0:
+             transaction_type = 'refund'
+         else:
+@@ -223,7 +236,9 @@
+     transactions = _scenario_transactions(state)
+     subscriptions = _scenario_subscriptions(state, transactions, base_date)
+     sid = state.get('session_id') or 'unknown'
++    net = sum(t['amount'] for t in transactions if t['status'] == 'booked')
+     return {
++        'schema_version': '1.0.0',
+         'scenario_id': f'SESSION-{sid[:12]}',
+         'scenario_type': 'SESSION',
+         'scenario_name': '当前演示会话',
+@@ -238,13 +253,20 @@
+             'user_id': state.get('customer_id'),
+             'account_type': '活期',
+             'currency': 'CNY',
+-            'initial_balance_minor': available,
++            'initial_balance_minor': available - net,
+             'balance_minor': available,
+             'status': '正常',
+         }],
+         'transactions': transactions,
+         'subscriptions': subscriptions,
+-        'cards': [],
++        'cards': [{
++            'card_id': c['id'], 'card_type': c['kind'],
++            'masked_card_number': '**** **** **** ' + c['last4'],
++            'status': c['status'],
++            'transaction_limit_minor': c['limit'],
++            'spent_today_minor': c['spent'] if c.get('spentDay') == state.get('day') else 0,
++            'source': 'session_ledger',
++        } for c in state.get('cards', [])],
+         'calendar_events': [],
+         'expected_insights': [],
+     }
+@@ -276,8 +298,20 @@
+         raise AnalysisError('TOOL_NOT_REGISTERED', f'不支持的分析工具：{tool}')
+     modules = _load_modules()
+     scenario = session_to_scenario(state)
++    args = _normalize_arguments(arguments)
++    if set(args) - {'days', 'month', 'year'}:
++        raise AnalysisError('INVALID_ARGUMENT', '会话分析只接受 days/month/year，不接受文件、评测答案或客户端账本')
++    if tool == 'data.organize':
++        if set(args) - {'days'}:
++            raise AnalysisError('INVALID_ARGUMENT', 'data.organize 仅接受 days，上下文来自服务端会话')
++        try:
++            package = modules['organizer'].organize(scenario, session_context(state, args))
++        except (ValueError, TypeError) as exc:
++            raise AnalysisError('INVALID_ARGUMENT', str(exc)) from exc
++        return {'tool': tool, 'source': 'session_ledger', 'result': package,
++                'simulated': True, 'ledger_modified': False}
+     result = modules['tools'].call_tool(
+-        tool, _normalize_arguments(arguments), data=scenario
++        tool, args, data=scenario
+     )
+     if result.get('status') != 'succeeded':
+         error = result.get('error') or {}
+@@ -294,6 +328,17 @@
+     }
+ 
+ 
++def session_context(state: Dict[str, Any], arguments=None) -> Dict[str, Any]:
++    return {
++        'source': 'session_ledger', 'days': (arguments or {}).get('days', 30),
++        'configured_amount_minor': state['amount'], 'goal': dict(state['goal']),
++        'consent': dict(state['consent']),
++        'profile': {'risk_tolerance': 1 if state['profile'] == 'valid' else None,
++                    'risk_capacity': 1, 'max_redemption_days': 1,
++                    'objective': 'liquidity', 'preferred_categories': ['cash']},
++    }
++
++
+ def generate_scenario(
+     prompt: str,
+     scenario_type: Optional[str] = None,
+@@ -302,16 +347,23 @@
+ ) -> Dict[str, Any]:
+     """Generate an independent demo scenario through the environment agent."""
+     modules = _load_modules()
+-    result = modules['tools'].call_tool('scenario.generate', {
+-        'prompt': prompt,
+-        'scenario_type': scenario_type,
+-        'seed': seed,
+-        'reference_date': reference_date,
+-    })
++    # Upstream generation uses a process-global seed/date. Serialize this boundary.
++    with _IMPORT_LOCK:
++        before_path = list(sys.path)
++        try:
++            result = modules['tools'].call_tool('scenario.generate', {
++                'prompt': prompt,
++                'scenario_type': scenario_type,
++                'seed': seed,
++                'reference_date': reference_date,
++            })
++        finally:
++            sys.path[:] = before_path
+     if result.get('status') != 'succeeded':
+         error = result.get('error') or {}
+         raise AnalysisError(
+             error.get('code', 'SCENARIO_GENERATION_FAILED'),
+             error.get('message', '场景生成失败'),
+         )
+-    return result.get('data')
++    return {**result['data'], 'schema_version': '1.0.0', 'simulated': True,
++            'ledger_modified': False}

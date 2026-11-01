@@ -1,0 +1,26 @@
+{
+  "status": "implemented_with_disclosed_limits",
+  "timestamp": "2026-10-29T16:29:58.492248+00:00",
+  "entrypoint": "start_review.py",
+  "summary": "reports/review-continuation/summary.json",
+  "completed": [
+    "完整题库结构化与105题实际离线评测",
+    "受限问答分流与摘录质量修正",
+    "安全原文引用入口",
+    "自愿操作摘要、私有检索、反馈、撤回、删除",
+    "摘要请求结果关联与重试",
+    "人工审核材料版本发布/回滚",
+    "新入口金融流程回归与桌面窄屏浏览器检查",
+    "原690文件保留"
+  ],
+  "remaining": [
+    "105题独立人工业务评分",
+    "全站接入新tools/security网关",
+    "真实身份与不可篡改持久审计",
+    "审核材料发布到在线RAG的正式集成",
+    "真实模型/银行/Google/外部搜索完整验收"
+  ],
+  "old_test_issue": "1项历史preservation用例引用未交付的32个pyc缓存；201项其它继承后端通过",
+  "runtime_data_packaged": false,
+  "private_chain_of_thought_logged": false
+}

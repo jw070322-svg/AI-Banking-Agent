@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-30T22:37:32.013586+08:00",
+  "active_launcher": "启动产品行情版.bat",
+  "url": "http://127.0.0.1:8807/",
+  "archived_files": 31,
+  "root_replacement_guides": [
+    "LOCAL_AGENT_HANDOFF.md",
+    "先看这里_最新版本.md"
+  ],
+  "preservation_tests": [
+    "tests.test_tools_security_1029.QuotaAndPreservationTests.test_preservation: PASS",
+    "review_additions.test_review.RAGReviewTests.test_all_690_supplied_files_remain_byte_identical: PASS"
+  ],
+  "startup_import_and_arguments": "start_live_product_quotes.py --help: PASS",
+  "tamper_detection": "3 in-memory negative checks PASS; no files corrupted",
+  "business_modules": "未移动运行模块或数据，未重启服务"
+}

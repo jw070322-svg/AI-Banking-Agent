@@ -1,0 +1,52 @@
+--- F:\AI_Banking\SecondAsgent\first_agent\server.py
++++ first_agent\server.py
+@@ -5,8 +5,9 @@
+ from urllib.parse import urlsplit, parse_qs, unquote
+ import argparse, json, mimetypes
+ from .service import AgentService, Fault, BASE
++from .analysis_bridge import analysis_status
+ 
+-def make_server(service,host='127.0.0.1',port=8765):
++def make_server(service,host='127.0.0.1',port=8768):
+     class Handler(BaseHTTPRequestHandler):
+         def log_message(self,*args):pass
+         def send_json(self,value,status=200,cookie=None):
+@@ -30,15 +31,18 @@
+         def do_GET(self):
+             try:
+                 self.safe_host();url=urlsplit(self.path);path=url.path
+-                if path=='/api/health':return self.send_json(service.envelope({'ready':True,'persistent':True,'mode':'local_demo'}))
++                if path=='/api/health':return self.send_json(service.envelope({'ready':True,'persistent':True,'mode':'local_demo','analysis':analysis_status()}))
+                 if path.startswith('/api/'):
+                     routes={'/api/snapshot':'snapshot','/api/accounts/overview':'accounts','/api/transactions':'transactions',
+-                            '/api/subscriptions':'subscriptions','/api/products':'recommend','/api/events':'events'}
++                            '/api/subscriptions':'subscriptions','/api/products':'recommend','/api/events':'events',
++                            '/api/analysis':'analysis','/api/analysis/status':'analysis.status'}
+                     if path.startswith('/api/operations/'):
+                         action='operation';args={'operation_id':path.rsplit('/',1)[1]}
+                     else:
+                         action=routes.get(path);args={k:v[-1] for k,v in parse_qs(url.query).items()}
+                     if not action:raise Fault('NOT_FOUND','接口不存在',404)
++                    if action=='analysis':
++                        tool=args.pop('tool','analysis.pipeline');args={'tool':tool,'args':args}
+                     return self.send_json(service.call(self.sid(),action,args))
+                 relative=unquote(path).lstrip('/') or 'index.html'
+                 target=(BASE/'web'/relative).resolve()
+@@ -65,7 +69,7 @@
+                         with service.transaction() as db:service.load(db,sid)
+                     except Fault:sid=service.create_session()
+                     return self.send_json(service.envelope({'mode':'local_demo'}),cookie=sid)
+-                routes={'/api/scenarios/generate':'scenario.generate','/api/rpc':'rpc','/api/chat':'chat','/api/knowledge':'knowledge','/api/recommendations':'recommend',
++                routes={'/api/scenarios/generate':'scenario.generate','/api/analysis':'analysis','/api/rpc':'rpc','/api/chat':'chat','/api/knowledge':'knowledge','/api/recommendations':'recommend',
+                         '/api/transfers/preview':'transfer.preview','/api/transfers/verify':'transfer.verify',
+                         '/api/transfers/confirm':'transfer.confirm','/api/transfers/reconcile':'transfer.reconcile','/api/transfers/cancel':'transfer.cancel'}
+                 action=routes.get(path)
+@@ -79,7 +83,7 @@
+     return ThreadingHTTPServer((host,port),Handler)
+ 
+ def main():
+-    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);parser.add_argument('--db')
++    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8768);parser.add_argument('--db')
+     options=parser.parse_args();server=make_server(AgentService(options.db),port=options.port)
+     print(f'Local simulated banking Agent: http://127.0.0.1:{server.server_port}',flush=True)
+     try:server.serve_forever()
