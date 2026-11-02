@@ -1,0 +1,5 @@
+{"kind":"table","sheet":"products","address":"A1:F6","rows":6,"cols":6,"values":[["code","name","category","risk_level","min_amount","lock_days"],[null,null,null,null,null,null],[null,null,null,null,null,null],[null,null,null,null,null,null],[null,null,null,null,null,null],[null,null,null,null,null,null]]}
+Inspect result written to file: F:\AI_Banking\Banking-整合版-修复(1)\AI_Banking_Agent_1026.ver1\data\wind_template.xlsx.inspect.ndjson
+{"kind":"table","sheet":"products","address":"A1:F6","rows":6,"cols":6,"values":[["code","name","category","risk_level","min_amount","lock_days"],["SYN-CASH","合成现金管理","cash",1,100,0],["SYN-BOND","合成纯债基金","bond",2,100,0],["SYN-INDEX","合成宽基基金","index",3,100,0],["SYN-TECH","合成科技基金","equity",4,100,0],["SYN-TERM","合成锁定基金","bond",2,10000,365]]}
+Inspect result written to file: F:\AI_Banking\Banking-整合版-修复(1)\AI_Banking_Agent_1026.ver1\data\wind_sample.xlsx.inspect.ndjson
+Created blank template and synthetic sample.

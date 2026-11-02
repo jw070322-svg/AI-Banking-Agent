@@ -1,0 +1,173 @@
+{
+  "doc_type": "handoff",
+  "title": "AI Banking 环境生成 Agent 逻辑链与交接",
+  "version": 1,
+  "updated_at": "2026-10-24",
+  "from": "环境生成agent",
+  "to": "主任务_金融分析与量化",
+  "purpose": "说明环境生成 Agent 与金融分析/量化模块如何通过统一契约协调，以及当前进度、边界与下一步。",
+
+  "modules": [
+    {
+      "name": "环境生成agent",
+      "path": "C:\\Users\\111\\Desktop\\AI_Banking\\环境生成agent",
+      "role": "按自然语言需求生成虚构场景数据，校验后产出契约 JSON",
+      "status": "done",
+      "tests": 70,
+      "key_files": ["main.py", "banking_domain.py", "validator.py", "scenario_adapter.py", "scenario_server.py"]
+    },
+    {
+      "name": "主任务_金融分析与量化",
+      "path": "C:\\Users\\111\\Desktop\\AI_Banking\\主任务_金融分析与量化",
+      "role": "账单报告、异常识别、订阅负担、现金流、流动性、预算建议、工具接口",
+      "status": "first_version_ready",
+      "tests": 115,
+      "key_files": ["bridge.py", "pipeline.py", "tools.py", "perturbations.py", "analysis/"]
+    },
+    {
+      "name": "FirstAgent",
+      "path": "C:\\Users\\111\\Desktop\\FirstAgent",
+      "role": "统一账本、HTTP 接口，接入环境生成与分析模块",
+      "status": "integrated",
+      "tests": 34,
+      "key_files": ["first_agent/analysis_bridge.py", "first_agent/service.py", "first_agent/server.py"]
+    }
+  ],
+
+  "logic_chain": [
+    {
+      "step": 1,
+      "module": "环境生成agent",
+      "action": "自然语言需求 -> parse -> generate(A~G) -> 双层校验 -> 契约适配",
+      "output": "契约场景 JSON（整数分、booked、ledger_modified=false）"
+    },
+    {
+      "step": 2,
+      "module": "主任务_金融分析与量化",
+      "action": "bridge.py 调用环境生成；pipeline.py 端到端分析；tools.py 暴露 9 个只读工具",
+      "output": "账单报告 / 异常 / 订阅负担 / 现金流 / 流动性 / 评测结果"
+    },
+    {
+      "step": 3,
+      "module": "FirstAgent",
+      "action": "analysis_bridge.py 会话账本 -> 契约场景 -> 分析工具",
+      "output": "/api/analysis、/api/scenarios/generate、/api/analysis/status"
+    }
+  ],
+
+  "contract": {
+    "boundary": "契约场景 JSON 是三个模块之间的唯一通信边界",
+    "amount": "整数分 *_minor；账单支出为负、收入为正",
+    "transaction_status": "completed -> booked",
+    "direction": "transaction_type 之外加 direction(credit/debit)",
+    "user_info": "去除身份证/手机/邮箱/住址，只保留去标识化 profile",
+    "card_number": "脱敏为 6222 **** **** 1234",
+    "ledger": "ledger_modified=false，只生成/只读",
+    "category_map": "环境生成用中文类别；FirstAgent 会话账本用英文 code，由 CATEGORY_MAP 统一成中文"
+  },
+
+  "environment_scenarios": {
+    "A": "普通银行用户",
+    "B": "购物支出增加",
+    "C": "疑似重复扣款",
+    "D": "余额不足",
+    "E": "周期性订阅",
+    "F": "家庭生日跨场景联动",
+    "G": "信用卡与卡片管理",
+    "shared_blocks": ["cards", "credit_card_bill", "family", "calendar_events", "expected_insights"],
+    "scenario_specific": {
+      "E": "subscriptions",
+      "G": "card_events",
+      "F": ["budget", "activity_calendar"]
+    },
+    "reproducibility": "set_seed(seed) + set_reference_date(YYYY-MM-DD)"
+  },
+
+  "analysis_tools": [
+    "scenario.generate",
+    "bills.summary",
+    "bills.categories",
+    "anomalies.detect",
+    "subscriptions.burden",
+    "cashflow.project",
+    "liquidity.available",
+    "budget.advice",
+    "analysis.pipeline"
+  ],
+
+  "analysis_capabilities": {
+    "reports": ["分类", "月度", "年度"],
+    "anomalies": ["重复扣款", "失败转账", "还款", "订阅续费", "订阅调价", "生日", "预算锁定", "工资", "异常大额消费"],
+    "subscription_burden": ["月均支出", "占工资比", "分级", "即将扣费"],
+    "cashflow": ["30/90天投影", "最低余额", "缺口日"],
+    "liquidity": ["锁定预算后可用金额", "挤占预警"],
+    "budget_advice": ["每月可安全储蓄额", "每月可安全投资额", "结余/流动性约束", "建议动作"],
+    "budget_backtest": ["A~G 场景", "6 种压力变体", "2 个周期", "13 种缓冲策略", "不变量检查", "数据质量标记"],
+    "data_organizer": ["analysis 视图", "recommendation profile（CNY 元）", "cards 视图", "display 只读摘要", "质量清单", "PII 移除", "标准答案默认剥离"],
+    "perturbations": 26,
+    "evaluation": "expected_insights 作为标准答案，A~G 样例 P/R/F1 = 1.0"
+  },
+
+  "first_agent_integration": {
+    "endpoints": {
+      "POST /api/analysis": "8 个只读分析工具（含 budget.advice），需 read + Idempotency-Key",
+      "GET /api/analysis": "扁平参数查询",
+      "GET /api/analysis/status": "分析模块自检",
+      "POST /api/scenarios/generate": "生成 A~G 独立场景，不写账本",
+      "GET /api/health": "返回 analysis.available"
+    },
+    "session_tools_excluded": ["scenario.generate"],
+    "read_only": true,
+    "ledger_modified": false,
+    "permission": "consent.read",
+    "recommend_budget": "已授权 read 时用 budget.advice.investment.headroom_minor 收紧推荐金额；为 0 时保留原配置并提示先补应急金；分析不可用自动回退；响应 budget_basis 标注来源"
+  },
+
+  "known_limits": [
+    "会话账本交易是月度汇总样本，非逐笔流水，重复扣款识别在会话账本上不触发",
+    "会话账本无信用卡账单、家庭成员生日、活动日历，相关能力只在 A~G 场景可用",
+    "已核实：FirstAgent 没有 scenarios.py，契约适配只有 scenario_adapter.py 一套，原‘职责重叠’信息过期",
+    "农历节日仅覆盖 2026-2027，为演示对照表",
+    "expected_insights 在环境生成侧仍作为契约字段保留并标注 evaluation_only_fields；对客链路（tools.scenario.generate / FirstAgent）默认剥离，include_evaluation=true 才返回",
+    "幂等结果已持久化到单机 SQLite（默认 runtime/idempotency.sqlite3，可用 ENV_AGENT_IDEMPOTENCY_DB 覆盖），重启可重放；不覆盖多实例/分布式",
+    "分析模块路径依赖：FirstAgent 默认从 ../AI_Banking/主任务_金融分析与量化 导入，可用 AI_BANKING_ANALYSIS_DIR 覆盖"
+  ],
+
+  "next_steps": [
+    "已完成（2026-10-24）：比赛演示脚本 AI_Banking/demo_full_chain.py，转账->账单分析->订阅续费->生日锁定->流动性一条命令跑通",
+    "已完成（2026-10-24）：预算建议 budget.advice，输出每月可安全储蓄（保留 1 个月支出）与可安全投资（保留 3 个月支出）金额及约束",
+    "已完成（2026-10-24）：理财推荐接入 budget.advice，positive headroom 收紧可投金额，为 0 时保留配置并提示先补应急金，响应 budget_basis 可追溯",
+    "已完成（2026-10-24）：合成场景参数化回测 backtest_budget.py，A~G × 6 压力 × 2 周期 × 13 策略共 1092 次全部通过；修正跨月工资取数",
+    "已完成（2026-10-24）：数据整理 Agent organizer.py，契约场景投影为 analysis/recommendation/cards/display 四视图 + 质量清单；20 项测试通过",
+    "真实脱敏数据回测，校准类别阈值、订阅负担分级、锁定比例与 1/3 个月缓冲策略",
+    "已完成（2026-10-24）：scenario.generate 默认剥离 expected_insights/evaluation_only_fields，include_evaluation=true 才返回；FirstAgent /api/scenarios/generate 自动继承",
+    "拆分 scenario_generator.py，环境生成侧 main.py 只保留解析/校验/保存",
+    "已完成（2026-10-24）：幂等存储改单机 SQLite，默认 runtime/idempotency.sqlite3，可用 ENV_AGENT_IDEMPOTENCY_DB 覆盖；新增 3 项持久化测试并做跨进程重启验证"
+  ],
+
+  "verification": {
+    "环境生成agent": "73 项测试通过",
+    "主任务_金融分析与量化": "115 项测试通过",
+    "FirstAgent": "34 项集成测试通过，verify_delivery 结论 passed",
+    "evaluation": "A~G 样例 P/R/F1 = 1.0；扰动样例 26/26 通过，FP 0 / FN 0",
+    "full_chain_demo": "demo_full_chain.py 退出码 0（普通档 800 元 + 红档 1200 元各跑一次）",
+    "client_leak_check": "FirstAgent /api/scenarios/generate 返回不含 expected_insights / evaluation_only_fields",
+    "budget_advice": "F 场景 30 天：储蓄 14,585.20 元/月、投资 10,835.68 元/月；会话账本：储蓄 15,640.00 元/月、投资 0（先补应急金）",
+    "recommend_budget": "会话账本 analysis_headroom=0，推荐回退到配置金额 3,640.00 元并提示先补应急金；FLEX/TERM3 仍可推荐，budget_basis 可追溯",
+    "budget_backtest": "1092 次策略组合全部通过；投资缓冲 1/3/6 个月的正投率分别为 80.95% / 66.67% / 38.10%",
+    "rule_stability_report": "reports/budget_backtest_rule_stability.md：不变量、确定性 84/84、敏感性、压力响应、回归测试",
+    "data_boundaries_report": "reports/budget_backtest_data_boundaries.md：场景完整度、可声明/不可声明、比赛六场景覆盖、真实数据校准方案",
+    "idempotency_persistence": "SQLite 存储；3 项测试 + 跨进程重启验证：同 session/key/params 返回相同 scenario_id，数据库保留 1 条记录",
+    "data_organizer": "20 项测试通过；F 场景 recommendation budget_cny=10835.68、budget_source=analysis_headroom；G 场景 cards 视图可用；缺失风险档案时 risk_tolerance=null"
+  },
+
+  "run_commands": {
+    "环境生成": "cd AI_Banking\\环境生成agent && python -m unittest discover -s . -p \"test_*.py\"",
+    "主任务": "cd AI_Banking\\主任务_金融分析与量化 && python -m unittest discover -s . -p \"test_*.py\"",
+    "FirstAgent": "cd Desktop\\FirstAgent && python verify_delivery.py",
+    "pipeline_demo": "cd AI_Banking\\主任务_金融分析与量化 && python cli.py pipeline --prompt \"配偶生日，锁定 1000 元预算\" --scenario-type F --seed 42 --reference-date 2026-10-23",
+    "full_chain_demo": "cd AI_Banking && python demo_full_chain.py",
+    "budget_backtest": "cd AI_Banking\\主任务_金融分析与量化 && python backtest_budget.py",
+    "data_organizer": "cd AI_Banking\\主任务_金融分析与量化 && python organizer.py --input fixtures/SCENARIO_F.json --out-dir organized"
+  }
+}

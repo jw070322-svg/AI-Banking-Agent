@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-11-02T19:27:53.8200910+08:00",
+  "release_commit": "4f29c0279fd84a529bb00130fd0397d7d777bf77",
+  "branch": "codex/1101-portable-local-model",
+  "zip": "releases/AI_Banking_Agent_1102.ver1.zip",
+  "bytes": 570122045,
+  "sha256": "bc7e614a8706109b17525f72bad7a501c59a306a61aad1210646c9adbc957696",
+  "fresh_remote_download_hash_matched": true,
+  "zip_members_verified_against_commit": 1021,
+  "launcher": "01_启动演示.bat",
+  "cold_start_evidence": "fresh-unzip-inference.json",
+  "scope": "Windows x64 local simulation"
+}

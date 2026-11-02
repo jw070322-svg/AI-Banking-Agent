@@ -1,0 +1,296 @@
+{
+  "schema_version": "1.0",
+  "app_version": "Third_Agent_1026ver.",
+  "generated_at": "2026-10-25T08:37:35.079Z",
+  "status": "initial_fix_complete_and_verified",
+  "trigger": "5小时额度剩余不高于15%，本次检测为10%；完成收尾交接，不再新增功能。",
+  "quota": {
+    "checked_at": "2026-10-25T08:35:16.731Z",
+    "window_minutes": 300,
+    "used_percent": 90,
+    "remaining_percent": 10,
+    "resets_at_epoch": 1792933636,
+    "monitor_id": "15-third-agent",
+    "monitor_interval_minutes": 5,
+    "trigger_remaining_percent": 15
+  },
+  "user_requests": [
+    "基于指定诊断上下文检查 Third_Agent (http://127.0.0.1:8768)，输出Markdown与JSON诊断报告。",
+    "以原版为基础做初步修复，独立文件夹与版本名 Third_Agent_1026ver.。",
+    "5小时额度剩余15%时整理项目、总结上下文并输出.md和.json交接文档。"
+  ],
+  "workspace": "F:\\AI_Banking\\Third_Agent_1026ver",
+  "original_project": "F:\\AI_Banking\\Third_Agent",
+  "references": {
+    "original_context": "E:\\codex\\2026-10-25\\referenced-chatgpt-conversation-this-is-an\\outputs\\agent-intent-recognition-diagnosis-context.md",
+    "diagnosis_markdown": "F:\\AI_Banking\\output\\agent_intent_diagnosis_2026-10-25\\agent-intent-diagnosis.md",
+    "diagnosis_json": "F:\\AI_Banking\\output\\agent_intent_diagnosis_2026-10-25\\agent-intent-diagnosis.json"
+  },
+  "constraints": [
+    "修改仅在独立副本，未复制原runtime；所有银行操作为本地模拟。",
+    "Windows目录不带末尾句点，显示版本保留句点。",
+    "核心仍为规则解析，未接入LLM；不得以候选代替权限、确认或授权。",
+    "前端、服务、目录、币种、幂等与未知结果检查沿用服务端边界。"
+  ],
+  "completed": [
+    "完成原问题诊断，证据指向聊天/表单收款人目录不一致、金额子串截取、语义未分类与旧草稿未同步。",
+    "新建独立副本，加入版本文件，默认8769、版本专属cookie banking_session_1026、独立SQLite数据路径。",
+    "新增规则候选解析器，支持核心前缀/空格/全角数字/受限词序；完整Decimal金额检查。",
+    "聊天与表单共用服务端演示目录；小王等为显式虚构联系人；精确唯一匹配，王五仍禁止转出。",
+    "按缺失槽位追问；余额查询可结束补充流程；否定、引用、条件、预约、多笔等不能误生成可执行转账。",
+    "更正先撤销旧草稿，即使新金额校验失败旧确认仍失效；取消结合真实状态；unknown保留查单入口。",
+    "前端识别clear_pending，清空验证码，确认前复核状态和绑定，阻止双击并发。",
+    "新增原因码/解析器版本/目录版本审计，并保留请求编号。",
+    "报告生成器仅采用本版实测结果，旧主文档及旧生成器已放入 reports/history/third-agent-baseline/。"
+  ],
+  "architecture": "HTTP server -> AgentService -> parse_transfer候选 -> 服务端目录/策略 -> transfer_preview -> 单独确认/必要验证 -> 模拟账本。工作台RPC经Node业务引擎，目录投影由同一服务端维护。",
+  "key_files": {
+    "README.md": "F:\\AI_Banking\\Third_Agent_1026ver\\README.md",
+    "CHANGES-1026.md": "F:\\AI_Banking\\Third_Agent_1026ver\\CHANGES-1026.md",
+    "API-CONTRACT.md": "F:\\AI_Banking\\Third_Agent_1026ver\\API-CONTRACT.md",
+    "version.json": "F:\\AI_Banking\\Third_Agent_1026ver\\version.json",
+    "summary.md": "F:\\AI_Banking\\Third_Agent_1026ver\\summary.md",
+    "summary.json": "F:\\AI_Banking\\Third_Agent_1026ver\\summary.json",
+    "first_agent/intent_parser.py": "F:\\AI_Banking\\Third_Agent_1026ver\\first_agent\\intent_parser.py",
+    "first_agent/recipients.py": "F:\\AI_Banking\\Third_Agent_1026ver\\first_agent\\recipients.py",
+    "first_agent/service.py": "F:\\AI_Banking\\Third_Agent_1026ver\\first_agent\\service.py",
+    "first_agent/server.py": "F:\\AI_Banking\\Third_Agent_1026ver\\first_agent\\server.py",
+    "web/agent-panel.js": "F:\\AI_Banking\\Third_Agent_1026ver\\web\\agent-panel.js",
+    "tests/test_intent_parser.py": "F:\\AI_Banking\\Third_Agent_1026ver\\tests\\test_intent_parser.py",
+    "tests/test_intent_regression.py": "F:\\AI_Banking\\Third_Agent_1026ver\\tests\\test_intent_regression.py",
+    "tests/agent_panel_regression.cjs": "F:\\AI_Banking\\Third_Agent_1026ver\\tests\\agent_panel_regression.cjs",
+    "reports/verification.json": "F:\\AI_Banking\\Third_Agent_1026ver\\reports\\verification.json",
+    "reports/original-source-preservation.json": "F:\\AI_Banking\\Third_Agent_1026ver\\reports\\original-source-preservation.json"
+  },
+  "verification": {
+    "app_version": "Third_Agent_1026ver.",
+    "verified_at": "2026-10-25T08:35:16.552427+00:00",
+    "integration": {
+      "run": 101,
+      "passed": 101,
+      "failures": [],
+      "errors": [],
+      "skipped": []
+    },
+    "vv_engine": {
+      "passed": 43,
+      "suites": {
+        "vv_core": {
+          "passed": 15,
+          "cases": [
+            "账单分类合计与总账一致",
+            "权限按查询订阅交易分开",
+            "订阅取消只减少未来支出，不能重复取消",
+            "关闭确认不执行，申购需验证，不能重复提交",
+            "目标、产品、预算、档案或授权变化使确认失效",
+            "筛选引擎处理风险期限金额与缺失资料",
+            "失败不会改动账本，未知结果冻结并查询一次",
+            "赎回申请不提前到账，次日查询后守恒",
+            "到账失败释放占用，未知赎回核对后仍须等到账",
+            "未到期不能赎回，占用资金不能重复赎回",
+            "中断撤销不回滚资金，恢复仍须重新确认",
+            "连续失败与验证错误锁定，解锁不清账",
+            "保持流动性不申购，预演无虚构收益",
+            "无效金额、期限和超配被拒绝",
+            "快照不能绕过内部规则，输入仅作记录不自动执行"
+          ]
+        },
+        "vv_simulation": {
+          "passed": 15,
+          "cases": [
+            "800 元转账同步余额资产账单与任务",
+            "转账与卡管理分别授权",
+            "失败转账不扣款，未知阻止重复，查询只入账一次",
+            "红色转账验证必需、错误验证码、关闭确认均不扣款",
+            "超额非整数未知联系人均拒绝",
+            "累计日限额与额度调整，不生成资金",
+            "限制解锁挂失联动转账，挂失不可解锁",
+            "未知卡操作查询后同步状态，失败不改卡",
+            "申请需次日审核，不当作立即开卡且重复查询不再开卡",
+            "卡申请拒绝不增加卡数与余额",
+            "快照恢复金额记录卡状态一致且编号不重复",
+            "刷新恢复待确认要求重新验证",
+            "授权变更/中断/目标变更使新操作失效，不回滚已执行",
+            "六个月锁定期加结算日不可用于六个月目标",
+            "持续操作混合申购赎回订阅和转账资金守恒"
+          ]
+        },
+        "vv_contract_rules": {
+          "passed": 5,
+          "cases": [
+            "1000元边界黄色可确认，累计多笔超限变红色",
+            "300秒预览过期不扣款且状态失效",
+            "120秒断言过期需重新验证但不延长预览",
+            "申购遵循相同的预览/断言时限",
+            "只有独立旧转账权限不能绕过trade，卡扩展仍隔离"
+          ]
+        },
+        "agent_panel_regression": {
+          "passed": 8,
+          "cases": [
+            "clear_pending clears preview and verification code",
+            "correction replaces old binding and amount",
+            "rejected correction recovers invalidation from snapshot",
+            "stale confirmation never reaches submit",
+            "changed binding never reaches submit",
+            "double confirmation sends exactly one submit",
+            "unknown result retains reconciliation control across non-clearing replies",
+            "expired preview does not offer confirmation"
+          ]
+        }
+      }
+    },
+    "module_checks": {
+      "analysis": {
+        "exit_code": 0,
+        "passed": true,
+        "test_count": 115,
+        "log": "reports/analysis.txt"
+      },
+      "environment": {
+        "exit_code": 0,
+        "passed": true,
+        "test_count": 73,
+        "log": "reports/environment.txt"
+      },
+      "backtest": {
+        "exit_code": 0,
+        "passed": true,
+        "test_count": null,
+        "log": "reports/backtest.txt"
+      },
+      "demo_80000": {
+        "exit_code": 0,
+        "passed": true,
+        "test_count": null,
+        "log": "reports/demo_80000.txt"
+      },
+      "demo_120000": {
+        "exit_code": 0,
+        "passed": true,
+        "test_count": null,
+        "log": "reports/demo_120000.txt"
+      }
+    },
+    "conclusion": "passed"
+  },
+  "test_commands": [
+    "python -B -m unittest discover -s tests -p test_intent_parser.py -q",
+    "node tests/agent_panel_regression.cjs",
+    "python -B verify_delivery.py",
+    "python -B build_reports.py"
+  ],
+  "verification_notes": [
+    "完整验证为最终代码：101/101 Python服务与解析测试，43项JavaScript（含8项前端），115项分析、73项环境，预算回测及800/1200元模拟全链路均通过。",
+    "早期测试遇到系统临时目录访问限制，获准后在正常本地环境运行；未改原运行数据库。",
+    "发现并修复转给小王800元规则顺序与测试字符串换行错误，最终全套无失败/错误/跳过。",
+    "原版6个已在诊断留存哈希的关键文件均未改变，详见original-source-preservation.json。"
+  ],
+  "runtime": {
+    "new_server_started": true,
+    "new_runtime_directory_exists": true,
+    "default_url": "http://127.0.0.1:8769/",
+    "port_status": "2026-10-25T10:30:57Z 经真实HTTP验证后已关闭；关闭后8769无LISTENING进程。",
+    "test_process": "接管冒烟进程已退出，exit_code=0；持久服务已按要求由taskkill终止。",
+    "agents": "本次接管未运行并行审查代理。",
+    "health": {
+      "ready": true,
+      "app_version": "Third_Agent_1026ver.",
+      "parser_kind": "rules",
+      "persistent": true
+    },
+    "runtime_directory": "runtime/agent.sqlite3（首次启动建立，验证后保留）",
+    "shutdown_after_verification": true
+  },
+  "takeover_verification": {
+    "checked_at": "2026-10-25T10:30:57.101840+00:00",
+    "method": "real HTTP on 127.0.0.1:8769, unique Idempotency-Key per POST, real cookie session, no transfer confirmation",
+    "scope": "仅验证与记录；未修改产品代码/测试/生成器，未重跑完整 verify_delivery.py",
+    "baseline_python_tests": {
+      "ran": 101,
+      "passed": 101,
+      "conclusion": "passed",
+      "command": "python -B -m unittest discover -s tests -p \"test_*.py\""
+    },
+    "health": {
+      "http_status": 200,
+      "ready": true,
+      "app_version": "Third_Agent_1026ver.",
+      "parser_kind": "rules",
+      "persistent": true
+    },
+    "flows": [
+      {
+        "name": "给小王转账800元",
+        "result": "awaiting_confirmation",
+        "preview": {"beneficiary_name": "小王", "amount_minor": 80000}
+      },
+      {
+        "name": "改成900元",
+        "result": "awaiting_confirmation",
+        "clear_pending": true,
+        "old_operation_status": "invalidated",
+        "new_amount_minor": 90000
+      },
+      {
+        "name": "取消刚才的转账",
+        "result": "cancelled",
+        "reason_code": "CANCELLED",
+        "operation_status": "cancelled"
+      },
+      {
+        "name": "缺金额后查余额",
+        "result": "needs_input -> accounts",
+        "reason_code": "MISSING_SLOT",
+        "missing": ["amount_minor"],
+        "clarification_cleared": true,
+        "isolated_800_no_preview": true
+      },
+      {
+        "name": "给张三丰转账800元",
+        "result": "needs_input",
+        "reason_code": "RECIPIENT_NOT_FOUND",
+        "alias_preserved": "张三丰",
+        "substring_match_used": false
+      }
+    ],
+    "initial_balance_minor": 3864000,
+    "final_balance_minor": 3864000,
+    "transfer_operations": ["invalidated", "cancelled"],
+    "confirmed_transfer_used": false,
+    "checks_passed": 14,
+    "checks_total": 14,
+    "conclusion": "passed",
+    "evidence": {
+      "json": "reports/takeover-smoke.json",
+      "log": "reports/takeover-smoke.txt",
+      "server_log": "reports/takeover-server.log"
+    },
+    "server_shutdown_after_verification": true
+  },
+  "known_limits": [
+    "有限规则，不是任意自然语言理解；中文金额、千分位、外币、条件、预约、批量暂不支持。",
+    "自然语言更正只支持当前聊天待确认草稿金额；取消/更正不关联表单或独立API创建的草稿。",
+    "到账查询仅提示查看记录与回执，不凭语言推断结果。",
+    "前端使用DOM测试，未完成真实浏览器、输入法、无障碍全面验收。",
+    "全部模拟银行、演示认证，新增目录不对应真实账户。",
+    "继承研究/分工/旧截图有历史日期，不是本版验收。"
+  ],
+  "pending_required": [],
+  "recommended_next": [
+    "启动8769并人工检查右下角聊天入口，至少演示小王800元、改900元、取消、缺金额后查询余额。",
+    "需要扩展表达时先补语料和回归；LLM仅作为候选提取层，不能放宽服务端校验。",
+    "后续可补槽位来源、轮次与结构化失败阶段，继续完善可观察性。"
+  ],
+  "resume_steps": [
+    "阅读本文件、CHANGES-1026.md和reports/verification.json，确认目录及版本。",
+    "在新目录执行 python -m first_agent.server --port 8769 或 .\\run_agent.ps1。",
+    "打开 http://127.0.0.1:8769/，核对/api/health中app_version，右下角开启演示权限。",
+    "本次初版实现与自动化验证已完成；仅在代码变化或发现新问题后重跑必要测试。",
+    "保持原Third_Agent/8768原样，勿运行历史目录中的旧报告生成器。"
+  ],
+  "automation": {
+    "id": "15-third-agent",
+    "action": "本次已达到阈值并完成交接，随即暂停，避免重复执行。"
+  }
+}

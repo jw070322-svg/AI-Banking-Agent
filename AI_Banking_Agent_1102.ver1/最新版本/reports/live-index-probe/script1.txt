@@ -1,0 +1,191 @@
+// @charset "gbk";
+var t = document.getElementById('clid').getAttribute('op');
+t = t ? t : 'bk';
+var x = document.getElementById('clid').value;
+var stockcode = t + "_" + x;
+// var stockcode = 'usa_BABA';
+// var stockcode = '16_1A0001';
+var elemId = 'hexmHqTable';
+function checkVar (name, callback) {
+  var timer = setInterval(function () {
+    if (window[name]) {
+      clearInterval(timer);
+      callback();
+    }
+  }, 0);
+}
+
+checkVar('hx_hq_canvas', function () {
+  hx_hq_canvas.initShow({
+    configs: {
+      // 必须是id
+      elementId: elemId,
+      code: stockcode,
+      pane: ['fs', 'dayK', 'weekK', 'monthK'],
+      activeDrawType: 'fs',
+      needRenderRealData: false
+    },
+    klineConfigs: {
+      draw: {
+      },
+      dataOrigin: {
+        keepGet: false,
+        ma: [5, 10, 30]
+      },
+      eventBtn: ['pre', 'next', 'zoomIn', 'zoomOut'],
+      // kline悬停
+      moveFn: function (d) {
+        //console.log(d);
+        showDataList(d);
+      },
+      // kline悬停结束
+      moveEndFn: function (d) {
+        //console.log('klinemove结束后');
+        hideDataList();
+      },
+      // 当前绘图信息
+      // 用于在当前图形嵌入其他信息
+      drawDataFn: function (d, pos) {
+        //console.log(d);
+        // console.log(pos);
+      },
+      beforeDrawFn: function (d) {
+        //console.log('画kline图之前');
+      },
+      afterDrawFn: function (d) {
+        // console.log('画kline图之后');
+      }
+    },
+    fsConfigs: {
+      draw: {
+        // 分时行情图上的颜色
+        color: {
+          upColor: '#D85342',
+          downColor: '#6CA584',
+          eqColor: '#444'
+        },
+        price: {
+          enable: true,
+          height: '0.66',
+          draw: {
+            nowp: {
+              enable: true,
+              color: '#6a9fd3',
+              lineWidth: 2
+            },
+            // 闭合线
+            nowpLineClosed: {
+              enable: true,
+              fillStyle: 'rgba(141,168,248, .05)',
+              lineWidth: 1
+            },
+            av: {
+              enable: false,
+              color: '#90b7de',
+              lineWidth: 2
+            }
+          },
+          // type:'line'
+          type: 'lineClosed'
+        },
+        vol: {
+          enable: true,
+          height: '0.34'
+        }
+      },
+      dataOrigin: {
+        keepGet: true
+      },
+      // fs悬停
+      moveFn: function (d) {
+        // av: "62.34" 均价
+        // dpos: 226   所有数据中, 所在位置
+        // mpos: Object 当前鼠标 x, y信息
+        // n: 213 成交量
+        // nowp: "62.13" 现价
+        // np: "" 成交金额
+        // rate: "0.34%" 涨跌幅
+        // ratep: "0.21" 涨跌额
+        // status: "up" 上升还是下降, up, down, eq
+        // t: "2016-09-13 14:45" 当前时刻
+        // console.log(d);
+        showDataList(d);
+      },
+      // fs悬停结束
+      moveEndFn: function (d) {
+        // console.log('分时结束后');
+        hideDataList();
+      },
+      // 当前绘图信息
+      // 用于在当前图形嵌入其他信息
+      drawDataFn: function (d, pos) {
+        //console.log(d);
+        //console.log(pos);
+      },
+      beforeDrawFn: function (d) {
+        //console.log('画分时图之前');
+      },
+      // 获得停牌状态 返回值是一个数组
+      // 如果出现停牌, 则回调函数触发, return ["hs_600021"]
+      getSuspensionsFn: function (d) {
+        //console.log(d);
+      }
+    }
+  });
+  // 行情图信息
+  hx_hq_canvas.getChartInfo = function (d) {
+    // console.log(d);
+  };
+});
+//悬停
+function showDataList (d) {
+  // av: "62.34" 均价
+  // dpos: 226   所有数据中, 所在位置
+  // mpos: Object 当前鼠标 x, y信息
+  // n: 213 成交量
+  // nowp: "62.13" 现价
+  // np: "" 成交金额
+  // rate: "0.34%" 涨跌幅
+  // ratep: "0.21" 涨跌额
+  // status: "up" 上升还是下降, up, down, eq
+  // t: "2016-09-13 14:45" 当前时刻
+  // console.log(d)
+  var isFenShi = $('.tab-list').children('.active').text().replace(/\s/g, '') === '分时'
+  var $dataLiat = $('.data-list');
+  if ($dataLiat.length < 1) {
+    $dataLiat = $('<ul class="data-list" style="display: none;">' +
+      '<li id="t">2016-09-20 14:17</li>' +
+      '<li>价格：<span id="nowp"></span></li>' +
+      // '<li>均价：<span id="av"></span></li>' +
+      '<li>涨跌幅：<span id="rate"></span></li>' +
+      '<li>成交量：<span id="n"></span>手</li>' +
+      '</ul>');
+    $('#' + elemId).append($dataLiat);
+  }
+  $('#t').html(d.t);
+  $('#nowp').html(d.nowp || (d.c ? (d.c).toFixed(2) : '--'));
+  // $('#av').html(d.av || (d.ma30 ? (d.ma30).toFixed(2) : '--'));
+  $('#rate').html(d.rate == '%' ? '0.00%' : d.rate);
+  if (isFenShi) {
+    $('#n').parent('li').show()
+    $('#n').html(d.n == '' ? '--' : d.n);
+  } else {
+    $('#n').parent('li').hide()
+  }
+  $('#nowp,#rate').attr('class', d.status);
+  var x = 100;
+  var left;
+  try {
+    if (d.mpos.x >= $('#' + elemId).width() / 2) {
+      left = x;
+    } else {
+      left = $('#' + elemId).width() - $dataLiat.width() - x;
+    }
+  } catch (e) {
+    left = x;
+  }
+  $dataLiat.css('left', left).show();
+}
+function hideDataList () {
+  $('.data-list').hide();
+}

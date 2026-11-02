@@ -1,0 +1,64 @@
+{
+  "changes": {
+    "first_agent/service.py": {
+      "before": "e05565bf25c13e6755779bc8a901f003c58fb7df37e4a1f68fd47cb9fbd08df2",
+      "after": "6c3e2c4b20244fbe2f944e5fb192218c64257f0eea8d93276b71627bf5a34c23",
+      "reason": "用户授权修复G01：同一事务缓存出口重新鉴权；重复执行只读原回执"
+    },
+    ".gitignore": {
+      "before": "0f107a84ac80ef956cc0120d12b2ec7268f84e16baa602e5d0668e516a066759",
+      "after": "17b46dfe0652d2d5d94efceeedd6ed197a94dc115a8ad8081b1b2d693b7cf974",
+      "reason": "排除每份安装的密钥和缓存"
+    },
+    "00_评委请先看.txt": {
+      "before": "d7a81a1c457ab6debf3310b1d5ce0790012ebd39b8316c48ac43309cc16f9e6f",
+      "after": "74d084375fb904d2f56fb8b5d62f4d47ae1fe9da77cbfd90c631db0e6c47405e",
+      "reason": "1102终版依据用户要求更新评委入口、PDF范围与材料索引"
+    },
+    "LOCAL_AGENT_HANDOFF.md": {
+      "before": "3d1635a8fb675c75d1add114c10c5b2040329d9bfd6d6ea515d3097c5f9b66de",
+      "after": "08df50a799a77e1453e7229d49feea5fdc6f52e4a5c9021e37d59d80da98a21b",
+      "reason": "增加1102终版交接入口并保留历史内容"
+    },
+    "first_agent/external_services.py": {
+      "before": "591fbcaf22f5181bc2ed5d3df2af9ebefe6100e4139c1f3730f64ff84384dc1b",
+      "after": "d79837c17e280c9e4750233154fa2eb6dcf9b2ad59c9420dfaa355f4054d9082",
+      "reason": "版本独立的回环服务、凭据与跳转限制"
+    },
+    "first_agent/local_ai_bootstrap.py": {
+      "before": "6dc88bea84c80ee942267e72ad7c7fd34c390c0570697f179d856b73ad6ac79f",
+      "after": "441c7a4f85c64f0bae096a198cdc81a0d5dafcca33b8f1f0c3f692f775a3d003",
+      "reason": "从当前版本启动并验证适配器，识别失败状态"
+    },
+    "start_local_ai.ps1": {
+      "before": "67e32e0a9f46f4a48f14bbae8fe30e2bf9efa7e33ce4771490e6d91b40cb9226",
+      "after": "05733eafc15676b63f48640657d70c075c3838642f7c2d5361b50afb0e18051e",
+      "reason": "使用随包组件和相对路径，校验哈希并生成本机凭据"
+    },
+    "tests/test_external_services.py": {
+      "before": "0fb2cb47f79fe9b565c824d57c33d1578d438a27c0abf509509e9b2c29274524",
+      "after": "c9fc69060e32de78ed3e93924a3f1854571ea98c21c3292fddce474a94e6749a",
+      "reason": "校验便携版固定回环端口"
+    },
+    "tests/test_local_model_bootstrap.py": {
+      "before": "1ac877339e26b5f2256d8fa9f672cf0029cc7d9626e62f245691bdf8151de4af",
+      "after": "002e98c7a132f26fe3fd8bcf4f898a740ac97a11d5edf9449645ebc50fed11c4",
+      "reason": "校验便携版管理路径仍然被拒绝"
+    },
+    "tools/diagnose_local_model.py": {
+      "before": "44055fe1bcf559795d144f77f99f11adb4234f75471d82e2dce1d127b2f3cb50",
+      "after": "448693ee627060d12b40f201ca6d904f7dfabac374f46d029347fc80eb796fb7",
+      "reason": "校验便携端口、空凭据和适配器哈希"
+    },
+    "tools/build_relocation_ledger.py": {
+      "before": "35cb29469664b87ae0f41cdecfc7349f7b632c076d5f986c6253cdd00e8aa43b",
+      "after": "4596196ac41ee25e387c03e6dbf7b39a2a114af6fa24fa5b517f911ceafc4c83",
+      "reason": "登记便携模型版本授权改动"
+    },
+    "tools/build_version_ledger.py": {
+      "before": "4fcad374f7149c33711702c73544e69f5a74cc1f48e99ba7df47e03fe107557a",
+      "after": "a37636603311e40ed497bf09df46eca03c44a4ffe14ae191cc9b1de2c20dac00",
+      "reason": "登记便携模型版本授权改动"
+    }
+  }
+}

@@ -1,0 +1,2760 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-27T10:39:36.764274+00:00",
+  "chunking": {
+    "max_chars": 800,
+    "overlap_lines": 2
+  },
+  "documents": [
+    {
+      "id": "yuki-01",
+      "path": "01-现金流.md",
+      "title": "现金流",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-6fe87830da12",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/01-%CF%84%C3%84%E2%96%91%CE%98%C3%A7%C3%A6%C2%B5%E2%95%A1%C3%BC.md",
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-02",
+      "path": "02-储蓄率.md",
+      "title": "储蓄率",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-4c47eb2fbfcc",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/02-%CF%83%C3%A9%C2%BF%CE%A6%C3%B4%C3%A4%CF%84%C3%84%C3%A7.md",
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-03",
+      "path": "03-流动性.md",
+      "title": "流动性",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-ee49ea4511d6",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/03-%C2%B5%E2%95%A1%C3%BC%CF%83%C3%A8%C2%BF%C2%B5%C3%87%C2%BA.md",
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-04",
+      "path": "04-债务比率.md",
+      "title": "债务比率",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-67daf7b142cc",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/04-%CF%83%C3%87%E2%95%91%CF%83%C3%A8%C3%AD%C2%B5%C2%BB%C3%B6%CF%84%C3%84%C3%A7.md",
+      "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-05",
+      "path": "05-风险管理.md",
+      "title": "风险管理",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-bedfd82a94fb",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/05-%CE%98%C3%BA%C3%84%CE%98%C3%96%E2%8C%90%CF%84%C2%AB%C3%AD%CF%84%C3%89%C3%A5.md",
+      "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-06",
+      "path": "06-合规边界.md",
+      "title": "合规边界",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-cbd5a374060c",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/06-%CF%83%C3%89%C3%AA%CE%A6%C2%BA%C3%A4%CE%A6%E2%95%9B%E2%95%A3%CF%84%C3%B2%C3%AE.md",
+      "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-07",
+      "path": "07-订阅管理.md",
+      "title": "订阅管理",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-15848d84a89f",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/07-%CE%A6%C2%AB%C3%B3%CE%98%C3%BF%C3%A0%CF%84%C2%AB%C3%AD%CF%84%C3%89%C3%A5.md",
+      "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-08",
+      "path": "08-旅行预算.md",
+      "title": "旅行预算",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-e97ce5bf453e",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/08-%C2%B5%C3%B9%C3%A0%C2%B5%E2%95%95%E2%95%95%CE%98%C3%B3%C3%A4%CF%84%C2%AB%C3%B9.md",
+      "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-01",
+      "path": "finance-01.md",
+      "title": "银行与现金流金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "d30ee83870d6fa9dd10a6ff765587ac8b7658bc83f5091cd37ff4383e89119d5",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-02",
+      "path": "finance-02.md",
+      "title": "基金与理财金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml",
+      "sha256": "b227b31a78d15728c93f9afcd4dd86b77ac166fe0b4c62ad52645b930a17f75f",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-03",
+      "path": "finance-03.md",
+      "title": "风险与组合金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml",
+      "sha256": "651ddf53227f4be610cb5f75784e1a10e776b262b3b17462b50ae4d3507259b0",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-04",
+      "path": "finance-04.md",
+      "title": "收益与估值金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "5b4b913ef45bca8c114de5ac515a765ac61dfa0c6d5f326e54dbeafe542fd648",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-05",
+      "path": "finance-05.md",
+      "title": "股票与指数金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "e9357b0bc4ea6dfb98e5cb41b6ae75b5fd9a661ef3b64de583b8fb6deee9a835",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-06",
+      "path": "finance-06.md",
+      "title": "债券金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "dc29c0dd0ec90744937012c54ce96dbcd36ebf84a31f7f33dfb81a5cf81a4ca9",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-07",
+      "path": "finance-07.md",
+      "title": "贷款与信用金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "ac8b1d4e96ebd6ef3e41d861f7b8a9828c8ee3a2a27e2739ce7b799a16f51b33",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-08",
+      "path": "finance-08.md",
+      "title": "宏观与市场金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "9aaccf62c5138ba076dd41881bb9a9b6d6b3435292e0334d69de950535eb2045",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-09",
+      "path": "finance-09.md",
+      "title": "保险金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "f25ae466573ce5d438d151b72218fe6f0edc970246e5e3df9e1efe9fc4d63716",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-10",
+      "path": "finance-10.md",
+      "title": "支付与账户金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "087e2095523b382a49b11801fd03626dbd46bb6ca354eb636a1587ae89c4a17c",
+      "valid_from": null,
+      "valid_until": null
+    }
+  ],
+  "chunks": [
+    {
+      "id": "ac158e2126a2f1adfa3ce278",
+      "document_id": "yuki-01",
+      "section": "现金流",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 现金流\n",
+      "sha256": "139e14625e7f704d3f934fd31ef9c841ce184745642085a4c399595d617507b9"
+    },
+    {
+      "id": "123d8f601fb99d351ec61cec",
+      "document_id": "yuki-01",
+      "section": "现金流 / 1. 什么是现金流",
+      "start_line": 3,
+      "end_line": 12,
+      "text": "## 1. 什么是现金流\n现金流是指在一定时间内，资金的流入和流出情况。它反映的是一个人或一个账户在一段时间内“钱从哪里来、去哪里”的变化规律。\n\n简单来说，现金流可以理解为：\n- 收入：钱进来\n- 支出：钱出去\n- 净现金流：收入减支出后的结果\n\n在银行和个人财务场景中，现金流是判断财务状态的重要指标之一。它帮助我们看到一个人是否有持续收入、是否过度消费，以及是否存在隐藏风险。\n",
+      "sha256": "bbb77dc5f1481b2876b50600dd318a8f164e9b853f21f5008dcfad4d782e55f4"
+    },
+    {
+      "id": "83e0a446f93153505da34cff",
+      "document_id": "yuki-01",
+      "section": "现金流 / 2. 为什么现金流重要",
+      "start_line": 13,
+      "end_line": 33,
+      "text": "## 2. 为什么现金流重要\n现金流很重要，因为它直接体现了一个人的资金健康状况。\n\n如果现金流稳定：\n- 收入覆盖支出\n- 有余力储蓄\n- 能按时还款\n- 财务压力较低\n\n如果现金流不好：\n- 常常资金不足\n- 支出大于收入\n- 需要依赖贷款或信用\n- 更容易出现逾期、代扣、透支等问题\n\n在 AI Banking Agent 的场景里，现金流帮助系统理解：\n- 用户目前的财务状况是否稳定\n- 收入是否异常下降\n- 支出是否明显增加\n- 是否需要进一步分析预算或风险\n",
+      "sha256": "f8988f2053afa654a9dcd7cef647f768f48927f31ac5cca3c524206012ad74b8"
+    },
+    {
+      "id": "40003bdabc395f02a47d6454",
+      "document_id": "yuki-01",
+      "section": "现金流 / 3. 常见场景",
+      "start_line": 34,
+      "end_line": 36,
+      "text": "## 3. 常见场景\n现金流问题常见于以下场景：\n",
+      "sha256": "f7f9d1d7ffe5c3b847f1b7e49600b40011fd22ecb926984380f9324907c38f9f"
+    },
+    {
+      "id": "bde23116f3aa67a501275171",
+      "document_id": "yuki-01",
+      "section": "现金流 / 3. 常见场景 / 3.1 收入下降",
+      "start_line": 37,
+      "end_line": 45,
+      "text": "### 3.1 收入下降\n例如：\n- 工作收入减少\n- 季关、兼职变少\n- 一次性补贴减少\n- 工资发放周期变化\n\n这种情况可能导致现金流承压。\n",
+      "sha256": "03ed93f01dc5e54f277c2ce7c9aab984742e3be2906fdc3376ae7760f1332ffc"
+    },
+    {
+      "id": "29c758fcc31311c936e88610",
+      "document_id": "yuki-01",
+      "section": "现金流 / 3. 常见场景 / 3.2 支出增加",
+      "start_line": 46,
+      "end_line": 55,
+      "text": "### 3.2 支出增加\n例如：\n- 生活成本提高\n- 旅行开销增加\n- 订阅费用增加\n- 医疗支出增加\n- 节假日消费增加\n\n如果支出持续增加，现金流会明显变差。\n",
+      "sha256": "b95c5e03ece47d1e0ab87837fd732f3c6f52953c8d527959b5205a993401ae79"
+    },
+    {
+      "id": "d7eedf2d03ca62884d1186f4",
+      "document_id": "yuki-01",
+      "section": "现金流 / 3. 常见场景 / 3.3 重复扣款",
+      "start_line": 56,
+      "end_line": 63,
+      "text": "### 3.3 重复扣款\n例如：\n- 订阅扣款重复\n- 支付系统重试\n- 代扣重复触发\n\n这会让用户误以为自己“被扣了两次钱”。\n",
+      "sha256": "143097c899d66552f8a4813fb865231043ae380ebc81f51e50ab715bb1b5b40b"
+    },
+    {
+      "id": "9037291b95420eb9a50ec769",
+      "document_id": "yuki-01",
+      "section": "现金流 / 3. 常见场景 / 3.4 转账或支付延迟",
+      "start_line": 64,
+      "end_line": 71,
+      "text": "### 3.4 转账或支付延迟\n例如：\n- 转账还未到账\n- 支付状态显示处理中\n- 退款还在处理中\n\n这类情况可能是正常的结算延迟，也可能需要进一步确认。\n",
+      "sha256": "b529ff484b2d2f849e41676e129e7d9c098a600e6298eb459e55c6b2a56553e3"
+    },
+    {
+      "id": "e8fa8982773c3da6992cbd1d",
+      "document_id": "yuki-01",
+      "section": "现金流 / 4. 常见问题",
+      "start_line": 72,
+      "end_line": 84,
+      "text": "## 4. 常见问题\n以下问题经常出现在用户询问中：\n\n- 为什么这月支出比上月高？\n- 为什么现金流突然变差？\n- 为什么我最近常常透支？\n- 为什么账单比平时多？\n- 为什么我被重复扣了一次钱？\n- 为什么转账还没到账？\n- 为什么储蓄率下降了？\n\n这些问题的核心都和现金流变化有关。\n",
+      "sha256": "190c68a6fbc47f325ca6f60b79767ba8300f8680c5bfd9f70f96f73f2161dd52"
+    },
+    {
+      "id": "835f0faecd667c882ebf75bb",
+      "document_id": "yuki-01",
+      "section": "现金流 / 5. 典型案例",
+      "start_line": 85,
+      "end_line": 85,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "fe53df6c5aa9d550b8577d1f",
+      "document_id": "yuki-01",
+      "section": "现金流 / 5. 典型案例 / 案例 1：收入稳定但支出突然上升",
+      "start_line": 86,
+      "end_line": 94,
+      "text": "### 案例 1：收入稳定但支出突然上升\n用户说：\n“我工资没有变少，但最近一个月支出特别多。”\n\nAI可以提示：\n- 可能是旅游、购物、订阅和一次性消费导致\n- 需要比对历史同期结果\n- 不能仅凭单月数据直接判断为财务异常\n",
+      "sha256": "352770dab0bdcea7b056998de31051f27e5a118faaf4389a46d752d444adc902"
+    },
+    {
+      "id": "1e91007076723d99b01fe803",
+      "document_id": "yuki-01",
+      "section": "现金流 / 5. 典型案例 / 案例 2：收入下降但支出未变",
+      "start_line": 95,
+      "end_line": 103,
+      "text": "### 案例 2：收入下降但支出未变\n用户说：\n“我最近收入变少了，但支出没怎么变。”\n\nAI可以判断：\n- 可能存在现金流压力\n- 需要看实际结余变化\n- 若持续多月下降，建议重点关注预算管理\n",
+      "sha256": "383d5b10e2045ee3497d35f8a57b793469c1be70985fc0b277c496edb63d4c18"
+    },
+    {
+      "id": "4c57004b96f6a01d27c42f36",
+      "document_id": "yuki-01",
+      "section": "现金流 / 5. 典型案例 / 案例 3：重复扣款",
+      "start_line": 104,
+      "end_line": 112,
+      "text": "### 案例 3：重复扣款\n用户说：\n“我被扣了两次同样的订阅费用。”\n\nAI应说明：\n- 这可能是系统重试、订单重复或代扣异常\n- 需要核对扣款时间、支付渠道和订单状态\n- 若无法解释，建议转人工核实\n",
+      "sha256": "d380903eac1e9334bd40170e7a4630f9df7e2ae6c09b31437a826dcecdd1acb5"
+    },
+    {
+      "id": "7fd6e6b000066490d924b5f6",
+      "document_id": "yuki-01",
+      "section": "现金流 / 5. 典型案例 / 案例 4：转账延迟",
+      "start_line": 113,
+      "end_line": 121,
+      "text": "### 案例 4：转账延迟\n用户说：\n“我转账了，为什么对方还没收到？”\n\nAI应说明：\n- 结算可能存在延时\n- 工具或支付渠道可能处理需要时间\n- 在状态未确认前，不能直接判断为失败或到账\n",
+      "sha256": "c445fc00fbaf16ef30786f6ca4ca19737609e288e82531091cf49ba5da6d7abe"
+    },
+    {
+      "id": "edda570d19cc7caaddfd9a11",
+      "document_id": "yuki-01",
+      "section": "现金流 / 6. 风险提示",
+      "start_line": 122,
+      "end_line": 132,
+      "text": "## 6. 风险提示\n现金流看起来简单，但容易误判。以下情况需要特别谨慎：\n\n- 仅看单笔交易，不能判断整体现金流健康状况\n- 不能把某一月的支出高估计为长期财务问题\n- 不能忽略收入波动和周期性支出\n- 不能在状态未核实前确认“已经到账”或“已失败”\n- 不能把系统重复扣款直接判定为恶意扣款\n\nAI Banking Agent 在处理现金流问题时，应优先采用“解释 + 依据 + 进一步核实”的方式，而不是直接给出绝对结论。\n",
+      "sha256": "fff4dea1a7d3c28f718301ee047e32631c0b2f8ee050225f09c29942cc1f948b"
+    },
+    {
+      "id": "3e3ba27bff6f40f94a20b155",
+      "document_id": "yuki-01",
+      "section": "现金流 / 7. 什么时候需要人工确认",
+      "start_line": 133,
+      "end_line": 144,
+      "text": "## 7. 什么时候需要人工确认\n以下情况建议人工确认或转人工处理：\n\n- 用户反复提到重复扣款且无法解释\n- 支出持续大幅增长，且无合理解释\n- 用户出现长期现金流压力或透支\n- 收入和支出出现持续异常变化\n- 交易状态不一致，无法确定真实情况\n- 用户要求直接执行支付、扣款或退款操作\n\n这些情况通常需要人工复核、权限确认或业务核实。\n",
+      "sha256": "a69410fb32cca41f8a3bbc3c7475053e5b829ed1dfc89c0df8e78745c3f59eb3"
+    },
+    {
+      "id": "47a978358f2af2b5da459fd5",
+      "document_id": "yuki-01",
+      "section": "现金流 / 8. 总结",
+      "start_line": 145,
+      "end_line": 153,
+      "text": "## 8. 总结\n现金流是个人财务管理和银行场景中最核心的指标之一。它帮助用户理解：\n- 钱是怎么进来的\n- 钱是怎么出去的\n- 现在的财务状态是否健康\n- 是否需要进一步分析预算、风险或合规问题\n\n对于 AI Banking Agent 来说，现金流不是一个简单的数字，而是一条连接“用户需求、交易状态、风险判断和财务建议”的关键链路。它是判断用户是否需要进一步分析、提醒或人工确认的重要依据。\n",
+      "sha256": "c5054729d9d295fa1c0f43a2b2cce3b9743a47fab9b5aef01b48d8a05cbde163"
+    },
+    {
+      "id": "b3cffec77424f05659835a30",
+      "document_id": "yuki-01",
+      "section": "现金流 / 9. 使用边界",
+      "start_line": 154,
+      "end_line": 155,
+      "text": "## 9. 使用边界\n本知识库仅用于金融业务知识学习和 AI 系统设计，不包含真实客户信息、真实账户信息、真实交易明细或隐私数据。任何涉及敏感财务数据的查询都应遵守权限边界，并由人工确认处理。",
+      "sha256": "40fbfcd7c5c42d41a13eac154f33ae133d38b2789a3782937bf7397472df0e3e"
+    },
+    {
+      "id": "932273ccf377002ac5d820e7",
+      "document_id": "yuki-02",
+      "section": "储蓄率",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 储蓄率\n",
+      "sha256": "7b6091eaa470c52b519986265e57fdda904c3d6c4e46904f11922bbfac21f44e"
+    },
+    {
+      "id": "40549e178599da344abb3104",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 1. 什么是储蓄率",
+      "start_line": 3,
+      "end_line": 20,
+      "text": "## 1. 什么是储蓄率\n储蓄率是衡量个人或家庭在一定时期内保留资金比例的核心财务指标。通常表示为：\n\n储蓄率 = (收入 - 支出) / 收入\n\n如果收入为 10000，支出为 7000，则净储蓄为 3000，储蓄率约为 30%。\n\n从银行和个人财务管理视角来看，储蓄率反映的是：\n- 资金保留能力\n- 现期消费压力\n- 财务稳定性\n- 对未来支出和应急资金的准备程度\n\n在 AI Banking Agent 的应用中，储蓄率是理解用户财务健康状态的重要指标之一。它帮助系统判断：\n- 用户是否具备稳定的资金积累能力\n- 收入和支出结构是否出现明显异常\n- 是否需要进一步做预算调整或风险提示\n",
+      "sha256": "a2ddb6379f1a6bb91f69148019078ecd38a7dac2e1e0f56b01e10fa7d10e719c"
+    },
+    {
+      "id": "8b3b3d90149c4b4afa27d587",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 2. 为什么储蓄率重要",
+      "start_line": 21,
+      "end_line": 23,
+      "text": "## 2. 为什么储蓄率重要\n储蓄率的重要性体现在以下几个方面：\n",
+      "sha256": "011843861a1a05eefb1dd1880613426139adf413172fe5dcdde13ad9aa0fd8b8"
+    },
+    {
+      "id": "5103fb7a2d9172be158592bb",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 2. 为什么储蓄率重要 / 2.1 反映财务韧性",
+      "start_line": 24,
+      "end_line": 26,
+      "text": "### 2.1 反映财务韧性\n较高的储蓄率通常意味着个人更有能力应对突发支出、应急资金需求以及未来目标支出。\n",
+      "sha256": "71642791b4932a096c27b10d00b419eb03c360468659491cb464739ce7d3f9e4"
+    },
+    {
+      "id": "2173f102c534105faa27c986",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 2. 为什么储蓄率重要 / 2.2 反映消费结构",
+      "start_line": 27,
+      "end_line": 34,
+      "text": "### 2.2 反映消费结构\n如果储蓄率持续下降，可能说明：\n- 支出增加\n- 固定成本上升\n- 收入波动\n- 一次性消费增加\n- 预算控制不足\n",
+      "sha256": "727e11628062bb6a4153df7c2a5c0bf3840c68f9177693c59bf5f948f28eb60c"
+    },
+    {
+      "id": "4eb3dc284daffb4bae08bf77",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 2. 为什么储蓄率重要 / 2.3 评估财务健康度",
+      "start_line": 35,
+      "end_line": 42,
+      "text": "### 2.3 评估财务健康度\n储蓄率是金融分析中常用的基础指标之一。它可以辅助判断：\n- 用户是否在正常范围内消费\n- 是否存在长期透支或收支失衡风险\n- 是否需要进行财务规划或支出优化\n\n在 AI Banking Agent 中，储蓄率是连接“用户需求、财务状态、预算建议和风险提示”的关键指标。\n",
+      "sha256": "b79c82539a191f216e7761c5713415168ba77dd6d58abacc0051ddcb538dd1e6"
+    },
+    {
+      "id": "3424bf734e0c86e57b8d7543",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 3. 常见场景",
+      "start_line": 43,
+      "end_line": 45,
+      "text": "## 3. 常见场景\n储蓄率相关场景通常包括：\n",
+      "sha256": "de70d5cbd1dd10e41d1bb0c0fcc43f69e10b2b5bc4f2fed1258e4b5ee9f583e7"
+    },
+    {
+      "id": "e439d38d7b8bd1f848a76751",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 3. 常见场景 / 3.1 收入下降",
+      "start_line": 46,
+      "end_line": 53,
+      "text": "### 3.1 收入下降\n例如：\n- 工作收入减少\n- 工资发放周期变化\n- 临时性收入减少\n\n这会直接降低储蓄率。\n",
+      "sha256": "b6815b2ca07cfb7e71951ad915442db69f69f9554ad99077bcc6825ef62a9440"
+    },
+    {
+      "id": "3e4e1f61b8e0398f780668d5",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 3. 常见场景 / 3.2 支出增加",
+      "start_line": 54,
+      "end_line": 62,
+      "text": "### 3.2 支出增加\n例如：\n- 旅行支出增加\n- 订阅费用增加\n- 生活成本上升\n- 重大消费事件\n\n这可能导致储蓄率下降。\n",
+      "sha256": "4eee0b1eeea800a86b9529be93da446e98b08e095b4498803a0814f45b33c9ac"
+    },
+    {
+      "id": "272a4e24b418f05d09a3a088",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 3. 常见场景 / 3.3 一次性支出",
+      "start_line": 63,
+      "end_line": 68,
+      "text": "### 3.3 一次性支出\n例如：\n- 购房、装修、教育、医疗、旅游等大额一次性花费\n\n即使收入没有显著变化，短期内也可能导致储蓄率下降。\n",
+      "sha256": "61084ce1c25d64c7df1df24ee5f0d0e4b8f533abafc1e617706e4f06110fa695"
+    },
+    {
+      "id": "9d0552e88dca704b6102e728",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 3. 常见场景 / 3.4 预算管理不足",
+      "start_line": 69,
+      "end_line": 71,
+      "text": "### 3.4 预算管理不足\n如果用户没有清晰预算，消费模式可能在短时间内出现失控，导致储蓄率持续下降。\n",
+      "sha256": "1288a68b8a6fb4bd3a23c144e1c0427805c78ea74f44a557225c1177cb040759"
+    },
+    {
+      "id": "0274ac2bd408230de18950b2",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 4. 常见问题",
+      "start_line": 72,
+      "end_line": 82,
+      "text": "## 4. 常见问题\n以下问题与储蓄率密切相关：\n\n- 为什么我的储蓄率下降了？\n- 我收入没变，为什么存的钱变少了？\n- 我本月消费太多，储蓄率为什么会低？\n- 我的储蓄率是不是偏低？\n- 为什么我一度有较高储蓄率，但最近明显下降？\n\n这些问题都需要结合收入、支出和周期变化来分析，而不能只看单一月份的数据。\n",
+      "sha256": "ac8cda0a0cb43001d37c88f78da1045352806b42a711ca79bcf9b9eecfbabd48"
+    },
+    {
+      "id": "44df7c69624efe195a53aec9",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 5. 典型案例",
+      "start_line": 83,
+      "end_line": 83,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "7af10a0eb3687c4d309be4d8",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 5. 典型案例 / 案例 1：收入稳定但储蓄率下降",
+      "start_line": 84,
+      "end_line": 92,
+      "text": "### 案例 1：收入稳定但储蓄率下降\n用户说明：\n“我工资没变，但最近一段时间存的钱明显少了。”\n\n分析：\n- 可能原因是生活开销增加\n- 也可能是一次性消费或旅行支出增加\n- 若短期内下降属于正常波动，但若持续数月下降则可能构成长期风险\n",
+      "sha256": "bdb8177ff9c65bd9bb32942b289d7ba4afbc36cccf2645c86739801958830fa2"
+    },
+    {
+      "id": "694f63de7f9cff88b0170061",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 5. 典型案例 / 案例 2：收入下降且支出未减",
+      "start_line": 93,
+      "end_line": 101,
+      "text": "### 案例 2：收入下降且支出未减\n用户说明：\n“我收入降低了，但支出没有明显变化。”\n\n分析：\n- 储蓄率自然会下降\n- 需要判断是否存在预算压力\n- 若持续下降，建议分析固定支出与非必要消费\n",
+      "sha256": "263c3a36c5e59215a96c50bca21665a142c691f043a66593754f5d08119dce92"
+    },
+    {
+      "id": "8369ee3254050ab89e777e76",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 5. 典型案例 / 案例 3：一次性大额支出",
+      "start_line": 102,
+      "end_line": 109,
+      "text": "### 案例 3：一次性大额支出\n用户说明：\n“我本月花了很多钱，但其实收入没有下降。”\n\n分析：\n- 很可能是一次性消费导致暂时储蓄率下降\n- 需要并入年度或月度累计视角来看，不应仅凭单月说明长期问题\n",
+      "sha256": "a132ac182c6356c4e27f0b2254f2cfac0689c556f1d0a9d3a4e9f51c271f9cde"
+    },
+    {
+      "id": "3b4afc46a0746ccbccd5f798",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 5. 典型案例 / 案例 4：信用卡消费高导致储蓄率低",
+      "start_line": 110,
+      "end_line": 118,
+      "text": "### 案例 4：信用卡消费高导致储蓄率低\n用户说明：\n“我每个月都有较高的信用卡消费。”\n\n分析：\n- 这可能意味着消费结构不稳定\n- 需要观察是否存在高利息负债或过度消费\n- 结合债务情况与流动性指标进行综合判断\n",
+      "sha256": "f13a9f4a560183e3edddae35d69a033d78ec7c2087416aa2ad94479295457d7d"
+    },
+    {
+      "id": "89ae73eed127d2f680a8fc71",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 6. 风险提示",
+      "start_line": 119,
+      "end_line": 129,
+      "text": "## 6. 风险提示\n储蓄率看似简单，但在实际分析中常常会出现误判。以下情况尤其需要避免：\n\n- 仅看单月储蓄率就下结论，忽略收入和支出周期差异\n- 把一次性大额支出解释成长期财务失衡\n- 忽略用户是否存在额外债务或固定支出压力\n- 认为储蓄率越高就一定更健康，而不考虑流动性和风险\n- 在缺乏收入或支出数据时直接给出财务判定\n\nAI Banking Agent 在处理储蓄率问题时，最重要的不是简单给出“高/低”的结论，而是解释“为什么”以及“是否需要进一步核实”。\n",
+      "sha256": "0861eb318166a5ce5da53732bb4929baebcd63e8f71b9f950b0a8fd24b562efe"
+    },
+    {
+      "id": "2c27fd32fa34753973ef2e48",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 7. 什么时候需要人工确认",
+      "start_line": 130,
+      "end_line": 141,
+      "text": "## 7. 什么时候需要人工确认\n以下情形通常需要人工确认、进一步核查或转人工处理：\n\n- 用户收入或支出出现持续异常变化\n- 储蓄率长期持续低于合理区间，且无法解释\n- 用户出现明显的还款压力、支出失控或高额消费\n- 用户要求快速做预算决策，但数据不完整\n- 用户希望使用储蓄率分析结果进行重要金融决策\n- 交易数据或收入支出数据缺失，无法得出可信结论\n\n在这些情况下，系统应优先提供解释，并提示进一步人工核实，而不是直接给出强决策。\n",
+      "sha256": "0aea8b05ae8960ff364baf29b7b57a0b70c16ef89ed143eb27bd91ff768ea758"
+    },
+    {
+      "id": "bcc3b0027cb19e630a60c91d",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 8. 与其他金融指标的关系",
+      "start_line": 142,
+      "end_line": 151,
+      "text": "## 8. 与其他金融指标的关系\n储蓄率通常需要和以下指标结合分析：\n\n- 现金流：反映资金流入和流出\n- 流动性：反映是否能及时覆盖短期支出\n- 债务比率：反映负债压力\n- 风险管理：反映是否存在隐性财务风险\n\n只有把这些指标结合起来看，才能更准确地理解用户的财务状态。\n",
+      "sha256": "b6d134c8cf8e64a3ab7352d46785e0d0a2e82bc1feef5423eee583905af4d670"
+    },
+    {
+      "id": "b9a7d69bf42a230cf4edba36",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 9. 总结",
+      "start_line": 152,
+      "end_line": 160,
+      "text": "## 9. 总结\n储蓄率是评估个人或家庭财务稳健性的重要指标之一。它不仅反映收入和支出是否健康，还能够帮助识别：\n- 财务压力是否上升\n- 是否存在预算失控\n- 是否需要更好的现金流规划\n- 是否存在长期财务风险\n\n对 AI Banking Agent 而言，储蓄率是一个极其关键的分析入口。它可以帮助模型判断用户是否需要预算建议、支出优化或进一步风险评估。真正价值不在于“给出一个数字”，而在于“结合业务场景解释数字背后的原因”。\n",
+      "sha256": "a513002e27aa819a163ebcef77c69161ff3e81112801f5375634b9e35fa2f3df"
+    },
+    {
+      "id": "90bc1cde9126bae8910634d8",
+      "document_id": "yuki-02",
+      "section": "储蓄率 / 10. 使用边界",
+      "start_line": 161,
+      "end_line": 162,
+      "text": "## 10. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习与系统设计，不包含真实客户信息、真实账户数据、真实交易明细或隐私资料。任何涉及敏感财务信息或跨权限访问的情形，都应遵循安全边界，并交由人工确认处理。",
+      "sha256": "77f885453f6decbcb66a4cd76a39db67c4e8dd3fd8f9ffaef1592b18cb0f8d0c"
+    },
+    {
+      "id": "408e03a4c689c32059987128",
+      "document_id": "yuki-03",
+      "section": "流动性",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 流动性\n",
+      "sha256": "a1e671de85fee4d79709189e4dd4f7e8da3d45ccf27c0d7a229ae36ccb8f77df"
+    },
+    {
+      "id": "140209ff346d4adec01dc38b",
+      "document_id": "yuki-03",
+      "section": "流动性 / 1. 什么是流动性",
+      "start_line": 3,
+      "end_line": 20,
+      "text": "## 1. 什么是流动性\n流动性指的是个人或机构在短期内将资产转化为现金、满足即时支付需求的能力。更直观地说，流动性衡量的是“我手头上有多少可快速使用的资金”。\n\n常见的流动性资产包括：\n- 活期存款\n- 现金\n- 可随时支取的资金\n- 高流动性的金融资产\n\n在个人财务管理中，流动性决定了一个人是否能应对：\n- 突发支出\n- 医疗费用\n- 临时收入中断\n- 账单到期\n- 还款压力\n\n在 AI Banking Agent 的业务场景中，流动性指标能够帮助系统判断用户是否具备稳定的短期支付能力，以及是否需要提醒其增强现金准备。\n",
+      "sha256": "f6046c519217bcc8da45dda967af911493e10b7aaf31d5b4cf911caccb1c2221"
+    },
+    {
+      "id": "f64b277e51f1cfe530e56970",
+      "document_id": "yuki-03",
+      "section": "流动性 / 2. 为什么流动性重要",
+      "start_line": 21,
+      "end_line": 35,
+      "text": "## 2. 为什么流动性重要\n流动性非常重要，因为它直接关系到一个人的资金安全和应急能力。\n\n如果流动性较高：\n- 用户能够及时支付账单\n- 面对突发支出时不容易陷入资金短缺\n- 更容易应对收入波动\n\n如果流动性较低：\n- 用户可能面临临时现金短缺\n- 更容易出现透支、逾期、信用卡欠款或代扣失衡\n- 即使收入稳定，也可能在短期内陷入支付困难\n\n因此，流动性不仅是财务指标，也与风险管理和生活稳定性密切相关。\n",
+      "sha256": "42df00ebb1039f51221ab46b008608fea3e529c4096e05163131b625e5c8168a"
+    },
+    {
+      "id": "d217dbd97418a6e5b3576c8d",
+      "document_id": "yuki-03",
+      "section": "流动性 / 3. 常见场景",
+      "start_line": 36,
+      "end_line": 38,
+      "text": "## 3. 常见场景\n流动性问题通常出现在以下场景中：\n",
+      "sha256": "75f41ecd279ba3bb966e2d07e171f12cfa5ebc3335e0d552e41cfb3d64770f6f"
+    },
+    {
+      "id": "fdf9146c817593e2458152dd",
+      "document_id": "yuki-03",
+      "section": "流动性 / 3. 常见场景 / 3.1 突发支出",
+      "start_line": 39,
+      "end_line": 47,
+      "text": "### 3.1 突发支出\n例如：\n- 医疗费用\n- 交通故障\n- 维修费用\n- 突发旅行支出\n\n如果没有充足短期现金，用户可能需要借贷或透支。\n",
+      "sha256": "726979d78811527df1be984d3df2cae0292c69a6da3cf191cbcd5d2753e1bea9"
+    },
+    {
+      "id": "8a6f71e4af532f7da174170a",
+      "document_id": "yuki-03",
+      "section": "流动性 / 3. 常见场景 / 3.2 收入中断",
+      "start_line": 48,
+      "end_line": 55,
+      "text": "### 3.2 收入中断\n例如：\n- 工作中断\n- 临时收入不足\n- 调薪间隔期\n\n如果流动性不足，用户可能无法按时支付账单。\n",
+      "sha256": "95a8b92ad1676c9879353142d3bae51a7c9110c4794bff344ab135c05fa7ceeb"
+    },
+    {
+      "id": "70bd794b39a4176254b319cb",
+      "document_id": "yuki-03",
+      "section": "流动性 / 3. 常见场景 / 3.3 大额即将到期支出",
+      "start_line": 56,
+      "end_line": 64,
+      "text": "### 3.3 大额即将到期支出\n例如：\n- 房租\n- 学费\n- 信用卡账单\n- 保险费\n\n高流动性可以降低因支出集中带来的压力。\n",
+      "sha256": "488123832c29b6a3aabe993ea015b7ad9f89a8298d5f3fa3e763b38669030244"
+    },
+    {
+      "id": "2d1f6f5d667ff703edc8a61b",
+      "document_id": "yuki-03",
+      "section": "流动性 / 4. 常见问题",
+      "start_line": 65,
+      "end_line": 78,
+      "text": "## 4. 常见问题\n以下问题通常与流动性有关：\n\n- 我现在有多少可用现金？\n- 为什么我明明有收入，但还会缺钱？\n- 我的短期资金是否够用？\n- 我为什么会突然感到资金压力大？\n- 这笔支出是否会影响我的应急能力？\n\nAI Banking Agent 在回答这些问题时，应重点关注：\n- 是否有充足短期现金\n- 是否存在急需资金的未来支出\n- 是否需要重新安排预算或储蓄策略\n",
+      "sha256": "08bdefa37a06dd07e21eb4f3e1f87755c50f385472976791cf2affc0b390ba13"
+    },
+    {
+      "id": "85aa7a990a8453973196ec4d",
+      "document_id": "yuki-03",
+      "section": "流动性 / 5. 典型案例",
+      "start_line": 79,
+      "end_line": 79,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "34998e230349377ef246f7cb",
+      "document_id": "yuki-03",
+      "section": "流动性 / 5. 典型案例 / 案例 1：收入稳定但短期资金不足",
+      "start_line": 80,
+      "end_line": 88,
+      "text": "### 案例 1：收入稳定但短期资金不足\n用户说：\n“我工资还在，为什么我总觉得钱不够用？”\n\n分析：\n- 可能是流动性偏低，短期支出集中\n- 也可能存在高固定成本或重复扣费\n- 需要结合现金流和支出结构分析\n",
+      "sha256": "0f45f9117e55c2a6a22a3c3512840e7e5ceb640ee81c2c5b8eea4dc4df9cc8ec"
+    },
+    {
+      "id": "494e456f6da748e2e7237743",
+      "document_id": "yuki-03",
+      "section": "流动性 / 5. 典型案例 / 案例 2：临时大额支出",
+      "start_line": 89,
+      "end_line": 97,
+      "text": "### 案例 2：临时大额支出\n用户说：\n“我本月还要交一笔大额费用。”\n\n分析：\n- 说明用户面临短期资金需求\n- 如果没有足够流动性，可能需要预算调整或延后开支\n- 这时 AI 应提醒其进行现金准备和优先级管理\n",
+      "sha256": "fd31b4752ba402fdaf7af585ea25c913632d64427f8fd5ae4b06d70157802ba1"
+    },
+    {
+      "id": "a3903f36a6ea010e2078a934",
+      "document_id": "yuki-03",
+      "section": "流动性 / 5. 典型案例 / 案例 3：收入临时下降",
+      "start_line": 98,
+      "end_line": 105,
+      "text": "### 案例 3：收入临时下降\n用户说：\n“最近几周收入不稳定，我担心自己付不出账单。”\n\n分析：\n- 让 AI 识别这是流动性风险的典型信号\n- 整体策略应侧重于应急储备、支出节流和风险提醒\n",
+      "sha256": "7d0e27b79e82efdcf1e35e17eae291c75eabfa0046ee03fe63f6f30083b7be10"
+    },
+    {
+      "id": "09b6cab03deba61e9d6c9933",
+      "document_id": "yuki-03",
+      "section": "流动性 / 6. 风险提示",
+      "start_line": 106,
+      "end_line": 120,
+      "text": "## 6. 风险提示\n流动性虽然看似是“现金够不够用”的问题，但其背后也会带来更深层次的风险：\n\n- 低流动性会增加短期违约风险\n- 流动性不足可能迫使用户借贷或透支\n- 即使收入正常，若现金周期不匹配，也会出现钱不够花\n- 短期资金波动不一定代表长期财务问题，但必须被重视\n\n因此，AI 在判断流动性时，不能只看“余额”这一单一指标，而应结合：\n- 收入周期\n- 固定支出\n- 即将到期费用\n- 还款负担\n- 应急储备情况\n",
+      "sha256": "9e8eececc5b1614862ed44732ecd15874b9645533ee8d635fc9f81a68f4cf9aa"
+    },
+    {
+      "id": "9e0e9510493e5b0b4ddc2301",
+      "document_id": "yuki-03",
+      "section": "流动性 / 7. 什么时候需要人工确认",
+      "start_line": 121,
+      "end_line": 130,
+      "text": "## 7. 什么时候需要人工确认\n以下情况通常建议人工确认或转人工处理：\n\n- 用户频繁出现资金短缺\n- 用户不能说明资金来源或临时支出来源\n- 流动性问题与异常交易、重复扣款或违约风险相关\n- 用户需要做重大财务决策\n- 数据缺失或状态不明确，无法可靠判断\n- 用户要求执行转账、支付或撤销操作\n",
+      "sha256": "4a85a70397191af80b511b71852cb59a8f2b324ce0fad4e86699afab1f122ae1"
+    },
+    {
+      "id": "24fbb5ffd03db2923e037214",
+      "document_id": "yuki-03",
+      "section": "流动性 / 8. 总结",
+      "start_line": 131,
+      "end_line": 141,
+      "text": "## 8. 总结\n流动性是衡量个人财务安全的重要指标之一。它衡量的是一个人是否能够在短期内覆盖支出、处理突发事件和保持正常支付能力。\n\n对于 AI Banking Agent 而言，流动性分析的重点并不只是“账户里有多少钱”，而是要判断：\n- 用户是否具备短期支付能力\n- 是否存在资金压力\n- 是否需要调整支出或预算\n- 是否需上报风险或触发人工确认\n\n在真实业务中，流动性与现金流、储蓄率、负债压力密切相关，它是构建金融判断闭环的重要一环。\n",
+      "sha256": "a21ab3e300c1ae8a408ed6dd2560e96423f1e66fe2698e796e71b278c65dca9d"
+    },
+    {
+      "id": "fe199e9dec0c4e7c9bfa13bc",
+      "document_id": "yuki-03",
+      "section": "流动性 / 9. 使用边界",
+      "start_line": 142,
+      "end_line": 143,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习与金融分析原型设计，不包含真实客户信息、真实账户信息或真实交易明细。所有建议都应基于脱敏业务场景和规则化逻辑，不适用于任何实际私密金融数据的直接查询。",
+      "sha256": "f4f547b8f4c3f7a9c4c0d8dad66a69aa475b4ba814425fba19fcc6b918784ba0"
+    },
+    {
+      "id": "0c3873e9312bb0196bd273c7",
+      "document_id": "yuki-04",
+      "section": "债务比率",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 债务比率\n",
+      "sha256": "d8a85f06d4a034e437538ff173a72a99455a59602068509c70c69bb7de1e9f18"
+    },
+    {
+      "id": "b5ddb6fada86e9878e9ada7d",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 1. 什么是债务比率",
+      "start_line": 3,
+      "end_line": 18,
+      "text": "## 1. 什么是债务比率\n债务比率是衡量负债压力的重要金融指标，通常用于评估一个人的债务与收入、资产或本期现金流之间的关系。它反映的是“当前负债是否过重”以及“是否会影响正常支付能力”。\n\n常见的债务比率形式包括：\n- 负债 / 收入\n- 负债 / 资产\n- 还款金额 / 收入\n- 负债与现金流的匹配情况\n\n在个人财务管理场景中，债务比率能够帮助判断：\n- 用户是否存在过度负债\n- 是否难以覆盖还款责任\n- 是否需要收紧预算或重新规划债务结构\n\n在 AI Banking Agent 中，债务比率是分析用户财务健康的重要辅助指标之一。\n",
+      "sha256": "62112daf14c7227ed7b0a5f1761fd49057bc3deaa34f27ff3d658bc76f7c7b9e"
+    },
+    {
+      "id": "87df279997b27f973ef92148",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 2. 为什么债务比率重要",
+      "start_line": 19,
+      "end_line": 34,
+      "text": "## 2. 为什么债务比率重要\n债务比率很重要，因为它体现了一个人是否负担过重。对于大多数用户而言，债务不仅意味着“要还钱”，也意味着未来的现金流会受到约束。\n\n如果债务比率过高：\n- 用户可能面临还款压力\n- 现金流可用性下降\n- 更容易出现逾期或违约风险\n- 可能影响预算稳定性和应急储备\n\n相反，如果债务比率合理：\n- 用户更容易保持财务弹性\n- 更容易管理现金流\n- 也更容易规划长期目标\n\n因此，债务比率是理解用户金融风险的重要维度。\n",
+      "sha256": "15859eb50e4150c325629a24e10ad1dd55fbfa1aa67c8007f93d34dbf60114f8"
+    },
+    {
+      "id": "62143390f32d4616a72d556e",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 3. 常见场景",
+      "start_line": 35,
+      "end_line": 37,
+      "text": "## 3. 常见场景\n债务比率往往在以下场景中需要关注：\n",
+      "sha256": "2b09c702aed7ce4721787c09b57f8dfcc74e292800f3e564345f36aff76469e1"
+    },
+    {
+      "id": "8a3f981c9b0bf8b9ca2c2b0b",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 3. 常见场景 / 3.1 信用卡负债",
+      "start_line": 38,
+      "end_line": 40,
+      "text": "### 3.1 信用卡负债\n如果信用卡透支长期存在，债务比率会明显上升，说明支付压力正在累积。\n",
+      "sha256": "f49fc29bac97e12b61b4cd024c6ad72ef97d7041fb81a2b8eda5553239978267"
+    },
+    {
+      "id": "e0b691aba9a766744b651dc7",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 3. 常见场景 / 3.2 大额贷款",
+      "start_line": 41,
+      "end_line": 43,
+      "text": "### 3.2 大额贷款\n比如房贷、车贷、教育贷款等，若占比过高，会压缩用户的现金流和预算空间。\n",
+      "sha256": "2fd83033bb419983649b87c7b422ef6baba0d49f8a61ae327c727095073fd57a"
+    },
+    {
+      "id": "6defda4cf42c307be043af76",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 3. 常见场景 / 3.3 低收入高负债",
+      "start_line": 44,
+      "end_line": 46,
+      "text": "### 3.3 低收入高负债\n当收入不稳定或较低，而负债较高时，风险会显著增加。\n",
+      "sha256": "c8895dde18795d233ff49452b6c7d871ce2e5679cbe43e92094882d1dee0c748"
+    },
+    {
+      "id": "8472c1f12822f8847bed38bd",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 3. 常见场景 / 3.4 过度消费",
+      "start_line": 47,
+      "end_line": 49,
+      "text": "### 3.4 过度消费\n如果用户消费超过收入，且依靠信用或借贷维持生活，债务比率会逐渐恶化。\n",
+      "sha256": "84fd75a0f1a952afbd1c6db136e24c8f5cb414a9c3554eef81e4ae0524280058"
+    },
+    {
+      "id": "2a05172f204b7a163b09e31a",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 4. 常见问题",
+      "start_line": 50,
+      "end_line": 64,
+      "text": "## 4. 常见问题\n通常与债务比率相关的问题包括：\n\n- 我的债务是不是太高了？\n- 为什么我每月还款压力越来越大？\n- 我是否已经处于高负债状态？\n- 我的负债是否影响了我的现金流？\n- 我应该怎么降低债务比例？\n\n对于这些问题，AI 需要关注：\n- 当前负债水平\n- 还款能力\n- 现金流是否足够覆盖利息与本金\n- 是否存在长期风险\n",
+      "sha256": "8ad1bc7b41605d631dc049d9d726f03d4940054686db615f29788fab090bde65"
+    },
+    {
+      "id": "d2708da4043878256ee548f4",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 5. 典型案例",
+      "start_line": 65,
+      "end_line": 65,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "298d95a859560cb96b0de372",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 5. 典型案例 / 案例 1：信用卡债务持续增长",
+      "start_line": 66,
+      "end_line": 74,
+      "text": "### 案例 1：信用卡债务持续增长\n用户说：\n“我每个月都在刷信用卡，但工资没有明显增长。”\n\n分析：\n- 这说明债务比率可能正在上升\n- 用户可能存在消费结构偏差或收入压力\n- AI 应提示其评估还款能力和支出结构\n",
+      "sha256": "d4f2ef1f806bde2db6789b8691d1712e11b536b656e2ebf37084f72d9f432b5c"
+    },
+    {
+      "id": "d280b205fcc40392912873d9",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 5. 典型案例 / 案例 2：收入波动导致还款压力",
+      "start_line": 75,
+      "end_line": 82,
+      "text": "### 案例 2：收入波动导致还款压力\n用户说：\n“我收入有些波动，但房贷还在还。”\n\n分析：\n- 说明用户需要增强现金流管理和预算控制\n- 如果债务压力与收入波动叠加，风险会明显放大\n",
+      "sha256": "52d0429f791326dac6ba98da1d03c46c2548cdeee45eb98302790e15774576e3"
+    },
+    {
+      "id": "5820afa29f9bd6bcdcf49435",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 5. 典型案例 / 案例 3：负债虽然存在但可控",
+      "start_line": 83,
+      "end_line": 90,
+      "text": "### 案例 3：负债虽然存在但可控\n用户说：\n“我有一点贷款，但我每个月都能还上。”\n\n分析：\n- 这类情况不一定是高风险\n- 但仍需结合收入、现金流和后续支出判断是否稳定\n",
+      "sha256": "14d859f66dd79873b924bd33c9b0898024c5e28a929fdac7acea7479e7d86584"
+    },
+    {
+      "id": "d98341de86f28b5bb646731f",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 6. 风险提示",
+      "start_line": 91,
+      "end_line": 106,
+      "text": "## 6. 风险提示\n债务比率过高会带来多种风险：\n\n- 还款压力增加\n- 现金流被压缩\n- 更容易出现逾期和违约\n- 降低应急能力和投资能力\n- 可能出现流动性恶化\n\nAI 在处理债务比率问题时，对“高债务”不能仅仅简单概括，而应从以下角度分析：\n- 负债类型\n- 还款期限\n- 利率\n- 收入稳定性\n- 当前现金流状态\n",
+      "sha256": "1d23a00b04ab7abcced4d3cce2a164b54fd7f08299558200bf4763980b7195c6"
+    },
+    {
+      "id": "b6d15d3056b9c81c345e064f",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 7. 什么时候需要人工确认",
+      "start_line": 107,
+      "end_line": 118,
+      "text": "## 7. 什么时候需要人工确认\n以下情况通常需要人工确认或转人工处理：\n\n- 用户债务明显超过其收入承受能力\n- 用户长期无法按时还款\n- 还款负担与现金流恶化叠加\n- 用户需要进行代偿、重组或大额借贷决策\n- 数据缺失或还款结构不明确\n- 用户要求直接执行还款、贷款或债务调整操作\n\n这类场景涉及重要金融决策，应由人工或更严格的审核机制介入。\n",
+      "sha256": "089e2a7043f9ab0afc1365013c5fad2cf63a785f2b0f9723a0457003ebb138b5"
+    },
+    {
+      "id": "95753b27b54ddce6da86c1fd",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 8. 总结",
+      "start_line": 119,
+      "end_line": 128,
+      "text": "## 8. 总结\n债务比率是衡量个人或家庭负债压力的重要指标。它能够帮助评估用户是否过度依赖借贷、是否存在还款风险，以及是否会影响其未来财务稳定性。\n\n在 AI Banking Agent 中，债务比率不能单独解释用户的全部财务状态，它需要和：\n- 现金流\n- 储蓄率\n- 流动性\n- 风险管理\n一起综合看，才能得出更准确的结论。\n",
+      "sha256": "2f5f7c9e909e5018d2591acf26255f98a3815f07e63ed214fb670b4ee71ad1a2"
+    },
+    {
+      "id": "b39b58a00b7b4688a52fc5bb",
+      "document_id": "yuki-04",
+      "section": "债务比率 / 9. 使用边界",
+      "start_line": 129,
+      "end_line": 130,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习和原型设计，不包含真实客户信息、真实负债记录、真实还款明细或个人隐私数据，任何敏感财务数据都必须严格遵守权限约束和合规要求。",
+      "sha256": "0d27258e33d324c4371c2a7444010da8c086c1a11a5674a711133358616610cd"
+    },
+    {
+      "id": "8651db91c2c68945e74bc7fe",
+      "document_id": "yuki-05",
+      "section": "风险管理",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 风险管理\n",
+      "sha256": "3f462c448fdbc62cbcc62034e2e684b71cffd7b31d50547a05f8b3cf5330322f"
+    },
+    {
+      "id": "a9980653fd17aec635d4bb44",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 1. 什么是风险管理",
+      "start_line": 3,
+      "end_line": 20,
+      "text": "## 1. 什么是风险管理\n风险管理是指在金融活动中识别、评估和控制潜在风险的一系列方法和流程。其核心目标是降低不确定性造成的损失，并保障决策更稳健、更透明。\n\n在个人财政和银行场景中，风险管理通常包括：\n- 现金流风险\n- 借贷风险\n- 支付风险\n- 操作风险\n- 欺诈风险\n- 权限滥用风险\n- 合规风险\n\n在 AI Banking Agent 中，风险管理不仅是金融知识的一部分，也是系统安全设计的重要组成部分。它关心：\n- 用户是否处于风险状态\n- Agent 是否应该给出建议\n- 是否需要拒答\n- 是否需要人工确认\n",
+      "sha256": "4a23e4387da6eb380ed1dd7f53d8f259df363a9b78efb733f34f1d10ef5003c0"
+    },
+    {
+      "id": "4b0ca9433004a1e775940881",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 2. 为什么风险管理重要",
+      "start_line": 21,
+      "end_line": 36,
+      "text": "## 2. 为什么风险管理重要\n金融场景中，最重要的不是“AI 能否回答”，而是“AI 是否能在正确范围内回答”。\n\n如果没有风险管理：\n- AI 可能给出不准确结论\n- 可能导致用户误判\n- 可能在高风险场景中直接做出错误动作\n- 可能违反隐私、权限或合规要求\n\n因此，AI Banking Agent 的风险管理机制必须覆盖：\n- 业务风险\n- 交易风险\n- 数据安全\n- 高风险操作拦截\n- 人工确认链路\n",
+      "sha256": "d2dfbf365efd354f3f85b14f453ebc5c12779c40325f777d80c7531dbe4632bb"
+    },
+    {
+      "id": "eb5379a2e8e7e7b68cdb67b0",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 3. 常见场景",
+      "start_line": 37,
+      "end_line": 39,
+      "text": "## 3. 常见场景\n风险管理常见于以下场景：\n",
+      "sha256": "7aec5437dba92a9dd38b27e404380b6ee5dd1270cb37f196fe49b00304ae22c1"
+    },
+    {
+      "id": "45a5400db182af3ce5c9bc2b",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 3. 常见场景 / 3.1 资金压力",
+      "start_line": 40,
+      "end_line": 45,
+      "text": "### 3.1 资金压力\n例如：\n- 现金流持续下降\n- 借贷负担过重\n- 还款压力突然增大\n",
+      "sha256": "89a4fa0688250f54984b17f81139e836570af10175a999a091703ca78785bd3b"
+    },
+    {
+      "id": "02fb323956c44d4c3906a4b2",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 3. 常见场景 / 3.2 异常交易",
+      "start_line": 46,
+      "end_line": 52,
+      "text": "### 3.2 异常交易\n例如：\n- 重复扣款\n- 长时间未到账\n- 异常大额支付\n- 不一致状态更新\n",
+      "sha256": "2d629c321fa1d1455af9be4ca8c6c35f4a37a17706144edd12b9b3e259d3ffb1"
+    },
+    {
+      "id": "c41861f9ea76d7a9aec7b472",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 3. 常见场景 / 3.3 权限滥用",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "### 3.3 权限滥用\n例如：\n- 用户要求查看他人账单\n- 用户要求直接执行敏感操作\n- 非授权访问其他账户信息\n",
+      "sha256": "f0ac5ce855ece61d3032fe970d29ffc8d53ecd6c60c936fa2b822b67d83315d9"
+    },
+    {
+      "id": "cbb092162332517200ae5bc4",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 3. 常见场景 / 3.4 业务误判",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "### 3.4 业务误判\n例如：\n- 仅看一笔交易就得出结论\n- 把正常波动误判为风险\n- 对风险提示置之不理\n",
+      "sha256": "9787b6ec3d9b26df9253c0a7b552f9e0105364231856331a34d8ce4001cf1618"
+    },
+    {
+      "id": "d3d9a1e47d2fc97a46f19bb2",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 4. 常见问题",
+      "start_line": 65,
+      "end_line": 75,
+      "text": "## 4. 常见问题\n以下问题通常与风险管理相关：\n\n- 这个情况属于正常风险还是高风险？\n- 我应该继续建议用户做什么？\n- 这个行为是否涉及隐私和越权？\n- 我是否需要拒答并转人工处理？\n- Agent 在处理时应该如何约束？\n\nAI Banking Agent 需要在这些问题上做出合理判断，而不仅仅是回答用户“看起来像是这样”。\n",
+      "sha256": "594377540e460444ce1983c4305f49d3268daa1047c6230a37d1a7702c9e7d06"
+    },
+    {
+      "id": "f9d9c486f152ac8a8c6788b9",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 5. 典型案例",
+      "start_line": 76,
+      "end_line": 76,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "e4907ec70168acd5416e2871",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 5. 典型案例 / 案例 1：重复扣费",
+      "start_line": 77,
+      "end_line": 85,
+      "text": "### 案例 1：重复扣费\n用户说：\n“我被扣了两次同样的钱。”\n\nAI应判断：\n- 这是典型异常支付场景\n- 需要核实交易状态和支付渠道\n- 若存在确认困难，应转人工\n",
+      "sha256": "f655b20bec46daeaad0df1d3a34060ca9277556c3656726af0201d25df0b831c"
+    },
+    {
+      "id": "8bb0ccd82d3ee9329db8b743",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 5. 典型案例 / 案例 2：突然大额支出",
+      "start_line": 86,
+      "end_line": 94,
+      "text": "### 案例 2：突然大额支出\n用户说：\n“我最近突然多花了一大笔钱。”\n\nAI应判断：\n- 可能存在消费异常、预算失控或收入波动\n- 不宜直接下达“你有风险”的结论\n- 需要结合历史数据和支出结构做解释\n",
+      "sha256": "b97390cbd7e216acf90ed4594aa53bf78f5538e50cb869934f1d4e672d544048"
+    },
+    {
+      "id": "50aced7e20b537083654a767",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 5. 典型案例 / 案例 3：用户要求查看他人账户",
+      "start_line": 95,
+      "end_line": 103,
+      "text": "### 案例 3：用户要求查看他人账户\n用户说：\n“帮我看一下我朋友的余额。”\n\nAI的正确行为：\n- 直接拒答\n- 说明无法查看他人账户信息\n- 建议转人工或走授权流程\n",
+      "sha256": "96507c5e002dd12e51d47802e164c9b7a66bcbf456968f28d04fc34939c86479"
+    },
+    {
+      "id": "15a228564eef40175d55c2fa",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 6. 风险提示",
+      "start_line": 104,
+      "end_line": 113,
+      "text": "## 6. 风险提示\n风险管理的重点不是“尽量多说”，而是“判断准确、边界清晰、权限受控”。\n\n应特别注意：\n- 不要在缺失数据时直接给出强结论\n- 不要把正常波动误认为风险\n- 不要越过权限直接访问隐私信息\n- 不要在未确认状态下执行支付或转账\n- 不要在高风险场景中让 AI 擅自处理\n",
+      "sha256": "72b73de6237f89026dde6859487f7ab3aeff108d6ea5964c4677ca9eefabe0d5"
+    },
+    {
+      "id": "7b6cebb63f8411f13e9d657b",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 7. 什么时候需要人工确认",
+      "start_line": 114,
+      "end_line": 123,
+      "text": "## 7. 什么时候需要人工确认\n以下情况通常需要人工确认或转人工处理：\n\n- 用户请求访问他人信息\n- 用户要求直接执行支付、转账、退款或扣款\n- 交易事件出现明显异常\n- 风险超过正常问答范围\n- 数据不足，无法可信解释\n- 高风险分类需要权限审批或政策判断\n",
+      "sha256": "ac966a958b124f9cc5aa788bcf3ae30ed52f7af1843dd7d265aa40ffdcea38f7"
+    },
+    {
+      "id": "4d60c3c261d59e52b30281fc",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 8. 总结",
+      "start_line": 124,
+      "end_line": 133,
+      "text": "## 8. 总结\n风险管理是 AI Banking Agent 能否真正进入金融应用场景的关键能力之一。它确保模型：\n- 有边界\n- 有审慎性\n- 有证据基础\n- 不越权\n- 不误动作\n\n真正的 AI 金融助手，不只是“会回答”，更重要的是“知道什么时候不能回答、什么时候必须转人工”。\n",
+      "sha256": "47c3659345b282bb049cc5afa77821073e8078e9bf8a9dd2ea0839241abc436d"
+    },
+    {
+      "id": "6f0f270d302e2404847c253c",
+      "document_id": "yuki-05",
+      "section": "风险管理 / 9. 使用边界",
+      "start_line": 134,
+      "end_line": 135,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习、风险识别与系统设计，不包括真实客户信息、真实交易明细、敏感账户资料或任何具体隐私内容。所有高风险输入都应遵循权限管理和人工确认机制。",
+      "sha256": "3c05718a8aef2102a4cf344b336beaf6adcd80bfaa1fdb5d1c048b0f16482f3a"
+    },
+    {
+      "id": "c1dd5245356e5d076c476489",
+      "document_id": "yuki-06",
+      "section": "合规边界",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 合规边界\n",
+      "sha256": "da9ea7f058145b50935fd62c6081670ff7682a19b5fec642a4e10eb57156d109"
+    },
+    {
+      "id": "9a6201a7254b836ea1615529",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 1. 什么是合规边界",
+      "start_line": 3,
+      "end_line": 7,
+      "text": "## 1. 什么是合规边界\n合规边界是指在金融场景中，AI 系统必须遵守的行为范围和安全边界。它限定了 AI 可以回答什么、不能回答什么、何时需要拒答以及何时必须转人工处理。\n\n在银行和金融服务中，合规边界的重要性不亚于模型能力本身。因为即使回答看似合理，如果越过权限或泄露隐私，也会造成重大风险。\n",
+      "sha256": "414cf06b6f46e5a3ac043b1a2b087ee9e3a67a93dbf1d53c4e2cc98897842d72"
+    },
+    {
+      "id": "f2e9dc3764d1c3d3ccf1bc17",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 2. 为什么合规边界重要",
+      "start_line": 8,
+      "end_line": 18,
+      "text": "## 2. 为什么合规边界重要\n合规边界重要的原因包括：\n\n- 保护用户隐私\n- 防止越权访问\n- 降低金融误导风险\n- 避免不当操作\n- 确保 AI 的回答是可解释和可追踪的\n\n在 AI Banking Agent 中，合规边界是系统设计和安全设计的关键内容。一个“聪明但不守规矩”的 AI，不会被认为是成熟的金融解决方案。\n",
+      "sha256": "9fd81eb39e63e26ccf8e36b326feb2f6615173210f62e1fd2a7bf2ceb632ea95"
+    },
+    {
+      "id": "2e56790eb91befaa7562705b",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 3. 常见场景",
+      "start_line": 19,
+      "end_line": 21,
+      "text": "## 3. 常见场景\n合规边界通常体现在以下场景中：\n",
+      "sha256": "f20820cfe5737dba2b75eef1a1bf991f93e13e597d453989d3af6b6c1ced41cf"
+    },
+    {
+      "id": "f3e16d34b2240831fea05fb0",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 3. 常见场景 / 3.1 跨用户信息访问",
+      "start_line": 22,
+      "end_line": 29,
+      "text": "### 3.1 跨用户信息访问\n例如：\n- 用户要求查看他人账户\n- 用户要求查别人账单\n- 用户要求获取他人财务详情\n\n这类请求必须拒绝。\n",
+      "sha256": "e6d3ae2a9d3f953c3e17899d6f1bf470a3f935357f82f8c33d614d9e82fd9fde"
+    },
+    {
+      "id": "9275bd8601a7171605c8fe10",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 3. 常见场景 / 3.2 直接执行金融操作",
+      "start_line": 30,
+      "end_line": 38,
+      "text": "### 3.2 直接执行金融操作\n例如：\n- 直接转账\n- 直接取消代扣\n- 直接退款\n- 直接修改支付信息\n\n这类操作必须经过权限验证和人工确认。\n",
+      "sha256": "b2469f58c4c726471e994ad3530102f93b9e3f0073bd0895d9e44fa0db3e24de"
+    },
+    {
+      "id": "baca52d732abbc508ecb8705",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 3. 常见场景 / 3.3 敏感数据查询",
+      "start_line": 39,
+      "end_line": 48,
+      "text": "### 3.3 敏感数据查询\n例如：\n- 账号\n- 身份证\n- 手机号\n- 账户余额\n- 真实交易记录\n\n这类信息不能在通用问答场景中直接返回。\n",
+      "sha256": "e6d67ebcd086f90b49d3afdc463b326689570c41919addd1800fb4058c90d8ad"
+    },
+    {
+      "id": "04cbf823ddeb7efa12977853",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 4. 常见问题",
+      "start_line": 49,
+      "end_line": 63,
+      "text": "## 4. 常见问题\n以下问题与合规边界直接相关：\n\n- 能不能查看别人的账单？\n- 能不能直接帮我转账？\n- 能不能直接修改收款人信息？\n- 为什么我不能问到某些银行信息？\n- 这个规则是否必须人工确认？\n\n对于这些问题，AI 的回答必须是：\n- 明确拒答或要求进一步验证\n- 提供安全理由\n- 强调权限不足\n- 建议转人工处理\n",
+      "sha256": "21cd32a6e026193f1b135aaba430cb5746f1e7179fad6eb5f87c4c55effdcd73"
+    },
+    {
+      "id": "e413e832efbc3691c0ab1a75",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 5. 典型案例",
+      "start_line": 64,
+      "end_line": 64,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "a74308f516b9b6c656fac685",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 5. 典型案例 / 案例 1：用户要求查看他人账户",
+      "start_line": 65,
+      "end_line": 73,
+      "text": "### 案例 1：用户要求查看他人账户\n用户说：\n“我想看一下我朋友的账户余额。”\n\n正确行为：\n- 拒绝\n- 说明无法访问他人账户信息\n- 需要授权和身份验证\n",
+      "sha256": "775faa4d228929a5792168fc10811b11e5a55e4da0f6d3df3783deecbaacced6"
+    },
+    {
+      "id": "90de32cda0a4844bd8c50a1e",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 5. 典型案例 / 案例 2：用户要求直接处理转账",
+      "start_line": 74,
+      "end_line": 82,
+      "text": "### 案例 2：用户要求直接处理转账\n用户说：\n“直接给我转账，不用问我确认。”\n\n正确行为：\n- 拒绝直接执行\n- 说明必须经过确认和权限校验\n- 建议人工处理\n",
+      "sha256": "d5517b4cfd5b9df2f4294da777a395ee6b975eb31404c336b0ea5dda017782e8"
+    },
+    {
+      "id": "c429737245a0cd228f475d07",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 5. 典型案例 / 案例 3：用户询问真实身份信息",
+      "start_line": 83,
+      "end_line": 91,
+      "text": "### 案例 3：用户询问真实身份信息\n用户说：\n“帮我查一下某人的身份证号和银行卡信息。”\n\n正确行为：\n- 拒绝\n- 说明这是敏感数据，不应直接披露\n- 引导至合规流程\n",
+      "sha256": "30a9162ddf7e2f1b32ced79fd52ce8534abc9f91ea01b62f6aaf18c84b20e219"
+    },
+    {
+      "id": "80c093e433e65349620f4ec0",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 6. 风险提示",
+      "start_line": 92,
+      "end_line": 103,
+      "text": "## 6. 风险提示\nAI 在金融场景中必须高度警惕以下问题：\n\n- 过度回答敏感信息\n- 忽略用户身份验证\n- 直接执行操作\n- 绕过安全机制\n- 将“看起来合理”视为“允许执行”\n- 在高风险场景中假装正常处理\n\n这些都是典型的合规风险。\n",
+      "sha256": "10d384c9acbfb52d32ddf6e7f00389f3dc7902a5cb7fd7026fdd25b734c1f534"
+    },
+    {
+      "id": "f6e9123290c82ba45061b783",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 7. 什么时候需要人工确认",
+      "start_line": 104,
+      "end_line": 113,
+      "text": "## 7. 什么时候需要人工确认\n以下情况通常需要人工确认或转人工处理：\n\n- 访问他人敏感信息\n- 执行支付、转账、退款、代扣调整\n- 处理有争议的账户详情\n- 高风险或异常业务请求\n- 用户要求越过权限或绕过安全流程\n- AI 无法确定是否超出授权范围\n",
+      "sha256": "6eb88ef5d6d2f811dbfa83a31588fd1a2d2a4c531557b8d9053668439723b876"
+    },
+    {
+      "id": "837ff1ac99cb5d76784f8634",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 8. 总结",
+      "start_line": 114,
+      "end_line": 124,
+      "text": "## 8. 总结\n合规边界不是“限制 AI 功能”，而是保证 AI 在金融场景中可以安全、可信、合规地工作。\n\n在 AI Banking Agent 中，最关键的不是让 AI “多聪明”，而是让 AI：\n- 知道什么不能做\n- 知道什么时候必须拒答\n- 知道什么时候需要人工确认\n- 知道什么是高风险行为\n\n这些能力直接决定了金融 AI 是否具备实际可用性。\n",
+      "sha256": "ca9df8a5c0071842bca406b263fba410e1efb02238616f7a8b2dce113a853bb1"
+    },
+    {
+      "id": "9687a311b4dba08f9e7ab898",
+      "document_id": "yuki-06",
+      "section": "合规边界 / 9. 使用边界",
+      "start_line": 125,
+      "end_line": 126,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的安全设计、权限控制和合规边界学习，不涉及真实客户隐私、真实账户信息、真实交易细节和敏感金融数据。任何涉及授权、匿名化和隐私保护的场景，都必须遵循合规要求和人工审核机制。",
+      "sha256": "a998a5747a87d0989789b5512566da9d4b06326dbc51b73ee41d30e5bb6f066d"
+    },
+    {
+      "id": "fb5263b15857e3136593158b",
+      "document_id": "yuki-07",
+      "section": "订阅管理",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 订阅管理\n",
+      "sha256": "df521917255e5c10d9661df1c7b100654301d5b624d7574708368cfc675de760"
+    },
+    {
+      "id": "72419a367a2582a61b3c8189",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 1. 什么是订阅管理",
+      "start_line": 3,
+      "end_line": 19,
+      "text": "## 1. 什么是订阅管理\n订阅管理是指对用户持续性消费、定期扣款或周期性服务费用进行识别、分析和控制的过程。它通常涉及：\n- 月度订阅费用\n- 自动扣款\n- 会员服务\n- 软件/平台订阅\n- 公共服务自动扣款\n- 重复扣款和异常扣费\n\n在个人财务管理中，订阅管理非常重要，因为许多用户会忽略这些“看起来不大”的持续支出，导致总成本逐渐上升。\n\n在 AI Banking Agent 中，订阅管理是一个非常典型的场景，可用于解释：\n- 为什么某一月支出突然增加\n- 为什么账户出现重复扣款\n- 为什么用户认为“钱不见了”\n- 是否需要取消、调整或提醒\n",
+      "sha256": "813226cbdf17b304b2b227bd8786130ac6c313523794057d233dfb03b3defc8b"
+    },
+    {
+      "id": "c39a11875b44ad4c26381aa4",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 2. 为什么订阅管理重要",
+      "start_line": 20,
+      "end_line": 36,
+      "text": "## 2. 为什么订阅管理重要\n订阅管理的重要性在于它是“隐性支出”最典型的来源之一。很多用户会忽视以下费用：\n- 视频会员\n- 办公软件订阅\n- 音乐服务\n- 云服务\n- 共享平台\n- 通讯服务\n- 保险服务\n\n这些费用虽然单笔不大，但累计起来可能很可观。同时，订阅服务也容易出现：\n- 误扣\n- 重复扣款\n- 改价\n- 取消失败\n- 自动续费\n",
+      "sha256": "af04882e94c0248c1e2aa321038d0d046e76008307ff2874522551450c3ced30"
+    },
+    {
+      "id": "ebb8372b5d4172340f77021e",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 3. 常见场景",
+      "start_line": 37,
+      "end_line": 39,
+      "text": "## 3. 常见场景\n订阅管理常见于以下场景：\n",
+      "sha256": "4ebcdb315bc73fe0ee89f68c56e5c46869ee9fc92dcfaac602d6ac75ba91ee2a"
+    },
+    {
+      "id": "264aa6efeae1144e34f31239",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 3. 常见场景 / 3.1 重复扣款",
+      "start_line": 40,
+      "end_line": 45,
+      "text": "### 3.1 重复扣款\n例如：\n- 用户被扣了两次相同金额\n- 订单状态显示已支付，但服务仍继续扣款\n- 自动续费触发了多次\n",
+      "sha256": "7968b11bd17db500db4be9ff821843898e0ac6eb369c14a9925ab39901b9c295"
+    },
+    {
+      "id": "731286e32903d56e77a41745",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 3. 常见场景 / 3.2 取消失败",
+      "start_line": 46,
+      "end_line": 51,
+      "text": "### 3.2 取消失败\n例如：\n- 用户已要求取消订阅，但仍继续扣费\n- 系统未同步状态\n- 账户中仍持续扣款\n",
+      "sha256": "ba987b09a4e30e64e8b4de871a72797cc236d63113d24c4a13463db64d46d2bf"
+    },
+    {
+      "id": "7655657fbcba36d40f925d0d",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 3. 常见场景 / 3.3 多重订阅",
+      "start_line": 52,
+      "end_line": 56,
+      "text": "### 3.3 多重订阅\n例如：\n- 用户忘记自己仍在订阅多个相近服务\n- 结果导致重复支出和预算失衡\n",
+      "sha256": "e25a605b78c50af9165c851e57c4e7f9335a1bbcae328b19028713bf572ac180"
+    },
+    {
+      "id": "95bf3f46722a9b712c32d324",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 3. 常见场景 / 3.4 订阅费用高于预算",
+      "start_line": 57,
+      "end_line": 61,
+      "text": "### 3.4 订阅费用高于预算\n例如：\n- 月度固定支出增长\n- 用户没有及时发现\n",
+      "sha256": "59fefaa33c0b389866e41ca15d81a06279989a5072fa6933fe0b376de9787881"
+    },
+    {
+      "id": "49a8d239e1c8b4f9c1ac8cd2",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 4. 常见问题",
+      "start_line": 62,
+      "end_line": 76,
+      "text": "## 4. 常见问题\n以下问题属于订阅管理的典型问题：\n\n- 为什么这月订阅费变高了？\n- 为什么我被扣了重复费用？\n- 为什么我取消了订阅，但还在扣款？\n- 我到底订阅了哪些服务？\n- 这个扣款是否属于正常自动扣款？\n\nAI 在回答时，应重点关注：\n- 是否存在重复扣款\n- 是否存在系统重试\n- 是否属于超出用户预期的服务续费\n- 是否需要转人工核实\n",
+      "sha256": "3da0cb055691185727931079db806b12e36df94e89fcd8990ac010f41b435985"
+    },
+    {
+      "id": "001222e8b28d05cedc7bd6e2",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 5. 典型案例",
+      "start_line": 77,
+      "end_line": 77,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "c0c3cda4a8219b9fd6e9f5b8",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 5. 典型案例 / 案例 1：重复扣费",
+      "start_line": 78,
+      "end_line": 86,
+      "text": "### 案例 1：重复扣费\n用户说：\n“我明明只订阅了一次，怎么扣了两次？”\n\nAI应说明：\n- 这可能是系统重试、支付状态延迟或重复处理\n- 需要核对支付状态、订单记录和扣款时间\n- 若无法解释，建议人工核实\n",
+      "sha256": "49753b467113f026e156c8c5c7ba0a16ef9a89c64086fae8198cc9f56be8fb01"
+    },
+    {
+      "id": "9082cdb9db0a1db6cf15388a",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 5. 典型案例 / 案例 2：取消后仍扣费",
+      "start_line": 87,
+      "end_line": 95,
+      "text": "### 案例 2：取消后仍扣费\n用户说：\n“我已经取消了，但是还在扣我钱。”\n\nAI应说明：\n- 这可能是取消生效时间未更新\n- 也可能是订单或服务状态没有同步\n- 需要查看订单状态和订阅状态\n",
+      "sha256": "ff30b8ae25d671c2c901957b5fc45cac1619fbec9d4f1e4cdfc8682c17417c54"
+    },
+    {
+      "id": "15c4ba94d4bbed1afb24fbf3",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 5. 典型案例 / 案例 3：长期未发现的隐性支出",
+      "start_line": 96,
+      "end_line": 104,
+      "text": "### 案例 3：长期未发现的隐性支出\n用户说：\n“我没有注意到这些订阅费用，它们怎么会累计这么多？”\n\nAI应解释：\n- 订阅不是单笔大支出，但累计起来十分可观\n- 其风险在于“看不见的持续支出”\n- 适合纳入预算调整与月度支出控制\n",
+      "sha256": "eaf84d7f501bfbecf98028325cb94400a9b0c4961951f0da0c58da5b3fa23c0a"
+    },
+    {
+      "id": "0614e95234f66eefb4f6814d",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 6. 风险提示",
+      "start_line": 105,
+      "end_line": 115,
+      "text": "## 6. 风险提示\n订阅管理的风险主要体现在以下方面：\n\n- 隐性支出未被察觉\n- 重复扣费导致用户失衡\n- 自动续费可能超出预算\n- 用户不清楚哪些服务仍在订阅\n- 处理错误可能引发投诉或争议\n\n因此，AI 必须在解释时保持审慎，尤其在重复扣款和退款状态不明确时。\n",
+      "sha256": "9e8044b6c1601899ccd1d8632b69394fa17371e3e9bb2eb4826dc848a69828a1"
+    },
+    {
+      "id": "4cea8bc37ba2ff29e61061bb",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 7. 什么时候需要人工确认",
+      "start_line": 116,
+      "end_line": 125,
+      "text": "## 7. 什么时候需要人工确认\n以下情形通常需要人工确认：\n\n- 重复扣款且无法解释\n- 用户要求取消订阅但系统状态不清\n- 大额连续扣费或异常扣款\n- 用户要求退款或取消已支付服务\n- 交易状态与订阅状态不一致\n- 用户对处理结果有争议\n",
+      "sha256": "a579df2093239b46dd06b74a8c279f2ff4922294dac2bc6b6ce1a94dcc0530aa"
+    },
+    {
+      "id": "155cf884143363dccd0b9273",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 8. 总结",
+      "start_line": 126,
+      "end_line": 134,
+      "text": "## 8. 总结\n订阅管理是个人财务管理中最典型的“隐性支出”问题之一。很多人并不总能及时意识到一项小订阅如何逐步放大支出压力，尤其是在多个订阅同时存在的情况下。\n\n在 AI Banking Agent 中，订阅管理不仅是一项金融分析任务，也是一个解释型场景。它帮助系统判断：\n- 用户是否存在重复扣费\n- 是否有未取消或错误续费\n- 是否需要提醒其调整预算与支出结构\n- 是否需要将问题转交人工处理\n",
+      "sha256": "74fcdef33123a35713d4bd3788d522f036effde4155fff075acbdbc2e2d89245"
+    },
+    {
+      "id": "97665b9b2c2c44d56a385035",
+      "document_id": "yuki-07",
+      "section": "订阅管理 / 9. 使用边界",
+      "start_line": 135,
+      "end_line": 136,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习和原型设计，不涉及真实客户隐私、真实支付记录、真实账户数据或敏感个人信息。任何支付状态、账户状态和退款处理都应遵守权限规则和人工确认机制。",
+      "sha256": "a0bf99d965b001e0417bc9823ac2095dc8a6c5e9799b873a8e8e849f3f9db988"
+    },
+    {
+      "id": "11966d9446ee806c1d60c331",
+      "document_id": "yuki-08",
+      "section": "旅行预算",
+      "start_line": 1,
+      "end_line": 2,
+      "text": "# 旅行预算\n",
+      "sha256": "17db2ad9a2685c3a43bd4d79eedf29cdfda7e29ed7e3c961273ccc43708bd48e"
+    },
+    {
+      "id": "3b300ab01ce7306c7cd25f67",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 1. 什么是旅行预算",
+      "start_line": 3,
+      "end_line": 20,
+      "text": "## 1. 什么是旅行预算\n旅行预算是指为旅游、出差或探亲等出行活动提前规划的资金安排。它通常包括：\n- 交通费用\n- 住宿费用\n- 餐饮费用\n- 景点门票\n- 交通工具费用\n- 购物和娱乐\n- 应急备用金\n\n旅行预算的重要性在于，它帮助用户提前判断“这次旅行是否在当前财务能力范围内”，以及“是否需要调整消费方式”。\n\n在 AI Banking Agent 场景中，旅行预算通常用于：\n- 预算规划\n- 旅行消费可持续性分析\n- 支出结构分析\n- 预算超支预警\n",
+      "sha256": "802df2827b70e789d4d295848b400afcbd41bd601b2f225cea96a5755d71cafe"
+    },
+    {
+      "id": "2e3b2c081aa9d3b9fcbc0f74",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 2. 为什么旅行预算重要",
+      "start_line": 21,
+      "end_line": 34,
+      "text": "## 2. 为什么旅行预算重要\n旅行预算重要的核心原因是：旅行消费往往容易被低估，尤其是在临时消费、购物和活动支出中。\n\n旅行预算帮助用户：\n- 及时识别预算超支风险\n- 明确各项支出占比\n- 优化消费结构\n- 保障旅行期间的现金流稳定\n\n如果没有明确预算：\n- 可能出现超支\n- 旅途压力增加\n- 可能影响后续贷款、储蓄和紧急准备金\n",
+      "sha256": "0da8e96295267332aa611710c8a9a72b78170341aec5817ebf7c93a75cbe11b6"
+    },
+    {
+      "id": "b49edf63b6912638ab401ae0",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 3. 常见场景",
+      "start_line": 35,
+      "end_line": 37,
+      "text": "## 3. 常见场景\n旅行预算常见于以下情形：\n",
+      "sha256": "6393d9ada1c823b3dc2f550214a292a14a78a162cfbf72034db46dfeab5a88b0"
+    },
+    {
+      "id": "2601e90eeb4dd13eccc12197",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 3. 常见场景 / 3.1 旅游计划",
+      "start_line": 38,
+      "end_line": 43,
+      "text": "### 3.1 旅游计划\n例如：\n- 假期旅游\n- 周末短途旅行\n- 国内外旅行\n",
+      "sha256": "01e5d49da2716c774be78c51ea489dceb3266814a8e30e24560994f893b9f6ac"
+    },
+    {
+      "id": "d05c09577de1003fe9d1b864",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 3. 常见场景 / 3.2 商务出差",
+      "start_line": 44,
+      "end_line": 51,
+      "text": "### 3.2 商务出差\n例如：\n- 机票\n- 酒店\n- 餐饮\n- 交通费\n- 会议费\n",
+      "sha256": "399a0a49e54af9d9e8a8af42d530726bc721b6b02c4bdeaed51523a5d8b6e9c5"
+    },
+    {
+      "id": "fadcc809e69ff8a63c89c0fb",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 3. 常见场景 / 3.3 紧急旅行",
+      "start_line": 52,
+      "end_line": 57,
+      "text": "### 3.3 紧急旅行\n例如：\n- 亲友病情\n- 家庭事务\n- 突发安排\n",
+      "sha256": "761c7245f60ff9ac8d8c4ab06cba1f5319e2647dfd368eb3dff4b399cbd23afa"
+    },
+    {
+      "id": "5953462d00c86fa847476b7f",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 4. 常见问题",
+      "start_line": 58,
+      "end_line": 72,
+      "text": "## 4. 常见问题\n以下问题通常涉及旅行预算：\n\n- 这个旅行预算是否合理？\n- 我这次旅行会不会超支？\n- 旅行花费的主要结构是什么？\n- 我该削减哪些花费？\n- 旅行预算是否会影响我的现金流？\n\nAI 在回答这些问题时，应重点关注：\n- 预算是否合理\n- 旅行支出是否超出承受能力\n- 未来支出是否影响其他目标\n- 是否需要调整预算或优先级\n",
+      "sha256": "3329152d138af5e206917a0c02716883355bd41805ffdc7444e40ae8c6e082c6"
+    },
+    {
+      "id": "b1ee0e13197cab3ebcdff4ec",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 5. 典型案例",
+      "start_line": 73,
+      "end_line": 73,
+      "text": "## 5. 典型案例",
+      "sha256": "14c69361f9f29acab08680276138a8c45f9013191faaf82a67a6d5c1d8df0765"
+    },
+    {
+      "id": "a38d25c66bc6e20a13d26a17",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 5. 典型案例 / 案例 1：预算不足但计划已定",
+      "start_line": 74,
+      "end_line": 82,
+      "text": "### 案例 1：预算不足但计划已定\n用户说：\n“我已经定了机票和酒店，但我担心旅行期间会超支。”\n\n分析：\n- 这属于常见预算超支风险\n- AI 应识别旅行成本中固定支出较高的风险\n- 建议预留备用金和控制非必要消费\n",
+      "sha256": "3139da20105455d19c7916d30e1f2233446cf274f6cbcc37437330456ccc805f"
+    },
+    {
+      "id": "2e6f1d5bf26ce57a47afd598",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 5. 典型案例 / 案例 2：超出原定预算",
+      "start_line": 83,
+      "end_line": 91,
+      "text": "### 案例 2：超出原定预算\n用户说：\n“我本来计划花 3000 元，但最后实际花了 5000 元。”\n\n分析：\n- 这属于典型预算失控场景\n- AI 可结合交通、住宿、餐饮和娱乐支出进行结构分析\n- 重点解释超支来源和如何调整\n",
+      "sha256": "dda9d815d3f45c56e772f17aaf48a585a2e9f8f858643b8307754d80a04ee9d9"
+    },
+    {
+      "id": "a687992908d7a8889f57b86c",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 5. 典型案例 / 案例 3：预算高于收入能力",
+      "start_line": 92,
+      "end_line": 100,
+      "text": "### 案例 3：预算高于收入能力\n用户说：\n“这次旅行预算很高，我不确定是否能负担得起。”\n\n分析：\n- 需要判断旅行模式是否超出用户的财务能力\n- AI 应提示优先级安排和更适合的预算节奏\n- 若影响到其他财务目标，应提示谨慎决策\n",
+      "sha256": "934e4d63344e30e8e59862cb604bc782cbe5c9e82be1c3d6e593034b6ca5c4ce"
+    },
+    {
+      "id": "9c19ce5a34d98391eba7d498",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 6. 风险提示",
+      "start_line": 101,
+      "end_line": 115,
+      "text": "## 6. 风险提示\n旅行预算的风险主要包括：\n\n- 预算估算不足\n- 住宿、餐饮、交通支出被低估\n- 临时消费导致预算超支\n- 预算来自信用额度或借贷，产生额外负债\n- 旅行计划影响正常储蓄和应急准备金\n\n因此，旅行预算在 AI 决策中不能只看“一个总额”，更要看：\n- 预算结构\n- 风险准备\n- 预算对其他财务目标的影响\n- 是否需要调整旅程规模和支出\n",
+      "sha256": "ff7dfcf7174971a0abe8340e391acd05baf3c2779d50981c7c364996f40e7e0b"
+    },
+    {
+      "id": "63426dd8dac7146baf454524",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 7. 什么时候需要人工确认",
+      "start_line": 116,
+      "end_line": 125,
+      "text": "## 7. 什么时候需要人工确认\n以下情况通常建议人工确认：\n\n- 旅行预算高于用户收入能力\n- 用户计划依赖信用卡或借贷支付\n- 出行计划涉及高风险、临时安排或跨地区复杂花费\n- 用户计划大额旅行但现金流较紧\n- 预算超支幅度明显\n- 用户要求将旅行预算与其他关键财务目标同时安排时\n",
+      "sha256": "6f39233f9e8067115f517c6d69c5f0324a0b7dcfb783df8bd07aeb71b5c3c8b3"
+    },
+    {
+      "id": "263540366c94b2a4baadb54e",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 8. 总结",
+      "start_line": 126,
+      "end_line": 136,
+      "text": "## 8. 总结\n旅行预算是个人财务管理中的一个典型场景，它体现了预算规划、现金流控制、支出结构分析和风险管理的结合。\n\n在 AI Banking Agent 中，旅行预算的价值在于：\n- 帮助用户理解“旅行花费在哪里”\n- 判断“预算是否合理”\n- 提醒“是否存在超支风险”\n- 评估“是否影响其他财务目标”\n\n如果 AI 能合理解释旅行预算问题，并在风险较高时提醒用户提前调整，它就会更接近真实的金融决策助手。\n",
+      "sha256": "248acb2c4dff7bd950cf55853bf6177c9eacdb6a777f775ac919321f96c28b8c"
+    },
+    {
+      "id": "6788a9079b8df5dba77c4d8f",
+      "document_id": "yuki-08",
+      "section": "旅行预算 / 9. 使用边界",
+      "start_line": 137,
+      "end_line": 138,
+      "text": "## 9. 使用边界\n本知识库仅用于 AI Banking Agent 的金融知识学习、预算分析和原型设计，不涉及真实客户隐私、真实账户信息、真实交易记录或具体个人出行数据。所有预算相关分析都应基于脱敏场景和规则化逻辑开展，不得直接访问不授权的敏感财务信息。",
+      "sha256": "df28b8776b76883980d960f6217c94b4984ff014c6110705cad8dcf7ed252066"
+    },
+    {
+      "id": "1fe6b1ef88384a9187d5cf94",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 银行与现金流金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "e7e01cdb03ca99966ff85ed4647517c6bf94b02c98e25426b4473fcad9a07c11"
+    },
+    {
+      "id": "81ba032ab6c8eaeaea632920",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 现金流",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 现金流\n\n一定期间内现金流入和流出的情况；净现金流等于现金流入减现金流出。利润增加不一定意味着现金同时到账。\n\n别名：现金流量\n",
+      "sha256": "ebb2643fca0c2c7553a240f01289a6dd35bcf8e6ae9c97f44bb2b74b71686381"
+    },
+    {
+      "id": "b04d627753efcfea4d0cefcd",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 可支配收入",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 可支配收入\n\n个人或家庭在缴纳相关税费等后，可用于消费和储蓄的收入；统计口径应以所用数据定义为准。\n\n别名：可支配所得\n",
+      "sha256": "e579259bb6c0d45e17f27960697a46645aa2d76cb94640dc2f95ddb596a69747"
+    },
+    {
+      "id": "05c66658ac7b708a8ca25876",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 储蓄率",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 储蓄率\n\n一定期间的储蓄占相应收入的比例；先明确收入、支出及缴税口径，收入为零时不能直接计算。\n\n别名：储蓄比例\n",
+      "sha256": "533ca35dde3048ddf6672f8d2712cc69ee44eb74b3dc4af134c01911f1f4d2c3"
+    },
+    {
+      "id": "b534c609e53df626464c9312",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 应急金",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 应急金\n\n为失业、疾病等意外支出预留、便于取用的资金；所需金额取决于支出稳定性和个人情况。\n\n别名：紧急备用金\n",
+      "sha256": "5c40e97b412ca2e5430f6819d10ae1969db2b560a5c96765417525cd4b49f684"
+    },
+    {
+      "id": "a7a50a9b64204ae90598cba4",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 流动性",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 流动性\n\n资产在需要时能否较快变现，以及变现时可能产生的成本和价格损失。\n\n别名：资金流动性\n",
+      "sha256": "13263dc493a6b669dc7809377e082980aa509b492a68ce1f0db0dda98c9984f2"
+    },
+    {
+      "id": "c1c6e37477158b12be620f36",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 活期存款",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 活期存款\n\n通常可以按银行规则随时存取的存款；具体利率与计息规则以银行公告和合同为准。\n\n别名：活期\n",
+      "sha256": "ed523c5a394042cc63195faac8c33106617f373623e533522daab27da3155d2c"
+    },
+    {
+      "id": "b00fce2cd31b47dddbc7352e",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 定期存款",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 定期存款\n\n约定存期的存款；提前支取的计息与限制以具体合同和现行规则为准。\n\n别名：定期\n",
+      "sha256": "78f915324cc023b48a32d8ca02dcbe8fed831bafdf5e6fbea7493b128af519e5"
+    },
+    {
+      "id": "9137bb3f0ecf9363fb36a307",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 存款保险",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 存款保险\n\n通过法定制度保护符合条件的存款；保障范围、限额和偿付条件以适用法规及官方信息为准，银行理财不等同存款。\n\n别名：存款保障\n",
+      "sha256": "c11d4f03c854183bda3dc9fa71c6ddb16da590748eae309cbf712ef311ba4176"
+    },
+    {
+      "id": "bc4f324b20e6874ea4ad6a26",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 本金",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 本金\n\n最初投入或尚未偿还的资金金额；具体产品是否保本要看合同和适用规定，不能仅凭名称判断。\n\n别名：投资本金\n",
+      "sha256": "0a782ef0bf8b4f2267e7f24a7109bc33107d4db39f7eb27ce05fdd6ecb920e1f"
+    },
+    {
+      "id": "ac0195a806a4ce116f689fdc",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 利息",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 利息\n\n资金借贷或存放形成的报酬；金额与本金、利率、计息时间和计息方式有关。\n\n别名：存款利息\n",
+      "sha256": "b1d956cd2f5d04104f34ab29553df9b699d5f59214d06691c92aabafdf211dad"
+    },
+    {
+      "id": "e3b3ed6fb224160ae6521f5f",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 单利",
+      "start_line": 65,
+      "end_line": 70,
+      "text": "## 单利\n\n仅以初始本金计息的方式；在不考虑其他变化时，利息可按本金乘利率乘期限估算。\n\n别名：简单利息\n",
+      "sha256": "c4438cc67e09ceba79b984dcf11d446d16e2c4e92cc9cc16ec10b2a7f9dfac09"
+    },
+    {
+      "id": "4b010d4446d51f7c324827c8",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 复利",
+      "start_line": 71,
+      "end_line": 76,
+      "text": "## 复利\n\n把前期收益并入计息基础，之后也对该部分计息；若每期有效利率为r，n期价值为本金乘(1+r)的n次方。\n\n别名：利滚利\n",
+      "sha256": "53a731cfb4cb1577203ea5e599212767e22bbdd3b5094f6a1d922a0f8e2f9483"
+    },
+    {
+      "id": "1dfb6b8f59effd1bea153991",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 年化收益率",
+      "start_line": 77,
+      "end_line": 82,
+      "text": "## 年化收益率\n\n将一段时间的收益按某种规则折算为年度口径；短期收益年化并不代表未来一年一定取得该收益。\n\n别名：年化回报率、年化收益\n",
+      "sha256": "231013563088a7b180ef9c6f5997e52cfcc4c5452569abc8e4bd49d9e92ab36b"
+    },
+    {
+      "id": "9dc071787f8f92fcebe8ca54",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 名义利率",
+      "start_line": 83,
+      "end_line": 88,
+      "text": "## 名义利率\n\n合同或报价上标示的利率；比较实际资金成本时还要看复利频率、费用及其他条款。\n\n别名：名义年利率\n",
+      "sha256": "1fdb869a5139dc9944a8c10d3f47fcd6f7ebe918a54a41cbaaa7ae583cb9de1e"
+    },
+    {
+      "id": "24ca078c5b06fc9fb521798b",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 实际利率",
+      "start_line": 89,
+      "end_line": 94,
+      "text": "## 实际利率\n\n扣除通货膨胀影响后的利率概念；精确关系为(1+名义利率)/(1+通胀率)-1，近似可用二者之差。\n\n别名：实际收益率\n",
+      "sha256": "672be74177debcbcda2a3c75078f399ef7faac08be7562e0d22f2f70bfbabd6d"
+    },
+    {
+      "id": "41ac847b33b301acc61d8fbf",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 通货膨胀",
+      "start_line": 95,
+      "end_line": 100,
+      "text": "## 通货膨胀\n\n总体物价水平持续上升的现象，会降低同等金额货币的购买力；个体消费篮子可能与统计篮子不同。\n\n别名：通胀\n",
+      "sha256": "ecbe56dfd9ce3ed8e802526df7757d1e7b9810f35627b111f795e316c913a2d9"
+    },
+    {
+      "id": "0198f11e4812eaaf4d210340",
+      "document_id": "finance-2027-01",
+      "section": "银行与现金流金融术语 / 购买力",
+      "start_line": 101,
+      "end_line": 106,
+      "text": "## 购买力\n\n一定金额货币能够购买商品和服务的能力；价格上涨而收入不变时，购买力通常下降。\n\n别名：货币购买力\n",
+      "sha256": "2538bd6540f4edf0107b5892e11ac2409b4eb18b42c6c50538ab41fbdc32a407"
+    },
+    {
+      "id": "be20ff5207a5ff34b7f80777",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 基金与理财金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "36de733e463347a137a5baa836f3ec7ce2d72aee003b017e74c50cb62613f2d2"
+    },
+    {
+      "id": "89bc231937af64d8a6da7256",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 基金",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 基金\n\n集合投资者资金，按照基金合同由管理人投资运作、托管人托管的产品；投资者按份额承担收益和风险。\n\n别名：证券投资基金\n",
+      "sha256": "6cb35331c072f3c80a51bbf931174907e1d4b96c382e6ce18c2fa9c8737aada7"
+    },
+    {
+      "id": "fb6e39b0dfdca8f3cd8e41b6",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 基金份额",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 基金份额\n\n投资者持有基金的权益单位数量；基金资产价值变化会影响份额净值。\n\n别名：基金份额数\n",
+      "sha256": "9aa3302c1460ceb3d47dfcf0dd1e03dfc6ae2936cf99217fd9af2357202b3232"
+    },
+    {
+      "id": "0e84f1710ccd7422448d6285",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 净值",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 净值\n\n资产价值扣除相关负债后的价值；基金的每份单位净值还需除以总份额，具体口径取决于对象。\n\n别名：资产净值概念\n",
+      "sha256": "e4b9804d9fe0279227cdf5041b525003e6254dea1c9422c15bb7b076cc52c30c"
+    },
+    {
+      "id": "53cbaad414f1d4994f9c6888",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 单位净值",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 单位净值\n\n基金资产净值除以基金总份额得到的每份价值；净值高低本身不能判断基金贵不贵或未来表现。\n\n别名：基金单位净值、基金净值、份额净值\n",
+      "sha256": "e6d483ea8f6cf7e448d2a93fb26e48574c1a3e653e451e4215d682b769f06599"
+    },
+    {
+      "id": "899b24f71925ea031b547ddf",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 累计净值",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 累计净值\n\n通常指单位净值加上成立以来每份累计分红；它不一定等同于分红再投资的总回报净值。\n\n别名：基金累计净值\n",
+      "sha256": "d76a01cebff3e6308e4b49aa147f9d5dc94394f174caea04977066bc5ea9c0a2"
+    },
+    {
+      "id": "9fb1f8c9a82804b5612c2162",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 复权净值",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 复权净值\n\n按数据供应商口径调整分红等因素后的净值序列；使用前应确认是否包含分红再投资及费用。\n\n别名：复权单位净值、调整后净值\n",
+      "sha256": "1087caf731fded8092b2ea0d5ef35452987ceca0c51763869a59773af4ec341a"
+    },
+    {
+      "id": "d702571e7a23fa7446eff89b",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 基金估值",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 基金估值\n\n根据已知持仓或市场数据估算的基金价值，可能与基金管理人正式公布的实际净值不同。\n\n别名：估算净值、基金净值估算\n",
+      "sha256": "44045a3b0c29d02bf16052e0508964d178fda0d8555791cd4557c4eaf5b6fd0a"
+    },
+    {
+      "id": "9ffae6dd9333ba53cad617fb",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 开放式基金",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 开放式基金\n\n基金份额通常可按合同规则申购赎回，份额规模可变化；具体开放时间与费用应看基金文件。\n\n别名：开放式\n",
+      "sha256": "7bb07a2270576de1e7b9a99c3befc9fe2793a6f53f04a3fe49c7263827c9a666"
+    },
+    {
+      "id": "735ff96286cdcc8a1b7bee13",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 封闭式基金",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 封闭式基金\n\n在约定期限内不按开放式基金方式随时申购赎回的基金；部分份额可在交易所交易，需关注流动性与价格。\n\n别名：封闭式\n",
+      "sha256": "865f01e72d9cddb66fa76590fb1638a4968c133c4e150bf399d365b1475e8363"
+    },
+    {
+      "id": "d43448e36685a633ed739317",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / ETF",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## ETF\n\n在交易所上市交易的开放式基金，通常跟踪某一指数或标的；场内买卖价格与基金净值可能有差异。\n\n别名：交易型开放式指数基金、交易所交易基金\n",
+      "sha256": "7082ee918a3f46d56316afde369d7be98279e32eab50b0d109914cec27beac7f"
+    },
+    {
+      "id": "cb65c5172886836073a84ea2",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 指数基金",
+      "start_line": 65,
+      "end_line": 70,
+      "text": "## 指数基金\n\n以跟踪指定指数为目标的基金，可能因费用、抽样或交易等因素产生跟踪误差。\n\n别名：被动指数基金\n",
+      "sha256": "c76915b0fab23786dd601d448480106899d694700163c6835a10ec37d7f26df2"
+    },
+    {
+      "id": "7910d0dfdb0c79aec5aba4f3",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 债券基金",
+      "start_line": 71,
+      "end_line": 76,
+      "text": "## 债券基金\n\n主要投资债券等资产的基金；仍可能面临利率、信用与流动性等风险，并非保证本金或收益。\n\n别名：债基\n",
+      "sha256": "66bec2dde4d551efaf7e72c9bdb957b106bd98dcf24a23bb7e64b02981841858"
+    },
+    {
+      "id": "79c383fc8894cba94d3e25ed",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 股票基金",
+      "start_line": 77,
+      "end_line": 82,
+      "text": "## 股票基金\n\n主要投资股票的基金，价值会受所持股票和市场波动影响，风险取决于实际持仓与产品规则。\n\n别名：股票型基金\n",
+      "sha256": "ff3550be1b943309092e36300980d9411f6f25e798a8928e3187f7cace644c74"
+    },
+    {
+      "id": "48994b87e97e5fbf46482840",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 货币市场基金",
+      "start_line": 83,
+      "end_line": 88,
+      "text": "## 货币市场基金\n\n主要投资符合规定的短期货币市场工具的基金；不等同银行存款，也不保证收益。\n\n别名：货币基金、货基\n",
+      "sha256": "298b172be537ef046f2f161160875bf43e72f8f888ece0aa92954c3828718997"
+    },
+    {
+      "id": "2286a03c00c9817eedec704a",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 混合基金",
+      "start_line": 89,
+      "end_line": 94,
+      "text": "## 混合基金\n\n按照合同同时配置股票、债券等多类资产的基金；实际风险取决于资产配置和投资策略。\n\n别名：混合型基金\n",
+      "sha256": "7f94f79836fcd8287d3212bdddf5f21a9820d181d3f697bedd8d4f9a85a5ab2e"
+    },
+    {
+      "id": "a311d6e6d1e38086bd1ed858",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 基金定投",
+      "start_line": 95,
+      "end_line": 100,
+      "text": "## 基金定投\n\n按照约定周期和金额分批投资基金的方式；不能保证盈利，也不能消除市场风险。\n\n别名：定期定额投资\n",
+      "sha256": "522aeae2cbbfc65c395e164fb91d221de5a7097163eb9aae9e27ad0bfc771d64"
+    },
+    {
+      "id": "b6af0fac2f785631012bca4b",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 申购",
+      "start_line": 101,
+      "end_line": 106,
+      "text": "## 申购\n\n按基金合同规定购买已成立基金份额的行为；确认日期、净值和费用以具体规则为准。\n\n别名：基金申购\n",
+      "sha256": "fc77dcb9fa6c78ffdbe9be7239111a63df2524e396a19733586934181a2eddf6"
+    },
+    {
+      "id": "7f1e5acad38abc9c25291f30",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 赎回",
+      "start_line": 107,
+      "end_line": 112,
+      "text": "## 赎回\n\n按产品规则向基金或产品管理方申请退出份额；到账时间、费用及开放条件可能不同。\n\n别名：基金赎回\n",
+      "sha256": "1813db9d023acda8a41f6c1f53f00a104266d81a5a96c487cfacc8095c1c6e9d"
+    },
+    {
+      "id": "5d144c1932000f0fdc5f997d",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 认购",
+      "start_line": 113,
+      "end_line": 118,
+      "text": "## 认购\n\n在募集期内购买基金份额的行为；确认时间、费率和份额计算以募集文件为准。\n\n别名：基金认购\n",
+      "sha256": "6def7643dd32b70c354ef06c5283dc3f1a8204aa15fa645ab1bb95088046c872"
+    },
+    {
+      "id": "c965b07c4383169969280102",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 管理费",
+      "start_line": 119,
+      "end_line": 124,
+      "text": "## 管理费\n\n基金管理人按合同从基金资产中计提的费用；确认净值是否已扣除，避免重复扣费。\n\n别名：基金管理费\n",
+      "sha256": "8020e53bc86e2fc24ae70376ee44faa0b4f4732dfd8ea610be3034e09dea17a8"
+    },
+    {
+      "id": "3516ff56a14428217ab2e4bd",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 托管费",
+      "start_line": 125,
+      "end_line": 130,
+      "text": "## 托管费\n\n基金托管人按合同从基金资产中计提的费用；费率与计提方式以合同为准。\n\n别名：基金托管费\n",
+      "sha256": "f6d1929b418a5397c080ea1da7daa40a701c155c86c6878fe08bd19791652a83"
+    },
+    {
+      "id": "c8880663c9a7c97ed46376ff",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 赎回费",
+      "start_line": 131,
+      "end_line": 136,
+      "text": "## 赎回费\n\n按具体产品和持有期限等规则，投资者赎回份额可能支付的费用；不同产品和渠道可能不同。\n\n别名：基金赎回费\n",
+      "sha256": "c3eb920174edc7db0caec82ed40d90c0d45b40b7b264077eb3511b1a638cfdfe"
+    },
+    {
+      "id": "d3d7ca6d8132ddae63cc2258",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 银行理财",
+      "start_line": 137,
+      "end_line": 142,
+      "text": "## 银行理财\n\n银行理财公司等发行的资产管理产品；投资范围、风险等级、开放期及费用应以正式产品文件为准。\n\n别名：银行理财产品\n",
+      "sha256": "b781222b1db01701c2c479bc5c047e86771915bb541c8afcde0e86a520a110f6"
+    },
+    {
+      "id": "48faee3dc34e56620adf1449",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 现金管理类理财",
+      "start_line": 143,
+      "end_line": 148,
+      "text": "## 现金管理类理财\n\n以现金管理为目标的一类理财产品；仍有信用、流动性等风险，不能等同于活期存款或保证收益。\n\n别名：现金管理产品\n",
+      "sha256": "1f04eb6bb4f64eca6abbb9599258ae4ede82d6dc86e10ffb0a2c1b9b50a92c3d"
+    },
+    {
+      "id": "2c1bcbefa8d0f60250e540fb",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 固收类理财",
+      "start_line": 149,
+      "end_line": 154,
+      "text": "## 固收类理财\n\n主要投资符合产品合同所列固定收益类资产的理财产品；净值仍可能波动和亏损。\n\n别名：固定收益类理财\n",
+      "sha256": "8b18d96c62fe2d9a402ca899d54f4483f833f8464d14e2c8d278844c7d82b191"
+    },
+    {
+      "id": "e93f7f25b586c2b896410049",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 固收增强",
+      "start_line": 155,
+      "end_line": 160,
+      "text": "## 固收增强\n\n以固定收益资产为基础并可配置其他风险资产的策略描述；实际比例和风险以产品合同为准。\n\n别名：固收加\n",
+      "sha256": "accbdcf6a1a59b0f0d02a2a4d4ab8810b5f0ca4883cfc6611d331a841626adb0"
+    },
+    {
+      "id": "a155107ef90f3c81a36465e9",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 开放日",
+      "start_line": 161,
+      "end_line": 166,
+      "text": "## 开放日\n\n产品按照合同允许办理相关申购或赎回的日期；是否可申请和到账时间以销售文件为准。\n\n别名：申赎开放日\n",
+      "sha256": "1007407baa5f3e948605221979eeffa4babcb0164e17c98f2a62de611fb85ede"
+    },
+    {
+      "id": "049669d656bccde51c255383",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 最短持有期",
+      "start_line": 167,
+      "end_line": 172,
+      "text": "## 最短持有期\n\n购买后需满足的最低持有时间要求；起算、开放及赎回规则应查具体产品文件。\n\n别名：最低持有期\n",
+      "sha256": "43ae29ff7bdaae88293668d7a2e334ff67541a86fb938bd20029249846d85a94"
+    },
+    {
+      "id": "09ec0c351970cd9e50f4d51c",
+      "document_id": "finance-2027-02",
+      "section": "基金与理财金融术语 / 业绩比较基准",
+      "start_line": 173,
+      "end_line": 178,
+      "text": "## 业绩比较基准\n\n用于评价产品表现或描述目标的参考指标，不是保证收益率或实际收益承诺。\n\n别名：理财业绩基准\n",
+      "sha256": "8b64e2508c9d6f58a8cccd9423e45abf6eb5d4185040cfbfebcee77cd144abbc"
+    },
+    {
+      "id": "fd00cb902fc4fb653e4fca58",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 风险与组合金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "163b66c8cf75fe949e484bf2de399a29e8d2473209ca8b21a2a0bb3812093270"
+    },
+    {
+      "id": "fecf5df448734ddf4bd86d04",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 风险等级",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 风险等级\n\n机构依据其风险评价体系对产品风险所作分类；分类标准和投资者适当性应以正式资料和现行规则为准。\n\n别名：产品风险等级\n",
+      "sha256": "cd73a2094e4572682e38bb6acb97ace2f6f10745255616ba14a5811d7587c88f"
+    },
+    {
+      "id": "fef625791010b18570fd9c4f",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 风险承受能力",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 风险承受能力\n\n投资者在财务条件、投资期限等约束下能够承受损失的能力；不能仅由口头偏好替代正式评估。\n\n别名：风险承受力\n",
+      "sha256": "589f405ebbbbaf3bca9d6e48680a3fbf92402502a2d135a22f6a5690f871f744"
+    },
+    {
+      "id": "854f156b6bd51da37e2d933e",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 风险偏好",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 风险偏好\n\n投资者主观上愿意承担风险的程度；与实际财务上的风险承受能力可能不同。\n\n别名：风险意愿\n",
+      "sha256": "6eddf0cd86e46bd0b552dfc6c41884bde256989db848eb6db87fa4ece771e350"
+    },
+    {
+      "id": "b5e4a6d25e9cdc0dc5612512",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 适当性",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 适当性\n\n结合投资者情况和产品风险等条件，核对产品或服务是否适合的管理过程；正式结论须遵循机构规则。\n\n别名：投资者适当性\n",
+      "sha256": "9b2f9c30dbaaf2024cdce48971ee99e1b73de7f5207486073c01d97303e053af"
+    },
+    {
+      "id": "051cbf77d67a0bf6f3f378b1",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 资产配置",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 资产配置\n\n依据目标、期限和风险承受能力，将资金分配到不同资产或策略；配置不能保证获利。\n\n别名：资产组合配置\n",
+      "sha256": "658a324760aa60dcd19e34e144bd3de3fc95c766589f63ee3fded3d5ba050d03"
+    },
+    {
+      "id": "c5ac97fc0b6befcc3fbe1e8e",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 分散投资",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 分散投资\n\n将资金分配到不同资产或标的以降低过度集中风险；相关资产同时下跌时仍可能亏损。\n\n别名：风险分散\n",
+      "sha256": "c9f888eb625fd9c02a1636a5ec0e7bfc8bc8e830e3c9d56813ba4f92e3f12910"
+    },
+    {
+      "id": "49eab872af1a949c318c3fdb",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 市场风险",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 市场风险\n\n受整体市场、经济或政策等因素影响而产生损失的风险；分散持有单个证券通常不能完全消除。\n\n别名：系统性风险\n",
+      "sha256": "b0e102bec0226a12c41e0ff68827e8ba4f092f28cea1bc20cd01673b9dce3658"
+    },
+    {
+      "id": "3e63715fa6714092a775a427",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 信用风险",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 信用风险\n\n债务人或交易对手不能按约履行义务，造成损失的风险。\n\n别名：违约风险\n",
+      "sha256": "fc1b511ddba4fe26d024a54d1cc90856c22e1f1ea50b4e75dd059fddc91c763f"
+    },
+    {
+      "id": "c0741d92e9da216c1a61501e",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 流动性风险",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 流动性风险\n\n资产无法按需要的时间、数量或合理价格变现，或者赎回受到限制的风险。\n\n别名：变现风险\n",
+      "sha256": "f53fe496ac96d89a56e8df50b7b2b31003fda5b68204acc02d7a1ca28d1fbfb8"
+    },
+    {
+      "id": "904f89133d05dde4c72ff0c2",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 利率风险",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 利率风险\n\n市场利率变化导致资产价格或现金流价值变化的风险；固定利率债券价格通常与市场利率反向变化。\n\n别名：利率变动风险\n",
+      "sha256": "05d7b169aa98b4c2b4ef7f3d87009686f3946185e4485f5841e1bef5fe2d8feb"
+    },
+    {
+      "id": "e157b66b66046dcd274bdb79",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 汇率风险",
+      "start_line": 65,
+      "end_line": 70,
+      "text": "## 汇率风险\n\n汇率变化导致外币资产、负债或现金流折算成本币后价值变化的风险。\n\n别名：外汇风险\n",
+      "sha256": "a4e61cdd54a849842e2376fe9eee91b831b1247b18291b25a9fd8857496acd59"
+    },
+    {
+      "id": "8fa25edb13c9057d5ec5703f",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 集中度风险",
+      "start_line": 71,
+      "end_line": 76,
+      "text": "## 集中度风险\n\n资产过多集中在单一标的、行业或交易对手，相关不利事件可能带来较大损失。\n\n别名：集中风险\n",
+      "sha256": "3fb5f8dc74c9766ca902958d9493c2d9c480f27f9426c76644714a03f8ed5c82"
+    },
+    {
+      "id": "5780219c8b0a6a8fce317e4b",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 波动率",
+      "start_line": 77,
+      "end_line": 82,
+      "text": "## 波动率\n\n收益率离散程度的统计指标；通常以收益率标准差衡量，并需注明观察频率和年化口径。\n\n别名：收益波动率\n",
+      "sha256": "f10582e4921d4cfe898284f5e8d1847a18dc044d39df836feec713c930149652"
+    },
+    {
+      "id": "f8dff090c85a3ce88a05bfa9",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 最大回撤",
+      "start_line": 83,
+      "end_line": 88,
+      "text": "## 最大回撤\n\n观察期内从某个历史峰值到其后谷值的最大跌幅比例；它是历史路径指标，不是未来最大损失上限。\n\n别名：最大跌幅回撤\n",
+      "sha256": "96a25b81127b22177f9a2533224e8c150e9af2e08ae98f4512f53bf058a4a55f"
+    },
+    {
+      "id": "1af505b12602324c1d65c6a1",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 夏普率",
+      "start_line": 89,
+      "end_line": 94,
+      "text": "## 夏普率\n\n衡量每单位超额收益波动所对应的平均超额收益；计算需明确收益频率、无风险基准、样本及年化口径，波动为零时不可计算。\n\n别名：夏普比率、Sharpe、Sharpe ratio\n",
+      "sha256": "fa4800016d0e4278d8c2903bf437f872d39aaf39c03773561fe51c9186d1210c"
+    },
+    {
+      "id": "be353f0654dee0e15ab4043b",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 贝塔系数",
+      "start_line": 95,
+      "end_line": 100,
+      "text": "## 贝塔系数\n\n衡量资产收益相对某个市场基准收益变动的敏感程度；估计值依赖基准和样本，不能单独概括所有风险。\n\n别名：Beta、β系数\n",
+      "sha256": "5e5a72de7edcfe78c09b6f77ffe17b10cd021a56ca317bb4382675d1ead6dd55"
+    },
+    {
+      "id": "9abff4c16bc8122e4915eab9",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 阿尔法",
+      "start_line": 101,
+      "end_line": 106,
+      "text": "## 阿尔法\n\n相对于所选基准或风险模型所解释收益的超额表现；计算依赖模型、费用和观察区间。\n\n别名：Alpha、α系数\n",
+      "sha256": "1767303e9226453d5cb5ad81bca3f8dcdf9754b2ab49b30dfd0d6e6a4e2a2899"
+    },
+    {
+      "id": "82b9afcd4aa1f29744c43d28",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 跟踪误差",
+      "start_line": 107,
+      "end_line": 112,
+      "text": "## 跟踪误差\n\n基金相对基准的超额收益波动程度，通常以一定频率的收益差标准差估计；不等同累计偏离。\n\n别名：Tracking error\n",
+      "sha256": "0e4ed0e6e799811ff19ee8bb2ce9b8f09c21e255fba8b4c19c59f81864441d02"
+    },
+    {
+      "id": "a5efa770126f680bba2544f8",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 回撤",
+      "start_line": 113,
+      "end_line": 118,
+      "text": "## 回撤\n\n净值从某一此前峰值向下跌落的幅度；统计区间和峰谷顺序会影响结果。\n\n别名：净值回撤\n",
+      "sha256": "21c32dc11a0592924c2f6beebe4b0d2c16bef68c1eb5a1be0801f7cbf995804b"
+    },
+    {
+      "id": "f9814a60e6647e6ccdcd808c",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 风险收益比",
+      "start_line": 119,
+      "end_line": 124,
+      "text": "## 风险收益比\n\n用于比较潜在收益与风险的表达，定义可因方法而异；必须明确衡量指标和样本，不能保证未来结果。\n\n别名：风险回报比\n",
+      "sha256": "4f86f31bc45f49e79dad19d815c69aa18eda1c39f7ed3330b84baa0415684550"
+    },
+    {
+      "id": "11221ee6b0b372c6d8585009",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 相关系数",
+      "start_line": 125,
+      "end_line": 130,
+      "text": "## 相关系数\n\n衡量两个变量线性共同变化程度的统计量，范围通常为-1至1；历史相关性可能随市场变化。\n\n别名：收益相关性\n",
+      "sha256": "891e5bf353204ff3544466cd2cc359716b64f0536c08afd21191a37cf04019b0"
+    },
+    {
+      "id": "0ba71c15d5e46d1a8e3c80cf",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 资产再平衡",
+      "start_line": 131,
+      "end_line": 136,
+      "text": "## 资产再平衡\n\n当持仓偏离目标比例时，通过调整组合恢复目标或容许区间的过程；应考虑费用、税费和交易限制。\n\n别名：组合再平衡\n",
+      "sha256": "1525f745bf51e6863bffb955930e02ac72ecd440d809e796d90d7f1ab22eec92"
+    },
+    {
+      "id": "a1698344985d7d4ce22a40c7",
+      "document_id": "finance-2027-03",
+      "section": "风险与组合金融术语 / 止损",
+      "start_line": 137,
+      "end_line": 142,
+      "text": "## 止损\n\n按照预先设定的条件限制损失或退出头寸的安排；实际成交价可能因跳空和流动性偏离预设价格。\n\n别名：止损线\n",
+      "sha256": "e004fb8ff3284bda3306f3259048b1396b3ede342d0fc3adca60417ff7483ed3"
+    },
+    {
+      "id": "bfbdbf9eeb91610677f6f7ad",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 收益与估值金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "731d878e38937ba2eddaeb683c4f3abf92f1cbe9f6085c29c7f1e62d10a3ee51"
+    },
+    {
+      "id": "ed71ae60988f88b96ab39c2e",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 收益率",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 收益率\n\n一定期间收益相对于投入资金或期初价值的比例；应说明是否含分红、费用及现金流。\n\n别名：回报率\n",
+      "sha256": "81d0dfab90bb9d1a74993cf65a3bb46a0ab6fe5ae4f8b18ba4ca09aadb5c1c0d"
+    },
+    {
+      "id": "51c25fa4086c6c7978d5c157",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 累计收益率",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 累计收益率\n\n某段持有期内相对起始价值的累计变化；有追加或提取资金时需选择合适的收益率方法。\n\n别名：区间收益率\n",
+      "sha256": "4ce7e87f5fa8f875b3e93a7eec6153183586e90e4ed993a1fa9b3eb1bc7da1ec"
+    },
+    {
+      "id": "ad8760c9370687b2cc25e6a7",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 几何年化收益率",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 几何年化收益率\n\n在无中途现金流等简化条件下，将期初到期末的总回报按实际期限折算为每年复合增长率。\n\n别名：复合年化收益率、CAGR\n",
+      "sha256": "1f4aa5f24bcf8767846e532c8139cd9efee20a9028c4c3380ad8aa7afe50fe66"
+    },
+    {
+      "id": "2403f615a9eba49796c3569c",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 超额收益",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 超额收益\n\n资产收益与选定比较基准收益的差额；基准可以是市场指数或无风险参考，需明确选择。\n\n别名：超额回报\n",
+      "sha256": "01b738fe40a2cd0f5583697ae976418b8e421391fbda974b7f7385df618f7bfa"
+    },
+    {
+      "id": "829d63886d10ca5bd3549a0c",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 无风险利率",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 无风险利率\n\n理论上不存在违约等风险的收益率基准；实际计算常用代理利率，不同期限与币种的代理不可混同。\n\n别名：无风险收益率\n",
+      "sha256": "2cfe91e78048be260e6dc13d52327b9d30f5e30dd2773e4ac79faf17978a48f4"
+    },
+    {
+      "id": "f77322d491b65d82017b0818",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 净资产",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 净资产\n\n资产总额减去负债总额的结果；统计时需明确估值时间和资产、负债范围。\n\n别名：资产净值\n",
+      "sha256": "0dbfa3b405b6016e62fef82967149e40cd302d8e706d2a1360a1e95a1494a444"
+    },
+    {
+      "id": "8396f88dfded6f32532cb583",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 现值",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 现值\n\n未来金额按选定折现率折算到当前的价值；折现率与期限假设变化会影响结果。\n\n别名：折现价值\n",
+      "sha256": "76e7f949bfa131b61de8eb1a325b49e817aec232493ace9e7fa7c27df1f9455f"
+    },
+    {
+      "id": "5b7f57fe942f07b053015d29",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 终值",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 终值\n\n当前金额按一定增长或计息假设推算到未来的价值；计算结果取决于假设，不构成承诺。\n\n别名：未来价值\n",
+      "sha256": "baaa98692aa49136b4ded603e6201051343342433d3653f04295a6ea3e832589"
+    },
+    {
+      "id": "3cc87fb73121f5fa063ac746",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 折现率",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 折现率\n\n将未来现金流转换成现值所使用的比率；应与现金流期限、风险和币种等口径相匹配。\n\n别名：贴现率\n",
+      "sha256": "3b564a5098c3c543981e4b4e31d49f9f55f730ef69bc70839eda87bc9e21e235"
+    },
+    {
+      "id": "fa3293877357dd5b01a5e818",
+      "document_id": "finance-2027-04",
+      "section": "收益与估值金融术语 / 收益曲线",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 收益曲线\n\n在某一时点，具有可比信用等条件的利率或收益率随期限变化形成的关系；不要与投资净值曲线混淆。\n\n别名：利率期限结构\n",
+      "sha256": "9e5586961a32703c73a11ca8f7cc89dcb26885d5eb5f98af5ea555cfdc26b332"
+    },
+    {
+      "id": "3916e5605a7fae492f5542ce",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 股票与指数金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "8a441eee512851886ed1cf9066ebc3611ae6fcca9b82d5263af7ce0a11591e5d"
+    },
+    {
+      "id": "70a9d75078bfb0d32659c2d3",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 股票",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 股票\n\n代表公司所有权份额的证券；股东可能获得分红和资本利得，也承担股价下跌风险。\n\n别名：股份\n",
+      "sha256": "957d392263f20cdfb5c7d4181de015e815b847a67fce2bb66a3fb18b8a890274"
+    },
+    {
+      "id": "10e18e3a50f8e705b691053d",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 股息",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 股息\n\n公司按规定向股东分配利润的一种形式；是否分红和具体金额取决于公司决议。\n\n别名：股票分红\n",
+      "sha256": "7bb4e87f4f80a23784770737075d5dad1d3f6a76d99c1598473987d3f91af658"
+    },
+    {
+      "id": "8b258ef88897376d86b05946",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 市值",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 市值\n\n通常指证券价格乘以相应股数；总市值和流通市值使用的股数范围不同。\n\n别名：市场价值\n",
+      "sha256": "bd68035a99b612f638c455b98c7279ef3e45b34d3c98ed65df1fee0c976425ca"
+    },
+    {
+      "id": "d98545b841eb3a387f38b53e",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 市盈率",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 市盈率\n\n股票价格相对于每股收益的估值比率；亏损公司、收益波动和静态或动态口径会影响解释。\n\n别名：PE、P/E\n",
+      "sha256": "f82c166184c730abed15f7220c7598ed2a096161fe56c576a21722a5e5b0bfae"
+    },
+    {
+      "id": "5bea32995bca7873b5b45900",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 市净率",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 市净率\n\n股票价格相对于每股净资产的比率；净资产质量、行业及估值日期会影响比较。\n\n别名：PB、P/B\n",
+      "sha256": "eb97ec5882da71202c2163a35e193066064b02cae5f471e4fe239113fa170ef7"
+    },
+    {
+      "id": "4ae51bb30915caed3c136706",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 每股收益",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 每股收益\n\n按规定口径计算、分摊到每股普通股的利润指标；基础和稀释每股收益的计算不同。\n\n别名：EPS\n",
+      "sha256": "f3ceca22521b2a76a223dc4f072609c381b87b6c0cd62484d0f2522aadb56c62"
+    },
+    {
+      "id": "8c61d4bb7fbe6a780eb69416",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 股票指数",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 股票指数\n\n按编制规则汇总一组证券价格或收益变化的指标；指数点位本身不是投资账户余额。\n\n别名：市场指数\n",
+      "sha256": "b724cd79fcc9672617e5a3c4a02828a01c6bce837b1b46d5b1e1674243fe18b2"
+    },
+    {
+      "id": "5b2470c7c3661f6997a6d164",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 沪深300",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 沪深300\n\n反映沪深市场部分大中市值证券整体表现的指数；具体样本与编制规则以指数公司公告为准。\n\n别名：沪深300指数\n",
+      "sha256": "fe3960cb59dd594bc4f61468d928c9b0f050c41392a51ff9b1158fe682f904bc"
+    },
+    {
+      "id": "aa3753300bdb13f0c7752377",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 上证50",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 上证50\n\n按指数编制规则从上海市场选择部分具有代表性的证券形成的指数。\n\n别名：上证50指数\n",
+      "sha256": "c4fb9bf0e6130df972db989f4cfa3ed11dc4e9eabaf815743a92d2d64e1940c6"
+    },
+    {
+      "id": "2836227ebdf41e7c43db9201",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 中证500",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 中证500\n\n按指数编制规则反映一定范围中小市值证券表现的指数；样本会随定期调整变化。\n\n别名：中证500指数\n",
+      "sha256": "188e1e7e72a590e35f8a4d0ced9831c3b89a1504a89de1479544edd51d4f3d8c"
+    },
+    {
+      "id": "547fcd2e5188cdf4280ebf0f",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 股息率",
+      "start_line": 65,
+      "end_line": 70,
+      "text": "## 股息率\n\n一定期间每股现金股息相对股价的比例；历史股息率不能保证未来分红。\n\n别名：分红收益率\n",
+      "sha256": "2f8b0a988d3b5f0ab9f63403b2319b99cb54af272d7c577a03df9787ef2ce260"
+    },
+    {
+      "id": "3517a3bb0ececbffae6e3d24",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 涨跌幅",
+      "start_line": 71,
+      "end_line": 76,
+      "text": "## 涨跌幅\n\n价格相对于比较基准价格的变化比例；需确认基准时点及是否考虑分红复权。\n\n别名：价格涨跌幅\n",
+      "sha256": "bf0904e85b226de8eb1dedbbee3aa8d0743d4ab5ee37d210455182e6e1d48e6c"
+    },
+    {
+      "id": "c15e176dd09517e447b1f00b",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 成交量",
+      "start_line": 77,
+      "end_line": 82,
+      "text": "## 成交量\n\n一定时期内成交的证券数量，单位可能是股、手或份；需结合具体市场规则。\n\n别名：交易量\n",
+      "sha256": "8990777fdbc369cca666a4fab3d9c79e0a8431602e0cd61a6a0dec7a14dee4bf"
+    },
+    {
+      "id": "e45f3c3e19a565385116f2dd",
+      "document_id": "finance-2027-05",
+      "section": "股票与指数金融术语 / 成交额",
+      "start_line": 83,
+      "end_line": 88,
+      "text": "## 成交额\n\n一定时期内成交交易的金额；高成交额不必然代表价格未来上涨。\n\n别名：交易金额\n",
+      "sha256": "104c284fa1f218745cdd525bddb0224fb88712f0dee4a488fda7c24104351fa3"
+    },
+    {
+      "id": "d9fc3b63ffc0db15b0c6118d",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 债券金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "0b25cb5d99f8bc2a9545520cfc14b37ffeb678af341e0d5a15155c717fe40026"
+    },
+    {
+      "id": "996dc6dd750db8a68701b4f0",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 债券",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 债券\n\n发行人按约定承担还本付息等义务的债务工具；投资者需考虑发行人信用和市场价格波动。\n\n别名：债务证券\n",
+      "sha256": "474533142c5e554e148719d54a2105a8f008a82574f195a461805be30b038836"
+    },
+    {
+      "id": "906fbf3421ce7946af72e884",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 国债",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 国债\n\n由政府发行的债务工具；不同币种、期限和市场仍可能面临利率、流动性等风险。\n\n别名：政府债券\n",
+      "sha256": "02b4b2a84d008485f62144e11347864619d11bed811d7acbddc0bf32d1003d18"
+    },
+    {
+      "id": "d158a2a68db03d7e51923d90",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 信用债",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 信用债\n\n以发行人信用为基础发行的债券；偿付能力变化或违约可能带来损失。\n\n别名：企业信用债\n",
+      "sha256": "2cce5e37ecee169c013f53792f9fbdb9f02553088536631aa0681c376bf0e8c7"
+    },
+    {
+      "id": "f31dcd4511625658d769be8d",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 票面利率",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 票面利率\n\n债券合同约定的票面利息计算利率；不一定等于按当前市场价格计算的收益率。\n\n别名：票息率\n",
+      "sha256": "90c6f2ff54cfef37ec31362d13329aa46740b75eb57ba0943771e7ae7dab745a"
+    },
+    {
+      "id": "4cf59f7cce9ed9c892d8749b",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 到期收益率",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 到期收益率\n\n在一系列假设下，使未来约定现金流现值等于债券当前价格的收益率；不保证实际实现该收益。\n\n别名：YTM、yield to maturity\n",
+      "sha256": "64e33b2ac19a04a9379b5f777c4067de80a52df6a1a58f14967c60b98b9a6d60"
+    },
+    {
+      "id": "5809141768524131d547ea90",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 久期",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 久期\n\n衡量债券价格对利率变化敏感程度的指标；久期越大时，在其他条件相近且小幅变动下价格通常更敏感。\n\n别名：债券久期\n",
+      "sha256": "0d549e461ed51f90b13cd85a97a8148f7adc5a7c19d25a09630e92552f173e5c"
+    },
+    {
+      "id": "87983ada67e7afadb6b0465b",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 修正久期",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 修正久期\n\n衡量债券价格对收益率小幅变化的近似百分比敏感度；大幅变化时还需考虑凸性等因素。\n\n别名：Modified duration\n",
+      "sha256": "5bff43ce8df284f3c537a971d1e7ef409b93eda2957ebd6168ea9cbaa0597cac"
+    },
+    {
+      "id": "fd3d0eeafca99647792107d3",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 债券价格",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 债券价格\n\n债券在市场上的交易价格；利率、信用、期限及流动性等因素都会影响价格。\n\n别名：债券市价\n",
+      "sha256": "37daae42525ab20f7669fd2ad479208a19605402d8dcc036e8aeb2e3f54e7bef"
+    },
+    {
+      "id": "5838c5c0799cd1b92d524ff3",
+      "document_id": "finance-2027-06",
+      "section": "债券金融术语 / 信用利差",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 信用利差\n\n可比条件下信用债收益率相对于某参考收益率的差值；期限、流动性和市场条件也会影响利差。\n\n别名：信用风险溢价\n",
+      "sha256": "a3628e9d68ff4cbc2746c186ec450ec7b7d6d6fa1e690dc7eee1c863430af618"
+    },
+    {
+      "id": "83fbd3bb5123da5f03b1e04f",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 贷款与信用金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "12bab0da67c184933a21cc3b8018310d1bd39be57befd25e7f47d864941f0751"
+    },
+    {
+      "id": "881d61f18a12d0dac21c2242",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 贷款本金",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 贷款本金\n\n借款人取得且尚需偿还的资金；不包括尚未支付的利息和其他费用。\n\n别名：借款本金\n",
+      "sha256": "baccf06da87e5e640ff7e38672d3dec4665193526af7b347ede11d69af806598"
+    },
+    {
+      "id": "a4dc5fd2ac3c241c8d2bc5ba",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 贷款利率",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 贷款利率\n\n借款资金的约定计息比例；比较成本应同时考虑期限、还款方式、费用和有效年化口径。\n\n别名：借款利率\n",
+      "sha256": "113ba101d885619b2d85ff4a4d7c126512d8f0e15c561379492e65822623af39"
+    },
+    {
+      "id": "db482224cb9b8d21e18a4f24",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / LPR",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## LPR\n\n贷款市场报价利率是按规定形成并公布的贷款定价参考；具体贷款利率仍以合同和适用规则为准。\n\n别名：贷款市场报价利率\n",
+      "sha256": "330d8cb8a213337c7cd727bf1280612830e326ea64822381da2d248c54a78f76"
+    },
+    {
+      "id": "1df6ae7b6f8833ae55e12bbd",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 等额本息",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 等额本息\n\n在利率等条件不变时，每期偿还相同金额的本金和利息合计；各期本金与利息占比会变化。\n\n别名：等额本息还款\n",
+      "sha256": "1d49affa839a4bd02f17e1fadeacdb94c02597b253809e82f8701ae41a3f0220"
+    },
+    {
+      "id": "f251fed9074465806b1e40dc",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 等额本金",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 等额本金\n\n每期偿还相同金额的本金，并支付剩余本金对应利息；利率不变时每期合计还款通常逐渐减少。\n\n别名：等额本金还款\n",
+      "sha256": "7c2b28016b5dafb7a2e5cc5fdc3f497b6dfdac8b8bb86c9c7af02e104ad3b63e"
+    },
+    {
+      "id": "ea197d44a9c9fa587a249043",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 信用报告",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 信用报告\n\n依法由征信机构提供的信用信息记录；信息范围、查询条件和异议处理以实际制度为准。\n\n别名：个人征信报告\n",
+      "sha256": "e22c3a51fc03b18da8030f0546016610c740447abe978978f12f8a6d78f3c35f"
+    },
+    {
+      "id": "97ae97cfcf8a2235a1c9eb27",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 逾期",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## 逾期\n\n未按合同约定期限履行还款义务；后果及费用取决于合同、适用规则和实际情况。\n\n别名：贷款逾期\n",
+      "sha256": "df199e48a4ca97f3ccf3dddf4973f20ec795fb33308218cdf29fe0e03069344e"
+    },
+    {
+      "id": "f4107b737c14e09d4f84b8a3",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 债务收入比",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 债务收入比\n\n一定时期债务偿付额相对于收入的比例；应明确收入与债务范围和统计周期。\n\n别名：负债收入比、DTI\n",
+      "sha256": "b9902f8e76f1fecb9134645e0369abac4ad28f146bd6a2a919aae356ab62b89c"
+    },
+    {
+      "id": "9c432f6944a9821b5bba06b0",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 杠杆",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 杠杆\n\n使用借入资金或其他方式扩大投资或经营敞口；可能同时放大收益与损失。\n\n别名：财务杠杆\n",
+      "sha256": "e440dfda158a4b8857c33e92637d84a9ff4f2aa95f02d666e85ec5c0e3ba3397"
+    },
+    {
+      "id": "b915e4ac426bf088032d5ed4",
+      "document_id": "finance-2027-07",
+      "section": "贷款与信用金融术语 / 担保",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 担保\n\n为债务履行提供的增信安排，例如保证或财产担保；具体责任及范围由合同和适用法律决定。\n\n别名：贷款担保\n",
+      "sha256": "d40c4540d3b4264644b3c67b0876e5cc22bbb120c60701f22299ef84ced79b92"
+    },
+    {
+      "id": "f4e6eebe7715dc62a5177061",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 宏观与市场金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "b166d2a599c01f6a853201f597d9a4d7a877f8bc25c335fd559d29a35b77ab84"
+    },
+    {
+      "id": "a8e648cbbd6087c258a35ede",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / CPI",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## CPI\n\n衡量居民消费商品和服务价格水平变化的统计指标；公布频率、同比和环比口径应区分。\n\n别名：居民消费价格指数、消费者物价指数\n",
+      "sha256": "1457d74a321f6ef68223e4c694d3cf4667bd83203a467e088458064efb9bffc9"
+    },
+    {
+      "id": "aa54e073cf7c6bb060c0037d",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / PPI",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## PPI\n\n衡量工业生产者产品出厂价格变动的统计指标；它不等同居民消费价格指数。\n\n别名：工业生产者出厂价格指数\n",
+      "sha256": "ed4bfe4ee6c2c510dea5ab24a4b1685e07a777364a031ade64f60aee20240074"
+    },
+    {
+      "id": "88bc1fd19374820d36bbae7b",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / PMI",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## PMI\n\n基于采购经理调查编制的经济景气指标；具体行业、季调和发布日期以统计发布为准。\n\n别名：采购经理指数、制造业PMI\n",
+      "sha256": "892913a346503acea0f73d8366f5fecfe18d3a4f641ce2f13e86793b75cb23f4"
+    },
+    {
+      "id": "726a5e12db4ea3b136fb3dba",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / GDP",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## GDP\n\n一定时期内一个经济体生产活动最终成果的综合指标；应区分现价、可比价和增长率。\n\n别名：国内生产总值\n",
+      "sha256": "c07df8dfa1396c22f40ab5fac32fca34409247d376be29257fb4f86fe09bc773"
+    },
+    {
+      "id": "46e207f6b1eca5ec1f3246b6",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / M2",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## M2\n\n按统计口径汇总的广义货币供应量指标；组成及增速以发布机构现行定义为准。\n\n别名：广义货币\n",
+      "sha256": "dcd2ec12a3ef815eef8654a460f05ef5fc4ba5158ebbf878c5dff7e513e92e9f"
+    },
+    {
+      "id": "daa82c84250b62c30858aaab",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / 社会融资规模",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 社会融资规模\n\n反映实体经济从金融体系获得资金额度的统计指标；存量与增量、当月与累计口径不同。\n\n别名：社融\n",
+      "sha256": "ffd4a58b07dabe5ea9200cbb5c54a2067a24e21974be48671d78d9c9d36f3352"
+    },
+    {
+      "id": "50a56889f521bcf9b0df523b",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / Shibor",
+      "start_line": 41,
+      "end_line": 46,
+      "text": "## Shibor\n\n银行间市场形成的不同期限报价参考利率；具体期限和日期必须注明，也不能简单等同国债无风险利率。\n\n别名：上海银行间同业拆放利率、SHIBOR\n",
+      "sha256": "993f90926c1a5a1d36dbe4aa53c450d1c3f6d80d60a183492bdfce37373286c5"
+    },
+    {
+      "id": "8ba0fdf43c0e1276cb88bb96",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / 基准利率",
+      "start_line": 47,
+      "end_line": 52,
+      "text": "## 基准利率\n\n金融产品定价所参考的利率；不同合同和市场使用的基准不同，不能假定当前数值。\n\n别名：参考利率\n",
+      "sha256": "2fdd710afc9804c00a843d7d40b4f73d964c94f63ef0bde9118b9c42e2a96950"
+    },
+    {
+      "id": "a343183f04d87a6a1759d162",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / 汇率",
+      "start_line": 53,
+      "end_line": 58,
+      "text": "## 汇率\n\n一种货币相对于另一种货币的兑换价格；报价方向、买卖价和时间会影响换算结果。\n\n别名：外汇汇率\n",
+      "sha256": "771a3d2643f0bcb21d0924539129df2f16fb7f1cc9c22d1aca38c0af1fd15e32"
+    },
+    {
+      "id": "3369931d4e0cce03b54ba172",
+      "document_id": "finance-2027-08",
+      "section": "宏观与市场金融术语 / 资产价格泡沫",
+      "start_line": 59,
+      "end_line": 64,
+      "text": "## 资产价格泡沫\n\n资产价格明显偏离可支撑价值并受预期推动的现象；是否存在泡沫通常具有不确定性。\n\n别名：金融泡沫\n",
+      "sha256": "c07a6925bd5ca439339048d8d0945bfea1517a30ae383529f41dddd45b58d429"
+    },
+    {
+      "id": "649048edee52ec3b5ee829be",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 保险金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "b8321502145d42c4b8fb0835e18c785b9df979e79de2112ace2ea95d3127f982"
+    },
+    {
+      "id": "ca8cd2c63047d22f6cc94898",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 保险",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 保险\n\n投保人按合同支付保险费，保险人对约定保险事故承担给付等责任的风险保障安排。\n\n别名：商业保险\n",
+      "sha256": "3a62337347128eeee7a341660dbb9eaa6f8f454d641d7d9cae6244d00c4af4c9"
+    },
+    {
+      "id": "153c991888f2adf0fd51113c",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 保险费",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 保险费\n\n投保人为获得保险合同约定保障而支付的费用；金额与责任、期限等相关。\n\n别名：保费\n",
+      "sha256": "4a321c312d06aa3fd09599f2d02361214fab6d5f1a9682a5ad4fb2ce172e5e04"
+    },
+    {
+      "id": "6e01c5a0fd649e5ebb538e61",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 保险金额",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 保险金额\n\n保险合同约定用于确定保险责任的金额或限额；不一定等于任何情况下的实际赔付。\n\n别名：保额\n",
+      "sha256": "bdd4c8e6e42c36b9e5adcb0f4cee3934d521b1babcd828643e98174b52eefda1"
+    },
+    {
+      "id": "8092587962da4441606fac34",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 免赔额",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 免赔额\n\n保险合同约定由被保险人自行承担、保险人通常不予赔付的部分；计算方式依具体合同。\n\n别名：保险免赔额\n",
+      "sha256": "b47d23f386c70c81b98905f6fa040c0fbe9550a646f7093efd7c55c26d9b570e"
+    },
+    {
+      "id": "c22254e247b007062d8edaad",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 等待期",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 等待期\n\n合同生效后一段约定时间内，特定保险责任可能受到限制的期间；以保险条款为准。\n\n别名：保险等待期\n",
+      "sha256": "9d6bef1b846e8622f4e061f827babb1a1ec2019e104a545bec818306ffb47ddb"
+    },
+    {
+      "id": "a6fd0666f604f874d78d31f7",
+      "document_id": "finance-2027-09",
+      "section": "保险金融术语 / 现金价值",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 现金价值\n\n某些保险合同在特定时点所具有的合同价值；退保所得及费用以合同实际约定为准。\n\n别名：保单现金价值\n",
+      "sha256": "d9053a993535e24a1cd9dc5aa84e776ebf805eec515156c1362d721938350dea"
+    },
+    {
+      "id": "1e8f0aa5934ca51ff6f13c88",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语",
+      "start_line": 1,
+      "end_line": 4,
+      "text": "# 支付与账户金融术语\n\n本资料为面向演示用途的原创教学概括；官方投教链接为本类别相关参考，并非对每条释义的逐条背书。具体产品、法规和数值需核实。\n",
+      "sha256": "8b384f9468302d27feead166cadddaef28222870ad280f2ae22da714ca005f4f"
+    },
+    {
+      "id": "89eada1b95fbaae419e270fe",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 银行卡",
+      "start_line": 5,
+      "end_line": 10,
+      "text": "## 银行卡\n\n银行发行的支付工具，不同卡种的存款、透支、费用和风险规则不同。\n\n别名：银行支付卡\n",
+      "sha256": "52b4036b8281af80eda7868b3073448a2fb3c56127614799fe9892f4e998b05f"
+    },
+    {
+      "id": "8d032404e37fe72f3ab28bbf",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 借记卡",
+      "start_line": 11,
+      "end_line": 16,
+      "text": "## 借记卡\n\n通常以持卡人账户资金为基础办理支付等业务的银行卡；具体功能与限制以发卡机构规则为准。\n\n别名：储蓄卡\n",
+      "sha256": "7115429d4cd0237be135dc3e6da6b44a0859a2c10fe89175a44548986634f0ac"
+    },
+    {
+      "id": "b438936611a379687fb7a6c7",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 信用卡",
+      "start_line": 17,
+      "end_line": 22,
+      "text": "## 信用卡\n\n可在约定信用额度和规则内使用信用的支付工具；未按期还款可能产生利息、费用和信用影响。\n\n别名：贷记卡\n",
+      "sha256": "f155540ad3e2889f1fef5dc20ee6a678fc408217d8dcce4add9ae3e7b571555d"
+    },
+    {
+      "id": "708bb6b57642a97a7e237eaf",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 转账",
+      "start_line": 23,
+      "end_line": 28,
+      "text": "## 转账\n\n按账户及支付规则将资金从付款账户转至收款账户的操作；执行前应核对收款人、金额和授权。\n\n别名：银行转账\n",
+      "sha256": "3707dfa06637531b6adc277ae57f15486513ff8c54ae4b9aa76258bc0d0e4365"
+    },
+    {
+      "id": "5ec9e6129b7f5cb858cb10be",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 支付密码",
+      "start_line": 29,
+      "end_line": 34,
+      "text": "## 支付密码\n\n用于验证支付或交易身份的秘密凭证；不应向他人或聊天助手提供。\n\n别名：交易密码\n",
+      "sha256": "b4678fd6695ff6f68d7a878d237aad0af8e6fc8afa87f64dba397f67c6a30338"
+    },
+    {
+      "id": "85228440e36c2a7fac49e699",
+      "document_id": "finance-2027-10",
+      "section": "支付与账户金融术语 / 验证码",
+      "start_line": 35,
+      "end_line": 40,
+      "text": "## 验证码\n\n用于验证某次登录或交易的临时信息；不应向他人或聊天助手提供。\n\n别名：一次性验证码、短信验证码\n",
+      "sha256": "b65e09685f612d7dd6e4e7eb26de9f4241e228f67a9d39366ce4ceeeef027f11"
+    }
+  ],
+  "embedding_model": null,
+  "vectors": null,
+  "content_sha256": "64caba34cb6c68f259c533fc2502306fe276f491b15e3d77fd5267a8dc4f3222"
+}

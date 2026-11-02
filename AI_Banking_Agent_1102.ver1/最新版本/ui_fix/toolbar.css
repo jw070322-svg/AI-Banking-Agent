@@ -1,0 +1,13 @@
+/* Visual restoration only. Keep the ver2 DOM relocation and all handlers. */
+.service-toolbar{position:fixed;right:18px;bottom:20px;z-index:50;display:flex;align-items:center;gap:8px;max-width:calc(100vw - 36px);margin:0;padding:0;border:0;background:transparent;box-shadow:none}
+.service-toolbar #feature-launchers{position:static;inset:auto;z-index:auto;display:flex;gap:8px;min-width:0}
+.service-toolbar #experience-launcher,.service-toolbar #feature-launchers button{position:static;inset:auto;z-index:auto;min-height:40px;margin:0;border:1px solid #dedbea;border-radius:24px;background:#ffffffed;color:#514b87;padding:12px 17px;box-shadow:0 3px 14px #242d4910;font:500 12px/1.4 var(--font-ui,system-ui);cursor:pointer;white-space:normal;overflow-wrap:anywhere;backdrop-filter:blur(12px)}
+.service-toolbar button:focus-visible{outline:3px solid #386bc9;outline-offset:3px}
+.service-toolbar button:disabled{opacity:.5;cursor:wait}
+/* Reserve breathing space below the content; the dock never changes its handlers. */
+body{padding-bottom:84px}
+@media(max-width:650px){.service-toolbar{right:12px;bottom:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;max-width:calc(100vw - 24px);width:280px}.service-toolbar #feature-launchers{display:contents}.service-toolbar #experience-launcher,.service-toolbar #feature-launchers button{width:100%;min-height:38px;padding:9px 12px;font-size:12px}body{padding-bottom:108px}}
+@media(prefers-reduced-transparency:reduce){.service-toolbar #experience-launcher,.service-toolbar #feature-launchers button{background:#fff;backdrop-filter:none}}
+
+/* Keep the existing fixed product-comparison action unobstructed. */
+@media(max-width:760px){body:has(.mobile-compare) .service-toolbar{bottom:calc(100px + env(safe-area-inset-bottom,0px))}body:has(.mobile-compare){padding-bottom:200px}}

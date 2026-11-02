@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-01T15:09:52.174272+08:00",
+  "app_port": 8808,
+  "model_url": "http://127.0.0.1:8811",
+  "model": "banking-finance-lora",
+  "adapter": "adapter-qwen2.gguf attached at scale 1.0",
+  "no_key_http": 401,
+  "wrong_key_http": 401,
+  "completion": "收到",
+  "web_route": "/api/knowledge",
+  "web_status": "needs_evidence",
+  "web_model_received": true,
+  "external_data_sent": false,
+  "steps": [
+    {
+      "provider": "local_rag",
+      "status": "no_evidence"
+    },
+    {
+      "provider": "baidu",
+      "status": "not_requested"
+    },
+    {
+      "provider": "llama_cpp",
+      "status": "ok"
+    }
+  ],
+  "independent_installation_key": true,
+  "binary_executed_from_extracted_copy": true,
+  "launcher": "启动最新安全自评版.bat",
+  "archive_sha256": "f3a03c8c417496ce716bfe23336e673c01dc721ca9f4f5b9ab1049aa52e93212",
+  "historical_files_verified": 906
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-02T05:04:42.392354+00:00",
+  "regression_completed_at": "2026-11-02T05:03:43.442380+00:00",
+  "test_completed_at": "2026-11-02T05:04:42.112881+00:00",
+  "test_time_note": "本次测试完成时间：2026-11-02T05:04:42.112881+00:00",
+  "scope": "本地模拟网页安全主链集成与安全自评",
+  "local_acceptance": "passed_with_disclosed_risks",
+  "regression_results_reused_from_prior_run": true,
+  "version": "1102.ver1",
+  "browser_enhancement_recheck": "automation_connection_unavailable; no new screenshots claimed",
+  "enhancement": "HTTP严格解析/隐私日志/限速/本地监听/攻击与正常样例/业务权限矩阵",
+  "new_entrypoint": "start_security_integrated.py",
+  "preview": "http://127.0.0.1:8808/",
+  "actual_gateway": "WebGuardian subclasses HardenedToolGateway, inherits its execute/confirmation/screening/output pipeline",
+  "authorization_port": "LedgerAuthorizationPort derives identity/permissions from existing SQLite state; local mock identity only",
+  "guarded_http_journeys": {
+    "started_at": "2026-11-02T05:03:44.775302+00:00",
+    "completed_at": "2026-11-02T05:04:42.112881+00:00",
+    "source_fingerprint": "85847dcea4848f9434ee66f53ea1368e1f4f32c549aa8bef3b33fd3cf88939f2",
+    "run": 58,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "inherited_backend": {
+    "run": 293,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "inherited_frontend_passed": 100,
+  "independent_bank_ledger_created": false,
+  "web_source_changed": false,
+  "real_service_security_certified": false,
+  "boundaries": "control-plane exceptions in routes.json; 13-tool catalogue remains a separate optional module, not a second bank behind this web adapter",
+  "pending_external": [
+    "真实身份/MFA",
+    "真实银行/验证器",
+    "生产不可篡改审计",
+    "模型业务质量与第三方服务专项验收"
+  ],
+  "pending_human": [
+    "105题独立业务评分",
+    "组长按测试证据复核并确认项目整体验收"
+  ]
+}

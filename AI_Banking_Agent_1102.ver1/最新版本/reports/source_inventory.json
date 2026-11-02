@@ -1,0 +1,506 @@
+{
+  "scanned_root": "F:\\AI_Banking\\Teammate_output",
+  "branches": [
+    {
+      "branch": "Ethan output",
+      "empty": true,
+      "files": []
+    },
+    {
+      "branch": "eva output",
+      "empty": false,
+      "files": [
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\2026-10-20-risk-compliance(1).md",
+          "bytes": 1731,
+          "modified_at": "2026-10-20T09:21:30.695209+00:00",
+          "sha256": "fd99e9177705d77bcd5abaa2c38dbb7332cb028880ad1795dcfb2f40c0b00fb0"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\__init__(1).py",
+          "bytes": 1260,
+          "modified_at": "2026-10-20T09:21:31.958205+00:00",
+          "sha256": "3713e73cbf512ed83cb4e0e3d8ea86f2e0598027c415a7db68b1ce2fdfd9cba9"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\action_log(1).py",
+          "bytes": 5284,
+          "modified_at": "2026-10-20T09:21:31.965783+00:00",
+          "sha256": "522b70c6e3ac562738cbdebbe7d62397bdd4ceb93b72669c80cbe81c7fbb8b20"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\compliance(1).py",
+          "bytes": 8593,
+          "modified_at": "2026-10-20T09:21:31.675108+00:00",
+          "sha256": "0ac894503d0c99745dd024ddf149759845352d098034bac8de420e1e5d234040"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\engine(1).py",
+          "bytes": 31225,
+          "modified_at": "2026-10-20T09:21:32.060810+00:00",
+          "sha256": "636a41aa1b6f347f9b1547051ad36056dbadf7afcbc04afbfd5fb4a1f3b25bc9"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\models(1).py",
+          "bytes": 7821,
+          "modified_at": "2026-10-20T09:21:31.564988+00:00",
+          "sha256": "1008de63da4891ca068b7cc886f3c4f4e155652d258245b19060a5ffbbee897e"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\policy(1).py",
+          "bytes": 10037,
+          "modified_at": "2026-10-20T09:21:31.033849+00:00",
+          "sha256": "0d2203f2f45a418c0a927a7c0f3c59d503a0f3b5e496699f7c5934d367b01869"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.1\\preview(1).py",
+          "bytes": 9862,
+          "modified_at": "2026-10-20T09:21:30.610891+00:00",
+          "sha256": "ce2031a62656bcaa8e2e887673874619031a66ab2b7592514e5763202a294148"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\06-risk-compliance.md",
+          "bytes": 14027,
+          "modified_at": "2026-10-20T11:48:00.388370+00:00",
+          "sha256": "8fcb8db38600f03f54a9fb1c485e77c8f4ecf582b14dad8d8534c79699830799"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\07-compliance-control-matrix.md",
+          "bytes": 3812,
+          "modified_at": "2026-10-20T11:48:02.402516+00:00",
+          "sha256": "b85a85b64f391e2597c4d18eac5b75c2d1451d513625bdc6eeec43d4d47cc1bf"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-account.balance.read-orchestrator.turn-1.0.0-2413b9(1).md",
+          "bytes": 2502,
+          "modified_at": "2026-10-20T11:42:48.099176+00:00",
+          "sha256": "684b1057b9a57feedb1c1c77d746432939f1b0409568a2ab3ffe83e3684f6d29"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-account.balance.read-orchestrator.turn-1.0.0-bfad21(1).md",
+          "bytes": 2498,
+          "modified_at": "2026-10-20T11:42:49.403103+00:00",
+          "sha256": "8a3d1b1e5b0101877b4a37ba2e6ec672eb324b1bad716a8eee2c23770f136c8d"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-card.freeze-card.freeze.preview-1.0.0-47fb96(1).md",
+          "bytes": 4080,
+          "modified_at": "2026-10-20T11:42:50.253192+00:00",
+          "sha256": "c9223a4e43b523e21a0868e550e0ec87ba6d42949820ba26ab5dca64d8fd66cd"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-card.freeze-freeze_card-1.0.0-5c4d97(1).md",
+          "bytes": 4419,
+          "modified_at": "2026-10-20T11:42:51.039159+00:00",
+          "sha256": "e3a3083360d751beedc94b82525cae3fa2ee926a259dfa5e81759da927e3ef0c"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-card.freeze-orchestrator.confirmation-1.0.0-0afe02(1).md",
+          "bytes": 4296,
+          "modified_at": "2026-10-20T11:42:52.010092+00:00",
+          "sha256": "cb20bd1e5b0fe5c3ebc2d8f37e7db6294c92bfd68de7e366cd83061e7b68f543"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transactions.read-orchestrator.turn-1.0.0-8baced(1).md",
+          "bytes": 2510,
+          "modified_at": "2026-10-20T11:42:54.633528+00:00",
+          "sha256": "88dd146db2c5eb1732402dee50ce6450781f163a8d35566775c08ec1c32d2a64"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-orchestrator.confirmation-1.0.0-96eff3(1).md",
+          "bytes": 5852,
+          "modified_at": "2026-10-20T11:42:55.627183+00:00",
+          "sha256": "1de991b28281754584b8686b77e65b5f83747739d767d1e2d0598a6bc90bac92"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-orchestrator.confirmation-1.0.0-b7d1f9.md",
+          "bytes": 5866,
+          "modified_at": "2026-10-20T11:42:56.710169+00:00",
+          "sha256": "cf9c551c1722e041a679830eed4b7e4a1f0f832c077da3cfe1bc94c70188b1c2"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-orchestrator.turn-1.0.0-0b12ea.md",
+          "bytes": 2440,
+          "modified_at": "2026-10-20T11:42:57.592159+00:00",
+          "sha256": "859a212c40ae919761bc9c0ae9f3a763fb4ff11cfa8b7bac65b9d420d4b32e87"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-transfer.preview-1.0.0-685df1.md",
+          "bytes": 5743,
+          "modified_at": "2026-10-20T11:43:00.950033+00:00",
+          "sha256": "6734140430ba48ef0c8e822094be5511b6bd61a575c7d318d8cfec242a699556"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-transfer.preview-1.0.0-714143.md",
+          "bytes": 5730,
+          "modified_at": "2026-10-20T11:43:01.687203+00:00",
+          "sha256": "36f7c7ca0744d5f2f01b007395566c94742b4bc3da7b38acec942fa104048aba"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-transfer_funds-1.0.0-4b3e04.md",
+          "bytes": 3283,
+          "modified_at": "2026-10-20T11:42:58.358586+00:00",
+          "sha256": "ff3a3cdc2a6aeb318d3f850b78ec44ddb2a922c224598aacd770a914b321c7fc"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-transfer_funds-1.0.0-cd479c.md",
+          "bytes": 5079,
+          "modified_at": "2026-10-20T11:42:59.442136+00:00",
+          "sha256": "649c871f54c3390624d867c50b74c1ce205076d07dc002359f89f995d27dac85"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-transfer.create-transfer_funds-1.0.0-f8eeec.md",
+          "bytes": 6162,
+          "modified_at": "2026-10-20T11:43:00.184675+00:00",
+          "sha256": "562b39a54b01e62d3aac69b09e15fd1803918529b5c61555ff13f3d19fef05d7"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-unknown-orchestrator.turn-1.0.0-880ec3(1).md",
+          "bytes": 2442,
+          "modified_at": "2026-10-20T11:43:02.570596+00:00",
+          "sha256": "02dd1a749225ff01dea513618faf609884f6e37f6f3445204654b17e58a28061"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\193600-unknown-orchestrator.turn-1.0.0-880ec3.md",
+          "bytes": 2442,
+          "modified_at": "2026-10-20T11:43:02.570596+00:00",
+          "sha256": "02dd1a749225ff01dea513618faf609884f6e37f6f3445204654b17e58a28061"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\2026-10-20-review-remediation(1).md",
+          "bytes": 2611,
+          "modified_at": "2026-10-20T11:42:44.378743+00:00",
+          "sha256": "ad0028702b9a8efe6dd2215793a7213091db46de1b7a439f163b16452b713939"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\2026-10-20-risk-compliance(3).md",
+          "bytes": 1774,
+          "modified_at": "2026-10-20T11:42:45.284535+00:00",
+          "sha256": "57de94a36b3f87ee70117074265daeb4deb45d5dd15c888bf99fec38d54d0d18"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\2026-10-20-token-limit-summary(1).md",
+          "bytes": 1308,
+          "modified_at": "2026-10-20T11:42:46.258911+00:00",
+          "sha256": "7f31170021a311c766c75b476db4f3321d9d98d9b0dde0627f34cad8ef224836"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\auth.py",
+          "bytes": 3925,
+          "modified_at": "2026-10-20T11:46:34.902922+00:00",
+          "sha256": "576fd7ca9e4612b849a5f0691645e44ebcac2733e5ff7ac67357227aecaf3c2e"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\controls.py",
+          "bytes": 5689,
+          "modified_at": "2026-10-20T11:46:35.951113+00:00",
+          "sha256": "7a455d882c5ba3bfa9247c25a8fd46160ae131c2ec799242da0af3af12d06f57"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\data.py",
+          "bytes": 12451,
+          "modified_at": "2026-10-20T11:46:01.475919+00:00",
+          "sha256": "4d6844e1ee3f630651a6110a8fbde815332d136a83bbcb1642b5eb9630bd9a48"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\delivery-verification-20261020-193709(1).md",
+          "bytes": 4210,
+          "modified_at": "2026-10-20T11:42:47.311029+00:00",
+          "sha256": "4f3ad50ef4d8357596168f0a0430aaf905cdadfe690f793e2e8fb914bdf666ea"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\models(3).py",
+          "bytes": 5636,
+          "modified_at": "2026-10-20T11:46:03.652141+00:00",
+          "sha256": "b1a16894e9c9fed4dda2c0fdaf67407e4348590cf8a04afd54d51ddf5425da7d"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\orchestrator.py",
+          "bytes": 26279,
+          "modified_at": "2026-10-20T11:46:03.979197+00:00",
+          "sha256": "cd0339a684dc98decbadcbea6fd75f311ab77b10ed6e05344df9ec10101f0134"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\policy_config.json",
+          "bytes": 258,
+          "modified_at": "2026-10-20T11:46:04.027658+00:00",
+          "sha256": "f0c0416092740facfeb908f5a8381dbbd1fc10bc603a05f7935a69a906aa8924"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\selection.py",
+          "bytes": 3957,
+          "modified_at": "2026-10-20T11:46:57.773761+00:00",
+          "sha256": "54504a44fa0785305b4d1f31bef39260164221758190d97d8aac33a57e824982"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\test_risk_compliance.py",
+          "bytes": 33318,
+          "modified_at": "2026-10-20T11:45:00.114938+00:00",
+          "sha256": "d51470b37979ccda1f8942dc6d9a55bec3b4687280777d50161ea6e87d449563"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\tools.py",
+          "bytes": 19143,
+          "modified_at": "2026-10-20T11:46:00.753106+00:00",
+          "sha256": "744d9f5941a8c9a5c04cf6903d0af2bcb54126a0b4c189c80370ac499d4147c0"
+        },
+        {
+          "path": "Teammate_output\\eva output\\1020\\ver.2\\verify_delivery.py",
+          "bytes": 9492,
+          "modified_at": "2026-10-20T11:45:07.443569+00:00",
+          "sha256": "2fb780452da253b658cbd710a2bfc7ab5ef0c524a2fbc1b8c93e2af4a30a01cf"
+        }
+      ]
+    },
+    {
+      "branch": "vv output",
+      "empty": false,
+      "files": [
+        {
+          "path": "Teammate_output\\vv output\\1019\\Banking 统一版.html",
+          "bytes": 14188068,
+          "modified_at": "2026-10-19T14:19:59.695139+00:00",
+          "sha256": "f96c22ab7abcc0429446ae7027073fb305069af860177f9e0bccb903d6618e11"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking 统一版(2).html",
+          "bytes": 25337258,
+          "modified_at": "2026-10-21T07:12:50.062315+00:00",
+          "sha256": "e38a4a589f2d350db0a99722e731a843abc697d81bd34b10acf6629ea2a9224a"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\API-CONTRACT.md",
+          "bytes": 1768,
+          "modified_at": "2026-10-19T14:10:10+00:00",
+          "sha256": "0540285f775ee2caeb7b9fe44be3e57677bcdce2055456d0a2c901e0ae3ee167"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\FONT-SOURCES.md",
+          "bytes": 670,
+          "modified_at": "2026-10-18T14:08:56+00:00",
+          "sha256": "f0a21a8f4532fc9ddc3325cc589a1457fc303ab9a2a7d136f97ed50047a15e9c"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\GeneralSans-400.woff2",
+          "bytes": 23084,
+          "modified_at": "2026-10-18T14:07:32+00:00",
+          "sha256": "3ec2be771caf168b077ca05af4df1dace77088e2b3a27da570036e61be58a039"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\GeneralSans-500.woff2",
+          "bytes": 22904,
+          "modified_at": "2026-10-18T14:07:32+00:00",
+          "sha256": "c30377df1de8444d07161725c751f458beec07c28034df2fd275d1aa587a239f"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\GeneralSans-600.woff2",
+          "bytes": 23092,
+          "modified_at": "2026-10-18T14:07:32+00:00",
+          "sha256": "94a2a0e1ef59728eb65498ed7fe26e5af7e2858a3a4a278a89ac1f83a0544945"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\LXGW-LICENSE.md",
+          "bytes": 20613,
+          "modified_at": "2026-10-18T14:09:10+00:00",
+          "sha256": "1483c7de02dcf8b9c54b3b1aacabf7d6bdf32d412ca6724c0292ea68e862d8cf"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\LXGWNeoZhiSong.ttf",
+          "bytes": 10468036,
+          "modified_at": "2026-10-18T14:08:08+00:00",
+          "sha256": "32b398f9c6278c4ed34f413077add2c2f3c84034d463af2b9cb98f12c4c2c6cd"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\MaShanZheng-OFL.txt",
+          "bytes": 4397,
+          "modified_at": "2026-10-21T05:41:10+00:00",
+          "sha256": "d7bdb1cee215b689e23c2f95672a6084c790542170648267a55114103d756a08"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\MaShanZheng-Regular.ttf",
+          "bytes": 5857936,
+          "modified_at": "2026-10-21T05:40:36+00:00",
+          "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\NotoSans-LICENSE.txt",
+          "bytes": 4301,
+          "modified_at": "2026-10-21T05:48:50+00:00",
+          "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\fonts\\NotoSansSC-Medium.otf",
+          "bytes": 8345436,
+          "modified_at": "2026-10-21T05:48:26+00:00",
+          "sha256": "7633f5a016d4dd95e685a69633d818aabc4644c4b08e26bd35b1b30c45ed5dda"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\index.html",
+          "bytes": 589,
+          "modified_at": "2026-10-19T13:39:34+00:00",
+          "sha256": "75ef2fd8c4b8482e69ba24cb1a50478454925477abd6a20f4a1f5cf23bc1d890"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\journey-engine.js",
+          "bytes": 18888,
+          "modified_at": "2026-10-19T14:02:54+00:00",
+          "sha256": "b3c0adc714d3697e40a62f0cd2a944754f92453d9ce1719be150c028314769c8"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\journey-workspace.css",
+          "bytes": 51455,
+          "modified_at": "2026-10-19T14:07:52+00:00",
+          "sha256": "a1bf63be16eb7454a1e4e964a7679d1568da49bd63aeeeb0c7157cd25b4bbbff"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\dist\\journey-workspace.js",
+          "bytes": 64741,
+          "modified_at": "2026-10-19T14:07:52+00:00",
+          "sha256": "d5effe00f98cc49d2071d834391389e23eaa110967f2291c0b7955a918c232a9"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\README.md",
+          "bytes": 4435,
+          "modified_at": "2026-10-19T14:10:10+00:00",
+          "sha256": "ccc47e6fd51a70719002dcf13c50073a1b83148c645ffa975d594939688546a8"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\tests\\core.cjs",
+          "bytes": 6072,
+          "modified_at": "2026-10-19T14:10:10+00:00",
+          "sha256": "17965b4788f6854b49f44eb1dd8692fcf296fc424581799b7c5be651313812de"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1)\\banking-agent\\tests\\verified-results.json",
+          "bytes": 935,
+          "modified_at": "2026-10-19T14:08:06+00:00",
+          "sha256": "6d0981741948a9dd6a7469a26ce8be48e061987903d7d0422729ea2ae0126679"
+        },
+        {
+          "path": "Teammate_output\\vv output\\1021\\Banking-统一版源码(1).zip",
+          "bytes": 17728732,
+          "modified_at": "2026-10-21T07:11:20.853621+00:00",
+          "sha256": "d12cfc0a2b26d88cb0e1da08530d384dcd5c82d1d4460a0e8ac7c6ccb02e605e"
+        }
+      ]
+    },
+    {
+      "branch": "YUKI ouput",
+      "empty": false,
+      "files": [
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\eval\\01-姝ｅ父闂.md",
+          "bytes": 5251,
+          "modified_at": "2026-10-22T04:43:40+00:00",
+          "sha256": "da99ff9f9ab8770255b0de293254f0f9076f1d15a621f3949355f07b6bca97ef"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\eval\\02-杈圭晫闂.md",
+          "bytes": 5362,
+          "modified_at": "2026-10-22T04:43:38+00:00",
+          "sha256": "f5ded1c1c0d07bcfe823506ba615e4c33ed8b17c59650c43c55d8b4cb80a1dd9"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\eval\\03-椋庨櫓闂.md",
+          "bytes": 4479,
+          "modified_at": "2026-10-22T04:31:56+00:00",
+          "sha256": "c5e3627acc878d44a4736873109b904a4c6d0d527d5cd0386055dab1f29b3db2"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\eval\\04-璇勬祴鎬昏〃.md",
+          "bytes": 672,
+          "modified_at": "2026-10-22T04:07:26+00:00",
+          "sha256": "892e7dff60e1662d4e5cc2ed1949bde61a13cee6b9bffcb126e94903e02d96aa"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge\\04-鍊哄姟姣旂巼.md",
+          "bytes": 4616,
+          "modified_at": "2026-10-21T02:40:24+00:00",
+          "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge\\05-椋庨櫓绠＄悊.md",
+          "bytes": 4167,
+          "modified_at": "2026-10-21T02:41:24+00:00",
+          "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge\\06-鍚堣杈圭晫.md",
+          "bytes": 3841,
+          "modified_at": "2026-10-21T02:42:12+00:00",
+          "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge\\07-璁㈤槄绠＄悊.md",
+          "bytes": 4497,
+          "modified_at": "2026-10-21T02:42:38+00:00",
+          "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\data\\knowledge\\08-鏃呮父棰勭畻.md",
+          "bytes": 4365,
+          "modified_at": "2026-10-21T02:43:10+00:00",
+          "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\docs\\RAG璇存槑.md",
+          "bytes": 3950,
+          "modified_at": "2026-10-21T03:21:16+00:00",
+          "sha256": "3379f8ddc75e67fa81ba52469359bd7d2f3a57af7aa109db12862278926a707a"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\docs\\宸ヤ綔鏃ュ織.md",
+          "bytes": 1968,
+          "modified_at": "2026-10-20T08:34:34+00:00",
+          "sha256": "1a05d8b94540fd7dfb658fb8c801b18a60c0623afbd846bbabaef7bb95537ad2"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\docs\\椤圭洰璇存槑.md",
+          "bytes": 2602,
+          "modified_at": "2026-10-20T08:26:12+00:00",
+          "sha256": "82a50189e46cf58b235310bbb83ddfbfb6a267580093c2e4fdd806609070a409"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\docs\\璇勬祴棰樺簱.md",
+          "bytes": 16761,
+          "modified_at": "2026-10-22T04:43:46+00:00",
+          "sha256": "130781d31bd114bff1f3d4879883c8781ed41a67a7975d2e7dbae6be024e81dd"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\README.md",
+          "bytes": 1387,
+          "modified_at": "2026-10-20T07:23:08+00:00",
+          "sha256": "5e4644988d9eeb305c35d539f2647d4528252bd5ec1ab14b48a827f89c876c11"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent\\AI-Banking-agent\\src\\RAG\\simple_RAG.py",
+          "bytes": 6014,
+          "modified_at": "2026-10-22T04:48:32+00:00",
+          "sha256": "b8b6783ff3d0bdba0dd9dcc0ecc24614800257bde3dd8ae26e2c33e26e2d984b"
+        },
+        {
+          "path": "Teammate_output\\YUKI ouput\\1022\\AI-Banking-agent.zip",
+          "bytes": 54123,
+          "modified_at": "2026-10-22T04:57:19.893454+00:00",
+          "sha256": "55adadf731afe8e1a7f5f8a6c3ebcb09af3f1c117b38076953b924a1d8bd333a"
+        }
+      ]
+    }
+  ],
+  "selection": {
+    "eva": "1020/ver.2 + explicitly marked missing-component patch from ver.1",
+    "vv": "1021; newer standalone HTML scripts checked against archive",
+    "YUKI": "1022; metadata __MACOSX excluded",
+    "Ethan": "empty; project finance modules used"
+  },
+  "vv_comparison": [
+    {
+      "file": "journey-engine.js",
+      "standalone_matches_archive": true
+    },
+    {
+      "file": "journey-workspace.js",
+      "standalone_matches_archive": true
+    }
+  ]
+}

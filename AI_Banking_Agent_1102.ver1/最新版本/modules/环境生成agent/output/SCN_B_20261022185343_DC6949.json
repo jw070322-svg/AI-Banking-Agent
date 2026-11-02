@@ -1,0 +1,150 @@
+{
+  "scenario_id": "SCN_B_20261022185343_DC6949",
+  "scenario_name": "购物支出增加",
+  "scenario_type": "B",
+  "created_at": "2026-10-22T18:53:43",
+  "user": {
+    "user_id": "U5402858B0DD0",
+    "name": "李敏",
+    "gender": "女",
+    "id_number": "330102200108221097",
+    "phone": "18199519753",
+    "email": "u5402858b0dd0@example.com",
+    "address": "成都市武侯区",
+    "occupation": "软件工程师",
+    "monthly_income": 20551.98,
+    "registration_date": "2022-09-19"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC133FF0B66994",
+      "user_id": "U5402858B0DD0",
+      "account_type": "储蓄卡",
+      "account_number": "6222782003554510058",
+      "currency": "CNY",
+      "initial_balance": 13834.03,
+      "balance": 16203.2,
+      "status": "正常",
+      "opened_date": "2024-07-02"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T9D7005F98C07",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-19",
+      "amount": 446.61,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "华联超市",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T65AAB1550968",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-21",
+      "amount": 814.92,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TDF003494D30C",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-22",
+      "amount": 2087.82,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "宜家家居",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD24D251913F4",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-09-26",
+      "amount": 330.82,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "天天购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T3F087F062D43",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-01",
+      "amount": 10588.79,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T5EEF63BCB7CE",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-03",
+      "amount": 59.28,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "午餐",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TDB7C951EE23B",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-04",
+      "amount": 2040.04,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "华联超市",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TCCBA653431B0",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-08",
+      "amount": 1483.71,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "天天购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TA0E584B3EC52",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-10",
+      "amount": 544.15,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "宜家家居",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD1FC7225F040",
+      "account_id": "ACC133FF0B66994",
+      "date": "2026-10-25",
+      "amount": 412.27,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "购物消费",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成连续两个月的购物消费，第二个月购物支出比第一个月增加指定金额（校验时按实际流水重算）。",
+    "expected": {
+      "two_consecutive_months": true,
+      "shopping_increase": 800.0
+    }
+  }
+}

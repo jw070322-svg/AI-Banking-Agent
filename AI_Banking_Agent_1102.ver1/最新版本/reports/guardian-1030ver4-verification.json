@@ -1,0 +1,79 @@
+{
+  "suite": "guardian-bridge-1030ver4",
+  "generated_at": "2026-10-30T15:05:54+00:00",
+  "policy_version": "sec_2026_10_29",
+  "checks": [
+    {
+      "id": "compliance_allow",
+      "status": "passed",
+      "detail": "allowed=True reasons=['COMPLIANCE_SCAN_PASSED']"
+    },
+    {
+      "id": "compliance_injection_request_text",
+      "status": "passed",
+      "detail": "allowed=False reasons=['JAILBREAK_PATTERN_SUSPECTED', 'PROMPT_INJECTION_SUSPECTED']"
+    },
+    {
+      "id": "compliance_injection_arguments",
+      "status": "passed",
+      "detail": "allowed=False reasons=['JAILBREAK_PATTERN_SUSPECTED', 'PROMPT_INJECTION_SUSPECTED']"
+    },
+    {
+      "id": "compliance_exception",
+      "status": "passed",
+      "detail": "RuntimeError surfaced"
+    },
+    {
+      "id": "risk_allow_with_evidence",
+      "status": "passed",
+      "detail": "allowed=True level=R4"
+    },
+    {
+      "id": "risk_deny_without_evidence",
+      "status": "passed",
+      "detail": "allowed=False flags=['fail_closed']"
+    },
+    {
+      "id": "risk_cross_session",
+      "status": "passed",
+      "detail": "allowed=False"
+    },
+    {
+      "id": "risk_expired",
+      "status": "passed",
+      "detail": "allowed=False"
+    },
+    {
+      "id": "risk_argument_tamper",
+      "status": "passed",
+      "detail": "allowed=False"
+    },
+    {
+      "id": "risk_revoked",
+      "status": "passed",
+      "detail": "revoked=True allowed=False"
+    },
+    {
+      "id": "risk_policy_version_changed",
+      "status": "passed",
+      "detail": "allowed=False"
+    },
+    {
+      "id": "risk_replay",
+      "status": "passed",
+      "detail": "first=True second=False"
+    },
+    {
+      "id": "risk_unknown_receipt",
+      "status": "passed",
+      "detail": "refused=True evidence_leaked=False"
+    }
+  ],
+  "passed": true,
+  "source_hashes": {
+    "first_agent/vendor/eva/security/adapters.py": "e9fbc5a7449f8c58f665d3a8057e6f61c683b722d985b407e4a521e794f3a0e2",
+    "first_agent/vendor/eva/security/compatibility.py": "dfaed53dac8663634f95f1af91a5a3430a099ae2564cca5709756f4d44625e41",
+    "first_agent/vendor/eva/security/injection.py": "615d50efd654082ac382b0fc07d566fca8e8e1f5f907e40dedc2179f40a4db42",
+    "first_agent/vendor/eva/security/runtime.py": "5aa5380f6152b1e704492b81ed9e421aff36e8b8ef57c5f4321e2d0f32ba5cbe"
+  }
+}

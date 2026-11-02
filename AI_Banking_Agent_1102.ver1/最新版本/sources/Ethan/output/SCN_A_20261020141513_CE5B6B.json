@@ -1,0 +1,164 @@
+{
+  "scenario_id": "SCN_A_20261020141513_CE5B6B",
+  "scenario_name": "普通银行用户",
+  "scenario_type": "A",
+  "created_at": "2026-10-20T14:15:13",
+  "user": {
+    "user_id": "U0CE09F208AB3",
+    "name": "陈杰",
+    "gender": "女",
+    "id_number": "110101198901237335",
+    "phone": "17445001405",
+    "email": "u0ce09f208ab3@example.com",
+    "address": "广州市天河区",
+    "occupation": "教师",
+    "monthly_income": 15276.04,
+    "registration_date": "2022-06-18"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC0470B3B8DD71",
+      "user_id": "U0CE09F208AB3",
+      "account_type": "储蓄卡",
+      "account_number": "6222873292909161839",
+      "currency": "CNY",
+      "initial_balance": 9527.39,
+      "balance": 20456.56,
+      "status": "正常",
+      "opened_date": "2021-11-28"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T99112C02931B",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-09-22",
+      "amount": 428.82,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB9237F0D2C00",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-09-22",
+      "amount": 113.99,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T60C85040FB74",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-09-24",
+      "amount": 492.81,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T6CB5DFB9689D",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-09-30",
+      "amount": 387.09,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T9815CA75C812",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-01",
+      "amount": 14309.78,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8875524F44F6",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-03",
+      "amount": 357.8,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T25B099F516AA",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-05",
+      "amount": 476.56,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T914F089D7A1A",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-06",
+      "amount": 322.1,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T0278F69E5F16",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-12",
+      "amount": 135.1,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TAE84D08A8522",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-15",
+      "amount": 348.02,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某电影院",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB16D2CDBA416",
+      "account_id": "ACC0470B3B8DD71",
+      "date": "2026-10-17",
+      "amount": 318.32,
+      "transaction_type": "expense",
+      "category": "通讯",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成一个普通银行用户，含用户信息、账户、初始余额，以及工资收入和日常消费流水。",
+    "expected": {
+      "has_user": true,
+      "has_account": true,
+      "has_income": true,
+      "has_expense": true,
+      "balance_non_negative": true
+    }
+  }
+}

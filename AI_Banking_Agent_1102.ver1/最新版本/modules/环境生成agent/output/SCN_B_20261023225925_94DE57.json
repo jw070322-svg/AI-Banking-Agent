@@ -1,0 +1,150 @@
+{
+  "scenario_id": "SCN_B_20261023225925_94DE57",
+  "scenario_name": "购物支出增加",
+  "scenario_type": "B",
+  "created_at": "2026-10-23T22:59:25",
+  "user": {
+    "user_id": "UFF5EFF50BDE4",
+    "name": "陈磊",
+    "gender": "男",
+    "id_number": "330102197811108618",
+    "phone": "19325288095",
+    "email": "uff5eff50bde4@example.com",
+    "address": "成都市武侯区",
+    "occupation": "软件工程师",
+    "monthly_income": 9901.75,
+    "registration_date": "2023-12-15"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC82702369B584",
+      "user_id": "UFF5EFF50BDE4",
+      "account_type": "储蓄卡",
+      "account_number": "6222430391171822782",
+      "currency": "CNY",
+      "initial_balance": 13758.53,
+      "balance": 16782.36,
+      "status": "正常",
+      "opened_date": "2024-07-03"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "TFF01988C24C9",
+      "account_id": "ACC82702369B584",
+      "date": "2026-09-13",
+      "amount": 327.85,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "华联超市",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T405C877409A9",
+      "account_id": "ACC82702369B584",
+      "date": "2026-09-15",
+      "amount": 226.45,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "宜家家居",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF143DC5C0EED",
+      "account_id": "ACC82702369B584",
+      "date": "2026-09-18",
+      "amount": 1932.46,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T628010435A10",
+      "account_id": "ACC82702369B584",
+      "date": "2026-09-20",
+      "amount": 247.03,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "天天购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB881AE270DA7",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-01",
+      "amount": 838.77,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "天天购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T287D6F4CC69A",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-01",
+      "amount": 9338.63,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TB8DBF42D47CC",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-03",
+      "amount": 47.22,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "午餐",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TE281AE849217",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-04",
+      "amount": 1374.57,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "华联超市",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T444EC0398710",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-18",
+      "amount": 1076.29,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "宜家家居",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T5715A4161293",
+      "account_id": "ACC82702369B584",
+      "date": "2026-10-25",
+      "amount": 244.16,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "购物消费",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成连续两个月的购物消费，第二个月购物支出比第一个月增加指定金额（校验时按实际流水重算）。",
+    "expected": {
+      "two_consecutive_months": true,
+      "shopping_increase": 800.0
+    }
+  }
+}

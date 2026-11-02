@@ -1,0 +1,112 @@
+{
+  "time": "2026-11-01T09:50:37.828612+08:00",
+  "application": "F:\\AI_Banking\\Banking_1101_安全自评增强版\\最新版本",
+  "checks": {
+    "health": {
+      "ready": true,
+      "app_version": "AI_Banking_Agent_1101_Guardian_hardened_local_demo"
+    },
+    "homepage": {
+      "http": 200,
+      "bytes": 1165,
+      "x_frame_options": "DENY"
+    },
+    "guardian_status": {
+      "without_cookie": 401,
+      "before": 0,
+      "after_snapshot": 1,
+      "status": {
+        "mode": "local_demo",
+        "gateway": "HardenedToolGateway",
+        "business_dispatches": 1,
+        "separate_bank_ledger": false,
+        "real_identity_verified": false
+      }
+    },
+    "transfer": {
+      "before_minor": 3864000,
+      "after_minor": 3834000,
+      "amount_minor": 30000,
+      "same_receipt_on_retry": true,
+      "receipt_status": "succeeded"
+    },
+    "assistant": {
+      "error": null
+    },
+    "injection": {
+      "error": "SECURITY_REVIEW_REQUIRED",
+      "balance_unchanged": true
+    },
+    "revoked_read_replay": {
+      "new_request_error": "SCOPE_DENIED",
+      "cached_request_error": null,
+      "identical_response": true,
+      "dispatch_count_before": 11,
+      "dispatch_count_after": 11
+    }
+  },
+  "url": "http://127.0.0.1:8808",
+  "status": "completed",
+  "windows_batch": {
+    "launcher": "启动最新安全自评版.bat",
+    "ready": true,
+    "version": "AI_Banking_Agent_1101_Guardian_hardened_local_demo"
+  },
+  "browser": {
+    "observed": [
+      "#/overview 显示演示账户可用资金38,640元、收支及理财入口",
+      "#/tasks 显示任务状态筛选和暂无活动记录",
+      "/api/security/status 浏览器会话计数3，标识HardenedToolGateway"
+    ]
+  },
+  "current_security_verify": {
+    "run": 41,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "deliver": {
+    "returncode": 1,
+    "exception": "AssertionError",
+    "missing_at_original_path": [
+      "modules/环境生成agent/runtime/idempotency.sqlite3",
+      "先看这里_最新版本.md",
+      "启动产品行情版.bat"
+    ],
+    "new_report_generated": false
+  },
+  "delivered_baseline_crosscheck": {
+    "baseline_total": 907,
+    "original_path_and_hash_match": 904,
+    "relocated_and_hash_match": [
+      {
+        "from": "先看这里_最新版本.md",
+        "to": "history_version/launchers_before_1101/先看这里_最新版本.md"
+      },
+      {
+        "from": "启动产品行情版.bat",
+        "to": "history_version/launchers_before_1101/启动产品行情版.bat"
+      }
+    ],
+    "deliberately_omitted": [
+      "modules/环境生成agent/runtime/idempotency.sqlite3"
+    ],
+    "unexpected_or_hash_mismatch": []
+  },
+  "inherited_reports_only": {
+    "backend_passed": 293,
+    "frontend_passed": 100,
+    "rerun_in_this_smoke": false
+  },
+  "boundaries": [
+    "本次模拟账本与用户账本隔离",
+    "本次未验证真实身份/MFA、银行、模型、第三方行情准确性或105题人工评分",
+    "业务源码未改动"
+  ],
+  "documentation": {
+    "docx": "AI_Banking_Agent_技术设计与实现报告_1101安全自评增强版.docx",
+    "markdown": "技术设计与复测说明_1101.md",
+    "word_pages_checked": 5,
+    "version": "1101.security-enhanced.1"
+  }
+}

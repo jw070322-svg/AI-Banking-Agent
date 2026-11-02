@@ -1,0 +1,309 @@
+{
+  "purpose": "Pre-existing implementation preserved during macro research addition",
+  "files": [
+    {
+      "path": "first_agent/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/analysis_bridge.py",
+      "sha256": "7776a3164ad8cd375abebb47cc373e395c94e14c62bb34d1b5208274b2d23264"
+    },
+    {
+      "path": "first_agent/scenarios.py",
+      "sha256": "38a3e9e37cbef95a956c2da58c197fde3c5fb61bfd07f19bac7a8cbfb5f1cff3"
+    },
+    {
+      "path": "first_agent/security.py",
+      "sha256": "b0cf902ac8ee7f0b4f38c6434378e32927f80d7d6813ff28073f13eec7291cf5"
+    },
+    {
+      "path": "first_agent/server.py",
+      "sha256": "105c5e8ce6ca3061f456d69425f0aa00b666a9accc8f5bec5b67ffc2ef2d15a8"
+    },
+    {
+      "path": "first_agent/service.py",
+      "sha256": "2679cd78f7e8cc98164383e55a73c79be70735543cb8d6d909650d64ec557a72"
+    },
+    {
+      "path": "first_agent/vendor/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/eva/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/eva/data.py",
+      "sha256": "4d6844e1ee3f630651a6110a8fbde815332d136a83bbcb1642b5eb9630bd9a48"
+    },
+    {
+      "path": "first_agent/vendor/eva/models.py",
+      "sha256": "b1a16894e9c9fed4dda2c0fdaf67407e4348590cf8a04afd54d51ddf5425da7d"
+    },
+    {
+      "path": "first_agent/vendor/eva/tools.py",
+      "sha256": "744d9f5941a8c9a5c04cf6903d0af2bcb54126a0b4c189c80370ac499d4147c0"
+    },
+    {
+      "path": "first_agent/vendor/eva/utils.py",
+      "sha256": "ff0261d00cf0d83c8dc91656254d2da106afece55e4befd64e6ea35843af151b"
+    },
+    {
+      "path": "first_agent/vendor/eva/risk/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/eva/risk/auth.py",
+      "sha256": "576fd7ca9e4612b849a5f0691645e44ebcac2733e5ff7ac67357227aecaf3c2e"
+    },
+    {
+      "path": "first_agent/vendor/eva/risk/compliance.py",
+      "sha256": "0ac894503d0c99745dd024ddf149759845352d098034bac8de420e1e5d234040"
+    },
+    {
+      "path": "first_agent/vendor/finance/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/finance/data_driven.py",
+      "sha256": "27f955d37e25d57839a4ba6a496ed766fe7765a121dae82348c49a6f42cdc85e"
+    },
+    {
+      "path": "first_agent/vendor/finance/matching_core.py",
+      "sha256": "b648f1a44314f13c57d2bccdfec2b7fb5e420b483e876ed1a47cd97a21b35d99"
+    },
+    {
+      "path": "first_agent/vendor/finance/rule_driven.py",
+      "sha256": "887207836324921c939e5d833b8b7b11e01a316b422ff89a18dcfbceb4e4f35c"
+    },
+    {
+      "path": "first_agent/vendor/rag/__init__.py",
+      "sha256": "7943e2551d18196328bc08986f5cfe96db3551dffc3489318a2ca4c274ad8a0d"
+    },
+    {
+      "path": "first_agent/vendor/rag/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "first_agent/vendor/rag/cli.py",
+      "sha256": "ffc46b21030df8f0fb12300b3f6283f1babd6886979bccab1c3da50186c2c365"
+    },
+    {
+      "path": "first_agent/vendor/rag/corpus.py",
+      "sha256": "1d5c235489c73b2e39857928235b2e3e4d91a18f5c03e7062e5af2b8113abaeb"
+    },
+    {
+      "path": "first_agent/vendor/rag/providers.py",
+      "sha256": "a4ef6f5be80fac513ae07589380c590a824eb8a759d0189aacd2191f0dc02bb6"
+    },
+    {
+      "path": "first_agent/vendor/rag/retrieval.py",
+      "sha256": "f559155bec509c5f1d97bf7a878b4b445b33fdaf125e255c5c8819e53c24de9f"
+    },
+    {
+      "path": "first_agent/vendor/rag/service.py",
+      "sha256": "62868820ab6d35c3affa095588259bbcb7a03e72156b767fcb28ac708d194cd3"
+    },
+    {
+      "path": "first_agent/vendor/scenario/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/scenario/base_validator.py",
+      "sha256": "3f643ed374f1694cf3dc30165f6cce662a12ee1ea6e223d7f0acd51e17e125f7"
+    },
+    {
+      "path": "first_agent/vendor/scenario/generator.py",
+      "sha256": "88aed19b8fad89fdcef2f41d0677803eafadb95646c3ce5fa0f12bdbdb9b5e2a"
+    },
+    {
+      "path": "first_agent/vendor/security/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "first_agent/vendor/security/gate.py",
+      "sha256": "f677552a5b976000052c92be74e56a50606cf40489719c77277f8e7609ae293b"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/backtest_budget.py",
+      "sha256": "d08942f6974f9b4ac49a139a5f2a708945cb011e913b1d7478906c8b6cce6123"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/bridge.py",
+      "sha256": "6156901bdb6f16a676951ca4ba5dadb5cb7662e99817697410743ade16237fb3"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/cli.py",
+      "sha256": "bbc1895d09a5d8eec9b5bbb1654284e0eda3021a8e3e846621651af552a137a9"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/make_fixtures.py",
+      "sha256": "5079a93f740170169d59dc7c514ca2a2a736556fedacfd583bbd95f0ea5007c3"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/organizer.py",
+      "sha256": "e57dc1ae464c3f09dc91b6bafe2f310d6437af89ad7ec2366a8d7ac8f370af5f"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/perturbations.py",
+      "sha256": "ca45a6f30255fee13e7d49adfe1ebd0ed9e562a23c595e8c644949d8bd83e194"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/pipeline.py",
+      "sha256": "df85b8b415259a715a8961eb2057c3765c47ab1659166c49bb0af19eb75c27d0"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tools.py",
+      "sha256": "7efad620e7045a25339ef973b5842c45e218da9c78c1fad29c24baccbda4079a"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/__init__.py",
+      "sha256": "e9ecac34ec310362736d8ec0dd10e41cf96d9306814f39ab1f2f8e974c905930"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/aggregate.py",
+      "sha256": "40be64a189140662dc944eec6c9f517375cb966fff851688b2fc938f70177d41"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/anomaly.py",
+      "sha256": "1cf6823017dadaf8be7250be3446eef036b13810e88fdf9b14b8af18aa2c2a49"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/budget.py",
+      "sha256": "c7bae1e7dbba9ae7b98b184931e974f07db8085503738be8ed59df5085af67c8"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/cashflow.py",
+      "sha256": "79fa8539736411bb5a567750b4bee62ff8bdf85efbcddf4cecdcf47795cf4382"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/data.py",
+      "sha256": "366a2dd4958cf8a554bbe1bcf1fcee95ded0b641de393994d44d95f648a33b8a"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/evaluate.py",
+      "sha256": "2cca427e2cea5d2dc83695c8399d5eb0d5808e9b2087eabdff0dd424ee7a47a4"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/liquidity.py",
+      "sha256": "edaf78d8c42ff6aa2b133656ccef50b4d6b32b5b3d65bb5c959c01386bf21a77"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/analysis/loader.py",
+      "sha256": "6178e1af16a2b7c686b165ecc5c4e8688b3abb356adbe3e99d2c2b0f67313783"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_aggregate.py",
+      "sha256": "8750fe0a4c580ba6ab97bee2cbb43ba2cd01854119704edf984b20cee50875bf"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_anomaly.py",
+      "sha256": "3c8bd6e213c852f967b73c2e844b1f7bc4f4d4c79bcf75b27cfb69967bb0679e"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_bridge.py",
+      "sha256": "1e5d3b8c9888354a1eac89a91b593b617afec303c0618e1570b50c7400138136"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_budget_backtest.py",
+      "sha256": "b1321b3c6286f52d424997b7c6e31ee7191055d564d566e4b276eebc9aa1cbcb"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_budget.py",
+      "sha256": "dd4619afab55ff29916eadafdb48dfae592e634d3b26db8f94aecb83c1da940c"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_cashflow.py",
+      "sha256": "53ca9827386709bd1e7de1412d06f3a0dfeec59950383198a6382f94425c5a81"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_evaluation.py",
+      "sha256": "53a6331f7ac509ff5b840315f2788a391f7b89e8647f27e9019e8bf489b3f1ab"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_liquidity.py",
+      "sha256": "e26963fc71b8d0fa7d9dbf109b5e621c9ef97e45961776172ac510a3db0fc20b"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_organizer.py",
+      "sha256": "8bf4db3d4b89cdc418ec14dd1041edbb1bf72d673b51399684f5768ca5192203"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_perturbations.py",
+      "sha256": "986c73f2165e15cb1cad8c8d33af2b2b1d222f36099622ebc99c28e31e653dfc"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_pipeline.py",
+      "sha256": "33e244e0e5a69a508e2964fbe899fc2998afac006587ea79fb594fa5f6e41268"
+    },
+    {
+      "path": "modules/主任务_金融分析与量化/tests/test_tools.py",
+      "sha256": "fd10ecf5339181552cc0a0781f4be2e744c5419da859e367759daea5036e03c6"
+    },
+    {
+      "path": "modules/环境生成agent/banking_domain.py",
+      "sha256": "73d9cf87192f29fd6c93e72e6085370e4d456f4204df5cca7a53eaef5e6c908a"
+    },
+    {
+      "path": "modules/环境生成agent/main_backup.py",
+      "sha256": "f0ef3d01efa087bf4bf7435530a9d56490a9a80e86091933069490cdba96db01"
+    },
+    {
+      "path": "modules/环境生成agent/main.py",
+      "sha256": "1a41629aa6d0160d43cdc97f080d24c7de93e8de6ed8bc6b9f4cfcd78bf86689"
+    },
+    {
+      "path": "modules/环境生成agent/scenario_adapter.py",
+      "sha256": "840a7b07223be60cf4aca299dbaf1483aa9f293909e46bc391ad5c9225d67f05"
+    },
+    {
+      "path": "modules/环境生成agent/scenario_server.py",
+      "sha256": "5bb1d214012f5660d5c9fc3cdcdbd103884fa89c105a255b2892324d5fc20733"
+    },
+    {
+      "path": "modules/环境生成agent/test_adapter.py",
+      "sha256": "a18675457b956a4bb3841267fc257f210c86fdcfa54698aad50c0cc935953608"
+    },
+    {
+      "path": "modules/环境生成agent/test_main.py",
+      "sha256": "db0f3eebb21604baa88d3c1a6d7eb174ab96d736027d67341ff2cd3f83d30238"
+    },
+    {
+      "path": "modules/环境生成agent/test_validator.py",
+      "sha256": "86765e99117f3ca00f7e852aa86006984bbd987ff05697287071c2116de2c619"
+    },
+    {
+      "path": "modules/环境生成agent/validator.py",
+      "sha256": "cdea6b4ef463c4a2fdc983f79eb2a51503cb0f960c6f199320aadd77b3d55742"
+    },
+    {
+      "path": "web/agent-panel.js",
+      "sha256": "f31e74304d8ff365aad62124c452252598449e2ce154e78a02467db99aef7014"
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "f2046e3be01a3fa264c3cd79b2d40719e7b5c185ef296b517a473dd1de4a2ef8"
+    },
+    {
+      "path": "web/journey-engine.js",
+      "sha256": "27e2c29ab3a79965a5e2069f47b21b1837482d5f2352d1070acdf161317b1ff4"
+    },
+    {
+      "path": "web/journey-workspace.css",
+      "sha256": "dd232b8baadcbbbb78e938f757c07978903cd3e9c3cad34dfe2a73ebefd926d0"
+    },
+    {
+      "path": "web/journey-workspace.js",
+      "sha256": "066abbabec0472a86d68748a4e22e551c30fe4e49804ecc41fd4971f1a8dad14"
+    },
+    {
+      "path": "web/server-bridge.js",
+      "sha256": "554291f5d7ed4526967345c9c5bbccfcf08cabb07232bd65ac874869c15de4fd"
+    }
+  ]
+}

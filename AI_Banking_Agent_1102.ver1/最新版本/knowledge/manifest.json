@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "yuki-01",
+      "path": "01-现金流.md",
+      "title": "现金流",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-6fe87830da12",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/01-%CF%84%C3%84%E2%96%91%CE%98%C3%A7%C3%A6%C2%B5%E2%95%A1%C3%BC.md",
+      "sha256": "6fe87830da12a7d7f7d97e4c8d6e0fadeb30df1078c7ce1677ca3450e9fc4e5d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-02",
+      "path": "02-储蓄率.md",
+      "title": "储蓄率",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-4c47eb2fbfcc",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/02-%CF%83%C3%A9%C2%BF%CE%A6%C3%B4%C3%A4%CF%84%C3%84%C3%A7.md",
+      "sha256": "4c47eb2fbfcc38972f7196621bec1da4be6102aa656d286f4c1aaa99a5927be9",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-03",
+      "path": "03-流动性.md",
+      "title": "流动性",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-ee49ea4511d6",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/03-%C2%B5%E2%95%A1%C3%BC%CF%83%C3%A8%C2%BF%C2%B5%C3%87%C2%BA.md",
+      "sha256": "ee49ea4511d6d502070f7259ee817202f746923c8ff416398d4322b6e498ff29",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-04",
+      "path": "04-债务比率.md",
+      "title": "债务比率",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-67daf7b142cc",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/04-%CF%83%C3%87%E2%95%91%CF%83%C3%A8%C3%AD%C2%B5%C2%BB%C3%B6%CF%84%C3%84%C3%A7.md",
+      "sha256": "67daf7b142ccb22f1560c78dba137f68fc8844fc04d5e6d76c4d219dda685951",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-05",
+      "path": "05-风险管理.md",
+      "title": "风险管理",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-bedfd82a94fb",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/05-%CE%98%C3%BA%C3%84%CE%98%C3%96%E2%8C%90%CF%84%C2%AB%C3%AD%CF%84%C3%89%C3%A5.md",
+      "sha256": "bedfd82a94fbbdf232f85ca887392662b43160af01b126ceaecfe3422cae69bb",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-06",
+      "path": "06-合规边界.md",
+      "title": "合规边界",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-cbd5a374060c",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/06-%CF%83%C3%89%C3%AA%CE%A6%C2%BA%C3%A4%CE%A6%E2%95%9B%E2%95%A3%CF%84%C3%B2%C3%AE.md",
+      "sha256": "cbd5a374060c0fa6ec06a51ef25931342be7a647ba2004f59435eabb531ae72d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-07",
+      "path": "07-订阅管理.md",
+      "title": "订阅管理",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-15848d84a89f",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/07-%CE%A6%C2%AB%C3%B3%CE%98%C3%BF%C3%A0%CF%84%C2%AB%C3%AD%CF%84%C3%89%C3%A5.md",
+      "sha256": "15848d84a89f800e4084b99ece4fc6cb66ca203bfd95f429dcd403fa72591db5",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "yuki-08",
+      "path": "08-旅行预算.md",
+      "title": "旅行预算",
+      "kind": "educational_demo",
+      "revision": "yuki-2026-10-22-e97ce5bf453e",
+      "source_uri": "file:///F:/AI_Banking/Teammate_output/YUKI%20ouput/1022/AI-Banking-agent.zip#AI-Banking-agent/data/knowledge/08-%C2%B5%C3%B9%C3%A0%C2%B5%E2%95%95%E2%95%95%CE%98%C3%B3%C3%A4%CF%84%C2%AB%C3%B9.md",
+      "sha256": "e97ce5bf453e1b10c0da4fbe26f1eac14c044fc9717c87d116397d06073f279d",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-01",
+      "path": "finance-01.md",
+      "title": "银行与现金流金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "d30ee83870d6fa9dd10a6ff765587ac8b7658bc83f5091cd37ff4383e89119d5",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-02",
+      "path": "finance-02.md",
+      "title": "基金与理财金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml",
+      "sha256": "b227b31a78d15728c93f9afcd4dd86b77ac166fe0b4c62ad52645b930a17f75f",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-03",
+      "path": "finance-03.md",
+      "title": "风险与组合金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml",
+      "sha256": "651ddf53227f4be610cb5f75784e1a10e776b262b3b17462b50ae4d3507259b0",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-04",
+      "path": "finance-04.md",
+      "title": "收益与估值金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "5b4b913ef45bca8c114de5ac515a765ac61dfa0c6d5f326e54dbeafe542fd648",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-05",
+      "path": "finance-05.md",
+      "title": "股票与指数金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "e9357b0bc4ea6dfb98e5cb41b6ae75b5fd9a661ef3b64de583b8fb6deee9a835",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-06",
+      "path": "finance-06.md",
+      "title": "债券金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "sha256": "dc29c0dd0ec90744937012c54ce96dbcd36ebf84a31f7f33dfb81a5cf81a4ca9",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-07",
+      "path": "finance-07.md",
+      "title": "贷款与信用金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "ac8b1d4e96ebd6ef3e41d861f7b8a9828c8ee3a2a27e2739ce7b799a16f51b33",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-08",
+      "path": "finance-08.md",
+      "title": "宏观与市场金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "9aaccf62c5138ba076dd41881bb9a9b6d6b3435292e0334d69de950535eb2045",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-09",
+      "path": "finance-09.md",
+      "title": "保险金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "f25ae466573ce5d438d151b72218fe6f0edc970246e5e3df9e1efe9fc4d63716",
+      "valid_from": null,
+      "valid_until": null
+    },
+    {
+      "id": "finance-2027-10",
+      "path": "finance-10.md",
+      "title": "支付与账户金融术语",
+      "kind": "educational_demo",
+      "revision": "finance-glossary-2026-10-27-v1",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf",
+      "sha256": "087e2095523b382a49b11801fd03626dbd46bb6ca354eb636a1587ae89c4a17c",
+      "valid_from": null,
+      "valid_until": null
+    }
+  ]
+}

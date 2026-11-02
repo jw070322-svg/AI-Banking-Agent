@@ -1,0 +1,117 @@
+[
+  {
+    "samples": [
+      {
+        "stage": "initial_inventory",
+        "primary_remaining": 93,
+        "secondary_remaining": 21
+      },
+      {
+        "stage": "interface_inspection",
+        "primary_remaining": 89,
+        "secondary_remaining": 20
+      },
+      {
+        "stage": "core_implementation",
+        "primary_remaining": 84,
+        "secondary_remaining": 19
+      },
+      {
+        "stage": "integration_tests",
+        "primary_remaining": 79,
+        "secondary_remaining": 18
+      },
+      {
+        "stage": "handoff_preparation",
+        "primary_remaining": 69,
+        "secondary_remaining": 17
+      },
+      {
+        "observed_at_utc": "2026-10-22 09:11:14 UTC",
+        "stage": "delivery_documentation",
+        "windows": [
+          {
+            "id": "codex",
+            "primary_remaining": 63,
+            "secondary_remaining": 16
+          }
+        ],
+        "threshold_percent": 10,
+        "stop": false
+      },
+      {
+        "observed_at_utc": "2026-10-22 09:21:10 UTC",
+        "stage": "final_verification",
+        "windows": [
+          {
+            "id": "codex",
+            "primary_remaining": 50,
+            "secondary_remaining": 14
+          }
+        ],
+        "threshold_percent": 10,
+        "stop": false
+      },
+      {
+        "observed_at_utc": "2026-10-22 12:30:11 UTC",
+        "stage": "branch_documentation_verification",
+        "windows": [
+          {
+            "id": "codex",
+            "window": "primary",
+            "window_duration_mins": 300,
+            "remaining_percent": 59,
+            "resets_at": 1792689323
+          }
+        ],
+        "monitor_window_minutes": 300,
+        "ignore_weekly": true,
+        "threshold_percent": 10,
+        "stop": false
+      }
+    ],
+    "sampling": "At major action boundaries using live account usage tool; earlier sample timestamps were not recorded.",
+    "conclusion": "all_observed_windows_at_or_above_10_percent",
+    "current_policy": {
+      "window_minutes": 300,
+      "threshold_percent": 10,
+      "ignore_weekly": true
+    }
+  },
+  {
+    "observed_at_utc": "2026-10-23T07:22:12.144197+00:00",
+    "stage": "secondasgent_delivery",
+    "windows": [
+      {
+        "id": "codex",
+        "window": "primary",
+        "window_duration_mins": 300,
+        "remaining_percent": 17,
+        "resets_at": 1792756486
+      }
+    ],
+    "monitor_window_minutes": 300,
+    "ignore_weekly": true,
+    "threshold_percent": 10,
+    "stop": false,
+    "monitor_status": "observed"
+  },
+  {
+    "observed_at_utc": "2026-10-23T07:25:53.115945+00:00",
+    "stage": "delivery_verified",
+    "windows": [
+      {
+        "id": "codex",
+        "window": "primary",
+        "window_duration_mins": 300,
+        "remaining_percent": 10,
+        "resets_at": 1792756486
+      }
+    ],
+    "monitor_window_minutes": 300,
+    "ignore_weekly": true,
+    "threshold_percent": 10,
+    "stop": false,
+    "monitor_status": "observed"
+  }
+]

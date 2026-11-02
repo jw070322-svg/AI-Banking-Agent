@@ -1,0 +1,15 @@
+{
+  "artifact_status": "design_only_not_deployed",
+  "validation_passed": true,
+  "markdown_json_prompt_equal": true,
+  "reasoning_precedes_recommendations": true,
+  "risk_count": 8,
+  "control_count": 10,
+  "question_count": 13,
+  "proposed_interface_count": 6,
+  "implementation_step_count": 7,
+  "planned_acceptance_count": 12,
+  "security_acceptance_executed": false,
+  "markdown_sha256": "739ac8f2cb277a4122f87481c1ae8571ea0dd0940af04ba6b1d44e15167ce4c8",
+  "json_sha256": "de114551154c3f7cdf1180954a9b21d896a9c1da1f7e66d6342fa78c33f82f7f"
+}

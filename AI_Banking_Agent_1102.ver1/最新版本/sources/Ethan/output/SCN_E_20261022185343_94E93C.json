@@ -1,0 +1,242 @@
+{
+  "scenario_id": "SCN_E_20261022185343_94E93C",
+  "scenario_name": "周期性订阅",
+  "scenario_type": "E",
+  "created_at": "2026-10-22T18:53:43",
+  "user": {
+    "user_id": "U294F852DC52C",
+    "name": "刘娜",
+    "gender": "女",
+    "id_number": "110101199103262012",
+    "phone": "15515787260",
+    "email": "u294f852dc52c@example.com",
+    "address": "成都市武侯区",
+    "occupation": "市场专员",
+    "monthly_income": 10967.27,
+    "registration_date": "2024-08-09"
+  },
+  "accounts": [
+    {
+      "account_id": "ACCCB32B50A18B9",
+      "user_id": "U294F852DC52C",
+      "account_type": "储蓄卡",
+      "account_number": "6222387264955224843",
+      "currency": "CNY",
+      "initial_balance": 5574.31,
+      "balance": 130507.4,
+      "status": "正常",
+      "opened_date": "2023-06-19"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T35FA3DEFA923",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-01",
+      "amount": 19836.43,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T4586E7734477",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T1565CBD2AB87",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-01",
+      "amount": 13189.94,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD681ED2B6863",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T00774D6C4992",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-01",
+      "amount": 19353.01,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8D1EDFF17422",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T8725E1AFC218",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-01",
+      "amount": 16388.61,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T676F563FCE9D",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T1AB4C43F23CE",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-01",
+      "amount": 17983.04,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T466B79CD7CB6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T30F0E6F87F65",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-01",
+      "amount": 17360.63,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T72DE04328254",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T353061D396C3",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-01",
+      "amount": 13002.07,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T194FFD3D7FA2",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "TE04972C76E2F",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-01",
+      "amount": 8059.36,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TF9BCA35891D6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "description": "新闻会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "新闻会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成多个月份的固定周期扣款，保留商户、金额、日期与订阅类别信息。",
+    "expected": {
+      "multiple_months": true,
+      "fixed_amount": true,
+      "fixed_merchant": true,
+      "has_subscription_category": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "ui_source_unchanged": true,
+  "input_files": 952,
+  "modified_input_files": [
+    "development_log_security_1101.jsonl",
+    "first_agent/service.py",
+    "HANDOFF_SECURITY_1101.json",
+    "reports/security-integration-1101/http-tests.json",
+    "reports/security-integration-1101/http-tests.txt",
+    "reports/security-integration-1101/inherited-regression.json",
+    "reports/security-integration-1101/inherited-regression.txt",
+    "reports/security-integration-1101/preservation.json",
+    "reports/security-integration-1101/summary.json",
+    "reports/security-integration-1101/test-evidence.csv",
+    "security_integration/deliver.py",
+    "security_integration/guardian.py",
+    "security_integration/package.py",
+    "security_integration/regression.py",
+    "security_integration/runtime.py",
+    "security_integration/test_chain.py",
+    "security_integration/verify.py",
+    "安全自评报告_1101.html",
+    "安全自评报告_1101.md",
+    "技术设计与复测说明_1101.md"
+  ],
+  "missing_input_files": [],
+  "new_files": [
+    "生成安全自评.bat",
+    "G01_D01修复与复测说明.md",
+    "生成安全自评.command",
+    "first_agent/replay_access.py",
+    "security_integration/test_fixes.py",
+    "security_integration/publication.py",
+    "security_integration/self_assess.py",
+    "security_integration/evidence.py",
+    "reports/g01-d01-fix/generation-status.json",
+    "reports/g01-d01-fix/authorized-changes.json",
+    "reports/g01-d01-fix/input-files.json"
+  ]
+}

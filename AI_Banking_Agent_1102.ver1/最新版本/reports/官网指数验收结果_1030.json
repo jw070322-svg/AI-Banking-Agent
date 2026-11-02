@@ -1,0 +1,35 @@
+{
+  "completed_at": "2026-10-30T16:08:10.825873+08:00",
+  "automated_tests": {
+    "total": 42,
+    "passed": 42,
+    "command": "python -X utf8 -B -m unittest live_indices.test_provider live_indices.test_runtime tests.test_extensions tests.test_latest_frontend -v",
+    "runtime_resource_cleanup_recheck": {
+      "total": 5,
+      "passed": 5
+    }
+  },
+  "javascript_syntax": "node --check live_indices/cards.js passed",
+  "browser": {
+    "url": "http://127.0.0.1:8806/",
+    "cards": 9,
+    "widths": [
+      320,
+      1440
+    ],
+    "horizontal_overflow": false,
+    "console_errors": [],
+    "source_details_expand": true
+  },
+  "preserved_inherited_files": 801,
+  "changed_inherited_files": [],
+  "live_public_success": {
+    "first_probe": 7,
+    "browser_round": 6
+  },
+  "limitations": [
+    "Wind official success remains unverified due TLS certificate mismatch",
+    "Public latest quotes may be delayed; no 20-day history fabricated",
+    "Product ranking and macro remain inherited historical calculations"
+  ]
+}

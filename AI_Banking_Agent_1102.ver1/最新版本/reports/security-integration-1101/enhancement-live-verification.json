@@ -1,0 +1,10 @@
+{
+  "http_health": 200,
+  "directory_redacted": true,
+  "frame_protection": "DENY",
+  "guardian_log_owner_pseudonymized": true,
+  "session_dispatch_count_matches": true,
+  "browser_recheck": "automation_connection_unavailable; no new screenshots claimed",
+  "bank_preview_balance_minor": 3834000,
+  "app_version": "AI_Banking_Agent_1101_Guardian_hardened_local_demo"
+}

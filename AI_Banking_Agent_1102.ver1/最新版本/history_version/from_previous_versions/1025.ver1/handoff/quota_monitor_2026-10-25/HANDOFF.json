@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "title": "本地 Agent 交接：额度监测与停工规则",
+  "generated_at": "2026-10-25T21:23:22+08:00",
+  "generated_at_utc": "2026-10-25T13:23:22Z",
+  "timezone": "Asia/Shanghai",
+  "project": {
+    "name": "Third_Agent_1026ver.",
+    "workspace": "F:\\AI_Banking\\Third_Agent_1026ver",
+    "original_project": "F:\\AI_Banking\\Third_Agent",
+    "version": "Third_Agent_1026ver.",
+    "default_port": 8769,
+    "mode": "local simulated banking prototype"
+  },
+  "user_request": {
+    "monitor": ["5h quota", "weekly quota"],
+    "stop_conditions": [
+      {"window_minutes": 300, "remaining_percent_below": 10},
+      {"window_minutes": 10080, "remaining_percent_below": 5}
+    ],
+    "stop_comparison": "strictly_less_than",
+    "deliverables": ["contextual local agent handoff in Markdown", "contextual local agent handoff in JSON"]
+  },
+  "quota_snapshot": {
+    "checked_at": "2026-10-25T21:23:22+08:00",
+    "source": "Codex account usage limits",
+    "windows": [
+      {"name": "5h", "window_duration_minutes": 300, "used_percent": 0, "remaining_percent": 100, "stop_below_percent": 10},
+      {"name": "weekly", "window_duration_minutes": 10080, "used_percent": 15, "remaining_percent": 85, "stop_below_percent": 5}
+    ],
+    "warning": "Snapshot only; re-read live quota before and after each task."
+  },
+  "monitoring": {
+    "automation_type": "heartbeat on current Codex thread",
+    "requested_interval_minutes": 5,
+    "also_check_before_and_after_each_task": true,
+    "action_when_threshold_crossed": "Stop new work immediately; only record status and remaining items and notify the user.",
+    "action_when_quota_unavailable": "Mark quota unknown, pause new nonessential work, and notify the user.",
+    "limitations": [
+      "Scheduled checks may be delayed and can queue while the current thread is busy; this is not strict real-time monitoring.",
+      "The automation only wakes the current thread and cannot forcibly stop work already running in other threads."
+    ]
+  },
+  "project_context": {
+    "status": "Initial fix and verification complete; later takeover smoke check recorded.",
+    "important_files": [
+      "README.md",
+      "CHANGES-1026.md",
+      "API-CONTRACT.md",
+      "summary.md",
+      "summary.json",
+      "reports/verification.json",
+      "reports/takeover-smoke.json",
+      "handoff/HANDOFF.md",
+      "handoff/HANDOFF.json"
+    ],
+    "constraints": [
+      "Keep the original Third_Agent project unchanged.",
+      "All banking behavior in this version is simulated; no real bank is connected.",
+      "Review existing project handoff and README before restarting services or changing code.",
+      "Do not treat the quota snapshot or historical test records as live state."
+    ],
+    "next_agent_first_action": "Read this handoff and query current 5h and weekly quota before continuing; stop if either remaining value is below its threshold."
+  },
+  "files": {
+    "markdown": "HANDOFF.md",
+    "json": "HANDOFF.json"
+  }
+}

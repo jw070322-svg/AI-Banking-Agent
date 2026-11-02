@@ -1,0 +1,202 @@
+[
+  {
+    "path": "development_log.jsonl",
+    "change": "added",
+    "sha256": "5f1a9aa73ce9d1f9be27a56a6d38e849a51f93c4c0f04725ed149d988f560856"
+  },
+  {
+    "path": "GOOGLE_CALENDAR.md",
+    "change": "added",
+    "sha256": "310562aa4dc2db18f44124ab393c8edec752d284400224cc07f593521a547d7e"
+  },
+  {
+    "path": "LOCAL_AGENT_HANDOFF.md",
+    "change": "added",
+    "sha256": "03082b1dfa3894e05e2aec18b00a5745f1ff250a5797a90b0bc26b3816a9a335"
+  },
+  {
+    "path": "README.md",
+    "change": "modified",
+    "sha256": "62e3cb70c609471b5a2341f3ca9b7f1f79a47a13841530041fa47f3dcd81b872"
+  },
+  {
+    "path": "run_frontend_checks.py",
+    "change": "modified",
+    "sha256": "8aa8002907860d4f3ff611fd731924a75fca6117bd3f4941891bdaeee821ccc0"
+  },
+  {
+    "path": "start.py",
+    "change": "modified",
+    "sha256": "9fe450df3775e99622642ce2aee56097ba2ab96b3082141e61e465b03ea6fc00"
+  },
+  {
+    "path": "VALIDATION_1026.md",
+    "change": "added",
+    "sha256": "31b988604146fac01ab698f3f795c85933b492ab9eb479f3f24ee4823bffbbae"
+  },
+  {
+    "path": "verify_delivery.py",
+    "change": "modified",
+    "sha256": "f34595cb0338648f715a50edfd696324910f5adc99d9266cb10bb89197eba68e"
+  },
+  {
+    "path": "WIND_DATA_REQUIREMENTS.md",
+    "change": "added",
+    "sha256": "4249d34412764ac68a5a96f813bdc095a9fd0d6ffe59e3fad6bd7909c0eef2ea"
+  },
+  {
+    "path": "先看这里.md",
+    "change": "modified",
+    "sha256": "4562cfc4717a983a7fa9496b0476ff0f1f6917df744519051881b0fe87d28eff"
+  },
+  {
+    "path": "data/wind_sample.xlsx",
+    "change": "added",
+    "sha256": "a9df9ed5f0e4ab586297212c67ab78a27a6b32e62c4cccec7f6909734f9d504e"
+  },
+  {
+    "path": "data/wind_sample.xlsx.inspect.ndjson",
+    "change": "added",
+    "sha256": "bc654954b76904cbbb3858e40021dc504c02d77f07ddc132a5c1a227f1c7dc91"
+  },
+  {
+    "path": "data/wind_template.xlsx",
+    "change": "added",
+    "sha256": "8b81b78414e144a2c6e687f8ec01a56149075442c28d3102c8e65dac46ba6b2f"
+  },
+  {
+    "path": "data/wind_template.xlsx.inspect.ndjson",
+    "change": "added",
+    "sha256": "980f164092732dba9c2a8a12b2121ac838824bb2fb34615d034a6f1861df4cba"
+  },
+  {
+    "path": "first_agent/analysis_bridge.py",
+    "change": "modified",
+    "sha256": "f6b91d7441b82a48cb9a127a92dccef7448cbd3128f4a8affd6fb876e116a9eb"
+  },
+  {
+    "path": "first_agent/calendar_provider.py",
+    "change": "added",
+    "sha256": "0581224a23897018b971d384a082bd079bdabc245312e213887d16cf09741a62"
+  },
+  {
+    "path": "first_agent/extensions.py",
+    "change": "added",
+    "sha256": "bda37dc4748bc648bd96c72cfe26ff38a1a75b9c76b6ca314b56cbd55e90447a"
+  },
+  {
+    "path": "first_agent/market_data.py",
+    "change": "added",
+    "sha256": "d693d771468d1f70f1029214fbff24a5eb4417970f909857618e75f0d59014ff"
+  },
+  {
+    "path": "first_agent/server.py",
+    "change": "modified",
+    "sha256": "589e64b7886ca18ef8ca007bf4223d37ccabf6010c10ee9d9acbbbfbc75c7571"
+  },
+  {
+    "path": "first_agent/service.py",
+    "change": "modified",
+    "sha256": "964011b53c732ed70206641d06f4d6282a363cfabefe3d67f2d6fc900fcdc410"
+  },
+  {
+    "path": "modules/主任务_金融分析与量化/analysis/budget.py",
+    "change": "modified",
+    "sha256": "a1e95e2f49ae433ef6f3fe1ad08e271b013139828ae3bd3a11d71502ffaa33dc"
+  },
+  {
+    "path": "modules/主任务_金融分析与量化/analysis/cashflow.py",
+    "change": "modified",
+    "sha256": "b36dabe3ecac24e9f313f2c998d7b3fd6532fce381d0891ecf3a7896f50cc12d"
+  },
+  {
+    "path": "tests/test_analysis_integration.py",
+    "change": "modified",
+    "sha256": "1c6981ff6cfcd8e81906ca52a60bd9a6e89ebe42630fea0ee73e5d09bc3d27c2"
+  },
+  {
+    "path": "tests/test_extensions.py",
+    "change": "added",
+    "sha256": "5132c0eae026cf1b269615efdf8b2f481864655227cffc6a627dd868bc4e016d"
+  },
+  {
+    "path": "tests/test_latest_frontend.py",
+    "change": "modified",
+    "sha256": "d8aee6663953b44bee2788c3fa4c566d3d308877b3a7ee0216660d104841c6b3"
+  },
+  {
+    "path": "tests/test_third_agent.py",
+    "change": "modified",
+    "sha256": "e05212d660a120fe198df45228a33160966b1db3f99c60a3a62485545e58d9f7"
+  },
+  {
+    "path": "tests_frontend/core.cjs",
+    "change": "modified",
+    "sha256": "a4a512a80f48c6b5677e43fb4aef9540e6105e9da935c1f298759ff1b581e2e9"
+  },
+  {
+    "path": "tests_frontend/new_features.cjs",
+    "change": "added",
+    "sha256": "1b1817a40f590df11d494350db03a4b01a8008cf26460fe19f1f04345b13de7a"
+  },
+  {
+    "path": "tests_frontend/simulation.cjs",
+    "change": "modified",
+    "sha256": "f7e8c1f8fc1e0ffcde18928d03fdd62ce4e37487b1242b80332fef2ccb0e5ae6"
+  },
+  {
+    "path": "tools/build_wind_workbooks.mjs",
+    "change": "added",
+    "sha256": "dde836424fbc7378db3913e1d114f5a892f559e51741ba34d0a6a22cd04db652"
+  },
+  {
+    "path": "tools/integrate_extensions.py",
+    "change": "added",
+    "sha256": "8d26c2ddc223e17e00f29dc2bcdc54d72bcaf0d804908c41314e8abafea66a50"
+  },
+  {
+    "path": "tools/upgrade_engine.py",
+    "change": "added",
+    "sha256": "0ee65d95a6aceb2d0d6caf7ae656bd5b74fae6a77c30eb2a95ad386c7e070276"
+  },
+  {
+    "path": "tools/upgrade_preview.py",
+    "change": "added",
+    "sha256": "512c8a30be9a4f601b71272346c1c1da55441b814f5b507a421417423c14610e"
+  },
+  {
+    "path": "web/backend-client.js",
+    "change": "modified",
+    "sha256": "3b6a5b035c3870243f8d86f612a93f6041fc1204e66a1ae450b58fa36bc04461"
+  },
+  {
+    "path": "web/customer-view.js",
+    "change": "modified",
+    "sha256": "1eb15f5c3df281643effa4f0dbae2cff389b6c38d9e4aa21f279826cef0ecdcd"
+  },
+  {
+    "path": "web/index.html",
+    "change": "modified",
+    "sha256": "a9205f9786a88f2efc8c2bd8409a87f9b3d4e310093ef92895ed3e069f787b6e"
+  },
+  {
+    "path": "web/journey-engine.js",
+    "change": "modified",
+    "sha256": "9d909189fc78e421024317457c3f7f72574c647c54f902f11b77bae8560aa8e1"
+  },
+  {
+    "path": "web/journey-workspace.js",
+    "change": "modified",
+    "sha256": "7540e6fe37cf0a84dbff36f199bd0fbc7b8bf6f8d012ccad513b9dbcd3706602"
+  },
+  {
+    "path": "web/planning-market.css",
+    "change": "added",
+    "sha256": "25536dd837ac465a1476401c4e973d48f398f407bf218f9947341b5d14e7ebc1"
+  },
+  {
+    "path": "web/planning-market.js",
+    "change": "added",
+    "sha256": "a2bf849c00dcaa8754c8f0e138e2997d6040ada97c53c3fe3194c701c7fd6518"
+  }
+]
