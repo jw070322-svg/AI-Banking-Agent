@@ -1,3 +1,18 @@
 @echo off
-chcp 65001 >nul
-call "%~dp0最新版本\启动最新安全自评版.bat"
+setlocal
+cd /d "%~dp0"
+for /d %%D in (*) do if exist "%%D\start_security_integrated.py" (
+    pushd "%%D"
+    where py >nul 2>nul
+    if errorlevel 1 (
+        python -X utf8 start_security_integrated.py
+    ) else (
+        py -3 -X utf8 start_security_integrated.py
+    )
+    popd
+    pause
+    exit /b
+)
+echo Application folder missing. Extract the entire ZIP before starting.
+pause
+exit /b 1
