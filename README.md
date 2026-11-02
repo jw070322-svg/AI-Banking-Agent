@@ -22,3 +22,6 @@
 - [应用 README](AI_Banking_Agent_1102.ver3/最新版本/README.md)、[部署与排障](AI_Banking_Agent_1102.ver3/最新版本/便携版使用说明.md)、[历史资料索引](AI_Banking_Agent_1102.ver3/最新版本/history_version/历史资料索引.md)
 
 [原项目文档归档](README_原项目文档.md)
+
+## 自带本地模型的压缩包文件
+releases/AI_Banking_Agent_1102.ver1.zip 文件大小532,742KB，因此无法上传于赛事提交网站
