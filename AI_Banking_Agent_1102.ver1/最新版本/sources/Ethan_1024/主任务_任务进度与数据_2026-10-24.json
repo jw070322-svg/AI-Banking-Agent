@@ -1,0 +1,233 @@
+{
+  "doc_type": "task_handoff",
+  "version": 1,
+  "updated_at": "2026-10-24",
+  "title": "AI Banking 主任务任务进度与数据交付",
+  "audience": ["推荐模块", "卡管理/风控", "界面", "知识模块", "集成负责人"],
+  "scope": {
+    "included": [
+      "环境生成 Agent",
+      "主任务_金融分析与量化",
+      "数据整理 Agent",
+      "FirstAgent 中的分析/推荐接入",
+      "FirstAgent 分析接入参考文件（analysis_bridge.py + 集成测试）"
+    ],
+    "excluded": [
+      "FirstAgent 全仓维护",
+      "UI 业务规则",
+      "转账/卡管理业务规则",
+      "队友模块源码"
+    ]
+  },
+  "status": {
+    "summary": "主任务代码已完成并通过回归，适合团队合并与联调；真实数据校准尚未进行",
+    "main_task_tests": 115,
+    "environment_agent_tests": 73,
+    "first_agent_tests": 34,
+    "first_agent_verify": "passed",
+    "full_chain_demo_exit_code": 0,
+    "budget_backtest_cases": 1092,
+    "budget_backtest_failures": 0,
+    "budget_backtest_determinism": "84/84 identical",
+    "organizer_tests": 22
+  },
+  "modules": [
+    {
+      "name": "环境生成 Agent",
+      "path": "环境生成agent/",
+      "responsibility": "A~G 场景生成、双层校验、契约适配、SQLite 幂等",
+      "not_responsible": "主 Agent 对话、UI、真实银行"
+    },
+    {
+      "name": "金融分析与量化",
+      "path": "主任务_金融分析与量化/",
+      "responsibility": "账单、异常、订阅、现金流、流动性、预算建议、参数化回测",
+      "not_responsible": "产品目录、申购/赎回执行、卡操作"
+    },
+    {
+      "name": "数据整理 Agent",
+      "path": "主任务_金融分析与量化/organizer.py",
+      "responsibility": "契约场景投影为 analysis / recommendation / cards / display 视图 + 质量清单",
+      "not_responsible": "第二套账本、第二套金额单位、会话转换"
+    },
+    {
+      "name": "FirstAgent 分析/推荐接入",
+      "path": "Desktop/FirstAgent（共享）",
+      "responsibility": "analysis_bridge.py、分析工具接入、推荐金额接入",
+      "not_responsible": "FirstAgent 全仓维护、UI、转账/卡管理业务规则",
+      "reference_files": [
+        "source/FirstAgent_分析接入/analysis_bridge.py",
+        "source/FirstAgent_分析接入/tests/test_analysis_integration.py"
+      ],
+      "note": "交付包只放分析接入参考，运行仍需要 FirstAgent 完整仓库"
+    }
+  ],
+  "logic_chain": [
+    {
+      "step": 1,
+      "name": "环境生成场景",
+      "path": "环境生成agent → scenario_adapter.py",
+      "output": "契约场景（整数分、booked、无 PII）"
+    },
+    {
+      "step": 2,
+      "name": "FirstAgent 会话账本",
+      "path": "first_agent/analysis_bridge.py",
+      "output": "契约场景"
+    },
+    {
+      "step": 3,
+      "name": "数据整理 Agent",
+      "path": "主任务_金融分析与量化/organizer.py",
+      "output": "analysis / recommendation / cards / display + manifest"
+    },
+    {
+      "step": 4,
+      "name": "下游消费",
+      "path": "分析工具 / 推荐模块 / 卡管理 / 界面",
+      "output": "只读结果；ledger_modified=false"
+    }
+  ],
+  "views": {
+    "analysis": {
+      "file": "analysis.scenario.json",
+      "content": "契约场景 + 可用月份 + 缺失区块",
+      "amount_unit": "minor",
+      "consumer": "主任务 tools / pipeline"
+    },
+    "recommendation": {
+      "file": "recommendation.profile.json",
+      "content": "matching_core profile + 金额条件",
+      "amount_unit": "budget_cny is CNY yuan; conditions are minor",
+      "profile_fields": [
+        "user_id",
+        "risk_tolerance",
+        "risk_capacity",
+        "budget_cny",
+        "horizon_days",
+        "max_redemption_days",
+        "objective",
+        "preferred_categories"
+      ],
+      "missing_risk_profile": "risk_tolerance=null；推荐模块返回 needs_profile_completion",
+      "budget_rule": {
+        "with_configured_and_positive_headroom": "min(configured_amount_minor, analysis_headroom_minor)",
+        "without_configured": "analysis_headroom_minor",
+        "zero_headroom": "保留 configured_amount_minor，并提示先补应急金"
+      },
+      "consumer": "推荐模块"
+    },
+    "cards": {
+      "file": "cards.view.json",
+      "content": "cards / credit_card_bill / card_events",
+      "amount_unit": "minor",
+      "empty_handling": "available=false，missing 列出缺失区块",
+      "consumer": "卡管理/风控",
+      "boundary": "FirstAgent 卡申请/挂失操作尚未接入，目前是数据能力"
+    },
+    "display": {
+      "file": "display.view.json",
+      "content": "余额、当月收入/消费、订阅数、卡片数",
+      "amount_unit": "minor",
+      "read_only": true,
+      "ledger_modified": false,
+      "boundary": "派生摘要，不是账本快照；实时界面仍读 /api/snapshot",
+      "consumer": "界面只读展示"
+    },
+    "manifest": {
+      "file": "manifest.json",
+      "content": "质量检查、缺失区块、PII、假设、警告、版本",
+      "consumer": "集成/QA"
+    }
+  },
+  "contracts": {
+    "amount": "CNY 整数分；只有 recommendation.profile.budget_cny 是 CNY 元",
+    "status": "只统计 status=booked",
+    "consumption": "借记卡 expense + 信用卡账单 expense；退款按负数冲减",
+    "transfer": "transfer_out 不是消费，单独统计",
+    "pii": "不含身份证、手机号、邮箱、住址、完整卡号；整理时兜底扫描",
+    "evaluation": "expected_insights 默认剥离；评测时显式 include_evaluation=true",
+    "read_only": "simulated=true; ledger_modified=false"
+  },
+  "capabilities": [
+    {"name": "分类/月度/年度账单", "file": "analysis/aggregate.py", "status": "done"},
+    {"name": "9 类异常与提醒", "file": "analysis/anomaly.py", "status": "done", "perturbations": "26/26"},
+    {"name": "订阅负担率", "file": "analysis/cashflow.py", "status": "done"},
+    {"name": "30/90 天现金流投影", "file": "analysis/cashflow.py", "status": "done"},
+    {"name": "跨场景流动性", "file": "analysis/liquidity.py", "status": "done"},
+    {"name": "每月储蓄/投资建议", "file": "analysis/budget.py", "status": "done"},
+    {"name": "参数化回测", "file": "backtest_budget.py", "status": "done", "cases": 1092},
+    {"name": "主 Agent 只读工具", "file": "tools.py", "status": "done", "count": 9},
+    {"name": "数据整理 Agent", "file": "organizer.py", "status": "done", "views": 4},
+    {"name": "全链路演示", "file": "AI_Banking/demo_full_chain.py", "status": "done"}
+  ],
+  "verification": {
+    "main_task": "115 项测试通过",
+    "environment_agent": "73 项测试通过",
+    "first_agent": "34 项测试通过；verify_delivery passed",
+    "perturbations": "26/26 通过；TP 9 / FP 0 / FN 0",
+    "a_to_g_evaluation": "33/33；P/R/F1 = 1.0（同源合成数据）",
+    "budget_backtest": "1092 次；不变量 0 失败；确定性 84/84",
+    "full_chain_demo": "退出码 0",
+    "idempotency_restart": "同 key 跨进程重启返回相同 scenario_id",
+    "organizer_f_example": {
+      "configured_amount_minor": 2000000,
+      "analysis_headroom_minor": 1083568,
+      "budget_minor": 1083568,
+      "budget_cny": 10835.68,
+      "budget_source": "min_configured_analysis",
+      "horizon_days": 180,
+      "expected_insights_present": false
+    },
+    "organizer_session_example": {
+      "configured_amount_minor": 364000,
+      "analysis_headroom_minor": 0,
+      "budget_minor": 364000,
+      "budget_source": "configured_analysis_zero",
+      "warning": "先补应急金"
+    }
+  },
+  "known_limits": [
+    "真实数据未校准：类别阈值、订阅 3%/8% 分级、1/3 个月缓冲均为原型策略",
+    "A~G 的 P/R/F1=1.0 是同源合成数据结果，不代表真实用户准确率",
+    "没有训练型模型：当前是确定性规则 + 现金流推演 + 敏感性回测",
+    "卡操作未接入：G 场景有卡数据，FirstAgent 尚未实现卡申请/挂失",
+    "会话账本为月度汇总样本，不能逐笔识别重复扣款；无信用卡账单、生日、日历",
+    "幂等为单机 SQLite，不覆盖多实例/分布式；没有 TTL 清理",
+    "农历节日仅覆盖 2026–2027，是演示对照表",
+    "推荐是偏好排序，预算是确定性推演，不是投资建议或收益预测"
+  ],
+  "files": [
+    {"path": "主任务_金融分析与量化/README.md", "purpose": "模块说明、命令、边界"},
+    {"path": "数据整理Agent_逻辑链与接口.md", "purpose": "整理 Agent 设计与接口"},
+    {"path": "主任务_金融分析与量化/organizer.py", "purpose": "四视图整理核心 + CLI"},
+    {"path": "主任务_金融分析与量化/backtest_budget.py", "purpose": "预算参数化回测 + 报告生成"},
+    {"path": "主任务_金融分析与量化/reports/", "purpose": "回测、规则稳定性、数据边界报告"},
+    {"path": "主任务_金融分析与量化/fixtures/", "purpose": "A~G 契约样例"},
+    {"path": "环境生成agent/", "purpose": "A~G 生成、校验、契约适配、SQLite 幂等"},
+    {"path": "source/FirstAgent_分析接入/analysis_bridge.py", "purpose": "会话账本 → 契约场景的接入参考"},
+    {"path": "source/FirstAgent_分析接入/tests/test_analysis_integration.py", "purpose": "分析接入集成测试"},
+    {"path": "主任务_任务进度与数据_2026-10-24.json", "purpose": "本文件的机器可读版本"}
+  ],
+  "commands": {
+    "main_tests": "cd 主任务_金融分析与量化 && python -m unittest discover -s . -p \"test_*.py\"",
+    "environment_tests": "cd 环境生成agent && python -m unittest discover -s . -p \"test_*.py\"",
+    "first_agent_verify": "cd Desktop/FirstAgent && python verify_delivery.py",
+    "full_chain_demo": "cd AI_Banking && python demo_full_chain.py",
+    "budget_backtest": "cd 主任务_金融分析与量化 && python backtest_budget.py",
+    "organizer_example": "cd 主任务_金融分析与量化 && python organizer.py --input fixtures/SCENARIO_F.json --out-dir organized"
+  },
+  "teammate_confirmations": [
+    "推荐模块：是否接受 budget_cny 由整理 Agent 给出，还是继续由 service.py 用 state.amount 计算",
+    "卡管理/风控：cards.view.json 字段是否够用，还需要哪些卡状态或限额字段",
+    "界面：是否需要 display.view.json，还是继续只读 /api/snapshot",
+    "集成：数据整理保持纯函数+文件，还是包装成 data.organize 工具接入 /api/analysis",
+    "真实数据：如果有脱敏流水，优先用于校准类别阈值和缓冲月数",
+    "FirstAgent 集成负责人：analysis_bridge.py 与 test_analysis_integration.py 是否作为共享基线保留在当前路径"
+  ],
+  "changelog": [
+    {"date": "2026-10-23", "content": "环境生成 A~G、卡片/日历/洞察、双层校验；分析模块第一版"},
+    {"date": "2026-10-24", "content": "FirstAgent 分析接入；演示脚本；标准答案防泄漏；预算建议；推荐金额接入；参数化回测；数据整理 Agent；SQLite 幂等"}
+  ],
+  "conclusion": "主任务已形成生成→契约→整理→分析/推荐/卡/展示的可运行链路；剩余是真实数据校准和接口确认，不是代码缺失"
+}

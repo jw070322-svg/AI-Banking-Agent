@@ -1,0 +1,40 @@
+{
+  "added_tokens_decoder": {
+    "151643": {
+      "content": "<|endoftext|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "151644": {
+      "content": "<|im_start|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "151645": {
+      "content": "<|im_end|>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    }
+  },
+  "bos_token": null,
+  "bos_token_id": null,
+  "clean_up_tokenization_spaces": false,
+  "eos_token": "<|endoftext|>",
+  "eos_token_id": 151643,
+  "extra_special_tokens": {},
+  "model_max_length": 1000000000000000019884624838656,
+  "model_type": "gpt2",
+  "pad_token": "<|endoftext|>",
+  "pad_token_id": 151643,
+  "tokenizer_class": "Qwen2Tokenizer",
+  "unk_token": "<|endoftext|>"
+}

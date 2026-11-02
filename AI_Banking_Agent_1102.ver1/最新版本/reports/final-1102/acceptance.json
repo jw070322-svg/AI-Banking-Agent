@@ -1,0 +1,57 @@
+{
+  "version": "1102.ver1",
+  "scope": "Windows x64 local simulation",
+  "at": "2026-11-02T05:08:44.069825+00:00",
+  "backend": {
+    "run": 293,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "frontend": 100,
+  "security": {
+    "started_at": "2026-11-02T05:03:44.775302+00:00",
+    "completed_at": "2026-11-02T05:04:42.112881+00:00",
+    "source_fingerprint": "85847dcea4848f9434ee66f53ea1368e1f4f32c549aa8bef3b33fd3cf88939f2",
+    "run": 58,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "actual_inference": {
+    "at": "2026-11-02T04:33:23.715319+00:00",
+    "app_port": 8808,
+    "model_url": "http://127.0.0.1:8811",
+    "model": "banking-finance-lora",
+    "adapter": "adapter-qwen2.gguf attached at scale 1.0",
+    "no_key_http": 401,
+    "wrong_key_http": 401,
+    "completion": "收到",
+    "web_route": "/api/knowledge",
+    "web_status": "needs_evidence",
+    "web_model_received": true,
+    "external_data_sent": false,
+    "steps": [
+      {
+        "provider": "local_rag",
+        "status": "no_evidence"
+      },
+      {
+        "provider": "baidu",
+        "status": "not_requested"
+      },
+      {
+        "provider": "llama_cpp",
+        "status": "ok"
+      }
+    ]
+  },
+  "preserved": 906,
+  "unexplained": 0,
+  "files": {
+    "安全自评报告_1101.pdf": "b2ce14fffb314f25ab9adfbd06c9f961d643b63744efb5d43cefbb55923fb3a9",
+    "安全自评报告_1101.md": "fcef5c73c32a475a6a758041721874c27ff5953ff2402a56bc91f24953fe9697",
+    "AI_Banking_Agent_技术设计与实现报告_1101赛题补充版.docx": "ebf4268f519555367ce6d089e1cdf3af3952a5f25d86d2096c8dd63d91da3041",
+    "赛题辅助材料/答辩PPT_DeepSleep.pptx": "f3bf31a8a3553ef07120277de7632f38d07c8b7d934518beedcbdd32ecc5ad48"
+  }
+}

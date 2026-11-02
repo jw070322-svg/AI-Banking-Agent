@@ -1,0 +1,114 @@
+{
+  "schema_version": "scenario-1.0",
+  "scenario_id": "SCN_A_20261022185343_A462AC",
+  "scenario_type": "A",
+  "accounts": [
+    {
+      "account_id": "ACC13849C0A2ED2",
+      "initial_balance_minor": 981198,
+      "balance_minor": 2318167,
+      "currency": "CNY"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T95F7D2E41A10",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-09-28",
+      "amount_minor": -2239,
+      "category": "餐饮",
+      "status": "booked"
+    },
+    {
+      "id": "T0B46B8466978",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-09-30",
+      "amount_minor": -45777,
+      "category": "通讯",
+      "status": "booked"
+    },
+    {
+      "id": "TCD4D8F847BB5",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-01",
+      "amount_minor": 1644041,
+      "category": "工资",
+      "status": "booked"
+    },
+    {
+      "id": "TBC18CD00D324",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-01",
+      "amount_minor": -31829,
+      "category": "娱乐",
+      "status": "booked"
+    },
+    {
+      "id": "TF27027EE78C2",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-02",
+      "amount_minor": -40470,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "TF07707286E49",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-02",
+      "amount_minor": -16930,
+      "category": "交通",
+      "status": "booked"
+    },
+    {
+      "id": "T2D57455270FE",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-06",
+      "amount_minor": -1845,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "T19CD57C42920",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-06",
+      "amount_minor": -34984,
+      "category": "通讯",
+      "status": "booked"
+    },
+    {
+      "id": "TC71AE09A6E1D",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -28031,
+      "category": "餐饮",
+      "status": "booked"
+    },
+    {
+      "id": "TD0EB6C33CEA6",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -46016,
+      "category": "购物",
+      "status": "booked"
+    },
+    {
+      "id": "T0120E3E22BD3",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -28450,
+      "category": "日用",
+      "status": "booked"
+    },
+    {
+      "id": "T16957ECE5044",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-14",
+      "amount_minor": -30501,
+      "category": "娱乐",
+      "status": "booked"
+    }
+  ],
+  "warnings": [],
+  "simulated": true,
+  "ledger_modified": false
+}

@@ -1,0 +1,9 @@
+{
+  "policy_version": "pol_2026_10_20",
+  "currency": "CNY",
+  "confirm_threshold_cny": "5000.00",
+  "large_amount_reminder_cny": "5000.00",
+  "single_transfer_limit_cny": "50000.00",
+  "daily_transfer_limit_cny": "100000.00",
+  "transfer_fee_cny": "0.00"
+}

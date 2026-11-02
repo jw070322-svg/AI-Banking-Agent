@@ -1,3 +1,5 @@
+[最新终版：评委打开说明](AI_Banking_Agent_1102.ver1/打开说明.md) · [完整模型 ZIP](releases/AI_Banking_Agent_1102.ver1.zip) · [SHA-256](releases/AI_Banking_Agent_1102.ver1.zip.sha256)
+
 # AI Banking Agent
 
 面向 2026 FinTechathon 的 AI Banking Agent 项目，目标是让 Agent 在金融数据与明确授权的基础上，完成可解释、可验证的银行业务闭环。
@@ -190,4 +192,5 @@ python -m unittest discover -s Dashboard/tests -p "test_*.py" -v
 - 王语嫣、谢涵微、杨婧柔分别主责后端、前端与 RAG／评测，wzy 审核关键接口与模块衔接。
 - 技术文档由王语嫣定稿，安全自评由谢涵微定稿，答辩 PPT 由杨婧柔定稿；杨婧柔协调提交并同步各材料版本。
 - 每人围绕具体交付逐步学习，保留主责与协作职责；先跑通一个金融业务闭环，再扩展技术栈和业务范围。
+
 

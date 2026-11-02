@@ -1,0 +1,1005 @@
+{
+  "generated_by": "tools/build_relocation_ledger.py",
+  "purpose": "证明移出根目录的历史文件内容未被篡改，供保全检查识别授权迁移。",
+  "not_a_baseline_edit": "两个基线 JSON 未改动；本台账只新增映射，不改写历史哈希。",
+  "relocated": [
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "CURVE_FIX_1026.md",
+      "baseline_sha256": "aa0bb5978f914386e47946e52502976360e213aabb67b525c9427eec81a3dcf4",
+      "current": "history_version/CURVE_FIX_1026.md",
+      "current_sha256": "aa0bb5978f914386e47946e52502976360e213aabb67b525c9427eec81a3dcf4",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1027_PAUSED.md",
+      "baseline_sha256": "94ec53efb34c8a7771cb3981a41dd0fda8bee8b482fc35c5e1032327ab8188b9",
+      "current": "history_version/HANDOFF_1027_PAUSED.md",
+      "current_sha256": "94ec53efb34c8a7771cb3981a41dd0fda8bee8b482fc35c5e1032327ab8188b9",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1027_SECURITY.md",
+      "baseline_sha256": "5b32d3b4698db9fd0af71ca5d2a87af1c6574d6dd3f622a7c6b966688d079fcc",
+      "current": "history_version/HANDOFF_1027_SECURITY.md",
+      "current_sha256": "5b32d3b4698db9fd0af71ca5d2a87af1c6574d6dd3f622a7c6b966688d079fcc",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1027_VER3.md",
+      "baseline_sha256": "ca733dea6a00a59a0dddeac5a35286428e9bc75678a545a65ba2fa89d544a8c6",
+      "current": "history_version/HANDOFF_1027_VER3.md",
+      "current_sha256": "ca733dea6a00a59a0dddeac5a35286428e9bc75678a545a65ba2fa89d544a8c6",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1027_VER4.md",
+      "baseline_sha256": "3ccbc3cdac0590d39f934150c35497152f097d6aa8ac3b80ab4e2cbb06370c97",
+      "current": "history_version/HANDOFF_1027_VER4.md",
+      "current_sha256": "3ccbc3cdac0590d39f934150c35497152f097d6aa8ac3b80ab4e2cbb06370c97",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1027_VER5_PAUSED.md",
+      "baseline_sha256": "20e07304abd4685fc6a94733c1c66e490f1fe2065eab1b3e3691fbc4b90f5a4d",
+      "current": "history_version/HANDOFF_1027_VER5_PAUSED.md",
+      "current_sha256": "20e07304abd4685fc6a94733c1c66e490f1fe2065eab1b3e3691fbc4b90f5a4d",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "HANDOFF_1028_RAG.md",
+      "baseline_sha256": "d6eabf4204ccfe34f6437054a9fa3ef70e5d681d6395cf3409ecd9efa6535792",
+      "current": "history_version/HANDOFF_1028_RAG.md",
+      "current_sha256": "d6eabf4204ccfe34f6437054a9fa3ef70e5d681d6395cf3409ecd9efa6535792",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_1029_PROGRESS.json",
+      "baseline_sha256": "ccad56fc411683a57540c06675d653781d846fc124124c16713b346d6225ab6f",
+      "current": "history_version/HANDOFF_1029_PROGRESS.json",
+      "current_sha256": "ccad56fc411683a57540c06675d653781d846fc124124c16713b346d6225ab6f",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_1029_RAG_PAUSED.json",
+      "baseline_sha256": "1201534e9a105c6f9fdad134b7d80f60d1c7beb501ba8026b6014f83a0b51c22",
+      "current": "history_version/HANDOFF_1029_RAG_PAUSED.json",
+      "current_sha256": "1201534e9a105c6f9fdad134b7d80f60d1c7beb501ba8026b6014f83a0b51c22",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_1029_TOOLS_SECURITY.json",
+      "baseline_sha256": "89a97d4ee49dcdcd17d0016903846cb3016ed6eb74b12a0d032e768c3594b744",
+      "current": "history_version/HANDOFF_1029_TOOLS_SECURITY.json",
+      "current_sha256": "89a97d4ee49dcdcd17d0016903846cb3016ed6eb74b12a0d032e768c3594b744",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_1030_RELAY.json",
+      "baseline_sha256": "195be80f8ea023f7d61473b17effe2541a0eb9eb904d621882537a80d881bfac",
+      "current": "history_version/HANDOFF_1030_RELAY.json",
+      "current_sha256": "195be80f8ea023f7d61473b17effe2541a0eb9eb904d621882537a80d881bfac",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_1030_UI_CACHE.json",
+      "baseline_sha256": "5f4f84d49530fe02a5dbc7797d89d213be6f66b713b1a7553aa3ae69d8b2f046",
+      "current": "history_version/HANDOFF_1030_UI_CACHE.json",
+      "current_sha256": "5f4f84d49530fe02a5dbc7797d89d213be6f66b713b1a7553aa3ae69d8b2f046",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "HANDOFF_REVIEW_1029.json",
+      "baseline_sha256": "8178ce738ccb13a3e7cbb6bb13ae5d3087adb6e5d5dbbfcb3d101ab41adf3fe5",
+      "current": "history_version/HANDOFF_REVIEW_1029.json",
+      "current_sha256": "8178ce738ccb13a3e7cbb6bb13ae5d3087adb6e5d5dbbfcb3d101ab41adf3fe5",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "README-原始版.md",
+      "baseline_sha256": "40de152dcbdd6d1a624be02edfaf7b88c5b34fbb1ba8060d8bc2603d9b369960",
+      "current": "history_version/README-原始版.md",
+      "current_sha256": "40de152dcbdd6d1a624be02edfaf7b88c5b34fbb1ba8060d8bc2603d9b369960",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "README.md",
+      "baseline_sha256": "b28b41c805274e3b5ce25a3d6a5c9446107a377f08888bb49705c90cf3ce028e",
+      "current": "history_version/README.md",
+      "current_sha256": "b28b41c805274e3b5ce25a3d6a5c9446107a377f08888bb49705c90cf3ce028e",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "RESUME_TOMORROW.json",
+      "baseline_sha256": "3c788a162f99b170416b6cd4d4e686b4c53f2f60dc71e768dd1f80d7e754d4d0",
+      "current": "history_version/RESUME_TOMORROW.json",
+      "current_sha256": "3c788a162f99b170416b6cd4d4e686b4c53f2f60dc71e768dd1f80d7e754d4d0",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "VALIDATION_1026.md",
+      "baseline_sha256": "414f83a90aabb8e5820fb232764aca45ecb114a6a8acac1479a118c7217654ab",
+      "current": "history_version/VALIDATION_1026.md",
+      "current_sha256": "414f83a90aabb8e5820fb232764aca45ecb114a6a8acac1479a118c7217654ab",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "VALIDATION_1027.md",
+      "baseline_sha256": "49c7def96a2b0cbb19d34a52505898a13c95ce0f7104ae77caec1e7276728d6a",
+      "current": "history_version/VALIDATION_1027.md",
+      "current_sha256": "49c7def96a2b0cbb19d34a52505898a13c95ce0f7104ae77caec1e7276728d6a",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "VALIDATION_1027_VER3.md",
+      "baseline_sha256": "b1a5b90ecbfade0b514760b86b24d59200359926f2b011862d7926dde718e181",
+      "current": "history_version/VALIDATION_1027_VER3.md",
+      "current_sha256": "b1a5b90ecbfade0b514760b86b24d59200359926f2b011862d7926dde718e181",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "VALIDATION_1027_VER4.md",
+      "baseline_sha256": "8ae471cfccee9b11f400ca099fc5505cddc2ef1f7439f423c03487c25f3f4570",
+      "current": "history_version/VALIDATION_1027_VER4.md",
+      "current_sha256": "8ae471cfccee9b11f400ca099fc5505cddc2ef1f7439f423c03487c25f3f4570",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "development_log.jsonl",
+      "baseline_sha256": "7ca5e13464c732b9dce968254c5f1045e9038f7d7b4889a833ed71198cc736cc",
+      "current": "history_version/development_log.jsonl",
+      "current_sha256": "7ca5e13464c732b9dce968254c5f1045e9038f7d7b4889a833ed71198cc736cc",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "development_log_1029.jsonl",
+      "baseline_sha256": "ec45dc2b96fd27a2d5777901451d7e1b9fc57e4dacdb391854af08e62d64a86a",
+      "current": "history_version/development_log_1029.jsonl",
+      "current_sha256": "ec45dc2b96fd27a2d5777901451d7e1b9fc57e4dacdb391854af08e62d64a86a",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "development_log_1030.jsonl",
+      "baseline_sha256": "fecc5bd45f48a8f5a428bd97b2097d5e9be94ebd4e46c6a6d0e806fe88c7632a",
+      "current": "history_version/development_log_1030.jsonl",
+      "current_sha256": "fecc5bd45f48a8f5a428bd97b2097d5e9be94ebd4e46c6a6d0e806fe88c7632a",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "development_log_rag_1029.jsonl",
+      "baseline_sha256": "25b25e424ad275321ca1e7b70012167b3fe3102db29093b13c379ecc2376c6ee",
+      "current": "history_version/development_log_rag_1029.jsonl",
+      "current_sha256": "25b25e424ad275321ca1e7b70012167b3fe3102db29093b13c379ecc2376c6ee",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "development_log_review_1029.jsonl",
+      "baseline_sha256": "6f76e9a6b06cae493c3454405bf81bcaf455b4167537603cd2a7b7f4370dbb86",
+      "current": "history_version/development_log_review_1029.jsonl",
+      "current_sha256": "6f76e9a6b06cae493c3454405bf81bcaf455b4167537603cd2a7b7f4370dbb86",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "development_log_ui_cache_1030.jsonl",
+      "baseline_sha256": "d6ab1f6d2174100da4d0490fc7f654bd5e1c2c2d7c87e77caf149c5060557d69",
+      "current": "history_version/development_log_ui_cache_1030.jsonl",
+      "current_sha256": "d6ab1f6d2174100da4d0490fc7f654bd5e1c2c2d7c87e77caf149c5060557d69",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "run_agent.ps1",
+      "baseline_sha256": "226a485354899799dea91f631e5b5fc16ef629a0f3d99ab950cb668f955675f6",
+      "current": "history_version/run_agent.ps1",
+      "current_sha256": "c3159614201daf8ab873b0c62e9858a9c23cd807bb7e50073a0b5e420dd38986",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/run_agent.ps1.txt",
+      "backup_sha256": "226a485354899799dea91f631e5b5fc16ef629a0f3d99ab950cb668f955675f6",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "tools_security_1029_additive.zip",
+      "baseline_sha256": "cd766e062f1ac960b9031b9e85296608712b1eda8f1d57fd0ad77a2174127ca6",
+      "current": "history_version/tools_security_1029_additive.zip",
+      "current_sha256": "cd766e062f1ac960b9031b9e85296608712b1eda8f1d57fd0ad77a2174127ca6",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "先看这里.md",
+      "baseline_sha256": "20d619480e89fb73358b1914517891be8fa2d3d97cd5e6b16176817d254fe7af",
+      "current": "history_version/先看这里.md",
+      "current_sha256": "20d619480e89fb73358b1914517891be8fa2d3d97cd5e6b16176817d254fe7af",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "先看这里_1028.md",
+      "baseline_sha256": "3af4291b5b3c9626f04d5130bd0f20f9505849bc86bd520ddd5cf6ad4c2f0d77",
+      "current": "history_version/先看这里_1028.md",
+      "current_sha256": "3af4291b5b3c9626f04d5130bd0f20f9505849bc86bd520ddd5cf6ad4c2f0d77",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/continuation-input-hashes.json",
+      "path": "先看这里_1029_RAG_暂停.md",
+      "baseline_sha256": "bb17525ea5404bc5367d7473b7e145bd980ab38e704acf01d8b4e1a8614f72ca",
+      "current": "history_version/先看这里_1029_RAG_暂停.md",
+      "current_sha256": "bb17525ea5404bc5367d7473b7e145bd980ab38e704acf01d8b4e1a8614f72ca",
+      "current_is_baseline": true,
+      "backup": null,
+      "backup_sha256": null,
+      "reason": "内容未变，仅位置迁入 history_version"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "启动增量RAG.bat",
+      "baseline_sha256": "da5a2ef49d3a55449104d5864f82da9bb296d3aaafd2875e0f9c139e07ba6097",
+      "current": "history_version/启动增量RAG.bat",
+      "current_sha256": "d6da23218768d59dce0df6fd6c6e2ab49544c96b69c66997e15a8c1ed60f3202",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/启动增量RAG.bat.txt",
+      "backup_sha256": "da5a2ef49d3a55449104d5864f82da9bb296d3aaafd2875e0f9c139e07ba6097",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "启动最新版本.bat",
+      "baseline_sha256": "0b8b3129d380ee307b2526934eee828564ff0bf772bda23cf86e74aa747c850a",
+      "current": "history_version/启动最新版本.bat",
+      "current_sha256": "a3857fda13e7df6cbaba8248904ea7cfb4a270dc3e158370a54c3ed7ef54fb01",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/启动最新版本.bat.txt",
+      "backup_sha256": "0b8b3129d380ee307b2526934eee828564ff0bf772bda23cf86e74aa747c850a",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "启动最新版本.command",
+      "baseline_sha256": "e5365eccb06565dab4b3405ef3831ecbf910c95ba90303be04926268b7af0e88",
+      "current": "history_version/启动最新版本.command",
+      "current_sha256": "66eacb45037478970dc8fdccd37e3efe1312cded725afe0683cdca980f8a4093",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/启动最新版本.command.txt",
+      "backup_sha256": "e5365eccb06565dab4b3405ef3831ecbf910c95ba90303be04926268b7af0e88",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "启动网页.bat",
+      "baseline_sha256": "f3780cc7828aa2c3386559b810ffcd243d1d49d45e6d3026a13c284f16053803",
+      "current": "history_version/启动网页.bat",
+      "current_sha256": "68c3591e8ea9189a4663b4cf57abd34d977b8550208aee9d10e0ae9bf9fa3fd4",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/启动网页.bat.txt",
+      "backup_sha256": "f3780cc7828aa2c3386559b810ffcd243d1d49d45e6d3026a13c284f16053803",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "启动网页.command",
+      "baseline_sha256": "6351b5103a45d38d76600549421661b5cdcdd8799be34ad16cc71c6eae4ed711",
+      "current": "history_version/启动网页.command",
+      "current_sha256": "62d0802b7dc5278fd1b1f5fd03050a57a5f81da4e79bfd7fee63946b7ea9243a",
+      "current_is_baseline": false,
+      "backup": "history_version/original_scripts/启动网页.command.txt",
+      "backup_sha256": "6351b5103a45d38d76600549421661b5cdcdd8799be34ad16cc71c6eae4ed711",
+      "reason": "经用户授权修正工作目录；原文逐字节保存在 original_scripts"
+    }
+  ],
+  "authorized_updates": [
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/run_agent.ps1",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "run_agent.ps1",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "226a485354899799dea91f631e5b5fc16ef629a0f3d99ab950cb668f955675f6",
+      "current_sha256": "c3159614201daf8ab873b0c62e9858a9c23cd807bb7e50073a0b5e420dd38986",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动1030_UI修复版.bat",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动1030_UI修复版.bat",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "4e54238ef0ef7782d4204f7f71046d5a8e5cb4c025c0299c45d16ba9e26b6557",
+      "current_sha256": "6f66757195fbca932d448de7319de21914115531c8ba739099141a1b63c33deb",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动1030接力验收版.bat",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动1030接力验收版.bat",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "e9862667fd6ab8b5b0dc10c1d8dd2d7ca58e107075286464f60bfc1a72943974",
+      "current_sha256": "b4cd4f15a7c26e0fcdaf660d14d64a1fe59428e635b1966964c1c25ce9ebab41",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动增量RAG.bat",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动增量RAG.bat",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "da5a2ef49d3a55449104d5864f82da9bb296d3aaafd2875e0f9c139e07ba6097",
+      "current_sha256": "d6da23218768d59dce0df6fd6c6e2ab49544c96b69c66997e15a8c1ed60f3202",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动安全评测续作版.bat",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动安全评测续作版.bat",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "466d9a4f3983670dec764bfc612acf269c527e7ad88d4f06896a154e3e14ba35",
+      "current_sha256": "1a90f6e89200c465c137aab88d395898e0ce660035b6d6ffa051675f6af249b7",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动安全评测续作版.command",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动安全评测续作版.command",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "195700949a1ca31679038aab5d59c8b07051f50ad3cc9f8389d10670d62130ec",
+      "current_sha256": "268626e13b5ac2a712cf9437c87c312cf5cdfdfd85ba53ae2a3f301b1e7dceef",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动网页.bat",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动网页.bat",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "f3780cc7828aa2c3386559b810ffcd243d1d49d45e6d3026a13c284f16053803",
+      "current_sha256": "68c3591e8ea9189a4663b4cf57abd34d977b8550208aee9d10e0ae9bf9fa3fd4",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "history_version/启动网页.command",
+      "proof": "reports/启动器归档_1030.json",
+      "file": "启动网页.command",
+      "change": "Working directory points to project parent",
+      "baseline_sha256": "6351b5103a45d38d76600549421661b5cdcdd8799be34ad16cc71c6eae4ed711",
+      "current_sha256": "62d0802b7dc5278fd1b1f5fd03050a57a5f81da4e79bfd7fee63946b7ea9243a",
+      "reason": "基线取自启动器修正之前；原文哈希与改后哈希均由归档报告逐字节记录"
+    }
+  ],
+  "generated_outputs": [
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/1029-modules-selfcheck.txt",
+      "producer": "first_agent/vendor/eva/security/selfcheck.py",
+      "evidence": "-selfcheck",
+      "baseline_sha256": "4d7c4f6079e61cf3e5927e045240091470c0dc95f89c857430cb81b8f6a6ec5e",
+      "current_sha256": "e7d180ded6236d19b57e9af97f21d627a23ef78eb50d01ce3d871937735416c8",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "reports/external-live.json",
+      "producer": "tools/verify_external_live.py",
+      "evidence": "external-live.json",
+      "baseline_sha256": "34b44f337ff9538786a035ce79e74e9dd8c5568f898ea2fe133bee329070baa5",
+      "current_sha256": "1a4238c38c87f0e95c9adb03c12493de07f717dba899ed086368350a4f063c85",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "reports/latest-frontend-tests.json",
+      "producer": "run_frontend_checks.py",
+      "evidence": "latest-frontend-tests.json",
+      "baseline_sha256": "aac920d546906bee22d384e4b6907831a00b7fae716867e4b98554eca5da7565",
+      "current_sha256": "bce355f1dcb17384bbfd8dd95d4b27720da4704f4f6d24e64240b283cd4e87a3",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "reports/latest-integration-tests.json",
+      "producer": "run_integration_checks.py",
+      "evidence": "latest-integration-tests.json",
+      "baseline_sha256": "794269afa2f32add7a973ff44c7a25901ef4cf90fc7265ac66b10bfea3976147",
+      "current_sha256": "6c56ab85424dc02b493d791c16d17f1f8dca30d16001f61b5976960368640e7e",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "reports/latest-integration-tests.txt",
+      "producer": "run_integration_checks.py",
+      "evidence": "latest-integration-tests.txt",
+      "baseline_sha256": "0a83564c5e42400405a29cf19df756ce8bafdbdb0efe8817159f1cdc2ba16606",
+      "current_sha256": "b89c4a0cb1a848b469917f532148ccc7bb8043b04c8f813059833e3fd57240d9",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/cases-complete.json",
+      "producer": "review_additions/evaluate.py",
+      "evidence": "cases-complete.json",
+      "baseline_sha256": "ec17238a3349ae5d10f9dda6e98253bf5a0ab29c09ead7966f5a5d4a8df5d125",
+      "current_sha256": "f92e181f90b4ce9688c73d7de58e78bdaa8746be0ee088d6aab08b0a53ab70c9",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/new-frontend-tests.json",
+      "producer": "run_review_checks.py",
+      "evidence": "'-frontend-tests.json'",
+      "baseline_sha256": "eb119044119172aea3be4ab94646224bebd81a7945395269e075483fd654ce91",
+      "current_sha256": "746332c26758887d4848d2d64e50eda2eefc71732881533406b5d63af99223f2",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/new-tests.json",
+      "producer": "run_review_checks.py",
+      "evidence": "'-tests.json'",
+      "baseline_sha256": "4f187d8e0e2797a5777a9d0d5b2172c59128d2fd6e4d02ac0774ebace1e4524a",
+      "current_sha256": "210c9b798251ba5912a2b70c0c0f808392c2d9f207fdc2e0b7b2c05896d557d8",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/new-tests.txt",
+      "producer": "run_review_checks.py",
+      "evidence": "'-tests.txt'",
+      "baseline_sha256": "63072fcee387e0616accc60f3f210c461c811bed81ceedff5b25c27fe3da2e19",
+      "current_sha256": "8f010861391cf5a9cf55fd717830e8dd3097a7d628629bd02ff4b34905608e8e",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/rag-results.json",
+      "producer": "review_additions/evaluate.py",
+      "evidence": "rag-results.json",
+      "baseline_sha256": "7dead9b13845f7747c82e7d2954400f7f9aa53bd1e30a6b594f2037fefa0621e",
+      "current_sha256": "a118a745d75de747db316d77b07be426101786ccf7c9ea0cd3d82f78a6ea1910",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "reports/review-continuation/知识问答核对.html",
+      "producer": "review_additions/evaluate.py",
+      "evidence": "知识问答核对",
+      "baseline_sha256": "e13d0de3552e6574df048e80fc7569f0224f282bf4a5ea717c5ad79def96c303",
+      "current_sha256": "13727dbf979803f2ccd9e929d22190c61c12c2b2fe9df87cd7ea1e0a73a3a9be",
+      "reason": "运行器每次重写的测试输出（含耗时），不能作为源文件冻结对象"
+    }
+  ],
+  "intentional_edits": [
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "API-CONTRACT.md",
+      "baseline_sha256": "a00f3b691cbfdfc4cf30faa0960b75397c12da32feba7c5eb82d5c4817c21ba7",
+      "current_sha256": "fd6ec82c9c499383acadde14bc1160d59ed9ba767fafd31f9d9055666f440cb0",
+      "reason": "1030 API 核对轮：策略版本订正为 integrated-demo-1026.1；补幂等豁免、已实现未列路由与覆盖缺口"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "LOCAL_AGENT_HANDOFF.md",
+      "baseline_sha256": "eef7b604cfc58202be49ba8db06e4f45a3964d6d9d97d9c04702cdac584c8baa",
+      "current_sha256": "3d1635a8fb675c75d1add114c10c5b2040329d9bfd6d6ea515d3097c5f9b66de",
+      "reason": "旧交接原文逐字节归档；当前交接指向ver4与迁移证据"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/external_services.py",
+      "baseline_sha256": "2896947946ce9168e23fa17af3b2e8b691dcb284611b79c6d55432e770179939",
+      "current_sha256": "591fbcaf22f5181bc2ed5d3df2af9ebefe6100e4139c1f3730f64ff84384dc1b",
+      "reason": "1030 本地模型轮：密钥改为共享路径优先并回退旧路径；本地 401 不再误报为“去官网验证”；密钥读取不再抛到 HTTP 层"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/service.py",
+      "baseline_sha256": "04ec68dc0002ad6b5cdb7041123ffaaba4f66240836934192b156ebb657e0986",
+      "current_sha256": "e05565bf25c13e6755779bc8a901f003c58fb7df37e4a1f68fd47cb9fbd08df2",
+      "reason": "1030 在线核验轮：knowledge 增加可选 online_verify；仅在显式同意且无本地证据时抓取已声明的官方页面；审计只加同意布尔值"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "first_agent/vendor/eva/security/adapters.py",
+      "baseline_sha256": "0e99ce1f74fe49bd25b13b2ec48c64630ed35c7dc882eca443a23e4fc4ab5a7c",
+      "current_sha256": "e9fbc5a7449f8c58f665d3a8057e6f61c683b722d985b407e4a521e794f3a0e2",
+      "reason": "1030 Guardian 轮：扫描器默认值改 CompatibleScanner 并加能力回退；证据增加撤权与策略版本校验；新增网页审批证据桥"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "first_agent/vendor/eva/security/injection.py",
+      "baseline_sha256": "a0dc4421404b8fa88eabdd5f569667bea995d3044e0254d6efccbc72e400b0b2",
+      "current_sha256": "615d50efd654082ac382b0fc07d566fca8e8e1f5f907e40dedc2179f40a4db42",
+      "reason": "1030 Guardian 轮：默认扫描器改 CompatibleScanner，消除默认构造时 ignore_code_blocks 参数导致的 TypeError"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "modules/环境生成agent/scenario_server.py",
+      "baseline_sha256": "5bb1d214012f5660d5c9fc3cdcdbd103884fa89c105a255b2892324d5fc20733",
+      "current_sha256": "fa2ef51d1e5b19be312661e4fe731b09ab7c124fc7b78d5e3d1a2ef523038028",
+      "reason": "1030 API 核对轮：文档字符串原引用不存在的 API-CONTRACT(1).md，订正为根目录 API-CONTRACT.md"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/check_audit.py",
+      "baseline_sha256": "b20f02b35c13aaffd152fd9301e776b8bdbf743577f4f2d54858f0c62b333517",
+      "current_sha256": "60ba85a75ad83834ec056e03ba76213f86f97bf237144db9ac5e28461b2645df",
+      "reason": "读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/delivery.py",
+      "baseline_sha256": "0f2b942da7b8213eca942fec9f3d47b4dfbf01fa99fa9e4a424bba6f1f8504bc",
+      "current_sha256": "17408e4e081011b5d5b4eac693340327a5fa2c3d45947b9d501650b8bae6c821",
+      "reason": "读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/evaluate.py",
+      "baseline_sha256": "ef1aafcf8b9485f1b9437d4bf80e5571442592bf07fea40368d7196e06130629",
+      "current_sha256": "8f3b64c2d2eaa14cfc85439bee2ba3dbcfb3b454261dae13af63d9f259ae6e75",
+      "reason": "读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/live_knowledge.py",
+      "baseline_sha256": "9c907421f17d922bf1cad664f2c134db8e96ba38e15b2f12b0ead27253d87828",
+      "current_sha256": "9b364b2c3c4cd71fe5b8732baf28c379b2d692c1d53cfeb28aa51013c229ded4",
+      "reason": "读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/releases.py",
+      "baseline_sha256": "cd7fe6a4a3646cfbca7c9ecb5c1c9f209a6a37ffeee5a1505349e0e032f3ca8f",
+      "current_sha256": "9862e7a7598f858bbbeaa65d72e8652632b518250993a16caef836010bc7ab15",
+      "reason": "读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/test_phase2.py",
+      "baseline_sha256": "268dd94d80eb333391f8704a808d572146036a8117f1078f91a3d6c0e00a698e",
+      "current_sha256": "536aef8c08a7be60c7827fb84c312b80595df0267ce2fe75376dbb9d39fd1a8a",
+      "reason": "读取文本显式指定 UTF-8，避免中文 Windows 下 GBK 解码失败"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "review_additions/test_review.py",
+      "baseline_sha256": "c6e7680651b370d3bf30c5b890b9fd1b04bead1dade63f9219bb56353fb2b302",
+      "current_sha256": "0d4ba3841d8bdca15d72fb21b031bcea63bdf3f28b2979c2222bfd6b4e7d38d2",
+      "reason": "690 文件清单检查识别授权迁移；读取文本显式指定 UTF-8"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "start.py",
+      "baseline_sha256": "62498359ba9096b51eac6e72f45acb4821c78418161d91af2745eb48c4f2d0fc",
+      "current_sha256": "fcac4f5518af110433393b580e59829c7c17241edfa4e37de12173cf9dcfe82c",
+      "reason": "1030 本地模型轮：改用共用引导，不再吞掉启动器输出、不再 10 秒盲杀"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "start_local_ai.ps1",
+      "baseline_sha256": "9d02d10dec9f487440426e351d322bb725995de309a67246520f129668950ac5",
+      "current_sha256": "67e32e0a9f46f4a48f14bbae8fe30e2bf9efa7e33ce4771490e6d91b40cb9226",
+      "reason": "1030 本地模型轮：共享密钥、端口占用分类、启动后轮询就绪与状态文件；改为纯 ASCII 避免 PS 5.1 解析乱码"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "tests/test_tools_security_1029.py",
+      "baseline_sha256": "32bf357bff1da53321bfae1b0536bd979821eff6cfc497e2727e816683901f0e",
+      "current_sha256": "811a48b8b51c2170d480f134f0357d1d77350dc7153c76862cd947807a8c03d6",
+      "reason": "保全检查改为识别已授权迁移与运行产物；原有哈希断言保留，只增加缺失时的追溯条件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "web/customer-view.js",
+      "baseline_sha256": "f38fef8c35cefaf1f425972f7b8a2fac2cc8727f72034f6a103b9d1cb11d5c60",
+      "current_sha256": "947d7799cc6d4c198493bb0ebeecb8ea608023a7fb73196205b1d11b24d20bcb",
+      "reason": "1030 在线核验轮：知识卡片增加官方原文摘录与“模型改写（非引用原文）”标注；沿用 esc 转义与 https 链接限制"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "web/external-services.css",
+      "baseline_sha256": "1fa05c52909b600d0b1b4bbd92d7da5418866f9b1f512c7f335b6840b8c333e9",
+      "current_sha256": "5629f2c052cd21af06b8fff7ebc41e512cc4db54fff7f632f1e45d75cdd45d54",
+      "reason": "1030 在线核验轮：原文摘录与模型改写的样式"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "web/external-services.js",
+      "baseline_sha256": "8eceee525870053497ba81858a050bb56a7c3e66b9307c94a93a716b5b98f932",
+      "current_sha256": "8c0aa131479c18b4b23221f43cb61a7f4f966b89b2ff8598576a50a0c127687c",
+      "reason": "1030 在线核验轮：新增独立的官方原文核验勾选框，随 knowledge 请求发送 online_verify"
+    },
+    {
+      "baseline": "reports/1030-ver3-baseline.json",
+      "path": "先看这里_最新版本.md",
+      "baseline_sha256": "029b26a2e1407a14fd8c3a6236c15a5541bff35769f4be9722ff1b260af95e04",
+      "current_sha256": "9f2415dc4851832f0646db8247050295d284f923378d542bfbd3d657d31aa278",
+      "reason": "旧版说明逐字节归档；当前说明指向8807"
+    }
+  ],
+  "absent_cache": [
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/__init__.cpython-314(2).pyc",
+      "source": "first_agent/vendor/eva/security/__init__.py",
+      "source_sha256": "6b74876fdcceedd9ed0b03aa81a263f9742bb7d33141d1425f3d31bf96303d97",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/adapters.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/adapters.py",
+      "source_sha256": "e9fbc5a7449f8c58f665d3a8057e6f61c683b722d985b407e4a521e794f3a0e2",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/audit.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/audit.py",
+      "source_sha256": "0282f7df6147c077f66e7fd2e9751c2925a2dac79edfd95b9863db1fc78a3bb1",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/auth.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/auth.py",
+      "source_sha256": "4049b9d088e7bb98d9df0ad21894d7b4954ee9f88478414cf87a2d7e89c7fecf",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/authorization.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/authorization.py",
+      "source_sha256": "aee9500afcb7012eaa4c59bb32920d034bf08a680f6c031553c482620ed95083",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/confirmation.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/confirmation.py",
+      "source_sha256": "cf0e1d89d71e4ab4b352162c3911a92948fcb5c94cbac4e47bd0d6a030b957d7",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/gateway.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/gateway.py",
+      "source_sha256": "a16cac63e99be0b131ae2530fd66c3e615d8fcd9828b92aa7af9e06606c8ed29",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/injection.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/injection.py",
+      "source_sha256": "615d50efd654082ac382b0fc07d566fca8e8e1f5f907e40dedc2179f40a4db42",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/models.cpython-314(2).pyc",
+      "source": "first_agent/vendor/eva/security/models.py",
+      "source_sha256": "a3ad37be9b84a44415e9fa04040e6bc2d4a891736cfef628d8adfb37bde1556b",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/passwords.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/passwords.py",
+      "source_sha256": "d5ca3860a2620d1395234078363d495d9a7368863a4b64bfca2d3f10f340e444",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/resources.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/resources.py",
+      "source_sha256": "aa99d6eb069fba1690e4eaa33b0fe61b2281a95bad27e8f11332474ea6e52c6c",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/security/sessions.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/security/sessions.py",
+      "source_sha256": "4ed15f3bb9e7cbb9f968798f9577e5dc32198f0b729812d9db723a16102338a0",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/__init__.cpython-314(3).pyc",
+      "source": "first_agent/vendor/eva/tool_calling/__init__.py",
+      "source_sha256": "e33ffeccc2e37d7667c37f0ffb589b4058e82756114b6102344dcd86a1be6ade",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/__init__.cpython-314(4).pyc",
+      "source": "first_agent/vendor/eva/tool_calling/__init__.py",
+      "source_sha256": "e33ffeccc2e37d7667c37f0ffb589b4058e82756114b6102344dcd86a1be6ade",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/accounts.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/accounts.py",
+      "source_sha256": "4b76f3488adeb7543b9405f384fbbce081f4d91158ac0cfb82b66b8b7601edde",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/adapters.cpython-314(1).pyc",
+      "source": "first_agent/vendor/eva/tool_calling/adapters.py",
+      "source_sha256": "d19ca60dff81157bbcfa972e6abb16afb126e4922d749befafa721645d125687",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/analysis.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/analysis.py",
+      "source_sha256": "af765c25682711ab4cf5d165936ac47d77717a8fdc02ae76b3af5f37db928b09",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/calculations.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/calculations.py",
+      "source_sha256": "a630417b27bfd814565a0113abb90625373f093da81bdd3c873bab8169368777",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/errors.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/errors.py",
+      "source_sha256": "a501280cc8ed7f77db3e6414663c3c9b9bf6873e50c540b04fbb8c591913de57",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/mocks.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/mocks.py",
+      "source_sha256": "f4a81b8dfcd05e9447b138c993c133526550c65ef5f435ea57e85e904f031c10",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/models.cpython-314(3).pyc",
+      "source": "first_agent/vendor/eva/tool_calling/models.py",
+      "source_sha256": "98e3bd7f2def7f9e445d23d98f95131967fa2efebd77df29201c4a61a59a5394",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/orchestration.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/orchestration.py",
+      "source_sha256": "9e25a1c1cfa852b14f80d86236335972755c5c9c7d643990bc76fecf59c9ca4c",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/planning.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/planning.py",
+      "source_sha256": "fa3685348452d104b4da8e5de09fa0c686f842636d43472de4d759bba5bbbec4",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/policies.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/policies.py",
+      "source_sha256": "0d0356991ee0b81ee505d246f1f757f0dd7c781650c4aacdeb28deaa037a0cef",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/products.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/products.py",
+      "source_sha256": "db6ae9c2d8e35d18b5935c07561d4d2334c9bbb31971d83bf059067c6d6089da",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/registry.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/registry.py",
+      "source_sha256": "7af407af37cd53f8156c3ed14e1a0b79c84c70468acd4ac0eb71ed0ef57cea54",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/reporting.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/reporting.py",
+      "source_sha256": "8689ac8bea8bf47379d824d23a6a292df62fef0d4e91f270298ed9cf9d6f4d86",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/schema.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/schema.py",
+      "source_sha256": "1f3d51fbc641ed03c150aa46017615b68a929c98aa138b4dea06b0c5bbb82766",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/services.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/services.py",
+      "source_sha256": "a0f6f8e353bf356ea7405568a7b8f32ec22aa06426b1d897f7b086a3060a2012",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/tracing.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tracing.py",
+      "source_sha256": "dc17aae9f42546ae85316e00b2ab2a260a638f9b7b15fc535efbd817f9b5e5b4",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/transactions.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/tools/transactions.py",
+      "source_sha256": "dd8983f2b90c1e0e4f56638741d90d2a042167095af23fdfbb986614997a5327",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    },
+    {
+      "baseline": "reports/1029-preservation-baseline.json",
+      "path": "first_agent/vendor/eva/tool_calling/utils.cpython-314.pyc",
+      "source": "first_agent/vendor/eva/tool_calling/utils.py",
+      "source_sha256": "9e2cd5b2fd43aa21618ae72f888b9164a1dadcd1089bba275cd1539478b2e307",
+      "reason": "未交付的编译缓存；同名源码存在，不补造缓存文件"
+    }
+  ],
+  "incoming_missing": [
+    "first_agent/vendor/eva/security/__init__.cpython-314(2).pyc",
+    "first_agent/vendor/eva/security/adapters.cpython-314.pyc",
+    "first_agent/vendor/eva/security/audit.cpython-314.pyc",
+    "first_agent/vendor/eva/security/auth.cpython-314.pyc",
+    "first_agent/vendor/eva/security/authorization.cpython-314.pyc",
+    "first_agent/vendor/eva/security/confirmation.cpython-314.pyc",
+    "first_agent/vendor/eva/security/gateway.cpython-314.pyc",
+    "first_agent/vendor/eva/security/injection.cpython-314.pyc",
+    "first_agent/vendor/eva/security/models.cpython-314(2).pyc",
+    "first_agent/vendor/eva/security/passwords.cpython-314.pyc",
+    "first_agent/vendor/eva/security/resources.cpython-314.pyc",
+    "first_agent/vendor/eva/security/sessions.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/__init__.cpython-314(3).pyc",
+    "first_agent/vendor/eva/tool_calling/__init__.cpython-314(4).pyc",
+    "first_agent/vendor/eva/tool_calling/accounts.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/adapters.cpython-314(1).pyc",
+    "first_agent/vendor/eva/tool_calling/analysis.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/calculations.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/errors.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/mocks.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/models.cpython-314(3).pyc",
+    "first_agent/vendor/eva/tool_calling/orchestration.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/planning.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/policies.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/products.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/registry.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/reporting.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/schema.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/services.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/tracing.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/transactions.cpython-314.pyc",
+    "first_agent/vendor/eva/tool_calling/utils.cpython-314.pyc"
+  ],
+  "unproven": [],
+  "summary": {
+    "relocated": 36,
+    "authorized_updates": 8,
+    "generated_outputs": 11,
+    "intentional_edits": 21,
+    "absent_cache": 32,
+    "incoming_missing": 32,
+    "unproven": 0
+  }
+}

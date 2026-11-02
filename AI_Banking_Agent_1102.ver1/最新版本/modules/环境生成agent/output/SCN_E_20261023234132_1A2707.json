@@ -1,0 +1,578 @@
+{
+  "scenario_id": "SCN_E_20261023234132_1A2707",
+  "scenario_name": "周期性订阅",
+  "scenario_type": "E",
+  "created_at": "2026-10-23T00:00:00",
+  "user": {
+    "user_id": "U9701CDA11EC4",
+    "name": "周强",
+    "gender": "男",
+    "id_number": "440103199311204247",
+    "phone": "18500314503",
+    "email": "u9701cda11ec4@example.com",
+    "address": "成都市武侯区",
+    "occupation": "会计",
+    "monthly_income": 12707.46,
+    "registration_date": "2022-06-16"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC367F61B25908",
+      "user_id": "U9701CDA11EC4",
+      "account_type": "储蓄卡",
+      "account_number": "6222565178836550620",
+      "currency": "CNY",
+      "initial_balance": 4198.94,
+      "balance": 78483.49,
+      "status": "正常",
+      "opened_date": "2024-06-29"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T058F66426014",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-06-01",
+      "amount": 15598.3,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T7543930B1EB6",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-06-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "音乐会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "音乐会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T4B204495C05B",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-07-01",
+      "amount": 17269.07,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T8FB124BA1CEF",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-07-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "音乐会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "音乐会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "TF8E554EEFC4B",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-08-01",
+      "amount": 11218.12,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TA07A8B8CC88A",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-08-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "音乐会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "音乐会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T2536437CCAFB",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-09-01",
+      "amount": 18401.38,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD7574436734F",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-09-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "音乐会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "音乐会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    },
+    {
+      "transaction_id": "T51ED1E2B2935",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-10-01",
+      "amount": 11947.68,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T44836E696346",
+      "account_id": "ACC367F61B25908",
+      "date": "2026-10-19",
+      "amount": 30.0,
+      "transaction_type": "expense",
+      "category": "订阅",
+      "merchant": "某音乐平台",
+      "description": "音乐会员 月度订阅扣款",
+      "status": "completed",
+      "subscription_type": "音乐会员",
+      "subscription_cycle": "monthly",
+      "recurring": true
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成多个月份的固定周期扣款，保留商户、金额、日期与订阅类别信息。",
+    "expected": {
+      "multiple_months": true,
+      "fixed_amount": true,
+      "fixed_merchant": true,
+      "has_subscription_category": true,
+      "consecutive_months": true
+    }
+  },
+  "cards": [
+    {
+      "card_id": "CARD6B66F064376C",
+      "user_id": "U9701CDA11EC4",
+      "account_id": "ACC367F61B25908",
+      "card_type": "debit",
+      "card_number_masked": "6222 **** **** 1728",
+      "brand": "银联",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2025-09-03",
+      "transaction_limit": {
+        "daily": 50000.0,
+        "single": 20000.0
+      }
+    },
+    {
+      "card_id": "CARD8CDC2F6D1485",
+      "user_id": "U9701CDA11EC4",
+      "account_id": "ACC367F61B25908",
+      "card_type": "credit",
+      "card_number_masked": "6225 **** **** 9411",
+      "brand": "银联",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2024-10-19",
+      "credit_limit": 20000.0,
+      "used_credit": 558.02,
+      "available_credit": 19441.98,
+      "statement_day": 4,
+      "due_day": 22,
+      "transaction_limit": {
+        "daily": 20000.0,
+        "single": 10000.0
+      }
+    }
+  ],
+  "credit_card_bill": {
+    "bill_id": "BILLFB244C716F58",
+    "card_id": "CARD8CDC2F6D1485",
+    "cycle_start": "2026-09-05",
+    "statement_date": "2026-10-04",
+    "due_date": "2026-10-22",
+    "items": [
+      {
+        "transaction_id": "CT7D02415E9732",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-09-20",
+        "amount": 798.44,
+        "transaction_type": "expense",
+        "category": "交通",
+        "merchant": "某电商平台",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CT221B7D70F3E1",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-09-25",
+        "amount": 48.94,
+        "transaction_type": "expense",
+        "category": "交通",
+        "merchant": "某旅行平台",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CT575DA9BDBBEB",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-09-26",
+        "amount": 328.9,
+        "transaction_type": "expense",
+        "category": "交通",
+        "merchant": "某超市",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CT7753C1453DBC",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-10-01",
+        "amount": 202.9,
+        "transaction_type": "expense",
+        "category": "交通",
+        "merchant": "某超市",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CT6661BB6DE8F8",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-10-01",
+        "amount": 294.54,
+        "transaction_type": "expense",
+        "category": "旅行",
+        "merchant": "某电商平台",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CTDCE9692E0865",
+        "card_id": "CARD8CDC2F6D1485",
+        "date": "2026-10-01",
+        "amount": 86.16,
+        "transaction_type": "expense",
+        "category": "日用",
+        "merchant": "某超市",
+        "description": "信用卡消费",
+        "status": "completed"
+      }
+    ],
+    "total_amount": 1759.88,
+    "minimum_payment": 175.99,
+    "paid_amount": 1201.86,
+    "outstanding_amount": 558.02,
+    "status": "partial",
+    "currency": "CNY"
+  },
+  "family": [
+    {
+      "member_id": "FAM76A5F16E49B1",
+      "relation": "母亲",
+      "birthday": "2027-06-08",
+      "birth_year": 1977,
+      "age_turning": 50
+    },
+    {
+      "member_id": "FAMB49C2BB8159D",
+      "relation": "配偶",
+      "birthday": "2027-10-22",
+      "birth_year": 1998,
+      "age_turning": 29
+    },
+    {
+      "member_id": "FAMB63A6AC3124D",
+      "relation": "子女",
+      "birthday": "2027-02-19",
+      "birth_year": 2017,
+      "age_turning": 10
+    }
+  ],
+  "subscriptions": [
+    {
+      "subscription_id": "SUB14385E933F99",
+      "merchant": "某音乐平台",
+      "amount": 30.0,
+      "cycle": "monthly",
+      "category": "订阅",
+      "subscription_type": "音乐会员",
+      "last_charge_date": "2026-10-19",
+      "next_charge_date": "2026-11-19",
+      "status": "active"
+    }
+  ],
+  "calendar_events": [
+    {
+      "event_id": "EVT8FE2FD25AF7C",
+      "date": "2026-11-01",
+      "event_type": "salary",
+      "category": "工资",
+      "title": "工资到账日",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 1,
+      "remind_date": "2026-10-31",
+      "priority": "low",
+      "budget": null,
+      "status": "planned",
+      "notes": "可安排本月储蓄与预算"
+    },
+    {
+      "event_id": "EVT13FC2E608E3D",
+      "date": "2026-11-19",
+      "event_type": "subscription_renewal",
+      "category": "订阅续费",
+      "title": "某音乐平台续费",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": "SUB14385E933F99",
+      "remind_days_before": 2,
+      "remind_date": "2026-11-17",
+      "priority": "medium",
+      "budget": 30.0,
+      "status": "planned",
+      "notes": "如不需要可提前取消"
+    },
+    {
+      "event_id": "EVT1B3AA16B28B1",
+      "date": "2026-11-21",
+      "event_type": "custom",
+      "category": "备忘",
+      "title": "信用卡年费减免确认",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-18",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "刷满 6 笔可免年费"
+    },
+    {
+      "event_id": "EVT5C2E56F0A1E4",
+      "date": "2026-11-22",
+      "event_type": "bill_due",
+      "category": "信用卡还款",
+      "title": "信用卡还款 6225 **** **** 9411",
+      "related_member_id": null,
+      "related_card_id": "CARD8CDC2F6D1485",
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-19",
+      "priority": "high",
+      "budget": 558.02,
+      "status": "planned",
+      "notes": "确保绑定账户余额充足"
+    },
+    {
+      "event_id": "EVT988885BED1D2",
+      "date": "2026-11-26",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "感恩节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-23",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "感恩节问候与安排"
+    },
+    {
+      "event_id": "EVT7D3E533996D9",
+      "date": "2026-12-25",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "圣诞节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-22",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "圣诞节问候与安排"
+    },
+    {
+      "event_id": "EVTA91A516438F3",
+      "date": "2027-01-01",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "元旦",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-29",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "元旦问候与安排"
+    },
+    {
+      "event_id": "EVTF975827761FF",
+      "date": "2027-02-19",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "子女生日",
+      "related_member_id": "FAMB63A6AC3124D",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-02-12",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    },
+    {
+      "event_id": "EVT9DCD7B8B7DA0",
+      "date": "2027-06-08",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "母亲生日",
+      "related_member_id": "FAM76A5F16E49B1",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-06-01",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    },
+    {
+      "event_id": "EVTDA6117395086",
+      "date": "2027-10-22",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "配偶生日",
+      "related_member_id": "FAMB49C2BB8159D",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-10-15",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    }
+  ],
+  "expected_insights": [
+    {
+      "insight_id": "INS9BFEECEDDC6F",
+      "insight_type": "salary_detected",
+      "severity": "low",
+      "title": "识别到工资收入",
+      "date": "2026-10-01",
+      "evidence_transaction_ids": [
+        "T51ED1E2B2935"
+      ],
+      "related_event_id": null,
+      "related_card_id": null,
+      "details": {
+        "merchant": "示例科技有限公司",
+        "cycle": "monthly"
+      }
+    },
+    {
+      "insight_id": "INS36FFFAC3F30B",
+      "insight_type": "upcoming_bill",
+      "severity": "high",
+      "title": "信用卡账单已逾期",
+      "date": "2026-10-22",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVT5C2E56F0A1E4",
+      "related_card_id": "CARD8CDC2F6D1485",
+      "details": {
+        "bill_status": "partial",
+        "overdue": true,
+        "with_minimum_payment": true
+      }
+    },
+    {
+      "insight_id": "INS76BC076467E8",
+      "insight_type": "subscription_renewal",
+      "severity": "medium",
+      "title": "某音乐平台即将续费",
+      "date": "2026-11-19",
+      "evidence_transaction_ids": [
+        "T44836E696346"
+      ],
+      "related_event_id": "EVT13FC2E608E3D",
+      "related_card_id": null,
+      "details": {
+        "merchant": "某音乐平台",
+        "cycle": "monthly"
+      }
+    },
+    {
+      "insight_id": "INS86CDDB0102DE",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "子女生日提醒",
+      "date": "2027-02-19",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVTF975827761FF",
+      "related_card_id": null,
+      "details": {
+        "relation": "子女",
+        "age_turning": 10,
+        "days_until": 119
+      }
+    },
+    {
+      "insight_id": "INS35AC3DAB50B8",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "母亲生日提醒",
+      "date": "2027-06-08",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVT9DCD7B8B7DA0",
+      "related_card_id": null,
+      "details": {
+        "relation": "母亲",
+        "age_turning": 50,
+        "days_until": 228
+      }
+    },
+    {
+      "insight_id": "INS820E6DD229A4",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "配偶生日提醒",
+      "date": "2027-10-22",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVTDA6117395086",
+      "related_card_id": null,
+      "details": {
+        "relation": "配偶",
+        "age_turning": 29,
+        "days_until": 364
+      }
+    }
+  ]
+}

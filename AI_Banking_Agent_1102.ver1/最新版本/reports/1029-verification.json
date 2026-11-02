@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-10-29T11:46:19.988450+08:00",
+  "old_files_unchanged": 618,
+  "input_files_unchanged": 73,
+  "original_module_python_files": 32,
+  "added_module_python_files": 7,
+  "module_hashes": {
+    "first_agent/vendor/eva/security/__init__.py": "6b74876fdcceedd9ed0b03aa81a263f9742bb7d33141d1425f3d31bf96303d97",
+    "first_agent/vendor/eva/security/adapters.py": "0e99ce1f74fe49bd25b13b2ec48c64630ed35c7dc882eca443a23e4fc4ab5a7c",
+    "first_agent/vendor/eva/security/audit.py": "0282f7df6147c077f66e7fd2e9751c2925a2dac79edfd95b9863db1fc78a3bb1",
+    "first_agent/vendor/eva/security/auth.py": "4049b9d088e7bb98d9df0ad21894d7b4954ee9f88478414cf87a2d7e89c7fecf",
+    "first_agent/vendor/eva/security/authorization.py": "aee9500afcb7012eaa4c59bb32920d034bf08a680f6c031553c482620ed95083",
+    "first_agent/vendor/eva/security/compatibility.py": "dfaed53dac8663634f95f1af91a5a3430a099ae2564cca5709756f4d44625e41",
+    "first_agent/vendor/eva/security/confirmation.py": "cf0e1d89d71e4ab4b352162c3911a92948fcb5c94cbac4e47bd0d6a030b957d7",
+    "first_agent/vendor/eva/security/gateway.py": "a16cac63e99be0b131ae2530fd66c3e615d8fcd9828b92aa7af9e06606c8ed29",
+    "first_agent/vendor/eva/security/hardening.py": "b530129b92c191a8e868d3af46e08eff157760fbe781fe90682b8802141f84f7",
+    "first_agent/vendor/eva/security/injection.py": "a0dc4421404b8fa88eabdd5f569667bea995d3044e0254d6efccbc72e400b0b2",
+    "first_agent/vendor/eva/security/models.py": "a3ad37be9b84a44415e9fa04040e6bc2d4a891736cfef628d8adfb37bde1556b",
+    "first_agent/vendor/eva/security/passwords.py": "d5ca3860a2620d1395234078363d495d9a7368863a4b64bfca2d3f10f340e444",
+    "first_agent/vendor/eva/security/quota_handoff.py": "84e907338e27bfb11fa235d96f91c960c3829a49efef54b86ee1cb3cc4695907",
+    "first_agent/vendor/eva/security/resources.py": "aa99d6eb069fba1690e4eaa33b0fe61b2281a95bad27e8f11332474ea6e52c6c",
+    "first_agent/vendor/eva/security/runtime.py": "5aa5380f6152b1e704492b81ed9e421aff36e8b8ef57c5f4321e2d0f32ba5cbe",
+    "first_agent/vendor/eva/security/selfcheck.py": "9e0752a8a28389cbd6a20baae54774b98824ae776695175d44edd9f75576ba84",
+    "first_agent/vendor/eva/security/sessions.py": "4ed15f3bb9e7cbb9f968798f9577e5dc32198f0b729812d9db723a16102338a0",
+    "first_agent/vendor/eva/tool_calling/__init__.py": "e33ffeccc2e37d7667c37f0ffb589b4058e82756114b6102344dcd86a1be6ade",
+    "first_agent/vendor/eva/tool_calling/adapters.py": "d19ca60dff81157bbcfa972e6abb16afb126e4922d749befafa721645d125687",
+    "first_agent/vendor/eva/tool_calling/calculations.py": "a630417b27bfd814565a0113abb90625373f093da81bdd3c873bab8169368777",
+    "first_agent/vendor/eva/tool_calling/errors.py": "a501280cc8ed7f77db3e6414663c3c9b9bf6873e50c540b04fbb8c591913de57",
+    "first_agent/vendor/eva/tool_calling/hardening.py": "20c11d952e234d5303bf2f60c65c68fe60272af41143964ba8307db8965504d2",
+    "first_agent/vendor/eva/tool_calling/mocks.py": "f4a81b8dfcd05e9447b138c993c133526550c65ef5f435ea57e85e904f031c10",
+    "first_agent/vendor/eva/tool_calling/model_bridge.py": "9b5ccb55c0d8b8b0517d4be9368132adf661ba2c2a61aaa4d4322e2f6bfbf19d",
+    "first_agent/vendor/eva/tool_calling/models.py": "98e3bd7f2def7f9e445d23d98f95131967fa2efebd77df29201c4a61a59a5394",
+    "first_agent/vendor/eva/tool_calling/orchestration.py": "9e25a1c1cfa852b14f80d86236335972755c5c9c7d643990bc76fecf59c9ca4c",
+    "first_agent/vendor/eva/tool_calling/registry.py": "7af407af37cd53f8156c3ed14e1a0b79c84c70468acd4ac0eb71ed0ef57cea54",
+    "first_agent/vendor/eva/tool_calling/reporting.py": "8689ac8bea8bf47379d824d23a6a292df62fef0d4e91f270298ed9cf9d6f4d86",
+    "first_agent/vendor/eva/tool_calling/schema.py": "1f3d51fbc641ed03c150aa46017615b68a929c98aa138b4dea06b0c5bbb82766",
+    "first_agent/vendor/eva/tool_calling/services.py": "a0f6f8e353bf356ea7405568a7b8f32ec22aa06426b1d897f7b086a3060a2012",
+    "first_agent/vendor/eva/tool_calling/tools/__init__.py": "376fc82c6ae22e7fe953ced90ad2246665b509daa52466158cc219215d6f71ae",
+    "first_agent/vendor/eva/tool_calling/tools/accounts.py": "4b76f3488adeb7543b9405f384fbbce081f4d91158ac0cfb82b66b8b7601edde",
+    "first_agent/vendor/eva/tool_calling/tools/analysis.py": "af765c25682711ab4cf5d165936ac47d77717a8fdc02ae76b3af5f37db928b09",
+    "first_agent/vendor/eva/tool_calling/tools/planning.py": "fa3685348452d104b4da8e5de09fa0c686f842636d43472de4d759bba5bbbec4",
+    "first_agent/vendor/eva/tool_calling/tools/policies.py": "0d0356991ee0b81ee505d246f1f757f0dd7c781650c4aacdeb28deaa037a0cef",
+    "first_agent/vendor/eva/tool_calling/tools/products.py": "db6ae9c2d8e35d18b5935c07561d4d2334c9bbb31971d83bf059067c6d6089da",
+    "first_agent/vendor/eva/tool_calling/tools/transactions.py": "dd8983f2b90c1e0e4f56638741d90d2a042167095af23fdfbb986614997a5327",
+    "first_agent/vendor/eva/tool_calling/tracing.py": "dc17aae9f42546ae85316e00b2ab2a260a638f9b7b15fc535efbd817f9b5e5b4",
+    "first_agent/vendor/eva/tool_calling/utils.py": "9e2cd5b2fd43aa21618ae72f888b9164a1dadcd1089bba275cd1539478b2e307"
+  },
+  "tests": {
+    "full_regression": {
+      "scope": "all",
+      "backend": {
+        "run": 201,
+        "failures": 0,
+        "errors": 0,
+        "passed": true
+      },
+      "frontend": {
+        "passed": true,
+        "total": 85,
+        "results": [
+          {
+            "file": "assistant-intents.cjs",
+            "passed": 13,
+            "cases": [
+              "转账常见同义句可提取变量",
+              "日常账单说法进入账单页",
+              "续费代扣会员语句进入订阅而非账单默认页",
+              "理财产品进入产品页，持仓赎回进入持仓页",
+              "预算目标进入资金计划",
+              "卡片同义词只打开管理页面",
+              "回执与交易历史不误当成新转账",
+              "查询余额与账户总览",
+              "预演权限和风险档案有直接入口但不修改条件",
+              "账单月份分类联动，绝对与相对日期明确",
+              "多个场景需选择，不按第一个关键词直接执行",
+              "未知或帮助语句保留可恢复指引",
+              "所有识别仅记录输入，不授权扣款取消或修改卡片"
+            ]
+          },
+          {
+            "file": "backend-client.cjs",
+            "passed": 6,
+            "cases": [
+              "读取后台快照，不建立浏览器账本",
+              "等待HTTP变更并刷新同一份余额",
+              "并发请求只提交一次",
+              "响应丢失不自动重试，刷新服务器最终结果",
+              "快照刷新失败时阻止新写入，重连可恢复",
+              "开发者密码由服务校验，令牌随请求发送"
+            ]
+          },
+          {
+            "file": "contract-rules.cjs",
+            "passed": 5,
+            "cases": [
+              "1000元边界黄色可确认，累计多笔超限变红色",
+              "300秒预览过期不扣款且状态失效",
+              "120秒断言过期需重新验证但不延长预览",
+              "申购遵循相同的预览/断言时限",
+              "只有独立旧转账权限不能绕过trade，卡扩展仍隔离"
+            ]
+          },
+          {
+            "file": "core.cjs",
+            "passed": 15,
+            "cases": [
+              "账单分类合计与总账一致",
+              "权限按查询订阅交易分开",
+              "订阅取消只减少未来支出，不能重复取消",
+              "关闭确认不执行，申购需验证，不能重复提交",
+              "目标、产品、预算、档案或授权变化使确认失效",
+              "筛选引擎处理风险期限金额与缺失资料",
+              "失败不会改动账本，未知结果冻结并查询一次",
+              "赎回申请不提前到账，次日查询后守恒",
+              "到账失败释放占用，未知赎回核对后仍须等到账",
+              "未到期不能赎回，占用资金不能重复赎回",
+              "中断撤销不回滚资金，恢复仍须重新确认",
+              "连续失败与验证错误锁定，解锁不清账",
+              "保持流动性不申购，预演无虚构收益",
+              "无效金额、期限和超配被拒绝",
+              "快照不能绕过内部规则，输入仅作记录不自动执行"
+            ]
+          },
+          {
+            "file": "customer-language.cjs",
+            "passed": 5,
+            "cases": [
+              "操作名称转换为业务文字，原始工具名不泄露",
+              "未知工具状态与任意原始日志不直接回显",
+              "未知结果与明确失败保留准确状态不冒充成功",
+              "取消确认与条件变化有可理解说明",
+              "凭证编号可读并保持月度账单编号唯一"
+            ]
+          },
+          {
+            "file": "new_features.cjs",
+            "passed": 6,
+            "cases": [
+              "逐日推进与批量推进结果相同且每月收支只记一次",
+              "零收益假设不产生估值，工资支出计入守恒",
+              "收益累积持仓，不提前变成可用现金",
+              "余额不足的支出不扣款不计入已入账账单",
+              "复利曲线与数学公式一致且参数改变确实改变曲线",
+              "定期到期结算前无可用回款且事件预留进入预演"
+            ]
+          },
+          {
+            "file": "return_chart.cjs",
+            "passed": 13,
+            "cases": [
+              "现金管理与四类固收目录具备独立的风险及预演假设",
+              "R1不能申购R2；R2正常匹配90天但不能配置超期产品",
+              "逐日曲线181个点与每月表格在所有月末精确一致",
+              "同本金同期限产品切换使用各自默认收益率",
+              "低收益不再被本金坐标压平，收益端点与账面计算一致",
+              "负收益向下且负数刻度和读数可见",
+              "零收益为水平线，零本金和保留流动性为空态",
+              "收益率和资产价值视图显示正确单位与坐标",
+              "波动情景单独控制缩放并包含负收益可能",
+              "90天赎回情景91天到账，此后收益保持不变",
+              "收入支出只改变现金流，不冒充投资收益",
+              "事件预留压低可配置上限，曲线不允许超额资金",
+              "长周期极端输入图形有限，非法频率与无效数据被拒绝"
+            ]
+          },
+          {
+            "file": "simulation.cjs",
+            "passed": 15,
+            "cases": [
+              "800 元转账同步余额资产账单与任务",
+              "转账与卡管理分别授权",
+              "失败转账不扣款，未知阻止重复，查询只入账一次",
+              "红色转账验证必需、错误验证码、关闭确认均不扣款",
+              "超额非整数未知联系人均拒绝",
+              "累计日限额与额度调整，不生成资金",
+              "限制解锁挂失联动转账，挂失不可解锁",
+              "未知卡操作查询后同步状态，失败不改卡",
+              "申请需次日审核，不当作立即开卡且重复查询不再开卡",
+              "卡申请拒绝不增加卡数与余额",
+              "快照恢复金额记录卡状态一致且编号不重复",
+              "刷新恢复待确认要求重新验证",
+              "授权变更/中断/目标变更使新操作失效，不回滚已执行",
+              "六个月锁定期加结算日不可用于六个月目标",
+              "持续操作混合申购赎回订阅和转账资金守恒"
+            ]
+          },
+          {
+            "file": "transfer-template.cjs",
+            "passed": 7,
+            "cases": [
+              "模板中的姓名和金额都是变量，不写死小王500",
+              "小李被识别但名册不存在，不替换成小王",
+              "重名联系人需要手动核对，不选第一个",
+              "缺少姓名金额或多笔附加条件不猜测",
+              "负数零超额与超过两位小数科学记数法均不带入",
+              "否定和绕过验证指令不转为可执行模板",
+              "识别不扣钱不授权不生成金融操作，执行仍走既有规则"
+            ]
+          }
+        ]
+      },
+      "passed": true
+    },
+    "final_module_regression": {
+      "scope": "modules",
+      "backend": {
+        "run": 36,
+        "failures": 0,
+        "errors": 0,
+        "passed": true
+      },
+      "frontend": null,
+      "passed": true
+    }
+  },
+  "scope": "modules only; original web routes and legacy code unchanged",
+  "production_payment_ready": false,
+  "paid_api_used": false
+}

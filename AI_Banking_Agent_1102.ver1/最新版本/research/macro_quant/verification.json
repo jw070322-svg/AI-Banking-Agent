@@ -1,0 +1,32 @@
+{
+  "cli_matches_function": true,
+  "deterministic_repeat": true,
+  "economic_validation": false,
+  "example_status": "ok",
+  "existing_code": {
+    "changed": [],
+    "files_checked": 76
+  },
+  "input_unchanged": true,
+  "model_version": "conditional-scenario-cvar-1.0.0",
+  "python": "3.14.7",
+  "sha256": {
+    "INTERFACE.md": "9e92bd63e88cd135a6f3a51dcca603be80a5f1b6a90e569ad42f7a6e6018b2b6",
+    "cli_output.json": "29b965e124ff72c495fe86b8ee559f4ac5eae80a9a23538369af7aff3342e2e3",
+    "context.json": "d348cf80441a366230e64c32c3093fb370aea8e75c2f5a616cbd3fff7b2337c3",
+    "example_input.json": "55017312ce48d92c7122f1bc5e7b81d5024771a1752935c8e4d63a5de2f7249d",
+    "example_output.json": "29b965e124ff72c495fe86b8ee559f4ac5eae80a9a23538369af7aff3342e2e3",
+    "params.json": "f13c1a6243c64e32f0648f033c73185d19b91c49ddadd9734dfbe2417bfc2f77",
+    "preserved_baseline.json": "ede0d42f79449e222e6cd4eacf9ba996a40aefbed0007e4c08151cfd46acca63",
+    "quant_recommender.py": "f7dea143494f1ed5879ef5b99b51106c4fa6bc6bc7efd447b92f658fbbece1a3",
+    "reproduce.py": "184f535fa98ddf0f1fc744e715659b79dddb3e850c8941d48cbca10db4b988b0",
+    "test_quant_recommender.py": "12e2d4adb81ca7b72228b1b62b775b35d99c33befc6d73197168a9bdc064225c",
+    "walk_forward_report.json": "a5593b56a89ec882f066e4bc04ac33eba08dba55a687a2ca0424d09edf3b4f5f",
+    "项目目标与思路.md": "4722afc03132c8788d813039747726623812231df0bfed3946b6eebfa0a59e55"
+  },
+  "status": "passed",
+  "test_count": 42,
+  "test_errors": 0,
+  "test_failures": 0,
+  "walk_forward_periods": 36
+}

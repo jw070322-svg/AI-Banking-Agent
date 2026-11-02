@@ -1,0 +1,3 @@
+/* Keep the summary control above existing service shortcuts and trade bar. */
+#experience-launcher{bottom:calc(78px + env(safe-area-inset-bottom, 0px))}
+@media(max-width:650px){#experience-launcher{bottom:calc(78px + env(safe-area-inset-bottom, 0px));right:14px}}

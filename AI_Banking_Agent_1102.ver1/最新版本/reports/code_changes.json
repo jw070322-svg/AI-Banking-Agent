@@ -1,0 +1,120 @@
+{
+  "baseline": "../FirstAgent",
+  "files": [
+    {
+      "path": "first_agent/engine_worker.cjs",
+      "old_sha256": "5137c54267bc775bd6d1011ac1489cd3cecf9f32c3b911ab413ba9a01db2585a",
+      "new_sha256": "42d89fb173d447d47fed1e54139567e12636c201c5a1654b234df23a49e5f6f3",
+      "diff": "reports/diffs/first_agent__engine_worker.cjs.diff"
+    },
+    {
+      "path": "first_agent/scenarios.py",
+      "old_sha256": null,
+      "new_sha256": "38a3e9e37cbef95a956c2da58c197fde3c5fb61bfd07f19bac7a8cbfb5f1cff3",
+      "diff": "reports/diffs/first_agent__scenarios.py.diff"
+    },
+    {
+      "path": "first_agent/server.py",
+      "old_sha256": "feb36bbdd9cad347d2f15e14ddcf18c9b6a22541c1c7e79f31d37ec79867f990",
+      "new_sha256": "078f99b060f441b83c6377e4e693ceab34da73c9ae5509ac3bcd5c047a3ef3f0",
+      "diff": "reports/diffs/first_agent__server.py.diff"
+    },
+    {
+      "path": "first_agent/service.py",
+      "old_sha256": "296bb68ce89a8b41314382ff262fa60709afcd69f653ec511c4bed4297fe7598",
+      "new_sha256": "08030e06689af5e482f465db3b17190b1cec8a77f0be9079f238d029a99db276",
+      "diff": "reports/diffs/first_agent__service.py.diff"
+    },
+    {
+      "path": "first_agent/vendor/scenario/__init__.py",
+      "old_sha256": null,
+      "new_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "diff": "reports/diffs/first_agent__vendor__scenario____init__.py.diff"
+    },
+    {
+      "path": "first_agent/vendor/scenario/base_validator.py",
+      "old_sha256": null,
+      "new_sha256": "3f643ed374f1694cf3dc30165f6cce662a12ee1ea6e223d7f0acd51e17e125f7",
+      "diff": "reports/diffs/first_agent__vendor__scenario__base_validator.py.diff"
+    },
+    {
+      "path": "first_agent/vendor/scenario/generator.py",
+      "old_sha256": null,
+      "new_sha256": "88aed19b8fad89fdcef2f41d0677803eafadb95646c3ce5fa0f12bdbdb9b5e2a",
+      "diff": "reports/diffs/first_agent__vendor__scenario__generator.py.diff"
+    },
+    {
+      "path": "tests/test_update.py",
+      "old_sha256": null,
+      "new_sha256": "ff04c7db46135d33f0f5102c3a065d8f7896f386c4311259f11b872ef1aac5ef",
+      "diff": "reports/diffs/tests__test_update.py.diff"
+    },
+    {
+      "path": "tests/vv_contract_rules.cjs",
+      "old_sha256": null,
+      "new_sha256": "5d4c830ee5195b692dce2c751f984a3b0af3c491ed3cb425ee8f3f062e721588",
+      "diff": "reports/diffs/tests__vv_contract_rules.cjs.diff"
+    },
+    {
+      "path": "tests/vv_simulation.cjs",
+      "old_sha256": null,
+      "new_sha256": "60c467baad792ff84111a94cf5d4166b9160a423e3b59b63aa1c2c2792b76922",
+      "diff": "reports/diffs/tests__vv_simulation.cjs.diff"
+    },
+    {
+      "path": "web/agent-panel.js",
+      "old_sha256": "e4cb39e4ca4b6b913d1caf4febaecf11c1dcd2d64190add6e127d4c090c1661b",
+      "new_sha256": "29e570639e3cba2a586f092104d2b5ba392b68da082fae9e15caf837b6af95d8",
+      "diff": "reports/diffs/web__agent-panel.js.diff"
+    },
+    {
+      "path": "web/journey-engine.js",
+      "old_sha256": "5be09a83d0e3730016dcb19e1b38a42adfc9863155f3ddc3da80a17ec9a7b30b",
+      "new_sha256": "27e2c29ab3a79965a5e2069f47b21b1837482d5f2352d1070acdf161317b1ff4",
+      "diff": "reports/diffs/web__journey-engine.js.diff"
+    },
+    {
+      "path": "web/journey-workspace.css",
+      "old_sha256": "a1bf63be16eb7454a1e4e964a7679d1568da49bd63aeeeb0c7157cd25b4bbbff",
+      "new_sha256": "dd232b8baadcbbbb78e938f757c07978903cd3e9c3cad34dfe2a73ebefd926d0",
+      "diff": "reports/diffs/web__journey-workspace.css.diff"
+    },
+    {
+      "path": "web/journey-workspace.js",
+      "old_sha256": "164396ec0de7e1d1e489c6f348802f4ae21acc7dee5fc82c19654a8fc943d9f5",
+      "new_sha256": "2e33c63a1c5869e2b6114a592f0ff5597c75280c1134b1fc4ac8121e0d2a1caf",
+      "diff": "reports/diffs/web__journey-workspace.js.diff"
+    },
+    {
+      "path": "web/server-bridge.js",
+      "old_sha256": "f6ff2d2813288cb2544fe9d6edf8436f7423a90c8bb4f7767f664779233b5728",
+      "new_sha256": "554291f5d7ed4526967345c9c5bbccfcf08cabb07232bd65ac874869c15de4fd",
+      "diff": "reports/diffs/web__server-bridge.js.diff"
+    },
+    {
+      "path": "verify_delivery.py",
+      "old_sha256": "c0c17107053c8e225cd4242a474084bf2de5027abded14da12344a401a33df80",
+      "new_sha256": "fda71a69eaa8ac081b6ff98aff6d45d536e45aa9444918e87cf2bb7f396f59e4",
+      "diff": "reports/diffs/verify_delivery.py.diff"
+    },
+    {
+      "path": "run_agent.ps1",
+      "old_sha256": "dfc1b6654c2bf450d733e83b2831f71c420f00b8114851a4412eaa0477d109f1",
+      "new_sha256": "5b2e7c14707237273ca40b573952f856f26b1a97a8e6d67b79fb8b45fd3849ab",
+      "diff": "reports/diffs/run_agent.ps1.diff"
+    },
+    {
+      "path": "write_reports.py",
+      "old_sha256": "3f98036201f30e7f30f4d07e5d97e68a2d387d4dea78ae5998e1703cb59d6870",
+      "new_sha256": "343969f92d398245b93fcad8e6452e79d76b6a10b1554ac2ce74d0c3e2a29864",
+      "diff": "reports/diffs/write_reports.py.diff"
+    },
+    {
+      "path": "write_update_reports.py",
+      "old_sha256": null,
+      "new_sha256": "f9b8637ebdd29ee5db6c609acfd41a9ddb454ae58d997465d9a66e22664b25d9",
+      "diff": "reports/diffs/write_update_reports.py.diff"
+    }
+  ],
+  "conclusion": "逐文件差异与哈希覆盖本轮运行代码、测试和交付脚本。"
+}

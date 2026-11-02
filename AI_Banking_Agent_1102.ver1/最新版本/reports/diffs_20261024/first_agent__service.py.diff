@@ -1,0 +1,101 @@
+--- F:\AI_Banking\SecondAsgent\first_agent\service.py
++++ first_agent\service.py
+@@ -9,7 +9,8 @@
+ import hashlib, json, re, shutil, sqlite3, subprocess, time
+ 
+ from .security import Scanner
+-from .scenarios import generate as generate_scenario
++from .analysis_bridge import (AnalysisError, analysis_status, generate_scenario,
++                              run_analysis_tool, session_to_scenario, session_context, _load_modules)
+ from .vendor.eva.data import MockBank, D, POLICY
+ from .vendor.eva.models import ToolError
+ from .vendor.eva.tools import ToolRegistry
+@@ -175,8 +176,30 @@
+ 
+     def dispatch(self,db,state,action,args):
+         if action=='scenario.generate':
+-            try:return generate_scenario(args.get('requirement'))
+-            except ValueError as exc:raise Fault('SCENARIO_INVALID',str(exc)) from exc
++            allowed={'requirement','prompt','format','scenario_type','seed','reference_date'}
++            if set(args)-allowed:raise Fault('INVALID_ARGUMENT','不支持的场景参数；对客接口不接受评测开关')
++            legacy=args.get('format','contract' if 'prompt' in args else 'legacy')=='legacy'
++            if args.get('format','legacy') not in {'legacy','contract'}:raise Fault('INVALID_ARGUMENT','format 必须为 legacy 或 contract')
++            if 'prompt' in args and 'requirement' in args and args['prompt']!=args['requirement']:
++                raise Fault('INVALID_ARGUMENT','prompt 与 requirement 不一致')
++            try:
++                scenario=generate_scenario(args.get('prompt',args.get('requirement')),args.get('scenario_type'),args.get('seed'),args.get('reference_date'))
++            except AnalysisError as exc:
++                code='SCENARIO_INVALID' if legacy and exc.code=='SCENARIO_UNSUPPORTED' else exc.code
++                raise Fault(code,exc.message) from exc
++            if not legacy:return scenario
++            # Compatibility projection only; canonical generation/validation stays upstream.
++            return {'schema_version':'scenario-1.0','scenario_id':scenario['scenario_id'],
++                    'scenario_type':scenario['scenario_type'],'accounts':scenario['accounts'],
++                    'transactions':[{'id':t['transaction_id'],'account_id':t['account_id'],'date':t['date'],
++                                     'amount_minor':t['amount'],'category':t['category'],'status':t['status']} for t in scenario['transactions']],
++                    'warnings':scenario.get('warnings',[]),'simulated':True,'ledger_modified':False}
++        if action=='analysis.status':return analysis_status()
++        if action=='analysis':
++            self.require(state,'accounts')
++            if set(args)-{'tool','args'}:raise Fault('INVALID_ARGUMENT','会话数据与上下文由服务端提供')
++            try:return run_analysis_tool(args.get('tool','analysis.pipeline'),args.get('args'),state)
++            except AnalysisError as exc:raise Fault(exc.code,exc.message) from exc
+         if action=='rpc':
+             method=args.get('method');params=args.get('args',[])
+             if method not in METHODS:raise Fault('TOOL_NOT_REGISTERED','不支持的业务工具')
+@@ -379,7 +402,31 @@
+         # Calendar days include next-day settlement; engine eligibility remains binding too.
+         profile={'user_id':state['customer_id'],'risk_tolerance':1 if state['profile']=='valid' else None,'risk_capacity':1,
+                  'budget_cny':min(state['amount'],out['capacity'])/100,'horizon_days':state['goal']['months']*30,'max_redemption_days':1,'objective':args.get('objective','liquidity'),'preferred_categories':['cash']}
++        capacity=min(state['amount'],out['capacity'])
++        basis={'configured_minor':state['amount'],'engine_capacity_minor':out['capacity'],
++               'analysis_headroom_minor':None,'applied_minor':capacity,'source':'engine_capacity',
++               'analysis_status':'not_authorized'}
++        warnings=[]
++        if state['consent']['read']:
++            try:
++                self.require(state,'accounts')
++                # The same organizer view is consumed by ranking and exposed to teammates.
++                package=run_analysis_tool('data.organize',{},state)['result']
++                view=package['views']['recommendation']
++                headroom=view['conditions']['analysis_headroom_minor']
++                basis.update(analysis_headroom_minor=headroom,analysis_status='available')
++                applied=min(capacity,view['conditions']['budget_minor'])
++                profile=dict(view['profile']);profile['budget_cny']=applied/100
++                profile['objective']=args.get('objective',profile['objective'])
++                basis['applied_minor']=applied
++                if applied<capacity:basis['source']='analysis'
++                warnings.extend(package['manifest']['warnings'])
++            except (AnalysisError,Fault):
++                basis['analysis_status']='unavailable'
++                warnings.append('分析不可用，采用原有配置与引擎容量；未改动账本')
+         result=recommend(profile,products,args.get('top_k',3));result['money_unit']='CNY minor units at external boundary; ranking adapter alone converts to CNY'
++        result['budget_basis']=basis
++        result['warnings']=list(dict.fromkeys(result.get('warnings',[])+warnings))
+         return result
+ 
+     def chat(self,state,args):
+@@ -410,6 +457,12 @@
+         if re.search('账单|消费|支出|现金流|储蓄率',text):tasks.append(('transactions',{'month':args.get('month','2026-10')}))
+         if re.search('订阅|扣费',text):tasks.append(('subscriptions',{}))
+         if re.search('理财|推荐|投资',text):tasks.append(('recommend',{}))
++        analysis_tool = ('data.organize' if re.search('数据整理|整理数据|卡片视图',text) else
++                         'budget.advice' if re.search('预算建议|可投金额|应急金',text) else
++                         'analysis.pipeline' if re.search('分析|现金流|储蓄率|流动性|异常',text) else None)
++        if analysis_tool:
++            tasks=[task for task in tasks if task[0]!='transactions']
++            tasks.append(('analysis',{'tool':analysis_tool,'args':{}}))
+         if not tasks:tasks=[('knowledge',{'question':text})]
+         results=[];plan=[]
+         for i,(tool,params) in enumerate(tasks):
+@@ -418,6 +471,10 @@
+             elif tool=='transactions':self.require(state,'transactions');data=self.engine_call(state,'summary',[params['month']])
+             elif tool=='subscriptions':self.require(state,'subscriptions');data=deepcopy(state['subscriptions'])
+             elif tool=='recommend':data=self.recommendations(state,{})
++            elif tool=='analysis':
++                self.require(state,'accounts')
++                try:data=run_analysis_tool(params['tool'],params['args'],state)
++                except AnalysisError as exc:raise Fault(exc.code,exc.message) from exc
+             else:data=self.rag.ask(text,3)
+             results.append({'tool':tool,'result':data})
+         log={'at':stamp(),'message':self.scanner.redact_text(text),'plan':plan,'status':'succeeded'}

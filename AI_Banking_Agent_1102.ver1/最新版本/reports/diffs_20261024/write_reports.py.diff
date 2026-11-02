@@ -1,0 +1,10 @@
+--- F:\AI_Banking\SecondAsgent\write_reports.py
++++ write_reports.py
+@@ -1,5 +1,2 @@
+-"""SecondAsgent report entry point."""
+-from write_update_reports import main
+-
+-if __name__ == "__main__":
+-    main()
++from build_reports import main
++if __name__ == '__main__': main()

@@ -1,0 +1,14 @@
+# Agent Action · transfer.create · transfer_funds@1.0.0
+
+```json
+{
+  "user_id": "CUST-001",
+  "intent": "transfer.create",
+  "tool": "transfer_funds@1.0.0",
+  "input": "{\"tool\":\"transfer_funds\",\"step_id\":\"t3\",\"error_code\":\"POLICY_DENIED\"}",
+  "output": "{\"ok\":false,\"step_id\":\"t3\",\"elapsed_ms\":0.0,\"status\":\"rejected\",\"error_code\":\"POLICY_DENIED\",\"error\":\"检测到试图绕过风控/审批的指令，操作已阻断。\"}",
+  "risk_check": "{\"policy_version\":\"pol_2026_10_20\",\"passed\":false,\"checks\":{\"compliance_scan\":\"fail\"},\"risk_flags\":[\"prompt_injection_suspected\"],\"requires_confirmation\":true,\"requires_step_up_auth\":true,\"requires_manual_review\":true,\"controls\":[{\"control_id\":\"RC-04\",\"obligation\":\"R4 操作必须通过 step-up 认证\",\"control\":\"StepUpAuthenticator 强制断言校验与一次性消费\",\"owner\":\"risk-module\",\"review_status\":\"implemented_demo\",\"evidence_ttl_days\":1,\"evidence_fields\":[\"auth_method\",\"step_up_verified\",\"step_up_simulated\"],\"evidence_hash\":\"sha256:9bbb37716c0472e9b50e6c2a19a366a7ecb3862e8616143f0b2f57c3bb891922\"},{\"control_id\":\"RC-05\",\"obligation\":\"提示注入与不可信内容不得改变授权或工具参数\",\"control\":\"ComplianceScanner + 固定模板 + 内容隔离标记\",\"owner\":\"risk-module\",\"review_status\":\"implemented\",\"evidence_ttl_days\":1,\"evidence_fields\":[\"findings\",\"blocked\",\"untrusted_content_findings\"],\"evidence_hash\":\"sha256:9fc5b26d226df52ea9fb0d89f7702197808ce0accf80d498f67947678c501c1b\"},{\"control_id\":\"RC-06\",\"obligation\":\"日志与审计记录必须最小化 PII\",\"control\":\"ComplianceScanner.redact + ActionLogWriter 写前二次扫描\",\"owner\":\"risk-module\",\"review_status\":\"implemented\",\"evidence_ttl_days\":1,\"evidence_fields\":[\"redaction_applied\",\"pii_scan\"],\"evidence_hash\":\"sha256:4aa6638e8a9be7829b930c80d1316e1d8f551cfc10756675e95ce2380316503b\"},{\"control_id\":\"RC-07\",\"obligation\":\"关键 Agent Action 必须可追溯\",\"control\":\"8 字段 .md Action Log + 应急 JSONL 通道\",\"owner\":\"risk-module\",\"review_status\":\"implemented\",\"evidence_ttl_days\":30,\"evidence_fields\":[\"log_format\",\"timestamp\",\"audit_id\",\"fallback_path\"],\"evidence_hash\":\"sha256:46ff2b76f4960f4f32f344d16264f08f07506d44b89614323ec50be21048edf2\"},{\"control_id\":\"RC-08\",\"obligation\":\"需要人工复核的异常必须被标记\",\"control\":\"requires_manual_review + audit 告警\",\"owner\":\"risk-module\",\"review_status\":\"implemented\",\"evidence_ttl_days\":30,\"evidence_fields\":[\"requires_manual_review\",\"severity\"],\"evidence_hash\":\"sha256:f13eacd5548ca72e7781d7d17a6f8988239a0f5dbc778bcf02a43157bd5b76c9\"}],\"untrusted_content_findings\":[{\"tool\":\"transfer_funds\",\"step_id\":\"t3\",\"findings\":[{\"code\":\"PROMPT_INJECTION_SUSPECTED\",\"severity\":\"high\",\"detail\":\"不可信内容（transfer_funds）：用户输入包含试图绕过限额/审批/风控的指令。\",\"matched\":\"绕过风控/审批\"}]}]}",
+  "approval": "{\"required\":true,\"decision\":\"blocked\",\"reason\":\"检测到试图绕过风控/审批的指令，操作已阻断。\"}",
+  "timestamp": "2026-10-20T19:36:00+08:00"
+}
+```

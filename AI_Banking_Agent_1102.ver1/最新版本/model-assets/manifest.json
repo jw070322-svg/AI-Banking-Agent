@@ -1,0 +1,133 @@
+{
+  "model_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+  "runtime_source": "https://github.com/ggml-org/llama.cpp/releases/tag/b11900",
+  "runtime_zip_sha256": "d3bbbbb7d1b4979b72052fd73cdeeb5a4d5a4e6a3f52aeb40abd6f116558e323",
+  "alias": "banking-finance-lora",
+  "files": [
+    {
+      "path": "model-assets/llama-b11900/ggml-base.dll",
+      "bytes": 805888,
+      "sha256": "1c7ccf233919d77ab6d58ce8c34cb6d88e0e8ce4d57ad92c5e98af73ddd03c0f"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-alderlake.dll",
+      "bytes": 1421824,
+      "sha256": "8f189b354d1a9fced7ceaa4329da0aa6d77b63a1b6d2bab5db2010bf83ad0352"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-cannonlake.dll",
+      "bytes": 1616896,
+      "sha256": "0a9b8974b4c3b0f6fee142020481b07a6707ef1f5a72ae8b30e5f991e9af5c45"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-cascadelake.dll",
+      "bytes": 1589760,
+      "sha256": "7bbc8274b557e30ddd0106d26937120f784186241002a692c89b14bce50d930a"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-cooperlake.dll",
+      "bytes": 1599488,
+      "sha256": "847b8de5227b6badf91e4871220cadb0e80d42f939b4edaef128a315e5f139dc"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-haswell.dll",
+      "bytes": 1426944,
+      "sha256": "03dcc47e42f87df19172d0786a100ec570b857346cea1dc73cf09014154840de"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-icelake.dll",
+      "bytes": 1596416,
+      "sha256": "69b5a408c468336ea418f2d9b6e0b9b68f416bb4ce011fd1a3e21fd06055036e"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-ivybridge.dll",
+      "bytes": 1308160,
+      "sha256": "15aa6dc555f2bb57c916e1358dfef3c42be38a6eec9ef62256028e1972c48f9c"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-piledriver.dll",
+      "bytes": 1300992,
+      "sha256": "764924d62da2c432a7cd4d0c5275ff5a59543cb9fdfa875c6b48944a7cae7667"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-sandybridge.dll",
+      "bytes": 1297408,
+      "sha256": "303a5edef9a920a02776213e2a00d6e9ae145b519e16e612d6c9e10d53b51051"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-sapphirerapids.dll",
+      "bytes": 1875968,
+      "sha256": "270dd72a2436688b5cba4e5561de791d4c7d5f204bfa44b3e872c1834aacccf6"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-skylakex.dll",
+      "bytes": 1610240,
+      "sha256": "4d23f408665c97e38602e21e1be0137b6b9d6f35e869517815227dfa8b6b9d12"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-sse42.dll",
+      "bytes": 923648,
+      "sha256": "cbdd9664818c43e899c2fda2a56ba3925b33f17bc3e86fc40c6e3b9260814a70"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-x64.dll",
+      "bytes": 916480,
+      "sha256": "7d8365cd7637fdba47091ebc2eb799fb34bf1232d21206ee9b6c95788db964ee"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-cpu-zen4.dll",
+      "bytes": 1605632,
+      "sha256": "9c61527b7665150cd380cc0895e6a2a1ac8f6ffc9cc56a000427f299eaaf19a1"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml-rpc.dll",
+      "bytes": 231424,
+      "sha256": "c4868e834e8930a43b19a354986084b2c555df40708c05bcf24887cfa860d13e"
+    },
+    {
+      "path": "model-assets/llama-b11900/ggml.dll",
+      "bytes": 78848,
+      "sha256": "054486d845c040b1957555f69a0acf2e0e9e3c09434e1717b22afa41ac77d7dd"
+    },
+    {
+      "path": "model-assets/llama-b11900/libomp.dll",
+      "bytes": 768000,
+      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c"
+    },
+    {
+      "path": "model-assets/llama-b11900/llama-common.dll",
+      "bytes": 8286720,
+      "sha256": "d338dc7346482885693bedfb194a1460050a486389fc16b95b6d6bf6ba1a3432"
+    },
+    {
+      "path": "model-assets/llama-b11900/llama-server-impl.dll",
+      "bytes": 9684992,
+      "sha256": "85288251d65e9b0605075de1d4f33421342df826ac86c1ba8513899c46462658"
+    },
+    {
+      "path": "model-assets/llama-b11900/llama-server.exe",
+      "bytes": 9216,
+      "sha256": "f40ea5811fe422f4d7b15a1621eddfc258f962b61ba545c1f9fe80ef850de845"
+    },
+    {
+      "path": "model-assets/llama-b11900/llama.dll",
+      "bytes": 3686912,
+      "sha256": "c413259a002cf5d8647d5ecadd611dba1651967beb12d67452e3dabbd8049c6a"
+    },
+    {
+      "path": "model-assets/llama-b11900/mtmd.dll",
+      "bytes": 1972736,
+      "sha256": "1096c0a97ab16d60b7156b9bd7834c986648d3c05ed696495923e78a024fc8f6"
+    },
+    {
+      "path": "model-assets/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    {
+      "path": "training/lora-finance-qwen05b-full/adapter-qwen2.gguf",
+      "bytes": 2169280,
+      "sha256": "ce77779a64722866b8d5cede0ee2c0485345a020d195a3a2abed7e592f10bad6"
+    }
+  ]
+}

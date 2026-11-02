@@ -1,0 +1,19 @@
+{
+  "version": "Third_Agent 2026-10-24",
+  "url": "http://127.0.0.1:8768/",
+  "database": "runtime/browser-demo.sqlite3",
+  "mode": "separate local synthetic demonstration",
+  "checks": [
+    {"check": "Page loads persisted overview", "passed": true, "available_minor": 3864000, "positions_minor": 9000000},
+    {"check": "Organizer without read consent denied", "passed": true},
+    {"check": "Organizer after explicit demo consent returns four views", "passed": true},
+    {"check": "Reload preserves session and organizer still works", "passed": true},
+    {"check": "Third edition title and updated capability text visible", "passed": true},
+    {"check": "New analysis and organizer buttons show readable Chinese summaries", "passed": true},
+    {"check": "Cashflow minimum 3847100, savings 1564000, investment 0, four reminders", "passed": true},
+    {"check": "Overview balance unchanged after read-only actions", "passed": true},
+    {"check": "Updated page scripts pass node --check", "passed": true}
+  ],
+  "screenshot": "reports/browser-analysis.png",
+  "limitations": ["No full responsive/accessibility audit", "No real bank or customer data used"]
+}

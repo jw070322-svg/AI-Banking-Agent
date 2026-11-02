@@ -1,0 +1,184 @@
+{
+  "retained_dependencies": [
+    "start.py",
+    "start_live_indices.py",
+    "start_live_product_quotes.py",
+    "start_local_ai.ps1"
+  ],
+  "url": "http://127.0.0.1:8807/",
+  "timestamp": "2026-10-30T22:33:38.8998190+08:00",
+  "path_updates": [
+    {
+      "change": "归档后的工作目录指向项目根目录，历史入口8806仅作对照",
+      "original_sha256": "124555335f78c89a2475c8a3f6f77d95e6743540bbb4bc5a7c326712642a872f",
+      "file": "启动官网指数优先版.bat",
+      "updated_sha256": "6b2b997e98f29226b843dbaa50ad11f7e211511027649adabb6c034cf67f5317",
+      "original": "history_version/original_scripts/启动官网指数优先版.bat.txt"
+    }
+  ],
+  "active_launcher": "启动产品行情版.bat",
+  "moved": [
+    {
+      "to": "history_version/启动官网指数优先版.bat",
+      "from": "启动官网指数优先版.bat",
+      "sha256": "124555335f78c89a2475c8a3f6f77d95e6743540bbb4bc5a7c326712642a872f"
+    },
+    {
+      "to": "history_version/先看这里_最新版本.md",
+      "from": "先看这里_最新版本.md",
+      "sha256": "029b26a2e1407a14fd8c3a6236c15a5541bff35769f4be9722ff1b260af95e04"
+    },
+    {
+      "to": "history_version/LOCAL_AGENT_HANDOFF.md",
+      "from": "LOCAL_AGENT_HANDOFF.md",
+      "sha256": "eef7b604cfc58202be49ba8db06e4f45a3964d6d9d97d9c04702cdac584c8baa"
+    },
+    {
+      "to": "history_version/CURVE_FIX_1026.md",
+      "from": "CURVE_FIX_1026.md",
+      "sha256": "aa0bb5978f914386e47946e52502976360e213aabb67b525c9427eec81a3dcf4"
+    },
+    {
+      "to": "history_version/RESUME_TOMORROW.json",
+      "from": "RESUME_TOMORROW.json",
+      "sha256": "3c788a162f99b170416b6cd4d4e686b4c53f2f60dc71e768dd1f80d7e754d4d0"
+    },
+    {
+      "to": "history_version/tools_security_1029_additive.zip",
+      "from": "tools_security_1029_additive.zip",
+      "sha256": "cd766e062f1ac960b9031b9e85296608712b1eda8f1d57fd0ad77a2174127ca6"
+    },
+    {
+      "to": "history_version/HANDOFF_1027_PAUSED.md",
+      "from": "HANDOFF_1027_PAUSED.md",
+      "sha256": "94ec53efb34c8a7771cb3981a41dd0fda8bee8b482fc35c5e1032327ab8188b9"
+    },
+    {
+      "to": "history_version/HANDOFF_1027_SECURITY.md",
+      "from": "HANDOFF_1027_SECURITY.md",
+      "sha256": "5b32d3b4698db9fd0af71ca5d2a87af1c6574d6dd3f622a7c6b966688d079fcc"
+    },
+    {
+      "to": "history_version/HANDOFF_1027_VER3.md",
+      "from": "HANDOFF_1027_VER3.md",
+      "sha256": "ca733dea6a00a59a0dddeac5a35286428e9bc75678a545a65ba2fa89d544a8c6"
+    },
+    {
+      "to": "history_version/HANDOFF_1027_VER4.md",
+      "from": "HANDOFF_1027_VER4.md",
+      "sha256": "3ccbc3cdac0590d39f934150c35497152f097d6aa8ac3b80ab4e2cbb06370c97"
+    },
+    {
+      "to": "history_version/HANDOFF_1027_VER5_PAUSED.md",
+      "from": "HANDOFF_1027_VER5_PAUSED.md",
+      "sha256": "20e07304abd4685fc6a94733c1c66e490f1fe2065eab1b3e3691fbc4b90f5a4d"
+    },
+    {
+      "to": "history_version/HANDOFF_1028_RAG.md",
+      "from": "HANDOFF_1028_RAG.md",
+      "sha256": "d6eabf4204ccfe34f6437054a9fa3ef70e5d681d6395cf3409ecd9efa6535792"
+    },
+    {
+      "to": "history_version/HANDOFF_1029_PROGRESS.json",
+      "from": "HANDOFF_1029_PROGRESS.json",
+      "sha256": "ccad56fc411683a57540c06675d653781d846fc124124c16713b346d6225ab6f"
+    },
+    {
+      "to": "history_version/HANDOFF_1029_RAG_PAUSED.json",
+      "from": "HANDOFF_1029_RAG_PAUSED.json",
+      "sha256": "1201534e9a105c6f9fdad134b7d80f60d1c7beb501ba8026b6014f83a0b51c22"
+    },
+    {
+      "to": "history_version/HANDOFF_1029_TOOLS_SECURITY.json",
+      "from": "HANDOFF_1029_TOOLS_SECURITY.json",
+      "sha256": "89a97d4ee49dcdcd17d0016903846cb3016ed6eb74b12a0d032e768c3594b744"
+    },
+    {
+      "to": "history_version/HANDOFF_1030_LAUNCHERS_PAUSED.json",
+      "from": "HANDOFF_1030_LAUNCHERS_PAUSED.json",
+      "sha256": "12a6bd302d1cb7685dbb86a3f04917d49d666a898b95239a1c412e1126ceb964"
+    },
+    {
+      "to": "history_version/HANDOFF_1030_LIVE_INDICES.json",
+      "from": "HANDOFF_1030_LIVE_INDICES.json",
+      "sha256": "f3ef85f67de3f8fb588ee89294a307c13ee08927fcf55caaf9987ee7af383af9"
+    },
+    {
+      "to": "history_version/HANDOFF_1030_PRESERVATION_FIX.json",
+      "from": "HANDOFF_1030_PRESERVATION_FIX.json",
+      "sha256": "dea23a510a70ed19db20acf3fe983dd9dbf5bd2446ae7b9d72b6ed1c14d8636f"
+    },
+    {
+      "to": "history_version/HANDOFF_1030_RELAY.json",
+      "from": "HANDOFF_1030_RELAY.json",
+      "sha256": "195be80f8ea023f7d61473b17effe2541a0eb9eb904d621882537a80d881bfac"
+    },
+    {
+      "to": "history_version/HANDOFF_1030_UI_CACHE.json",
+      "from": "HANDOFF_1030_UI_CACHE.json",
+      "sha256": "5f4f84d49530fe02a5dbc7797d89d213be6f66b713b1a7553aa3ae69d8b2f046"
+    },
+    {
+      "to": "history_version/HANDOFF_REVIEW_1029.json",
+      "from": "HANDOFF_REVIEW_1029.json",
+      "sha256": "8178ce738ccb13a3e7cbb6bb13ae5d3087adb6e5d5dbbfcb3d101ab41adf3fe5"
+    },
+    {
+      "to": "history_version/VALIDATION_1026.md",
+      "from": "VALIDATION_1026.md",
+      "sha256": "414f83a90aabb8e5820fb232764aca45ecb114a6a8acac1479a118c7217654ab"
+    },
+    {
+      "to": "history_version/VALIDATION_1027_VER3.md",
+      "from": "VALIDATION_1027_VER3.md",
+      "sha256": "b1a5b90ecbfade0b514760b86b24d59200359926f2b011862d7926dde718e181"
+    },
+    {
+      "to": "history_version/VALIDATION_1027_VER4.md",
+      "from": "VALIDATION_1027_VER4.md",
+      "sha256": "8ae471cfccee9b11f400ca099fc5505cddc2ef1f7439f423c03487c25f3f4570"
+    },
+    {
+      "to": "history_version/VALIDATION_1027.md",
+      "from": "VALIDATION_1027.md",
+      "sha256": "49c7def96a2b0cbb19d34a52505898a13c95ce0f7104ae77caec1e7276728d6a"
+    },
+    {
+      "to": "history_version/development_log_1029.jsonl",
+      "from": "development_log_1029.jsonl",
+      "sha256": "ec45dc2b96fd27a2d5777901451d7e1b9fc57e4dacdb391854af08e62d64a86a"
+    },
+    {
+      "to": "history_version/development_log_1030.jsonl",
+      "from": "development_log_1030.jsonl",
+      "sha256": "fecc5bd45f48a8f5a428bd97b2097d5e9be94ebd4e46c6a6d0e806fe88c7632a"
+    },
+    {
+      "to": "history_version/development_log_rag_1029.jsonl",
+      "from": "development_log_rag_1029.jsonl",
+      "sha256": "25b25e424ad275321ca1e7b70012167b3fe3102db29093b13c379ecc2376c6ee"
+    },
+    {
+      "to": "history_version/development_log_review_1029.jsonl",
+      "from": "development_log_review_1029.jsonl",
+      "sha256": "6f76e9a6b06cae493c3454405bf81bcaf455b4167537603cd2a7b7f4370dbb86"
+    },
+    {
+      "to": "history_version/development_log_ui_cache_1030.jsonl",
+      "from": "development_log_ui_cache_1030.jsonl",
+      "sha256": "d6ab1f6d2174100da4d0490fc7f654bd5e1c2c2d7c87e77caf149c5060557d69"
+    },
+    {
+      "to": "history_version/development_log.jsonl",
+      "from": "development_log.jsonl",
+      "sha256": "7ca5e13464c732b9dce968254c5f1045e9038f7d7b4889a833ed71198cc736cc"
+    },
+    {
+      "copy": true,
+      "to": "history_version/00_评委请先看_指数版.txt",
+      "from": "00_评委请先看.txt",
+      "sha256": "ee2338f9be0ea9eea6e0fadd36180add6f9833a2d7bd8751bd081d2b798b8d5d"
+    }
+  ],
+  "user_request": "将1030.ver4历史版本材料归入history_version"
+}

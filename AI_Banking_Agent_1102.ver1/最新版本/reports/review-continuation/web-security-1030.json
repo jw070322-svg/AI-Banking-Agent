@@ -1,0 +1,53 @@
+{
+  "updated_at": "2026-10-29T16:05:20.292770+00:00",
+  "scope": "主网页安全检查第一阶段；非完整AuthorizedToolGateway接入",
+  "entrypoint": "start_review.py",
+  "covered": [
+    "RPC assistant/interpret及chat自然语言请求",
+    "knowledge与external.search问题",
+    "业务dispatch入口拒绝请求顶层身份权限替换"
+  ],
+  "reused": "PromptInjectionGuard + CompatibleScanner",
+  "checks": {
+    "run": 45,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "rag": {
+    "evaluated_at": "2026-10-29T16:04:15.478960+00:00",
+    "questions": 105,
+    "baseline_statuses": {
+      "grounded": 97,
+      "needs_business_data": 3,
+      "no_evidence": 5
+    },
+    "current_statuses": {
+      "grounded": 60,
+      "needs_business_data": 12,
+      "insufficient_evidence": 7,
+      "needs_evidence": 3,
+      "boundary_rejected": 13,
+      "rejected": 10
+    },
+    "citation_integrity_failures": 0,
+    "ledger_unchanged": true,
+    "human_scoring_pending": 105,
+    "semantic_pass_rate": null,
+    "network": "disabled_for_evaluation",
+    "model": "local extractive baseline; no LLM evaluated",
+    "statement": "不能把可追溯引用当成回答正确率；工程24项另见验收映射"
+  },
+  "remaining": [
+    "独立工具注册表与原SQLite账本适配",
+    "真实身份认证、资源授权和工具确认统一迁移",
+    "工具返回内容安全检查尚未全站集成",
+    "全站接口严格参数白名单及开发者旁路另行审计"
+  ],
+  "limits": [
+    "恶意文本检测是有限规则，不是完整语义防御",
+    "原账本授权/确认/幂等继续负责执行限制",
+    "仅拒绝顶层身份权限伪造，不宣称所有嵌套参数完成白名单核验",
+    "105题仍待人工业务评分；未接外部网络或真实模型"
+  ]
+}

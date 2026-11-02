@@ -1,0 +1,25 @@
+{
+  "scope": "1026 parser merged into latest single assistant",
+  "live_url": "http://127.0.0.1:8788/",
+  "observed": [
+    "给小王转账: asks amount without debit",
+    "800元: creates pending800 preview",
+    "改成900元: replaces preview, old800 invalidated in tasks",
+    "取消刚才的转账: cancels900, no debit",
+    "给林晓转300块: shared confirmation completes; tasks show300",
+    "reload: available38340,total128340,expenses13160",
+    "改成-50元: old100 preview removed, clear error, no new debit",
+    "close confirmation200: task cancelled, no debit",
+    "390px viewport: no page or panel horizontal overflow",
+    "browser warning and error logs empty"
+  ],
+  "test_reports": [
+    "latest-integration-tests.json",
+    "latest-frontend-tests.json"
+  ],
+  "screenshots": [
+    "连续对话-金额更正.png",
+    "连续对话-窄屏.png"
+  ],
+  "boundary": "finite rules, simulated bank; no arbitrary-language or production-auth claim"
+}

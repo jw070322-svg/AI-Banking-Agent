@@ -1,0 +1,137 @@
+--- FirstAgent/tests/test_update.py
++++ SecondAsgent/tests/test_update.py
+@@ -0,0 +1,134 @@
++from copy import deepcopy
++from pathlib import Path
++import json, math, unittest
++import test_integration as base_tests
++from first_agent.scenarios import normalize, generate, minor
++from first_agent.service import AgentService, canonical
++
++
++class UpdateTests(unittest.TestCase):
++    setUp=base_tests.IntegrationTests.setUp
++    call=base_tests.IntegrationTests.call
++    rpc=base_tests.IntegrationTests.rpc
++    balance=base_tests.IntegrationTests.balance
++    preview=base_tests.IntegrationTests.preview
++
++    def ready(self):
++        self.assertIsNone(self.rpc('authorize',{'read':True,'trade':True,'subscriptions':True,'cards':True})['error'])
++
++    def execute(self,kind,target=None,amount=None,outcome='success',options=None):
++        response=self.rpc('propose',kind,target,amount,options or {})
++        self.assertIsNone(response['error'],response)
++        op=response['data']
++        if op['level']=='red':self.assertIsNone(self.rpc('verify',op['id'],'246810')['error'])
++        response=self.rpc('execute',op['id'],outcome)
++        self.assertIsNone(response['error'],response)
++        return op,response
++
++    def state(self):return self.call('snapshot')['data']['state']
++
++    def test_card_scope_and_strict_boolean(self):
++        self.rpc('authorize',{'read':True,'trade':True,'subscriptions':True})
++        self.assertIsNotNone(self.rpc('propose','card_loss','CARD-DEBIT')['error'])
++        self.assertEqual(self.rpc('authorize',{'read':True,'trade':True,'subscriptions':True,'cards':'false'})['error']['code'],'INVALID_ARGUMENT')
++
++    def test_card_limit_and_loss_block_both_transfer_routes(self):
++        self.ready();self.execute('card_limit','CARD-DEBIT',100000)
++        self.execute('transfer','R-WANG',80000)
++        self.assertEqual(self.balance(),3784000)
++        self.assertIsNotNone(self.call('transfer.preview',{'beneficiary_name':'张三','amount_minor':20001})['error'])
++        self.execute('card_lock','CARD-DEBIT')
++        self.assertEqual(self.call('transfer.preview',{'beneficiary_name':'张三','amount_minor':1})['error']['code'],'CARD_BLOCKED')
++        self.execute('card_unlock','CARD-DEBIT');self.execute('card_loss','CARD-DEBIT')
++        self.assertIsNotNone(self.rpc('propose','transfer','R-WANG',1)['error'])
++        self.assertIsNotNone(self.rpc('propose','card_unlock','CARD-DEBIT')['error'])
++
++    def test_cross_route_daily_risk_and_common_task_projection(self):
++        self.ready();old=self.preview()
++        self.assertIsNone(self.rpc('execute',old['id'],'success')['error'])
++        self.assertEqual(self.state()['cards'][0]['spent'],80000)
++        new=self.rpc('propose','transfer','R-WANG',20001)['data'];self.assertEqual(new['level'],'red')
++        self.rpc('verify',new['id'],'246810');self.assertIsNone(self.rpc('execute',new['id'],'success')['error'])
++        next_op=self.preview(1);self.assertEqual(next_op['level'],'red')
++        ids=[o['id'] for o in self.state()['operations']]
++        self.assertIn(old['id'],ids);self.assertIn(new['id'],ids);self.assertEqual(len(ids),len(set(ids)))
++
++    def test_card_unknown_failed_and_once_only(self):
++        self.ready();self.execute('card_loss','CARD-DEBIT',outcome='failed')
++        self.assertEqual(self.state()['cards'][0]['status'],'active')
++        op,_=self.execute('card_lock','CARD-DEBIT',outcome='unknown')
++        self.assertIsNotNone(self.call('transfer.preview',{'beneficiary_name':'张三','amount_minor':1})['error'])
++        self.assertIsNone(self.rpc('reconcile',op['id'],'success')['error'])
++        self.assertIsNotNone(self.rpc('reconcile',op['id'],'success')['error'])
++        self.assertEqual(self.state()['cards'][0]['status'],'locked');self.assertEqual(self.balance(),3864000)
++
++    def test_card_application_settlement_and_new_card_payment(self):
++        self.ready();op,response=self.execute('card_apply');self.assertEqual(response['status'],'processing')
++        self.assertIsNotNone(self.rpc('settleCard',op['id'],'success')['error'])
++        self.rpc('advance',1);self.assertIsNone(self.rpc('settleCard',op['id'],'success')['error'])
++        card=self.state()['cards'][-1];self.assertEqual(self.balance(),3864000)
++        self.execute('transfer','R-WANG',80000,options={'cardId':card['id']})
++        self.assertEqual(self.balance(),3784000);self.assertIsNotNone(self.rpc('settleCard',op['id'],'success')['error'])
++
++    def test_card_confirmation_expiry_and_replay(self):
++        self.ready();op=self.rpc('propose','card_loss','CARD-DEBIT')['data']
++        self.rpc('verify',op['id'],'246810');self.now[0]+=120
++        self.assertEqual(self.rpc('execute',op['id'],'success')['error']['code'],'AUTH_EXPIRED')
++        self.assertEqual(self.state()['cards'][0]['status'],'active')
++        self.rpc('verify',op['id'],'246810');self.assertIsNone(self.rpc('execute',op['id'],'success')['error'])
++        self.assertIsNotNone(self.rpc('execute',op['id'],'success')['error'])
++
++    def test_server_restore_preserves_valid_assertion_and_old_state_migration(self):
++        self.ready();op=self.rpc('propose','card_lock','CARD-DEBIT')['data'];self.rpc('verify',op['id'],'246810')
++        self.service=AgentService(self.service.db_path,clock=lambda:self.now[0])
++        self.assertIsNone(self.rpc('execute',op['id'],'success')['error'])
++        with self.service.transaction() as db:
++            state=self.service.load(db,self.sid);state.pop('cards');state.pop('contacts');state.pop('externalOut')
++            db.execute('UPDATE sessions SET state=? WHERE sid=?',(canonical(state),self.sid))
++        restored=self.state();self.assertEqual(restored['available'],3864000);self.assertEqual(len(restored['cards']),2)
++
++    def test_consent_expiry_cannot_be_bypassed_by_legacy_api(self):
++        self.ready();self.now[0]+=86400
++        self.assertEqual(self.call('transfer.preview',{'beneficiary_name':'张三','amount_minor':1})['error']['code'],'SCOPE_EXPIRED')
++        self.assertIsNotNone(self.rpc('propose','card_loss','CARD-DEBIT')['error'])
++
++    def test_scenario_api_idempotency_and_no_ledger_change(self):
++        self.ready();before=self.state()
++        args={'requirement':'普通银行用户'};first=self.call('scenario.generate',args,'scenario-fixed')
++        self.assertIsNone(first['error']);self.assertEqual(first,self.call('scenario.generate',args,'scenario-fixed'))
++        self.assertEqual(first['data']['scenario_type'],'A');self.assertEqual(self.state(),before)
++        self.assertNotIn('user',first['data']);self.assertEqual(self.call('scenario.generate',{'requirement':'贷款'})['error']['code'],'SCENARIO_INVALID')
++
++
++class ScenarioTests(unittest.TestCase):
++    def fixture(self,family):
++        root=Path(__file__).resolve().parents[1]/'sources/Ethan/output'
++        return json.loads(max(root.glob('SCN_'+family+'_*.json'),key=lambda p:p.name).read_text(encoding='utf-8-sig'))
++
++    def test_latest_five_families_reconcile_exactly(self):
++        for family in 'ABCDE':
++            with self.subTest(family=family):
++                result=normalize(self.fixture(family),{'scenario_type':family,'params':{}})
++                self.assertEqual(result['scenario_type'],family)
++                for a in result['accounts']:
++                    actual=a['initial_balance_minor']+sum(x['amount_minor'] for x in result['transactions'] if x['account_id']==a['account_id'] and x['status']=='booked')
++                    self.assertEqual(actual,a['balance_minor'])
++
++    def test_nonfinite_boolean_precision_and_bad_balance_rejected(self):
++        for value in [True,float('nan'),float('inf'),-1,0.001,'1']:
++            with self.assertRaises(ValueError):minor(value)
++        data=self.fixture('D');data['accounts'][0]['balance']+=1
++        with self.assertRaises(ValueError):normalize(data,{'scenario_type':'D'})
++        data=self.fixture('A');data['transactions'][1]['transaction_id']=data['transactions'][0]['transaction_id']
++        with self.assertRaises(ValueError):normalize(data,{'scenario_type':'A'})
++
++    def test_generator_uses_amount_after_increase_not_month_count(self):
++        result=generate('连续2个月购物支出增加800元');self.assertEqual(result['scenario_type'],'B')
++        months={}
++        for t in result['transactions']:
++            if t['category']=='购物' and t['status']=='booked':months[t['date'][:7]]=months.get(t['date'][:7],0)-t['amount_minor']
++        values=[months[m] for m in sorted(months)]
++        self.assertEqual(values[-1]-values[-2],80000)
++
++
++if __name__=='__main__':unittest.main()

@@ -1,0 +1,1365 @@
+{
+  "schema_version": 1,
+  "terms": [
+    {
+      "category": "银行与现金流",
+      "term": "现金流",
+      "aliases": [
+        "现金流量"
+      ],
+      "definition": "一定期间内现金流入和流出的情况；净现金流等于现金流入减现金流出。利润增加不一定意味着现金同时到账。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "可支配收入",
+      "aliases": [
+        "可支配所得"
+      ],
+      "definition": "个人或家庭在缴纳相关税费等后，可用于消费和储蓄的收入；统计口径应以所用数据定义为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "储蓄率",
+      "aliases": [
+        "储蓄比例"
+      ],
+      "definition": "一定期间的储蓄占相应收入的比例；先明确收入、支出及缴税口径，收入为零时不能直接计算。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "应急金",
+      "aliases": [
+        "紧急备用金"
+      ],
+      "definition": "为失业、疾病等意外支出预留、便于取用的资金；所需金额取决于支出稳定性和个人情况。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "流动性",
+      "aliases": [
+        "资金流动性"
+      ],
+      "definition": "资产在需要时能否较快变现，以及变现时可能产生的成本和价格损失。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "活期存款",
+      "aliases": [
+        "活期"
+      ],
+      "definition": "通常可以按银行规则随时存取的存款；具体利率与计息规则以银行公告和合同为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "定期存款",
+      "aliases": [
+        "定期"
+      ],
+      "definition": "约定存期的存款；提前支取的计息与限制以具体合同和现行规则为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "存款保险",
+      "aliases": [
+        "存款保障"
+      ],
+      "definition": "通过法定制度保护符合条件的存款；保障范围、限额和偿付条件以适用法规及官方信息为准，银行理财不等同存款。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "本金",
+      "aliases": [
+        "投资本金"
+      ],
+      "definition": "最初投入或尚未偿还的资金金额；具体产品是否保本要看合同和适用规定，不能仅凭名称判断。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "利息",
+      "aliases": [
+        "存款利息"
+      ],
+      "definition": "资金借贷或存放形成的报酬；金额与本金、利率、计息时间和计息方式有关。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "单利",
+      "aliases": [
+        "简单利息"
+      ],
+      "definition": "仅以初始本金计息的方式；在不考虑其他变化时，利息可按本金乘利率乘期限估算。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "复利",
+      "aliases": [
+        "利滚利"
+      ],
+      "definition": "把前期收益并入计息基础，之后也对该部分计息；若每期有效利率为r，n期价值为本金乘(1+r)的n次方。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "年化收益率",
+      "aliases": [
+        "年化回报率",
+        "年化收益"
+      ],
+      "definition": "将一段时间的收益按某种规则折算为年度口径；短期收益年化并不代表未来一年一定取得该收益。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "名义利率",
+      "aliases": [
+        "名义年利率"
+      ],
+      "definition": "合同或报价上标示的利率；比较实际资金成本时还要看复利频率、费用及其他条款。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "实际利率",
+      "aliases": [
+        "实际收益率"
+      ],
+      "definition": "扣除通货膨胀影响后的利率概念；精确关系为(1+名义利率)/(1+通胀率)-1，近似可用二者之差。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "通货膨胀",
+      "aliases": [
+        "通胀"
+      ],
+      "definition": "总体物价水平持续上升的现象，会降低同等金额货币的购买力；个体消费篮子可能与统计篮子不同。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "银行与现金流",
+      "term": "购买力",
+      "aliases": [
+        "货币购买力"
+      ],
+      "definition": "一定金额货币能够购买商品和服务的能力；价格上涨而收入不变时，购买力通常下降。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "基金与理财",
+      "term": "基金",
+      "aliases": [
+        "证券投资基金"
+      ],
+      "definition": "集合投资者资金，按照基金合同由管理人投资运作、托管人托管的产品；投资者按份额承担收益和风险。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "基金份额",
+      "aliases": [
+        "基金份额数"
+      ],
+      "definition": "投资者持有基金的权益单位数量；基金资产价值变化会影响份额净值。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "净值",
+      "aliases": [
+        "资产净值概念"
+      ],
+      "definition": "资产价值扣除相关负债后的价值；基金的每份单位净值还需除以总份额，具体口径取决于对象。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "单位净值",
+      "aliases": [
+        "基金单位净值",
+        "基金净值",
+        "份额净值"
+      ],
+      "definition": "基金资产净值除以基金总份额得到的每份价值；净值高低本身不能判断基金贵不贵或未来表现。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "累计净值",
+      "aliases": [
+        "基金累计净值"
+      ],
+      "definition": "通常指单位净值加上成立以来每份累计分红；它不一定等同于分红再投资的总回报净值。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "复权净值",
+      "aliases": [
+        "复权单位净值",
+        "调整后净值"
+      ],
+      "definition": "按数据供应商口径调整分红等因素后的净值序列；使用前应确认是否包含分红再投资及费用。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "基金估值",
+      "aliases": [
+        "估算净值",
+        "基金净值估算"
+      ],
+      "definition": "根据已知持仓或市场数据估算的基金价值，可能与基金管理人正式公布的实际净值不同。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "开放式基金",
+      "aliases": [
+        "开放式"
+      ],
+      "definition": "基金份额通常可按合同规则申购赎回，份额规模可变化；具体开放时间与费用应看基金文件。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "封闭式基金",
+      "aliases": [
+        "封闭式"
+      ],
+      "definition": "在约定期限内不按开放式基金方式随时申购赎回的基金；部分份额可在交易所交易，需关注流动性与价格。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "ETF",
+      "aliases": [
+        "交易型开放式指数基金",
+        "交易所交易基金"
+      ],
+      "definition": "在交易所上市交易的开放式基金，通常跟踪某一指数或标的；场内买卖价格与基金净值可能有差异。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "指数基金",
+      "aliases": [
+        "被动指数基金"
+      ],
+      "definition": "以跟踪指定指数为目标的基金，可能因费用、抽样或交易等因素产生跟踪误差。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "债券基金",
+      "aliases": [
+        "债基"
+      ],
+      "definition": "主要投资债券等资产的基金；仍可能面临利率、信用与流动性等风险，并非保证本金或收益。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "股票基金",
+      "aliases": [
+        "股票型基金"
+      ],
+      "definition": "主要投资股票的基金，价值会受所持股票和市场波动影响，风险取决于实际持仓与产品规则。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "货币市场基金",
+      "aliases": [
+        "货币基金",
+        "货基"
+      ],
+      "definition": "主要投资符合规定的短期货币市场工具的基金；不等同银行存款，也不保证收益。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "混合基金",
+      "aliases": [
+        "混合型基金"
+      ],
+      "definition": "按照合同同时配置股票、债券等多类资产的基金；实际风险取决于资产配置和投资策略。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "基金定投",
+      "aliases": [
+        "定期定额投资"
+      ],
+      "definition": "按照约定周期和金额分批投资基金的方式；不能保证盈利，也不能消除市场风险。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "申购",
+      "aliases": [
+        "基金申购"
+      ],
+      "definition": "按基金合同规定购买已成立基金份额的行为；确认日期、净值和费用以具体规则为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "赎回",
+      "aliases": [
+        "基金赎回"
+      ],
+      "definition": "按产品规则向基金或产品管理方申请退出份额；到账时间、费用及开放条件可能不同。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "认购",
+      "aliases": [
+        "基金认购"
+      ],
+      "definition": "在募集期内购买基金份额的行为；确认时间、费率和份额计算以募集文件为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "管理费",
+      "aliases": [
+        "基金管理费"
+      ],
+      "definition": "基金管理人按合同从基金资产中计提的费用；确认净值是否已扣除，避免重复扣费。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "托管费",
+      "aliases": [
+        "基金托管费"
+      ],
+      "definition": "基金托管人按合同从基金资产中计提的费用；费率与计提方式以合同为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "赎回费",
+      "aliases": [
+        "基金赎回费"
+      ],
+      "definition": "按具体产品和持有期限等规则，投资者赎回份额可能支付的费用；不同产品和渠道可能不同。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "银行理财",
+      "aliases": [
+        "银行理财产品"
+      ],
+      "definition": "银行理财公司等发行的资产管理产品；投资范围、风险等级、开放期及费用应以正式产品文件为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "现金管理类理财",
+      "aliases": [
+        "现金管理产品"
+      ],
+      "definition": "以现金管理为目标的一类理财产品；仍有信用、流动性等风险，不能等同于活期存款或保证收益。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "固收类理财",
+      "aliases": [
+        "固定收益类理财"
+      ],
+      "definition": "主要投资符合产品合同所列固定收益类资产的理财产品；净值仍可能波动和亏损。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "固收增强",
+      "aliases": [
+        "固收加"
+      ],
+      "definition": "以固定收益资产为基础并可配置其他风险资产的策略描述；实际比例和风险以产品合同为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "开放日",
+      "aliases": [
+        "申赎开放日"
+      ],
+      "definition": "产品按照合同允许办理相关申购或赎回的日期；是否可申请和到账时间以销售文件为准。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "最短持有期",
+      "aliases": [
+        "最低持有期"
+      ],
+      "definition": "购买后需满足的最低持有时间要求；起算、开放及赎回规则应查具体产品文件。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "基金与理财",
+      "term": "业绩比较基准",
+      "aliases": [
+        "理财业绩基准"
+      ],
+      "definition": "用于评价产品表现或描述目标的参考指标，不是保证收益率或实际收益承诺。",
+      "source_title": "证监会基金投资者教育手册",
+      "source_uri": "https://www.csrc.gov.cn/xizang/c105485/c1304209/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "风险等级",
+      "aliases": [
+        "产品风险等级"
+      ],
+      "definition": "机构依据其风险评价体系对产品风险所作分类；分类标准和投资者适当性应以正式资料和现行规则为准。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "风险承受能力",
+      "aliases": [
+        "风险承受力"
+      ],
+      "definition": "投资者在财务条件、投资期限等约束下能够承受损失的能力；不能仅由口头偏好替代正式评估。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "风险偏好",
+      "aliases": [
+        "风险意愿"
+      ],
+      "definition": "投资者主观上愿意承担风险的程度；与实际财务上的风险承受能力可能不同。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "适当性",
+      "aliases": [
+        "投资者适当性"
+      ],
+      "definition": "结合投资者情况和产品风险等条件，核对产品或服务是否适合的管理过程；正式结论须遵循机构规则。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "资产配置",
+      "aliases": [
+        "资产组合配置"
+      ],
+      "definition": "依据目标、期限和风险承受能力，将资金分配到不同资产或策略；配置不能保证获利。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "分散投资",
+      "aliases": [
+        "风险分散"
+      ],
+      "definition": "将资金分配到不同资产或标的以降低过度集中风险；相关资产同时下跌时仍可能亏损。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "市场风险",
+      "aliases": [
+        "系统性风险"
+      ],
+      "definition": "受整体市场、经济或政策等因素影响而产生损失的风险；分散持有单个证券通常不能完全消除。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "信用风险",
+      "aliases": [
+        "违约风险"
+      ],
+      "definition": "债务人或交易对手不能按约履行义务，造成损失的风险。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "流动性风险",
+      "aliases": [
+        "变现风险"
+      ],
+      "definition": "资产无法按需要的时间、数量或合理价格变现，或者赎回受到限制的风险。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "利率风险",
+      "aliases": [
+        "利率变动风险"
+      ],
+      "definition": "市场利率变化导致资产价格或现金流价值变化的风险；固定利率债券价格通常与市场利率反向变化。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "汇率风险",
+      "aliases": [
+        "外汇风险"
+      ],
+      "definition": "汇率变化导致外币资产、负债或现金流折算成本币后价值变化的风险。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "集中度风险",
+      "aliases": [
+        "集中风险"
+      ],
+      "definition": "资产过多集中在单一标的、行业或交易对手，相关不利事件可能带来较大损失。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "波动率",
+      "aliases": [
+        "收益波动率"
+      ],
+      "definition": "收益率离散程度的统计指标；通常以收益率标准差衡量，并需注明观察频率和年化口径。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "最大回撤",
+      "aliases": [
+        "最大跌幅回撤"
+      ],
+      "definition": "观察期内从某个历史峰值到其后谷值的最大跌幅比例；它是历史路径指标，不是未来最大损失上限。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "夏普率",
+      "aliases": [
+        "夏普比率",
+        "Sharpe",
+        "Sharpe ratio"
+      ],
+      "definition": "衡量每单位超额收益波动所对应的平均超额收益；计算需明确收益频率、无风险基准、样本及年化口径，波动为零时不可计算。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "贝塔系数",
+      "aliases": [
+        "Beta",
+        "β系数"
+      ],
+      "definition": "衡量资产收益相对某个市场基准收益变动的敏感程度；估计值依赖基准和样本，不能单独概括所有风险。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "阿尔法",
+      "aliases": [
+        "Alpha",
+        "α系数"
+      ],
+      "definition": "相对于所选基准或风险模型所解释收益的超额表现；计算依赖模型、费用和观察区间。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "跟踪误差",
+      "aliases": [
+        "Tracking error"
+      ],
+      "definition": "基金相对基准的超额收益波动程度，通常以一定频率的收益差标准差估计；不等同累计偏离。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "回撤",
+      "aliases": [
+        "净值回撤"
+      ],
+      "definition": "净值从某一此前峰值向下跌落的幅度；统计区间和峰谷顺序会影响结果。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "风险收益比",
+      "aliases": [
+        "风险回报比"
+      ],
+      "definition": "用于比较潜在收益与风险的表达，定义可因方法而异；必须明确衡量指标和样本，不能保证未来结果。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "相关系数",
+      "aliases": [
+        "收益相关性"
+      ],
+      "definition": "衡量两个变量线性共同变化程度的统计量，范围通常为-1至1；历史相关性可能随市场变化。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "资产再平衡",
+      "aliases": [
+        "组合再平衡"
+      ],
+      "definition": "当持仓偏离目标比例时，通过调整组合恢复目标或容许区间的过程；应考虑费用、税费和交易限制。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "风险与组合",
+      "term": "止损",
+      "aliases": [
+        "止损线"
+      ],
+      "definition": "按照预先设定的条件限制损失或退出头寸的安排；实际成交价可能因跳空和流动性偏离预设价格。",
+      "source_title": "证监局基金风险指标介绍",
+      "source_uri": "https://www.csrc.gov.cn/tianjin/c105377/c7bbc987b3f8c43a997f7f6f0c9bf2ae5/content.shtml"
+    },
+    {
+      "category": "收益与估值",
+      "term": "收益率",
+      "aliases": [
+        "回报率"
+      ],
+      "definition": "一定期间收益相对于投入资金或期初价值的比例；应说明是否含分红、费用及现金流。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "累计收益率",
+      "aliases": [
+        "区间收益率"
+      ],
+      "definition": "某段持有期内相对起始价值的累计变化；有追加或提取资金时需选择合适的收益率方法。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "几何年化收益率",
+      "aliases": [
+        "复合年化收益率",
+        "CAGR"
+      ],
+      "definition": "在无中途现金流等简化条件下，将期初到期末的总回报按实际期限折算为每年复合增长率。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "超额收益",
+      "aliases": [
+        "超额回报"
+      ],
+      "definition": "资产收益与选定比较基准收益的差额；基准可以是市场指数或无风险参考，需明确选择。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "无风险利率",
+      "aliases": [
+        "无风险收益率"
+      ],
+      "definition": "理论上不存在违约等风险的收益率基准；实际计算常用代理利率，不同期限与币种的代理不可混同。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "净资产",
+      "aliases": [
+        "资产净值"
+      ],
+      "definition": "资产总额减去负债总额的结果；统计时需明确估值时间和资产、负债范围。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "现值",
+      "aliases": [
+        "折现价值"
+      ],
+      "definition": "未来金额按选定折现率折算到当前的价值；折现率与期限假设变化会影响结果。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "终值",
+      "aliases": [
+        "未来价值"
+      ],
+      "definition": "当前金额按一定增长或计息假设推算到未来的价值；计算结果取决于假设，不构成承诺。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "折现率",
+      "aliases": [
+        "贴现率"
+      ],
+      "definition": "将未来现金流转换成现值所使用的比率；应与现金流期限、风险和币种等口径相匹配。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "收益与估值",
+      "term": "收益曲线",
+      "aliases": [
+        "利率期限结构"
+      ],
+      "definition": "在某一时点，具有可比信用等条件的利率或收益率随期限变化形成的关系；不要与投资净值曲线混淆。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "股票",
+      "aliases": [
+        "股份"
+      ],
+      "definition": "代表公司所有权份额的证券；股东可能获得分红和资本利得，也承担股价下跌风险。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "股息",
+      "aliases": [
+        "股票分红"
+      ],
+      "definition": "公司按规定向股东分配利润的一种形式；是否分红和具体金额取决于公司决议。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "市值",
+      "aliases": [
+        "市场价值"
+      ],
+      "definition": "通常指证券价格乘以相应股数；总市值和流通市值使用的股数范围不同。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "市盈率",
+      "aliases": [
+        "PE",
+        "P/E"
+      ],
+      "definition": "股票价格相对于每股收益的估值比率；亏损公司、收益波动和静态或动态口径会影响解释。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "市净率",
+      "aliases": [
+        "PB",
+        "P/B"
+      ],
+      "definition": "股票价格相对于每股净资产的比率；净资产质量、行业及估值日期会影响比较。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "每股收益",
+      "aliases": [
+        "EPS"
+      ],
+      "definition": "按规定口径计算、分摊到每股普通股的利润指标；基础和稀释每股收益的计算不同。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "股票指数",
+      "aliases": [
+        "市场指数"
+      ],
+      "definition": "按编制规则汇总一组证券价格或收益变化的指标；指数点位本身不是投资账户余额。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "沪深300",
+      "aliases": [
+        "沪深300指数"
+      ],
+      "definition": "反映沪深市场部分大中市值证券整体表现的指数；具体样本与编制规则以指数公司公告为准。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "上证50",
+      "aliases": [
+        "上证50指数"
+      ],
+      "definition": "按指数编制规则从上海市场选择部分具有代表性的证券形成的指数。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "中证500",
+      "aliases": [
+        "中证500指数"
+      ],
+      "definition": "按指数编制规则反映一定范围中小市值证券表现的指数；样本会随定期调整变化。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "股息率",
+      "aliases": [
+        "分红收益率"
+      ],
+      "definition": "一定期间每股现金股息相对股价的比例；历史股息率不能保证未来分红。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "涨跌幅",
+      "aliases": [
+        "价格涨跌幅"
+      ],
+      "definition": "价格相对于比较基准价格的变化比例；需确认基准时点及是否考虑分红复权。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "成交量",
+      "aliases": [
+        "交易量"
+      ],
+      "definition": "一定时期内成交的证券数量，单位可能是股、手或份；需结合具体市场规则。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "股票与指数",
+      "term": "成交额",
+      "aliases": [
+        "交易金额"
+      ],
+      "definition": "一定时期内成交交易的金额；高成交额不必然代表价格未来上涨。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "债券",
+      "aliases": [
+        "债务证券"
+      ],
+      "definition": "发行人按约定承担还本付息等义务的债务工具；投资者需考虑发行人信用和市场价格波动。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "国债",
+      "aliases": [
+        "政府债券"
+      ],
+      "definition": "由政府发行的债务工具；不同币种、期限和市场仍可能面临利率、流动性等风险。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "信用债",
+      "aliases": [
+        "企业信用债"
+      ],
+      "definition": "以发行人信用为基础发行的债券；偿付能力变化或违约可能带来损失。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "票面利率",
+      "aliases": [
+        "票息率"
+      ],
+      "definition": "债券合同约定的票面利息计算利率；不一定等于按当前市场价格计算的收益率。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "到期收益率",
+      "aliases": [
+        "YTM",
+        "yield to maturity"
+      ],
+      "definition": "在一系列假设下，使未来约定现金流现值等于债券当前价格的收益率；不保证实际实现该收益。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "久期",
+      "aliases": [
+        "债券久期"
+      ],
+      "definition": "衡量债券价格对利率变化敏感程度的指标；久期越大时，在其他条件相近且小幅变动下价格通常更敏感。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "修正久期",
+      "aliases": [
+        "Modified duration"
+      ],
+      "definition": "衡量债券价格对收益率小幅变化的近似百分比敏感度；大幅变化时还需考虑凸性等因素。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "债券价格",
+      "aliases": [
+        "债券市价"
+      ],
+      "definition": "债券在市场上的交易价格；利率、信用、期限及流动性等因素都会影响价格。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "债券",
+      "term": "信用利差",
+      "aliases": [
+        "信用风险溢价"
+      ],
+      "definition": "可比条件下信用债收益率相对于某参考收益率的差值；期限、流动性和市场条件也会影响利差。",
+      "source_title": "美国证监会投资者教育词汇表",
+      "source_uri": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "贷款本金",
+      "aliases": [
+        "借款本金"
+      ],
+      "definition": "借款人取得且尚需偿还的资金；不包括尚未支付的利息和其他费用。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "贷款利率",
+      "aliases": [
+        "借款利率"
+      ],
+      "definition": "借款资金的约定计息比例；比较成本应同时考虑期限、还款方式、费用和有效年化口径。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "LPR",
+      "aliases": [
+        "贷款市场报价利率"
+      ],
+      "definition": "贷款市场报价利率是按规定形成并公布的贷款定价参考；具体贷款利率仍以合同和适用规则为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "等额本息",
+      "aliases": [
+        "等额本息还款"
+      ],
+      "definition": "在利率等条件不变时，每期偿还相同金额的本金和利息合计；各期本金与利息占比会变化。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "等额本金",
+      "aliases": [
+        "等额本金还款"
+      ],
+      "definition": "每期偿还相同金额的本金，并支付剩余本金对应利息；利率不变时每期合计还款通常逐渐减少。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "信用报告",
+      "aliases": [
+        "个人征信报告"
+      ],
+      "definition": "依法由征信机构提供的信用信息记录；信息范围、查询条件和异议处理以实际制度为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "逾期",
+      "aliases": [
+        "贷款逾期"
+      ],
+      "definition": "未按合同约定期限履行还款义务；后果及费用取决于合同、适用规则和实际情况。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "债务收入比",
+      "aliases": [
+        "负债收入比",
+        "DTI"
+      ],
+      "definition": "一定时期债务偿付额相对于收入的比例；应明确收入与债务范围和统计周期。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "杠杆",
+      "aliases": [
+        "财务杠杆"
+      ],
+      "definition": "使用借入资金或其他方式扩大投资或经营敞口；可能同时放大收益与损失。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "贷款与信用",
+      "term": "担保",
+      "aliases": [
+        "贷款担保"
+      ],
+      "definition": "为债务履行提供的增信安排，例如保证或财产担保；具体责任及范围由合同和适用法律决定。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "CPI",
+      "aliases": [
+        "居民消费价格指数",
+        "消费者物价指数"
+      ],
+      "definition": "衡量居民消费商品和服务价格水平变化的统计指标；公布频率、同比和环比口径应区分。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "PPI",
+      "aliases": [
+        "工业生产者出厂价格指数"
+      ],
+      "definition": "衡量工业生产者产品出厂价格变动的统计指标；它不等同居民消费价格指数。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "PMI",
+      "aliases": [
+        "采购经理指数",
+        "制造业PMI"
+      ],
+      "definition": "基于采购经理调查编制的经济景气指标；具体行业、季调和发布日期以统计发布为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "GDP",
+      "aliases": [
+        "国内生产总值"
+      ],
+      "definition": "一定时期内一个经济体生产活动最终成果的综合指标；应区分现价、可比价和增长率。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "M2",
+      "aliases": [
+        "广义货币"
+      ],
+      "definition": "按统计口径汇总的广义货币供应量指标；组成及增速以发布机构现行定义为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "社会融资规模",
+      "aliases": [
+        "社融"
+      ],
+      "definition": "反映实体经济从金融体系获得资金额度的统计指标；存量与增量、当月与累计口径不同。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "Shibor",
+      "aliases": [
+        "上海银行间同业拆放利率",
+        "SHIBOR"
+      ],
+      "definition": "银行间市场形成的不同期限报价参考利率；具体期限和日期必须注明，也不能简单等同国债无风险利率。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "基准利率",
+      "aliases": [
+        "参考利率"
+      ],
+      "definition": "金融产品定价所参考的利率；不同合同和市场使用的基准不同，不能假定当前数值。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "汇率",
+      "aliases": [
+        "外汇汇率"
+      ],
+      "definition": "一种货币相对于另一种货币的兑换价格；报价方向、买卖价和时间会影响换算结果。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "宏观与市场",
+      "term": "资产价格泡沫",
+      "aliases": [
+        "金融泡沫"
+      ],
+      "definition": "资产价格明显偏离可支撑价值并受预期推动的现象；是否存在泡沫通常具有不确定性。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "保险",
+      "aliases": [
+        "商业保险"
+      ],
+      "definition": "投保人按合同支付保险费，保险人对约定保险事故承担给付等责任的风险保障安排。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "保险费",
+      "aliases": [
+        "保费"
+      ],
+      "definition": "投保人为获得保险合同约定保障而支付的费用；金额与责任、期限等相关。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "保险金额",
+      "aliases": [
+        "保额"
+      ],
+      "definition": "保险合同约定用于确定保险责任的金额或限额；不一定等于任何情况下的实际赔付。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "免赔额",
+      "aliases": [
+        "保险免赔额"
+      ],
+      "definition": "保险合同约定由被保险人自行承担、保险人通常不予赔付的部分；计算方式依具体合同。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "等待期",
+      "aliases": [
+        "保险等待期"
+      ],
+      "definition": "合同生效后一段约定时间内，特定保险责任可能受到限制的期间；以保险条款为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "保险",
+      "term": "现金价值",
+      "aliases": [
+        "保单现金价值"
+      ],
+      "definition": "某些保险合同在特定时点所具有的合同价值；退保所得及费用以合同实际约定为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "银行卡",
+      "aliases": [
+        "银行支付卡"
+      ],
+      "definition": "银行发行的支付工具，不同卡种的存款、透支、费用和风险规则不同。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "借记卡",
+      "aliases": [
+        "储蓄卡"
+      ],
+      "definition": "通常以持卡人账户资金为基础办理支付等业务的银行卡；具体功能与限制以发卡机构规则为准。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "信用卡",
+      "aliases": [
+        "贷记卡"
+      ],
+      "definition": "可在约定信用额度和规则内使用信用的支付工具；未按期还款可能产生利息、费用和信用影响。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "转账",
+      "aliases": [
+        "银行转账"
+      ],
+      "definition": "按账户及支付规则将资金从付款账户转至收款账户的操作；执行前应核对收款人、金额和授权。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "支付密码",
+      "aliases": [
+        "交易密码"
+      ],
+      "definition": "用于验证支付或交易身份的秘密凭证；不应向他人或聊天助手提供。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    },
+    {
+      "category": "支付与账户",
+      "term": "验证码",
+      "aliases": [
+        "一次性验证码",
+        "短信验证码"
+      ],
+      "definition": "用于验证某次登录或交易的临时信息；不应向他人或聊天助手提供。",
+      "source_title": "中国人民银行金融知识普及读本",
+      "source_uri": "https://guiyang.pbc.gov.cn/guiyang/113337/114084/3540759/2018051811593716305.pdf"
+    }
+  ]
+}

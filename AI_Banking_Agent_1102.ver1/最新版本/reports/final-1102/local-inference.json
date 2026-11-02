@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-02T04:33:23.715319+00:00",
+  "app_port": 8808,
+  "model_url": "http://127.0.0.1:8811",
+  "model": "banking-finance-lora",
+  "adapter": "adapter-qwen2.gguf attached at scale 1.0",
+  "no_key_http": 401,
+  "wrong_key_http": 401,
+  "completion": "收到",
+  "web_route": "/api/knowledge",
+  "web_status": "needs_evidence",
+  "web_model_received": true,
+  "external_data_sent": false,
+  "steps": [
+    {
+      "provider": "local_rag",
+      "status": "no_evidence"
+    },
+    {
+      "provider": "baidu",
+      "status": "not_requested"
+    },
+    {
+      "provider": "llama_cpp",
+      "status": "ok"
+    }
+  ]
+}

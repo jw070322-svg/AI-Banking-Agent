@@ -1,0 +1,216 @@
+{
+  "generated_by": "tools/verify_external_endpoints_1030ver4.py",
+  "generated_at": "2026-10-30T23:02:43.250799+08:00",
+  "policy": "只探测不升级；一次失败不构成更换端点的理由",
+  "summary": {
+    "probed": 6,
+    "ok": 5,
+    "unavailable": 1,
+    "skipped": 2,
+    "chain_resolved_by_ths": 4,
+    "chain_fallback_local": 1
+  },
+  "checks": [
+    {
+      "name": "ths_index_directory",
+      "url": "https://q.10jqka.com.cn/zs/",
+      "hosts": [
+        "d.10jqka.com.cn",
+        "index_api.wind.com.cn",
+        "q.10jqka.com.cn",
+        "www.wind.com.cn"
+      ],
+      "checked_at": "2026-10-30T15:02:38.209055+00:00",
+      "status": "ok",
+      "bytes": 125898,
+      "elapsed_ms": 312,
+      "signature": {
+        "kind": "html",
+        "bytes_probe": 120598,
+        "has_doctype_or_html": true,
+        "mentions_windindex": false
+      },
+      "sample": "reports/external-endpoints-1030ver4/ths_index_directory.txt",
+      "sample_sha256": "14934ee905894888bcc26742701355a469eb77259c2bab3828d56ed7426dfb2c"
+    },
+    {
+      "name": "ths_zs_1B0001",
+      "url": "https://d.10jqka.com.cn/v6/time/zs_1B0001/last.js",
+      "hosts": [
+        "d.10jqka.com.cn",
+        "index_api.wind.com.cn",
+        "q.10jqka.com.cn",
+        "www.wind.com.cn"
+      ],
+      "checked_at": "2026-10-30T15:02:38.521797+00:00",
+      "status": "ok",
+      "bytes": 10783,
+      "elapsed_ms": 148,
+      "signature": {
+        "kind": "jsonp",
+        "callback": "quotebridge_v6_time_zs_1B0001_last",
+        "callback_matches_v6_pattern": true,
+        "ends_with_close": true,
+        "has_json_body": true
+      },
+      "sample": "reports/external-endpoints-1030ver4/ths_zs_1B0001.txt",
+      "sample_sha256": "011b44a9fd4ce57debeecdba73ade3772b573fc742653fbc24aa0df175d10553"
+    },
+    {
+      "name": "wind_index_page",
+      "url": "https://www.wind.com.cn/portal/en/WindIndex/detail.html?id=2&v=1",
+      "hosts": [
+        "d.10jqka.com.cn",
+        "index_api.wind.com.cn",
+        "q.10jqka.com.cn",
+        "www.wind.com.cn"
+      ],
+      "checked_at": "2026-10-30T15:02:38.669623+00:00",
+      "status": "ok",
+      "bytes": 1103,
+      "elapsed_ms": 210,
+      "signature": {
+        "kind": "html",
+        "bytes_probe": 1101,
+        "has_doctype_or_html": true,
+        "mentions_windindex": false
+      },
+      "sample": "reports/external-endpoints-1030ver4/wind_index_page.txt",
+      "sample_sha256": "1e7e6984eb9fd42f9f1c6a4a14bac84b1128b641c6f6ac15a22a4ca49df9e9d0"
+    },
+    {
+      "name": "wind_detail_js",
+      "url": "https://www.wind.com.cn/portal/en/WindIndex/js/detail.js?v=20240409",
+      "hosts": [
+        "d.10jqka.com.cn",
+        "index_api.wind.com.cn",
+        "q.10jqka.com.cn",
+        "www.wind.com.cn"
+      ],
+      "checked_at": "2026-10-30T15:02:38.879914+00:00",
+      "status": "ok",
+      "bytes": 3568,
+      "elapsed_ms": 331,
+      "signature": {
+        "kind": "text",
+        "has_content": true
+      },
+      "sample": "reports/external-endpoints-1030ver4/wind_detail_js.txt",
+      "sample_sha256": "e0aeed50a02a1deeff3601b67d78c4b7d1f594082f3fe3159c82b6d5e1b8f080"
+    },
+    {
+      "name": "ths_hs_510300",
+      "url": "https://d.10jqka.com.cn/v6/time/hs_510300/last.js",
+      "hosts": [
+        "d.10jqka.com.cn"
+      ],
+      "checked_at": "2026-10-30T15:02:39.210707+00:00",
+      "status": "ok",
+      "bytes": 9452,
+      "elapsed_ms": 157,
+      "signature": {
+        "kind": "jsonp",
+        "callback": "quotebridge_v6_time_hs_510300_last",
+        "callback_matches_v6_pattern": true,
+        "ends_with_close": true,
+        "has_json_body": true
+      },
+      "sample": "reports/external-endpoints-1030ver4/ths_hs_510300.txt",
+      "sample_sha256": "3132d75e7bdab84af2fd72d1a60b50d6702b35dd39015fdd9643fd274bdf8597"
+    },
+    {
+      "url": "http://127.0.0.1:8797/v1/models",
+      "checked_at": "2026-10-30T15:02:39.367365+00:00",
+      "status": "unavailable",
+      "error": "URLError: <urlopen error [WinError 10061] 由于目标计算机积极拒绝，无法连接。>",
+      "note": "本地模型未启动；这不是外部接口失效"
+    },
+    {
+      "url": "https://xinxipilu.chinawealth.com.cn/...",
+      "status": "skipped_by_policy",
+      "reason": "中国理财网带验证码风控；按项目约定不抓取、不绕过，只作为人工核验链接"
+    },
+    {
+      "url": "https://www.googleapis.com/calendar/v3/...",
+      "status": "skipped_no_credentials",
+      "reason": "需要 BANKING_GOOGLE_* 环境变量；未读取任何凭据"
+    }
+  ],
+  "index_chain": [
+    {
+      "code": "000001.SH",
+      "name": "上证指数",
+      "result_source": "同花顺",
+      "has_final_data": true,
+      "steps": [
+        {
+          "source": "同花顺",
+          "status": "accepted",
+          "observation": "代码匹配；数值、报价时间有效"
+        }
+      ]
+    },
+    {
+      "code": "399001.SZ",
+      "name": "深证成指",
+      "result_source": "同花顺",
+      "has_final_data": true,
+      "steps": [
+        {
+          "source": "同花顺",
+          "status": "accepted",
+          "observation": "代码匹配；数值、报价时间有效"
+        }
+      ]
+    },
+    {
+      "code": "399006.SZ",
+      "name": "创业板指",
+      "result_source": "同花顺",
+      "has_final_data": true,
+      "steps": [
+        {
+          "source": "同花顺",
+          "status": "accepted",
+          "observation": "代码匹配；数值、报价时间有效"
+        }
+      ]
+    },
+    {
+      "code": "399905.SZ",
+      "name": "中证500",
+      "result_source": "同花顺",
+      "has_final_data": true,
+      "steps": [
+        {
+          "source": "同花顺",
+          "status": "accepted",
+          "observation": "代码匹配；数值、报价时间有效"
+        }
+      ]
+    },
+    {
+      "code": "931186.CSI",
+      "name": "中证科技50策略",
+      "result_source": "本地wind数据表格",
+      "has_final_data": false,
+      "steps": [
+        {
+          "source": "同花顺",
+          "status": "unavailable",
+          "observation": "同花顺官方指数目录未找到目标代码的行情入口"
+        },
+        {
+          "source": "Wind官网",
+          "status": "unavailable",
+          "observation": "官网 TLS 证书校验失败；未关闭证书验证"
+        },
+        {
+          "source": "本地wind数据表格",
+          "status": "unavailable",
+          "observation": "本地表格也没有该指数的有效观测数据"
+        }
+      ]
+    }
+  ]
+}

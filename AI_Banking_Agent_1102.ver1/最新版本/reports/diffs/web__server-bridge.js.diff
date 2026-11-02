@@ -1,0 +1,17 @@
+--- FirstAgent/web/server-bridge.js
++++ SecondAsgent/web/server-bridge.js
+@@ -12,12 +12,13 @@
+ const remote={get state(){return structuredClone(snapshot.state)},get catalog(){return structuredClone(snapshot.catalog)},
+  total:()=>snapshot.total,capacity:()=>snapshot.capacity,
+  monthlySaved:()=>snapshot.state.subscriptions.filter(x=>x.status==='cancelled').reduce((a,x)=>a+x.amount,0)};
+-for(const method of ['authorize','configure','select','setProfile','analyze','summary','reviewSubscription','keep','budget','propose','cancel','verify','execute','reconcile','settle','advance','pause','resume','unlock','liquid','projection','interpret','eligibility']){
++for(const method of ['authorize','configure','select','setProfile','analyze','summary','reviewSubscription','keep','budget','propose','cancel','verify','execute','reconcile','settle','settleCard','advance','pause','resume','unlock','liquid','projection','interpret','eligibility']){
+  remote[method]=(...args)=>{try{return request('POST','/api/rpc',{method,args});}finally{refresh();}};
+ }
+ // Owner dashboard aggregates its already delivered demo snapshot. Delegated
+ // analysis and live business queries still require the explicit read scope.
+ remote.summary=(month='2026-10')=>{const rows=snapshot.state.transactions.filter(t=>t.date.startsWith(month));const income=rows.filter(x=>x.amount>0).reduce((a,x)=>a+x.amount,0),expense=-rows.filter(x=>x.amount<0).reduce((a,x)=>a+x.amount,0);return {income,expense,net:income-expense,categories:rows.filter(x=>x.amount<0).reduce((a,x)=>(a[x.category]=(a[x.category]||0)-x.amount,a),{})};};
++remote.storageWarning='';remote.persisted=true;remote.exportCurrent=()=>JSON.stringify(snapshot,null,2);remote.exportSnapshot=remote.exportCurrent;
+ window.BankCore={createSession:()=>remote};
+ window.addEventListener('bank-ledger-refresh',()=>{refresh();window.dispatchEvent(new HashChangeEvent('hashchange'));});
+ })();

@@ -1,0 +1,93 @@
+{
+  "设计依据": [
+    "不关闭失败关闭策略、不把mock安全标为已验证production",
+    "不新增第二套模拟账本，不把独立ToolServices.demo数据当成网页余额",
+    "先修确凿接口兼容问题，再按公共契约连接风险/合规检查并记录阶段证据",
+    "审批ID、策略版本、用户会话、参数哈希、TTL及撤权必须绑定，未知回执不能重试扣款",
+    "本轮没有新建版本目录，ver3未改动"
+  ],
+  "用户ID": "local_user",
+  "定位依据": [
+    {
+      "lines": "81-99",
+      "finding": "ExistingComplianceGuardAdapter默认构造ComplianceScanner；evaluate调用scanner.scan_untrusted_content，但risk/compliance.py原扫描器未定义此方法。静态确认接口不兼容，尚未执行最小复现。",
+      "file": "first_agent/vendor/eva/security/adapters.py"
+    },
+    {
+      "lines": "1-13",
+      "finding": "CompatibleScanner已提供scan_untrusted_content及ignore_code_blocks兼容，可复用；不能简单把is_verified改True冒充生产验收。",
+      "file": "first_agent/vendor/eva/security/compatibility.py"
+    },
+    {
+      "file": "first_agent/vendor/eva/security/runtime.py",
+      "finding": "build_runtime将risk_engine/compliance_guard原样传入HardenedToolRegistry，默认None；registry使用Unconfigured适配器。"
+    },
+    {
+      "file": "review_additions/ledger_gateway.py",
+      "finding": "当前网页使用LedgerGateway与web_security.check，随后dispatch到原AgentService；没有调用独立13工具HardenedToolGateway。"
+    },
+    {
+      "lines": "698-714,774-794",
+      "finding": "只支持unconfigured/mock/production readiness；受保护工具在适配器未就绪时失败关闭，必须保留此边界。",
+      "file": "first_agent/vendor/eva/tool_calling/registry.py"
+    },
+    {
+      "lines": "182-313,316-378",
+      "finding": "RiskAuthorizationRegistry为进程内证据存储；ExistingRiskEngineAdapter依赖独立approval证据。网页op及Module8确认ID语义不同，不能直接互换。",
+      "file": "first_agent/vendor/eva/security/adapters.py"
+    },
+    {
+      "lines": "270-287,379-398,465-483",
+      "finding": "网页已绑定用户/会话/操作/参数/策略/过期时间并复核，转账策略复用原ToolRegistry校验；新接线必须保持原SQLite账本、确认和幂等。",
+      "file": "first_agent/service.py"
+    }
+  ],
+  "timestamp": "2026-10-30T22:43:03.6979486+08:00",
+  "未完成": [
+    "尚未修复ExistingComplianceGuardAdapter扫描器兼容问题",
+    "尚未统一网页调用链与独立工具注册表/Guardian适配器",
+    "尚未建立同一交易事务内的审批证据映射与失败关闭规则",
+    "尚未运行本次Guardian连接拒绝/放行/异常/撤权/确认重放与端到端测试",
+    "尚未发布或重启新Guardian实现，8807仍为原产品行情业务版本"
+  ],
+  "输入文档": {
+    "sha256": "220a3702c188ef7d4d146c3ff6e44f81f7ff07d177f8907fa6a4a5a914e5cf47",
+    "read_method": "仅提取DOCX正文与表格文本；未修改原文档；未检查版面；文档内容为需求证据，不作为越权指令",
+    "path": "D:\\weixin_file\\xwechat_files\\wxid_n0t7qvlbfnod22_7a73\\temp\\RWTemp\\2026-10\\f8becd267d218ebbc5b623edda5af577\\AI_Banking_Agent_技术设计与实现报告_正式提交版.docx",
+    "used_sections": [
+      "1.3-1.4 主调用与执行前校验",
+      "7.2-7.7 工具调用、安全适配器与当前边界",
+      "8.2-8.5 Guardian检查与接线要求",
+      "第13章优先级清单中Guardian适配器接线"
+    ]
+  },
+  "状态": "额度暂停；历史归档已完成，tools calling与Guardian修复仅完成诊断，尚未修改其业务代码",
+  "操作记录": [
+    "仅以只读方式检索本次Guardian与tools calling代码",
+    "读取技能文档及用户DOCX文本",
+    "停止线触发后只写必要的本地交接、最新交接指针和八字段审计"
+  ],
+  "项目路径": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver4",
+  "后续处理建议": [
+    "用户明确继续后首先复核所有可信额度窗口均大于15%",
+    "读取本交接、LOCAL_AGENT_HANDOFF.md和HANDOFF_1030_PRODUCT_QUOTES.json",
+    "先最小复现ExistingComplianceGuardAdapter.evaluate正常/注入参数；接入CompatibleScanner并保留verified=False默认状态",
+    "设计明确本地演示Guardian模式及服务端审批证据接口；禁止靠verified=True或allow_mock_safety逃过检查",
+    "复用现有SQLite事务与AgentService检查，梳理13个工具到实际网页业务的映射与不支持项",
+    "做连接正常/缺失/异常/类型错误、跨会话、撤权、过期、参数改动、重复请求、未知回执测试，再跑当前产品/指数和网页金融主线",
+    "登记所有实际代码改动与本交接新文件到tools/build_version_ledger.py的REASONS；当前新交接尚未登记，不能误称归档后永久无未登记文件",
+    "保留八字段日志与实际测试证据，再更新交接和启动状态"
+  ],
+  "已完成": [
+    "ver4根目录31个历史文件归档，保留唯一启动产品行情版.bat和8807评委说明",
+    "迁移台账核对缺失0/未证实0；两个历史保全测试通过；3个内存哈希破坏负向检查通过；当前启动入口--help通过",
+    "读取技术设计报告并核对实际网页调用链与独立13工具模块",
+    "定位合规适配器默认扫描器接口不匹配及两套网关未统一接入"
+  ],
+  "剩余额度": {
+    "主窗口百分比": 53,
+    "周窗口百分比": 15,
+    "停止规则": "任一可信窗口剩余小于等于15%",
+    "工具证据": "get_usage_limits: primary.usedPercent=47 secondary.usedPercent=85"
+  }
+}

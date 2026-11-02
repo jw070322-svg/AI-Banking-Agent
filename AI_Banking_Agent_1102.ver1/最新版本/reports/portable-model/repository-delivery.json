@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-11-01T15:28:06.7308948+08:00",
+  "repository": "https://github.com/jw070322-svg/AI-Banking-Agent",
+  "branch": "codex/1101-portable-local-model",
+  "verified_release_commit": "684b1c95033787b7b19b3829af3be4b21f9c2ab7",
+  "archive_members_matched_to_git_blobs": 1001,
+  "verification": "New local LFS store fetched both objects from origin at the specified release commit; SHA-256 and lengths match the tested archive and weight.",
+  "objects": [
+    {
+      "path": "releases/AI_Banking_Agent_1101.ver1.zip",
+      "bytes": 560679662,
+      "sha256": "f3a03c8c417496ce716bfe23336e673c01dc721ca9f4f5b9ab1049aa52e93212"
+    },
+    {
+      "path": "AI_Banking_Agent_1101.ver1/model-assets/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    }
+  ],
+  "acceptance": "reports/portable-model/final-unzip.json",
+  "negative_checks": [
+    "Missing LoRA refused before launch",
+    "LFS pointer substituted for the base weight rejected before key generation"
+  ],
+  "test_totals": {
+    "backend": 293,
+    "frontend": 100,
+    "security_http": 58
+  }
+}

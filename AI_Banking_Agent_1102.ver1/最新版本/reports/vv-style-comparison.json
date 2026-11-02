@@ -1,0 +1,5 @@
+{
+  "comparison": "latest standalone HTML vs archive dist stylesheet",
+  "nonfont_css_matches": true,
+  "font_handling": "archive relative font assets retained; license files copied"
+}

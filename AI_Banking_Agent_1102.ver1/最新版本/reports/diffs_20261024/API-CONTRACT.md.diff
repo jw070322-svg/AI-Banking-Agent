@@ -1,0 +1,79 @@
+--- F:\AI_Banking\SecondAsgent\API-CONTRACT.md
++++ API-CONTRACT.md
+@@ -1,4 +1,4 @@
+-# SecondAsgent 统一接口（响应 1.0.0；策略 integrated-demo-1.1）
++# Third_Agent 统一接口（响应 1.0.0；策略 integrated-demo-1.1）
+ 
+ ## 设计依据
+ 
+@@ -19,7 +19,7 @@
+ | Method | Path | 关键参数 / 返回 | 权限与用途 |
+ |---|---|---|---|
+ | POST | /api/session | {}；设置 HttpOnly、SameSite=Strict cookie | 建立或复用本机演示会话 |
+-| GET | /api/health | ready, persistent, mode | 服务健康 |
++| GET | /api/health | ready, persistent, mode, analysis.available | 服务健康 |
+ | GET | /api/snapshot | state, catalog, total, capacity | 当前演示所有者快照 |
+ | GET | /api/accounts/overview | available_minor, positions_minor, total_minor, version | Agent 查询需 read |
+ | GET | /api/transactions?month=2026-10 | items, summary | 需 read；聚合结果为整数分 |
+@@ -75,14 +75,58 @@
+ 
+ 服务端恢复 preserveVerification:true 不接受 HTTP 指定；验证仍需服务端绑定、策略、会话和时限校验。旧状态缺卡时补默认结构并使旧待确认失效。真实时钟校验期限，模拟日期用于卡审核。
+ 
+-## 独立场景生成
++## 独立场景生成（Third_Agent 增量）
+ 
+-POST /api/scenarios/generate，body 为 {"requirement":"最近2个月支出增加800元的用户"}，要求会话和 Idempotency-Key。成功 data 包含 schema_version:"scenario-1.0"、scenario_id、scenario_type、accounts、transactions、warnings、simulated:true、ledger_modified:false。无需金融写入权限，因为不改变客户账本。
++`POST /api/scenarios/generate` 需要本机会话和 Idempotency-Key，无需金融写权限。全部 A–G 通过本包 `modules/环境生成agent/scenario_adapter.py` 生成并双层校验；不写会话账本。
+ 
+-accounts 为 account_id、initial_balance_minor、balance_minor、currency；transactions 为 id、account_id、date、amount_minor、category、status。收入正、支出负；completed 映射 booked，rejected 不计余额。拒绝重复 ID、无效关联、非有限/超过两位小数金额及余额不平，错误 SCENARIO_INVALID。输入 1–2000 字符；单个源金额不超过 1,000,000,000 分。不返回源格式中的身份信息，不导入当前会话。
++| 请求 | 返回 data | 金额语义 |
++|---|---|---|
++| `{ "requirement": "普通银行用户" }` | 兼容 `schema_version:"scenario-1.0"`，顶层无 user | transactions.amount_minor **带符号**；id 为旧字段 |
++| `{ "prompt": "配偶生日锁定1000元", "seed":42, "reference_date":"2026-10-23" }` | 完整 `schema_version:"1.0.0"`，A–G 分析契约 | amount_minor **绝对值**，amount 带符号，transaction_id、direction、transaction_type |
++| `{ "requirement":"信用卡", "format":"contract", "scenario_type":"G" }` | 同完整契约 | 同上 |
++
++`format` 为 legacy/contract；有 prompt 时默认 contract，否则默认 legacy。prompt 和 requirement 同时给且不一致时拒绝。可选 scenario_type 为 A–G，seed 为 0 到 2^32-1 整数，reference_date 为真实存在的 YYYY-MM-DD；严格拒绝布尔 seed。用户输入 1–2000 字符。不支持的需求返回 SCENARIO_UNSUPPORTED；旧 legacy 保留 SCENARIO_INVALID。其余参数错误 INVALID_ARGUMENT。
++
++对客接口拒绝 include_evaluation 和未知参数；输出不含 expected_insights/evaluation_only_fields。返回恒 simulated=true、ledger_modified=false。生成数据含脱敏卡片、账单、家庭/日历及场景专项块，缺块不编造。卡账单独立于存款，booked 才参与余额。
++
++同会话相同 Idempotency-Key 原请求重放由主服务 requests 表持久化，改参复用报冲突。上游另有独立单机 SQLite 生成缓存；两者均不提供分布式保证。legacy 只是完整契约的兼容输出，不喂给分析 loader，也不是兜底 toolkit 的 scenario-1.1。
++
+ 
+ ## 接入分工
+ 
+ 团队维护模拟 API 与可替换契约；真实银行由组委会本地部署接入。eva 主责卡后端/风控，vv 主责交互，集成负责状态和回执，Ethan 提供场景，YUKI 维护知识与评测。
+ 
+ 结论：新增卡管理与场景沿用统一外壳及整数分契约；金融业务共享账本，独立场景不改变实时资金。
++
++
++## 只读分析与数据整理（接口文档增量 2026-10-24）
++
++响应 envelope 和执行策略仍为 1.0.0 / integrated-demo-1.1；本节为向后兼容的新增 API。默认启动端口 8768。
++
++| Method | Path | 请求/返回 | 权限 |
++|---|---|---|---|
++| GET | /api/analysis/status | available、tools、error | 已建会话；不读客户数据 |
++| GET | /api/analysis?tool=bills.summary&month=2026-10 | data.tool/source/result/simulated/ledger_modified | consent.read 且未过期 |
++| POST | /api/analysis | `{ "tool":"data.organize", "args":{ "days":30 } }` | consent.read；必须 Idempotency-Key |
++| GET | /api/health | 新增 data.analysis.available | 仅可用性，不返回账本 |
++
++会话工具：bills.summary、bills.categories、anomalies.detect、subscriptions.burden、cashflow.project、liquidity.available、budget.advice、analysis.pipeline、data.organize。默认 analysis.pipeline；scenario.generate 不能走会话分析入口。
++
++参数沿用工具规范：账单 month/year；现金流/流动性 days；预算 days/month；pipeline days/month；organize 只接受 days；days 为 1–366 整数。GET 的数字字符串在桥内转整数。无参数的工具拒绝额外参数。所有会话工具拒绝 scenario_file、include_evaluation、data、context 等客户端数据/路径/标准答案参数，身份和账本均从 cookie 对应会话读取。
++
++成功 data 为 `{tool,source:"session_ledger",result,simulated:true,ledger_modified:false}`。未知工具 TOOL_NOT_REGISTERED，参数错误 INVALID_ARGUMENT，缺 read 为 SCOPE_DENIED，授权过期 SCOPE_EXPIRED，模块不可用 ANALYSIS_UNAVAILABLE；失败不改金融状态。读取仍记录审计/幂等日志，ledger_modified=false 专指业务账本。
++
++`data.organize` 的 result 含 views.analysis/recommendation/cards/display 与 manifest；分析金额为整数分，只有 recommendation.profile.budget_cny 为 CNY 元。上游个别带符号 amount 仍以分计，不能仅根据字段后缀猜单位。manifest 显示缺失数据，display 始终是派生只读摘要。对客不开放评测开关，离线 organizer 的显式评测能力仍保留。
++
++会话 cards 使用 card_id/card_type/masked_card_number/status/transaction_limit_minor/spent_today_minor/source。无信用卡账单和事件时分别列入 missing；不会从额度推算欠款。initial_balance_minor 为当前余额减已记账流水的重建期初，不冒称原银行记录的期初。申购/赎回标为 investment_purchase/investment_redemption，不作为消费/退款。
++
++### 推荐金额与来源
++
++`GET /api/products` 与 `POST /api/recommendations` 新增 budget_basis：configured_minor、engine_capacity_minor、analysis_headroom_minor（未授权/不可用为 null）、applied_minor、source、analysis_status。
++
++- 有有效 read 且整理可用：消费 organizer 的 recommendation 视图。最终 `applied_minor=min(state.amount, engine.capacity, view.conditions.budget_minor)`。
++- 上游视图按已验证规则：正分析上限与配置取 min；零上限保留配置并给应急金提示。因此 source 仍可为 engine_capacity，同时 analysis_headroom_minor=0。
++- 缺 read 或模块不可用：沿用旧配置/引擎容量；source=engine_capacity，analysis_status=not_authorized/unavailable；不会自动授予 read。
++- 正上限实际收紧时 source=analysis；可用时 analysis_status=available。预算视图是草稿，产品推荐与最终执行仍受原引擎规则约束。
++
++实时资金与操作继续以 /api/snapshot 和原金融回执为准。新整理和生成数据不导入会话，不改变 consent/version/操作状态，不让客户账本进入 RAG。
