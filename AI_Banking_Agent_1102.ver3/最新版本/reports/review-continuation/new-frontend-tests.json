@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "file": "test_frontend.cjs",
+      "exit_code": 0,
+      "result": {
+        "passed": 8,
+        "checks": [
+          "filters and comparison map to a semantic operation",
+          "disabled controls are not recorded as attempted actions",
+          "submission and confirmation separated",
+          "queue cannot switch owner or consent epoch",
+          "poisoned storage never leaks text or credentials",
+          "malformed/unknown queued events rejected",
+          "queue bounded and safe event retained",
+          "local citations are clickable and unsafe links cannot enter markup"
+        ]
+      }
+    }
+  ]
+}

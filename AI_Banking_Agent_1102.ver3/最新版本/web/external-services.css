@@ -1,0 +1,14 @@
+#external-dialog{width:min(780px,92vw);max-height:88vh;overflow:auto;border:1px solid #ddd8ee;border-radius:18px;padding:26px;color:#29243b;background:#fcfbff;font-family:inherit}
+#external-dialog::backdrop{background:#241b3a88}#external-dialog button{padding:9px 14px;margin:5px;border:1px solid #ccc5e3;border-radius:9px;cursor:pointer;background:#f0ebff;color:#33235d}
+#external-dialog input{display:block;width:100%;box-sizing:border-box;padding:11px;margin:8px 0;border:1px solid #b9b3cb;border-radius:8px;font:inherit}
+#external-dialog .external-consent{display:flex;align-items:flex-start;gap:8px;margin:12px 0;line-height:1.5}
+#external-dialog .external-consent input{display:inline-block;width:auto;flex:none;margin:4px 0 0;padding:0}
+#external-dialog p{line-height:1.75}#external-close{float:right}.external-sites{display:flex;gap:16px;flex-wrap:wrap}.external-sites a{padding:10px 16px;background:#eee7fc;border-radius:10px}
+#external-result{white-space:normal;overflow-wrap:anywhere}.knowledge-answer{white-space:pre-wrap}
+#external-dialog .baidu-search-link{margin:18px 0 32px}#external-dialog .baidu-search-link a{display:inline-block;color:#1854b6;font-size:1.25rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}#external-dialog .baidu-search-link a:focus-visible{outline:3px solid #1854b6;outline-offset:4px}
+
+/* 官方原文核验：原文摘录在前，模型改写明确区分 */
+.official-evidence{margin:12px 0}
+.official-meta{margin:0 0 6px;color:#5b5470;font-size:.88rem}
+.official-excerpt{margin:8px 0 12px;padding:12px 16px;border-left:4px solid #7c6bb0;background:#f5f2ff;border-radius:0 10px 10px 0;line-height:1.75;white-space:normal}
+.model-rewrite{margin:10px 0;padding:10px 14px;background:#fff6e8;border:1px dashed #d9a441;border-radius:10px;line-height:1.7}

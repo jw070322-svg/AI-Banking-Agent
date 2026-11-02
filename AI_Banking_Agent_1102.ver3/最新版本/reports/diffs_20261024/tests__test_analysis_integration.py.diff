@@ -1,0 +1,23 @@
+--- sources/Ethan_1024/FirstAgent_分析接入/tests/test_analysis_integration.py
++++ tests/test_analysis_integration.py
+@@ -111,8 +111,10 @@
+ 
+     def test_recommendation_uses_positive_analysis_headroom(self):
+         self.ready()
+-        advice={'investment':{'headroom_minor':10000}}
+-        with patch('first_agent.service.run_analysis_tool',return_value={'result':advice}):
++        # Third_Agent consumes the organizer recommendation view, not a second calculation.
++        package=self.analysis('data.organize')['data']['result']
++        package['views']['recommendation']['conditions'].update(analysis_headroom_minor=10000,budget_minor=10000)
++        with patch('first_agent.service.run_analysis_tool',return_value={'result':package}):
+             result=self.call('recommend',{})['data']
+         self.assertEqual(result['budget_basis']['analysis_headroom_minor'],10000)
+         self.assertEqual(result['budget_basis']['applied_minor'],10000)
+@@ -143,7 +145,7 @@
+         if response.get('error'):
+             if response['error']['code']=='ENVIRONMENT_UNAVAILABLE':self.skipTest('environment agent missing')
+             self.fail(response['error'])
+-        self.assertEqual(response['data']['scenario']['scenario_type'],'A')
++        self.assertEqual(response['data']['scenario_type'],'A')
+         self.assertFalse(response['data']['ledger_modified'])
+         self.assertEqual(self.state(),before)

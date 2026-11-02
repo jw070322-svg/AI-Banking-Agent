@@ -1,0 +1,67 @@
+{
+  "source": "actual browser local demo; new isolated ledger",
+  "transfer_minor": 30000,
+  "before_available_minor": 3864000,
+  "after_available_minor": 3834000,
+  "before_total_minor": 12864000,
+  "after_total_minor": 12834000,
+  "receipt_ui": "BK000002",
+  "refresh_preserved": true,
+  "narrow_viewport": 390,
+  "narrow_document_width": 390,
+  "guardian_dispatch_counts": [
+    [
+      "page.open",
+      2
+    ],
+    [
+      "rpc.authorize",
+      1
+    ],
+    [
+      "rpc.execute",
+      1
+    ],
+    [
+      "rpc.propose",
+      1
+    ],
+    [
+      "snapshot",
+      8
+    ]
+  ],
+  "gateway_events": [
+    [
+      "CONFIRMATION_ACCEPTED",
+      5
+    ],
+    [
+      "CONFIRMATION_CONSUMED",
+      5
+    ],
+    [
+      "CONFIRMATION_PREPARED",
+      5
+    ],
+    [
+      "TOOL_EXECUTION_AUTHORIZED",
+      13
+    ],
+    [
+      "TOOL_EXECUTION_SUCCEEDED",
+      13
+    ]
+  ],
+  "screenshots": [
+    "browser-transfer-receipt.png",
+    "browser-tasks-narrow.png",
+    "browser-replay-desktop.png",
+    "browser-overview-narrow.png"
+  ],
+  "not_claimed": [
+    "full UI accessibility audit",
+    "all browser engines",
+    "real bank identity or transactions"
+  ]
+}

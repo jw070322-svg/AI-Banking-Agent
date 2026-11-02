@@ -1,0 +1,17 @@
+/* Async tests for the contract client with a stub transport. No live service required. */
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+(async()=>{
+ let calls=[],ids=0,failNext=false;const ctx={URL,AbortController,setTimeout,clearTimeout,crypto:{randomUUID:()=>`key-${++ids}`},fetch:async(url,options)=>{calls.push({url,options});if(failNext){failNext=false;throw Error('lost connection');}return{ok:true,json:async()=>({schema_version:'1.0.0',request_id:'r1',status:'succeeded',data:{},error:null,trace:[],simulated:true})};}};
+ vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/contract-client.js'),'utf8'),ctx);const api=ctx.FirstAgentContract,client=api.createClient({baseURL:'http://localhost:8000/'}),passed=[];
+ const test=async(n,f)=>{await f();passed.push(n);};
+ await test('无配置不创建后台客户端，本地不发网络请求',()=>{assert.equal(calls.length,0);assert.throws(()=>api.createClient(),e=>e.code==='BACKEND_NOT_CONFIGURED');});
+ await test('金额拒绝元字符串浮点负数和布尔',()=>{for(const n of ['80000',800.5,-1,true,NaN,0])assert.throws(()=>api.minor(n));assert.equal(api.minor(80000),80000);});
+ await test('转账预览固定账户、姓名、整数分和请求键',async()=>{const cmd=client.previewTransfer({amount_minor:80000,beneficiary_name:'小王'});assert.equal(JSON.parse(cmd.body).account_id,'ACC-4821');await client.send(cmd);assert.equal(calls[0].url,'http://localhost:8000/api/session');assert.equal(calls[0].options.headers['Idempotency-Key'],undefined);assert.equal(calls[1].options.headers['Idempotency-Key'],cmd.key);assert.equal(calls[1].options.credentials,'include');});
+ await test('重试复用同一个键，改参复用拒绝',async()=>{const cmd=client.confirmTransfer({operation_id:'OP1',confirmed:true});failNext=true;await assert.rejects(()=>client.send(cmd),e=>e.code==='TRANSPORT_UNCERTAIN');await client.send(cmd);assert.equal(calls.at(-1).options.headers['Idempotency-Key'],calls.at(-2).options.headers['Idempotency-Key']);await assert.rejects(()=>client.send({...cmd,body:'{"operation_id":"OTHER"}'}),e=>e.code==='IDEMPOTENCY_CONFLICT');});
+ await test('确认拒绝省略同意，不自动附加假断言',()=>{assert.throws(()=>client.confirmTransfer({operation_id:'OP1'}));assert.equal(JSON.parse(client.confirmTransfer({operation_id:'OP1',confirmed:true}).body).assertion_id,undefined);});
+ await test('三类权限过滤本地扩展；卡管理不虚构路由',()=>{const cmd=client.rpc('authorize',[{read:true,subscriptions:false,trade:true,cards:true,transfer:true}]);assert.deepEqual(Object.keys(JSON.parse(cmd.body).args[0]),['read','subscriptions','trade']);assert.throws(()=>client.rpc('settleCard',[]));assert.throws(()=>client.rpc('propose',['card_loss','CARD1']));assert.throws(()=>client.rpc('propose',['transfer','X',1]));});
+ await test('未知状态及损坏响应不用于改账',()=>{assert.throws(()=>api.envelope({status:'success'}));assert.throws(()=>api.envelope({schema_version:'1',request_id:'r',status:'made_up',data:{},error:null,trace:[],simulated:true}));});
+ await test('查询原操作不发送新的转账确认',async()=>{await client.operation('OP1');assert.equal(calls.at(-1).url,'http://localhost:8000/api/operations/OP1');assert.equal(calls.at(-1).options.method,'GET');});
+ await test('禁止其他账户、凭据网址和file协议',()=>{assert.throws(()=>client.previewTransfer({amount_minor:1,beneficiary_name:'小王',account_id:'OTHER'}));assert.throws(()=>api.createClient({baseURL:'file:///tmp/'}));assert.throws(()=>api.createClient({baseURL:'http://u:p@localhost/'}));});
+ console.log(JSON.stringify({passed:passed.length,cases:passed},null,2));
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,54 @@
+{
+  "用户ID": "local_user",
+  "状态": "知识问答「官方原文在线核验」已实现并实网验证：默认不外发，勾选后抓知识库已声明的官方出处，原文摘录在前、模型改写标注在后",
+  "项目路径": "F:\\AI_Banking\\AI_Banking_Agent_1030.ver4",
+  "用户诉求": "本地模型不能联网核验知识是否正确吗？→ 选择实现 B 方案（用户勾选后抓白名单官方页正文，抽段落当引用）",
+  "设计要点": [
+    "触发：只有 POST /api/knowledge 显式带 online_verify=true 且本地判定 no_evidence 才抓取；其余情况零外发",
+    "来源：knowledge/finance_glossary.json 每条术语已声明的 source_uri，不做搜索引擎检索（实测服务端百度已被反爬拦截）",
+    "白名单：www.csrc.gov.cn / www.gov.cn / www.pbc.gov.cn / www.nfra.gov.cn / guiyang.pbc.gov.cn；重定向同集合约束",
+    "不发送问题文本：请求的是固定官方 URL；审计只记 online_verify 布尔与 question_length",
+    "AI 网页版（deepseek/kimi/yiyan/tongyi）只作 ai_links 跳转，永不抓取、永不引用",
+    "展示：原文摘录在前；模型一句话改写在后面并强制标注「模型改写（非引用原文）」",
+    "改写硬校验：新出现的数字必须在原文里出现过、不得含 URL 或 think 块、只保留第一句、超过 120 字即丢弃",
+    "证据冻结：runtime/online-evidence/<sha256前16>.json（URL、抓取时间、内容哈希、摘录），不含问题原文"
+  ],
+  "实测证据": {
+    "CSRC已验证": "问「基金是怎么运作的」→ verified，摘录含「基金投资者即基金份额持有人…」，发布机构 西藏证监局，发布日期 2009-05-07",
+    "HTTP端到端": "8807 上 POST /api/knowledge {online_verify:true} → status=verified，2 条引用，rewrite ok 并带标注",
+    "PDF路径": "问「现金流是什么意思」→ source_unparseable，给出 guiyang.pbc.gov.cn 的 PDF 链接，不编造摘录",
+    "非白名单": "问「贴现率怎么理解」→ 来源在 investor.gov，返回 blocked(host_not_allowlisted)，未发起请求",
+    "隐私过滤": "含「收入」等词的问题在抓取前即被 public_question 拦下（沿用既有规则，未放宽）",
+    "前端": "verified 卡片标题为「官方原文核验」，摘录转义正常，改写标注正确"
+  },
+  "测试结果": {
+    "在线核验专项": "29 通过（tests/test_online_verification.py）",
+    "前端专项": "8 通过（tests_frontend/online-verification.cjs）",
+    "后端集成": "293 通过 / 0 失败 / 0 错误",
+    "复核链": "57 通过",
+    "前端检查": "100 通过"
+  },
+  "边界与已知问题": [
+    "只有 52 条 CSRC 术语能真正核验；49 条人民银行术语的来源是 PDF，栏目索引页无服务端渲染的文章列表，实测回 source_unparseable",
+    "33 条 investor.gov 术语不在允许抓取范围，返回 blocked，只给链接",
+    "「核验」只证明官方页面写有该表述，不等于语义正确，也不等于业务适当性通过",
+    "术语匹配是字面包含匹配：问「伞形信托和基金的区别」会命中「基金」并核验基金原文，可能与提问主题不完全对应；摘录仍为原文，改写有标注",
+    "本地 0.5B 模型改写质量有限：喂整段会照抄或列点，已改为只喂第一句并限制 token",
+    "privacy 正则包含「收入」等银行语义词，会连带拦下部分经济学问题（沿用既有规则，未放宽）"
+  ],
+  "改动文件": [
+    "first_agent/online_verification.py（新）",
+    "first_agent/external_services.py（request 增加 hosts 参数；新增 complete()）",
+    "first_agent/service.py（knowledge 增加 online_verify 分支）",
+    "web/customer-view.js、web/external-services.js、web/external-services.css",
+    "tests/test_online_verification.py、tests_frontend/online-verification.cjs（新）",
+    "API-CONTRACT.md、tools/build_version_ledger.py、tools/build_relocation_ledger.py"
+  ],
+  "后续处理建议": [
+    "先复核额度，再读本交接与 LOCAL_AGENT_HANDOFF.md",
+    "若要提升覆盖率：为术语表补充 HTML 版官方出处（替换 PDF 的 source_uri），而不是放开 PDF 解析",
+    "如需更准的术语匹配，可在 glossary 增加 aliases，而不是改匹配算法放宽",
+    "改受基线约束的文件后，在两条台账登记并重跑，确认未证实为 0"
+  ],
+  "timestamp": "2026-10-31T00:55:00+08:00"
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "banking.wind-task-guide.v1",
+  "export_time": "2026-10-27T12:22:43+08:00",
+  "analysis_date": "2026-10-27",
+  "workbook": {
+    "filename": "wind_banking_products_20261027.xlsx",
+    "format": "xlsx values only",
+    "sha256": "230f7bb738d2b96582cbab280b0139eeba4dcbcada3201358f0646ca5c12fe4d",
+    "sheets": [
+      "products",
+      "prices",
+      "risk_free",
+      "indices",
+      "macro"
+    ],
+    "row_counts": {
+      "products": 35,
+      "prices": 13361,
+      "risk_free": 532,
+      "indices": 4662,
+      "macro": 67
+    },
+    "columns_note": "products 含 min_amount_unit / min_amount_semantics 消歧列",
+    "size_bytes": 426439,
+    "total_rows": 18657
+  },
+  "data_sources": [
+    {
+      "sheet": "products(银行理财)",
+      "wind_interface": "银行理财产品基本信息+基金信息"
+    },
+    {
+      "sheet": "products(基金/ETF)",
+      "wind_interface": "Wind基金基本信息+ETF申购赎回清单"
+    },
+    {
+      "sheet": "prices(银行理财)",
+      "wind_interface": "单位净值 LF_NAV"
+    },
+    {
+      "sheet": "prices(基金/ETF)",
+      "wind_interface": "复权单位净值 LF_ADJNAV"
+    },
+    {
+      "sheet": "risk_free",
+      "wind_interface": "SHIBOR:隔夜(%)",
+      "original_publisher": "全国银行间同业拆借中心（NIFC）/ 中国人民银行",
+      "note": "原 5 点短序列（1年期国债口径）不足以支撑夏普计算，已替换为 Shibor 隔夜完整日序列；两者量级一致（1.18% vs 1.29%），口径均为年化小数、日频"
+    },
+    {
+      "sheet": "indices",
+      "wind_interface": "指数日行情 WSD close",
+      "original_publisher": "中证指数有限公司"
+    },
+    {
+      "sheet": "macro",
+      "wind_interface": "PMI/CPI/PPI/社融/M2/LPR/MLF",
+      "original_publisher": "国家统计局/中国人民银行"
+    },
+    {
+      "sheet": "risk_free(备选源核查)",
+      "wind_interface": "中国:国债到期收益率:1年(%)",
+      "note": "接口返回全 0（531 行数值均为 0），判定为无权限/无数据，未采用"
+    },
+    {
+      "sheet": "prices(基金缺口补齐)",
+      "wind_interface": "复权单位净值 LF_ADJNAV，2026-06-15~2026-07-03 单独补取",
+      "note": "10 只债基原序列在该区间缺失 12 个交易日，已补 140 行"
+    }
+  ],
+  "field_mapping": {
+    "products.min_amount": {
+      "source_field": "申购金额下限_场外 / ETF最小申赎单位(份)",
+      "note": "配合 min_amount_unit 使用"
+    },
+    "products.min_amount_unit": {
+      "allowed": [
+        "CNY_yuan",
+        "shares_lot"
+      ]
+    },
+    "products.min_amount_semantics": {
+      "allowed": [
+        "per_share_class_min_purchase",
+        "etf_min_creation_redemption_unit"
+      ]
+    },
+    "prices.nav": {
+      "source_field": "单位净值(理财) / 复权单位净值(基金)",
+      "note": "10 只债基 2026-06-15~2026-07-03 缺口已补；仍为同一复权口径"
+    },
+    "indices.close": {
+      "source_field": "收盘点位",
+      "note": "9只指数全部518个交易日，2024-09-02~2026-10-27，最大缺口11自然日（春节）"
+    },
+    "risk_free.rate": {
+      "source_field": "SHIBOR:隔夜(%)  ÷ 100",
+      "note": "年化小数，交易日为银行间市场工作日"
+    }
+  },
+  "price_basis_note": {
+    "total_return_net": "分红再投资且已扣费"
+  },
+  "currency": "CNY",
+  "date_range": {
+    "prices": "2024-09-02~2026-10-27",
+    "indices": "2024-09-02~2026-10-27",
+    "risk_free": "2024-09-02~2026-10-27",
+    "macro": "2025-02-28~2026-10-20"
+  },
+  "vintage": "macro 采用 Wind 当期发布值，非 PIT vintage",
+  "verified_products": [
+    "GL24651.LC",
+    "GL24665.LC",
+    "GL24663.LC",
+    "BL24151.LC",
+    "BL24155.LC",
+    "GL241V6.LC",
+    "BL2506V.LC",
+    "BL250EQ.LC",
+    "BL2531T.LC",
+    "GL24662.LC",
+    "BL250N4.LC",
+    "000128.OF",
+    "003009.OF",
+    "004155.OF",
+    "006824.OF",
+    "006545.OF",
+    "006210.OF",
+    "530021.OF",
+    "000078.OF",
+    "485119.OF",
+    "400030.OF",
+    "511010.SH",
+    "511260.SH",
+    "511020.SH",
+    "511520.SH",
+    "510300.SH",
+    "510050.SH",
+    "510500.SH",
+    "512100.SH",
+    "515750.SH",
+    "159928.SZ",
+    "512170.SH",
+    "159940.SZ",
+    "159930.SZ",
+    "518880.SH"
+  ],
+  "permissions_checked": false,
+  "billing_checked": false,
+  "score_artifact": {
+    "file": "wind_score_recommend_20261027.xlsx",
+    "json": "wind_score_recommend_20261027.json",
+    "engine": "score_engine.py",
+    "window": "每产品最近 253 个观测点",
+    "risk_free_series": "SHIBOR 隔夜",
+    "analysis_date": "2026-10-27",
+    "note": "评分与推荐清单为在现有五表上的派生结果，不改变五表原始数据口径"
+  }
+}

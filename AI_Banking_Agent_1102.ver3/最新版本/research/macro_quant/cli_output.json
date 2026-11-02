@@ -1,0 +1,1361 @@
+{
+  "as_of": "2026-10-24T08:00:00+00:00",
+  "config_sha256": "137281e88e2e313b4c90118147fc554803ee50f3c764863a6a88f4b876e95a00",
+  "data_kind": "synthetic",
+  "dataset_id": "synthetic-macro-20261024-v1",
+  "diagnostics": {
+    "active_features": [
+      "cpi_yoy",
+      "gdp_yoy",
+      "market_momentum",
+      "market_volatility",
+      "policy_rate",
+      "term_spread"
+    ],
+    "applied_ess": 82.582948939844,
+    "constant_features": [],
+    "feature_weights": {
+      "cpi_yoy": 0.16666666666666666,
+      "gdp_yoy": 0.16666666666666666,
+      "market_momentum": 0.16666666666666666,
+      "market_volatility": 0.16666666666666666,
+      "policy_rate": 0.16666666666666666,
+      "term_spread": 0.16666666666666666
+    },
+    "kernel_ess": 76.85892376150382,
+    "kernel_tail_support": 7.68589237615038,
+    "mixed_ess": 82.582948939844,
+    "mixed_tail_support": 8.258294893984399,
+    "nearest_distance": 0.21454276109778392,
+    "rejected_history": [
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0000"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0001"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0002"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0003"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0004"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0005"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0006"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0007"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0008"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0009"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0010"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0011"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0012"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0013"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0014"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0015"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0016"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0017"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0018"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0019"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0020"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0021"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0022"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0023"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0024"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0025"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0026"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0027"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0028"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0029"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0030"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0031"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0032"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0033"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0034"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0035"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0036"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0037"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0038"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0039"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0040"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0041"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0042"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0043"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0044"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0045"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0046"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0047"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0048"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0049"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0050"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0051"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0052"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0053"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0054"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0055"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0056"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0057"
+      },
+      {
+        "reasons": [
+          "outside_lookback"
+        ],
+        "scenario_id": "S0058"
+      }
+    ],
+    "scalers": {
+      "cpi_yoy": {
+        "mean": 0.012949586300454148,
+        "std": 0.008331411125601108
+      },
+      "gdp_yoy": {
+        "mean": 0.041346036782414934,
+        "std": 0.009142155635737446
+      },
+      "market_momentum": {
+        "mean": 0.002397006265031057,
+        "std": 0.017530788706949137
+      },
+      "market_volatility": {
+        "mean": 0.180905782139561,
+        "std": 0.029452857654203912
+      },
+      "policy_rate": {
+        "mean": 0.019937391182293623,
+        "std": 0.0020665067911198056
+      },
+      "term_spread": {
+        "mean": 0.006045889178407746,
+        "std": 0.0019897402164318987
+      }
+    },
+    "scenario_count": 121,
+    "scenario_ids": [
+      "S0059",
+      "S0060",
+      "S0061",
+      "S0062",
+      "S0063",
+      "S0064",
+      "S0065",
+      "S0066",
+      "S0067",
+      "S0068",
+      "S0069",
+      "S0070",
+      "S0071",
+      "S0072",
+      "S0073",
+      "S0074",
+      "S0075",
+      "S0076",
+      "S0077",
+      "S0078",
+      "S0079",
+      "S0080",
+      "S0081",
+      "S0082",
+      "S0083",
+      "S0084",
+      "S0085",
+      "S0086",
+      "S0087",
+      "S0088",
+      "S0089",
+      "S0090",
+      "S0091",
+      "S0092",
+      "S0093",
+      "S0094",
+      "S0095",
+      "S0096",
+      "S0097",
+      "S0098",
+      "S0099",
+      "S0100",
+      "S0101",
+      "S0102",
+      "S0103",
+      "S0104",
+      "S0105",
+      "S0106",
+      "S0107",
+      "S0108",
+      "S0109",
+      "S0110",
+      "S0111",
+      "S0112",
+      "S0113",
+      "S0114",
+      "S0115",
+      "S0116",
+      "S0117",
+      "S0118",
+      "S0119",
+      "S0120",
+      "S0121",
+      "S0122",
+      "S0123",
+      "S0124",
+      "S0125",
+      "S0126",
+      "S0127",
+      "S0128",
+      "S0129",
+      "S0130",
+      "S0131",
+      "S0132",
+      "S0133",
+      "S0134",
+      "S0135",
+      "S0136",
+      "S0137",
+      "S0138",
+      "S0139",
+      "S0140",
+      "S0141",
+      "S0142",
+      "S0143",
+      "S0144",
+      "S0145",
+      "S0146",
+      "S0147",
+      "S0148",
+      "S0149",
+      "S0150",
+      "S0151",
+      "S0152",
+      "S0153",
+      "S0154",
+      "S0155",
+      "S0156",
+      "S0157",
+      "S0158",
+      "S0159",
+      "S0160",
+      "S0161",
+      "S0162",
+      "S0163",
+      "S0164",
+      "S0165",
+      "S0166",
+      "S0167",
+      "S0168",
+      "S0169",
+      "S0170",
+      "S0171",
+      "S0172",
+      "S0173",
+      "S0174",
+      "S0175",
+      "S0176",
+      "S0177",
+      "S0178",
+      "S0179"
+    ],
+    "weight_mode": "conditional",
+    "weights": [
+      {
+        "distance": 1.8302877622255052,
+        "kernel_weight": 0.0014811784910300516,
+        "scenario_id": "S0059",
+        "weight": 0.002159506922918782
+      },
+      {
+        "distance": 1.8561808429672182,
+        "kernel_weight": 0.0014782813019338032,
+        "scenario_id": "S0060",
+        "weight": 0.0021568994527321585
+      },
+      {
+        "distance": 1.838978533943565,
+        "kernel_weight": 0.0015284586895134111,
+        "scenario_id": "S0061",
+        "weight": 0.002202059101553806
+      },
+      {
+        "distance": 1.8431579078103364,
+        "kernel_weight": 0.0015528533975980078,
+        "scenario_id": "S0062",
+        "weight": 0.0022240143388299427
+      },
+      {
+        "distance": 1.9264877959381568,
+        "kernel_weight": 0.0014763057624349039,
+        "scenario_id": "S0063",
+        "weight": 0.0021551214671831492
+      },
+      {
+        "distance": 1.9181229775466184,
+        "kernel_weight": 0.001515800221138592,
+        "scenario_id": "S0064",
+        "weight": 0.0021906664800164684
+      },
+      {
+        "distance": 1.8445434556857503,
+        "kernel_weight": 0.0016433239078181175,
+        "scenario_id": "S0065",
+        "weight": 0.0023054377980280412
+      },
+      {
+        "distance": 1.8283084040049469,
+        "kernel_weight": 0.0016976177208898602,
+        "scenario_id": "S0066",
+        "weight": 0.00235430222979261
+      },
+      {
+        "distance": 1.8553411921688248,
+        "kernel_weight": 0.0016927446728862215,
+        "scenario_id": "S0067",
+        "weight": 0.002349916486589335
+      },
+      {
+        "distance": 1.7565988349059607,
+        "kernel_weight": 0.0018679867553586756,
+        "scenario_id": "S0068",
+        "weight": 0.002507634360814544
+      },
+      {
+        "distance": 1.7392604356895376,
+        "kernel_weight": 0.0019301250727030708,
+        "scenario_id": "S0069",
+        "weight": 0.002563558846424499
+      },
+      {
+        "distance": 1.6739257284557527,
+        "kernel_weight": 0.0020676120499063385,
+        "scenario_id": "S0070",
+        "weight": 0.0026872971259074402
+      },
+      {
+        "distance": 1.6007121821024701,
+        "kernel_weight": 0.0022231513840015277,
+        "scenario_id": "S0071",
+        "weight": 0.0028272825265931107
+      },
+      {
+        "distance": 1.482064103154878,
+        "kernel_weight": 0.002458277837338032,
+        "scenario_id": "S0072",
+        "weight": 0.0030388963345959643
+      },
+      {
+        "distance": 1.4702094534006476,
+        "kernel_weight": 0.0025256349536242305,
+        "scenario_id": "S0073",
+        "weight": 0.0030995177392535433
+      },
+      {
+        "distance": 1.4070702439094327,
+        "kernel_weight": 0.0026808060438371704,
+        "scenario_id": "S0074",
+        "weight": 0.003239171720445189
+      },
+      {
+        "distance": 1.287520526439135,
+        "kernel_weight": 0.0029357346420607207,
+        "scenario_id": "S0075",
+        "weight": 0.0034686074588463844
+      },
+      {
+        "distance": 1.2248801561792058,
+        "kernel_weight": 0.0030993259069338973,
+        "scenario_id": "S0076",
+        "weight": 0.0036158395972322433
+      },
+      {
+        "distance": 1.147634008643787,
+        "kernel_weight": 0.0032909124130746903,
+        "scenario_id": "S0077",
+        "weight": 0.003788267452758957
+      },
+      {
+        "distance": 1.0501882613016105,
+        "kernel_weight": 0.0035184196619652665,
+        "scenario_id": "S0078",
+        "weight": 0.0039930239767604755
+      },
+      {
+        "distance": 1.0022385690741107,
+        "kernel_weight": 0.0036661263904658285,
+        "scenario_id": "S0079",
+        "weight": 0.004125960032410982
+      },
+      {
+        "distance": 0.9427387415569748,
+        "kernel_weight": 0.0038347588873877438,
+        "scenario_id": "S0080",
+        "weight": 0.004277729279640705
+      },
+      {
+        "distance": 0.8974548470842946,
+        "kernel_weight": 0.003982376210601442,
+        "scenario_id": "S0081",
+        "weight": 0.004410584870533033
+      },
+      {
+        "distance": 0.8435193118918792,
+        "kernel_weight": 0.00414540095820129,
+        "scenario_id": "S0082",
+        "weight": 0.004557307143372896
+      },
+      {
+        "distance": 0.7759919471338772,
+        "kernel_weight": 0.0043299505536283315,
+        "scenario_id": "S0083",
+        "weight": 0.004723401779257234
+      },
+      {
+        "distance": 0.7595101572100111,
+        "kernel_weight": 0.0044390223977068205,
+        "scenario_id": "S0084",
+        "weight": 0.004821566438927874
+      },
+      {
+        "distance": 0.7418645040684918,
+        "kernel_weight": 0.0045520402298827095,
+        "scenario_id": "S0085",
+        "weight": 0.004923282487886174
+      },
+      {
+        "distance": 0.6711698963239286,
+        "kernel_weight": 0.0047447003066222754,
+        "scenario_id": "S0086",
+        "weight": 0.005096676556951784
+      },
+      {
+        "distance": 0.70384488894002,
+        "kernel_weight": 0.0047888879595424485,
+        "scenario_id": "S0087",
+        "weight": 0.00513644544457994
+      },
+      {
+        "distance": 0.6194523514340164,
+        "kernel_weight": 0.005004659079691735,
+        "scenario_id": "S0088",
+        "weight": 0.005330639452714297
+      },
+      {
+        "distance": 0.5777327731584959,
+        "kernel_weight": 0.005158895503978294,
+        "scenario_id": "S0089",
+        "weight": 0.005469452234572201
+      },
+      {
+        "distance": 0.5134809252264574,
+        "kernel_weight": 0.005341770488188509,
+        "scenario_id": "S0090",
+        "weight": 0.005634039720361393
+      },
+      {
+        "distance": 0.48120425036852377,
+        "kernel_weight": 0.005484608484092166,
+        "scenario_id": "S0091",
+        "weight": 0.005762593916674685
+      },
+      {
+        "distance": 0.46756171793162576,
+        "kernel_weight": 0.0056073382917558225,
+        "scenario_id": "S0092",
+        "weight": 0.005873050743571976
+      },
+      {
+        "distance": 0.36301391985241604,
+        "kernel_weight": 0.0058277259936951546,
+        "scenario_id": "S0093",
+        "weight": 0.006071399675317375
+      },
+      {
+        "distance": 0.34704959471677665,
+        "kernel_weight": 0.005956005278980828,
+        "scenario_id": "S0094",
+        "weight": 0.006186851032074481
+      },
+      {
+        "distance": 0.31766975453007157,
+        "kernel_weight": 0.006098201823361986,
+        "scenario_id": "S0095",
+        "weight": 0.006314827922017523
+      },
+      {
+        "distance": 0.24509313883268266,
+        "kernel_weight": 0.006273436872222341,
+        "scenario_id": "S0096",
+        "weight": 0.006472539465991843
+      },
+      {
+        "distance": 0.2846048563790299,
+        "kernel_weight": 0.006365720913519063,
+        "scenario_id": "S0097",
+        "weight": 0.006555595103158893
+      },
+      {
+        "distance": 0.31528932124835257,
+        "kernel_weight": 0.006462983386229335,
+        "scenario_id": "S0098",
+        "weight": 0.0066431313285981375
+      },
+      {
+        "distance": 0.3522305839374831,
+        "kernel_weight": 0.0065526224265879205,
+        "scenario_id": "S0099",
+        "weight": 0.0067238064649208645
+      },
+      {
+        "distance": 0.4839891816399476,
+        "kernel_weight": 0.0065184405911050845,
+        "scenario_id": "S0100",
+        "weight": 0.006693042812986312
+      },
+      {
+        "distance": 0.5360299910190078,
+        "kernel_weight": 0.006567236526661081,
+        "scenario_id": "S0101",
+        "weight": 0.006736959154986708
+      },
+      {
+        "distance": 0.6628030614043074,
+        "kernel_weight": 0.006472574451194787,
+        "scenario_id": "S0102",
+        "weight": 0.006651763287067044
+      },
+      {
+        "distance": 0.7318658219498986,
+        "kernel_weight": 0.006458671520031358,
+        "scenario_id": "S0103",
+        "weight": 0.006639250649019959
+      },
+      {
+        "distance": 0.7637050022826709,
+        "kernel_weight": 0.0065149270671063545,
+        "scenario_id": "S0104",
+        "weight": 0.006689880641387455
+      },
+      {
+        "distance": 0.9764735684720272,
+        "kernel_weight": 0.0061169961375197885,
+        "scenario_id": "S0105",
+        "weight": 0.006331742804759546
+      },
+      {
+        "distance": 0.962051976294441,
+        "kernel_weight": 0.006274776208962227,
+        "scenario_id": "S0106",
+        "weight": 0.00647374486905774
+      },
+      {
+        "distance": 1.0720364323981495,
+        "kernel_weight": 0.006086521728831474,
+        "scenario_id": "S0107",
+        "weight": 0.006304315836940062
+      },
+      {
+        "distance": 1.1843859054278696,
+        "kernel_weight": 0.0058649607045052,
+        "scenario_id": "S0108",
+        "weight": 0.006104910915046415
+      },
+      {
+        "distance": 1.1671003611292845,
+        "kernel_weight": 0.0060332297134111845,
+        "scenario_id": "S0109",
+        "weight": 0.006256353023061802
+      },
+      {
+        "distance": 1.2012383804672164,
+        "kernel_weight": 0.006041001497606267,
+        "scenario_id": "S0110",
+        "weight": 0.006263347628837376
+      },
+      {
+        "distance": 1.3570781453202756,
+        "kernel_weight": 0.005636293604914732,
+        "scenario_id": "S0111",
+        "weight": 0.0058991105254149944
+      },
+      {
+        "distance": 1.331346597466135,
+        "kernel_weight": 0.005834878924002086,
+        "scenario_id": "S0112",
+        "weight": 0.006077837312593613
+      },
+      {
+        "distance": 1.3968303293600268,
+        "kernel_weight": 0.005716789295482473,
+        "scenario_id": "S0113",
+        "weight": 0.005971556646925961
+      },
+      {
+        "distance": 1.3999442155309105,
+        "kernel_weight": 0.0058166594944156335,
+        "scenario_id": "S0114",
+        "weight": 0.006061439825965806
+      },
+      {
+        "distance": 1.3629781336739932,
+        "kernel_weight": 0.006065862560516895,
+        "scenario_id": "S0115",
+        "weight": 0.006285722585456941
+      },
+      {
+        "distance": 1.4291627408032201,
+        "kernel_weight": 0.005934987347828081,
+        "scenario_id": "S0116",
+        "weight": 0.006167934894037008
+      },
+      {
+        "distance": 1.4400450309949937,
+        "kernel_weight": 0.006008531750371489,
+        "scenario_id": "S0117",
+        "weight": 0.006234124856326076
+      },
+      {
+        "distance": 1.3457469647665923,
+        "kernel_weight": 0.006493561371540413,
+        "scenario_id": "S0118",
+        "weight": 0.006670651515378108
+      },
+      {
+        "distance": 1.3757438635128627,
+        "kernel_weight": 0.006500790724808653,
+        "scenario_id": "S0119",
+        "weight": 0.006677157933319524
+      },
+      {
+        "distance": 1.3775756459243635,
+        "kernel_weight": 0.006619746882783215,
+        "scenario_id": "S0120",
+        "weight": 0.006784218475496629
+      },
+      {
+        "distance": 1.332488354597728,
+        "kernel_weight": 0.006934191277709674,
+        "scenario_id": "S0121",
+        "weight": 0.0070672184309304425
+      },
+      {
+        "distance": 1.3858425426606797,
+        "kernel_weight": 0.006844796084332234,
+        "scenario_id": "S0122",
+        "weight": 0.006986762756890747
+      },
+      {
+        "distance": 1.2924378460757087,
+        "kernel_weight": 0.007376761704412924,
+        "scenario_id": "S0123",
+        "weight": 0.007465531814963367
+      },
+      {
+        "distance": 1.3456709258036106,
+        "kernel_weight": 0.00728910768705616,
+        "scenario_id": "S0124",
+        "weight": 0.00738664319934228
+      },
+      {
+        "distance": 1.3739490533548142,
+        "kernel_weight": 0.0073048978060650405,
+        "scenario_id": "S0125",
+        "weight": 0.007400854306450272
+      },
+      {
+        "distance": 1.3408643594626384,
+        "kernel_weight": 0.007597041313934565,
+        "scenario_id": "S0126",
+        "weight": 0.0076637834635328445
+      },
+      {
+        "distance": 1.3861382114394603,
+        "kernel_weight": 0.007535136737408599,
+        "scenario_id": "S0127",
+        "weight": 0.007608069344659475
+      },
+      {
+        "distance": 1.446790613260331,
+        "kernel_weight": 0.007393845537371969,
+        "scenario_id": "S0128",
+        "weight": 0.007480907264626508
+      },
+      {
+        "distance": 1.4669030948332402,
+        "kernel_weight": 0.007440064202334601,
+        "scenario_id": "S0129",
+        "weight": 0.007522504063092877
+      },
+      {
+        "distance": 1.5170505644356622,
+        "kernel_weight": 0.007336638286738607,
+        "scenario_id": "S0130",
+        "weight": 0.007429420739056483
+      },
+      {
+        "distance": 1.5677417222606729,
+        "kernel_weight": 0.0072238320138219856,
+        "scenario_id": "S0131",
+        "weight": 0.007327895093431523
+      },
+      {
+        "distance": 1.6198882948880364,
+        "kernel_weight": 0.007097204598695991,
+        "scenario_id": "S0132",
+        "weight": 0.0072139304198181285
+      },
+      {
+        "distance": 1.661716332832991,
+        "kernel_weight": 0.007017816775784948,
+        "scenario_id": "S0133",
+        "weight": 0.007142481379198189
+      },
+      {
+        "distance": 1.6980649866121447,
+        "kernel_weight": 0.006962702544817455,
+        "scenario_id": "S0134",
+        "weight": 0.007092878571327446
+      },
+      {
+        "distance": 1.7651801147177044,
+        "kernel_weight": 0.006740737287269253,
+        "scenario_id": "S0135",
+        "weight": 0.0068931098395340635
+      },
+      {
+        "distance": 1.783052988335167,
+        "kernel_weight": 0.006775618833660237,
+        "scenario_id": "S0136",
+        "weight": 0.006924503231285949
+      },
+      {
+        "distance": 1.8216629826571107,
+        "kernel_weight": 0.006696977687604539,
+        "scenario_id": "S0137",
+        "weight": 0.006853726199835821
+      },
+      {
+        "distance": 1.8572577414942086,
+        "kernel_weight": 0.0066313629472155395,
+        "scenario_id": "S0138",
+        "weight": 0.006794672933485722
+      },
+      {
+        "distance": 1.8636418641250059,
+        "kernel_weight": 0.006724688646594955,
+        "scenario_id": "S0139",
+        "weight": 0.006878666062927195
+      },
+      {
+        "distance": 1.8590853561584424,
+        "kernel_weight": 0.006881311023823816,
+        "scenario_id": "S0140",
+        "weight": 0.00701962620243317
+      },
+      {
+        "distance": 1.8558799127311143,
+        "kernel_weight": 0.00703367637849996,
+        "scenario_id": "S0141",
+        "weight": 0.0071567550216417
+      },
+      {
+        "distance": 1.861612856816749,
+        "kernel_weight": 0.0071365364924646,
+        "scenario_id": "S0142",
+        "weight": 0.0072493291242098756
+      },
+      {
+        "distance": 1.850272693967398,
+        "kernel_weight": 0.00734364819056574,
+        "scenario_id": "S0143",
+        "weight": 0.007435729652500902
+      },
+      {
+        "distance": 1.8401025602378696,
+        "kernel_weight": 0.007549113913542841,
+        "scenario_id": "S0144",
+        "weight": 0.007620648803180293
+      },
+      {
+        "distance": 1.8147604025897552,
+        "kernel_weight": 0.007855916751109025,
+        "scenario_id": "S0145",
+        "weight": 0.007896771356989858
+      },
+      {
+        "distance": 1.798527179137152,
+        "kernel_weight": 0.008113712849519844,
+        "scenario_id": "S0146",
+        "weight": 0.008128787845559595
+      },
+      {
+        "distance": 1.7722761345358538,
+        "kernel_weight": 0.008445554243586003,
+        "scenario_id": "S0147",
+        "weight": 0.008427445100219139
+      },
+      {
+        "distance": 1.746740473145785,
+        "kernel_weight": 0.00878339711264909,
+        "scenario_id": "S0148",
+        "weight": 0.008731503682375916
+      },
+      {
+        "distance": 1.7177399468610517,
+        "kernel_weight": 0.009156320380708119,
+        "scenario_id": "S0149",
+        "weight": 0.009067134623629042
+      },
+      {
+        "distance": 1.7109712213133121,
+        "kernel_weight": 0.009382589730508515,
+        "scenario_id": "S0150",
+        "weight": 0.009270777038449399
+      },
+      {
+        "distance": 1.6771472068152469,
+        "kernel_weight": 0.009811709494424928,
+        "scenario_id": "S0151",
+        "weight": 0.00965698482597417
+      },
+      {
+        "distance": 1.680370673991976,
+        "kernel_weight": 0.009978427668343177,
+        "scenario_id": "S0152",
+        "weight": 0.009807031182500595
+      },
+      {
+        "distance": 1.673327483349536,
+        "kernel_weight": 0.010225950646057887,
+        "scenario_id": "S0153",
+        "weight": 0.010029801862443833
+      },
+      {
+        "distance": 1.6849967353574284,
+        "kernel_weight": 0.01033435790250735,
+        "scenario_id": "S0154",
+        "weight": 0.01012736839324835
+      },
+      {
+        "distance": 1.6493120007954638,
+        "kernel_weight": 0.010817541426655527,
+        "scenario_id": "S0155",
+        "weight": 0.01056223356498171
+      },
+      {
+        "distance": 1.725472782102307,
+        "kernel_weight": 0.010415615469995873,
+        "scenario_id": "S0156",
+        "weight": 0.01020050020398802
+      },
+      {
+        "distance": 1.7037952781147607,
+        "kernel_weight": 0.01079496482204705,
+        "scenario_id": "S0157",
+        "weight": 0.010541914620834082
+      },
+      {
+        "distance": 1.6056169996163716,
+        "kernel_weight": 0.011828793060973215,
+        "scenario_id": "S0158",
+        "weight": 0.01147236003586763
+      },
+      {
+        "distance": 1.720525487977175,
+        "kernel_weight": 0.011076845721203333,
+        "scenario_id": "S0159",
+        "weight": 0.010795607430074735
+      },
+      {
+        "distance": 1.652705512836767,
+        "kernel_weight": 0.011881105528011192,
+        "scenario_id": "S0160",
+        "weight": 0.011519441256201808
+      },
+      {
+        "distance": 1.6455737626565297,
+        "kernel_weight": 0.012175560184260272,
+        "scenario_id": "S0161",
+        "weight": 0.01178445044682598
+      },
+      {
+        "distance": 1.600736783086744,
+        "kernel_weight": 0.012820305349513311,
+        "scenario_id": "S0162",
+        "weight": 0.012364721095553715
+      },
+      {
+        "distance": 1.623436005175455,
+        "kernel_weight": 0.012858701666104921,
+        "scenario_id": "S0163",
+        "weight": 0.012399277780486164
+      },
+      {
+        "distance": 1.5446410086542681,
+        "kernel_weight": 0.013856408996563966,
+        "scenario_id": "S0164",
+        "weight": 0.013297214377899304
+      },
+      {
+        "distance": 1.476204138966555,
+        "kernel_weight": 0.014789885784465821,
+        "scenario_id": "S0165",
+        "weight": 0.014137343487010975
+      },
+      {
+        "distance": 1.4452300053445883,
+        "kernel_weight": 0.01538366581452195,
+        "scenario_id": "S0166",
+        "weight": 0.01467174551406149
+      },
+      {
+        "distance": 1.3993254386403375,
+        "kernel_weight": 0.016144472414457486,
+        "scenario_id": "S0167",
+        "weight": 0.015356471454003472
+      },
+      {
+        "distance": 1.3027007037967755,
+        "kernel_weight": 0.017441460524411187,
+        "scenario_id": "S0168",
+        "weight": 0.016523760752961802
+      },
+      {
+        "distance": 1.2881051961836238,
+        "kernel_weight": 0.01793057557583029,
+        "scenario_id": "S0169",
+        "weight": 0.016963964299238996
+      },
+      {
+        "distance": 1.2098027146888726,
+        "kernel_weight": 0.01909118006745102,
+        "scenario_id": "S0170",
+        "weight": 0.018008508341697652
+      },
+      {
+        "distance": 1.0719436121813066,
+        "kernel_weight": 0.020871459497857202,
+        "scenario_id": "S0171",
+        "weight": 0.019610759829063216
+      },
+      {
+        "distance": 0.936855655710339,
+        "kernel_weight": 0.022599775703368578,
+        "scenario_id": "S0172",
+        "weight": 0.021166244414023455
+      },
+      {
+        "distance": 0.8822207266205377,
+        "kernel_weight": 0.023553622958632014,
+        "scenario_id": "S0173",
+        "weight": 0.022024706943760547
+      },
+      {
+        "distance": 0.7200501316335989,
+        "kernel_weight": 0.02543881687973097,
+        "scenario_id": "S0174",
+        "weight": 0.02372138147274961
+      },
+      {
+        "distance": 0.6804501610486283,
+        "kernel_weight": 0.026254954467847695,
+        "scenario_id": "S0175",
+        "weight": 0.024455905302054663
+      },
+      {
+        "distance": 0.5832730715744898,
+        "kernel_weight": 0.02750585219521253,
+        "scenario_id": "S0176",
+        "weight": 0.025581713256683014
+      },
+      {
+        "distance": 0.40466312863859616,
+        "kernel_weight": 0.029161960880694938,
+        "scenario_id": "S0177",
+        "weight": 0.02707221107361718
+      },
+      {
+        "distance": 0.25698741259678554,
+        "kernel_weight": 0.030381458644745157,
+        "scenario_id": "S0178",
+        "weight": 0.028169759061262376
+      },
+      {
+        "distance": 0.21454276109778392,
+        "kernel_weight": 0.031110150188317264,
+        "scenario_id": "S0179",
+        "weight": 0.028825581450477273
+      }
+    ]
+  },
+  "evaluated": [
+    {
+      "loss_cvar": -0.0001345068734338713,
+      "loss_var": -0.0003207787516208624,
+      "mean_excess_return": 0.0009351482595901309,
+      "mean_net_return": 0.0021477254565581833,
+      "name": "虚构稳健样本A",
+      "product_id": "SYN_A",
+      "scenario_count": 121,
+      "score": 0.000534827566512001,
+      "volatility": 0.00045643179394711257
+    },
+    {
+      "loss_cvar": 0.0007920482552886562,
+      "loss_var": -0.00011931660736664738,
+      "mean_excess_return": 0.0017608564114194338,
+      "mean_net_return": 0.0029734336083874864,
+      "name": "虚构短债样本B",
+      "product_id": "SYN_B",
+      "scenario_count": 121,
+      "score": 0.0004844040780653888,
+      "volatility": 0.0013149834405139615
+    },
+    {
+      "loss_cvar": 0.018014795876108648,
+      "loss_var": 0.01253164636715036,
+      "mean_excess_return": 0.001015788704957436,
+      "mean_net_return": 0.0022283659019254887,
+      "name": "虚构均衡样本C",
+      "product_id": "SYN_C",
+      "scenario_count": 121,
+      "score": -0.008499503585575606,
+      "volatility": 0.010472610768027546
+    }
+  ],
+  "excluded": [
+    {
+      "product_id": "SYN_D",
+      "reasons": [
+        "risk_limit"
+      ]
+    },
+    {
+      "product_id": "SYN_LOCKED",
+      "reasons": [
+        "holding_horizon_limit"
+      ]
+    },
+    {
+      "product_id": "SYN_NEW",
+      "reasons": [
+        "missing_common_returns",
+        "not_in_historical_universe",
+        "return_terms_mismatch"
+      ]
+    }
+  ],
+  "input_sha256": "7873a5201556d66476bf20b513c294fd185744d2c2a952f48ada94d071612bbc",
+  "ledger_modified": false,
+  "model_version": "conditional-scenario-cvar-1.0.0",
+  "ranking": [
+    {
+      "loss_cvar": -0.0001345068734338713,
+      "loss_var": -0.0003207787516208624,
+      "mean_excess_return": 0.0009351482595901309,
+      "mean_net_return": 0.0021477254565581833,
+      "name": "虚构稳健样本A",
+      "product_id": "SYN_A",
+      "scenario_count": 121,
+      "score": 0.000534827566512001,
+      "volatility": 0.00045643179394711257
+    },
+    {
+      "loss_cvar": 0.0007920482552886562,
+      "loss_var": -0.00011931660736664738,
+      "mean_excess_return": 0.0017608564114194338,
+      "mean_net_return": 0.0029734336083874864,
+      "name": "虚构短债样本B",
+      "product_id": "SYN_B",
+      "scenario_count": 121,
+      "score": 0.0004844040780653888,
+      "volatility": 0.0013149834405139615
+    }
+  ],
+  "reason_codes": [],
+  "research_only": true,
+  "schema_version": "macro-quant-1.0",
+  "status": "ok",
+  "warnings": [
+    "illustrative_parameters_not_calibrated",
+    "ess_is_weight_concentration_not_independent_sample_size",
+    "source_authenticity_requires_upstream_evidence",
+    "current_fee_counterfactual_scenarios",
+    "synthetic_data_no_economic_validation"
+  ]
+}

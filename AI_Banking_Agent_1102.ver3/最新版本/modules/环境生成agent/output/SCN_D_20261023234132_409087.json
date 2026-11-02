@@ -1,0 +1,402 @@
+{
+  "scenario_id": "SCN_D_20261023234132_409087",
+  "scenario_name": "余额不足",
+  "scenario_type": "D",
+  "created_at": "2026-10-23T00:00:00",
+  "user": {
+    "user_id": "UCB9D68881C56",
+    "name": "陈强",
+    "gender": "男",
+    "id_number": "330102199604069204",
+    "phone": "17845263097",
+    "email": "ucb9d68881c56@example.com",
+    "address": "成都市武侯区",
+    "occupation": "医生",
+    "monthly_income": 21806.18,
+    "registration_date": "2021-08-20"
+  },
+  "accounts": [
+    {
+      "account_id": "ACCA39D099A0307",
+      "user_id": "UCB9D68881C56",
+      "account_type": "储蓄卡",
+      "account_number": "6222949066882811265",
+      "currency": "CNY",
+      "initial_balance": 1855.26,
+      "balance": 8596.16,
+      "status": "正常",
+      "opened_date": "2022-12-02"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T5F6F4C8DA302",
+      "account_id": "ACCA39D099A0307",
+      "date": "2026-10-08",
+      "amount": 9208.01,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T235143D803AF",
+      "account_id": "ACCA39D099A0307",
+      "date": "2026-10-13",
+      "amount": 1866.81,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某购物中心",
+      "description": "购物消费",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TFFB219CADA68",
+      "account_id": "ACCA39D099A0307",
+      "date": "2026-10-18",
+      "amount": 600.3,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "聚餐",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TD945D98D4098",
+      "account_id": "ACCA39D099A0307",
+      "date": "2026-10-23",
+      "amount": 10289.72,
+      "transaction_type": "transfer_out",
+      "category": "转账",
+      "merchant": "收款人-张三",
+      "description": "转账请求：金额超过可用余额，被银行拒绝",
+      "status": "rejected",
+      "expected_result": "rejected"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成账户余额与一笔转账请求，使请求金额超过可用余额；交易应被拒绝，不允许出现负余额。",
+    "expected": {
+      "transfer_rejected": true,
+      "no_negative_balance": true
+    }
+  },
+  "cards": [
+    {
+      "card_id": "CARD9978277B5BE5",
+      "user_id": "UCB9D68881C56",
+      "account_id": "ACCA39D099A0307",
+      "card_type": "debit",
+      "card_number_masked": "6222 **** **** 5065",
+      "brand": "银联",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2023-07-26",
+      "transaction_limit": {
+        "daily": 50000.0,
+        "single": 20000.0
+      }
+    },
+    {
+      "card_id": "CARD1B342063E843",
+      "user_id": "UCB9D68881C56",
+      "account_id": "ACCA39D099A0307",
+      "card_type": "credit",
+      "card_number_masked": "6225 **** **** 6345",
+      "brand": "Visa",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2023-05-03",
+      "credit_limit": 30000.0,
+      "used_credit": 0.0,
+      "available_credit": 30000.0,
+      "statement_day": 7,
+      "due_day": 25,
+      "transaction_limit": {
+        "daily": 20000.0,
+        "single": 10000.0
+      }
+    }
+  ],
+  "credit_card_bill": {
+    "bill_id": "BILL15215859B6D7",
+    "card_id": "CARD1B342063E843",
+    "cycle_start": "2026-09-08",
+    "statement_date": "2026-10-07",
+    "due_date": "2026-10-25",
+    "items": [
+      {
+        "transaction_id": "CT1E17A5C58C0B",
+        "card_id": "CARD1B342063E843",
+        "date": "2026-09-17",
+        "amount": 332.59,
+        "transaction_type": "expense",
+        "category": "娱乐",
+        "merchant": "某电商平台",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CT3F3D84D9AB12",
+        "card_id": "CARD1B342063E843",
+        "date": "2026-09-25",
+        "amount": 750.92,
+        "transaction_type": "expense",
+        "category": "日用",
+        "merchant": "某商场",
+        "description": "信用卡消费",
+        "status": "completed"
+      },
+      {
+        "transaction_id": "CTBA04D6511F5A",
+        "card_id": "CARD1B342063E843",
+        "date": "2026-10-05",
+        "amount": 93.62,
+        "transaction_type": "expense",
+        "category": "交通",
+        "merchant": "某超市",
+        "description": "信用卡消费",
+        "status": "completed"
+      }
+    ],
+    "total_amount": 1177.13,
+    "minimum_payment": 0.0,
+    "paid_amount": 1177.13,
+    "outstanding_amount": 0.0,
+    "status": "paid",
+    "currency": "CNY"
+  },
+  "family": [
+    {
+      "member_id": "FAM074629F7D734",
+      "relation": "母亲",
+      "birthday": "2027-09-05",
+      "birth_year": 1974,
+      "age_turning": 53
+    },
+    {
+      "member_id": "FAME1DFAAEE910C",
+      "relation": "配偶",
+      "birthday": "2027-02-17",
+      "birth_year": 1987,
+      "age_turning": 40
+    },
+    {
+      "member_id": "FAM10485FE2FE3E",
+      "relation": "子女",
+      "birthday": "2027-01-27",
+      "birth_year": 2011,
+      "age_turning": 16
+    }
+  ],
+  "calendar_events": [
+    {
+      "event_id": "EVTDD8C385D1C97",
+      "date": "2026-10-30",
+      "event_type": "custom",
+      "category": "备忘",
+      "title": "信用卡年费减免确认",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 1,
+      "remind_date": "2026-10-29",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "刷满 6 笔可免年费"
+    },
+    {
+      "event_id": "EVT504D672F8DAB",
+      "date": "2026-11-04",
+      "event_type": "custom",
+      "category": "备忘",
+      "title": "家庭照片冲印",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-01",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "选择 20 张照片冲洗"
+    },
+    {
+      "event_id": "EVT53332B186E16",
+      "date": "2026-11-08",
+      "event_type": "salary",
+      "category": "工资",
+      "title": "工资到账日",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 1,
+      "remind_date": "2026-11-07",
+      "priority": "low",
+      "budget": null,
+      "status": "planned",
+      "notes": "可安排本月储蓄与预算"
+    },
+    {
+      "event_id": "EVT4FE0C72877B1",
+      "date": "2026-11-26",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "感恩节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-23",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "感恩节问候与安排"
+    },
+    {
+      "event_id": "EVTC0D743EAF675",
+      "date": "2026-12-25",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "圣诞节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-22",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "圣诞节问候与安排"
+    },
+    {
+      "event_id": "EVT39DEA97FEE94",
+      "date": "2027-01-01",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "元旦",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-29",
+      "priority": "medium",
+      "budget": null,
+      "status": "planned",
+      "notes": "元旦问候与安排"
+    },
+    {
+      "event_id": "EVT7EACCEF48CDA",
+      "date": "2027-01-27",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "子女生日",
+      "related_member_id": "FAM10485FE2FE3E",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-01-20",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    },
+    {
+      "event_id": "EVT167EF9B75D10",
+      "date": "2027-02-17",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "配偶生日",
+      "related_member_id": "FAME1DFAAEE910C",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-02-10",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    },
+    {
+      "event_id": "EVTC76F11AC44BE",
+      "date": "2027-09-05",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "母亲生日",
+      "related_member_id": "FAM074629F7D734",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-08-29",
+      "priority": "high",
+      "budget": null,
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    }
+  ],
+  "expected_insights": [
+    {
+      "insight_id": "INSEB74B06CDC63",
+      "insight_type": "salary_detected",
+      "severity": "low",
+      "title": "识别到工资收入",
+      "date": "2026-10-08",
+      "evidence_transaction_ids": [
+        "T5F6F4C8DA302"
+      ],
+      "related_event_id": null,
+      "related_card_id": null,
+      "details": {
+        "merchant": "示例科技有限公司",
+        "cycle": "monthly"
+      }
+    },
+    {
+      "insight_id": "INSD4E568E217FF",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "子女生日提醒",
+      "date": "2027-01-27",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVT7EACCEF48CDA",
+      "related_card_id": null,
+      "details": {
+        "relation": "子女",
+        "age_turning": 16,
+        "days_until": 96
+      }
+    },
+    {
+      "insight_id": "INS59A0C984E3CD",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "配偶生日提醒",
+      "date": "2027-02-17",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVT167EF9B75D10",
+      "related_card_id": null,
+      "details": {
+        "relation": "配偶",
+        "age_turning": 40,
+        "days_until": 117
+      }
+    },
+    {
+      "insight_id": "INSC242593A5937",
+      "insight_type": "birthday_upcoming",
+      "severity": "low",
+      "title": "母亲生日提醒",
+      "date": "2027-09-05",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVTC76F11AC44BE",
+      "related_card_id": null,
+      "details": {
+        "relation": "母亲",
+        "age_turning": 53,
+        "days_until": 317
+      }
+    }
+  ]
+}

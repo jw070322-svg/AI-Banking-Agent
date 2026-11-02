@@ -1,0 +1,60 @@
+{
+  "generated_by": "tools/audit_api_endpoints_1030ver4.py",
+  "generated_at": "2026-10-30T23:06:04.387807+08:00",
+  "scope": "静态字符串级核对；不是运行时路由分发表，也不校验参数语义",
+  "framework": "stdlib http.server（无 FastAPI/Flask/Starlette，故无框架版本迁移）",
+  "versions_in_paths": {
+    "internal": "无 /api/v1、/api/v2、api_version；版本由 APP_VERSION 与会话 cookie 名表达",
+    "third_party": [
+      "/v6/ 同花顺分时",
+      "/v3/ Google Calendar",
+      "/v1/ 本地 llama.cpp",
+      "Wind ?v=1 与 detail.js?v=20240409"
+    ]
+  },
+  "summary": {
+    "routes_in_code": 48,
+    "routes_in_code_api": 44,
+    "static_assets_excluded": 4,
+    "routes_in_docs": 51,
+    "in_code_not_in_docs": 0,
+    "in_docs_not_in_code": 0
+  },
+  "in_code_not_in_docs": [],
+  "in_docs_not_in_code": [],
+  "static_assets": [
+    {
+      "path": "/planning-market.js",
+      "evidence": [
+        "live_indices/runtime.py:87"
+      ]
+    },
+    {
+      "path": "/review/experience.css",
+      "evidence": [
+        "review_additions/runtime.py:249",
+        "review_additions/runtime.py:257",
+        "relay_additions/runtime.py:85",
+        "relay_additions/runtime.py:92",
+        "ui_fix/server.py:17"
+      ]
+    },
+    {
+      "path": "/review/experience.js",
+      "evidence": [
+        "review_additions/runtime.py:249",
+        "review_additions/runtime.py:257",
+        "ui_fix/server.py:17"
+      ]
+    },
+    {
+      "path": "/review/source-links.js",
+      "evidence": [
+        "review_additions/runtime.py:249",
+        "review_additions/runtime.py:257",
+        "relay_additions/runtime.py:85",
+        "relay_additions/runtime.py:90"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+评委启动说明
+
+请双击本目录唯一的启动批处理：
+启动官网指数优先版.bat
+
+页面地址：http://127.0.0.1:8806/
+启动后请保留服务窗口。若页面已经打开，可直接刷新使用。
+
+history_version 保存旧版本启动器，仅供历史追溯，不用于本次演示。
+历史脚本的工作目录已修正；修改前原文保存在 history_version/original_scripts，后缀为 .txt，避免误启动。
+start.py、start_live_indices.py 和 start_local_ai.ps1 等是程序运行或被引用的辅助文件，保留原位置以免破坏依赖。

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-25",
+  "base_url": "http://127.0.0.1:8788/",
+  "environment": "local simulated backend, isolated validation SQLite outside delivery",
+  "browser_checked": [
+    "RPC transfer 300 yuan to fictional 林晓; available 38640→38340; total 128640→128340; expense +300",
+    "reload preserved server balance",
+    "cash-flow analysis displayed backend result",
+    "debt ratio knowledge displayed source excerpts",
+    "debit-card loss with mock verification246810 displayed completed receipt in shared tasks",
+    "bnbu server login and one-click reset restored available38640/total128640, cards active, scopes disabled",
+    "desktop1280 and narrow390 no document horizontal overflow",
+    "browser warning/error logs empty"
+  ],
+  "automated_reports": [
+    "latest-integration-tests.json",
+    "latest-frontend-tests.json"
+  ],
+  "not_claimed": [
+    "real bank or generated model connection",
+    "all-device/accessibility certification",
+    "browser service-restart persistence test"
+  ],
+  "screenshots": [
+    "整合版-总览.png",
+    "整合版-窄屏.png"
+  ]
+}

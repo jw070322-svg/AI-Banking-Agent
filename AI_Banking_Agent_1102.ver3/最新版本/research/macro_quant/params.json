@@ -1,0 +1,155 @@
+{
+  "schema_version": "macro-quant-1.0",
+  "model_version": "conditional-scenario-cvar-1.0.0",
+  "parameter_status": "illustrative_not_calibrated",
+  "purpose": "独立、只读、可复现的30自然日产品研究排序；不是组合权重、收益承诺或交易指令。",
+  "model_params": {
+    "horizon_days": 30,
+    "lookback_days": 3650,
+    "bandwidth": 1.5,
+    "half_life_days": 1080,
+    "uniform_mixture": 0.1,
+    "cvar_alpha": 0.9,
+    "risk_aversion": 0.5,
+    "min_samples": 36,
+    "min_kernel_ess": 24.0,
+    "min_tail_ess": 3.0,
+    "max_nearest_distance": 3.0,
+    "scale_epsilon": 1e-10,
+    "min_score": 0.0,
+    "top_k": 3,
+    "comparison_tolerance": 1e-12,
+    "weight_mode": "conditional"
+  },
+  "parameter_definitions": {
+    "horizon_days": {"unit": "calendar_day", "constraint": "positive integer", "meaning": "从投入到资金到账的共同评价期限H；相邻训练标签不重叠。"},
+    "lookback_days": {"unit": "calendar_day", "constraint": "positive integer", "meaning": "历史决策时刻距as_of的最大距离；不是样本数量。"},
+    "bandwidth": {"unit": "standardized_distance", "constraint": "finite > 0", "meaning": "高斯相似核带宽h；越小越重视相似宏观环境。"},
+    "half_life_days": {"unit": "calendar_day", "constraint": "finite > 0", "meaning": "历史情景时效半衰期；以decision_at计算年龄。"},
+    "uniform_mixture": {"unit": "probability", "constraint": "0 <= rho < 1", "meaning": "最终概率p=(1-rho)q+rho/n；均匀混合不能使不合格的核支持通过门槛。"},
+    "cvar_alpha": {"unit": "probability", "constraint": "0 < alpha < 1", "meaning": "CVaR保留最差1-alpha概率质量，边界情景只取所需的部分概率。"},
+    "risk_aversion": {"unit": "dimensionless", "constraint": "0 <= lambda <= 1", "meaning": "U=(1-lambda)mean_excess-lambda*CVaR(-excess)；不由1至5级风险评级自动换算。"},
+    "min_samples": {"unit": "scenario_count", "constraint": "integer >= 2", "meaning": "完成标签、时点可用、相同制度且不重叠的训练情景最少数量。"},
+    "min_kernel_ess": {"unit": "weight_concentration_equivalent_count", "constraint": "finite >= 1", "meaning": "未混合核概率q的1/sum(q^2)下限；不是独立样本量或置信水平。"},
+    "min_tail_ess": {"unit": "heuristic_tail_support", "constraint": "finite > 0", "meaning": "(1-alpha)*ESS(q)下限；名称保留便于调用，但此值不是实际尾部ESS，也不是统计充分性的保证。"},
+    "max_nearest_distance": {"unit": "standardized_distance", "constraint": "finite > 0", "meaning": "当前状态与最近训练情景距离上限，超出时拒绝外推。"},
+    "scale_epsilon": {"unit": "raw_feature_unit", "constraint": "finite > 0", "meaning": "训练标准差不超过此值的特征视为常量；若当前值偏离训练均值超过此值则拒绝constant_feature_shift，否则移除；全部移除则拒绝。"},
+    "min_score": {"unit": "decimal_H_return", "constraint": "finite >= 0", "meaning": "相对现金基准的最低分数；这是偏好门槛，不是显著性阈值。"},
+    "top_k": {"unit": "product_count", "constraint": "positive integer", "meaning": "正分备选产品最多数量；每项是独立候选，不可将列表解释为可同时全额投入。"},
+    "comparison_tolerance": {"unit": "floating_point_tolerance", "constraint": "0 < finite value <= 1e-6", "meaning": "支持门槛浮点容差；推荐要求score>min_score+此值；不用于放宽金额、风险或期限硬约束。"},
+    "weight_mode": {"unit": "enum", "constraint": "conditional | uniform", "meaning": "默认conditional；uniform只用于相同数据和支持门槛下的等权情景基线。"}
+  },
+  "feature_definitions": {
+    "gdp_yoy": {
+      "description": "最近实际公开的单季度实际GDP同比增速；不可混入累计同比或事后修订值。",
+      "unit": "decimal_rate", "example": 0.045, "weight": 1.0, "max_age_days": 180,
+      "frequency": "quarterly", "transform": "来源百分数除以100；持有最近已公开版本，不做未来插值。", "source_id": "NBS"
+    },
+    "cpi_yoy": {
+      "description": "最近实际公开的全国CPI当月同比变化率。",
+      "unit": "decimal_rate", "example": 0.01, "weight": 1.0, "max_age_days": 75,
+      "frequency": "monthly", "transform": "来源同比百分数除以100；不能用价格指数水平代替同比变化率。", "source_id": "NBS"
+    },
+    "policy_rate": {
+      "description": "人民银行7天期逆回购操作利率；不是LPR、DR007或国债收益率。",
+      "unit": "decimal_rate", "example": 0.02, "weight": 1.0, "max_age_days": 15,
+      "frequency": "operation_day", "transform": "来源百分数除以100；保留实际公告及制度版本，连续相同利率也需证据支持观测日期。", "source_id": "PBOC"
+    },
+    "term_spread": {
+      "description": "同一估值日同种国债曲线10年到期收益率减1年到期收益率。",
+      "unit": "decimal_rate_difference", "example": 0.005, "weight": 1.0, "max_age_days": 10,
+      "frequency": "trading_day", "transform": "(10年收益率百分数-1年收益率百分数)/100；不是债券持有期回报。", "source_id": "CHINABOND"
+    },
+    "market_volatility": {
+      "description": "固定市场总收益指数最近20个交易日对数收益样本标准差乘sqrt(252)。",
+      "unit": "annualized_decimal_volatility", "example": 0.2, "weight": 1.0, "max_age_days": 10,
+      "frequency": "trading_day", "transform": "r_d=log(TR_d/TR_(d-1)); sqrt(252*sum((r_d-mean)^2)/19)，需要21个总收益指数水平。", "source_id": "MARKET_TR_PROVIDER"
+    },
+    "market_momentum": {
+      "description": "同一固定市场总收益指数过去20个交易日简单收益率。",
+      "unit": "decimal_return", "example": 0.03, "weight": 1.0, "max_age_days": 10,
+      "frequency": "trading_day", "transform": "TR_t/TR_(t-20)-1；只能使用决策前已发布的收盘值。", "source_id": "MARKET_TR_PROVIDER"
+    }
+  },
+  "data_policy": {
+    "all_rates_and_returns": "decimal; 1% = 0.01; 禁止输入1表示1%",
+    "money": "CNY integer minor units; 100分=1元; bool不是integer",
+    "timestamps": "ISO8601 with explicit timezone; example 2026-10-24T08:00:00+00:00; 内部以UTC时间差计算自然日",
+    "missing": "不填未来数据；当前关键特征缺失/过期则abstain；不完整历史行剔除并记录；产品缺共同历史则排除该产品",
+    "revision": "available_at必须是该vintage实际可用时刻。后来下载的修订值不能贴上最初发布日。point_in_time_verified是上游证据声明，不是代码对来源真实性的证明。",
+    "regime": "仅使用与当前regime_id一致的历史；中国政策框架2024年7月前后的跨制度合并需另行实证论证。本示例使用纯合成稳定制度。",
+    "return_convention": "cash_settled_horizon_excluding_entry_exit_v1",
+    "cash_settled_return": "期初投入，最迟在label_end-redemption_days发起赎回；label_end前到账。收益已扣持续费用并包括分红再投资；未扣申购附加费及赎回费；赎回等待现金不计息。不能直接采用期末NAV比值而忽略到账延迟。",
+    "entry_fee_basis": "申购费率按投入NAV本金加收；总预算B购得的NAV本金=B/(1+c_entry)。",
+    "exit_fee_basis": "赎回费率按赎回终值扣收；等待现金不计息。",
+    "net_return_formula": "(1+gross_return)*(1-exit_cost_rate)/(1+entry_cost_rate)-1",
+    "current_fee_repricing": "评分使用当前已知费率重定价历史gross_return；这些情景是当前费用下的反事实，不是历史实际实付收益。滚动验证按当期快照费率计费。",
+    "common_support": "先独立于候选构建情景集合；所有参评产品必须有全套该集合收益、当时universe记录和与当前一致的期限口径；禁止各产品单独删行再归一化。",
+    "distribution_assumption": "在相同制度和同类市场状态下，历史条件收益分布对当前有参考性；此为待检验假设，不由CVaR数学性质证明。",
+    "source_adapter_status": "not_implemented; 原型消费已整理字段，不联网采集、不从原始价格自动构造PIT标签。"
+  },
+  "input_fields": {
+    "schema_version": {"type": "string", "required": true, "definition": "固定macro-quant-1.0"},
+    "as_of": {"type": "timestamp", "required": true, "definition": "本次决策的严格信息截止时刻"},
+    "regime_id": {"type": "nonempty string", "required": true, "definition": "事先定义、当时可识别的制度/数据口径版本，不可根据未来收益划段"},
+    "return_convention": {"type": "string", "required": true, "definition": "固定cash_settled_horizon_excluding_entry_exit_v1"},
+    "provenance": {"type": "object", "required": true, "fields": {"data_kind": "synthetic或observed", "dataset_id": "非空数据集版本", "point_in_time_verified": "bool；false直接拒绝。true须由来源存档支持，合成数据仅证明生成机制。", "market_index_id": "上游固定总收益指数及版本，真实数据必须填写；代码不向数据商核验。", "source_manifest": "上游证据清单，记录原文件SHA256、来源URL、published_at、retrieved_at、时区；真实数据接入必备，原型不负责下载核验。"}},
+    "profile": {"type": "object", "required": true, "fields": {"risk_tolerance": "integer 1..5，风险意愿", "risk_capacity": "integer 1..5，风险承受能力", "budget_minor": "nonnegative integer，已有服务budget_basis.applied_minor；不在此模型重算", "horizon_days": "positive integer，用户资金可持有自然日", "max_redemption_days": "nonnegative integer，可接受到账等待自然日"}},
+    "current_features": {"type": "object<feature_id,feature_observation>", "required": true, "definition": "六个特征截至as_of已知的最新有效值；保持真实版本时间"},
+    "feature_observation": {"type": "object", "fields": {"value": "有限number，单位见feature_definitions", "observation_end": "统计/观测期结束timestamp，不晚于available_at", "available_at": "该版本可用于决策的实际timestamp，不晚于其decision_at或当前as_of", "source_id": "非空来源标识", "vintage_id": "非空历史版本标识；并非只填写日期即可证明无修订偏差"}},
+    "products": {"type": "array<product>", "required": true, "definition": "当前已授权可研究的产品事实列表；product_id唯一"},
+    "product": {"type": "object", "fields": {"product_id": "nonempty string，跨历史稳定ID", "name": "nonempty string，显示名称", "risk_level": "integer 1..5，有序评级只作门槛", "min_investment_minor": "nonnegative integer，最低申购总支出（含申购费），单位分", "lockup_days": "nonnegative integer，最低持有自然日", "redemption_days": "nonnegative integer，保守到账等待自然日；真实交易日规则先转换", "active": "bool，当前有效", "facts_verified": "bool，关键事实已核验声明", "currency": "string，仅CNY可参评", "entry_cost_rate": "0<=number<1，按NAV申购净额附加的费率", "exit_cost_rate": "0<=number<1，按赎回终值扣取的费率", "facts_as_of": "事实快照timestamp<=as_of", "source_id": "非空产品事实来源"}},
+    "history": {"type": "array<scenario>", "required": true, "definition": "候选历史情景；scenario_id唯一，返回训练拒绝原因"},
+    "scenario": {"type": "object", "fields": {"scenario_id": "nonempty string，情景唯一键", "regime_id": "nonempty string，与当前不一致的行剔除", "decision_at": "投资起点timestamp；同时是历史特征信息截止时刻", "label_end": "timestamp，必须恰好decision_at+H自然日", "label_available_at": "timestamp>=label_end，标签实际可获取时刻；晚于as_of不能训练", "features": "object<feature_id,feature_observation>，当时已公开且未过期的特征", "cash_return": "finite number > -1，相同起止区间、同币种可实现现金基准净简单收益，事后标签而非当时已知的未来利率", "product_returns": "object<product_id,finite number>=-1，符合到账期限口径、持续费用后的申赎费前收益", "product_terms": "object<product_id,{lockup_days:int>=0,redemption_days:int>=0}>，收益标签对应的期限；与当前不同的产品排除", "product_costs": "object<product_id,{entry_cost_rate,exit_cost_rate}>，历史实际费率证据；当前情景评分不直接用它", "universe": "array<unique product_id>，当时存在且可投资的产品集合；需含退市产品的历史以评估幸存偏差", "source_id": "非空标签来源", "product_snapshots": "复现演示及滚动验证扩展字段：该origin完整products列表，facts_as_of<=decision_at；核心排序不读取此扩展"}}
+  },
+  "output_definitions": {
+    "status": "ok有正分候选；no_positive_score所有可评产品未超过现金门槛；abstain输入信息/支持不足",
+    "research_only": "始终true",
+    "ledger_modified": "始终false",
+    "ranking": "正分候选最多top_k，按score降序再product_id升序；不是资产配置比例",
+    "evaluated": "有共同历史且过硬门槛的所有产品统计，包括非正分项",
+    "excluded": "产品逐项排除原因",
+    "reason_codes": "全局拒绝原因；数据错误ValueError与正常拒绝分开",
+    "mean_net_return": "sum(p_i*r_net_i)，H日小数收益，不是现实预期收益的保证",
+    "mean_excess_return": "sum(p_i*(r_net_i-cash_i))，H日小数超额收益",
+    "volatility": "H日超额收益excess的共同加权经验总体标准差；不宣称年化真实风险",
+    "loss_var": "加权signed loss=-excess的alpha分位数",
+    "loss_cvar": "signed loss最差1-alpha概率质量的平均值；可为负，不裁零",
+    "score": "(1-lambda)*mean_excess_return-lambda*loss_cvar；与现金0分比较",
+    "diagnostics": "训练行ID、拒绝行原因、标准化均值/标准差、常量特征、核概率/最终概率、ESS和最近情景距离；足以逐项复算",
+    "kernel_tail_support": "(1-alpha)*ESS(q)，仅权重分散程度启发式",
+    "mixed_tail_support": "(1-alpha)*ESS(混合核概率)，仅诊断，不能替代未混合支持门槛；uniform模式实际概率为1/n而此项仍报告混合核诊断",
+    "applied_ess": "实际用于评分的概率1/sum(p^2)；conditional为混合核概率，uniform为1/n",
+    "input_sha256": "输入对象的canonical_hash",
+    "config_sha256": "完整配置对象的canonical_hash，包括说明字段；说明修订也改变配置版本哈希",
+    "canonical_hash": "对输入与配置进行UTF8/sort_keys/separators逗号冒号/ensure_ascii=false/allow_nan=false的JSON序列化后SHA256；不是来源真伪认证"
+  },
+  "reproduction": {
+    "python_minimum": "3.11", "dependencies": "Python standard library only",
+    "seed": 20261024, "as_of": "2026-10-24T08:00:00+00:00", "demo_scenarios": 180,
+    "demo_kind": "synthetic", "demo_regime_id": "synthetic_stable_regime_v1",
+    "synthetic_scope": "直接生成虚构宏观/市场特征值与到账毛收益，不生成原始指数价格路径；不验证从原始数据提取因子的步骤。",
+    "walk_forward_test_periods": 36,
+    "walk_forward_policy": "最后36个不重叠30日区间，参数固定不寻优；每个origin只使用当时已成熟标签和当期产品快照。无正分/拒绝时持有现金基准。",
+    "random_generator": "random.Random(seed); 完整example_input.json随交付保存，应优先以此文件复算，避免不同Python版本高层随机算法差异。",
+    "floating_point": "IEEE754双精度；同环境输入逐字节一致，跨环境允许1e-12数量级差异；排名临界项应单独复核。",
+    "economic_validation": "not_performed; 合成回测仅检查实现、时点隔离和指标计算，不证明盈利或最优参数。",
+    "sharpe": "不报告年化Sharpe或AUC；无二分类标签，且未建立收益独立同分布/时间尺度假设。"
+  },
+  "integration_context": {
+    "baseline": "Third_Agent based on SecondAsgent plus Ethan 2026-10-24 ver.1",
+    "preserve": ["原偏好排序及已验证预算规则", "零分析上限时原回退及应急金提示", "单一账本与交易审批链", "不将客户账本送入RAG", "合成数据不冒充真实数据"],
+    "mode": "offline_research_only",
+    "api_change": "新增离线函数/文件契约；没有新增HTTP路由，没有自动替换/api/recommendations",
+    "profile_adapter": "将服务端budget_basis.applied_minor作为profile.budget_minor，携带原预算警告；拒绝仅凭宏观分数提高预算。当前交付没有自动接入服务。",
+    "production_prerequisites": ["真实PIT宏观及产品收益数据适配器", "产品退市/新发和制度变化处理", "当期费率及到账现金流核验", "真实样本滚动验证及冻结参数", "授权/预算/门槛映射审核"]
+  },
+  "sources": [
+    {"id": "RU2002", "title": "Conditional Value-at-Risk for General Loss Distributions", "url": "https://sites.math.washington.edu/~rtr/papers/rtr187-CVaR2.pdf", "supports": "CVaR对一般离散分布的定义和原子概率处理；不支持本项目参数最优性"},
+    {"id": "ALFRED", "title": "Data Revisions with FRED", "url": "https://www.stlouisfed.org/publications/page-one-economics/2022/08/01/data-revisions-with-fred", "supports": "数据修订和历史版本；不能证明中国数据已有完整历史版本档案"},
+    {"id": "NBS", "title": "2026年主要统计信息发布日程表", "url": "https://www.stats.gov.cn/xw/tjxw/tzgg/202512/t20251224_1962137.html", "supports": "统计期与实际发布时间不同，计划会调整；应保存实际可用时刻"},
+    {"id": "PBOC", "title": "2024年第四季度中国货币政策执行报告", "url": "https://www.pbc.gov.cn/goutongjiaoliu/113456/113469/5587716/2025022618190099812.pdf", "supports": "2024年7月明示7天期逆回购操作利率为政策利率；此为字段与制度依据，不是2026当前利率"},
+    {"id": "CHINABOND", "title": "国债及其他债券收益率曲线", "url": "https://yield.chinabond.com.cn/cbweb-pbc-web/pbc/more?locale=cn_zh", "supports": "日终曲线及17:30北京时间发布口径；曲线收益率不能当作产品持有期总回报"},
+    {"id": "PBO", "title": "The Probability of Backtest Overfitting", "url": "https://www.davidhbailey.com/dhbpapers/backtest-prob.pdf", "supports": "反复试验的选择偏差；本原型没有候选收益矩阵，未计算PBO"}
+  ]
+}

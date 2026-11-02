@@ -1,0 +1,50 @@
+{
+  "version": "1029安全评测续作",
+  "updated_at": "2026-10-29T16:29:58.492005+00:00",
+  "new_backend_tests": {
+    "run": 57,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "new_frontend_checks": 8,
+  "inherited_tests": {
+    "run": 202,
+    "failures": 0,
+    "errors": 1,
+    "passed": false
+  },
+  "inherited_frontend_checks": 85,
+  "original_file_count": 690,
+  "changed_original_files": 0,
+  "rag": {
+    "evaluated_at": "2026-10-29T16:27:46.689724+00:00",
+    "questions": 105,
+    "baseline_statuses": {
+      "grounded": 97,
+      "needs_business_data": 3,
+      "no_evidence": 5
+    },
+    "current_statuses": {
+      "grounded": 60,
+      "needs_business_data": 12,
+      "insufficient_evidence": 7,
+      "needs_evidence": 3,
+      "boundary_rejected": 13,
+      "rejected": 10
+    },
+    "citation_integrity_failures": 0,
+    "ledger_unchanged": true,
+    "human_scoring_pending": 105,
+    "semantic_pass_rate": null,
+    "network": "disabled_for_evaluation",
+    "model": "local extractive baseline; no LLM evaluated",
+    "statement": "不能把可追溯引用当成回答正确率；工程24项另见验收映射"
+  },
+  "engineering_24_counts": {
+    "checked": 17,
+    "partial": 6,
+    "not_applicable": 1
+  },
+  "whole_product_security_certified": false
+}

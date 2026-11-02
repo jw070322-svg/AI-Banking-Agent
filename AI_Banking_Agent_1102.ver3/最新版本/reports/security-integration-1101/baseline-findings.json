@@ -1,0 +1,8 @@
+{
+  "scope": "inherited HTTP parent without TransportHardening, isolated local fixture",
+  "duplicate_json_accepted": true,
+  "fake_content_type_accepted": true,
+  "health_discloses_directory": true,
+  "frame_protection_header_present": false,
+  "financial_operations_submitted": 0
+}

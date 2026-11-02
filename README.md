@@ -1,25 +1,24 @@
-# AI Banking Agent 1102.ver1
+# DeepSleep · AI Banking Agent 评委使用说明
 
-本项目提供本地模拟银行业务、金融知识检索、理财分析和网页安全执行链。Windows x64 版随包提供千问 Qwen2.5 0.5B、金融 LoRA 和 llama.cpp CPU 推理服务。
+提交版 1102.ver3 提供模拟银行业务、金融知识问答与财务分析。推理程序和金融 LoRA 已随包提供，基础模型在首次使用时准备。
 
-评委材料包括 [安全自评 PDF](AI_Banking_Agent_1102.ver1/最新版本/安全自评报告_1101.pdf)、[安全自评 Markdown](AI_Banking_Agent_1102.ver1/最新版本/安全自评报告_1101.md) 和 [DeepSleep 答辩 PPT](AI_Banking_Agent_1102.ver1/最新版本/赛题辅助材料/答辩PPT_DeepSleep.pptx)。历史启动资料归档在 history_version。
+**[下载评委提交 ZIP](https://media.githubusercontent.com/media/jw070322-svg/AI-Banking-Agent/main/releases/AI_Banking_Agent_1102.ver3.zip)** · [压缩包 SHA-256](releases/AI_Banking_Agent_1102.ver3.zip.sha256)
 
-[评委打开说明](AI_Banking_Agent_1102.ver1/打开说明.md) · [原项目文档归档](README_原项目文档.md)
+## 首次准备本地模型
 
-## 启动
+1. 在 Windows x64 上安装 Python 3.11+ 和 Node.js 18+，完整解压评审 ZIP 至可写目录。
+2. **首次保持联网，双击解压目录里的 01_启动演示.bat**。启动器会下载原版 Qwen2.5-0.5B-Instruct Q4_K_M（约 491 MB），显示下载进度，并核对文件大小和 SHA-256。随后自动加载随包的金融 LoRA。
+3. 窗口出现“本地模型已就绪”后，打开 <http://127.0.0.1:8808/>。请保留启动窗口。以后在同一份解压目录双击启动器，校验通过即可离线推理。实时行情与官网核验等联网功能仍需网络。
 
-安装 Python 3.11+ 和 Node.js 18+，完整解压发布 ZIP 到可写目录，双击外层的“01_启动演示.bat”。看到模型就绪后，打开 http://127.0.0.1:8808/ 并保留窗口。模型服务监听本机 8811。详细部署、校验和排障步骤见 [便携版使用说明](AI_Banking_Agent_1102.ver1/最新版本/便携版使用说明.md)。
+**选择手动准备，或评审机器无法联网时**，请在可联网的电脑上下载原始 GGUF 文件，再复制到解压目录内的 `最新版本/model-assets/qwen2.5-0.5b-instruct-q4_k_m.gguf`。保留文件名后双击同一启动器，它会自动校验并使用本地副本。下载中断可重新运行启动器。[官方模型下载](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf) · [项目备用下载](https://media.githubusercontent.com/media/jw070322-svg/AI-Banking-Agent/b283030b8d52c2825be338773f3596a9543550a5/AI_Banking_Agent_1102.ver1/%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC/model-assets/qwen2.5-0.5b-instruct-q4_k_m.gguf)
 
-## 验证和提交材料
+文件大小为 **491,400,032 字节**，SHA-256 为 `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`。
 
-- 安全自评：`python -X utf8 -B -m security_integration.self_assess`。
-- 继承回归：`python -X utf8 -B -m security_integration.regression`。
-- 网页及模型服务运行时，执行 `python -X utf8 -B tools/verify_portable_inference.py` 验证推理和网页知识路径。
-- 查看[系统架构图](AI_Banking_Agent_1102.ver1/最新版本/赛题辅助材料/系统架构图.png)、[核心算法说明](AI_Banking_Agent_1102.ver1/最新版本/赛题辅助材料/核心算法说明.md)、[安全自评](AI_Banking_Agent_1102.ver1/最新版本/安全自评报告_1101.html)及赛题补充版技术报告。
-- 测试证据位于 `reports/security-integration-1101/` 与 `reports/portable-model/`，测试时间以各记录为准。
+## 提交材料
 
-## 取得源码和模型
+- [DeepSleep 答辩 PPT](AI_Banking_Agent_1102.ver3/最新版本/赛题辅助材料/答辩PPT_DeepSleep.pptx)
+- [技术设计报告](AI_Banking_Agent_1102.ver3/最新版本/AI_Banking_Agent_技术设计与实现报告_1101赛题补充版.docx)、[架构图](AI_Banking_Agent_1102.ver3/最新版本/赛题辅助材料/系统架构图.png)与[算法说明](AI_Banking_Agent_1102.ver3/最新版本/赛题辅助材料/核心算法说明.md)
+- [终版安全自评 PDF](AI_Banking_Agent_1102.ver3/最新版本/安全自评报告_1101.pdf)和[同版 Markdown](AI_Banking_Agent_1102.ver3/最新版本/安全自评报告_1101.md)，内含权限分级与已知风险
+- [应用 README](AI_Banking_Agent_1102.ver3/最新版本/README.md)、[部署与排障](AI_Banking_Agent_1102.ver3/最新版本/便携版使用说明.md)、[历史资料索引](AI_Banking_Agent_1102.ver3/最新版本/history_version/历史资料索引.md)
 
-安装 Git LFS 后克隆本仓库并运行 `git lfs pull`，进入 `AI_Banking_Agent_1102.ver1/最新版本`。也可直接下载 [完整 ZIP](releases/AI_Banking_Agent_1102.ver1.zip) 和 [SHA-256 校验文件](releases/AI_Banking_Agent_1102.ver1.zip.sha256)。仓库包含模型权重，建议使用完整 ZIP 并在解压后核对 SHA-256。
-
-本应用使用本地模拟账本和演示身份。模型金融回答质量、真实银行接入、生产认证与审计仍需独立业务验收。
+[原项目文档归档](README_原项目文档.md)

@@ -1,0 +1,18 @@
+{
+  "observed_at_utc": "2026-10-23T07:25:53.115945+00:00",
+  "stage": "delivery_verified",
+  "windows": [
+    {
+      "id": "codex",
+      "window": "primary",
+      "window_duration_mins": 300,
+      "remaining_percent": 10,
+      "resets_at": 1792756486
+    }
+  ],
+  "monitor_window_minutes": 300,
+  "ignore_weekly": true,
+  "threshold_percent": 10,
+  "stop": false,
+  "monitor_status": "observed"
+}

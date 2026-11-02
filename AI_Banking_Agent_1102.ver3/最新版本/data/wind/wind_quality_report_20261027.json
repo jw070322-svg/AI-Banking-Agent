@@ -1,0 +1,616 @@
+{
+  "generated_at": "2026-10-27T12:22:52+08:00",
+  "analysis_date": "2026-10-27",
+  "workbook_sha256": "230f7bb738d2b96582cbab280b0139eeba4dcbcada3201358f0646ca5c12fe4d",
+  "checks": {
+    "key_uniqueness": "PASS",
+    "numeric_finite": "PASS",
+    "nav_positive": "PASS",
+    "close_positive": "PASS",
+    "risk_level_from_official_terms": "PASS",
+    "no_mixed_nav_basis": "PASS",
+    "no_forward_fill": "PASS",
+    "no_future_data": "PASS",
+    "percent_encoding": "PASS",
+    "money_encoding": "PASS",
+    "date_encoding": "PASS",
+    "formula_policy": "PASS",
+    "size_limits": "PASS（426439 B < 8MiB；18657 行 < 160000；15 列 ≤ 40）"
+  },
+  "rule_readiness": {
+    "index_history": "READY — 9只指数各518点，2024-09-02~2026-10-27，最大间隔11自然日，可算20日均值与回撤",
+    "nav_scoring": "24/35 达标（≥253点）；11只银行理财因接口限制仅59-150点",
+    "pmi_rule": "READY — 最新可用PMI 2026-09 为50.1（>49，不触发压降）",
+    "dd20_snapshot_as_of_2026_10_27": [
+      {
+        "code": "000016.SH",
+        "name": "上证50指数",
+        "sector": NaN,
+        "close": 2759.86,
+        "ma20": 2795.72,
+        "dd20_pct": -1.28,
+        "triggered": false
+      },
+      {
+        "code": "000300.SH",
+        "name": "沪深300指数",
+        "sector": NaN,
+        "close": 4098.17,
+        "ma20": 4253.6,
+        "dd20_pct": -3.65,
+        "triggered": false
+      },
+      {
+        "code": "000852.SH",
+        "name": "中证1000指数",
+        "sector": NaN,
+        "close": 6587.87,
+        "ma20": 7018.75,
+        "dd20_pct": -6.14,
+        "triggered": true
+      },
+      {
+        "code": "000928.SH",
+        "name": "中证全指能源指数",
+        "sector": "能源",
+        "close": 3457.97,
+        "ma20": 3423.02,
+        "dd20_pct": 1.02,
+        "triggered": false
+      },
+      {
+        "code": "000932.SH",
+        "name": "中证主要消费指数",
+        "sector": "消费",
+        "close": 12487.85,
+        "ma20": 12334.26,
+        "dd20_pct": 1.25,
+        "triggered": false
+      },
+      {
+        "code": "000992.SH",
+        "name": "中证全指金融地产指数",
+        "sector": "金融",
+        "close": 5418.96,
+        "ma20": 5420.39,
+        "dd20_pct": -0.03,
+        "triggered": false
+      },
+      {
+        "code": "399905.SZ",
+        "name": "中证500指数",
+        "sector": NaN,
+        "close": 6655.63,
+        "ma20": 7102.11,
+        "dd20_pct": -6.29,
+        "triggered": true
+      },
+      {
+        "code": "399989.SZ",
+        "name": "中证医疗指数",
+        "sector": "医药",
+        "close": 6592.01,
+        "ma20": 6645.06,
+        "dd20_pct": -0.8,
+        "triggered": false
+      },
+      {
+        "code": "931186.CSI",
+        "name": "中证科技50策略指数",
+        "sector": "科技",
+        "close": 6603.24,
+        "ma20": 6789.48,
+        "dd20_pct": -2.74,
+        "triggered": false
+      }
+    ]
+  },
+  "coverage": {
+    "products": 35,
+    "prices": 13361,
+    "risk_free": 532,
+    "indices": 4662,
+    "macro": 67,
+    "score_ready_ge253": 24,
+    "insufficient": 11
+  },
+  "per_product": [
+    {
+      "code": "000078.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "000128.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "003009.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "004155.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "006210.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "006545.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "006824.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "159928.SZ",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "159930.SZ",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "159940.SZ",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "400030.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "485119.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "510050.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "510300.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "510500.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "511010.SH",
+      "points": 508,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 17.0,
+      "missing_trading_days_max": 10,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "511020.SH",
+      "points": 508,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 17.0,
+      "missing_trading_days_max": 10,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "511260.SH",
+      "points": 508,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 17.0,
+      "missing_trading_days_max": 10,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "511520.SH",
+      "points": 508,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 17.0,
+      "missing_trading_days_max": 10,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "512100.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "512170.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "515750.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "518880.SH",
+      "points": 518,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 11.0,
+      "missing_trading_days_max": 0,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "530021.OF",
+      "points": 495,
+      "first": "2024-09-02",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 19.0,
+      "missing_trading_days_max": 12,
+      "stale_days": 0,
+      "score_ready": true,
+      "irregular_calendar": false
+    },
+    {
+      "code": "BL24151.LC",
+      "points": 142,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 36.0,
+      "missing_trading_days_max": 21,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "BL24155.LC",
+      "points": 141,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 63.0,
+      "missing_trading_days_max": 44,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "BL2506V.LC",
+      "points": 59,
+      "first": "2026-04-07",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 111.0,
+      "missing_trading_days_max": 77,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "BL250EQ.LC",
+      "points": 59,
+      "first": "2026-04-07",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 111.0,
+      "missing_trading_days_max": 77,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "BL250N4.LC",
+      "points": 59,
+      "first": "2026-04-07",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 111.0,
+      "missing_trading_days_max": 77,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "BL2531T.LC",
+      "points": 59,
+      "first": "2026-04-07",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 111.0,
+      "missing_trading_days_max": 77,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "GL241V6.LC",
+      "points": 142,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 36.0,
+      "missing_trading_days_max": 21,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "GL24651.LC",
+      "points": 123,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 63.0,
+      "missing_trading_days_max": 44,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "GL24662.LC",
+      "points": 142,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 36.0,
+      "missing_trading_days_max": 21,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "GL24663.LC",
+      "points": 150,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 36.0,
+      "missing_trading_days_max": 21,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    },
+    {
+      "code": "GL24665.LC",
+      "points": 123,
+      "first": "2026-01-05",
+      "last": "2026-10-27",
+      "median_gap_days": 1.0,
+      "max_gap_days": 63.0,
+      "missing_trading_days_max": 44,
+      "stale_days": 0,
+      "score_ready": false,
+      "irregular_calendar": true
+    }
+  ],
+  "amount_semantics_fixed": {
+    "CNY_yuan": 21,
+    "shares_lot": 14
+  },
+  "excluded_products": [
+    {
+      "code": "BL243M7.LC",
+      "reason": "净值恒为1.0000"
+    },
+    {
+      "code": "BL244MN.LC",
+      "reason": "净值恒为1.0000"
+    },
+    {
+      "code": "GL24672.LC",
+      "reason": "净值恒为1.0000"
+    },
+    {
+      "code": "GL24673.LC",
+      "reason": "净值恒为1.0000"
+    },
+    {
+      "code": "BL243ZV.LC",
+      "reason": "净值恒为1.0000且区间值为空"
+    },
+    {
+      "code": "BL25XYF.LC",
+      "reason": "无历史净值序列"
+    }
+  ],
+  "missing_items": [
+    "11 只银行理财净值仅 59~150 点，低于 253 点评分门槛，本版无法评分（Wind 净值接口仅回溯至 2026-01-05 或 2026-04-07）",
+    "宏观 available_date 为降级值（Wind 无独立发布日期字段），PMI 规则按 observation date 视作已发布处理",
+    "ETF 最小申赎单位以份额表示，未折算为人民币金额，起购门槛比较为名义口径"
+  ],
+  "notes": [
+    "指数与对应ETF日收益相关系数0.998-0.999，交叉验证通过",
+    "512170/515750 2024-09-30 单日涨超11% 为2024年9月末真实行情；518880 2026-02-02 跌11.5% 为黄金真实回撤",
+    "截至2026-10-27：中证500(-6.29%)、中证1000(-6.14%) 20日均值跌幅已超5%，按规则宽基风险上限压至2；其余7只指数未触发"
+  ],
+  "risk_free_upgrade": {
+    "issue": "原 risk_free 仅 5 个观察点（2026-10-20~2026-10-26），夏普所需的超额收益序列无法构造，24 只合格产品全部无法评分",
+    "resolution": "替换为 SHIBOR 隔夜日序列，532 个观察日，覆盖 2024-09-02~2026-10-27",
+    "consistent_with_prior": "原 1 年期国债口径末值 1.1789%，Shibor 隔夜同期 1.2901%，量级与方向一致",
+    "rejected_source": "中债国债到期收益率:1年 接口返回全 0，判定无权限，未采用"
+  },
+  "nav_gap_fixed": {
+    "affected": "10 只债券基金（000078.OF 等）",
+    "gap": "2026-06-12 ~ 2026-07-06 之间缺失 12 个交易日",
+    "rows_added": 140,
+    "status": "已补齐并校验，补齐后 10 只基金 missing_trading_days_max = 12（恰好等于阈值，未超限）"
+  },
+  "scoring_artifact": {
+    "file": "wind_score_recommend_20261027.xlsx",
+    "sheets": [
+      "00_参数与闸门",
+      "01_推荐清单",
+      "02_全量评分明细",
+      "03_指数20日跌幅",
+      "04_情景敏感性"
+    ],
+    "counts": {
+      "products": 35,
+      "passed": 10,
+      "deferred": 0,
+      "excluded": 25,
+      "scored": 24
+    },
+    "parameters": {
+      "risk_preference": 4,
+      "risk_capacity": 4,
+      "risk_cap_effective": 2,
+      "amount": 200000,
+      "horizon_days": 180
+    },
+    "window": "最近 253 个观测点"
+  }
+}

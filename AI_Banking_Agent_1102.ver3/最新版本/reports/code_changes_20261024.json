@@ -1,0 +1,209 @@
+[
+  {
+    "file": "API-CONTRACT.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\API-CONTRACT.md",
+    "before_sha256": "1059b45587127602c780b6d6fc5e6a498fe36003068a06a665c38d035af9c92f",
+    "after_sha256": "4fa9db656b87eba437fd8c54ff89dc9b4661bd36ad89c96c9dd2ca126275a2dc",
+    "diff": "reports/diffs_20261024/API-CONTRACT.md.diff"
+  },
+  {
+    "file": "context_log.json",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\context_log.json",
+    "before_sha256": "6bf0e7eee5c7eed5569fcdd54dd7f6e9db1b815047eca5aa463ca03f08755c83",
+    "after_sha256": "5fd01d899c455587a7a3c993c7f2436b21072bb7fe92ffcc63de8c5097771f5f"
+  },
+  {
+    "file": "context_log.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\context_log.md",
+    "before_sha256": "233cc5e138017ae21ba9970728aa69e447499257c4e59062b4c5f6e64629501c",
+    "after_sha256": "23e6f5a63eb51048ca12776afa80ef071b6cf1904f6db3455c520fef3f425b3f",
+    "diff": "reports/diffs_20261024/context_log.md.diff"
+  },
+  {
+    "file": "README.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\README.md",
+    "before_sha256": "79f276740603e50e40399dbcbb6dcaefbb848c6d66a80d073ddd6399d3b765bf",
+    "after_sha256": "1221f8817b74cfa21f856738591b26e86017422f53d2f0307ab3d487625fb653",
+    "diff": "reports/diffs_20261024/README.md.diff"
+  },
+  {
+    "file": "run_agent.ps1",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\run_agent.ps1",
+    "before_sha256": "5b2e7c14707237273ca40b573952f856f26b1a97a8e6d67b79fb8b45fd3849ab",
+    "after_sha256": "d86b1d2423420c63fc0868c6ddaba7042a7e938dba3a4d8b41c8dba11b067c5e",
+    "diff": "reports/diffs_20261024/run_agent.ps1.diff"
+  },
+  {
+    "file": "summary.json",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\summary.json",
+    "before_sha256": "865cd28bab60fb20ac40e53ae8d5cf047bf8bb8eee11e46abeec73d9acf6dc30",
+    "after_sha256": "0eabbbf7fddd23b1b971b131d789e1c3560d3ff5b2375f10a4039cb3236eacca"
+  },
+  {
+    "file": "summary.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\summary.md",
+    "before_sha256": "32937e849a063174aa761d2cd3635b78233a39f753b4509ba932b4685a67935d",
+    "after_sha256": "04878cad50da4b0ce03071cb80a72f30e96ec059df7ca80c68b24812298c42aa",
+    "diff": "reports/diffs_20261024/summary.md.diff"
+  },
+  {
+    "file": "verify_delivery.py",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\verify_delivery.py",
+    "before_sha256": "fda71a69eaa8ac081b6ff98aff6d45d536e45aa9444918e87cf2bb7f396f59e4",
+    "after_sha256": "923fcb224efa6adf1f401799ee709747f38e73ad42dbb7820f7fc9ed4359c76f",
+    "diff": "reports/diffs_20261024/verify_delivery.py.diff"
+  },
+  {
+    "file": "write_reports.py",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\write_reports.py",
+    "before_sha256": "343969f92d398245b93fcad8e6452e79d76b6a10b1554ac2ce74d0c3e2a29864",
+    "after_sha256": "7adbe1dbb4dcb6ae99e7c77bf4a874b6c27ef4c6610831c52a89cce6537f894c",
+    "diff": "reports/diffs_20261024/write_reports.py.diff"
+  },
+  {
+    "file": "write_update_reports.py",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\write_update_reports.py",
+    "before_sha256": "f9b8637ebdd29ee5db6c609acfd41a9ddb454ae58d997465d9a66e22664b25d9",
+    "after_sha256": "7adbe1dbb4dcb6ae99e7c77bf4a874b6c27ef4c6610831c52a89cce6537f894c",
+    "diff": "reports/diffs_20261024/write_update_reports.py.diff"
+  },
+  {
+    "file": "first_agent\\server.py",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\first_agent\\server.py",
+    "before_sha256": "078f99b060f441b83c6377e4e693ceab34da73c9ae5509ac3bcd5c047a3ef3f0",
+    "after_sha256": "105c5e8ce6ca3061f456d69425f0aa00b666a9accc8f5bec5b67ffc2ef2d15a8",
+    "diff": "reports/diffs_20261024/first_agent__server.py.diff"
+  },
+  {
+    "file": "first_agent\\service.py",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\first_agent\\service.py",
+    "before_sha256": "08030e06689af5e482f465db3b17190b1cec8a77f0be9079f238d029a99db276",
+    "after_sha256": "2679cd78f7e8cc98164383e55a73c79be70735543cb8d6d909650d64ec557a72",
+    "diff": "reports/diffs_20261024/first_agent__service.py.diff"
+  },
+  {
+    "file": "reports\\integration-tests.txt",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\integration-tests.txt",
+    "before_sha256": "5f2b5a133efc036dbc3817dbdabdf48f71851bd02cdf54d418e9ea173f1e53ae",
+    "after_sha256": "c86a09b40f2f78447581c47ff02c711edac008465cd746da27f72958bbcc4e96"
+  },
+  {
+    "file": "reports\\source_integrity.json",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\source_integrity.json",
+    "before_sha256": "c2076e8c36a2078a08f943c5a111a588fc981857c0bcdd93fd68a5e94bf72c42",
+    "after_sha256": "f57f0948aa57008a19552a8c321aaeed2c913fbb0a11cf8740c028608e7737c0"
+  },
+  {
+    "file": "reports\\verification.json",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\verification.json",
+    "before_sha256": "121906a22e0e2a7c448c4c640d9a48e03f2b8f0da056a2f61bfd3191760601ce",
+    "after_sha256": "cf6c575c4714ed07c8f1952e421b9c5d33e5f630dc7c2626f3e025425fe5ad99"
+  },
+  {
+    "file": "web\\agent-panel.js",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\web\\agent-panel.js",
+    "before_sha256": "29e570639e3cba2a586f092104d2b5ba392b68da082fae9e15caf837b6af95d8",
+    "after_sha256": "f31e74304d8ff365aad62124c452252598449e2ce154e78a02467db99aef7014",
+    "diff": "reports/diffs_20261024/web__agent-panel.js.diff"
+  },
+  {
+    "file": "web\\journey-workspace.js",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\web\\journey-workspace.js",
+    "before_sha256": "2e33c63a1c5869e2b6114a592f0ff5597c75280c1134b1fc4ac8121e0d2a1caf",
+    "after_sha256": "066abbabec0472a86d68748a4e22e551c30fe4e49804ecc41fd4971f1a8dad14",
+    "diff": "reports/diffs_20261024/web__journey-workspace.js.diff"
+  },
+  {
+    "file": "reports\\branches\\Ethan.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\branches\\Ethan.md",
+    "before_sha256": "a2dd702bcc2f2bbad91983b8da479e7ef45daf234bc8813ba8b4263f6984fecf",
+    "after_sha256": "bca08541d84438d8433473bf83b37aec26384e775e7798462b3e5232832216e0",
+    "diff": "reports/diffs_20261024/reports__branches__Ethan.md.diff"
+  },
+  {
+    "file": "reports\\branches\\eva.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\branches\\eva.md",
+    "before_sha256": "dd8d922db5b64dd5751b26b702b2872334ef94474b017b512267e2cd219e7718",
+    "after_sha256": "8fa285252ad51bfcc24efb41381e13527e84b288cbb61ab285c4b87549e5ead0",
+    "diff": "reports/diffs_20261024/reports__branches__eva.md.diff"
+  },
+  {
+    "file": "reports\\branches\\integration.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\branches\\integration.md",
+    "before_sha256": "0ed240ae69f0d1c4d957655e859a9bede8a092ec90865c1877b3234af97166ab",
+    "after_sha256": "e410f47d3f398dc7dc922612125428f9043868d9e56dba3a25ca79ef4a8cff85",
+    "diff": "reports/diffs_20261024/reports__branches__integration.md.diff"
+  },
+  {
+    "file": "reports\\branches\\vv.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\branches\\vv.md",
+    "before_sha256": "1ae1fc640c479373639c89a8b6cd655833cb90cf6f9cfc1ff16b565754117b38",
+    "after_sha256": "e4aaa0316ee0b2095dd7d50470842f15cd569e0ae7176c27d28ae4905d174d51",
+    "diff": "reports/diffs_20261024/reports__branches__vv.md.diff"
+  },
+  {
+    "file": "reports\\branches\\YUKI.md",
+    "status": "modified",
+    "source": "F:\\AI_Banking\\SecondAsgent\\reports\\branches\\YUKI.md",
+    "before_sha256": "0b8a316e261eaa3fc0c7297a8227ad2d17b4184420c28d9354abebc0b888b087",
+    "after_sha256": "930609743b3e7b2d7162b2d324f109c47561e494425b7cdf5b6edd913eac0015",
+    "diff": "reports/diffs_20261024/reports__branches__YUKI.md.diff"
+  },
+  {
+    "file": "first_agent/analysis_bridge.py",
+    "status": "adapted_reference",
+    "after_sha256": "7776a3164ad8cd375abebb47cc373e395c94e14c62bb34d1b5208274b2d23264",
+    "reference": "sources/Ethan_1024/FirstAgent_分析接入/analysis_bridge.py",
+    "diff": "reports/diffs_20261024/first_agent__analysis_bridge.py.diff"
+  },
+  {
+    "file": "tests/test_analysis_integration.py",
+    "status": "adapted_reference",
+    "after_sha256": "f61ad242f9d0cbc99e928252feb976e922a57a50b4919a31f2b8c0bf6cb9a6de",
+    "reference": "sources/Ethan_1024/FirstAgent_分析接入/tests/test_analysis_integration.py",
+    "diff": "reports/diffs_20261024/tests__test_analysis_integration.py.diff"
+  },
+  {
+    "file": "demo_full_chain.py",
+    "status": "adapted_reference",
+    "after_sha256": "69c98baa4f401989687c90a506bfc34e8a987feced3a520a1a722fc87ff95103",
+    "reference": "sources/Ethan_1024/demo_full_chain.py",
+    "diff": "reports/diffs_20261024/demo_full_chain.py.diff"
+  },
+  {
+    "file": "tests/test_third_agent.py",
+    "status": "added",
+    "after_sha256": "c610fe54eaf602dcdd9be3c7633a6c813c0ecf2f25d293771d7a61ab78b26e0c"
+  },
+  {
+    "file": "build_reports.py",
+    "status": "added",
+    "after_sha256": "73728122347750392f519fa53c26aae9701a820e7be2f69ed955be3435c87198"
+  },
+  {
+    "file": "INTEGRATION-DECISIONS.md",
+    "status": "added",
+    "after_sha256": "da0f81dcf4020868c31437f63fa38b4b9fe24534f14a7d79f78cd36880e76b4a"
+  }
+]

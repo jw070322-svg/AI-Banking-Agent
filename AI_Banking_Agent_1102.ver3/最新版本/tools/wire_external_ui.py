@@ -1,0 +1,25 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]
+def edit(name,old,new):
+    p=root/name;s=p.read_text(encoding='utf-8');assert old in s,name;p.write_text(s.replace(old,new),encoding='utf-8')
+edit('web/index.html','</head>','<link rel="stylesheet" href="external-services.css"></head>')
+edit('web/index.html','</body>','<script src="external-services.js"></script></body>')
+edit('web/journey-workspace.js',"['planning','market'].includes(result.route)","['planning','market','connections'].includes(result.route)")
+p=root/'web/planning-market.js';s=p.read_text(encoding='utf-8');start=s.index('function queryLinks(');end=s.index('\nfunction reservationForm',start)
+s=s[:start]+'''function queryLinks(city=''){return `<div class="merchant-links"><p>${esc(city||'选择城市后')}：餐厅 / 蛋糕 / 花店。进入官网搜索，价格与营业信息以官网为准。</p><a href="https://meishi.meituan.com/" target="_blank" rel="noopener noreferrer">打开美团美食</a><a href="https://www.dianping.com/" target="_blank" rel="noopener noreferrer">打开大众点评</a></div>`;}'''+s[end:]
+s=s.replace("e=>open(e.detail.tab)","e=>{if(['planning','market'].includes(e.detail.tab))open(e.detail.tab);}")
+s=s.replace('AI_Banking_Agent_1026.ver2-session-log','AI_Banking_Agent_1027.ver2-session-log');p.write_text(s,encoding='utf-8')
+edit('web/backend-client.js',"const post=body!==undefined,controller", "const post=body!==undefined,research=path==='/api/knowledge'||path.startsWith('/api/external/')||path.startsWith('/api/local-life/'),controller")
+edit('web/backend-client.js','controller.abort(),20000)','controller.abort(),research?65000:20000)')
+edit('web/backend-client.js',"const error=Error(post?", "const error=Error(post&&!research?")
+edit('web/backend-client.js','error.uncertain=post;', 'error.uncertain=post&&!research;')
+edit('web/backend-client.js',"api.extension=(action,args={})", "api.research=(action,args={})=>request('/api/'+action,args);\n api.extension=(action,args={})")
+p=root/'web/customer-view.js';s=p.read_text(encoding='utf-8');old="if(tool==='knowledge')return card('知识解答',paragraph(r?.answer||'暂未找到足够依据，请补充问题。')";new="""if(tool==='knowledge')return card(r?.status==='ai_unverified'?'AI 补充解释（未经外部核实）':'知识解答','<div class="knowledge-answer">'+paragraph(r?.answer||'暂未找到足够依据，请补充问题。')+'</div>'+warnings(r?.warnings)+(r?.search_status?paragraph('百度：'+r.search_status):'')+(/^https:\\/\\//.test(r?.search_url||'')?'<p><a href="'+esc(r.search_url)+'" target="_blank" rel="noopener noreferrer">在百度核对来源</a></p>':'')+(r?.search_results||[]).filter(x=>/^https:\\/\\//.test(x.url||'')).map(x=>'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title)+'</a></p>').join('')""";assert old in s;s=s.replace(old,new);p.write_text(s,encoding='utf-8')
+edit('run_frontend_checks.py',"'projection-chart.js']","'projection-chart.js','external-services.js']")
+edit('verify_delivery.py',"'version':'AI_Banking_Agent_1026.ver2'","'version':'AI_Banking_Agent_1027.ver2'")
+edit('run_agent.ps1','8788','8793')
+edit('first_agent/external_services.py','def __init__(self, transport=request):','def __init__(self, transport=None):')
+edit('first_agent/external_services.py','self.transport=transport;','self.transport=transport or request;')
+edit('run_integration_checks.py','import io,json,sys,unittest','import io,json,sys,unittest\nfrom unittest.mock import patch')
+edit('run_integration_checks.py', '    result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)', "    with patch('first_agent.external_services.request',return_value={'status':'unavailable','reason':'offline_test'}):\n        result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)")
+print('UI and test runner connected')

@@ -1,0 +1,12 @@
+--- FirstAgent/first_agent/engine_worker.cjs
++++ SecondAsgent/first_agent/engine_worker.cjs
+@@ -2,7 +2,8 @@
+ const fs=require('node:fs');
+ const {createSession}=require('../web/journey-engine.js');
+ const req=JSON.parse(fs.readFileSync(0,'utf8'));
+-const bank=createSession(req.state);
++if(Number.isFinite(req.now))Date.now=()=>req.now*1000;
++const bank=createSession(req.state,{preserveVerification:true});
+ let result=null,error=null;
+ try { if(req.method) result=bank[req.method](...(req.args||[])); }
+ catch(e) { error=String(e.message); }

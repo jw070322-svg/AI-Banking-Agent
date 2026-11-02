@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-27T11:02:56.226051+00:00",
+  "answers": [
+    {
+      "question": "什么是债券基金？",
+      "terms": [
+        "债券基金"
+      ],
+      "grounded": true,
+      "has_reference": true
+    },
+    {
+      "question": "基金净值估算是什么？",
+      "terms": [
+        "基金估值"
+      ],
+      "grounded": true,
+      "has_reference": true
+    },
+    {
+      "question": "借记卡和信用卡的区别",
+      "terms": [
+        "借记卡",
+        "信用卡"
+      ],
+      "grounded": true,
+      "has_reference": true
+    },
+    {
+      "question": "夏普率是什么？",
+      "terms": [
+        "夏普率"
+      ],
+      "grounded": true,
+      "has_reference": true
+    }
+  ],
+  "meituan_url": "https://www.meituan.com/",
+  "ledger_unchanged": true,
+  "no_paid_api": true,
+  "passed": true
+}

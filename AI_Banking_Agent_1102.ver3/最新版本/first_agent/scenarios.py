@@ -1,0 +1,66 @@
+"""Offline synthetic scenarios; never replace the live session ledger."""
+from decimal import Decimal, InvalidOperation
+import re
+from .vendor.scenario import generator, base_validator
+
+
+def minor(value):
+    if isinstance(value, bool) or not isinstance(value, (int, float, Decimal)):
+        raise ValueError('金额必须为有限数值')
+    try:
+        amount = Decimal(str(value))
+        cents = amount * 100
+        if not amount.is_finite() or amount < 0 or cents > 1_000_000_000 or cents != cents.to_integral_value():
+            raise ValueError('金额必须非负、有限且最多两位小数')
+        return int(cents)
+    except InvalidOperation as exc:
+        raise ValueError('无效金额') from exc
+
+
+def normalize(scenario, config):
+    """Combine submitted structural checks with original, otherwise bypassed checks."""
+    ok, errors = base_validator.validate(scenario, config)
+    if not ok:
+        raise ValueError('; '.join(errors))
+    accounts = []
+    items = []
+    incoming = {'income', 'transfer_in', 'refund'}
+    for row in scenario['transactions']:
+        amount = minor(row['amount'])
+        status = row.get('status')
+        if status not in {'completed', 'rejected'}:
+            raise ValueError('不支持的场景交易状态')
+        items.append({'id': row['transaction_id'], 'account_id': row['account_id'],
+                      'date': row['date'], 'amount_minor': amount if row['transaction_type'] in incoming else -amount,
+                      'category': row['category'], 'status': 'booked' if status == 'completed' else 'rejected'})
+    for account in scenario['accounts']:
+        initial = minor(account['initial_balance'])
+        closing = minor(account['balance'])
+        actual = initial + sum(t['amount_minor'] for t in items
+                               if t['account_id'] == account['account_id'] and t['status'] == 'booked')
+        if actual != closing:
+            raise ValueError('余额对账失败：只计入 completed 交易')
+        accounts.append({'account_id': account['account_id'], 'initial_balance_minor': initial,
+                         'balance_minor': closing, 'currency': 'CNY'})
+    ok, messages = generator.validate_scenario_fallback(scenario, config)
+    if not ok:
+        raise ValueError('; '.join(messages))
+    return {'schema_version': 'scenario-1.0', 'scenario_id': scenario['scenario_id'],
+            'scenario_type': scenario['scenario_type'], 'accounts': accounts, 'transactions': items,
+            'warnings': messages, 'simulated': True, 'ledger_modified': False}
+
+
+def generate(requirement):
+    if not isinstance(requirement, str) or not 1 <= len(requirement.strip()) <= 2000:
+        raise ValueError('场景需求必须为 1–2000 个字符')
+    try:
+        config = generator.parse_requirement(requirement)
+    except generator.ScenarioError as exc:
+        raise ValueError(str(exc)) from exc
+    if config['scenario_type']=='B':
+        match=re.search(r'(?:增加|上涨|提升)(?:了)?\s*(\d+(?:\.\d{1,2})?)\s*元',requirement)
+        if match:config['params']['increase_amount']=minor(Decimal(match.group(1)))/100
+        minor(config['params']['increase_amount'])
+        config['requirements']=generator.build_requirements('B',config['params'])
+    config['scenario_id'] = generator.generate_scenario_id(config['scenario_type'])
+    return normalize(generator.generate_scenario_fallback(config), config)

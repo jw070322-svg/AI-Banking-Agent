@@ -1,0 +1,18 @@
+{
+  "scope": "slot filling to existing form",
+  "url": "http://127.0.0.1:8788/",
+  "observed": [
+    "给小王转账 → displays 小王 / amount pending",
+    "800元 → opens existing transfer panel with R-WANG and800",
+    "no debit and no operation before form propose",
+    "cancel then 给林晓转账; close assistant and reload; 林晓 context retained",
+    "800 → transfer form R-LIN/800 with explicit CNY interpretation notice",
+    "form generates existing confirmation; closing cancels without debit"
+  ],
+  "automated": {
+    "backend": 118,
+    "frontend": 66
+  },
+  "screenshot": "追问后自动填表.png",
+  "not_claimed": "arbitrary natural language, real bank, all browser/accessibility certification"
+}

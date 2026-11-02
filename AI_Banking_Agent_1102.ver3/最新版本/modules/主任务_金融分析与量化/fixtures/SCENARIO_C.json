@@ -1,0 +1,512 @@
+{
+  "scenario_id": "SCN_C_20261023235306_8DA505",
+  "scenario_type": "C",
+  "scenario_name": "疑似重复扣款",
+  "created_at": "2026-10-23T00:00:00",
+  "currency": "CNY",
+  "ledger_modified": false,
+  "user": {
+    "user_id": "U1C80A3B1799D",
+    "profile": {
+      "occupation": "会计",
+      "registration_date": "2025-01-27",
+      "monthly_income_minor": 2039516
+    }
+  },
+  "accounts": [
+    {
+      "account_id": "ACCBDD606671AD1",
+      "user_id": "U1C80A3B1799D",
+      "account_type": "储蓄卡",
+      "currency": "CNY",
+      "initial_balance_minor": 1069891,
+      "balance_minor": 2076725,
+      "status": "正常",
+      "opened_date": "2024-11-29"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "T23B8392456DE",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-09-23",
+      "amount_minor": 1130035,
+      "amount": 1130035,
+      "direction": "credit",
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T6C03972A8469",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-01",
+      "amount_minor": 30145,
+      "amount": -30145,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某超市",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T6C30B2B9437A",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-04",
+      "amount_minor": 12571,
+      "amount": -12571,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T9A1D815EF6D1",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-21",
+      "amount_minor": 3132,
+      "amount": -3132,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某餐厅",
+      "description": "",
+      "status": "booked"
+    },
+    {
+      "transaction_id": "T562BC37459EE",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-21",
+      "amount_minor": 27013,
+      "amount": -27013,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "线上购物支付",
+      "status": "booked",
+      "time": "10:00:00",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPF50B371ECD7B",
+      "related_transaction_id": "T17BE1A2A73ED"
+    },
+    {
+      "transaction_id": "T17BE1A2A73ED",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-21",
+      "amount_minor": 27013,
+      "amount": -27013,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "疑似重复扣款",
+      "status": "booked",
+      "time": "10:02:00",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPF50B371ECD7B",
+      "related_transaction_id": "T562BC37459EE"
+    },
+    {
+      "transaction_id": "T72FF386ECBE0",
+      "account_id": "ACCBDD606671AD1",
+      "date": "2026-10-22",
+      "amount_minor": 23327,
+      "amount": -23327,
+      "direction": "debit",
+      "transaction_type": "expense",
+      "category": "日用",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "booked"
+    }
+  ],
+  "summary": {
+    "transaction_count": 7,
+    "booked_income_minor": 1130035,
+    "booked_expense_minor": 123201,
+    "booked_net_minor": 1006834
+  },
+  "scenario_requirements": {
+    "goal": "生成正常交易，并加入一组满足预设条件的疑似重复交易；保留全部原始交易，不删除任何交易。",
+    "expected": {
+      "has_normal_transactions": true,
+      "has_duplicate_group": true,
+      "duplicate_same_merchant_amount_category_date": true,
+      "originals_preserved": true
+    }
+  },
+  "cards": [
+    {
+      "card_id": "CARDE9C33602F8AC",
+      "user_id": "U1C80A3B1799D",
+      "account_id": "ACCBDD606671AD1",
+      "card_type": "debit",
+      "card_number_masked": "6222 **** **** 6155",
+      "brand": "银联",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2022-12-27",
+      "transaction_limit_minor": {
+        "daily_minor": 5000000,
+        "single_minor": 2000000
+      }
+    },
+    {
+      "card_id": "CARDA7CA366EB16F",
+      "user_id": "U1C80A3B1799D",
+      "account_id": "ACCBDD606671AD1",
+      "card_type": "credit",
+      "card_number_masked": "6225 **** **** 9179",
+      "brand": "Visa",
+      "status": "active",
+      "currency": "CNY",
+      "opened_date": "2025-12-12",
+      "credit_limit_minor": 3000000,
+      "used_credit_minor": 216183,
+      "available_credit_minor": 2783817,
+      "statement_day": 9,
+      "due_day": 27,
+      "transaction_limit_minor": {
+        "daily_minor": 2000000,
+        "single_minor": 1000000
+      }
+    }
+  ],
+  "credit_card_bill": {
+    "bill_id": "BILL8976E2817EFD",
+    "card_id": "CARDA7CA366EB16F",
+    "cycle_start": "2026-09-10",
+    "statement_date": "2026-10-09",
+    "due_date": "2026-10-27",
+    "currency": "CNY",
+    "status": "partial",
+    "items": [
+      {
+        "transaction_id": "CT0C0FC17AF08A",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-09-12",
+        "amount_minor": 77916,
+        "amount": -77916,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "餐饮",
+        "merchant": "某餐厅",
+        "description": "信用卡消费",
+        "status": "booked"
+      },
+      {
+        "transaction_id": "CT23BE43CF2FDE",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-09-14",
+        "amount_minor": 24457,
+        "amount": -24457,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "旅行",
+        "merchant": "某超市",
+        "description": "信用卡消费",
+        "status": "booked"
+      },
+      {
+        "transaction_id": "CT95A7BF3C4C06",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-09-18",
+        "amount_minor": 40274,
+        "amount": -40274,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "旅行",
+        "merchant": "某商场",
+        "description": "信用卡消费",
+        "status": "booked"
+      },
+      {
+        "transaction_id": "CTFF50382567B8",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-09-21",
+        "amount_minor": 89786,
+        "amount": -89786,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "旅行",
+        "merchant": "某商场",
+        "description": "信用卡消费",
+        "status": "booked"
+      },
+      {
+        "transaction_id": "CT77D2FF01CF99",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-09-29",
+        "amount_minor": 49033,
+        "amount": -49033,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "旅行",
+        "merchant": "某电商平台",
+        "description": "信用卡消费",
+        "status": "booked"
+      },
+      {
+        "transaction_id": "CT6C12AE340454",
+        "card_id": "CARDA7CA366EB16F",
+        "date": "2026-10-05",
+        "amount_minor": 54888,
+        "amount": -54888,
+        "direction": "debit",
+        "transaction_type": "expense",
+        "category": "娱乐",
+        "merchant": "某商场",
+        "description": "信用卡消费",
+        "status": "booked"
+      }
+    ],
+    "total_amount_minor": 336354,
+    "minimum_payment_minor": 33635,
+    "paid_amount_minor": 120171,
+    "outstanding_amount_minor": 216183
+  },
+  "calendar_events": [
+    {
+      "event_id": "EVTF42D00D4AF59",
+      "date": "2026-10-27",
+      "event_type": "bill_due",
+      "category": "信用卡还款",
+      "title": "信用卡还款 6225 **** **** 9179",
+      "related_member_id": null,
+      "related_card_id": "CARDA7CA366EB16F",
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-10-24",
+      "priority": "high",
+      "status": "planned",
+      "notes": "确保绑定账户余额充足",
+      "budget_minor": 216183
+    },
+    {
+      "event_id": "EVT5FB82720797D",
+      "date": "2026-11-10",
+      "event_type": "custom",
+      "category": "备忘",
+      "title": "车险续保",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-07",
+      "priority": "low",
+      "status": "planned",
+      "notes": "对比两家报价后续保"
+    },
+    {
+      "event_id": "EVTA392D777A477",
+      "date": "2026-11-10",
+      "event_type": "custom",
+      "category": "备忘",
+      "title": "家庭照片冲印",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 1,
+      "remind_date": "2026-11-09",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "选择 20 张照片冲洗"
+    },
+    {
+      "event_id": "EVTE037B8DB0672",
+      "date": "2026-11-23",
+      "event_type": "salary",
+      "category": "工资",
+      "title": "工资到账日",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 1,
+      "remind_date": "2026-11-22",
+      "priority": "low",
+      "status": "planned",
+      "notes": "可安排本月储蓄与预算"
+    },
+    {
+      "event_id": "EVT1C8E5715BD6F",
+      "date": "2026-11-26",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "感恩节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-11-23",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "感恩节问候与安排"
+    },
+    {
+      "event_id": "EVT444EC0398710",
+      "date": "2026-12-18",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "子女生日",
+      "related_member_id": "FAMAF423838B326",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2026-12-11",
+      "priority": "high",
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    },
+    {
+      "event_id": "EVT6F4C4B22D308",
+      "date": "2026-12-25",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "圣诞节",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-22",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "圣诞节问候与安排"
+    },
+    {
+      "event_id": "EVT7427287D06CA",
+      "date": "2027-01-01",
+      "event_type": "festival",
+      "category": "节日",
+      "title": "元旦",
+      "related_member_id": null,
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 3,
+      "remind_date": "2026-12-29",
+      "priority": "medium",
+      "status": "planned",
+      "notes": "元旦问候与安排"
+    },
+    {
+      "event_id": "EVTA416C4C2E2E3",
+      "date": "2027-01-08",
+      "event_type": "birthday",
+      "category": "生日",
+      "title": "父亲生日",
+      "related_member_id": "FAM0837D261A7AB",
+      "related_card_id": null,
+      "related_subscription_id": null,
+      "remind_days_before": 7,
+      "remind_date": "2027-01-01",
+      "priority": "high",
+      "status": "planned",
+      "notes": "提前准备礼物或鲜花"
+    }
+  ],
+  "expected_insights": [
+    {
+      "insight_id": "INS295BC333E861",
+      "insight_type": "salary_detected",
+      "severity": "low",
+      "title": "识别到工资收入",
+      "date": "2026-09-23",
+      "evidence_transaction_ids": [
+        "T23B8392456DE"
+      ],
+      "related_event_id": null,
+      "related_card_id": null,
+      "details": {
+        "merchant": "示例科技有限公司",
+        "cycle": "monthly"
+      }
+    },
+    {
+      "insight_id": "INSF4188A14BE62",
+      "insight_type": "duplicate_charge",
+      "severity": "high",
+      "title": "发现疑似重复扣款",
+      "date": "2026-10-21",
+      "evidence_transaction_ids": [
+        "T562BC37459EE",
+        "T17BE1A2A73ED"
+      ],
+      "related_event_id": null,
+      "related_card_id": null,
+      "details": {
+        "group_id": "DUPF50B371ECD7B",
+        "merchant": "某电商平台",
+        "count": 2
+      }
+    },
+    {
+      "insight_id": "INSEC24C754108F",
+      "insight_type": "upcoming_bill",
+      "severity": "high",
+      "title": "信用卡账单待还款",
+      "date": "2026-10-27",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVTF42D00D4AF59",
+      "related_card_id": "CARDA7CA366EB16F",
+      "details": {
+        "bill_status": "partial",
+        "overdue": false,
+        "with_minimum_payment": true
+      }
+    },
+    {
+      "insight_id": "INSEB2287C5421E",
+      "insight_type": "birthday_upcoming",
+      "severity": "medium",
+      "title": "子女生日提醒",
+      "date": "2026-12-18",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVT444EC0398710",
+      "related_card_id": null,
+      "details": {
+        "relation": "子女",
+        "age_turning": 16,
+        "days_until": 56
+      }
+    },
+    {
+      "insight_id": "INS995400257AD1",
+      "insight_type": "birthday_upcoming",
+      "severity": "medium",
+      "title": "父亲生日提醒",
+      "date": "2027-01-08",
+      "evidence_transaction_ids": [],
+      "related_event_id": "EVTA416C4C2E2E3",
+      "related_card_id": null,
+      "details": {
+        "relation": "父亲",
+        "age_turning": 60,
+        "days_until": 77
+      }
+    }
+  ],
+  "evaluation_only_fields": [
+    "expected_insights"
+  ],
+  "family": [
+    {
+      "member_id": "FAMAF423838B326",
+      "relation": "子女",
+      "birthday": "2026-12-18",
+      "birth_year": 2010,
+      "age_turning": 16
+    },
+    {
+      "member_id": "FAM0837D261A7AB",
+      "relation": "父亲",
+      "birthday": "2027-01-08",
+      "birth_year": 1967,
+      "age_turning": 60
+    }
+  ]
+}

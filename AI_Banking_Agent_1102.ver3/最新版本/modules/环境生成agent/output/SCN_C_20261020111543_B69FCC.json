@@ -1,0 +1,127 @@
+{
+  "scenario_id": "SCN_C_20261020111543_B69FCC",
+  "scenario_name": "疑似重复扣款",
+  "scenario_type": "C",
+  "created_at": "2026-10-20T11:15:43",
+  "user": {
+    "user_id": "UE0E86FC61C28",
+    "name": "张强",
+    "gender": "男",
+    "id_number": "330102198104097642",
+    "phone": "13564008164",
+    "email": "ue0e86fc61c28@example.com",
+    "address": "成都市武侯区",
+    "occupation": "设计师",
+    "monthly_income": 20444.5,
+    "registration_date": "2025-02-21"
+  },
+  "accounts": [
+    {
+      "account_id": "ACC9A11F36AB527",
+      "user_id": "UE0E86FC61C28",
+      "account_type": "储蓄卡",
+      "account_number": "6222274498456548060",
+      "currency": "CNY",
+      "initial_balance": 17439.81,
+      "balance": 27337.13,
+      "status": "正常",
+      "opened_date": "2023-08-01"
+    }
+  ],
+  "transactions": [
+    {
+      "transaction_id": "TDEA9D65F6467",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-09-20",
+      "amount": 11046.57,
+      "transaction_type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "description": "月度工资收入",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TFAF97F79501A",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-09-26",
+      "amount": 107.75,
+      "transaction_type": "expense",
+      "category": "餐饮",
+      "merchant": "某超市",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T706910399795",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-10-05",
+      "amount": 121.15,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "TE6BB610D91C3",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-10-06",
+      "amount": 20.7,
+      "transaction_type": "expense",
+      "category": "交通",
+      "merchant": "某咖啡店",
+      "description": "",
+      "status": "completed"
+    },
+    {
+      "transaction_id": "T145DF27BCB3B",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-10-17",
+      "amount": 299.8,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "线上购物支付",
+      "status": "completed",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPB9B07CE65E91",
+      "time": "10:00:00",
+      "related_transaction_id": "T813E892DDFED"
+    },
+    {
+      "transaction_id": "T813E892DDFED",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-10-17",
+      "amount": 299.8,
+      "transaction_type": "expense",
+      "category": "购物",
+      "merchant": "某电商平台",
+      "description": "疑似重复扣款",
+      "status": "completed",
+      "is_suspicious": true,
+      "duplicate_group_id": "DUPB9B07CE65E91",
+      "time": "10:02:00",
+      "related_transaction_id": "T145DF27BCB3B"
+    },
+    {
+      "transaction_id": "T75E170BD291F",
+      "account_id": "ACC9A11F36AB527",
+      "date": "2026-10-19",
+      "amount": 300.05,
+      "transaction_type": "expense",
+      "category": "娱乐",
+      "merchant": "某加油站",
+      "description": "",
+      "status": "completed"
+    }
+  ],
+  "scenario_requirements": {
+    "goal": "生成正常交易，并加入一组满足预设条件的疑似重复交易；保留全部原始交易，不删除任何交易。",
+    "expected": {
+      "has_normal_transactions": true,
+      "has_duplicate_group": true,
+      "duplicate_same_merchant_amount_category_date": true,
+      "originals_preserved": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "entry": "主导航、业务标签、功能按钮、明细、对比、面板关闭、取消",
+    "capture": "页面click语义；不读文字、对象编号或输入值",
+    "result": "client_observation / unverified"
+  },
+  {
+    "entry": "月份、分类、风险、期限、流动性、门槛、任务筛选",
+    "capture": "data-filter change；不读选项值",
+    "result": "filter"
+  },
+  {
+    "entry": "搜索、助手、预算、目标、金额、确认等表单",
+    "capture": "submit + 固定表单类别；不读FormData",
+    "result": "提交观察，后台是否执行另记"
+  },
+  {
+    "entry": "后台AgentService.call调用",
+    "capture": "开始步骤、返回状态、请求ID、结果关联",
+    "result": "server_result；请求回执不等于银行清算"
+  },
+  {
+    "entry": "本地摘要设置、反馈、删除",
+    "capture": "独立摘要表与最小生命周期记录",
+    "result": "不循环采集摘要面板自身按钮"
+  },
+  {
+    "entry": "键盘逐字输入、鼠标移动、任意DOM变化、自动重绘计算",
+    "capture": "不采集",
+    "result": "不宣称全操作覆盖"
+  },
+  {
+    "entry": "服务初始化、health/static读取、原developer登录/重置HTTP旁路",
+    "capture": "不作为用户经验；原有旁路审计仍适用",
+    "result": "没有宣称所有HTTP请求均进入经验"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-10-23T07:22:12.152932+00:00",
+  "url": "http://127.0.0.1:8766/#/tasks",
+  "environment": "staging; same business code as SecondAsgent",
+  "checks": [
+    "授权 read/subscriptions/trade/cards",
+    "卡限制预览、246810 演示验证、明确确认后成功；余额不变",
+    "刷新后任务回执保留",
+    "流动性问答显示 yuki-03、哈希和行号",
+    "生成普通用户场景返回 scenario-1.0 与 ledger_modified:false"
+  ],
+  "not_claimed": [
+    "全尺寸视觉回归",
+    "真实银行行为"
+  ],
+  "conclusion": "所列交互已通过浏览器观察验证",
+  "delivery_url": "http://127.0.0.1:8767/",
+  "delivery_checks": [
+    "新目录独立启动",
+    "初始可用38640元、总资产128640元",
+    "新版卡管理入口及服务端模拟文案可见",
+    "卡管理面板显示借记卡/信用卡、申请、限额、限制和挂失入口"
+  ],
+  "tested_code_comparison": {
+    "reference": "F:\\AI_Banking\\.work\\integration-20261023\\FirstAgent",
+    "differences": [],
+    "scope": "first_agent/tests + engine/bridge/workspace/style/verification script; agent-panel only changes title"
+  },
+  "screenshot": "reports/browser-update-20261023.png"
+}

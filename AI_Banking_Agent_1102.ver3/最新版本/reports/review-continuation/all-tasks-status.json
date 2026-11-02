@@ -1,0 +1,44 @@
+{
+  "updated_at": "2026-10-29T16:19:27.181432+00:00",
+  "all_tasks_completed": false,
+  "source": "HANDOFF_1029_RAG_PAUSED.json",
+  "tasks": [
+    {
+      "task": "专项题库与重合结构化",
+      "status": "implemented",
+      "evidence": "cases-complete.json"
+    },
+    {
+      "task": "真实离线评测及报告",
+      "status": "executed_human_scoring_pending",
+      "evidence": "rag-results.json"
+    },
+    {
+      "task": "前端语义事件与安全经验存储",
+      "status": "implemented_with_coverage_limits",
+      "evidence": "action-coverage.json"
+    },
+    {
+      "task": "反馈审核版本发布回滚",
+      "status": "implemented_local_operator_identity_only",
+      "evidence": "test_phase2.py"
+    },
+    {
+      "task": "启动入口与验收",
+      "status": "partial_http_and_prior_browser_checks",
+      "evidence": "new-tests.json"
+    },
+    {
+      "task": "原tools/security完整网关迁移",
+      "status": "incomplete",
+      "evidence": "shared_scanner_and_bounded_json_only"
+    }
+  ],
+  "second_phase": "第二阶段_1030.md",
+  "backend": {
+    "run": 53,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  }
+}

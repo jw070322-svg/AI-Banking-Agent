@@ -1,0 +1,53 @@
+{
+  "environment": "in-app Chromium browser + loopback service, local demo only",
+  "checks": [
+    {
+      "name": "startup",
+      "result": "passed after correcting owner-dashboard summary adapter scope boundary"
+    },
+    {
+      "name": "explicit_transfer",
+      "result": "passed",
+      "amount_minor": 80000,
+      "before_available_minor": 3864000,
+      "after_available_minor": 3784000,
+      "after_total_minor": 12784000
+    },
+    {
+      "name": "reload_persistence",
+      "result": "passed",
+      "available_minor": 3784000
+    },
+    {
+      "name": "unified_bill",
+      "result": "passed",
+      "expense_before_minor": 1286000,
+      "expense_after_minor": 1366000
+    },
+    {
+      "name": "RAG_citation",
+      "result": "passed",
+      "question": "什么是债务比率",
+      "citation_document": "yuki-04"
+    },
+    {
+      "name": "wealth_screen",
+      "result": "passed",
+      "observed": "6-month product rejected when 1 extra settlement day exceeds horizon"
+    },
+    {
+      "name": "service_restart_persistence",
+      "result": "passed",
+      "available_minor": 3784000
+    },
+    {
+      "name": "recovered_liquidity_browser_citation",
+      "result": "passed",
+      "question": "什么是流动性",
+      "document": "yuki-03"
+    }
+  ],
+  "screenshot": "reports/browser-overview.png",
+  "known_console_history": "One startup scope error occurred before the fix; it was corrected and no new application error was observed in the exercised flows. This is not a full browser/viewport regression.",
+  "conclusion": "以上页面行为已实际验证；其余接口以自动化测试报告为证据。"
+}
