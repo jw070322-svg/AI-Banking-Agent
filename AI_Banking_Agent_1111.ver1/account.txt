@@ -1,0 +1,3 @@
+accountNo accountName password Balance VIP
+0123 ExampleVIP 123456 100000.23 V
+0124 ExampleRegular 654321 100000.12 N
