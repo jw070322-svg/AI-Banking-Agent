@@ -1,0 +1,39 @@
+{
+  "source_kind": "synthetic",
+  "desensitized": true,
+  "review_status": "pending",
+  "model_version": "qwen2.5-0.5b-instruct-q4_k_m",
+  "template_version": "unverified",
+  "page_version": "www.dianping.com@2026-11-12",
+  "evidence_hashes": [],
+  "customer_ref": "synthetic-cust-1",
+  "allowed_actions": [
+    "open_site",
+    "select_city",
+    "search"
+  ],
+  "record_id": "synthetic-traj-004-budget-boundary",
+  "event_template": "birthday_dinner",
+  "input_summary": "合成事件：生日聚餐 预算总额600元",
+  "state_summary": "合成候选状态：候选A人均150.00（接受）、候选B人均150.01（超界）",
+  "model_output": {
+    "service_categories": [
+      "生日餐厅"
+    ],
+    "public_keywords": [
+      "生日餐厅"
+    ],
+    "constraints": [
+      "600元总额/4人"
+    ],
+    "needs_clarification": false,
+    "evidence_spans": [
+      "生日"
+    ]
+  },
+  "actual_actions": [],
+  "tool_returns": [],
+  "postcondition": "预算边界：150.01元人均超限被筛除，150元人均落界保留",
+  "correction_label": "success",
+  "notes": "合成种子样本，用于脚手架演示；非真实采集"
+}

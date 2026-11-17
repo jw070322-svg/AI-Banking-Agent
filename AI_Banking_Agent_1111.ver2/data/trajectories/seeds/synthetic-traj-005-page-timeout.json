@@ -1,0 +1,41 @@
+{
+  "source_kind": "synthetic",
+  "desensitized": true,
+  "review_status": "pending",
+  "model_version": "qwen2.5-0.5b-instruct-q4_k_m",
+  "template_version": "unverified",
+  "page_version": "www.dianping.com@2026-11-12",
+  "evidence_hashes": [],
+  "customer_ref": "synthetic-cust-1",
+  "allowed_actions": [
+    "open_site",
+    "select_city",
+    "search"
+  ],
+  "record_id": "synthetic-traj-005-page-timeout",
+  "event_template": "page_anomaly",
+  "input_summary": "合成事件：生日聚餐",
+  "state_summary": "合成页面状态：城市控件可见但点击超时30s",
+  "model_output": {
+    "service_categories": [],
+    "public_keywords": [],
+    "constraints": [],
+    "needs_clarification": false,
+    "evidence_spans": []
+  },
+  "actual_actions": [
+    {
+      "action": "select_city",
+      "result": "timeout"
+    }
+  ],
+  "tool_returns": [
+    {
+      "tool": "playwright_click",
+      "error": "actionability_timeout"
+    }
+  ],
+  "postcondition": "城市点击 actionability 超时（Playwright未派发），应转坐标派发或waiting_user",
+  "correction_label": "failure_page",
+  "notes": "合成种子样本（对应2026-11-11/12真实观察的脱敏化重演）；用于failure_page标签演示"
+}

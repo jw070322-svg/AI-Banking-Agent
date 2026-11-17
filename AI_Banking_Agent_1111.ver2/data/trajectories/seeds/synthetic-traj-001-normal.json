@@ -1,0 +1,40 @@
+{
+  "source_kind": "synthetic",
+  "desensitized": true,
+  "review_status": "pending",
+  "model_version": "qwen2.5-0.5b-instruct-q4_k_m",
+  "template_version": "unverified",
+  "page_version": "www.dianping.com@2026-11-12",
+  "evidence_hashes": [],
+  "customer_ref": "synthetic-cust-1",
+  "allowed_actions": [
+    "open_site",
+    "select_city",
+    "search"
+  ],
+  "record_id": "synthetic-traj-001-normal",
+  "event_template": "birthday_dinner",
+  "input_summary": "合成事件：生日聚餐",
+  "state_summary": "合成首页状态：城市=杭州，搜索框可见",
+  "model_output": {
+    "service_categories": [
+      "生日餐厅",
+      "聚餐餐厅"
+    ],
+    "public_keywords": [
+      "生日餐厅",
+      "聚餐餐厅"
+    ],
+    "constraints": [],
+    "needs_clarification": false,
+    "evidence_spans": [
+      "生日",
+      "聚餐"
+    ]
+  },
+  "actual_actions": [],
+  "tool_returns": [],
+  "postcondition": "规则基线与预期一致：生日聚餐→生日餐厅+聚餐餐厅",
+  "correction_label": "success",
+  "notes": "合成种子样本，用于脚手架演示；非真实采集"
+}
