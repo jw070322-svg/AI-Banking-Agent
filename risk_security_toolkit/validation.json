@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-18T21:43:18+08:00",
+  "repository": "jw070322-svg/AI-Banking-Agent",
+  "revision": "3c64974c4ebe70a46d46af4e14bf577d5adbd443",
+  "supported_documents_reviewed": 2,
+  "control_topics": 6,
+  "control_verification": "unknown",
+  "tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "executed": 20,
+    "passed": 19,
+    "skipped": 1,
+    "failed": 0,
+    "skip_reason": "Windows host did not permit filesystem symlink creation",
+    "environment": "Python 3.14.7 on Windows; rerun outside sandbox after default temporary-directory permission errors"
+  },
+  "checks": {
+    "generated_package_import": "passed in isolated subprocess",
+    "compileall": "passed",
+    "snapshot_reproduces_plan": "exact equality",
+    "fictional_policy_example": "passed"
+  },
+  "limits": {
+    "private_repository_live_reads": "authorized connected GitHub app",
+    "direct_REST_transport": "simulated HTTP and API responses; no local PAT live integration test",
+    "PDF": "not parsed",
+    "auxiliary_markdown": "three files outside selected snapshot scope",
+    "snapshot": "unsigned export with SHA256 hashes",
+    "writes": "always require review; execution is not implemented"
+  },
+  "usage_remaining_percent": {
+    "primary_remaining": 93,
+    "secondary_remaining": 70
+  },
+  "decisions": [
+    "Keep connector/source ingestion separate from planning and code generation.",
+    "Resolve moving remote references once and preserve line/hash provenance.",
+    "Use fixed templates and treat retrieved repository contents as untrusted data.",
+    "Keep missing verification unknown; require explicit domain policy and server integrations."
+  ]
+}
