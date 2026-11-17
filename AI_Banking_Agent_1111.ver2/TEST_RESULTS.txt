@@ -1,0 +1,2101 @@
+2026-11-11 本地流程原型验证
+命令：python -m unittest -v
+结果：12 tests / OK / 0.017s
+首次受限运行：11项通过，交接测试因系统临时目录权限错误失败；正常权限重跑12项全部通过。
+覆盖：客户城市、城市缺失、预算口径缺失、未知事件、设备定位待确认、预算上限与超限、人数缺失、价格区间部分重叠、价格缺失、条件价格、非法金额、交接脱敏与唯一目录。
+测试性质：本地单元测试，使用合成输入；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T00:06:34.412413+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 39 项，失败 1，错误 0）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... FAIL
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+FAIL: test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_schemas.py", line 53, in test_needs_input_plan_is_valid
+    self.assertEqual(plan["budget"], None)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'min_cents': 0, 'max_cents': 60000, 'basis': 'total', 'currency': 'CNY'} != None
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.233s
+
+FAILED (failures=1)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T00:06:55.998564+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 40 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T00:28:23.240484+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 55 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 Phase 1 千问路径去风险（2026-11-12T00:29:03.982246+08:00）
+命令：python -m unittest test_qwen_client（15项）+ python evaluate_gold_set.py
+服务核验：llama.cpp b11900；model id=banking-qwen2.5-0.5b；API key鉴权通过；chat template正常；temperature=0；原权重无适配器；8797由本版启动
+基线（24例合成金标准）：原始JSON合规率0.125；围栏率0.8333；围栏剥离诊断合规率0.9167（工程可救）；修复轮无效（合规率不变0.125）；关键词召回0.2391/精确0.0833；否定排除0.0；应澄清召回0.0；误澄清0.0526；证据片段案例级全有效率0.0417；1例重复循环（已加max_tokens=512与超长跳过修复防护）
+性质：本地模型行为基线；不是训练成果，不是端到端验收；不宣称模型能力提升。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T00:37:55.428992+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 80 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T00:41:47.662980+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 82 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 Phase 2 只读执行器薄切片（2026-11-12T00:42:24.468827+08:00）
+命令：python -m unittest test_executor（27项）+ python run_all_checks.py（82项全绿）+ 浏览器真实只读会话
+新增：executor/包（base状态机、locator_registry、readonly_actions契约、run_session三段式CLI）
+真实会话（reports/sessions/20261112-003808-b9686bfe，run_id=0f8e1e7ee8ac）：步骤1 open_site 两次尝试（含一次允许的重试）均被点评反爬验证墙（verify.meituan.com，action=spiderindefence，标题=验证中心）重定向；按DESIGN §4记waiting_user，未绕过验证；步骤2-4未执行，如实记skipped。证据链：截图2张+DOM快照2份+run.jsonl（每行过Schema，ok必须带证据哈希）+summary.md。
+实测修复：域名判定改主机名（子串包含曾把回调参数里的dianping.com误判为已到官网）；waiting_user关键词补充（身份核实/验证中心/spiderindefence）。
+性质：只读观测；无登录、无下单、无绕过验证、无写操作。select_city与search未被执行，城市点击超时问题仍未观测到，不得宣称浏览器适配器完成。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T01:08:00.901244+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 82 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 Phase 2 恢复轮：waiting_user→用户在受控面板完成验证→只读会话复跑（2026-11-12T01:08:01.040281+08:00）
+命令：python run_all_checks.py（83项全绿）+ 浏览器真实只读会话两轮（run2 aborted采集器漏键被状态机拦截；run3 aborted search提交层阻断）
+会话1（20261112-004857-fd485455）：步骤1采集器遗漏title_nonempty计算→裁决ABORT有效→已加硬校验（observed_state必须逐键给出后置条件计算结果，缺失拒绝落盘）+回归测试
+会话2（20261112-005226-ff200a32，run_id=2664c6dc4073）：
+  - open_site：m.dianping.com移动版首页可达（无验证墙，用户已在面板完成滑块验证）→CONTINUE
+  - select_city：攻克2026-11-11历史超时！根因=dianping页面全局阻断Playwright actionability（元素可见但点击永不满足），坐标派发(cua.click)可真实触发；citylist点击杭州后子域cookie隔离致m域城市未变，按控件已验证href导航/www.dianping.com/hangzhou→页头读回杭州[更换]→ok
+  - resolve_location：city_only跳过
+  - search：输入#J-search-input成功且回读值=生日餐厅（关键词回显、城市杭州均验证）；提交层全部契约内机制穷尽失败（按钮cua点击/合成Enter/dom_cua节点不可达/受信键入+Enter/最近搜索建议项点击均不跳转）→如实failed+ABORT，不伪造成功
+证据链：两会话共11张截图+9份DOM快照+run.jsonl全记录+summary.md
+性质：只读观测；无登录无下单无绕过验证无写操作；search结果页未到达，不得宣称端到端完成
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T01:14:09.088203+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 82 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 Phase 2 完成：search经用户接管取证成功（2026-11-12T01:14:09.207366+08:00）
+命令：python run_all_checks.py（82项全绿）+ 用户接管搜索 + 执行器只读取证
+会话（20261112-011106-8e0c06fb，run_id=10dde9e3a3e9，outcome=completed）：
+  - 用户在受控面板手动搜索「生日餐厅」（DESIGN §4 waiting_user 用户接管路径，合规）
+  - 结果页取证：URL /search/keyword/3/0_生日餐厅（杭州=3）；页头杭州[更换]；搜索框回显生日餐厅；站点自报共1007个相关商户；样例：淀·sediment(人均172)/烛屿(121)/山海(122)
+  - 关键词回显与城市一致由状态机核验通过（CONTINUE）；机器只做观测，动作来源如实标注 user_takeover
+  - 认领的用户标签页截图表面不可用（3s超时×2），DOM快照19KB为主证据——如实记录
+工程事实（真实操作证实）：搜索结果URL规律 /search/keyword/{城市码}/0_{关键词}；shop链接为哈希ID（H9M9ownlt44i0Aaw式），非数字ID
+性质：只读观测与取证；执行器未代替用户提交任何动作；Phase 2 四步全部有真实证据或如实记录的失败
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T01:24:15.774837+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 97 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 Phase 3 预算组合与交接回填（2026-11-12T01:25:01.290589+08:00）
+命令：python -m unittest test_phase3（15项）+ python run_all_checks.py（97项全绿）+ python demo_phase3.py
+新增：workflow.allocate_budget（多品类组合验证：单品类筛选→选最低价候选→最坏区间+附加费≤预算；缺失如实标记不推定人数/不虚构价格）；filter_candidates 证据回填（G5：全桶携带分值/口径/类型/来源/采集时间/换算）；write_handoff 从 run.jsonl 回填执行字段（R6，坏行拒绝、合并后契约自检）；plan.schema 增 execution 可选块；demo_phase3.py；data/observed_quotes_20261112.json（今日真实观测人均价，诚实标注来源）
+端到端样例（reports/phase3/20261112-012415-66b93314）：合成客户+真实餐厅价+合成蛋糕价→within_budget（最优534/最坏564/上限600）；所选餐厅=烛屿（人均121×4=484）；淀·sediment 172×4=688 超界被筛除；执行记录回填自 run4 真实 run.jsonl（search ok，evidence=search-results-dom.txt）
+性质：组合验证为本地逻辑演示；客户合成、蛋糕价合成占位、餐厅价为页面参考价不保证结算；不是真实端到端验收，不构成购买指令
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T01:32:59.685124+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 111 项，失败 1，错误 4）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ok
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ERROR
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ERROR
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ERROR
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... FAIL
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ERROR
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+ERROR: test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_training_pipeline.py", line 96, in test_export_only_approved_train
+    review_trajectory("e-1", "approved", "ok")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/training_pipeline.py", line 95, in review_trajectory
+    raise FileNotFoundError(f"候选库中不存在轨迹：{record_id}")
+FileNotFoundError: 候选库中不存在轨迹：e-1
+
+======================================================================
+ERROR: test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_training_pipeline.py", line 63, in test_review_moves_and_updates
+    result = review_trajectory("t-2", "approved", "合成样本审核通过")
+             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/training_pipeline.py", line 95, in review_trajectory
+    raise FileNotFoundError(f"候选库中不存在轨迹：{record_id}")
+FileNotFoundError: 候选库中不存在轨迹：t-2
+
+======================================================================
+ERROR: test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_training_pipeline.py", line 72, in test_review_reject_path
+    review_trajectory("t-3", "rejected", "标签错误")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/training_pipeline.py", line 95, in review_trajectory
+    raise FileNotFoundError(f"候选库中不存在轨迹：{record_id}")
+FileNotFoundError: 候选库中不存在轨迹：t-3
+
+======================================================================
+ERROR: test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_training_pipeline.py", line 81, in test_split_groups_no_leakage
+    review_trajectory("g-a", "approved", "ok")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/training_pipeline.py", line 95, in review_trajectory
+    raise FileNotFoundError(f"候选库中不存在轨迹：{record_id}")
+FileNotFoundError: 候选库中不存在轨迹：g-a
+
+======================================================================
+FAIL: test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_training_pipeline.py", line 115, in test_scan_privacy_finds_patterns
+    self.assertEqual(scan_privacy({"a": "id 11010119900307765X"})[0]["kind"], "id_card_cn")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'phone_cn' != 'id_card_cn'
+- phone_cn
++ id_card_cn
+
+
+----------------------------------------------------------------------
+Ran 111 tests in 10.104s
+
+FAILED (failures=1, errors=4)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T01:34:05.839874+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 111 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 顺序执行①②③（2026-11-12T01:34:37.970984+08:00）
+① search自动化补全（run5：20261112-012739-6a359f8e，completed）：按用户真实操作证实的URL规律只读直导航 /search/keyword/3/0_生日餐厅 → 四步全CONTINUE；关键词回显+城市杭州+自报1008个结果（较1小时前1007+1，活数据如实记录）机器核验通过；表单提交仍未打通如实记录；执行器健壮性修复：record容忍缺失started_at/ended_at（Schema本允许null）
+② Phase 4 轨迹采集脚手架（R8）：training_pipeline.py（契约校验入库→PII脱敏扫描隔离→人工审核CLI→按客户×事件模板分组防泄漏划分70/15/15→仅approved+train导出Qwen messages格式，synthetic/observed分报）；evaluation/gates.py（预算覆盖错误=0、隐私外发错误=0 硬断言门禁）；5条合成种子走完全流水线（5入库→5审核→2组→5导出）；test_training_pipeline 14项
+全量回归：111项全绿
+③ 8797 llama-server 已停止（llama.cpp b11900，原权重无适配器），端口释放；Phase 1 金标准与基线报告保留于 reports/phase1/，复评需重启服务
+性质：①为只读观测；②全部合成数据脚手架演示，未做真实轨迹采集，600条目标未开始，训练未执行
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T23:19:27.425579+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 150 项，失败 0，错误 1）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ERROR
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ok
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ok
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ok
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ok
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+ERROR: test_full_flow (test_executor.SessionFlowTests.test_full_flow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_executor.py", line 250, in test_full_flow
+    code = cmd_record(_args(command="record", session_dir=str(session),
+                            step_file=str(step_file)))
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 137, in cmd_record
+    raise ValueError(f"后置条件证据 {entry.get('key')} 的 run_id 与本会话不符；"
+                     "禁止混用另一会话证据")
+ValueError: 后置条件证据 domain_is_dianping 的 run_id 与本会话不符；禁止混用另一会话证据
+
+----------------------------------------------------------------------
+Ran 150 tests in 10.561s
+
+FAILED (errors=1)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T23:20:12.961343+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 150 项，失败 0，错误 1）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ERROR
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ok
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ok
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ok
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ok
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+ERROR: test_full_flow (test_executor.SessionFlowTests.test_full_flow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_executor.py", line 288, in test_full_flow
+    cmd_finish(_args(command="finish", session_dir=str(session),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     outcome="completed", note="测试会话"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 167, in cmd_finish
+    goal_outcome = args.goal_outcome
+                   ^^^^^^^^^^^^^^^^^
+AttributeError: 'Namespace' object has no attribute 'goal_outcome'
+
+----------------------------------------------------------------------
+Ran 150 tests in 10.453s
+
+FAILED (errors=1)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T23:20:47.167758+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 150 项，失败 1，错误 0）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... FAIL
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ok
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ok
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ok
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ok
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+FAIL: test_full_flow (test_executor.SessionFlowTests.test_full_flow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_executor.py", line 291, in test_full_flow
+    self.assertIn("结局：completed", summary)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '结局：completed' not found in '# 只读观测会话汇总\n\n- 会话目录：C:/Users/JW/AppData/Local/Temp/tmp5ji3ogat/20261112-232036-23e641d7\n- 结束时间：2026-11-12T23:20:36.928248+08:00\n- 运行结局（run_outcome）：completed（测试会话）\n- 目标裁决（goal_outcome）：blocked（自动计算，§4.1 双结局分离）\n- 步骤数：1\n- 步骤1 open_site：ok，必要=True，证据 evidence/open_site-01.png#sha256:f084b1351c41cf3c\n\n- 本会话为只读观测；不包含登录、下单、绕过验证或任何写操作。\n- 口径纠正（§1）：run_outcome=completed 只表示执行终止方式，不等于各必要动作实际执行成功；以 goal_outcome 为准。'
+
+----------------------------------------------------------------------
+Ran 150 tests in 10.473s
+
+FAILED (failures=1)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T23:21:29.331855+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 150 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 工作包A+B实施（按 NEXT_AGENT_DEVELOPMENT_DESIGN_20261112.md，2026-11-12T23:22:53.264074+08:00）
+命令：python run_all_checks.py（150项全绿，较111新增39项）
+工作包A（§4 运行状态与发布门禁）：
+  - execution_log Schema v2字段：action_source/execution_method/skip_reason/required_for_goal/postcondition_evidence（每条后置条件绑定证据文件+SHA256+时间+run_id，跨会话证据拒绝）/session_end（run_outcome与goal_outcome双结局）
+  - record_step：skipped无skip_reason拒绝落盘；postcondition_evidence缺键拒绝、证据文件与哈希强校验、run_id必须匹配本会话
+  - compute_goal_outcome：计划必要但未记录步骤按not_executed→blocked；历史run5重算=partial（缺目标绑定，不追认成功，历史文件未改）
+  - finish写session_end；summary双结局并附口径纠正说明
+  - evaluation.evaluate_release_gate 三态门禁（§4.2裁决表逐条实现+测试）：缺字段/空样本/金额缺失/重复样本充数/指标未达→incomplete；错误推荐超预算或隐私外发→fail；正常排除超价不计错误；不适用须理由+策略允许
+  - plan.budget_fingerprint（含人数口径）+ 交接回填run_outcome/goal_outcome
+工作包B（§5 训练数据契约v2）：
+  - trajectory_v2.schema：schema_version=2、gold_output（训练标签，契约校验）、customer_group/template_family/duplicate_cluster、reviewer_ref/reviewed_at/review_reason、evidence_manifest
+  - migrate_v1_to_v2：缺分组标unknown、时间/审核/gold留空不补造、split清空、输入输出哈希报告、原文件只读
+  - split_reviewed_v2：关联分量图划分（任一字段相同即连边，连通分量整体进同一集），缺分组标识→needs_grouping不默认占位；split_manifest（交集检查no_leakage、种子、输入哈希）
+  - export_messages_v2：仅approved+train+gold通过契约导出，gold作标签非预测；failure_model未纠正单独计数拒绝；synthetic/observed分报
+  - 演示：迁移种子→needs_grouping拒绝导出；demo-v2对（failure_model+gold纠正）→种子0确定性入train→gold成功导出
+性质：A/B为本地代码与合成数据演示；C前须确定真实客户来源及记录选择机制；未采集客户数据、未训练、未宣称任何验收完成
+
+2026-11-12 Phase 0 本地加固检查（2026-11-12T23:47:54.547187+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 173 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-12 工作包C本地可完成部分（按 ZCODE_FEEDBACK_20261112.md，2026-11-12T23:48:28.601758+08:00）
+命令：python -m unittest test_work_package_c（23项）+ python demo_work_package_c.py + python run_all_checks.py（173项全绿）
+新增模块：customer_source.py（显式record_id+来源配置 → 快照：needs_input/not_found/duplicate_record/source_error/ok五态状态机；测试来源与真实来源强制分开标记；快照指纹绑定build_plan，计划携带customer_ref_snapshot/customer_snapshot_hash/source_kind；不遍历选客）；city_registry.py（城市映射证据登记：必填字段+证据哈希+核实时间，同名城市码冲突拒绝自动覆盖，证据过期→needs_city_resolution不猜测，verify_city_evidence本地哈希复验，build_search_url主机受限+URL编码——杭州构造URL与run5已证实URL逐字符一致）
+门禁缺口修复（反馈第7条）：policy必填evidence_freshness_days（证据过期→incomplete）与allowed_sources（来源白名单强制，越界→incomplete），均带回归测试
+fixtures：data/customer_fixtures/test_customers.json（3条合成客户，kind=test_fixture）+ duplicate_ids.json（重复ID测试）
+干跑演示（demo_work_package_c.py，明确标注非试点）：c-test-001→planned+绑定；c-test-002→needs_input(口径缺失)；杭州resolved(3)/珠海needs_city_resolution(不猜测)；构造URL与run5证实URL逐字符一致；证据复验无发现
+边界：真实客户来源未确定→真实试点（20次）保持阻塞；合成不计真实；未采集客户数据；未触碰旧版本与历史证据；未提交推送Git
+
+2026-11-12 Phase 0 本地加固检查（2026-11-14T00:06:11.823768+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 185 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+
+2026-11-14 工作包C真实试点 P0：试点基础设施（2026-11-14T00:06:34.590606+08:00）
+命令：python -m unittest test_pilot_ledger（12项）+ python run_all_checks.py（185项全绿）
+新增：pilot_ledger.py（台账 reports/pilot_C/ledger.jsonl：start/finish生命周期、pilot_id顺序分配、重复finish与未知ID拒绝；source_kind强制local_real_file——合成不计真实试点；scenario七类枚举主场景防重复计数；stats四率口径写入代码：自动完成率=goal satisfied且无接管/closed、接管率、可控环境完成率=satisfied/(closed−墙阻断)、总成功率，open行不计分母、非真实来源行标记；verify逐行证据哈希复验）；real_customers_TEMPLATE.json（local_real_file模板+逐字段填写说明）；README增补填写说明
+边界：P1（第二城市接管取证）、P2（用户填写真实文件+显式ID）、P3/P4（20次执行与统计）待用户输入；未采集客户数据；未提交推送Git
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:10:42.166487+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 196 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:16:22.354090+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 208 项，失败 4，错误 0）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ok
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_attempt_monotonic_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_attempt_monotonic_rejected) ... ok
+test_duplicate_finalize_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_duplicate_finalize_rejected) ... ok
+test_explicit_goal_override_is_annotation_only (test_outcome_authority.R1OutcomeAuthorityTests.test_explicit_goal_override_is_annotation_only) ... ok
+test_machine_verdict_persisted_with_step (test_outcome_authority.R1OutcomeAuthorityTests.test_machine_verdict_persisted_with_step) ... ok
+test_plan_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_plan_tamper_rejected) ... ok
+test_post_finalize_record_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_post_finalize_record_rejected) ... ok
+test_postconditions_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_postconditions_tamper_rejected) ... ok
+test_required_for_goal_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_required_for_goal_tamper_rejected) ... ok
+test_retry_terminal_attempt_counts_once (test_outcome_authority.R1OutcomeAuthorityTests.test_retry_terminal_attempt_counts_once) ... ok
+test_satisfied_happy_path_with_machine_verdicts (test_outcome_authority.R1OutcomeAuthorityTests.test_satisfied_happy_path_with_machine_verdicts) ... ok
+test_skipped_mandatory_search_cannot_satisfy (test_outcome_authority.R1OutcomeAuthorityTests.test_skipped_mandatory_search_cannot_satisfy) ... ok
+test_unplanned_step_id_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_unplanned_step_id_rejected) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_ledger_path_none_returns_default (test_pilot_ledger.DefaultPathTests.test_ledger_path_none_returns_default) ... ok
+test_stats_no_arg_does_not_crash (test_pilot_ledger.DefaultPathTests.test_stats_no_arg_does_not_crash) ... ok
+test_empty_evidence_rejected (test_pilot_ledger.FinishTests.test_empty_evidence_rejected) ... ok
+test_finish_derives_outcomes_from_session (test_pilot_ledger.FinishTests.test_finish_derives_outcomes_from_session) ... ok
+test_inconsistent_cli_assertion_rejected (test_pilot_ledger.FinishTests.test_inconsistent_cli_assertion_rejected) ... ok
+test_prefix_hash_evidence_rejected (test_pilot_ledger.FinishTests.test_prefix_hash_evidence_rejected) ... ok
+test_takeover_derived_from_session (test_pilot_ledger.FinishTests.test_takeover_derived_from_session) ... ok
+test_unfinalized_session_rejected (test_pilot_ledger.FinishTests.test_unfinalized_session_rejected) ... ok
+test_wall_classification_requires_confirmed_marker (test_pilot_ledger.FinishTests.test_wall_classification_requires_confirmed_marker) ... ok
+test_cross_customer_city_mismatch_rejected (test_pilot_ledger.StartTests.test_cross_customer_city_mismatch_rejected) ... ok
+test_duplicate_open_pilot_rejected (test_pilot_ledger.StartTests.test_duplicate_open_pilot_rejected) ... ok
+test_duplicate_record_in_source_rejected (test_pilot_ledger.StartTests.test_duplicate_record_in_source_rejected) ... ok
+test_missing_source_path_rejected (test_pilot_ledger.StartTests.test_missing_source_path_rejected) ... ok
+test_nonexistent_session_rejected (test_pilot_ledger.StartTests.test_nonexistent_session_rejected) ... ok
+test_record_not_found_rejected (test_pilot_ledger.StartTests.test_record_not_found_rejected) ... ok
+test_session_without_run_jsonl_rejected (test_pilot_ledger.StartTests.test_session_without_run_jsonl_rejected) ... ok
+test_start_happy_path_derives_city (test_pilot_ledger.StartTests.test_start_happy_path_derives_city) ... ok
+test_synthetic_flagged_record_rejected_despite_label (test_pilot_ledger.StartTests.test_synthetic_flagged_record_rejected_despite_label) ... ok
+test_counts_and_rates_with_numerators (test_pilot_ledger.StatsTests.test_counts_and_rates_with_numerators) ... ok
+test_invalid_row_reported_not_counted (test_pilot_ledger.StatsTests.test_invalid_row_reported_not_counted) ... ok
+test_zero_runs_not_evaluated (test_pilot_ledger.StatsTests.test_zero_runs_not_evaluated) ... ok
+test_missing_and_matching_evidence (test_pilot_ledger.VerifyTests.test_missing_and_matching_evidence) ... ok
+test_prefix_hash_is_a_finding (test_pilot_ledger.VerifyTests.test_prefix_hash_is_a_finding) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... FAIL
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... FAIL
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... FAIL
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... FAIL
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_build_search_url_host_restricted (test_work_package_c.CityRegistryTests.test_build_search_url_host_restricted) ... ok
+test_build_search_url_matches_run5_verified_url (test_work_package_c.CityRegistryTests.test_build_search_url_matches_run5_verified_url) ... ok
+test_build_search_url_unknown_city_passthrough (test_work_package_c.CityRegistryTests.test_build_search_url_unknown_city_passthrough) ... ok
+test_expired_evidence_needs_resolution (test_work_package_c.CityRegistryTests.test_expired_evidence_needs_resolution) ... ok
+test_real_hangzhou_mapping_resolves (test_work_package_c.CityRegistryTests.test_real_hangzhou_mapping_resolves) ... ok
+test_register_conflicting_code_rejected (test_work_package_c.CityRegistryTests.test_register_conflicting_code_rejected) ... ok
+test_register_requires_evidence (test_work_package_c.CityRegistryTests.test_register_requires_evidence) ... ok
+test_unknown_city_needs_resolution_no_guess (test_work_package_c.CityRegistryTests.test_unknown_city_needs_resolution_no_guess) ... ok
+test_verify_evidence_real_file_passes_and_tamper_detected (test_work_package_c.CityRegistryTests.test_verify_evidence_real_file_passes_and_tamper_detected) ... ok
+test_duplicate_record_id_detected (test_work_package_c.CustomerSourceTests.test_duplicate_record_id_detected) ... ok
+test_invalid_path_and_json (test_work_package_c.CustomerSourceTests.test_invalid_path_and_json) ... ok
+test_missing_id_needs_input (test_work_package_c.CustomerSourceTests.test_missing_id_needs_input) ... ok
+test_ok_snapshot_and_isolation_between_customers (test_work_package_c.CustomerSourceTests.test_ok_snapshot_and_isolation_between_customers) ... ok
+test_record_not_found (test_work_package_c.CustomerSourceTests.test_record_not_found) ... ok
+test_source_config_validation (test_work_package_c.CustomerSourceTests.test_source_config_validation) ... ok
+test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete) ... ok
+test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes) ... ok
+test_policy_without_freshness_config_rejected (test_work_package_c.GateGapTests.test_policy_without_freshness_config_rejected) ... ok
+test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete) ... ok
+test_budget_basis_missing_through_snapshot (test_work_package_c.SnapshotPlanWiringTests.test_budget_basis_missing_through_snapshot) ... ok
+test_not_ok_snapshot_never_builds_plan (test_work_package_c.SnapshotPlanWiringTests.test_not_ok_snapshot_never_builds_plan) ... ok
+test_plan_binds_snapshot_and_fingerprint (test_work_package_c.SnapshotPlanWiringTests.test_plan_binds_snapshot_and_fingerprint) ... ok
+test_two_customer_plans_do_not_share_binding (test_work_package_c.SnapshotPlanWiringTests.test_two_customer_plans_do_not_share_binding) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+FAIL: test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 88, in test_all_required_ok_is_satisfied
+    self.assertEqual(compute_goal_outcome(steps), "satisfied")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'partial' != 'satisfied'
+- partial
++ satisfied
+
+
+======================================================================
+FAIL: test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 100, in test_required_failed_is_failed
+    self.assertEqual(compute_goal_outcome(steps), "failed")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'partial' != 'failed'
+- partial
++ failed
+
+
+======================================================================
+FAIL: test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 95, in test_required_skipped_blocks_goal
+    self.assertEqual(compute_goal_outcome(steps), "blocked")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'partial' != 'blocked'
+- partial
++ blocked
+
+
+======================================================================
+FAIL: test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 104, in test_required_waiting_user_blocks
+    self.assertEqual(compute_goal_outcome(steps), "blocked")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'partial' != 'blocked'
+- partial
++ blocked
+
+
+----------------------------------------------------------------------
+Ran 208 tests in 10.612s
+
+FAILED (failures=4)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:17:15.023357+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 208 项，失败 0，错误 4）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ok
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_attempt_monotonic_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_attempt_monotonic_rejected) ... ok
+test_duplicate_finalize_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_duplicate_finalize_rejected) ... ok
+test_explicit_goal_override_is_annotation_only (test_outcome_authority.R1OutcomeAuthorityTests.test_explicit_goal_override_is_annotation_only) ... ok
+test_machine_verdict_persisted_with_step (test_outcome_authority.R1OutcomeAuthorityTests.test_machine_verdict_persisted_with_step) ... ok
+test_plan_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_plan_tamper_rejected) ... ok
+test_post_finalize_record_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_post_finalize_record_rejected) ... ok
+test_postconditions_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_postconditions_tamper_rejected) ... ok
+test_required_for_goal_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_required_for_goal_tamper_rejected) ... ok
+test_retry_terminal_attempt_counts_once (test_outcome_authority.R1OutcomeAuthorityTests.test_retry_terminal_attempt_counts_once) ... ok
+test_satisfied_happy_path_with_machine_verdicts (test_outcome_authority.R1OutcomeAuthorityTests.test_satisfied_happy_path_with_machine_verdicts) ... ok
+test_skipped_mandatory_search_cannot_satisfy (test_outcome_authority.R1OutcomeAuthorityTests.test_skipped_mandatory_search_cannot_satisfy) ... ok
+test_unplanned_step_id_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_unplanned_step_id_rejected) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_ledger_path_none_returns_default (test_pilot_ledger.DefaultPathTests.test_ledger_path_none_returns_default) ... ok
+test_stats_no_arg_does_not_crash (test_pilot_ledger.DefaultPathTests.test_stats_no_arg_does_not_crash) ... ok
+test_empty_evidence_rejected (test_pilot_ledger.FinishTests.test_empty_evidence_rejected) ... ok
+test_finish_derives_outcomes_from_session (test_pilot_ledger.FinishTests.test_finish_derives_outcomes_from_session) ... ok
+test_inconsistent_cli_assertion_rejected (test_pilot_ledger.FinishTests.test_inconsistent_cli_assertion_rejected) ... ok
+test_prefix_hash_evidence_rejected (test_pilot_ledger.FinishTests.test_prefix_hash_evidence_rejected) ... ok
+test_takeover_derived_from_session (test_pilot_ledger.FinishTests.test_takeover_derived_from_session) ... ok
+test_unfinalized_session_rejected (test_pilot_ledger.FinishTests.test_unfinalized_session_rejected) ... ok
+test_wall_classification_requires_confirmed_marker (test_pilot_ledger.FinishTests.test_wall_classification_requires_confirmed_marker) ... ok
+test_cross_customer_city_mismatch_rejected (test_pilot_ledger.StartTests.test_cross_customer_city_mismatch_rejected) ... ok
+test_duplicate_open_pilot_rejected (test_pilot_ledger.StartTests.test_duplicate_open_pilot_rejected) ... ok
+test_duplicate_record_in_source_rejected (test_pilot_ledger.StartTests.test_duplicate_record_in_source_rejected) ... ok
+test_missing_source_path_rejected (test_pilot_ledger.StartTests.test_missing_source_path_rejected) ... ok
+test_nonexistent_session_rejected (test_pilot_ledger.StartTests.test_nonexistent_session_rejected) ... ok
+test_record_not_found_rejected (test_pilot_ledger.StartTests.test_record_not_found_rejected) ... ok
+test_session_without_run_jsonl_rejected (test_pilot_ledger.StartTests.test_session_without_run_jsonl_rejected) ... ok
+test_start_happy_path_derives_city (test_pilot_ledger.StartTests.test_start_happy_path_derives_city) ... ok
+test_synthetic_flagged_record_rejected_despite_label (test_pilot_ledger.StartTests.test_synthetic_flagged_record_rejected_despite_label) ... ok
+test_counts_and_rates_with_numerators (test_pilot_ledger.StatsTests.test_counts_and_rates_with_numerators) ... ok
+test_invalid_row_reported_not_counted (test_pilot_ledger.StatsTests.test_invalid_row_reported_not_counted) ... ok
+test_zero_runs_not_evaluated (test_pilot_ledger.StatsTests.test_zero_runs_not_evaluated) ... ok
+test_missing_and_matching_evidence (test_pilot_ledger.VerifyTests.test_missing_and_matching_evidence) ... ok
+test_prefix_hash_is_a_finding (test_pilot_ledger.VerifyTests.test_prefix_hash_is_a_finding) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ERROR
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ERROR
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ERROR
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ERROR
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_build_search_url_host_restricted (test_work_package_c.CityRegistryTests.test_build_search_url_host_restricted) ... ok
+test_build_search_url_matches_run5_verified_url (test_work_package_c.CityRegistryTests.test_build_search_url_matches_run5_verified_url) ... ok
+test_build_search_url_unknown_city_passthrough (test_work_package_c.CityRegistryTests.test_build_search_url_unknown_city_passthrough) ... ok
+test_expired_evidence_needs_resolution (test_work_package_c.CityRegistryTests.test_expired_evidence_needs_resolution) ... ok
+test_real_hangzhou_mapping_resolves (test_work_package_c.CityRegistryTests.test_real_hangzhou_mapping_resolves) ... ok
+test_register_conflicting_code_rejected (test_work_package_c.CityRegistryTests.test_register_conflicting_code_rejected) ... ok
+test_register_requires_evidence (test_work_package_c.CityRegistryTests.test_register_requires_evidence) ... ok
+test_unknown_city_needs_resolution_no_guess (test_work_package_c.CityRegistryTests.test_unknown_city_needs_resolution_no_guess) ... ok
+test_verify_evidence_real_file_passes_and_tamper_detected (test_work_package_c.CityRegistryTests.test_verify_evidence_real_file_passes_and_tamper_detected) ... ok
+test_duplicate_record_id_detected (test_work_package_c.CustomerSourceTests.test_duplicate_record_id_detected) ... ok
+test_invalid_path_and_json (test_work_package_c.CustomerSourceTests.test_invalid_path_and_json) ... ok
+test_missing_id_needs_input (test_work_package_c.CustomerSourceTests.test_missing_id_needs_input) ... ok
+test_ok_snapshot_and_isolation_between_customers (test_work_package_c.CustomerSourceTests.test_ok_snapshot_and_isolation_between_customers) ... ok
+test_record_not_found (test_work_package_c.CustomerSourceTests.test_record_not_found) ... ok
+test_source_config_validation (test_work_package_c.CustomerSourceTests.test_source_config_validation) ... ok
+test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete) ... ok
+test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes) ... ok
+test_policy_without_freshness_config_rejected (test_work_package_c.GateGapTests.test_policy_without_freshness_config_rejected) ... ok
+test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete) ... ok
+test_budget_basis_missing_through_snapshot (test_work_package_c.SnapshotPlanWiringTests.test_budget_basis_missing_through_snapshot) ... ok
+test_not_ok_snapshot_never_builds_plan (test_work_package_c.SnapshotPlanWiringTests.test_not_ok_snapshot_never_builds_plan) ... ok
+test_plan_binds_snapshot_and_fingerprint (test_work_package_c.SnapshotPlanWiringTests.test_plan_binds_snapshot_and_fingerprint) ... ok
+test_two_customer_plans_do_not_share_binding (test_work_package_c.SnapshotPlanWiringTests.test_two_customer_plans_do_not_share_binding) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+ERROR: test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 94, in test_all_required_ok_is_satisfied
+    self.assertEqual(compute_goal_outcome(steps, planned=planned), "satisfied")
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 56, in compute_goal_outcome
+    plan_required[planned_step["action"]] = planned_step
+                  ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 111, in test_required_failed_is_failed
+    self.assertEqual(compute_goal_outcome(steps, planned=planned), "failed")
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 56, in compute_goal_outcome
+    plan_required[planned_step["action"]] = planned_step
+                  ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 104, in test_required_skipped_blocks_goal
+    self.assertEqual(compute_goal_outcome(steps, planned=planned), "blocked")
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 56, in compute_goal_outcome
+    plan_required[planned_step["action"]] = planned_step
+                  ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'action'
+
+======================================================================
+ERROR: test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_a.py", line 116, in test_required_waiting_user_blocks
+    self.assertEqual(compute_goal_outcome(steps, planned=planned), "blocked")
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/executor/run_session.py", line 56, in compute_goal_outcome
+    plan_required[planned_step["action"]] = planned_step
+                  ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'action'
+
+----------------------------------------------------------------------
+Ran 208 tests in 11.150s
+
+FAILED (errors=4)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:18:09.985878+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 208 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:24:03.933881+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 217 项，失败 4，错误 0）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ok
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_attempt_monotonic_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_attempt_monotonic_rejected) ... ok
+test_duplicate_finalize_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_duplicate_finalize_rejected) ... ok
+test_explicit_goal_override_is_annotation_only (test_outcome_authority.R1OutcomeAuthorityTests.test_explicit_goal_override_is_annotation_only) ... ok
+test_machine_verdict_persisted_with_step (test_outcome_authority.R1OutcomeAuthorityTests.test_machine_verdict_persisted_with_step) ... ok
+test_plan_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_plan_tamper_rejected) ... ok
+test_post_finalize_record_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_post_finalize_record_rejected) ... ok
+test_postconditions_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_postconditions_tamper_rejected) ... ok
+test_required_for_goal_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_required_for_goal_tamper_rejected) ... ok
+test_retry_terminal_attempt_counts_once (test_outcome_authority.R1OutcomeAuthorityTests.test_retry_terminal_attempt_counts_once) ... ok
+test_satisfied_happy_path_with_machine_verdicts (test_outcome_authority.R1OutcomeAuthorityTests.test_satisfied_happy_path_with_machine_verdicts) ... ok
+test_skipped_mandatory_search_cannot_satisfy (test_outcome_authority.R1OutcomeAuthorityTests.test_skipped_mandatory_search_cannot_satisfy) ... ok
+test_unplanned_step_id_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_unplanned_step_id_rejected) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_ledger_path_none_returns_default (test_pilot_ledger.DefaultPathTests.test_ledger_path_none_returns_default) ... ok
+test_stats_no_arg_does_not_crash (test_pilot_ledger.DefaultPathTests.test_stats_no_arg_does_not_crash) ... ok
+test_empty_evidence_rejected (test_pilot_ledger.FinishTests.test_empty_evidence_rejected) ... ok
+test_finish_derives_outcomes_from_session (test_pilot_ledger.FinishTests.test_finish_derives_outcomes_from_session) ... ok
+test_inconsistent_cli_assertion_rejected (test_pilot_ledger.FinishTests.test_inconsistent_cli_assertion_rejected) ... ok
+test_prefix_hash_evidence_rejected (test_pilot_ledger.FinishTests.test_prefix_hash_evidence_rejected) ... ok
+test_takeover_derived_from_session (test_pilot_ledger.FinishTests.test_takeover_derived_from_session) ... ok
+test_unfinalized_session_rejected (test_pilot_ledger.FinishTests.test_unfinalized_session_rejected) ... ok
+test_wall_classification_requires_confirmed_marker (test_pilot_ledger.FinishTests.test_wall_classification_requires_confirmed_marker) ... ok
+test_cross_customer_city_mismatch_rejected (test_pilot_ledger.StartTests.test_cross_customer_city_mismatch_rejected) ... ok
+test_duplicate_open_pilot_rejected (test_pilot_ledger.StartTests.test_duplicate_open_pilot_rejected) ... ok
+test_duplicate_record_in_source_rejected (test_pilot_ledger.StartTests.test_duplicate_record_in_source_rejected) ... ok
+test_missing_source_path_rejected (test_pilot_ledger.StartTests.test_missing_source_path_rejected) ... ok
+test_nonexistent_session_rejected (test_pilot_ledger.StartTests.test_nonexistent_session_rejected) ... ok
+test_record_not_found_rejected (test_pilot_ledger.StartTests.test_record_not_found_rejected) ... ok
+test_session_without_run_jsonl_rejected (test_pilot_ledger.StartTests.test_session_without_run_jsonl_rejected) ... ok
+test_start_happy_path_derives_city (test_pilot_ledger.StartTests.test_start_happy_path_derives_city) ... ok
+test_synthetic_flagged_record_rejected_despite_label (test_pilot_ledger.StartTests.test_synthetic_flagged_record_rejected_despite_label) ... ok
+test_counts_and_rates_with_numerators (test_pilot_ledger.StatsTests.test_counts_and_rates_with_numerators) ... ok
+test_invalid_row_reported_not_counted (test_pilot_ledger.StatsTests.test_invalid_row_reported_not_counted) ... ok
+test_zero_runs_not_evaluated (test_pilot_ledger.StatsTests.test_zero_runs_not_evaluated) ... ok
+test_missing_and_matching_evidence (test_pilot_ledger.VerifyTests.test_missing_and_matching_evidence) ... ok
+test_prefix_hash_is_a_finding (test_pilot_ledger.VerifyTests.test_prefix_hash_is_a_finding) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ok
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ok
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ok
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ok
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_build_search_url_host_restricted (test_work_package_c.CityRegistryTests.test_build_search_url_host_restricted) ... ok
+test_build_search_url_matches_run5_verified_url (test_work_package_c.CityRegistryTests.test_build_search_url_matches_run5_verified_url) ... ok
+test_build_search_url_unknown_city_passthrough (test_work_package_c.CityRegistryTests.test_build_search_url_unknown_city_passthrough) ... ok
+test_expired_evidence_needs_resolution (test_work_package_c.CityRegistryTests.test_expired_evidence_needs_resolution) ... ok
+test_real_hangzhou_mapping_resolves (test_work_package_c.CityRegistryTests.test_real_hangzhou_mapping_resolves) ... ok
+test_register_conflicting_code_rejected (test_work_package_c.CityRegistryTests.test_register_conflicting_code_rejected) ... ok
+test_register_requires_evidence (test_work_package_c.CityRegistryTests.test_register_requires_evidence) ... ok
+test_unknown_city_needs_resolution_no_guess (test_work_package_c.CityRegistryTests.test_unknown_city_needs_resolution_no_guess) ... ok
+test_verify_evidence_real_file_passes_and_tamper_detected (test_work_package_c.CityRegistryTests.test_verify_evidence_real_file_passes_and_tamper_detected) ... ok
+test_duplicate_record_id_detected (test_work_package_c.CustomerSourceTests.test_duplicate_record_id_detected) ... ok
+test_invalid_path_and_json (test_work_package_c.CustomerSourceTests.test_invalid_path_and_json) ... ok
+test_missing_id_needs_input (test_work_package_c.CustomerSourceTests.test_missing_id_needs_input) ... ok
+test_ok_snapshot_and_isolation_between_customers (test_work_package_c.CustomerSourceTests.test_ok_snapshot_and_isolation_between_customers) ... ok
+test_record_not_found (test_work_package_c.CustomerSourceTests.test_record_not_found) ... ok
+test_source_config_validation (test_work_package_c.CustomerSourceTests.test_source_config_validation) ... ok
+test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete) ... FAIL
+test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes) ... FAIL
+test_policy_without_freshness_config_rejected (test_work_package_c.GateGapTests.test_policy_without_freshness_config_rejected) ... FAIL
+test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete) ... FAIL
+test_failing_before_probe_now_incomplete (test_work_package_c.R3GateClosureTests.test_failing_before_probe_now_incomplete) ... ok
+test_future_evidence_incomplete (test_work_package_c.R3GateClosureTests.test_future_evidence_incomplete) ... ok
+test_hard_fail_precedence_over_incomplete_fields (test_work_package_c.R3GateClosureTests.test_hard_fail_precedence_over_incomplete_fields) ... ok
+test_hash_format_incomplete (test_work_package_c.R3GateClosureTests.test_hash_format_incomplete) ... ok
+test_missing_evidence_time_incomplete (test_work_package_c.R3GateClosureTests.test_missing_evidence_time_incomplete) ... ok
+test_missing_sources_incomplete (test_work_package_c.R3GateClosureTests.test_missing_sources_incomplete) ... ok
+test_nonfinite_metric_incomplete (test_work_package_c.R3GateClosureTests.test_nonfinite_metric_incomplete) ... ok
+test_override_recommendation_fail_precedence (test_work_package_c.R3GateClosureTests.test_override_recommendation_fail_precedence) ... ok
+test_required_checks_mismatch_incomplete (test_work_package_c.R3GateClosureTests.test_required_checks_mismatch_incomplete) ... ok
+test_budget_basis_missing_through_snapshot (test_work_package_c.SnapshotPlanWiringTests.test_budget_basis_missing_through_snapshot) ... ok
+test_not_ok_snapshot_never_builds_plan (test_work_package_c.SnapshotPlanWiringTests.test_not_ok_snapshot_never_builds_plan) ... ok
+test_plan_binds_snapshot_and_fingerprint (test_work_package_c.SnapshotPlanWiringTests.test_plan_binds_snapshot_and_fingerprint) ... ok
+test_two_customer_plans_do_not_share_binding (test_work_package_c.SnapshotPlanWiringTests.test_two_customer_plans_do_not_share_binding) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+FAIL: test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 222, in test_disallowed_source_incomplete
+    self.assertTrue(any("来源" in r for r in gate["reasons"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 214, in test_fresh_evidence_passes
+    self.assertEqual(gate["decision"], "pass")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'incomplete' != 'pass'
+- incomplete
++ pass
+
+
+======================================================================
+FAIL: test_policy_without_freshness_config_rejected (test_work_package_c.GateGapTests.test_policy_without_freshness_config_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 205, in test_policy_without_freshness_config_rejected
+    self.assertIn("策略未配置", gate["reasons"][0])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '策略未配置' not found in '策略不符合契约（未配置完整，禁止发布）：policy：缺少必需字段 evidence_freshness_days'
+
+======================================================================
+FAIL: test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 210, in test_stale_evidence_incomplete
+    self.assertTrue(any("证据过期" in r for r in gate["reasons"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 217 tests in 11.185s
+
+FAILED (failures=4)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:24:48.710705+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：存在失败（未通过项如实记录；不得据此宣称任何未实现目标完成）
+  [1] 单元测试：存在失败（运行 217 项，失败 3，错误 0）
+  test_cli_writes_valid_handoff (test_cli.CliTests.test_cli_writes_valid_handoff) ... ok
+test_build_step_fields (test_executor.ActionContractTests.test_build_step_fields) ... ok
+test_non_readonly_contract_rejected (test_executor.ActionContractTests.test_non_readonly_contract_rejected) ... ok
+test_unknown_action (test_executor.ActionContractTests.test_unknown_action) ... ok
+test_failed_readonly_retry_then_abort (test_executor.DecideTests.test_failed_readonly_retry_then_abort) ... ok
+test_ok_but_captcha_waits_user (test_executor.DecideTests.test_ok_but_captcha_waits_user) ... ok
+test_ok_but_mismatch_aborts (test_executor.DecideTests.test_ok_but_mismatch_aborts) ... ok
+test_ok_continue (test_executor.DecideTests.test_ok_continue) ... ok
+test_skipped_continues_with_reason_passthrough (test_executor.DecideTests.test_skipped_continues_with_reason_passthrough) ... ok
+test_waiting_user (test_executor.DecideTests.test_waiting_user) ... ok
+test_failed_step_allows_no_evidence (test_executor.ExecutionLogTests.test_failed_step_allows_no_evidence) ... ok
+test_hash_mismatch_rejected (test_executor.ExecutionLogTests.test_hash_mismatch_rejected) ... ok
+test_missing_evidence_file_rejected (test_executor.ExecutionLogTests.test_missing_evidence_file_rejected) ... ok
+test_ok_without_evidence_rejected (test_executor.ExecutionLogTests.test_ok_without_evidence_rejected) ... ok
+test_run_start_and_ok_step_roundtrip (test_executor.ExecutionLogTests.test_run_start_and_ok_step_roundtrip) ... ok
+test_schema_invalid_status_rejected (test_executor.ExecutionLogTests.test_schema_invalid_status_rejected) ... ok
+test_default_registry_candidates (test_executor.RegistryTests.test_default_registry_candidates) ... ok
+test_record_and_snapshot (test_executor.RegistryTests.test_record_and_snapshot) ... ok
+test_transient_index_never_allowed (test_executor.RegistryTests.test_transient_index_never_allowed) ... ok
+test_unknown_target_raises (test_executor.RegistryTests.test_unknown_target_raises) ... ok
+test_unique_with_evidence_subdir (test_executor.SessionDirTests.test_unique_with_evidence_subdir) ... ok
+test_full_flow (test_executor.SessionFlowTests.test_full_flow) ... ok
+test_domain_match_uses_host_not_substring (test_executor.StateMachineTests.test_domain_match_uses_host_not_substring) ... ok
+test_force_wall_detected (test_executor.StateMachineTests.test_force_wall_detected) ... ok
+test_normal_login_hint_not_wall (test_executor.StateMachineTests.test_normal_login_hint_not_wall) ... ok
+test_retry_policy (test_executor.StateMachineTests.test_retry_policy) ... ok
+test_verify_state (test_executor.StateMachineTests.test_verify_state) ... ok
+test_verify_wall_variants_detected (test_executor.StateMachineTests.test_verify_wall_variants_detected) ... ok
+test_basic_extraction_matches_historical_rules_order (test_lexicon.LexiconTests.test_basic_extraction_matches_historical_rules_order) ... ok
+test_corrupt_json_raises (test_lexicon.LexiconTests.test_corrupt_json_raises) ... ok
+test_default_loads_with_version (test_lexicon.LexiconTests.test_default_loads_with_version) ... ok
+test_loose_negation_only_flags (test_lexicon.LexiconTests.test_loose_negation_only_flags) ... ok
+test_missing_file_raises (test_lexicon.LexiconTests.test_missing_file_raises) ... ok
+test_negation_excludes_keyword_and_flags (test_lexicon.LexiconTests.test_negation_excludes_keyword_and_flags) ... ok
+test_non_integer_priority_raises (test_lexicon.LexiconTests.test_non_integer_priority_raises) ... ok
+test_single_char_negation_prefix_rejected (test_lexicon.LexiconTests.test_single_char_negation_prefix_rejected) ... ok
+test_unknown_event_yields_no_keywords (test_lexicon.LexiconTests.test_unknown_event_yields_no_keywords) ... ok
+test_attempt_monotonic_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_attempt_monotonic_rejected) ... ok
+test_duplicate_finalize_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_duplicate_finalize_rejected) ... ok
+test_explicit_goal_override_is_annotation_only (test_outcome_authority.R1OutcomeAuthorityTests.test_explicit_goal_override_is_annotation_only) ... ok
+test_machine_verdict_persisted_with_step (test_outcome_authority.R1OutcomeAuthorityTests.test_machine_verdict_persisted_with_step) ... ok
+test_plan_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_plan_tamper_rejected) ... ok
+test_post_finalize_record_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_post_finalize_record_rejected) ... ok
+test_postconditions_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_postconditions_tamper_rejected) ... ok
+test_required_for_goal_tamper_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_required_for_goal_tamper_rejected) ... ok
+test_retry_terminal_attempt_counts_once (test_outcome_authority.R1OutcomeAuthorityTests.test_retry_terminal_attempt_counts_once) ... ok
+test_satisfied_happy_path_with_machine_verdicts (test_outcome_authority.R1OutcomeAuthorityTests.test_satisfied_happy_path_with_machine_verdicts) ... ok
+test_skipped_mandatory_search_cannot_satisfy (test_outcome_authority.R1OutcomeAuthorityTests.test_skipped_mandatory_search_cannot_satisfy) ... ok
+test_unplanned_step_id_rejected (test_outcome_authority.R1OutcomeAuthorityTests.test_unplanned_step_id_rejected) ... ok
+test_bad_surcharge_rejected (test_phase3.AllocateBudgetTests.test_bad_surcharge_rejected) ... ok
+test_empty_categories (test_phase3.AllocateBudgetTests.test_empty_categories) ... ok
+test_invalid_budget (test_phase3.AllocateBudgetTests.test_invalid_budget) ... ok
+test_missing_party_size_flags_not_assumes (test_phase3.AllocateBudgetTests.test_missing_party_size_flags_not_assumes) ... ok
+test_over_budget (test_phase3.AllocateBudgetTests.test_over_budget) ... ok
+test_partial_overlap (test_phase3.AllocateBudgetTests.test_partial_overlap) ... ok
+test_surcharge_pushes_over (test_phase3.AllocateBudgetTests.test_surcharge_pushes_over) ... ok
+test_within_budget_with_real_quotes_and_synthetic_cake (test_phase3.AllocateBudgetTests.test_within_budget_with_real_quotes_and_synthetic_cake) ... ok
+test_accepted_record_carries_evidence (test_phase3.FilterEvidenceTests.test_accepted_record_carries_evidence) ... ok
+test_currency_failure_has_no_price_evidence (test_phase3.FilterEvidenceTests.test_currency_failure_has_no_price_evidence) ... ok
+test_excluded_carries_price_evidence (test_phase3.FilterEvidenceTests.test_excluded_carries_price_evidence) ... ok
+test_unknown_carries_partial_evidence (test_phase3.FilterEvidenceTests.test_unknown_carries_partial_evidence) ... ok
+test_corrupt_log_line_rejected (test_phase3.HandoffBackfillTests.test_corrupt_log_line_rejected) ... ok
+test_with_log_backfills_steps_and_stays_valid (test_phase3.HandoffBackfillTests.test_with_log_backfills_steps_and_stays_valid) ... ok
+test_without_log_states_plan_only (test_phase3.HandoffBackfillTests.test_without_log_states_plan_only) ... ok
+test_ledger_path_none_returns_default (test_pilot_ledger.DefaultPathTests.test_ledger_path_none_returns_default) ... ok
+test_stats_no_arg_does_not_crash (test_pilot_ledger.DefaultPathTests.test_stats_no_arg_does_not_crash) ... ok
+test_empty_evidence_rejected (test_pilot_ledger.FinishTests.test_empty_evidence_rejected) ... ok
+test_finish_derives_outcomes_from_session (test_pilot_ledger.FinishTests.test_finish_derives_outcomes_from_session) ... ok
+test_inconsistent_cli_assertion_rejected (test_pilot_ledger.FinishTests.test_inconsistent_cli_assertion_rejected) ... ok
+test_prefix_hash_evidence_rejected (test_pilot_ledger.FinishTests.test_prefix_hash_evidence_rejected) ... ok
+test_takeover_derived_from_session (test_pilot_ledger.FinishTests.test_takeover_derived_from_session) ... ok
+test_unfinalized_session_rejected (test_pilot_ledger.FinishTests.test_unfinalized_session_rejected) ... ok
+test_wall_classification_requires_confirmed_marker (test_pilot_ledger.FinishTests.test_wall_classification_requires_confirmed_marker) ... ok
+test_cross_customer_city_mismatch_rejected (test_pilot_ledger.StartTests.test_cross_customer_city_mismatch_rejected) ... ok
+test_duplicate_open_pilot_rejected (test_pilot_ledger.StartTests.test_duplicate_open_pilot_rejected) ... ok
+test_duplicate_record_in_source_rejected (test_pilot_ledger.StartTests.test_duplicate_record_in_source_rejected) ... ok
+test_missing_source_path_rejected (test_pilot_ledger.StartTests.test_missing_source_path_rejected) ... ok
+test_nonexistent_session_rejected (test_pilot_ledger.StartTests.test_nonexistent_session_rejected) ... ok
+test_record_not_found_rejected (test_pilot_ledger.StartTests.test_record_not_found_rejected) ... ok
+test_session_without_run_jsonl_rejected (test_pilot_ledger.StartTests.test_session_without_run_jsonl_rejected) ... ok
+test_start_happy_path_derives_city (test_pilot_ledger.StartTests.test_start_happy_path_derives_city) ... ok
+test_synthetic_flagged_record_rejected_despite_label (test_pilot_ledger.StartTests.test_synthetic_flagged_record_rejected_despite_label) ... ok
+test_counts_and_rates_with_numerators (test_pilot_ledger.StatsTests.test_counts_and_rates_with_numerators) ... ok
+test_invalid_row_reported_not_counted (test_pilot_ledger.StatsTests.test_invalid_row_reported_not_counted) ... ok
+test_zero_runs_not_evaluated (test_pilot_ledger.StatsTests.test_zero_runs_not_evaluated) ... ok
+test_missing_and_matching_evidence (test_pilot_ledger.VerifyTests.test_missing_and_matching_evidence) ... ok
+test_prefix_hash_is_a_finding (test_pilot_ledger.VerifyTests.test_prefix_hash_is_a_finding) ... ok
+test_empty_event_needs_no_network (test_qwen_client.ExtractTests.test_empty_event_needs_no_network) ... ok
+test_fenced_json_repaired_once (test_qwen_client.ExtractTests.test_fenced_json_repaired_once) ... ok
+test_in_vocabulary_keyword_not_flagged (test_qwen_client.ExtractTests.test_in_vocabulary_keyword_not_flagged) ... ok
+test_invalid_after_repair_falls_back (test_qwen_client.ExtractTests.test_invalid_after_repair_falls_back) ... ok
+test_invalid_evidence_span_is_flagged_not_silently_dropped (test_qwen_client.ExtractTests.test_invalid_evidence_span_is_flagged_not_silently_dropped) ... ok
+test_missing_key_file_reported_as_unavailable (test_qwen_client.ExtractTests.test_missing_key_file_reported_as_unavailable) ... ok
+test_out_of_vocabulary_keyword_flagged (test_qwen_client.ExtractTests.test_out_of_vocabulary_keyword_flagged) ... ok
+test_plain_json_ok_and_request_hygiene (test_qwen_client.ExtractTests.test_plain_json_ok_and_request_hygiene) ... ok
+test_repetition_loop_output_skips_repair (test_qwen_client.ExtractTests.test_repetition_loop_output_skips_repair) ... ok
+test_request_bounds_generation (test_qwen_client.ExtractTests.test_request_bounds_generation) ... ok
+test_schema_violation_triggers_repair_path (test_qwen_client.ExtractTests.test_schema_violation_triggers_repair_path) ... ok
+test_service_error_is_unavailable (test_qwen_client.ExtractTests.test_service_error_is_unavailable) ... ok
+test_probe_auth_failure (test_qwen_client.ProbeTests.test_probe_auth_failure) ... ok
+test_probe_ok (test_qwen_client.ProbeTests.test_probe_ok) ... ok
+test_probe_service_down (test_qwen_client.ProbeTests.test_probe_service_down) ... ok
+test_execution_log_contract (test_schemas.ForwardContractTests.test_execution_log_contract) ... ok
+test_qwen_output_contract (test_schemas.ForwardContractTests.test_qwen_output_contract) ... ok
+test_trajectory_contract (test_schemas.ForwardContractTests.test_trajectory_contract) ... ok
+test_bad_money_pattern_is_structural_failure (test_schemas.MerchantContractTests.test_bad_money_pattern_is_structural_failure) ... ok
+test_currency_mismatch_is_semantic_failure (test_schemas.MerchantContractTests.test_currency_mismatch_is_semantic_failure) ... ok
+test_non_string_price_is_structural_failure (test_schemas.MerchantContractTests.test_non_string_price_is_structural_failure) ... ok
+test_unknown_basis_is_structural_failure (test_schemas.MerchantContractTests.test_unknown_basis_is_structural_failure) ... ok
+test_valid_item_accepted (test_schemas.MerchantContractTests.test_valid_item_accepted) ... ok
+test_needs_input_plan_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_is_valid) ... ok
+test_needs_input_plan_null_budget_is_valid (test_schemas.PlanContractTests.test_needs_input_plan_null_budget_is_valid) ... ok
+test_plan_rejects_bad_status (test_schemas.PlanContractTests.test_plan_rejects_bad_status) ... ok
+test_plan_rejects_extra_field (test_schemas.PlanContractTests.test_plan_rejects_extra_field) ... ok
+test_plan_rejects_live_executed_true (test_schemas.PlanContractTests.test_plan_rejects_live_executed_true) ... ok
+test_plan_rejects_unknown_step_action (test_schemas.PlanContractTests.test_plan_rejects_unknown_step_action) ... ok
+test_planned_plan_is_valid (test_schemas.PlanContractTests.test_planned_plan_is_valid) ... ok
+test_customer_bad_basis_enum_rejected (test_schemas.ValidatorTests.test_customer_bad_basis_enum_rejected) ... ok
+test_customer_bad_city_type_rejected (test_schemas.ValidatorTests.test_customer_bad_city_type_rejected) ... ok
+test_example_customer_matches_contract (test_schemas.ValidatorTests.test_example_customer_matches_contract) ... ok
+test_budget_override_detected (test_training_pipeline.GateTests.test_budget_override_detected) ... ok
+test_clean_sent_text_passes (test_training_pipeline.GateTests.test_clean_sent_text_passes) ... ok
+test_gates_pass_only_when_both_zero (test_training_pipeline.GateTests.test_gates_pass_only_when_both_zero) ... ok
+test_privacy_leak_detected (test_training_pipeline.GateTests.test_privacy_leak_detected) ... ok
+test_add_rejects_bad_model_output (test_training_pipeline.PipelineTests.test_add_rejects_bad_model_output) ... ok
+test_add_rejects_schema_violation (test_training_pipeline.PipelineTests.test_add_rejects_schema_violation) ... ok
+test_add_valid_goes_to_candidate (test_training_pipeline.PipelineTests.test_add_valid_goes_to_candidate) ... ok
+test_add_with_pii_goes_to_quarantine (test_training_pipeline.PipelineTests.test_add_with_pii_goes_to_quarantine) ... ok
+test_export_only_approved_train (test_training_pipeline.PipelineTests.test_export_only_approved_train) ... ok
+test_review_moves_and_updates (test_training_pipeline.PipelineTests.test_review_moves_and_updates) ... ok
+test_review_reject_path (test_training_pipeline.PipelineTests.test_review_reject_path) ... ok
+test_scan_privacy_finds_patterns (test_training_pipeline.PipelineTests.test_scan_privacy_finds_patterns) ... ok
+test_split_groups_no_leakage (test_training_pipeline.PipelineTests.test_split_groups_no_leakage) ... ok
+test_status_counts (test_training_pipeline.StatusTests.test_status_counts) ... ok
+test_new_fields_recorded (test_work_package_a.ActionMetadataTests.test_new_fields_recorded) ... ok
+test_postcondition_evidence_missing_file_rejected (test_work_package_a.ActionMetadataTests.test_postcondition_evidence_missing_file_rejected) ... ok
+test_skipped_with_reason_and_not_required (test_work_package_a.ActionMetadataTests.test_skipped_with_reason_and_not_required) ... ok
+test_skipped_without_skip_reason_rejected (test_work_package_a.ActionMetadataTests.test_skipped_without_skip_reason_rejected) ... ok
+test_all_required_ok_is_satisfied (test_work_package_a.GoalOutcomeTests.test_all_required_ok_is_satisfied) ... ok
+test_no_required_steps_is_partial (test_work_package_a.GoalOutcomeTests.test_no_required_steps_is_partial) ... ok
+test_required_failed_is_failed (test_work_package_a.GoalOutcomeTests.test_required_failed_is_failed) ... ok
+test_required_skipped_blocks_goal (test_work_package_a.GoalOutcomeTests.test_required_skipped_blocks_goal) ... ok
+test_required_waiting_user_blocks (test_work_package_a.GoalOutcomeTests.test_required_waiting_user_blocks) ... ok
+test_run5_history_not_retroactively_satisfied (test_work_package_a.GoalOutcomeTests.test_run5_history_not_retroactively_satisfied) ... ok
+test_budget_fingerprint_stable_and_bound (test_work_package_a.PlanFingerprintTests.test_budget_fingerprint_stable_and_bound) ... ok
+test_budget_amount_missing_incomplete (test_work_package_a.ReleaseGateTests.test_budget_amount_missing_incomplete) ... ok
+test_duplicate_samples_do_not_count (test_work_package_a.ReleaseGateTests.test_duplicate_samples_do_not_count) ... ok
+test_empty_samples_incomplete (test_work_package_a.ReleaseGateTests.test_empty_samples_incomplete) ... ok
+test_metric_threshold_miss_is_incomplete (test_work_package_a.ReleaseGateTests.test_metric_threshold_miss_is_incomplete) ... ok
+test_missing_report_field_is_incomplete (test_work_package_a.ReleaseGateTests.test_missing_report_field_is_incomplete) ... ok
+test_normal_exclusion_is_not_an_error (test_work_package_a.ReleaseGateTests.test_normal_exclusion_is_not_an_error) ... ok
+test_not_applicable_requires_reason_and_policy (test_work_package_a.ReleaseGateTests.test_not_applicable_requires_reason_and_policy) ... ok
+test_override_recommendation_fails (test_work_package_a.ReleaseGateTests.test_override_recommendation_fails) ... ok
+test_pass_when_all_complete (test_work_package_a.ReleaseGateTests.test_pass_when_all_complete) ... ok
+test_policy_must_be_configured (test_work_package_a.ReleaseGateTests.test_policy_must_be_configured) ... ok
+test_privacy_leak_fails (test_work_package_a.ReleaseGateTests.test_privacy_leak_fails) ... ok
+test_finish_records_dual_outcome (test_work_package_a.SessionEndTests.test_finish_records_dual_outcome) ... ok
+test_migrated_seed_cannot_export_without_gold (test_work_package_b.MigrationTests.test_migrated_seed_cannot_export_without_gold) ... ok
+test_v1_migrates_without_fabrication (test_work_package_b.MigrationTests.test_v1_migrates_without_fabrication) ... ok
+test_gold_must_pass_contract (test_work_package_b.V2AddTests.test_gold_must_pass_contract) ... ok
+test_pii_to_quarantine (test_work_package_b.V2AddTests.test_pii_to_quarantine) ... ok
+test_prediction_stays_prediction (test_work_package_b.V2AddTests.test_prediction_stays_prediction) ... ok
+test_valid_v2_to_candidate (test_work_package_b.V2AddTests.test_valid_v2_to_candidate) ... ok
+test_failure_model_without_gold_refused (test_work_package_b.V2ExportTests.test_failure_model_without_gold_refused) ... ok
+test_gold_is_label_not_prediction (test_work_package_b.V2ExportTests.test_gold_is_label_not_prediction) ... ok
+test_rejected_never_exported (test_work_package_b.V2ExportTests.test_rejected_never_exported) ... ok
+test_success_without_gold_refused (test_work_package_b.V2ExportTests.test_success_without_gold_refused) ... ok
+test_synthetic_observed_counted_separately (test_work_package_b.V2ExportTests.test_synthetic_observed_counted_separately) ... ok
+test_manifest_reproducible_and_leak_free (test_work_package_b.V2SplitTests.test_manifest_reproducible_and_leak_free) ... ok
+test_missing_grouping_goes_to_needs_grouping (test_work_package_b.V2SplitTests.test_missing_grouping_goes_to_needs_grouping) ... ok
+test_same_customer_group_same_split_even_across_templates (test_work_package_b.V2SplitTests.test_same_customer_group_same_split_even_across_templates) ... ok
+test_same_template_family_same_split_across_customers (test_work_package_b.V2SplitTests.test_same_template_family_same_split_across_customers) ... ok
+test_transitive_linking_via_cluster (test_work_package_b.V2SplitTests.test_transitive_linking_via_cluster) ... ok
+test_build_search_url_host_restricted (test_work_package_c.CityRegistryTests.test_build_search_url_host_restricted) ... ok
+test_build_search_url_matches_run5_verified_url (test_work_package_c.CityRegistryTests.test_build_search_url_matches_run5_verified_url) ... ok
+test_build_search_url_unknown_city_passthrough (test_work_package_c.CityRegistryTests.test_build_search_url_unknown_city_passthrough) ... ok
+test_expired_evidence_needs_resolution (test_work_package_c.CityRegistryTests.test_expired_evidence_needs_resolution) ... ok
+test_real_hangzhou_mapping_resolves (test_work_package_c.CityRegistryTests.test_real_hangzhou_mapping_resolves) ... ok
+test_register_conflicting_code_rejected (test_work_package_c.CityRegistryTests.test_register_conflicting_code_rejected) ... ok
+test_register_requires_evidence (test_work_package_c.CityRegistryTests.test_register_requires_evidence) ... ok
+test_unknown_city_needs_resolution_no_guess (test_work_package_c.CityRegistryTests.test_unknown_city_needs_resolution_no_guess) ... ok
+test_verify_evidence_real_file_passes_and_tamper_detected (test_work_package_c.CityRegistryTests.test_verify_evidence_real_file_passes_and_tamper_detected) ... ok
+test_duplicate_record_id_detected (test_work_package_c.CustomerSourceTests.test_duplicate_record_id_detected) ... ok
+test_invalid_path_and_json (test_work_package_c.CustomerSourceTests.test_invalid_path_and_json) ... ok
+test_missing_id_needs_input (test_work_package_c.CustomerSourceTests.test_missing_id_needs_input) ... ok
+test_ok_snapshot_and_isolation_between_customers (test_work_package_c.CustomerSourceTests.test_ok_snapshot_and_isolation_between_customers) ... ok
+test_record_not_found (test_work_package_c.CustomerSourceTests.test_record_not_found) ... ok
+test_source_config_validation (test_work_package_c.CustomerSourceTests.test_source_config_validation) ... ok
+test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete) ... FAIL
+test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes) ... FAIL
+test_policy_without_freshness_config_rejected (test_work_package_c.GateGapTests.test_policy_without_freshness_config_rejected) ... ok
+test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete) ... FAIL
+test_failing_before_probe_now_incomplete (test_work_package_c.R3GateClosureTests.test_failing_before_probe_now_incomplete) ... ok
+test_future_evidence_incomplete (test_work_package_c.R3GateClosureTests.test_future_evidence_incomplete) ... ok
+test_hard_fail_precedence_over_incomplete_fields (test_work_package_c.R3GateClosureTests.test_hard_fail_precedence_over_incomplete_fields) ... ok
+test_hash_format_incomplete (test_work_package_c.R3GateClosureTests.test_hash_format_incomplete) ... ok
+test_missing_evidence_time_incomplete (test_work_package_c.R3GateClosureTests.test_missing_evidence_time_incomplete) ... ok
+test_missing_sources_incomplete (test_work_package_c.R3GateClosureTests.test_missing_sources_incomplete) ... ok
+test_nonfinite_metric_incomplete (test_work_package_c.R3GateClosureTests.test_nonfinite_metric_incomplete) ... ok
+test_override_recommendation_fail_precedence (test_work_package_c.R3GateClosureTests.test_override_recommendation_fail_precedence) ... ok
+test_required_checks_mismatch_incomplete (test_work_package_c.R3GateClosureTests.test_required_checks_mismatch_incomplete) ... ok
+test_budget_basis_missing_through_snapshot (test_work_package_c.SnapshotPlanWiringTests.test_budget_basis_missing_through_snapshot) ... ok
+test_not_ok_snapshot_never_builds_plan (test_work_package_c.SnapshotPlanWiringTests.test_not_ok_snapshot_never_builds_plan) ... ok
+test_plan_binds_snapshot_and_fingerprint (test_work_package_c.SnapshotPlanWiringTests.test_plan_binds_snapshot_and_fingerprint) ... ok
+test_two_customer_plans_do_not_share_binding (test_work_package_c.SnapshotPlanWiringTests.test_two_customer_plans_do_not_share_binding) ... ok
+test_ambiguous_budget (test_workflow.WorkflowTests.test_ambiguous_budget) ... ok
+test_bad_money (test_workflow.WorkflowTests.test_bad_money) ... ok
+test_budget_boundary (test_workflow.WorkflowTests.test_budget_boundary) ... ok
+test_conditional_price (test_workflow.WorkflowTests.test_conditional_price) ... ok
+test_device_not_customer_location (test_workflow.WorkflowTests.test_device_not_customer_location) ... ok
+test_handoff_avoids_raw_event_and_is_unique (test_workflow.WorkflowTests.test_handoff_avoids_raw_event_and_is_unique) ... ok
+test_missing_city (test_workflow.WorkflowTests.test_missing_city) ... ok
+test_missing_party_size (test_workflow.WorkflowTests.test_missing_party_size) ... ok
+test_plan_uses_customer_city (test_workflow.WorkflowTests.test_plan_uses_customer_city) ... ok
+test_price_interval_partial_overlap (test_workflow.WorkflowTests.test_price_interval_partial_overlap) ... ok
+test_unknown_event (test_workflow.WorkflowTests.test_unknown_event) ... ok
+test_unknown_price (test_workflow.WorkflowTests.test_unknown_price) ... ok
+
+======================================================================
+FAIL: test_disallowed_source_incomplete (test_work_package_c.GateGapTests.test_disallowed_source_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 222, in test_disallowed_source_incomplete
+    self.assertTrue(any("来源" in r for r in gate["reasons"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_fresh_evidence_passes (test_work_package_c.GateGapTests.test_fresh_evidence_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 214, in test_fresh_evidence_passes
+    self.assertEqual(gate["decision"], "pass")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'incomplete' != 'pass'
+- incomplete
++ pass
+
+
+======================================================================
+FAIL: test_stale_evidence_incomplete (test_work_package_c.GateGapTests.test_stale_evidence_incomplete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:/AI_Banking/AI_Banking_Agent_1111.ver2/test_work_package_c.py", line 210, in test_stale_evidence_incomplete
+    self.assertTrue(any("证据过期" in r for r in gate["reasons"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 217 tests in 11.073s
+
+FAILED (failures=3)
+
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:25:39.184265+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 217 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。
+
+2026-11-12 Phase 0 本地加固检查（2026-11-17T23:28:07.569226+08:00）
+命令：python run_all_checks.py（或 启动1111本地测试.bat）
+内容：单元测试 + JSON Schema 契约校验 + 词库完整性 + 计划往返校验
+结果：全部通过
+  [1] 单元测试：全部通过（运行 226 项，失败 0，错误 0）
+  [2] example_customer.json 符合 customer_input 契约
+  [3] 词库完整：1111.ver2-lexicon-1，5 个触发品类 / 7 个搜索关键词 / 7 个否定前缀
+  [4] 计划往返：status=planned，keywords=['生日餐厅', '蛋糕', '聚餐餐厅']，keyword_source=lexicon_1111.ver2-lexicon-1_rule_baseline_not_qwen，negated=[]，review_flags=0 项
+性质：本地确定性检查；不是模型评测，不是真实点评端到端测试。

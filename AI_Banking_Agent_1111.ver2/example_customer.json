@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "city": "杭州",
+  "special_event": "生日聚餐",
+  "budget": {"max": "600", "basis": "total", "currency": "CNY"},
+  "party_size": 4,
+  "location_mode": "city_only"
+}
