@@ -1,0 +1,31 @@
+{
+  "$id": "release_policy.schema.json",
+  "title": "发布门禁策略（S1.3 R3：策略本身过契约——未配置不能发布）",
+  "type": "object",
+  "required": ["policy_version", "required_checks", "min_samples_per_scenario",
+               "metric_thresholds", "evidence_freshness_days", "allowed_sources"],
+  "properties": {
+    "policy_version": {"type": "string"},
+    "required_checks": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "min_samples_per_scenario": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "metric_thresholds": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["object", "number"],
+        "properties": {
+          "min": {"type": "number"},
+          "max": {"type": "number"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_freshness_days": {"type": "integer", "minimum": 1},
+    "allowed_sources": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "not_applicable_allowed": {"type": "array", "items": {"type": "string"}},
+    "expected_model_hash": {"type": "string"}
+  },
+  "additionalProperties": false
+}

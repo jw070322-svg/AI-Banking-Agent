@@ -1,0 +1,55 @@
+{
+  "$id": "execution_log.schema.json",
+  "title": "运行日志 v2（DESIGN §7 + 工作包A §4.1：动作来源/方法/跳过原因/目标绑定/会话双结局）",
+  "type": "object",
+  "required": ["type", "timestamp"],
+  "properties": {
+    "type": {"enum": ["run_start", "step", "session_end"]},
+    "timestamp": {"type": "string"},
+    "run_id": {"type": "string"},
+    "customer_ref": {"type": "string"},
+    "mode": {"type": "string"},
+    "seq": {"type": "integer"},
+    "action": {"type": "string"},
+    "params": {"type": ["object", "null"]},
+    "started_at": {"type": ["string", "null"]},
+    "ended_at": {"type": ["string", "null"]},
+    "duration_ms": {"type": ["integer", "null"]},
+    "error_code": {"type": ["string", "null"]},
+    "retries": {"type": ["integer", "null"]},
+    "response_summary": {"type": ["string", "null"]},
+    "evidence_ref": {"type": ["string", "null"]},
+    "status": {"enum": ["ok", "failed", "waiting_user", "skipped", null]},
+    "action_source": {"enum": ["automation", "user_takeover", null]},
+    "execution_method": {"enum": ["form_submit", "direct_navigation", "coordinate_dispatch", "none", null]},
+    "skip_reason": {"type": ["string", "null"]},
+    "required_for_goal": {"type": ["boolean", "null"]},
+    "postcondition_evidence": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "required": ["key", "evidence_ref", "sha256", "verified_at", "run_id"],
+        "properties": {
+          "key": {"type": "string"},
+          "evidence_ref": {"type": "string"},
+          "sha256": {"type": "string"},
+          "verified_at": {"type": "string"},
+          "run_id": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "run_outcome": {"enum": ["completed", "aborted", "waiting_user", "unknown", null]},
+    "goal_outcome": {"enum": ["satisfied", "partial", "blocked", "failed", "unknown", null]},
+    "goal_outcome_annotation": {"enum": ["satisfied", "partial", "blocked", "failed", null]},
+    "note": {"type": ["string", "null"]},
+    "finished_at": {"type": ["string", "null"]},
+    "plan_hash": {"type": ["string", "null"]},
+    "step_id": {"type": ["string", "null"]},
+    "attempt": {"type": ["integer", "null"]},
+    "machine_verdict": {"enum": ["CONTINUE", "RETRY", "WAITING_USER", "ABORT", null]},
+    "machine_verdict_reason": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
+

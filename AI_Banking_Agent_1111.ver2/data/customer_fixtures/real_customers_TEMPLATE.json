@@ -1,0 +1,19 @@
+{
+  "_填写说明": {
+    "kind": "必须保持 local_real_file（customer_source.py 强制要求来源配置与此一致）",
+    "source_version": "填本次数据版本日期，如 2026-11-14",
+    "records": "真实客户记录数组；只填你明确授权试点的记录；禁止遍历资料库",
+    "record_id": "必填，唯一；试点将以显式ID引用，绝不自动选客",
+    "city": "必填，客户所在城市（须为已登记或可取证登记映射的城市）",
+    "special_event": "必填，客户特殊事件原文；仅本地处理，不外发点评（外发只含公共服务关键词）",
+    "budget.max/min": "客户原值数字字符串；min可省略默认0",
+    "budget.basis": "必填 per_person 或 total；缺失则该记录计划转 needs_input（可用于缺参场景）",
+    "budget.currency": "必填，CNY；其他币种不自动换汇",
+    "party_size": "总额/人均换算需要时必填，正整数",
+    "location_mode": "city_only（默认）或 device；device 需客户本人设备授权，当前未验收",
+    "privacy": "真实记录仅本地留存，不提交Git、不写入运行日志与交接正文"
+  },
+  "kind": "local_real_file",
+  "source_version": "",
+  "records": []
+}

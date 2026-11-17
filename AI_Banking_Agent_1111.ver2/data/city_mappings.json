@@ -1,0 +1,15 @@
+{
+  "mappings": [
+    {
+      "city_name": "杭州",
+      "administrative_region": "浙江省杭州市",
+      "platform_city_code": "3",
+      "source_url": "https://www.dianping.com/search/keyword/3/0_%E7%94%9F%E6%97%A5%E9%A4%90%E5%8E%85",
+      "evidence_ref": "reports/sessions/20261112-012739-6a359f8e/evidence/search-directnav-dom.txt",
+      "evidence_hash": "e14a9889aaf3b258e6d3663c469f8f0e3394b89290ca5f6b63803621b61bb2f8",
+      "verified_at": "2026-11-12",
+      "verified_by": "user_takeover_search + executor_run5_direct_navigation_observation",
+      "notes": "URL城市码经用户真实搜索(run4)与执行器只读直导航(run5)双重证实；URL规律 /search/keyword/{城市码}/0_{关键词}"
+    }
+  ]
+}

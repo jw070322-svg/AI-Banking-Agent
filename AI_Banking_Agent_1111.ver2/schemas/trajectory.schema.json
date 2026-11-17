@@ -1,0 +1,31 @@
+{
+  "$id": "trajectory.schema.json",
+  "title": "训练轨迹记录（DESIGN §6 采集单位；review_status 非 approved 不得进入训练）",
+  "type": "object",
+  "required": ["record_id", "source_kind", "desensitized", "review_status",
+               "model_version", "evidence_hashes"],
+  "properties": {
+    "record_id": {"type": "string"},
+    "source_kind": {"enum": ["synthetic", "observed"]},
+    "desensitized": {"const": true},
+    "customer_ref": {"type": "string"},
+    "event_template": {"type": "string"},
+    "input_summary": {"type": "string"},
+    "state_summary": {"type": "string"},
+    "allowed_actions": {"type": "array", "items": {"type": "string"}},
+    "model_output": {"type": ["object", "null"]},
+    "actual_actions": {"type": "array"},
+    "tool_returns": {"type": "array"},
+    "postcondition": {"type": "string"},
+    "correction_label": {"enum": ["success", "failure_model", "failure_page",
+                                   "failure_tool", "unclear", null]},
+    "review_status": {"enum": ["pending", "approved", "rejected"]},
+    "split": {"enum": ["train", "validation", "test", null]},
+    "model_version": {"type": "string"},
+    "template_version": {"type": "string"},
+    "page_version": {"type": "string"},
+    "evidence_hashes": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

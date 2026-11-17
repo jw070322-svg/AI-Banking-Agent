@@ -1,0 +1,59 @@
+{
+  "$id": "release_report.schema.json",
+  "title": "发布门禁评测报告（S1.3 R3：报告过契约；证据元数据必填由门禁语义层强制）",
+  "type": "object",
+  "required": ["schema_version", "run_id", "evaluated_at", "model_hash",
+               "template_hash", "dataset_hash", "evaluator_version",
+               "required_checks", "completed_checks", "sample_counts",
+               "findings", "metrics"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "evaluated_at": {"type": "string"},
+    "model_hash": {"type": "string", "pattern": "^[0-9a-f]{8,64}$"},
+    "template_hash": {"type": "string", "pattern": "^[0-9a-f]{8,64}$"},
+    "dataset_hash": {"type": "string", "pattern": "^[0-9a-f]{8,64}$"},
+    "evaluator_version": {"type": "string"},
+    "required_checks": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "completed_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check", "applicable"],
+        "properties": {
+          "check": {"type": "string"},
+          "applicable": {"type": "boolean"},
+          "not_applicable_reason": {"type": "string"},
+          "sample_ids": {"type": "array", "items": {"type": "string"}},
+          "sources": {"type": "array", "items": {"type": "string"}},
+          "evidence_verified_at": {"type": "string"},
+          "budget_applicable": {"type": "boolean"},
+          "amounts_cents": {"type": "array", "items": {"type": "integer"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "sample_counts": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {"enum": ["budget_override_recommendation", "privacy_leak",
+                             "budget_normal_exclusion", "other"]},
+          "detail": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {"type": "number"}
+    }
+  },
+  "additionalProperties": false
+}

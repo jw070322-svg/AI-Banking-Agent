@@ -1,0 +1,15 @@
+{
+  "$id": "qwen_output.schema.json",
+  "title": "本地千问受限输出（DESIGN §3；Phase 1 接入时启用；模型无权改写城市与预算）",
+  "type": "object",
+  "required": ["service_categories", "public_keywords", "constraints",
+               "needs_clarification", "evidence_spans"],
+  "properties": {
+    "service_categories": {"type": "array", "items": {"type": "string"}},
+    "public_keywords": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "needs_clarification": {"type": "boolean"},
+    "evidence_spans": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

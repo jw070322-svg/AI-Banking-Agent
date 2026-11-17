@@ -1,0 +1,52 @@
+{
+  "$id": "trajectory_v2.schema.json",
+  "title": "训练轨迹记录 v2（工作包B §5：gold标签、分组关联、审核元数据；model_output保留为预测不作训练标签）",
+  "type": "object",
+  "required": ["record_id", "schema_version", "source_kind", "desensitized",
+               "review_status", "model_version", "evidence_hashes"],
+  "properties": {
+    "record_id": {"type": "string"},
+    "schema_version": {"const": 2},
+    "source_kind": {"enum": ["synthetic", "observed"]},
+    "desensitized": {"const": true},
+    "customer_ref": {"type": ["string", "null"]},
+    "customer_group": {"type": ["string", "null"]},
+    "event_template": {"type": ["string", "null"]},
+    "template_family": {"type": ["string", "null"]},
+    "duplicate_cluster": {"type": ["string", "null"]},
+    "run_id": {"type": ["string", "null"]},
+    "input_summary": {"type": ["string", "null"]},
+    "state_summary": {"type": ["string", "null"]},
+    "allowed_actions": {"type": "array", "items": {"type": "string"}},
+    "model_output": {"type": ["object", "null"]},
+    "gold_output": {"type": ["object", "null"]},
+    "actual_actions": {"type": "array"},
+    "tool_returns": {"type": "array"},
+    "postcondition": {"type": ["string", "null"]},
+    "correction_label": {"enum": ["success", "failure_model", "failure_page",
+                                   "failure_tool", "unclear", null]},
+    "review_status": {"enum": ["pending", "approved", "rejected"]},
+    "reviewer_ref": {"type": ["string", "null"]},
+    "reviewed_at": {"type": ["string", "null"]},
+    "review_reason": {"type": ["string", "null"]},
+    "split": {"enum": ["train", "validation", "test", "needs_grouping", null]},
+    "model_version": {"type": "string"},
+    "template_version": {"type": "string"},
+    "page_version": {"type": ["string", "null"]},
+    "evidence_hashes": {"type": "array", "items": {"type": "string"}},
+    "evidence_manifest": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string"},
+          "sha256": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

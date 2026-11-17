@@ -1,0 +1,18 @@
+{
+  "$id": "merchant_item.schema.json",
+  "title": "点评候选商户条目（本地合成或后续真实采集；结构失败进 needs_confirmation，不当成0元或匹配）",
+  "type": "object",
+  "required": ["id"],
+  "properties": {
+    "id": {"type": "string"},
+    "price_min": {"type": ["string", "null"], "pattern": "^\\d+(\\.\\d{1,2})?$"},
+    "price_max": {"type": ["string", "null"], "pattern": "^\\d+(\\.\\d{1,2})?$"},
+    "currency": {"type": "string"},
+    "basis": {"enum": ["per_person", "total"]},
+    "price_kind": {"enum": ["listed", "average"]},
+    "source_url": {"type": "string"},
+    "observed_at": {"type": "string"},
+    "conditional": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

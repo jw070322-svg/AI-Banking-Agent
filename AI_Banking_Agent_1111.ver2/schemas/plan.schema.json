@@ -1,0 +1,66 @@
+{
+  "$id": "plan.schema.json",
+  "title": "build_plan 输出契约（plan_only；live_executed 恒为 false 直到真实执行器接入）",
+  "type": "object",
+  "required": ["schema_version", "created_at", "status", "mode", "city", "keywords",
+               "keyword_source", "budget", "party_size", "issues", "steps",
+               "live_executed", "negated_keywords", "review_flags"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "created_at": {"type": "string"},
+    "status": {"enum": ["planned", "needs_input"]},
+    "mode": {"const": "plan_only"},
+    "city": {"type": "string"},
+    "keywords": {"type": "array", "items": {"type": "string"}},
+    "keyword_source": {"type": "string"},
+    "budget": {
+      "type": ["object", "null"],
+      "properties": {
+        "min_cents": {"type": "integer"},
+        "max_cents": {"type": "integer"},
+        "basis": {"enum": ["per_person", "total"]},
+        "currency": {"const": "CNY"}
+      },
+      "additionalProperties": false
+    },
+    "party_size": {"type": ["integer", "null"]},
+    "issues": {"type": "array", "items": {"type": "string"}},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["action", "params", "verify"],
+        "properties": {
+          "action": {"enum": ["open_site", "select_city", "resolve_location",
+                               "search", "filter_price", "filter_candidates", "write_handoff"]},
+          "step_id": {"type": "string"},
+          "required_for_goal": {"type": "boolean"},
+          "params": {"type": "object"},
+          "verify": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "live_executed": {"const": false},
+    "negated_keywords": {"type": "array", "items": {"type": "string"}},
+    "review_flags": {"type": "array", "items": {"type": "string"}},
+    "budget_fingerprint": {"type": ["string", "null"]},
+    "customer_ref_snapshot": {"type": ["string", "null"]},
+    "customer_snapshot_hash": {"type": ["string", "null"]},
+    "source_kind": {"type": ["string", "null"]},
+    "execution": {
+      "type": ["object", "null"],
+      "properties": {
+        "log_path": {"type": "string"},
+        "backfilled_at": {"type": "string"},
+        "outcome": {"type": "string"},
+        "run_outcome": {"type": "string"},
+        "goal_outcome": {"type": "string"},
+        "steps": {"type": "array", "items": {"type": "object"}},
+        "attachments": {"type": "array", "items": {"type": "object"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

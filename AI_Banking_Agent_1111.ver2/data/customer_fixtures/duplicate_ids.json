@@ -1,0 +1,8 @@
+{
+  "kind_note": "重复ID测试fixture（synthetic）",
+  "source_version": "2026-11-12",
+  "records": [
+    {"record_id": "c-dup-1", "city": "杭州", "special_event": "生日", "budget": {"max": "100", "currency": "CNY", "basis": "total"}, "synthetic": true},
+    {"record_id": "c-dup-1", "city": "上海", "special_event": "纪念日", "budget": {"max": "200", "currency": "CNY", "basis": "total"}, "synthetic": true}
+  ]
+}

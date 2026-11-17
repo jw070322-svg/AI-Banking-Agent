@@ -1,0 +1,19 @@
+{
+  "lexicon_version": "1111.ver2-lexicon-1",
+  "updated_at": "2026-11-12",
+  "source_note": "自 workflow.py 内置 RULES 外置；结构与校验规则见 lexicon.py。keyword_source 引用 lexicon_version 供审计。",
+  "categories": [
+    {"trigger": "生日", "search_keywords": ["生日餐厅", "蛋糕"], "priority": 10},
+    {"trigger": "纪念日", "search_keywords": ["约会餐厅", "鲜花"], "priority": 10},
+    {"trigger": "婚礼", "search_keywords": ["婚宴"], "priority": 10},
+    {"trigger": "聚餐", "search_keywords": ["聚餐餐厅"], "priority": 10},
+    {"trigger": "亲子", "search_keywords": ["亲子餐厅"], "priority": 10}
+  ],
+  "negation_prefixes": ["不要", "不用", "无需", "不订", "不用订", "别订", "不想要"],
+  "notes": [
+    "否定匹配仅接受'否定前缀+关键词'在事件原文中连续出现；未形成连续匹配时写复核标记转人工/模型复核，不宣称完整理解。",
+    "触发词为子串匹配基线；复杂多意图、否定嵌套、口语变体必须转结构化模型评审（DESIGN §3）。",
+    "priority 为确定性排序预留；当前全部同级，稳定排序保持历史 RULES 顺序。",
+    "review_flags 只用固定短语，绝不携带事件原文，保证交接脱敏性质。"
+  ]
+}

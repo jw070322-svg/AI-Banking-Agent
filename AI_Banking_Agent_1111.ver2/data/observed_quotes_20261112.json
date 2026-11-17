@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-11-12",
+  "source_page": "https://www.dianping.com/search/keyword/3/0_%E7%94%9F%E6%97%A5%E9%A4%90%E5%8E%85",
+  "source_kind": "observed",
+  "city_code": "3",
+  "declared_result_count": 1007,
+  "note": "2026-11-12 用户接管搜索后执行器只读采集的页面展示价；人均价为站点参考价（price_kind=average），不保证结算；采集过程见 reports/sessions/20261112-011106-8e0c06fb/",
+  "category": "餐厅",
+  "items": [
+    {
+      "id": "shop-H9M9ownlt44i0Aaw",
+      "name": "淀·sediment·生日·纪念日·聚会餐厅(湘湖路店)",
+      "price_min": "172",
+      "price_max": "172",
+      "currency": "CNY",
+      "basis": "per_person",
+      "price_kind": "average",
+      "source_url": "https://www.dianping.com/shop/H9M9ownlt44i0Aaw",
+      "observed_at": "2026-11-12"
+    },
+    {
+      "id": "shop-candle-island-hz",
+      "name": "烛屿Candle Island·生日餐厅·约会求婚表白(杭州店)",
+      "price_min": "121",
+      "price_max": "121",
+      "currency": "CNY",
+      "basis": "per_person",
+      "price_kind": "average",
+      "source_url": "https://www.dianping.com/search/keyword/3/0_%E7%94%9F%E6%97%A5%E9%A4%90%E5%8E%85",
+      "observed_at": "2026-11-12"
+    },
+    {
+      "id": "shop-shanhai-hz",
+      "name": "山海restaurant·生日·约会餐厅",
+      "price_min": "122",
+      "price_max": "122",
+      "currency": "CNY",
+      "basis": "per_person",
+      "price_kind": "average",
+      "source_url": "https://www.dianping.com/search/keyword/3/0_%E7%94%9F%E6%97%A5%E9%A4%90%E5%8E%85",
+      "observed_at": "2026-11-12"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$id": "customer_input.schema.json",
+  "title": "客户规范输入（宽松结构校验；语义校验在 build_plan 中进行，缺失字段转 needs_input 而非报错）",
+  "type": ["object", "null"],
+  "properties": {
+    "synthetic": {"type": "boolean"},
+    "city": {"type": "string"},
+    "special_event": {"type": "string"},
+    "budget": {
+      "type": ["object", "null"],
+      "properties": {
+        "min": {"type": ["string", "number", "null"]},
+        "max": {"type": ["string", "number", "null"]},
+        "basis": {"enum": ["per_person", "total"]},
+        "currency": {"type": "string"}
+      }
+    },
+    "party_size": {"type": ["integer", "null"]},
+    "location_mode": {"enum": ["city_only", "device", null]}
+  },
+  "additionalProperties": true
+}

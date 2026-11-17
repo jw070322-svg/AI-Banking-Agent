@@ -1,0 +1,30 @@
+{
+  "kind_note": "本文件为测试fixture（synthetic）；不计入真实试点，不得作为真实客户来源",
+  "source_version": "2026-11-12",
+  "records": [
+    {
+      "record_id": "c-test-001",
+      "city": "杭州",
+      "special_event": "生日聚餐",
+      "budget": {"max": "600", "currency": "CNY", "basis": "total"},
+      "party_size": 4,
+      "location_mode": "city_only",
+      "synthetic": true
+    },
+    {
+      "record_id": "c-test-002",
+      "city": "上海",
+      "special_event": "纪念日",
+      "budget": {"max": "800", "currency": "CNY"},
+      "party_size": 2,
+      "synthetic": true
+    },
+    {
+      "record_id": "c-test-003",
+      "city": "珠海",
+      "special_event": "特殊需求",
+      "budget": {"max": "300", "currency": "CNY", "basis": "per_person"},
+      "synthetic": true
+    }
+  ]
+}
