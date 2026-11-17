@@ -1,0 +1,68 @@
+{
+  "schema_version": "scenario-1.1",
+  "scenario_id": "SCN_D_20261022185343_ABED32",
+  "scenario_type": "D",
+  "parameters": {
+    "increase_minor": 80000
+  },
+  "accounts": [
+    {
+      "account_id": "ACC57DB69A28AC1",
+      "currency": "CNY",
+      "initial_balance_minor": 112215,
+      "balance_minor": 997227
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TEDA842F0AF67",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-07",
+      "amount_minor": 1191301,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "TEDA842F0AF67"
+    },
+    {
+      "id": "T92913C383BD8",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-12",
+      "amount_minor": -242060,
+      "type": "expense",
+      "category": "购物",
+      "merchant": "某购物中心",
+      "status": "booked",
+      "raw_id": "T92913C383BD8"
+    },
+    {
+      "id": "T8E71094CB6A1",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-17",
+      "amount_minor": -64229,
+      "type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "status": "booked",
+      "raw_id": "T8E71094CB6A1"
+    },
+    {
+      "id": "T59FA648CA043",
+      "account_id": "ACC57DB69A28AC1",
+      "date": "2026-10-22",
+      "amount_minor": -1127745,
+      "type": "transfer_out",
+      "category": "转账",
+      "merchant": "收款人-张三",
+      "status": "rejected",
+      "raw_id": "T59FA648CA043"
+    }
+  ],
+  "simulated": true,
+  "ledger_modified": false,
+  "source": {
+    "provider": "Ethan 1022",
+    "sha256": "e80af97d5574c80123bf7527d0c83a0652188627429b0e1eaa159dc5ad070bc6"
+  }
+}

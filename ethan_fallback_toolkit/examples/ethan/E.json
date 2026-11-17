@@ -1,0 +1,216 @@
+{
+  "schema_version": "scenario-1.1",
+  "scenario_id": "SCN_E_20261022185343_94E93C",
+  "scenario_type": "E",
+  "parameters": {
+    "increase_minor": 80000
+  },
+  "accounts": [
+    {
+      "account_id": "ACCCB32B50A18B9",
+      "currency": "CNY",
+      "initial_balance_minor": 557431,
+      "balance_minor": 13050740
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T35FA3DEFA923",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-01",
+      "amount_minor": 1983643,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T35FA3DEFA923"
+    },
+    {
+      "id": "T4586E7734477",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-03-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T4586E7734477"
+    },
+    {
+      "id": "T1565CBD2AB87",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-01",
+      "amount_minor": 1318994,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T1565CBD2AB87"
+    },
+    {
+      "id": "TD681ED2B6863",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-04-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "TD681ED2B6863"
+    },
+    {
+      "id": "T00774D6C4992",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-01",
+      "amount_minor": 1935301,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T00774D6C4992"
+    },
+    {
+      "id": "T8D1EDFF17422",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-05-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T8D1EDFF17422"
+    },
+    {
+      "id": "T8725E1AFC218",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-01",
+      "amount_minor": 1638861,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T8725E1AFC218"
+    },
+    {
+      "id": "T676F563FCE9D",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-06-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T676F563FCE9D"
+    },
+    {
+      "id": "T1AB4C43F23CE",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-01",
+      "amount_minor": 1798304,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T1AB4C43F23CE"
+    },
+    {
+      "id": "T466B79CD7CB6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-07-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T466B79CD7CB6"
+    },
+    {
+      "id": "T30F0E6F87F65",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-01",
+      "amount_minor": 1736063,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T30F0E6F87F65"
+    },
+    {
+      "id": "T72DE04328254",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-08-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T72DE04328254"
+    },
+    {
+      "id": "T353061D396C3",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-01",
+      "amount_minor": 1300207,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "T353061D396C3"
+    },
+    {
+      "id": "T194FFD3D7FA2",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-09-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "T194FFD3D7FA2"
+    },
+    {
+      "id": "TE04972C76E2F",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-01",
+      "amount_minor": 805936,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "TE04972C76E2F"
+    },
+    {
+      "id": "TF9BCA35891D6",
+      "account_id": "ACCCB32B50A18B9",
+      "date": "2026-10-19",
+      "amount_minor": -3000,
+      "type": "expense",
+      "category": "订阅",
+      "merchant": "某视频平台",
+      "status": "booked",
+      "subscription_cycle": "monthly",
+      "recurring": true,
+      "raw_id": "TF9BCA35891D6"
+    }
+  ],
+  "simulated": true,
+  "ledger_modified": false,
+  "source": {
+    "provider": "Ethan 1022",
+    "sha256": "9724f96be979773ad732b041b9af3bd3892e4e4f7c79ac8beff3c65fc49c81fd"
+  }
+}

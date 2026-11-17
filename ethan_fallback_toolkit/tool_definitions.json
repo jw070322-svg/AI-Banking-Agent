@@ -1,0 +1,425 @@
+[
+  {
+    "name": "generate_environment",
+    "python_signature": "(scenario_type='A', *, seed=42, as_of='2026-10-24', increase_minor=80000)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "scenario_type": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "increase_minor": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000000
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Generate a deterministic, reconciled A-E synthetic banking environment with a seed and reference date."
+  },
+  {
+    "name": "parse_requirement",
+    "python_signature": "(text)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Parse supported Chinese scenario descriptions into A-E and an exact integer shopping increase."
+  },
+  {
+    "name": "validate_environment",
+    "python_signature": "(data)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "accounts",
+            "transactions"
+          ],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "minItems": 1
+            },
+            "transactions": {
+              "type": "array"
+            }
+          }
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Check ledger structure, money, dates, balances and the specified A-E semantic requirements."
+  },
+  {
+    "name": "validate_ledger",
+    "python_signature": "(data)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "accounts",
+            "transactions"
+          ],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "minItems": 1
+            },
+            "transactions": {
+              "type": "array"
+            }
+          }
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Check canonical CNY ledger structure, unique identifiers and end-of-day reconciliation."
+  },
+  {
+    "name": "import_ethan",
+    "python_signature": "(data)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Import original Ethan 1022 yuan-based JSON, preserving business semantics and removing user identity fields."
+  },
+  {
+    "name": "to_agent_scenario",
+    "python_signature": "(data)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "accounts",
+            "transactions"
+          ],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "minItems": 1
+            },
+            "transactions": {
+              "type": "array"
+            }
+          }
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Produce a read-only scenario-1.0 projection compatible with SecondAsgent; not a financial-analysis input."
+  },
+  {
+    "name": "organize_financial_data",
+    "python_signature": "(data, *, start_date=None, end_date=None)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "accounts",
+            "transactions"
+          ],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "minItems": 1
+            },
+            "transactions": {
+              "type": "array"
+            }
+          }
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Build a dated snapshot with source hashes, reconciliation and unconfirmed duplicate/subscription candidates."
+  },
+  {
+    "name": "calculate_financial_metrics",
+    "python_signature": "(data, *, start_date=None, end_date=None, liquid_assets_minor=None, monthly_debt_payment_minor=0, essential_monthly_expense_minor=None)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object",
+          "required": [
+            "accounts",
+            "transactions"
+          ],
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "minItems": 1
+            },
+            "transactions": {
+              "type": "array"
+            }
+          }
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "liquid_assets_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "monthly_debt_payment_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "essential_monthly_expense_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Compute booked income, refunds, consumption, transfers, monthly summaries and explicitly defined ratios."
+  },
+  {
+    "name": "simulate_cashflow",
+    "python_signature": "(*, start_date, end_date, start_balance_minor, events, minimum_reserve_minor=0)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "start_balance_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "minimum_reserve_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "events": {
+          "type": "array",
+          "maxItems": 10000
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "start_balance_minor",
+        "events"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Simulate user-supplied dated events and minimum cash balances without changing any live ledger."
+  },
+  {
+    "name": "compare_plans",
+    "python_signature": "(*, start_date, end_date, start_balance_minor, plans, minimum_reserve_minor=0)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "start_balance_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "minimum_reserve_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "plans": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 20
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date",
+        "start_balance_minor",
+        "plans"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Compare named deterministic cashflow plans; does not choose or execute a plan."
+  },
+  {
+    "name": "plan_life_event",
+    "python_signature": "(*, event_date, as_of, budget_minor, available_minor, emergency_reserve_minor=0, label='家人生日', currency='CNY')",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "event_date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "budget_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "available_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "emergency_reserve_minor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "CNY"
+          ]
+        }
+      },
+      "required": [
+        "event_date",
+        "as_of",
+        "budget_minor",
+        "available_minor"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Draft an affordable life-event budget and dated reminders, respecting the stated reserve."
+  },
+  {
+    "name": "export_ics",
+    "python_signature": "(plan)",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "plan": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "plan"
+      ],
+      "additionalProperties": false
+    },
+    "side_effects": false,
+    "description": "Render a draft life-event calendar as escaped, folded ICS text; does not publish or schedule anything."
+  }
+]

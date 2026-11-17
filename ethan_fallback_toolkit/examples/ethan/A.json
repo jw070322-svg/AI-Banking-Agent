@@ -1,0 +1,156 @@
+{
+  "schema_version": "scenario-1.1",
+  "scenario_id": "SCN_A_20261022185343_A462AC",
+  "scenario_type": "A",
+  "parameters": {
+    "increase_minor": 80000
+  },
+  "accounts": [
+    {
+      "account_id": "ACC13849C0A2ED2",
+      "currency": "CNY",
+      "initial_balance_minor": 981198,
+      "balance_minor": 2318167
+    }
+  ],
+  "transactions": [
+    {
+      "id": "T95F7D2E41A10",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-09-28",
+      "amount_minor": -2239,
+      "type": "expense",
+      "category": "餐饮",
+      "merchant": "某餐厅",
+      "status": "booked",
+      "raw_id": "T95F7D2E41A10"
+    },
+    {
+      "id": "T0B46B8466978",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-09-30",
+      "amount_minor": -45777,
+      "type": "expense",
+      "category": "通讯",
+      "merchant": "某超市",
+      "status": "booked",
+      "raw_id": "T0B46B8466978"
+    },
+    {
+      "id": "TCD4D8F847BB5",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-01",
+      "amount_minor": 1644041,
+      "type": "income",
+      "category": "工资",
+      "merchant": "示例科技有限公司",
+      "status": "booked",
+      "raw_id": "TCD4D8F847BB5"
+    },
+    {
+      "id": "TBC18CD00D324",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-01",
+      "amount_minor": -31829,
+      "type": "expense",
+      "category": "娱乐",
+      "merchant": "某咖啡店",
+      "status": "booked",
+      "raw_id": "TBC18CD00D324"
+    },
+    {
+      "id": "TF27027EE78C2",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-02",
+      "amount_minor": -40470,
+      "type": "expense",
+      "category": "购物",
+      "merchant": "某加油站",
+      "status": "booked",
+      "raw_id": "TF27027EE78C2"
+    },
+    {
+      "id": "TF07707286E49",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-02",
+      "amount_minor": -16930,
+      "type": "expense",
+      "category": "交通",
+      "merchant": "某电影院",
+      "status": "booked",
+      "raw_id": "TF07707286E49"
+    },
+    {
+      "id": "T2D57455270FE",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-06",
+      "amount_minor": -1845,
+      "type": "expense",
+      "category": "购物",
+      "merchant": "某餐厅",
+      "status": "booked",
+      "raw_id": "T2D57455270FE"
+    },
+    {
+      "id": "T19CD57C42920",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-06",
+      "amount_minor": -34984,
+      "type": "expense",
+      "category": "通讯",
+      "merchant": "某电影院",
+      "status": "booked",
+      "raw_id": "T19CD57C42920"
+    },
+    {
+      "id": "TC71AE09A6E1D",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -28031,
+      "type": "expense",
+      "category": "餐饮",
+      "merchant": "某电影院",
+      "status": "booked",
+      "raw_id": "TC71AE09A6E1D"
+    },
+    {
+      "id": "TD0EB6C33CEA6",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -46016,
+      "type": "expense",
+      "category": "购物",
+      "merchant": "某咖啡店",
+      "status": "booked",
+      "raw_id": "TD0EB6C33CEA6"
+    },
+    {
+      "id": "T0120E3E22BD3",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-08",
+      "amount_minor": -28450,
+      "type": "expense",
+      "category": "日用",
+      "merchant": "某咖啡店",
+      "status": "booked",
+      "raw_id": "T0120E3E22BD3"
+    },
+    {
+      "id": "T16957ECE5044",
+      "account_id": "ACC13849C0A2ED2",
+      "date": "2026-10-14",
+      "amount_minor": -30501,
+      "type": "expense",
+      "category": "娱乐",
+      "merchant": "某电影院",
+      "status": "booked",
+      "raw_id": "T16957ECE5044"
+    }
+  ],
+  "simulated": true,
+  "ledger_modified": false,
+  "source": {
+    "provider": "Ethan 1022",
+    "sha256": "1d4a302e801ff83d4de1a0718cd22bfdad1f6ff87e43e1867206518a34b55058"
+  }
+}
