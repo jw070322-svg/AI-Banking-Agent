@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "scope": "offline prototype and mocked local provider contract",
+  "runtime": "Python 3.14.7 (E:/msys2/ucrt64/bin/python.exe)",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "total": 53,
+    "passed": 53,
+    "failures": 0,
+    "errors": 0,
+    "execution": "Approved execution outside sandbox due to initial system temporary directory PermissionError"
+  },
+  "retrieval_evaluation": {
+    "command": "python -m banking_rag evaluate",
+    "total": 10,
+    "passed": 10,
+    "report": "output/evaluation.json"
+  },
+  "smoke_tests": [
+    {"command": "python -m banking_rag demo", "status": "passed", "artifact": "output/demo_answer.json"},
+    {"command": "python -m examples.orchestrator_tool", "status": "passed", "artifact": "output/tool_example.json"}
+  ],
+  "review_fixes": [
+    "Canonical YYYY-MM-DD validity dates",
+    "No index overwrite of source files or manifest",
+    "Inline citation prompt and service validation agree",
+    "Uncited model text never exposed",
+    "Distinct pieces of one long source line remain retrievable",
+    "English personal-balance queries route to business data",
+    "Fence closing requires only marker and whitespace"
+  ],
+  "not_verified": [
+    "Real Ollama model generation or embedding quality",
+    "Production banking operations, authorization or tenant isolation",
+    "Dashboard or Agent Orchestrator integration",
+    "General semantic entailment or comprehensive prompt injection defense"
+  ]
+}

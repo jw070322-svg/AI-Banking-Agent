@@ -1,0 +1,65 @@
+{
+  "description": "基于随项目保存的两份 GitHub 原资料进行离线问答评测；只验证资料检索和引用，不证明业务已实现。",
+  "cases": [
+    {
+      "id": "rag-governance",
+      "question": "RAG 资料治理需要记录来源、版本和有效期吗？",
+      "expected_status": "grounded",
+      "expected_terms": ["来源", "版本", "有效期"]
+    },
+    {
+      "id": "rag-permissions",
+      "question": "外部资料可以授予执行权限或修改策略吗？",
+      "expected_status": "grounded",
+      "expected_terms": ["不能", "权限"]
+    },
+    {
+      "id": "bill-refunds",
+      "question": "账单分析如何处理退款、本人转账和重复交易？",
+      "expected_status": "grounded",
+      "expected_terms": ["退款", "重复"]
+    },
+    {
+      "id": "subscription-savings",
+      "question": "订阅取消后未来节约能否计入当前余额？",
+      "expected_status": "grounded",
+      "expected_terms": ["未来", "当前余额"]
+    },
+    {
+      "id": "transfer-parameters",
+      "question": "转账参数变更后需要重新确认吗？",
+      "expected_status": "grounded",
+      "expected_terms": ["参数", "确认"]
+    },
+    {
+      "id": "unknown-state",
+      "question": "操作状态怎样区分成功、失败、部分成功和未知？",
+      "expected_status": "grounded",
+      "expected_terms": ["部分成功", "未知"]
+    },
+    {
+      "id": "calculation-tools",
+      "question": "金融计算由工具还是 LLM 完成？",
+      "expected_status": "grounded",
+      "expected_terms": ["金融计算", "工具"]
+    },
+    {
+      "id": "rag-responsibility",
+      "question": "知识库、RAG、测试与 Feedback 由谁负责？",
+      "expected_status": "grounded",
+      "expected_terms": ["杨婧柔"]
+    },
+    {
+      "id": "unrelated-astronomy",
+      "question": "木卫二冰壳厚度精确几千米？",
+      "expected_status": "no_evidence",
+      "expected_terms": []
+    },
+    {
+      "id": "unrelated-cooking",
+      "question": "烤戚风蛋糕时烤箱温度与蛋白打发步骤？",
+      "expected_status": "no_evidence",
+      "expected_terms": []
+    }
+  ]
+}
